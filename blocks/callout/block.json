@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/callout",
+    "title": "Callout",
+    "category": "theme",
+    "description": "A highlighted callout box with an optional CTA.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "text": {
+            "type": "string",
+            "default": ""
+        },
+        "variant": {
+            "type": "string",
+            "default": "info",
+            "enum": [
+                "info",
+                "warning",
+                "success"
+            ]
+        },
+        "ctaText": {
+            "type": "string",
+            "default": ""
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": "file:callout.css",
+    "editorStyle": "file:../../build/index.css"
+}

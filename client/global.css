@@ -1,0 +1,47 @@
+html {
+    margin: 0 !important;
+    background-color: yellow;
+    min-height: 100dvh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: grey;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr min-content;
+}
+
+.header-homepage {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    background-color: white;
+}
+
+nav {
+    margin: 2rem;
+}
+
+.menu ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.page_item {
+    background-color: yellow;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 2rem;
+}

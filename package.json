@@ -1,0 +1,12 @@
+{
+    "name": "observata-blocks",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "wp-scripts build --config webpack.config.js",
+        "start": "wp-scripts start --config webpack.config.js"
+    },
+    "devDependencies": {
+        "@wordpress/scripts": "^30.0.0"
+    }
+}

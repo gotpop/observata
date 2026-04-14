@@ -1,0 +1,21 @@
+/*
+Theme Name: Observata
+Theme URI: https://github.com/observata
+Author: Observata
+Author URI: https://github.com/observata
+Description: Custom WordPress theme for Observata. Built on BlankSlate.
+Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 8.0
+License: GNU General Public License v3 or Later
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: observata
+
+Observata WordPress Theme
+Built on BlankSlate by WebGuy
+*/
+
+@import './client/reset.css';
+@import './client/global.css';

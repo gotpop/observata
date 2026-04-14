@@ -1,0 +1,12 @@
+{
+    "name": "observata/theme",
+    "description": "Observata WordPress theme",
+    "type": "wordpress-theme",
+    "require": {
+        "timber/timber": "^2.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

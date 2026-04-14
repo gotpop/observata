@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card",
+    "title": "Card",
+    "category": "theme",
+    "description": "An individual card. Only usable inside the Cards block.",
+    "parent": [
+        "observata/cards"
+    ],
+    "supports": {
+        "html": false,
+        "reusable": false
+    },
+    "attributes": {
+        "mediaId": {
+            "type": "number",
+            "default": 0
+        },
+        "mediaUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "cardTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "cardText": {
+            "type": "string",
+            "default": ""
+        },
+        "linkUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "linkText": {
+            "type": "string",
+            "default": "Learn more"
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": "file:card.css",
+    "editorStyle": "file:../../build/index.css"
+}

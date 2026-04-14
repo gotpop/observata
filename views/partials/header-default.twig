@@ -1,0 +1,14 @@
+<header id="header" class="header-homepage" role="banner">
+	<div id="branding">
+		<div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+			<h1>
+				<a href="{{ site.url }}" title="{{ site.name }}" rel="home" itemprop="url">
+					<span itemprop="name">{{ site.name }}</span>
+				</a>
+			</h1>
+		</div>
+	</div>
+	<nav id="menu" role="navigation" aria-label="Primary Navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+		{{ function('wp_nav_menu', { theme_location: 'main-menu', link_before: '<span itemprop="name">', link_after: '</span>' }) }}
+	</nav>
+</header>

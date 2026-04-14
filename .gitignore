@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+vendor
+
+# Build output
+build
+dist
+
+# Composer
+composer.phar
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Caches
+.cache
+.sass-cache
+.parcel-cache
+
+# Source maps
+*.map
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.idea
+*.swp
+*.swo
+
+# VSCode workspace
+*.code-workspace

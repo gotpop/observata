@@ -1,0 +1,14 @@
+const defaultConfig = require('@wordpress/scripts/config/webpack.config');
+
+module.exports = {
+    ...defaultConfig,
+    entry: async () => {
+        const defaultEntries = typeof defaultConfig.entry === 'function'
+            ? await defaultConfig.entry()
+            : defaultConfig.entry;
+        return {
+            ...defaultEntries,
+            client: './client/index.ts',
+        };
+    },
+};

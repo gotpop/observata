@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+	{% include 'partials/header-default.twig' %}
+{% endblock %}
+
+{% block content %}
+	<div id="post-{{ post.ID }}" class="{{ post.class }} default-content">
+		{{ content | raw }}
+	</div>
+{% endblock %}
+
+{% block footer %}
+	{% include 'partials/footer-default.twig' %}
+{% endblock %}

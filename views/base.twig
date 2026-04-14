@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+<head>
+	<meta charset="{{ site.charset }}">
+	<meta name="viewport" content="width=device-width">
+	{{ function('wp_head') }}
+</head>
+<body class="{{ body_class }} liam">
+	{{ function('wp_body_open') }}
+	<div id="wrapper" class="hfeed">
+
+		{% block header %}{% endblock %}
+
+		<div id="container">
+			<main id="content" class="site-main">
+				{% block content %}{% endblock %}
+			</main>
+		</div>
+
+		{% block footer %}{% endblock %}
+
+	</div>
+	{{ function('wp_footer') }}
+</body>
+</html>

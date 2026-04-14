@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/cards",
+    "title": "Cards",
+    "category": "theme",
+    "description": "A grid of cards. Add, remove and reorder individual cards freely.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": "file:cards.css",
+    "editorStyle": "file:../../build/index.css"
+}
