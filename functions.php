@@ -8,6 +8,7 @@ add_action('admin_menu', 'observata_remove_admin_menus');
 function observata_remove_admin_menus()
 {
 	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
 }
 
 // Load Composer autoloader (Timber, Twig, etc.) and custom block registration.
@@ -221,7 +222,8 @@ function observata_custom_pings($comment)
 {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<?php comment_author_link(); ?></li>
+		<?php comment_author_link(); ?>
+	</li>
 	<?php
 }
 
