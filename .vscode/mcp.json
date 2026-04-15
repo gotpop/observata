@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "shaders": {
+      "type": "http",
+      "url": "https://shaders.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ak_GPQRKY42VP3BZ6FAZDQP7Y570VKTQR9Z"
+      }
+    }
+  }
+}
