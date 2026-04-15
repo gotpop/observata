@@ -1,14 +1,23 @@
-.wp-block-observata-hero {}
-
-.wp-block-observata-hero .hero-inner {}
-
-.wp-block-observata-hero h1 {}
-
-.wp-block-observata-hero .hero-subheading {}
-
-.wp-block-observata-hero .hero-cta {}
-
-
 .wp-block-observata-hero {
-    background-color: aqua;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: white;
+    min-height: 800px;
+    color: white;
+}
+
+.wp-block-observata-hero .hero-shader {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.wp-block-observata-hero .hero-inner {
+    position: relative;
+    z-index: 1;
 }
