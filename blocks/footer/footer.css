@@ -86,3 +86,9 @@
     font-weight: var(--fonts-weight-font-weight-regular);
     color: rgba(255, 255, 255, 0.8);
 }
+
+
+
+.footer-content {
+    background-color: pink;
+}
