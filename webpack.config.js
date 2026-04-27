@@ -8,7 +8,7 @@ module.exports = {
             : defaultConfig.entry;
         return {
             ...defaultEntries,
-            client: './client/index.ts',
+            client: './client/ts/index.ts',
         };
     },
 };
