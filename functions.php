@@ -3,41 +3,6 @@
 // Hide the admin toolbar on the front end.
 add_filter('show_admin_bar', '__return_false');
 
-// Hide the Posts menu item from wp-admin (no blog on this site).
-add_action('admin_menu', 'observata_remove_admin_menus', 999);
-function observata_remove_admin_menus()
-{
-	remove_menu_page('edit.php');
-	remove_menu_page('edit-comments.php');
-	remove_menu_page('gutenberg-edit-site');
-	remove_submenu_page('themes.php', 'theme-editor.php');
-	remove_submenu_page('themes.php', 'widgets.php');
-
-	// Remove the Customize / Design submenu (slug contains dynamic params so loop to match).
-	global $submenu;
-	if (isset($submenu['themes.php'])) {
-		foreach ($submenu['themes.php'] as $key => $item) {
-			if (
-				isset($item[2]) && (
-					strpos($item[2], 'customize.php') !== false ||
-					strpos($item[2], 'site-editor.php') !== false ||
-					strpos($item[2], 'gutenberg-edit-site') !== false
-				)
-			) {
-				unset($submenu['themes.php'][$key]);
-			}
-		}
-	}
-}
-
-// Remove the Comments button and New Post item from the admin bar.
-add_action('admin_bar_menu', 'observata_remove_admin_bar_items', 999);
-function observata_remove_admin_bar_items($wp_admin_bar)
-{
-	$wp_admin_bar->remove_node('comments');
-	$wp_admin_bar->remove_node('new-post');
-}
-
 // Customise the wp-admin bar: brand colour and custom logo.
 add_action('admin_head', 'observata_admin_bar_styles');
 function observata_admin_bar_styles()
@@ -328,7 +293,10 @@ function observata_comment_count($count)
 {
 	if (!is_admin()) {
 		global $id;
-		$get_comments = get_comments('status=approve&post_id=' . $id);
+		$get_comments = get_comments([
+			'status' => 'approve',
+			'post_id' => $id,
+		]);
 		$comments_by_type = separate_comments($get_comments);
 		return count($comments_by_type['comment']);
 	} else {
