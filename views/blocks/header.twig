@@ -1,0 +1,36 @@
+{% set logo_text = attributes.logo|default('Observata') %}
+{% set services = attributes.services|default('Services') %}
+{% set pricing = attributes.pricing|default('Pricing') %}
+{% set resources = attributes.resources|default('Resources') %}
+{% set about = attributes.about|default('About Us') %}
+{% set contact = attributes.contact|default('Contact Us') %}
+
+{% set nav_items = {
+    'services': services,
+    'pricing': pricing,
+    'resources': resources,
+    'about-us': about,
+    'contact-us': contact,
+} %}
+
+<header id="header" class="observata-header">
+    <div class="header-content">
+        <div class="header-logo">
+            <h1><a href="{{ function('home_url', '/') }}"
+                    title="{{ function('get_bloginfo', 'name')|esc_attr }}">{{ logo_text|default(function('get_bloginfo', 'name'))|esc_html }}</a></h1>
+        </div>
+
+        <div class="header-navigation">
+            <nav id="menu" role="navigation"
+                aria-label="{{ function('__', 'Primary Navigation', 'observata') }}">
+                <ul class="menu-list">
+                    {% for slug, label in nav_items %}
+                        <li class="menu-item menu-item-{{ slug|esc_attr }}">
+                            <a href="{{ function('home_url', '/' ~ slug ~ '/') }}"><span>{{ label|esc_html }}</span></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

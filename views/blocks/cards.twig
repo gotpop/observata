@@ -1,0 +1,10 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+
+<div class="wp-block-observata-cards">
+	{% if section_title %}
+		<h2 class="cards-section-title">{{ section_title|wp_kses_post }}</h2>
+	{% endif %}
+	<div class="cards-grid">
+		{{ content|raw }}
+	</div>
+</div>

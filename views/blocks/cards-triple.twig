@@ -1,0 +1,27 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+
+<section class="wp-block-observata-cards-triple">
+    {% if section_title %}
+        <h2 class="section-title">{{ section_title|wp_kses_post }}</h2>
+    {% endif %}
+
+    <div class="cards-container">
+        {{ function('observata_render_block', 'observata/card-swoosh-icon', {
+            'cardTitle': 'Search as a Service',
+            'cardText': 'Enable your employees to securely and fast locate information across all internal systems.',
+            'iconNumber': '01'
+        })|raw }}
+
+        {{ function('observata_render_block', 'observata/card-swoosh-icon', {
+            'cardTitle': 'MDR as a Service',
+            'cardText': 'We protect your critical assets 24/7. Detecting threats, responding fast and preventing attacks.',
+            'iconNumber': '02'
+        })|raw }}
+
+        {{ function('observata_render_block', 'observata/card-swoosh-icon', {
+            'cardTitle': 'Observability as a Service',
+            'cardText': 'Powered by Elastic. Managed by experts. Detect early, respond fast.',
+            'iconNumber': '03'
+        })|raw }}
+    </div>
+</section>

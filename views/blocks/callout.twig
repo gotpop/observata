@@ -1,0 +1,15 @@
+{% set text = attributes.text|default('') %}
+{% set variant = attributes.variant|default('info') %}
+{% set cta_text = attributes.ctaText|default('') %}
+{% set cta_url = attributes.ctaUrl|default('') %}
+
+<aside class="wp-block-observata-callout is-{{ variant|esc_attr }}">
+	<div class="callout-inner">
+		{% if text %}
+			<p class="callout-text">{{ text|wp_kses_post }}</p>
+		{% endif %}
+		{% if cta_text and cta_url %}
+			<a href="{{ cta_url|esc_url }}" class="callout-cta">{{ cta_text|esc_html }}</a>
+		{% endif %}
+	</div>
+</aside>

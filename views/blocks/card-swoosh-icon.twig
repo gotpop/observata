@@ -1,0 +1,20 @@
+{% set card_title = attributes.cardTitle|default('') %}
+{% set card_text = attributes.cardText|default('') %}
+{% set icon_number = attributes.iconNumber|default('01') %}
+
+<article class="wp-block-observata-card-swoosh-icon">
+    <div class="swoosh-background">
+        <div class="icon-circle">
+            <span class="icon-number">{{ icon_number|esc_html }}</span>
+        </div>
+    </div>
+
+    <div class="card-body">
+        {% if card_title %}
+            <h3 class="card-title">{{ card_title|wp_kses_post }}</h3>
+        {% endif %}
+        {% if card_text %}
+            <p class="card-text">{{ card_text|wp_kses_post }}</p>
+        {% endif %}
+    </div>
+</article>
