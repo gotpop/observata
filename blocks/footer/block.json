@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/footer",
+    "title": "Footer",
+    "category": "theme",
+    "description": "Footer with social links and contact information.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "locations": {
+            "type": "string",
+            "default": "Denmark | Sweden | Finland | Norway"
+        },
+        "copyright": {
+            "type": "string",
+            "default": "© Observata AB 2026"
+        },
+        "contactEmail": {
+            "type": "string",
+            "default": "sales@observata.com"
+        },
+        "contactAddress": {
+            "type": "string",
+            "default": "Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden"
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css"
+}

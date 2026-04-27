@@ -1,0 +1,20 @@
+.wp-block-observata-cards-triple {
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-block-observata-cards-triple .section-title {
+    font-size: 40px;
+    font-family: var(--typography-family-gantari);
+    font-weight: var(--typography-weight-bold);
+    color: var(--fonts-colour-text-heading);
+    line-height: var(--line-height-heading-h2);
+    letter-spacing: -0.8px;
+}
+
+.wp-block-observata-cards-triple .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    padding: 0 0 80px 0;
+}

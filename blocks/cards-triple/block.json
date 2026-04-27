@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/cards-triple",
+    "title": "Cards Triple",
+    "category": "theme",
+    "description": "3 service cards in grid layout.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css"
+}
