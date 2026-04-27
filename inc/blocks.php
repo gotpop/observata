@@ -23,10 +23,7 @@ function observata_register_blocks()
 	);
 
 	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
-		register_block_type(
-			dirname($block_json),
-			['editor_script' => 'observata-blocks']
-		);
+		register_block_type(dirname($block_json));
 	}
 }
 
@@ -49,4 +46,18 @@ function observata_allowed_blocks($allowed_blocks, $editor_context)
 	}
 
 	return $allowed;
+}
+
+/**
+ * Render a dynamic block by name + attributes from PHP templates.
+ */
+function observata_render_block(string $block_name, array $attributes = []): string
+{
+	$attrs = '';
+
+	if (!empty($attributes)) {
+		$attrs = ' ' . wp_json_encode($attributes, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+	}
+
+	return do_blocks("<!-- wp:{$block_name}{$attrs} /-->");
 }

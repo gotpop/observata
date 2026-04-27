@@ -4,10 +4,7 @@
     "name": "observata/card",
     "title": "Card",
     "category": "theme",
-    "description": "An individual card. Only usable inside the Cards block.",
-    "parent": [
-        "observata/cards"
-    ],
+    "description": "An individual card.",
     "supports": {
         "html": false,
         "reusable": false

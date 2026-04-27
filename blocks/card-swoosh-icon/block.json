@@ -9,10 +9,6 @@
         "html": false,
         "reusable": false
     },
-    "parent": [
-        "observata/cards-grid",
-        "observata/cards-triple"
-    ],
     "attributes": {
         "cardTitle": {
             "type": "string",

@@ -8,25 +8,22 @@ $section_title = $attributes['sectionTitle'] ?? '';
     <?php endif; ?>
 
     <div class="cards-container">
-        <?php echo do_blocks_shortcode('observata/service-card', array(
-            'serviceTitle' => 'Search as a Service',
-            'serviceText' => 'Enable your employees to securely and fast locate information across all internal systems.',
-            'readMoreText' => 'Discover search',
-            'readMoreUrl' => '#'
+        <?php echo observata_render_block('observata/card-swoosh-icon', array(
+            'cardTitle' => 'Search as a Service',
+            'cardText' => 'Enable your employees to securely and fast locate information across all internal systems.',
+            'iconNumber' => '01'
         )); ?>
 
-        <?php echo do_blocks_shortcode('observata/service-card', array(
-            'serviceTitle' => 'MDR as a Service',
-            'serviceText' => 'We protect your critical assets 24/7. Detecting threats, responding fast and preventing attacks.',
-            'readMoreText' => 'Discover MDR',
-            'readMoreUrl' => '#'
+        <?php echo observata_render_block('observata/card-swoosh-icon', array(
+            'cardTitle' => 'MDR as a Service',
+            'cardText' => 'We protect your critical assets 24/7. Detecting threats, responding fast and preventing attacks.',
+            'iconNumber' => '02'
         )); ?>
 
-        <?php echo do_blocks_shortcode('observata/service-card', array(
-            'serviceTitle' => 'Observability as a Service',
-            'serviceText' => 'Powered by Elastic. Managed by experts. Detect early, respond fast.',
-            'readMoreText' => 'Discover observability',
-            'readMoreUrl' => '#'
+        <?php echo observata_render_block('observata/card-swoosh-icon', array(
+            'cardTitle' => 'Observability as a Service',
+            'cardText' => 'Powered by Elastic. Managed by experts. Detect early, respond fast.',
+            'iconNumber' => '03'
         )); ?>
     </div>
 </section>

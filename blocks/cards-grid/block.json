@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/intro",
-    "title": "Intro",
+    "name": "observata/cards-grid",
+    "title": "Cards Grid",
     "category": "theme",
-    "description": "Intro section with logo strip and 3 feature cards.",
+    "description": "Six-card grid section.",
     "supports": {
         "html": false,
         "multiple": false
@@ -17,9 +17,9 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "style": "file:intro.css",
+    "style": "file:cards-grid.css",
     "editorStyle": [
-        "file:intro.css",
+        "file:cards-grid.css",
         "file:../../build/index.css"
     ]
 }

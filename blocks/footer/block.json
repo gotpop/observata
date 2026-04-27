@@ -28,6 +28,10 @@
         }
     },
     "render": "file:render.php",
+    "style": "file:footer.css",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css"
+    "editorStyle": [
+        "file:footer.css",
+        "file:../../build/index.css"
+    ]
 }

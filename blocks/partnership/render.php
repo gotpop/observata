@@ -1,5 +1,7 @@
 <?php
 $section_title = $attributes['sectionTitle'] ?? '';
+$cta_text = $attributes['ctaText'] ?? 'Discover how partnership works';
+$cta_url = $attributes['ctaUrl'] ?? '#partnership-phase';
 ?>
 
 <section class="wp-block-observata-partnership">
@@ -42,8 +44,8 @@ $section_title = $attributes['sectionTitle'] ?? '';
             <div class="arrow-icon"></div>
         </div>
 
-        <?php if ($section_title): ?>
-            <a href="#partnership-phase" class="partnership-cta"><?php echo esc_html($cta_url); ?></a>
+        <?php if ($cta_text): ?>
+            <a href="<?php echo esc_url($cta_url); ?>" class="partnership-cta"><?php echo esc_html($cta_text); ?></a>
         <?php endif; ?>
     </div>
 </section>

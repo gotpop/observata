@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/observability",
+    "title": "Observability",
+    "category": "theme",
+    "description": "Observability section.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": "Being observed is not the same as being observable"
+        },
+        "introText": {
+            "type": "string",
+            "default": "Most observability stacks were built for dashboards and not decisions."
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": "file:observability.css",
+    "editorStyle": [
+        "file:observability.css",
+        "file:../../build/index.css"
+    ]
+}
