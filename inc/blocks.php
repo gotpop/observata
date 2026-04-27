@@ -23,6 +23,17 @@ function observata_register_blocks()
 	);
 
 	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
+		// Skip hero block if it has a Twig template
+		if (basename(dirname($block_json)) === 'hero') {
+			$hero_twig = get_template_directory() . '/views/blocks/hero.twig';
+			if (file_exists($hero_twig)) {
+				register_block_type_from_metadata(
+					dirname($block_json),
+					['render_callback' => 'observata_render_block_twig']
+				);
+				continue;
+			}
+		}
 		register_block_type(dirname($block_json));
 	}
 }

@@ -1,0 +1,36 @@
+{% set heading = attributes.heading|default('') %}
+{% set subheading = attributes.subheading|default('') %}
+{% set cta_text = attributes.ctaText|default('Review Your Observability Structure') %}
+{% set cta_url = attributes.ctaUrl|default('#') %}
+{% set read_more_text = attributes.readMoreText|default('Discover') %}
+{% set read_more_url = attributes.readMoreUrl|default('#') %}
+
+<section class="wp-block-observata-hero">
+    <div class="gradient-background"></div>
+    <div class="ribbon-shader"></div>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            {% if heading %}
+                <h1>{{ heading|wp_kses_post }}</h1>
+            {% endif %}
+
+            {% if subheading %}
+                <p class="hero-subheading">{{ subheading|wp_kses_post }}</p>
+            {% endif %}
+        </div>
+
+        <div class="hero-buttons">
+            {% if cta_text and cta_url %}
+                <a href="{{ cta_url|esc_url }}" class="hero-cta-primary">{{ cta_text|esc_html }}</a>
+            {% endif %}
+
+            {% if read_more_text and read_more_url %}
+                <div class="hero-read-more">
+                    <p>{{ read_more_text|esc_html }}</p>
+                    <div class="arrow-icon"></div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -68,6 +68,7 @@ function observata_admin_bar_styles()
 
 // Load Composer autoloader (Timber, Twig, etc.) and custom block registration.
 require get_template_directory() . '/vendor/autoload.php';
+require get_template_directory() . '/inc/block-renderer.php';
 require get_template_directory() . '/inc/blocks.php';
 
 // Init Timber and point it to the views/ directory for Twig templates.
