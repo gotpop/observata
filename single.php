@@ -1,13 +1,16 @@
-<?php get_header(); ?>
-<?php if (have_posts()):
-    while (have_posts()):
-        the_post(); ?>
-        <?php get_template_part('entry'); ?>
-        <?php if (comments_open() && !post_password_required()) {
-            comments_template('', true);
-        } ?>
-    <?php endwhile; endif; ?>
-<footer class="footer">
-    <?php get_template_part('nav', 'below-single'); ?>
-</footer>
-<?php get_footer(); ?>
+<?php
+
+$context = \Timber\Timber::context();
+$post = \Timber\Timber::get_post();
+
+if (!$post) {
+    wp_safe_redirect(home_url('/'));
+    exit;
+}
+
+$post->setup();
+$context['post'] = $post;
+$context['body_class'] = implode(' ', get_body_class());
+$context['show_comments'] = comments_open($post->ID) && !post_password_required($post->ID);
+
+\Timber\Timber::render('templates/blog-single.twig', $context);

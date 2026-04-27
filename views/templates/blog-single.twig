@@ -1,0 +1,51 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+	{% include 'partials/header-default.twig' %}
+{% endblock %}
+
+{% block content %}
+	<article id="post-{{ post.ID }}" class="{{ post.class }}">
+		<header>
+			<h1 class="entry-title" itemprop="headline"><a href="{{ post.link }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+			{{ function('edit_post_link') }}
+			<div class="entry-meta">
+				<span class="author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ post.author.name }}</span></span>
+				<span class="meta-sep"> | </span>
+				<time class="entry-date" datetime="{{ post.date|date('c') }}" title="{{ post.date|date(function('get_option', 'date_format')) }}" itemprop="datePublished" pubdate>{{ post.date|date(function('get_option', 'date_format')) }}</time>
+				<meta itemprop="dateModified" content="{{ function('get_the_modified_date', 'Y-m-d', post.ID) }}">
+			</div>
+		</header>
+		<div class="entry-content" itemprop="mainEntityOfPage">
+			{% if post.thumbnail %}
+				<a href="{{ post.thumbnail.src('full') }}" title="{{ post.title }}"><img src="{{ post.thumbnail.src('full') }}" alt="{{ post.title }}" itemprop="image"></a>
+			{% endif %}
+			<meta itemprop="description" content="{{ post.excerpt|striptags|e('html_attr') }}">
+			{{ post.content|raw }}
+			<div class="entry-links">{{ function('wp_link_pages') }}</div>
+		</div>
+		<footer class="entry-footer">
+			<span class="cat-links">{{ function('esc_html__', 'Categories: ', 'observata') }}{{ function('get_the_category_list', ', ')|raw }}</span>
+			<span class="tag-links">{{ function('get_the_tag_list')|raw }}</span>
+			{% if function('comments_open', post.ID) %}
+				<span class="meta-sep">|</span>
+				<span class="comments-link"><a href="{{ function('get_comments_link') }}">{{ function('esc_html__', 'Comments', 'observata') }}</a></span>
+			{% endif %}
+		</footer>
+	</article>
+
+	{% if show_comments %}
+		{{ function('comments_template', '', true) }}
+	{% endif %}
+
+	<footer class="footer">
+		{{ function('the_post_navigation', {
+			prev_text: '<span class="meta-nav">&larr;</span> %title',
+			next_text: '%title <span class="meta-nav">&rarr;</span>'
+		}) }}
+	</footer>
+{% endblock %}
+
+{% block footer %}
+	{% include 'partials/footer-default.twig' %}
+{% endblock %}

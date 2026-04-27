@@ -1,0 +1,43 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+	{% include 'partials/header-default.twig' %}
+{% endblock %}
+
+{% block content %}
+	{% if posts %}
+		<header class="header">
+			<h1 class="entry-title" itemprop="name">{{ function('sprintf', function('esc_html__', 'Search Results for: %s', 'observata'), search_query) }}</h1>
+		</header>
+		{% for post in posts %}
+			<article id="post-{{ post.ID }}" class="{{ post.class }}">
+				<header>
+					<h2 class="entry-title">
+						<a href="{{ post.link }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+					</h2>
+				</header>
+				<div class="entry-summary">
+					<div itemprop="description">{{ post.excerpt|raw }}</div>
+				</div>
+			</article>
+		{% endfor %}
+		{{ function('the_posts_navigation', {
+			prev_text: function('sprintf', function('esc_html__', '%s older', 'observata'), '<span class="meta-nav">&larr;</span>'),
+			next_text: function('sprintf', function('esc_html__', 'newer %s', 'observata'), '<span class="meta-nav">&rarr;</span>')
+		}) }}
+	{% else %}
+		<article id="post-0" class="post no-results not-found">
+			<header class="header">
+				<h1 class="entry-title" itemprop="name">{{ function('esc_html__', 'Nothing Found', 'observata') }}</h1>
+			</header>
+			<div class="entry-content" itemprop="mainContentOfPage">
+				<p>{{ function('esc_html__', 'Sorry, nothing matched your search. Please try again.', 'observata') }}</p>
+				{{ function('get_search_form') }}
+			</div>
+		</article>
+	{% endif %}
+{% endblock %}
+
+{% block footer %}
+	{% include 'partials/footer-default.twig' %}
+{% endblock %}
