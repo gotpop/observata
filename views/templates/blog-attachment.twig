@@ -1,0 +1,49 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+	{% include 'partials/header-default.twig' %}
+{% endblock %}
+
+{% block content %}
+	<article id="post-{{ post.ID }}" class="{{ post.class }}">
+		<header class="header">
+			<h1 class="entry-title" itemprop="name">{{ post.title }}</h1>
+			{{ function('edit_post_link') }}
+			<div class="entry-meta">
+				<span class="author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ post.author.name }}</span></span>
+				<span class="meta-sep"> | </span>
+				<time class="entry-date" datetime="{{ post.date|date('c') }}" title="{{ post.date|date(function('get_option', 'date_format')) }}" itemprop="datePublished" pubdate>{{ post.date|date(function('get_option', 'date_format')) }}</time>
+			</div>
+			{% if parent_permalink %}
+				<a href="{{ parent_permalink }}" title="{{ function('sprintf', function('esc_attr__', 'Return to %s', 'observata'), parent_title) }}" rev="attachment"><span class="meta-nav">&larr;</span> {{ function('esc_html__', 'Return to', 'observata') }} {{ parent_title }}</a>
+			{% endif %}
+			<nav id="nav-above" class="navigation">
+				<div class="nav-previous">{{ function('previous_image_link', false, '&lsaquo;') }}</div>
+				<div class="nav-next">{{ function('next_image_link', false, '&rsaquo;') }}</div>
+			</nav>
+		</header>
+		<div class="entry-content" itemprop="mainContentOfPage">
+			<div class="entry-attachment">
+				{% if is_image_attachment and attachment_image %}
+					<p class="attachment"><a href="{{ attachment_url }}" title="{{ post.title }}" rel="attachment"><img src="{{ attachment_image[0] }}" width="{{ attachment_image[1] }}" height="{{ attachment_image[2] }}" class="attachment-full" alt="{{ post.excerpt }}" itemprop="image"></a></p>
+				{% else %}
+					<a href="{{ attachment_url }}" title="{{ post.title }}" rel="attachment">{{ function('wp_basename', attachment_url) }}</a>
+				{% endif %}
+			</div>
+			{% if post.excerpt %}
+				<div class="entry-caption">{{ post.excerpt|raw }}</div>
+			{% endif %}
+			{% if post.thumbnail %}
+				<img src="{{ post.thumbnail.src('full') }}" alt="{{ post.title }}" itemprop="image">
+			{% endif %}
+		</div>
+	</article>
+
+	{% if show_comments %}
+		{{ function('comments_template') }}
+	{% endif %}
+{% endblock %}
+
+{% block footer %}
+	{% include 'partials/footer-default.twig' %}
+{% endblock %}

@@ -1,18 +1,9 @@
-<?php get_header(); ?>
-<header class="header">
-    <?php the_post(); ?>
-    <h1 class="entry-title author" itemprop="name"><?php the_author_link(); ?>
-    </h1>
-    <div class="archive-meta" itemprop="description">
-        <?php if ('' != get_the_author_meta('user_description')) {
-            echo wp_kses_post(get_the_author_meta('user_description'));
-        } ?>
-    </div>
-    <?php rewind_posts(); ?>
-</header>
-<?php while (have_posts()):
-    the_post(); ?>
-    <?php get_template_part('entry'); ?>
-<?php endwhile; ?>
-<?php get_template_part('nav', 'below'); ?>
-<?php get_footer(); ?>
+<?php
+
+$context = \Timber\Timber::context();
+$context['posts'] = \Timber\Timber::get_posts();
+$context['archive_title'] = get_the_archive_title();
+$context['archive_description'] = get_the_archive_description();
+$context['body_class'] = implode(' ', get_body_class());
+
+\Timber\Timber::render('templates/blog-archive.twig', $context);
