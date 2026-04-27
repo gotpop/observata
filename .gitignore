@@ -38,3 +38,6 @@ Desktop.ini
 
 # VSCode workspace
 *.code-workspace
+
+# MCP configuration with sensitive tokens
+.vscode/mcp.json
