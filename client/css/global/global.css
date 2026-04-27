@@ -8,7 +8,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: grey;
-    min-height: 100dvh;
+    min-height: 200dvh;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -22,6 +22,9 @@ body {
 .header-homepage {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 header {
