@@ -12,7 +12,8 @@ $cta_url = $attributes['ctaUrl'] ?? '#partnership-phase';
 
     <div class="content-wrapper">
         <?php if ($section_title): ?>
-            <h2 class="section-title"><?php echo wp_kses_post($section_title); ?></h2>
+            <h2 class="section-title"><?php echo wp_kses_post($section_title); ?>
+            </h2>
         <?php endif; ?>
 
         <div class="phases-wrap">
@@ -22,8 +23,10 @@ $cta_url = $attributes['ctaUrl'] ?? '#partnership-phase';
                     <div class="phase-title">The entry point</div>
                 </div>
                 <div class="phase-content">
-                    <p class="phase-text">Migrate from your current observability tool to Elastic at no extra cost.</p>
-                    <p class="phase-text">Our experts will audit your current set-up and optimise for success.</p>
+                    <p class="phase-text">Migrate from your current
+                        observability tool to Elastic at no extra cost.</p>
+                    <p class="phase-text">Our experts will audit your current
+                        set-up and optimise for success.</p>
                 </div>
             </div>
 
@@ -33,8 +36,12 @@ $cta_url = $attributes['ctaUrl'] ?? '#partnership-phase';
                     <div class="phase-title">The partnership</div>
                 </div>
                 <div class="phase-content">
-                    <p class="phase-text">Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives.</p>
-                    <p class="phase-text">Our experts will audit your current set-up and optimise for success.</p>
+                    <p class="phase-text">Once your environment is implemented
+                        and optimised, you'll move into Observata's continuous
+                        elevation of your observability. This is where the real
+                        value lives.</p>
+                    <p class="phase-text">Our experts will audit your current
+                        set-up and optimise for success.</p>
                 </div>
             </div>
         </div>
@@ -45,7 +52,8 @@ $cta_url = $attributes['ctaUrl'] ?? '#partnership-phase';
         </div>
 
         <?php if ($cta_text): ?>
-            <a href="<?php echo esc_url($cta_url); ?>" class="partnership-cta"><?php echo esc_html($cta_text); ?></a>
+            <a href="<?php echo esc_url($cta_url); ?>"
+                class="partnership-cta"><?php echo esc_html($cta_text); ?></a>
         <?php endif; ?>
     </div>
 </section>
