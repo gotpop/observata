@@ -17,5 +17,5 @@ Observata WordPress Theme
 Built on BlankSlate by WebGuy
 */
 
-@import './client/reset.css';
-@import './client/global.css';
+
+@import './client/css/index.css';
