@@ -141,6 +141,11 @@ function observata_enqueue()
 	$version = file_exists($style_path) ? md5_file($style_path) : null;
 	wp_enqueue_style('observata-style', get_stylesheet_uri(), [], $version);
 
+	$hero_style_path = get_template_directory() . '/blocks/hero/hero.css';
+	if (file_exists($hero_style_path)) {
+		wp_enqueue_style('observata-hero', get_template_directory_uri() . '/blocks/hero/hero.css', ['observata-style'], md5_file($hero_style_path));
+	}
+
 	$client_asset_path = get_template_directory() . '/build/client.asset.php';
 	if (file_exists($client_asset_path)) {
 		$client_asset = require $client_asset_path;

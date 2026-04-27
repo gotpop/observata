@@ -2,9 +2,9 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    background: white;
+    background: pink;
     min-height: 800px;
-    color: white;
+    border: 12px solid red;
 }
 
 .wp-block-observata-hero .hero-shader {
