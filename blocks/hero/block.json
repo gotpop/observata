@@ -4,37 +4,39 @@
     "name": "observata/hero",
     "title": "Hero",
     "category": "theme",
-    "description": "A full-width hero section with heading, subheading, background image and CTA.",
+    "description": "Full-width hero section with gradient background, shader effect, and CTA buttons.",
     "supports": {
-        "html": false
+        "html": false,
+        "multiple": false
     },
     "attributes": {
         "heading": {
             "type": "string",
-            "default": ""
+            "default": "observability & security"
         },
         "subheading": {
             "type": "string",
-            "default": ""
-        },
-        "mediaId": {
-            "type": "number",
-            "default": 0
-        },
-        "mediaUrl": {
-            "type": "string",
-            "default": ""
+            "default": "unify your AI powered"
         },
         "ctaText": {
             "type": "string",
-            "default": ""
+            "default": "Review Your Observability Structure"
         },
         "ctaUrl": {
             "type": "string",
-            "default": ""
+            "default": "#"
+        },
+        "readMoreText": {
+            "type": "string",
+            "default": "Discover"
+        },
+        "readMoreUrl": {
+            "type": "string",
+            "default": "#"
         }
     },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css"
+    "editorStyle": "file:../../build/index.css",
+    "style": "file:hero.css"
 }

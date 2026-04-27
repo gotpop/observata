@@ -1,0 +1,88 @@
+.wp-block-observata-footer {
+    position: relative;
+    background: var(--colour-primary-900, #0a1f3a);
+}
+
+.wp-block-observata-footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 80px 0;
+}
+
+.wp-block-observata-footer .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+
+.wp-block-observata-footer .footer-logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.wp-block-observata-footer .footer-logo a h1 {
+    font-family: var(--typography-family-gantari);
+    font-weight: var(--typography-weight-bold);
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.wp-block-observata-footer .footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.wp-block-observata-footer .footer-link {
+    color: var(--colour-accent-1-100, #ffebf9);
+    font-family: var(--fonts-family-font-inter);
+    font-size: 16px;
+    font-weight: var(--fonts-weight-font-weight-regular);
+    line-height: 1.5;
+}
+
+.wp-block-observata-footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.wp-block-observata-footer .footer-locations {
+    text-align: center;
+    font-family: var(--fonts-family-font-inter);
+    font-size: 14px;
+    font-weight: var(--fonts-weight-font-weight-regular);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wp-block-observata-footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wp-block-observata-footer .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wp-block-observata-footer .footer-label {
+    font-weight: var(--fonts-weight-font-weight-medium);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wp-block-observata-footer .footer-value {
+    font-weight: var(--fonts-weight-font-weight-regular);
+    color: white;
+}
+
+.wp-block-observata-footer .footer-copyright {
+    text-align: center;
+    font-size: 14px;
+    font-weight: var(--fonts-weight-font-weight-regular);
+    color: rgba(255, 255, 255, 0.8);
+}

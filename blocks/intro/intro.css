@@ -1,0 +1,24 @@
+.wp-block-observata-intro {
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-block-observata-intro .logo-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    padding: 349px 0 0;
+}
+
+.wp-block-observata-intro .logo-item {
+    display: flex;
+    align-items: center;
+}
+
+.wp-block-observata-intro .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+    gap: 40px;
+    padding: 0 0 80px 0;
+}

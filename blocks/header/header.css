@@ -1,0 +1,70 @@
+.observata-header {
+    position: relative;
+    background: white;
+    border-bottom: 1px solid var(--colour-border-border-gray, #e5e7ea);
+}
+
+.observata-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+.observata-header .header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.observata-header .header-logo h1 a {
+    font-size: 32px;
+    font-family: var(--typography-family-gantari);
+    font-weight: 700;
+    color: var(--fonts-colour-text-heading);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+}
+
+.observata-header .header-navigation {
+    display: flex;
+    gap: 32px;
+}
+
+.observata-header nav[role="navigation"] {
+    position: relative;
+}
+
+.observata-header .menu-list {
+    list-style: none;
+    display: none;
+    gap: 16px;
+    align-items: center;
+}
+
+.observata-header .menu-toggle {
+    cursor: pointer;
+    position: relative;
+    padding: 8px 16px;
+}
+
+.observata-header .menu-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: var(--colour-primary-500);
+}
+
+.observata-header .menu-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: white;
+    transform: rotate(45deg);
+}
