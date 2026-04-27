@@ -3,11 +3,12 @@
  * Block registration and Gutenberg configuration.
  */
 
-add_action( 'init', 'observata_register_blocks' );
-function observata_register_blocks() {
+add_action('init', 'observata_register_blocks');
+function observata_register_blocks()
+{
 	$asset_file = get_template_directory() . '/build/index.asset.php';
 
-	if ( ! file_exists( $asset_file ) ) {
+	if (!file_exists($asset_file)) {
 		return;
 	}
 
@@ -21,12 +22,10 @@ function observata_register_blocks() {
 		true
 	);
 
-	$blocks = [ 'hero', 'cards', 'card', 'callout' ];
-
-	foreach ( $blocks as $block ) {
+	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
 		register_block_type(
-			get_template_directory() . '/blocks/' . $block,
-			[ 'editor_script' => 'observata-blocks' ]
+			dirname($block_json),
+			['editor_script' => 'observata-blocks']
 		);
 	}
 }
@@ -36,12 +35,18 @@ function observata_register_blocks() {
  * observata/card is intentionally included so it can be added
  * inside the Cards block via InnerBlocks.
  */
-add_filter( 'allowed_block_types_all', 'observata_allowed_blocks', 10, 2 );
-function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
-	return [
-		'observata/hero',
-		'observata/cards',
-		'observata/card',
-		'observata/callout',
-	];
+add_filter('allowed_block_types_all', 'observata_allowed_blocks', 10, 2);
+function observata_allowed_blocks($allowed_blocks, $editor_context)
+{
+	$allowed = [];
+
+	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
+		$metadata = json_decode(file_get_contents($block_json), true);
+
+		if (!empty($metadata['name'])) {
+			$allowed[] = $metadata['name'];
+		}
+	}
+
+	return $allowed;
 }
