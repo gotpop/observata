@@ -16,6 +16,14 @@
         z-index: 1;
     }
 
+    .hero-shader {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
     .ribbon-shader {
         position: absolute;
         left: 50%;
