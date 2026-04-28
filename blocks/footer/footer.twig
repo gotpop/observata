@@ -9,7 +9,9 @@
             <div class="footer-logo">
                 <a href="{{ function('home_url', '/') }}"
                     title="{{ function('get_bloginfo', 'name')|esc_attr }}">
-                    <h1>Observata</h1>
+                    <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/observata-white-logo.svg"
+                         alt="{{ function('get_bloginfo', 'name')|esc_attr }}"
+                         class="logo-image">
                 </a>
             </div>
 
