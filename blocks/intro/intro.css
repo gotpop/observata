@@ -1,38 +1,10 @@
 .wp-block-observata-intro {
-    position: relative;
-    /* overflow: hidden; */
-    border-top: 1px solid var(--colour-border-border-gray);
-    border-bottom: 1px solid var(--colour-border-border-gray);
-
-
+    anchor-name: --intro-anchor;
     background-color: white;
+    border-bottom: 1px solid var(--colour-border-border-gray);
+    border-top: 1px solid var(--colour-border-border-gray);
+    position: relative;
 
-    .logo-strip {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 55px;
-        padding: 2rem 4rem;
-        position: absolute;
-        inset: -6.5rem auto auto auto;
-        background-color: white;
-        transform: translateX(50%);
-        border-radius: 8rem 8rem 0 0;
-        border: 1px solid var(--colour-border-border-gray);
-        border-bottom: none;
-        corner-shape: squircle;
-
-    }
-
-    .logo-item {
-        display: flex;
-        align-items: center;
-        max-width: 300px;
-
-        img {
-            max-width: 100px;
-        }
-    }
 
     .cards-container {
         display: grid;
@@ -47,4 +19,32 @@
         padding: 2rem;
         margin: 0 auto;
     }
+}
+
+.logo-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    padding: 2rem 4rem;
+    position: absolute;
+    position-anchor: --intro-anchor;
+    position-area: center top;
+    background-color: white;
+    border-radius: 8rem 8rem 0 0;
+    border: 1px solid var(--colour-border-border-gray);
+    border-bottom: none;
+    corner-shape: squircle;
+
+    .logo-item {
+        display: flex;
+        align-items: center;
+        max-width: 300px;
+
+        img {
+            max-width: 200px;
+            max-height: 30px;
+        }
+    }
+
 }

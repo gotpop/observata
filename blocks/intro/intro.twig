@@ -18,25 +18,26 @@
     },
 ] %}
 
-<section class="wp-block-observata-intro">
-    <div class="logo-strip">
-        <div class="logo-item">
-            <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/af-logo.svg"
-                alt="AF" />
-        </div>
-        <div class="logo-item">
-            <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/tele-dark-logo.svg"
-                alt="Tele Dark" />
-        </div>
-        <div class="logo-item">
-            <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/elastic-logo.svg"
-                alt="Elastic" />
-        </div>
-        <div class="logo-item">
-            <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/crowdstrike-logo.svg"
-                alt="Crowdstrike" />
-        </div>
+<div class="logo-strip">
+    <div class="logo-item">
+        <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/af-logo.svg"
+            alt="AF" />
     </div>
+    <div class="logo-item">
+        <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/tele-dark-logo.svg"
+            alt="Tele Dark" />
+    </div>
+    <div class="logo-item">
+        <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/elastic-logo.svg"
+            alt="Elastic" />
+    </div>
+    <div class="logo-item">
+        <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/crowdstrike-logo.svg"
+            alt="Crowdstrike" />
+    </div>
+</div>
+
+<section class="wp-block-observata-intro">
 
     {% if section_title %}
         <h2 class="intro-section-title">{{ section_title|wp_kses_post }}</h2>
