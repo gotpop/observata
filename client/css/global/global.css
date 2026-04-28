@@ -1,13 +1,11 @@
 html {
-    margin: 0 !important;
-    background-color: yellow;
     min-height: 100dvh;
 }
 
 body {
     padding: 0;
     margin: 0;
-    background-color: grey;
+    background-color: gray;
     min-height: 200dvh;
     display: grid;
     grid-template-columns: 1fr;
@@ -25,26 +23,4 @@ body {
     position: sticky;
     top: 0;
     z-index: 999;
-}
-
-header {
-    background-color: white;
-}
-
-nav {
-    margin: 2rem;
-}
-
-.menu ul {
-    display: flex;
-    gap: 3rem;
-}
-
-.page_item {
-    background-color: yellow;
-}
-
-h1 {
-    font-size: 5rem;
-    margin: 2rem;
 }

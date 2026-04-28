@@ -1,22 +1,35 @@
 .observata-header {
     position: relative;
-    background: red;
-    border-bottom: 1px solid var(--colour-border-border-gray, #e5e7ea);
+
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 40px 80px;
+        background: white;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .header-navigation {
+        display: flex;
+        gap: 32px;
+    }
+
 }
 
-.observata-header .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 80px;
-}
-
-.observata-header .header-logo {
-    display: flex;
-    align-items: center;
-}
-
-.observata-header .header-logo h1 a {
+.header-logo h1 a {
     font-size: 32px;
     font-family: var(--typography-family-gantari);
     font-weight: 700;
@@ -26,29 +39,29 @@
     text-decoration: none;
 }
 
-.observata-header .header-navigation {
-    display: flex;
-    gap: 32px;
-}
 
-.observata-header nav[role="navigation"] {
+nav[role="navigation"] {
     position: relative;
+    /* min-width: 600px;
+    min-height: 100px;
+    background: aqua; */
 }
 
-.observata-header .menu-list {
+.menu-list {
     list-style: none;
-    display: none;
-    gap: 16px;
+    display: flex;
+    gap: 2rem;
     align-items: center;
 }
 
-.observata-header .menu-toggle {
+.menu-toggle {
     cursor: pointer;
     position: relative;
     padding: 8px 16px;
+    background-color: red;
 }
 
-.observata-header .menu-toggle::before {
+.menu-toggle::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -58,7 +71,7 @@
     background: var(--colour-primary-500);
 }
 
-.observata-header .menu-toggle::after {
+.menu-toggle::after {
     content: '';
     position: absolute;
     top: 50%;
