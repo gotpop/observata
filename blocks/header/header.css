@@ -13,7 +13,7 @@
         align-items: center;
         margin: 0 80px;
         background: white;
-        padding: 1.2rem 2rem;
+        padding: 18px 28px;
         border-radius: 4.5rem;
         corner-shape: squircle;
         width: stretch;
@@ -22,11 +22,10 @@
     .header-logo {
         display: flex;
         align-items: center;
-        max-width: 300px;
     }
 
     .logo-image {
-        height: 40px;
+        max-width: 135px;
         width: auto;
         display: block;
     }
@@ -67,30 +66,12 @@ nav[role="navigation"] {
     align-items: center;
 }
 
-.menu-toggle {
-    cursor: pointer;
-    position: relative;
-    padding: 8px 16px;
-    background-color: red;
-}
-
-.menu-toggle::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 4px;
-    height: 4px;
-    background: var(--colour-primary-500);
-}
-
-.menu-toggle::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 4px;
-    height: 4px;
-    background: white;
-    transform: rotate(45deg);
+.menu-item a {
+    color: var(--colour-text-body-default, #626262);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
 }
