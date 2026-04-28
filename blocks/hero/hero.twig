@@ -6,30 +6,40 @@
 {% set read_more_url = attributes.readMoreUrl|default('#') %}
 
 <section class="hero-home">
-    <canvas class="hero-shader"></canvas>
-    <div class="hero-content">
-        <div class="hero-text">
-            {% if heading %}
-                {# <h1>{{ heading|wp_kses_post }}</h1> #}
-                <h1>We enable, operate and unify your AI powered observability & security</h1>
-            {% endif %}
+	<canvas class="hero-shader"></canvas>
+	<div class="hero-content">
+		<div class="hero-text">
+			{% if heading %}
+				{# <h1>{{ heading|wp_kses_post }}</h1> #}
+				<h1 class="heading-hero">
+					<span class="line-one">We enable, operate and</span>
+					<br/>
+					<span class="line-two">
+						<i>unify</i>
+						your
+						<i>AI</i>
+						powered</span>
+					<br/>
+					<span class="line-three">observability & security</span>
+				</h1>
+			{% endif %}
 
-            {% if subheading %}
-                <p class="hero-subheading">{{ subheading|wp_kses_post }}</p>
-            {% endif %}
-        </div>
+			{% if subheading %}
+				<p class="hero-subheading">{{ subheading|wp_kses_post }}</p>
+			{% endif %}
+		</div>
 
-        <div class="hero-buttons">
-            {% if cta_text and cta_url %}
-                <a href="{{ cta_url|esc_url }}" class="hero-cta-primary">{{ cta_text|esc_html }}</a>
-            {% endif %}
+		<div class="hero-buttons">
+			{% if cta_text and cta_url %}
+				<a href="{{ cta_url|esc_url }}" class="hero-cta-primary">{{ cta_text|esc_html }}</a>
+			{% endif %}
 
-            {% if read_more_text and read_more_url %}
-                <div class="hero-read-more">
-                    <p>{{ read_more_text|esc_html }}</p>
-                    <div class="arrow-icon"></div>
-                </div>
-            {% endif %}
-        </div>
-    </div>
+			{% if read_more_text and read_more_url %}
+				<div class="hero-read-more">
+					<p>{{ read_more_text|esc_html }}</p>
+					<div class="arrow-icon"></div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
 </section>

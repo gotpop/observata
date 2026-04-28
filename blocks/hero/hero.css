@@ -1,3 +1,14 @@
+@keyframes background-animation {
+    from {
+        background-color: red;
+    }
+
+    to {
+        background-color: blue;
+    }
+}
+
+
 .hero-home {
     position: relative;
     overflow: hidden;
@@ -50,7 +61,10 @@
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
-        margin-top: 13rem;
+        margin-top: 11rem;
+
+        animation: background-animation linear;
+        animation-timeline: scroll(nearest);
 
     }
 
@@ -67,9 +81,28 @@
         font-size: 56px;
         font-weight: var(--typography-weight-bold);
         color: var(--colour-text-text-hero);
-        line-height: 56px;
-        letter-spacing: -1.12px;
+        line-height: 60px;
+        letter-spacing: -1px;
         margin-bottom: 1rem;
+    }
+
+    .heading-hero {
+
+        i {
+            color: var(--colour-secondary-500);
+        }
+
+        span {
+            position: relative;
+        }
+
+        .line-two {
+            left: -3px;
+        }
+
+        .line-three {
+            left: 18px;
+        }
     }
 
     .hero-text p.hero-subheading {
