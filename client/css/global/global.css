@@ -115,3 +115,8 @@ select {
     top: 0;
     z-index: 999;
 }
+
+
+html {
+    scroll-timeline: --main-timeline;
+}

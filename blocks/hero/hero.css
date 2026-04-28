@@ -1,10 +1,22 @@
 @keyframes background-animation {
     from {
-        background-color: red;
+        background-color: transparent;
+        backdrop-filter: blur(0px);
     }
 
     to {
-        background-color: blue;
+        backdrop-filter: blur(3px);
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
@@ -16,9 +28,26 @@
     min-height: 900px;
     display: grid;
     justify-content: center;
-    background: linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
+    background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
     position: sticky;
     top: 0;
+
+
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        background-color: transparent;
+        animation: background-animation linear;
+        /* animation-timeline: scroll(nearest); */
+        animation-timeline: --main-timeline;
+        /* display: none; */
+        z-index: 999;
+        animation-range-end: 900px;
+    }
 
     .gradient-background {
         position: absolute;
@@ -37,6 +66,7 @@
         z-index: 2;
         /* border: 1px solid red; */
         bottom: -280px;
+        animation: 1s fade-in forwards ease-in;
     }
 
     .ribbon-shader {
@@ -63,8 +93,9 @@
         justify-items: center;
         margin-top: 11rem;
 
-        animation: background-animation linear;
-        animation-timeline: scroll(nearest);
+        /* animation: background-animation linear; */
+        /* animation-timeline: scroll(nearest); */
+        /* animation-timeline: --main-timeline; */
 
     }
 
