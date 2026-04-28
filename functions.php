@@ -71,9 +71,9 @@ require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/block-renderer.php';
 require get_template_directory() . '/inc/blocks.php';
 
-// Init Timber and point it to the views/ directory for Twig templates.
+// Init Timber and point it to the views/ and blocks/ directories for Twig templates.
 \Timber\Timber::init();
-\Timber\Timber::$dirname = ['views'];
+\Timber\Timber::$dirname = ['views', 'blocks'];
 
 // Theme setup: supports, menus, text domain.
 add_action('after_setup_theme', 'observata_setup');

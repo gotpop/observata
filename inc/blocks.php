@@ -24,7 +24,7 @@ function observata_register_blocks()
 
 	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
 		$block_name = basename(dirname($block_json));
-		$twig_template = get_template_directory() . "/views/blocks/{$block_name}.twig";
+		$twig_template = get_template_directory() . "/blocks/{$block_name}/{$block_name}.twig";
 
 		if (file_exists($twig_template)) {
 			// Use Twig renderer
