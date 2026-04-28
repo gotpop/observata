@@ -1,6 +1,32 @@
 html {
     min-height: 100dvh;
     font-family: var(--typography-family-inter), system-ui, -apple-system, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* WebKit scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox scrollbar hover */
+@media (hover: hover) {
+    html:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+    }
 }
 
 body {

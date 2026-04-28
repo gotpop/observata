@@ -1,14 +1,14 @@
 import { createShader } from "shaders/js"
 
-const heroShaderConfig = {
+const shader = await createShader(document.getElementById("canvas"), {
   components: [
     {
       type: "Form3D",
       id: "idmmr8zyxrodm90feqn",
       props: {
         center: {
-          x: 0.08,
-          y: 0.46,
+          x: 0.82,
+          y: 0.53,
         },
         glossiness: 200,
         lighting: 197,
@@ -22,7 +22,7 @@ const heroShaderConfig = {
         },
         shape3dType: "ribbon",
         speed: 0,
-        zoom: 102,
+        zoom: 63,
       },
       children: [
         {
@@ -47,8 +47,8 @@ const heroShaderConfig = {
             strokeWidth: 0.16,
             trailLength: 0.72,
             transform: {
+              offsetX: -0.22,
               scale: 0.79,
-              offsetX: 0.21,
             },
           },
         },
@@ -58,15 +58,24 @@ const heroShaderConfig = {
       type: "FilmGrain",
       id: "idmmr97z6pijyaz1v1u",
       props: {
-        strength: 0.32,
+        opacity: 0.32,
+        strength: {
+          type: "map",
+          source: "",
+          channel: "alpha",
+          inputMax: 1,
+          inputMin: 0,
+          outputMax: 1,
+          outputMin: 0,
+        },
         visible: true,
       },
     },
   ],
-}
+})
 
 const initHeroShaders = async () => {
-  const canvas = document.querySelector<HTMLCanvasElement>(".wp-block-observata-hero .hero-shader")
+  const canvas = document.querySelector<HTMLCanvasElement>(".hero-home .hero-shader")
   canvas.style.width = "1600px"
   canvas.style.height = "340px"
 
