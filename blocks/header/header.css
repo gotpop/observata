@@ -1,6 +1,6 @@
 .observata-header {
     position: relative;
-    background: white;
+    background: red;
     border-bottom: 1px solid var(--colour-border-border-gray, #e5e7ea);
 }
 
