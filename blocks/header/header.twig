@@ -17,7 +17,11 @@
     <div class="header-content">
         <div class="header-logo">
             <a href="{{ function('home_url', '/') }}"
-                    title="{{ function('get_bloginfo', 'name')|esc_attr }}">{{ logo_text|default(function('get_bloginfo', 'name'))|esc_html }}</a>
+                    title="{{ function('get_bloginfo', 'name')|esc_attr }}">
+                <img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/observata-blue-logo.svg"
+                     alt="{{ function('get_bloginfo', 'name')|esc_attr }}"
+                     class="logo-image">
+            </a>
         </div>
 
         <div class="header-navigation">
