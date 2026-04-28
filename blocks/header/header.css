@@ -1,12 +1,15 @@
-.observata-header {
-    position: relative;
+.header {
+    position: sticky;
+    top: 2rem;
+    z-index: 999;
+
 
 
     .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 40px 80px;
+        margin: 0 80px;
         background: white;
         padding: 1rem 2rem;
         border-radius: 2rem;

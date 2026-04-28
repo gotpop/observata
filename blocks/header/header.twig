@@ -13,11 +13,11 @@
     'contact-us': contact,
 } %}
 
-<header id="header" class="observata-header">
+<header id="header" class="header">
     <div class="header-content">
         <div class="header-logo">
-            <h1><a href="{{ function('home_url', '/') }}"
-                    title="{{ function('get_bloginfo', 'name')|esc_attr }}">{{ logo_text|default(function('get_bloginfo', 'name'))|esc_html }}</a></h1>
+            <a href="{{ function('home_url', '/') }}"
+                    title="{{ function('get_bloginfo', 'name')|esc_attr }}">{{ logo_text|default(function('get_bloginfo', 'name'))|esc_html }}</a>
         </div>
 
         <div class="header-navigation">

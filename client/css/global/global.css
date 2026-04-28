@@ -7,43 +7,65 @@ body {
     padding: 0;
     margin: 0;
     background-color: gray;
-    min-height: 200dvh;
+    min-height: 100dvh;
     display: grid;
     grid-template-columns: 1fr;
     font-family: var(--typography-family-inter), system-ui, -apple-system, sans-serif;
 }
 
 /* Headings use Gantari font */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     font-family: var(--typography-family-gantari), var(--typography-family-inter), system-ui, -apple-system, sans-serif;
     font-weight: var(--typography-weight-bold);
     margin: 0;
     line-height: 1.2;
 }
 
-h1, .h1 {
+h1,
+.h1 {
     font-size: var(--size-heading-h1);
     line-height: var(--line-height-heading-h1);
 }
 
-h2, .h2 {
+h2,
+.h2 {
     font-size: var(--size-heading-h2);
     line-height: var(--line-height-heading-h2);
 }
 
-h3, .h3 {
+h3,
+.h3 {
     font-size: var(--size-heading-h3);
     line-height: var(--line-height-heading-h3);
 }
 
-h4, .h4 {
+h4,
+.h4 {
     font-size: var(--size-heading-h4);
     line-height: var(--line-height-heading-h4);
 }
 
 /* Body text uses Inter */
-p, span, div, li, a, button, input, textarea, select {
+p,
+span,
+div,
+li,
+a,
+button,
+input,
+textarea,
+select {
     font-family: var(--typography-family-inter), system-ui, -apple-system, sans-serif;
 }
 
