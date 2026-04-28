@@ -1,6 +1,6 @@
 import { createShader } from "shaders/js"
 
-const shader = await createShader(document.getElementById("canvas"), {
+const heroShaderConfig = {
   components: [
     {
       type: "Form3D",
@@ -58,28 +58,20 @@ const shader = await createShader(document.getElementById("canvas"), {
       type: "FilmGrain",
       id: "idmmr97z6pijyaz1v1u",
       props: {
-        opacity: 0.32,
-        strength: {
-          type: "map",
-          source: "",
-          channel: "alpha",
-          inputMax: 1,
-          inputMin: 0,
-          outputMax: 1,
-          outputMin: 0,
-        },
+        strength: 0.32,
         visible: true,
       },
     },
   ],
-})
+}
 
 const initHeroShaders = async () => {
   const canvas = document.querySelector<HTMLCanvasElement>(".hero-home .hero-shader")
-  canvas.style.width = "1600px"
-  canvas.style.height = "340px"
 
   if (!canvas) return
+
+  canvas.style.width = "1600px"
+  canvas.style.height = "340px"
 
   if (!window.isSecureContext || !("gpu" in navigator)) {
     console.warn("Shaders need HTTPS or localhost with WebGPU support. Current origin:", window.location.origin)
