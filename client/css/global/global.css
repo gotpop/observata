@@ -69,10 +69,17 @@ select {
     font-family: var(--typography-family-inter), system-ui, -apple-system, sans-serif;
 }
 
-#wrapper {
+/* .site {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr min-content;
+} */
+
+
+.site-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content;
 }
 
 .header-homepage {

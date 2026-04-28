@@ -7,17 +7,19 @@
 </head>
 <body class="{{ body_class }} liam">
 	{{ function('wp_body_open') }}
-	<div id="wrapper" class="hfeed">
+	<div id="site" class="site">
 
 		{% block header %}{% endblock %}
 
-		<div id="container">
-			<main id="content" class="site-main">
-				{% block content %}{% endblock %}
-			</main>
-		</div>
+		<div class="site-inner">
+				<div id="container">
+					<main id="content" class="site-main">
+						{% block content %}{% endblock %}
+					</main>
+				</div>
 
-		{% block footer %}{% endblock %}
+				{% block footer %}{% endblock %}
+		</div>
 
 	</div>
 	{{ function('wp_footer') }}

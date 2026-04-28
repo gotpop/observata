@@ -1,7 +1,9 @@
 .header {
-    position: sticky;
+    /* position: sticky; */
     top: 2rem;
     z-index: 999;
+    position: fixed;
+    width: 100vw;
 
 
 
@@ -13,6 +15,7 @@
         background: white;
         padding: 1rem 2rem;
         border-radius: 2rem;
+        width: stretch;
     }
 
     .header-logo {

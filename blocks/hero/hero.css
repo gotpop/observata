@@ -5,6 +5,9 @@
     min-height: 800px;
     display: grid;
     place-content: center;
+    background: linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
+    position: sticky;
+    top: 0;
 
     .gradient-background {
         position: absolute;
@@ -45,16 +48,16 @@
     }
 
     .hero-text h1 {
-        font-family: gantari;
+        /* font-family: var(--typography-family-gantari); */
         font-size: 56px;
         font-weight: var(--typography-weight-bold);
         color: var(--fonts-colour-text-heading);
-        line-height: 46px;
+        line-height: 50px;
         letter-spacing: -1.12px;
     }
 
     .hero-text p.hero-subheading {
-        font-family: var(--fonts-family-font-inter);
+        /* font-family: var(--typography-family-inter); */
         font-size: 20px;
         font-weight: var(--fonts-weight-font-weight-regular);
         color: var(--fonts-colour-text-hero-subheading);
@@ -75,7 +78,7 @@
         color: var(--colour-accent-1-100);
         padding: 16px 24px;
         border-radius: 30px;
-        font-family: var(--fonts-family-font-inter);
+        /* font-family: var(--typography-family-inter); */
         font-size: 16px;
         font-weight: var(--fonts-weight-font-weight-medium);
         text-decoration: none;
@@ -89,12 +92,12 @@
         align-items: center;
         gap: 8px;
         color: var(--colour-primary-500);
-    }
 
-    .hero-read-more p {
-        font-family: var(--typography-family-gantari);
-        font-size: 16px;
-        font-weight: var(--typography-weight-bold);
+        p {
+            /* font-family: var(--typography-family-gantari); */
+            font-size: 16px;
+            font-weight: var(--typography-weight-bold);
+        }
     }
 
     .arrow-icon {
