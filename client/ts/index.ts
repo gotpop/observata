@@ -4,11 +4,11 @@ const heroShaderConfig = {
   components: [
     {
       type: "Form3D",
-      id: "hero_form3d",
+      id: "idmmr8zyxrodm90feqn",
       props: {
         center: {
-          x: 0.63,
-          y: 0.82,
+          x: 0.08,
+          y: 0.46,
         },
         glossiness: 200,
         lighting: 197,
@@ -21,13 +21,13 @@ const heroShaderConfig = {
           seed: 25,
         },
         shape3dType: "ribbon",
-        speed: 2,
-        zoom: 78,
+        speed: 0,
+        zoom: 102,
       },
       children: [
         {
           type: "Swirl",
-          id: "hero_swirl",
+          id: "idmmr8zwtuhz62buy44",
           props: {
             colorA: "#0598ce",
             colorB: "#133868",
@@ -37,7 +37,7 @@ const heroShaderConfig = {
         },
         {
           type: "FallingLines",
-          id: "hero_falling_lines",
+          id: "idmmr93vzo731cyb4y3",
           props: {
             angle: 0,
             blendMode: "linearDodge",
@@ -48,6 +48,7 @@ const heroShaderConfig = {
             trailLength: 0.72,
             transform: {
               scale: 0.79,
+              offsetX: 0.21,
             },
           },
         },
@@ -55,7 +56,7 @@ const heroShaderConfig = {
     },
     {
       type: "FilmGrain",
-      id: "hero_film_grain",
+      id: "idmmr97z6pijyaz1v1u",
       props: {
         strength: 0.32,
         visible: true,
@@ -65,26 +66,28 @@ const heroShaderConfig = {
 }
 
 const initHeroShaders = async () => {
-  const canvases = document.querySelectorAll<HTMLCanvasElement>(".wp-block-observata-hero .hero-shader")
+  const canvas = document.querySelector<HTMLCanvasElement>(".wp-block-observata-hero .hero-shader")
+  canvas.style.width = "1600px"
+  canvas.style.height = "340px"
+
+  if (!canvas) return
 
   if (!window.isSecureContext || !("gpu" in navigator)) {
     console.warn("Shaders need HTTPS or localhost with WebGPU support. Current origin:", window.location.origin)
     return
   }
 
-  for (const canvas of canvases) {
-    if (canvas.dataset.shaderInitialized === "true") {
-      continue
-    }
+  if (canvas.dataset.shaderInitialized === "true") {
+    return
+  }
 
-    canvas.dataset.shaderInitialized = "true"
+  canvas.dataset.shaderInitialized = "true"
 
-    try {
-      await createShader(canvas, heroShaderConfig)
-    } catch (error) {
-      console.error("Hero shader failed to initialize.", error)
-      delete canvas.dataset.shaderInitialized
-    }
+  try {
+    await createShader(canvas, heroShaderConfig)
+  } catch (error) {
+    console.error("Hero shader failed to initialize.", error)
+    delete canvas.dataset.shaderInitialized
   }
 }
 
