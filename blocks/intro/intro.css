@@ -1,24 +1,40 @@
 .block-intro {
     anchor-name: --intro-anchor;
-    background-color: white;
+    background-color: var(--colour-surface-white);
     border-bottom: 1px solid var(--colour-border-border-gray);
     border-top: 1px solid var(--colour-border-border-gray);
     position: relative;
     grid-column: full;
+    grid-template-columns: subgrid;
+    display: grid;
+    padding-block: 5rem;
 
 
-    .cards-container {
+    .block-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
-        gap: 40px;
-        padding: 0 0 80px 0;
+        grid-column: content;
+        /* grid-template-columns: repeat(auto-fit, minmax(28px, 1fr)); */
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--spacing-spacing-50);
+    }
+}
+
+.card-geo {
+    padding: var(--spacing-spacing-40);
+    border: 1px solid var(--colour-border-border-gray);
+    border-radius: var(--radius-radius-card);
+
+
+    h3 {
+        margin-bottom: var(--spacing-spacing-32);
+        text-box: trim-both cap alphabetic;
     }
 
-
-    .cards-container {
-        max-width: 1200px;
-        padding: 2rem;
-        margin: 0 auto;
+    p {
+        text-box: trim-both cap alphabetic;
+        color: var(--colour-text-body-default);
+        font-size: var(--typography-size-16);
+        line-height: 1.5;
     }
 }
 

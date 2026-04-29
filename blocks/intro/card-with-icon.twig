@@ -1,39 +1,7 @@
-{% set section_title = attributes.sectionTitle|default('') %}
-
-{% set intro_cards = [
-    {
-        'title': 'Embedded experts',
-        'text': 'We embed directly into your environment to tune pipelines and triage alerts. Eliminate skill gaps and lower overhead with 24/7 lifecycle coverage and executive-level reporting.',
-        'icon_class': 'icon-24',
-    },
-    {
-        'title': 'One fee — Zero surprises',
-        'text': 'We own the license; you pay one flat monthly bill for data usage. This includes unlimited support, optimization, and knowledge transfer to ensure total operational stability.',
-        'icon_class': 'icon-28',
-    },
-    {
-        'title': 'Achieve higher ROI',
-        'text': 'We embed directly into your environment to tune pipelines and triage alerts. Eliminate skill gaps and lower overhead with 24/7 lifecycle coverage and executive-level reporting.',
-        'icon_class': 'icon-26',
-    },
-] %}
-
-{% include 'intro/logo-strip.twig' %}
-
-<section class="block-intro">
-	{% if section_title %}
-		<h2 class="intro-section-title">{{ section_title|wp_kses_post }}</h2>
-	{% endif %}
-
-	<block-content class="block-content">
-		{% for card in intro_cards %}
-			<article class="intro-card {{ card.icon_class|esc_attr }}">
-				<div class="intro-card-icon" aria-hidden="true"></div>
-				<div class="intro-card-body">
-					<h3 class="intro-card-title">{{ card.title|esc_html }}</h3>
-					<p class="intro-card-text">{{ card.text|esc_html }}</p>
-				</div>
-			</article>
-		{% endfor %}
-	</block-content>
-</section>
+<article class="card-geo {{ card.icon_class|esc_attr }}">
+	<div class="intro-card-icon" aria-hidden="true"></div>
+	<div class="intro-card-body">
+		<h3 class="intro-card-title">{{ card.title|esc_html }}</h3>
+		<p class="intro-card-text">{{ card.text|esc_html }}</p>
+	</div>
+</article>
