@@ -1,4 +1,5 @@
 {% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
 
 {% set cards = [
 	{
@@ -35,9 +36,7 @@
 
 <section class="block-cards-grid">
 	<block-content class="block-content">
-		{% if section_title %}
-			<h2 class="intro-heading">{{ section_title|wp_kses_post }}</h2>
-		{% endif %}
+		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<div class="cards-container">
 			{% for card in cards %}

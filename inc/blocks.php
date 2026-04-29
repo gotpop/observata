@@ -43,6 +43,7 @@ function observata_register_blocks()
  * Restrict the block inserter to only our custom blocks.
  * observata/card is intentionally included so it can be added
  * inside the Cards block via InnerBlocks.
+ * observata/section-intro is excluded as it's only used internally by parent blocks.
  */
 add_filter('allowed_block_types_all', 'observata_allowed_blocks', 10, 2);
 function observata_allowed_blocks($allowed_blocks, $editor_context)
@@ -51,6 +52,11 @@ function observata_allowed_blocks($allowed_blocks, $editor_context)
 
 	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
 		$metadata = json_decode(file_get_contents($block_json), true);
+
+		// Skip internal blocks
+		if (!empty($metadata['name']) && $metadata['name'] === 'observata/section-intro') {
+			continue;
+		}
 
 		if (!empty($metadata['name'])) {
 			$allowed[] = $metadata['name'];

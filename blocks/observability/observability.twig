@@ -9,7 +9,7 @@
 
 <section class="block-observability">
 	<block-content class="block-content">
-		{% include 'observability/section-intro.twig' %}
+		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<article class="card-large">
 			<div class="cards-micro">

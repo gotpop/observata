@@ -13,6 +13,10 @@
         "sectionTitle": {
             "type": "string",
             "default": ""
+        },
+        "introText": {
+            "type": "string",
+            "default": ""
         }
     },
     "render": "file:render.php",
