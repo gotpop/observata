@@ -20,6 +20,8 @@ import CardGeoEdit from './card-geo/edit';
 import CardGeoSave from './card-geo/save';
 import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
+import CardSwooshIconEdit from './card-swoosh-icon/edit';
+import CardSwooshIconSave from './card-swoosh-icon/save';
 import CardEdit from './card/edit';
 import CardSave from './card/save';
 import CardsGridEdit from './cards-grid/edit';
@@ -100,8 +102,8 @@ registerBlockType(cardsTripleMetadata.name, {
 });
 
 registerBlockType(cardSwooshIconMetadata.name, {
-    edit: createDynamicEdit('Card Swoosh Icon block'),
-    save: DynamicSave,
+    edit: CardSwooshIconEdit,
+    save: CardSwooshIconSave,
 });
 
 registerBlockType(partnershipMetadata.name, {

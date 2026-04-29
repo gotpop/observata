@@ -5,6 +5,9 @@
     "title": "Card with Swoosh Background",
     "category": "theme",
     "description": "A benefit card with swoosh gradient background and numbered icon.",
+    "parent": [
+        "observata/cards-grid"
+    ],
     "supports": {
         "html": false,
         "reusable": false
