@@ -1,0 +1,16 @@
+site-layout {
+    display: grid;
+    grid-template-columns: [full-start] 1fr [content-start] minmax(420px, 1200px) [content-start] 1fr [full-end];
+}
+
+site-container {
+    display: grid;
+    grid-column: full;
+}
+
+
+footer {
+    display: grid;
+    grid-column: full;
+    /* grid-template-columns: subgrid; */
+}

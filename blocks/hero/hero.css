@@ -80,7 +80,7 @@
     }
 
     .hero-content {
-        max-width: 711px;
+        max-width: 712px;
         width: 100%;
         z-index: 3;
         display: grid;
@@ -118,6 +118,9 @@
     }
 
     .heading-hero {
+        position: relative;
+        right: 9px;
+
 
         i {
             color: var(--colour-secondary-500);

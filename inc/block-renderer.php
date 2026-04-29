@@ -17,6 +17,11 @@ function observata_render_block_twig($attributes, $content, $block) {
         ]
     );
 
+    // Add WordPress main menu to context for header block
+    if ($template_name === 'header') {
+        $context['main_menu'] = \Timber\Timber::get_menu('main-menu');
+    }
+
     if (!file_exists($template_path)) {
         return '';
     }

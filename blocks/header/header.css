@@ -4,19 +4,22 @@
     z-index: 999;
     position: fixed;
     width: 100vw;
-
+    display: grid;
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [content-start] minmax(420px, 1200px) [content-start] minmax(1rem, 1fr) [full-end];
 
 
     .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 80px;
+        /* margin: 0 80px; */
         background: white;
         padding: 18px 28px;
         border-radius: 4.5rem;
         corner-shape: squircle;
         width: stretch;
+        max-width: 1200px;
+        grid-column: content;
     }
 
     .header-logo {

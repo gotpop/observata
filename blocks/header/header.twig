@@ -1,17 +1,4 @@
 {% set logo_text = attributes.logo|default('Observata') %}
-{% set services = attributes.services|default('Services') %}
-{% set pricing = attributes.pricing|default('Pricing') %}
-{% set resources = attributes.resources|default('Resources') %}
-{% set about = attributes.about|default('About Us') %}
-{% set contact = attributes.contact|default('Contact Us') %}
-
-{% set nav_items = {
-    'services': services,
-    'pricing': pricing,
-    'resources': resources,
-    'about-us': about,
-    'contact-us': contact,
-} %}
 
 <header id="header" class="header">
     <div class="header-content">
@@ -28,11 +15,13 @@
             <nav id="menu" role="navigation"
                 aria-label="{{ function('__', 'Primary Navigation', 'observata') }}">
                 <ul class="menu-list">
-                    {% for slug, label in nav_items %}
-                        <li class="menu-item menu-item-{{ slug|esc_attr }}">
-                            <a href="{{ function('home_url', '/' ~ slug ~ '/') }}"><span>{{ label|esc_html }}</span></a>
-                        </li>
-                    {% endfor %}
+                    {% if main_menu and main_menu.items %}
+                        {% for item in main_menu.items %}
+                            <li class="menu-item menu-item-{{ item.slug|esc_attr }}">
+                                <a href="{{ item.link }}"><span>{{ item.title|esc_html }}</span></a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </nav>
         </div>

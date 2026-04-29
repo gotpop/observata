@@ -1,15 +1,13 @@
 {% extends 'base.twig' %}
 
 {% block header %}
-    {{ function('do_blocks', '<!-- wp:observata/header /-->') }}
+	{{ function('do_blocks', '<!-- wp:observata/header /-->') }}
 {% endblock %}
 
 {% block content %}
-    <div id="post-{{ post.ID }}" class="{{ post.class }} homepage-content">
-        {{ content | raw }}
-    </div>
+	{{ content | raw }}
 {% endblock %}
 
 {% block footer %}
-    {{ function('do_blocks', '<!-- wp:observata/footer /-->') }}
+	{{ function('do_blocks', '<!-- wp:observata/footer /-->') }}
 {% endblock %}
