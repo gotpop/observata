@@ -1,0 +1,25 @@
+{# /**
+ * Card Simple Block Template
+ *
+ * @param string imageUrl     Card image URL
+ * @param string imageAlt     Card image alt text
+ * @param string title        Card title
+ * @param string description  Card description
+ */ #}
+
+{% set image_url = attributes.imageUrl|default('') %}
+{% set image_alt = attributes.imageAlt|default('') %}
+{% set title = attributes.title|default('') %}
+{% set description = attributes.description|default('') %}
+
+<div class="card-simple">
+	{% if image_url %}
+		<img class="card-simple__image" src="{{ image_url }}" alt="{{ image_alt }}"/>
+	{% endif %}
+	{% if title %}
+		<h3 class="card-simple__title">{{ title|wp_kses_post }}</h3>
+	{% endif %}
+	{% if description %}
+		<p class="card-simple__description">{{ description|wp_kses_post }}</p>
+	{% endif %}
+</div>

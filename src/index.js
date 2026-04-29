@@ -3,6 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import calloutMetadata from '../blocks/callout/block.json';
 import cardGeoMetadata from '../blocks/card-geo/block.json';
 import cardMicroMetadata from '../blocks/card-micro/block.json';
+import cardSimpleMetadata from '../blocks/card-simple/block.json';
 import cardSwooshIconMetadata from '../blocks/card-swoosh-icon/block.json';
 import cardMetadata from '../blocks/card/block.json';
 import cardsGridMetadata from '../blocks/cards-grid/block.json';
@@ -20,12 +21,16 @@ import CardGeoEdit from './card-geo/edit';
 import CardGeoSave from './card-geo/save';
 import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
+import CardSimpleEdit from './card-simple/edit';
+import CardSimpleSave from './card-simple/save';
 import CardSwooshIconEdit from './card-swoosh-icon/edit';
 import CardSwooshIconSave from './card-swoosh-icon/save';
 import CardEdit from './card/edit';
 import CardSave from './card/save';
 import CardsGridEdit from './cards-grid/edit';
 import CardsGridSave from './cards-grid/save';
+import CardsTripleEdit from './cards-triple/edit';
+import CardsTripleSave from './cards-triple/save';
 import CardsEdit from './cards/edit';
 import CardsSave from './cards/save';
 import HeroEdit from './hero/edit';
@@ -99,8 +104,8 @@ registerBlockType(cardsGridMetadata.name, {
 });
 
 registerBlockType(cardsTripleMetadata.name, {
-    edit: createDynamicEdit('Cards Triple block'),
-    save: DynamicSave,
+    edit: CardsTripleEdit,
+    save: CardsTripleSave,
 });
 
 registerBlockType(cardSwooshIconMetadata.name, {
@@ -111,6 +116,11 @@ registerBlockType(cardSwooshIconMetadata.name, {
 registerBlockType(partnershipMetadata.name, {
     edit: PartnershipEdit,
     save: PartnershipSave,
+});
+
+registerBlockType(cardSimpleMetadata.name, {
+    edit: CardSimpleEdit,
+    save: CardSimpleSave,
 });
 
 registerBlockType(observabilityMetadata.name, {
