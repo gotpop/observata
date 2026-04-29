@@ -1,6 +1,14 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set cta_text = attributes.ctaText|default('Discover how partnership works') %}
 {% set cta_url = attributes.ctaUrl|default('#partnership-phase') %}
+{% set phase1_number = attributes.phase1Number|default('01') %}
+{% set phase1_title = attributes.phase1Title|default('The entry point') %}
+{% set phase1_text1 = attributes.phase1Text1|default('Migrate from your current observability tool to Elastic at no extra cost.') %}
+{% set phase1_text2 = attributes.phase1Text2|default('Our experts will audit your current set-up and optimise for success.') %}
+{% set phase2_number = attributes.phase2Number|default('02') %}
+{% set phase2_title = attributes.phase2Title|default('The partnership') %}
+{% set phase2_text1 = attributes.phase2Text1|default("Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives.") %}
+{% set phase2_text2 = attributes.phase2Text2|default('Our experts will audit your current set-up and optimise for success.') %}
 
 <section class="block-partnership">
 	<block-content class="block-content">
@@ -11,23 +19,23 @@
 		<div class="phases-wrap">
 			<div class="phase">
 				<div class="phase-box">
-					<div class="phase-number">01</div>
-					<div class="phase-title">The entry point</div>
+					<div class="phase-number">{{ phase1_number }}</div>
+					<div class="phase-title">{{ phase1_title }}</div>
 				</div>
 				<div class="phase-content">
-					<p class="phase-text">Migrate from your current observability tool to Elastic at no extra cost.</p>
-					<p class="phase-text">Our experts will audit your current set-up and optimise for success.</p>
+					<p class="phase-text">{{ phase1_text1 }}</p>
+					<p class="phase-text">{{ phase1_text2 }}</p>
 				</div>
 			</div>
 
 			<div class="phase">
 				<div class="phase-box">
-					<div class="phase-number">02</div>
-					<div class="phase-title">The partnership</div>
+					<div class="phase-number">{{ phase2_number }}</div>
+					<div class="phase-title">{{ phase2_title }}</div>
 				</div>
 				<div class="phase-content">
-					<p class="phase-text">Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives.</p>
-					<p class="phase-text">Our experts will audit your current set-up and optimise for success.</p>
+					<p class="phase-text">{{ phase2_text1 }}</p>
+					<p class="phase-text">{{ phase2_text2 }}</p>
 				</div>
 			</div>
 		</div>

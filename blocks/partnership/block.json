@@ -13,6 +13,46 @@
         "sectionTitle": {
             "type": "string",
             "default": ""
+        },
+        "ctaText": {
+            "type": "string",
+            "default": "Discover how partnership works"
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": "#partnership-phase"
+        },
+        "phase1Number": {
+            "type": "string",
+            "default": "01"
+        },
+        "phase1Title": {
+            "type": "string",
+            "default": "The entry point"
+        },
+        "phase1Text1": {
+            "type": "string",
+            "default": "Migrate from your current observability tool to Elastic at no extra cost."
+        },
+        "phase1Text2": {
+            "type": "string",
+            "default": "Our experts will audit your current set-up and optimise for success."
+        },
+        "phase2Number": {
+            "type": "string",
+            "default": "02"
+        },
+        "phase2Title": {
+            "type": "string",
+            "default": "The partnership"
+        },
+        "phase2Text1": {
+            "type": "string",
+            "default": "Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives."
+        },
+        "phase2Text2": {
+            "type": "string",
+            "default": "Our experts will audit your current set-up and optimise for success."
         }
     },
     "render": "file:render.php",

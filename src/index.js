@@ -34,6 +34,8 @@ import IntroEdit from './intro/edit';
 import IntroSave from './intro/save';
 import ObservabilityEdit from './observability/edit';
 import ObservabilitySave from './observability/save';
+import PartnershipEdit from './partnership/edit';
+import PartnershipSave from './partnership/save';
 
 function createDynamicEdit(label) {
     return function DynamicEdit() {
@@ -107,8 +109,8 @@ registerBlockType(cardSwooshIconMetadata.name, {
 });
 
 registerBlockType(partnershipMetadata.name, {
-    edit: createDynamicEdit('Partnership block'),
-    save: DynamicSave,
+    edit: PartnershipEdit,
+    save: PartnershipSave,
 });
 
 registerBlockType(observabilityMetadata.name, {

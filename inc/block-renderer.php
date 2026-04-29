@@ -3,7 +3,8 @@
  * Custom block renderer that uses Twig templates for block output.
  */
 
-function observata_render_block_twig($attributes, $content, $block) {
+function observata_render_block_twig($attributes, $content, $block)
+{
     $block_name = $block->block_type->name;
     $template_name = str_replace('observata/', '', $block_name);
     $template_path = get_template_directory() . "/blocks/{$template_name}/{$template_name}.twig";
