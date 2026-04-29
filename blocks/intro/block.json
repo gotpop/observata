@@ -4,7 +4,7 @@
     "name": "observata/intro",
     "title": "Intro",
     "category": "theme",
-    "description": "Intro section with logo strip and 3 feature cards.",
+    "description": "Intro section with logo strip and feature cards. Add Card with Geo Icon blocks inside.",
     "supports": {
         "html": false,
         "multiple": false
@@ -15,9 +15,15 @@
             "default": ""
         }
     },
+    "providesContext": {
+        "iconGeo": "iconGeo"
+    },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "style": "file:intro.css",
+    "style": [
+        "file:intro.css",
+        "file:../card-geo/card-geo.css"
+    ],
     "editorStyle": [
         "file:intro.css",
         "file:../../build/index.css"

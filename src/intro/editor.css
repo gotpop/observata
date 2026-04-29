@@ -1,0 +1,44 @@
+/* Editor-specific overrides for the Intro block */
+
+.block-editor-block-list__block {
+    padding: 1rem;
+    border: dotted 1px grey;
+}
+
+.block-editor-block-list__block.block-intro {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    .block-editor-block-list__layout {
+        display: flex !important;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .block-content {
+        display: flex !important;
+
+        article {
+            max-width: 200px !important;
+        }
+    }
+}
+
+.block-editor-block-list__block .logo-strip {
+    position: relative;
+    position-anchor: auto;
+    position-area: auto;
+    margin-bottom: 2rem;
+    display: none;
+}
+
+/* Placeholder icon styling for card-geo inner blocks */
+.block-intro .intro-card-icon.is-placeholder .icon-geo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--colour-text-text-hero-subheading, #999);
+}

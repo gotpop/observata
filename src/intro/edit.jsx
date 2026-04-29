@@ -1,9 +1,15 @@
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import './editor.css';
 
-import { __ } from '@wordpress/i18n';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+
+
+const CARD_GEO_TEMPLATE = [
+    ['observata/card-geo', { cardTitle: 'Embedded experts', cardText: 'We embed directly into your environment to tune pipelines and triage alerts. Eliminate skill gaps and lower overhead with 24/7 lifecycle coverage and executive-level reporting.', iconGeo: '24' }],
+    ['observata/card-geo', { cardTitle: 'One fee — Zero surprises', cardText: 'We own the license; you pay one flat monthly bill for data usage. This includes unlimited support, optimization, and knowledge transfer to ensure total operational stability.', iconGeo: '28' }],
+    ['observata/card-geo', { cardTitle: 'Achieve higher ROI', cardText: 'We embed directly into your environment to tune pipelines and triage alerts. Eliminate skill gaps and lower overhead with 24/7 lifecycle coverage and executive-level reporting.', iconGeo: '26' }],
+];
 
 export default function IntroEdit({ attributes, setAttributes }) {
-    const { sectionTitle } = attributes;
     const blockProps = useBlockProps({
         className: 'block-intro',
     });
@@ -11,24 +17,18 @@ export default function IntroEdit({ attributes, setAttributes }) {
     return (
         <section {...blockProps}>
             <div className="logo-strip is-placeholder">
-                <span>AF</span>
-                <span>Tele2</span>
-                <span>Elastic</span>
-                <span>CrowdStrike</span>
+                <div className="logo-item"><span>AF</span></div>
+                <div className="logo-item"><span>Tele2</span></div>
+                <div className="logo-item"><span>Elastic</span></div>
+                <div className="logo-item"><span>CrowdStrike</span></div>
             </div>
 
-            <RichText
-                tagName="h2"
-                className="intro-section-title"
-                value={sectionTitle}
-                onChange={(value) => setAttributes({ sectionTitle: value })}
-                placeholder={__('Intro section title…', 'observata')}
-            />
-
-            <div className="cards-container is-placeholder">
-                <div className="intro-card-placeholder">{__('Embedded experts', 'observata')}</div>
-                <div className="intro-card-placeholder">{__('One fee — Zero surprises', 'observata')}</div>
-                <div className="intro-card-placeholder">{__('Achieve higher ROI', 'observata')}</div>
+            <div className="block-content">
+                <InnerBlocks
+                    allowedBlocks={['observata/card-geo']}
+                    template={CARD_GEO_TEMPLATE}
+                    templateLock="insert"
+                />
             </div>
         </section>
     );

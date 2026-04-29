@@ -1,7 +1,26 @@
+import { useBlockProps } from '@wordpress/block-editor';
+import { registerBlockType } from '@wordpress/blocks';
+import calloutMetadata from '../blocks/callout/block.json';
+import cardGeoMetadata from '../blocks/card-geo/block.json';
+import cardSwooshIconMetadata from '../blocks/card-swoosh-icon/block.json';
+import cardMetadata from '../blocks/card/block.json';
+import cardsGridMetadata from '../blocks/cards-grid/block.json';
+import cardsTripleMetadata from '../blocks/cards-triple/block.json';
+import cardsMetadata from '../blocks/cards/block.json';
+import footerMetadata from '../blocks/footer/block.json';
+import headerMetadata from '../blocks/header/block.json';
+import heroMetadata from '../blocks/hero/block.json';
+import introMetadata from '../blocks/intro/block.json';
+import observabilityMetadata from '../blocks/observability/block.json';
+import partnershipMetadata from '../blocks/partnership/block.json';
 import CalloutEdit from './callout/edit';
 import CalloutSave from './callout/save';
+import CardGeoEdit from './card-geo/edit';
+import CardGeoSave from './card-geo/save';
 import CardEdit from './card/edit';
 import CardSave from './card/save';
+import CardsGridEdit from './cards-grid/edit';
+import CardsGridSave from './cards-grid/save';
 import CardsEdit from './cards/edit';
 import CardsSave from './cards/save';
 import HeroEdit from './hero/edit';
@@ -10,22 +29,6 @@ import IntroEdit from './intro/edit';
 import IntroSave from './intro/save';
 import ObservabilityEdit from './observability/edit';
 import ObservabilitySave from './observability/save';
-import CardsGridEdit from './cards-grid/edit';
-import CardsGridSave from './cards-grid/save';
-import calloutMetadata from '../blocks/callout/block.json';
-import cardMetadata from '../blocks/card/block.json';
-import cardSwooshIconMetadata from '../blocks/card-swoosh-icon/block.json';
-import cardsGridMetadata from '../blocks/cards-grid/block.json';
-import cardsMetadata from '../blocks/cards/block.json';
-import cardsTripleMetadata from '../blocks/cards-triple/block.json';
-import footerMetadata from '../blocks/footer/block.json';
-import headerMetadata from '../blocks/header/block.json';
-import heroMetadata from '../blocks/hero/block.json';
-import introMetadata from '../blocks/intro/block.json';
-import observabilityMetadata from '../blocks/observability/block.json';
-import partnershipMetadata from '../blocks/partnership/block.json';
-import { registerBlockType } from '@wordpress/blocks';
-import { useBlockProps } from '@wordpress/block-editor';
 
 function createDynamicEdit(label) {
     return function DynamicEdit() {
@@ -61,6 +64,11 @@ registerBlockType(calloutMetadata.name, {
 registerBlockType(introMetadata.name, {
     edit: IntroEdit,
     save: IntroSave,
+});
+
+registerBlockType(cardGeoMetadata.name, {
+    edit: CardGeoEdit,
+    save: CardGeoSave,
 });
 
 registerBlockType(headerMetadata.name, {

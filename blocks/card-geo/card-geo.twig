@@ -1,0 +1,13 @@
+{% set card_title = attributes.cardTitle|default('') %}
+{% set card_text = attributes.cardText|default('') %}
+{% set icon_geo = attributes.iconGeo|default('24') %}
+
+<article class="card-geo icon-{{ icon_geo }}">
+	<div class="intro-card-icon" aria-hidden="true">
+		{% include 'graphics/geo/' ~ icon_geo ~ '.twig' %}
+	</div>
+	<div class="intro-card-body">
+		<h3 class="intro-card-title">{{ card_title|esc_html }}</h3>
+		<p class="intro-card-text">{{ card_text|wp_kses_post }}</p>
+	</div>
+</article>
