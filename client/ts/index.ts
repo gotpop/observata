@@ -66,7 +66,7 @@ const heroShaderConfig = {
 }
 
 const initHeroShaders = async () => {
-  const canvas = document.querySelector<HTMLCanvasElement>(".hero-home .hero-shader")
+  const canvas = document.getElementById("hero-shader")
 
   if (!canvas) return
 

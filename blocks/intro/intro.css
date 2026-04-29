@@ -1,9 +1,10 @@
-.wp-block-observata-intro {
+.block-intro {
     anchor-name: --intro-anchor;
     background-color: white;
     border-bottom: 1px solid var(--colour-border-border-gray);
     border-top: 1px solid var(--colour-border-border-gray);
     position: relative;
+    grid-column: full;
 
 
     .cards-container {

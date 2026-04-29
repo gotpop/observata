@@ -5,7 +5,7 @@ import { __ } from '@wordpress/i18n';
 export default function IntroEdit({ attributes, setAttributes }) {
     const { sectionTitle } = attributes;
     const blockProps = useBlockProps({
-        className: 'wp-block-observata-intro',
+        className: 'block-intro',
     });
 
     return (

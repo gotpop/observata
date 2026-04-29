@@ -6,6 +6,14 @@ site-layout {
 site-container {
     display: grid;
     grid-column: full;
+    grid-template-columns: subgrid;
+}
+
+
+main {
+    display: grid;
+    grid-column: full;
+    grid-template-columns: subgrid;
 }
 
 

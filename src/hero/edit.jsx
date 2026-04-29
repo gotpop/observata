@@ -6,7 +6,7 @@ import { __ } from '@wordpress/i18n';
 export default function HeroEdit({ attributes, setAttributes }) {
     const { heading, subheading, mediaUrl, mediaId, ctaText, ctaUrl } = attributes;
     const blockProps = useBlockProps({
-        className: 'hero-home',
+        className: 'block-hero-home',
         style: mediaUrl ? { backgroundImage: `url(${mediaUrl})` } : {},
     });
 
