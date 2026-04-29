@@ -1,5 +1,3 @@
-{% set section_title = attributes.sectionTitle|default('') %}
-
 {% set intro_cards = [
     {
         'title': 'Embedded experts',
@@ -24,10 +22,6 @@
 {% include 'intro/logo-strip.twig' %}
 
 <section class="block-intro">
-	{% if section_title %}
-		<h2 class="intro-section-title">{{ section_title|wp_kses_post }}</h2>
-	{% endif %}
-
 	<block-content class="block-content">
 		{% for card in intro_cards %}
 			{% include 'intro/card-with-icon.twig' %}

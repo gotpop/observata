@@ -8,6 +8,10 @@ import HeroEdit from './hero/edit';
 import HeroSave from './hero/save';
 import IntroEdit from './intro/edit';
 import IntroSave from './intro/save';
+import ObservabilityEdit from './observability/edit';
+import ObservabilitySave from './observability/save';
+import CardsGridEdit from './cards-grid/edit';
+import CardsGridSave from './cards-grid/save';
 import calloutMetadata from '../blocks/callout/block.json';
 import cardMetadata from '../blocks/card/block.json';
 import cardSwooshIconMetadata from '../blocks/card-swoosh-icon/block.json';
@@ -70,8 +74,8 @@ registerBlockType(footerMetadata.name, {
 });
 
 registerBlockType(cardsGridMetadata.name, {
-    edit: createDynamicEdit('Cards Grid block'),
-    save: DynamicSave,
+    edit: CardsGridEdit,
+    save: CardsGridSave,
 });
 
 registerBlockType(cardsTripleMetadata.name, {
@@ -90,6 +94,6 @@ registerBlockType(partnershipMetadata.name, {
 });
 
 registerBlockType(observabilityMetadata.name, {
-    edit: createDynamicEdit('Observability block'),
-    save: DynamicSave,
+    edit: ObservabilityEdit,
+    save: ObservabilitySave,
 });

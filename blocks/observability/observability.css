@@ -56,3 +56,17 @@
 
     .card-micro-body {}
 }
+
+/* Editor styles */
+.observata-observability-editor {
+    .observata-controls {
+        padding: 1rem;
+        background: #f0f0f0;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+
+        .components-text-control {
+            margin-bottom: 1rem;
+        }
+    }
+}

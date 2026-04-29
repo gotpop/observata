@@ -9,20 +9,17 @@
 	<canvas id="hero-shader" class="hero-shader"></canvas>
 	<div class="hero-content">
 		<div class="hero-text">
-			{% if heading %}
-				{# <h1>{{ heading|wp_kses_post }}</h1> #}
-				<h1 class="heading-hero">
-					<span class="line-one">We enable, operate and</span>
-					<br/>
-					<span class="line-two">
-						<i>unify</i>
-						your
-						<i>AI</i>
-						powered</span>
-					<br/>
-					<span class="line-three">observability & security</span>
-				</h1>
-			{% endif %}
+			<h1 class="heading-hero">
+				<span class="line-one">We enable, operate and</span>
+				<br/>
+				<span class="line-two">
+					<i>unify</i>
+					your
+					<i>AI</i>
+					powered</span>
+				<br/>
+				<span class="line-three">observability & security</span>
+			</h1>
 
 			{% if subheading %}
 				<p class="hero-subheading">{{ subheading|wp_kses_post }}</p>
