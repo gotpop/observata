@@ -1,0 +1,21 @@
+.card-micro {
+    display: flex;
+    padding: var(--spacing-spacing-16);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-spacing-16);
+    border-radius: var(--radius-radius-comfortable, 0.8125rem);
+    border: 1px solid var(--colour-brand-light);
+    background-color: var(--colour-surface-white);
+    backdrop-filter: blur(5px);
+}
+
+.card-micro-heading {
+    color: var(--colour-text-heading-default);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.card-micro-body {}

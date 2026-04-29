@@ -2,6 +2,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import calloutMetadata from '../blocks/callout/block.json';
 import cardGeoMetadata from '../blocks/card-geo/block.json';
+import cardMicroMetadata from '../blocks/card-micro/block.json';
 import cardSwooshIconMetadata from '../blocks/card-swoosh-icon/block.json';
 import cardMetadata from '../blocks/card/block.json';
 import cardsGridMetadata from '../blocks/cards-grid/block.json';
@@ -17,6 +18,8 @@ import CalloutEdit from './callout/edit';
 import CalloutSave from './callout/save';
 import CardGeoEdit from './card-geo/edit';
 import CardGeoSave from './card-geo/save';
+import CardMicroEdit from './card-micro/edit';
+import CardMicroSave from './card-micro/save';
 import CardEdit from './card/edit';
 import CardSave from './card/save';
 import CardsGridEdit from './cards-grid/edit';
@@ -69,6 +72,11 @@ registerBlockType(introMetadata.name, {
 registerBlockType(cardGeoMetadata.name, {
     edit: CardGeoEdit,
     save: CardGeoSave,
+});
+
+registerBlockType(cardMicroMetadata.name, {
+    edit: CardMicroEdit,
+    save: CardMicroSave,
 });
 
 registerBlockType(headerMetadata.name, {

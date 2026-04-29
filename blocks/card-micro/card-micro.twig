@@ -1,0 +1,7 @@
+{% set card_title = attributes.cardTitle|default('') %}
+{% set card_description = attributes.cardDescription|default('') %}
+
+<article class="card-micro">
+	<h3 class="card-micro-heading">{{ card_title|esc_html }}</h3>
+	<p class="card-micro-body">{{ card_description|wp_kses_post }}</p>
+</article>

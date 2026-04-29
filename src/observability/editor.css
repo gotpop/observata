@@ -1,18 +1,17 @@
-.block-observability {
-    background-color: var(--colour-surface-white);
-    border-bottom: 1px solid var(--colour-border-border-gray);
-    border-top: 1px solid var(--colour-border-border-gray);
-    position: relative;
-    grid-column: full;
-    grid-template-columns: subgrid;
-    display: grid;
-    padding-block: 5rem;
+.observata-observability-editor {
+    border: 1px dashed #ccc;
+    padding: 1.5rem;
+    border-radius: 4px;
 
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-spacing-50);
+    .observata-controls {
+        padding: 1rem;
+        background: #f0f0f0;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+
+        .components-text-control {
+            margin-bottom: 1rem;
+        }
     }
 
     .card-large {
@@ -20,8 +19,6 @@
         background-image: url('../../assets/img/connected-dots.png');
         border-radius: var(--radius-radius-large);
         border: 1px solid var(--colour-accent-1-200);
-        flex-direction: column;
-        gap: var(--spacing-spacing-32);
         padding: var(--spacing-spacing-80);
         background-repeat: no-repeat;
         background-position: top -200px right -200px;

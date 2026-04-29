@@ -1,21 +1,13 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
 
-{% set cards = [
-	{ title: 'Alert fatigue', description: 'Too many noisy alerts hide the incidents that matter most.' },
-	{ title: 'Cost sprawl', description: 'Unmanaged ingestion and retention policies inflate platform spend.' },
-	{ title: 'Blind spots', description: 'Disconnected logs, metrics, and traces prevent fast root-cause analysis.' }
-] %}
-
 <section class="block-observability">
 	<block-content class="block-content">
 		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<article class="card-large">
 			<div class="cards-micro">
-				{% for card in cards %}
-					{% include 'observability/card-micro.twig' %}
-				{% endfor %}
+				{{ content|raw }}
 			</div>
 		</article>
 	</block-content>
