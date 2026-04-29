@@ -1,32 +1,45 @@
-.wp-block-observata-partnership {
+.block-partnership {
     position: relative;
     overflow: hidden;
-    background: var(--colour-background-bg-white);
-    padding: 80px 0;
+    background-color: var(--colour-surface-white);
+    border-bottom: 1px solid var(--colour-border-border-gray);
+    position: relative;
+    grid-column: full;
+    grid-template-columns: subgrid;
+    display: grid;
+    padding-block: 5rem;
+
+
+    .block-content {
+        display: grid;
+        grid-column: content;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-spacing-50);
+    }
 }
 
-.wp-block-observata-partnership .swoosh-gradient {
+.block-partnership .swoosh-gradient {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, #d4dbe0 0%, #e9edef 100%);
     z-index: 1;
 }
 
-.wp-block-observata-partnership .swoosh-mask {
+.block-partnership .swoosh-mask {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
 }
 
-.wp-block-observata-partnership .swoop {
+.block-partnership .swoop {
     position: absolute;
     background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1451 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect x="0" y="0" height="100%" width="100%" fill="url(%23grad)"/><defs><radialGradient id="grad" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="10" gradientTransform="matrix(0.85 21.15 -94.148 3.4873 719.52 580.43)"><stop stop-color="rgba(14,52,103,1)" offset="0.125"/><stop stop-color="rgba(27,80,134,0.85)" offset="0.25926"/><stop stop-color="rgba(40,108,165,0.7)" offset="0.39352"/><stop stop-color="rgba(94,145,187,0.545)" offset="0.52714"/><stop stop-color="rgba(147,182,210,0.39)" offset="0.66088"/><stop stop-color="rgba(255,255,255,1)" offset="1"/></radialGradient></defs></svg>') center / 80% no-repeat;
-    mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
     mask-size: 1451px 800px;
 }
 
-.wp-block-observata-partnership .content-wrapper {
+.block-partnership .content-wrapper {
     position: relative;
     left: 200px;
     top: 124px;
@@ -34,25 +47,25 @@
     z-index: 3;
 }
 
-.wp-block-observata-partnership .phases-wrap {
+.block-partnership .phases-wrap {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.wp-block-observata-partnership .phase {
+.block-partnership .phase {
     display: flex;
     align-items: center;
     padding: 10px;
 }
 
-.wp-block-observata-partnership .phase-box {
+.block-partnership .phase-box {
     background: rgba(255, 255, 255, 0.8);
     border-radius: var(--radius-radius-card);
     padding: 16px;
 }
 
-.wp-block-observata-partnership .phase-number {
+.block-partnership .phase-number {
     font-family: var(--typography-family-font-inter);
     font-size: 14px;
     font-weight: var(--fonts-weight-font-weight-medium);
@@ -66,7 +79,7 @@
     justify-content: center;
 }
 
-.wp-block-observata-partnership .phase-title {
+.block-partnership .phase-title {
     font-family: var(--typography-family-font-gantari);
     font-size: 16px;
     font-weight: var(--typography-weight-bold);
@@ -74,7 +87,7 @@
     margin-bottom: 4px;
 }
 
-.wp-block-observata-partnership .phase-content {
+.block-partnership .phase-content {
     font-family: var(--typography-family-font-inter);
     font-size: 14px;
     font-weight: var(--fonts-weight-font-weight-regular);
@@ -82,7 +95,7 @@
     line-height: 1.5;
 }
 
-.wp-block-observata-partnership .icon-container {
+.block-partnership .icon-container {
     position: absolute;
     right: -142px;
     top: 77px;
@@ -90,14 +103,14 @@
     height: 40px;
 }
 
-.wp-block-observata-partnership .icon-circle {
+.block-partnership .icon-circle {
     width: 60px;
     height: 60px;
     background: var(--colour-surface-white, white);
     border-radius: 50%;
 }
 
-.wp-block-observata-partnership .arrow-icon {
+.block-partnership .arrow-icon {
     width: 17px;
     height: 17px;
     background: var(--colour-primary-500);
@@ -106,7 +119,7 @@
     mask-size: 14px 14px;
 }
 
-.wp-block-observata-partnership .partnership-cta {
+.block-partnership .partnership-cta {
     background: var(--colour-accent-1-base);
     border: 2px solid var(--colour-accent-1-300);
     color: var(--colour-accent-1-100);

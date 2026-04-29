@@ -8,14 +8,15 @@
     grid-template-columns: subgrid;
     display: grid;
     padding-block: 5rem;
+
+    .block-content {
+        display: grid;
+        grid-column: content;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-spacing-50);
+    }
 }
 
-.block-content {
-    display: grid;
-    grid-column: content;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-spacing-50);
-}
 
 .block-cards-grid .intro-heading {
     font-size: 40px;
