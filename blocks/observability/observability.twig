@@ -1,32 +1,22 @@
 {% set section_title = attributes.sectionTitle|default('Being observed is not the same as being observable') %}
 {% set intro_text = attributes.introText|default('Most observability stacks were built for dashboards and not decisions.') %}
 
-<section class="wp-block-observata-observability">
-    <div class="observability-inner">
-        {% if section_title %}
-            <h2 class="observability-title">{{ section_title|esc_html }}</h2>
-        {% endif %}
+{% set cards = [
+	{ title: 'Alert fatigue', description: 'Too many noisy alerts hide the incidents that matter most.' },
+	{ title: 'Cost sprawl', description: 'Unmanaged ingestion and retention policies inflate platform spend.' },
+	{ title: 'Blind spots', description: 'Disconnected logs, metrics, and traces prevent fast root-cause analysis.' }
+] %}
 
-        {% if intro_text %}
-            <p class="observability-intro">{{ intro_text|esc_html }}</p>
-        {% endif %}
+<section class="block-observability">
+	<block-content class="block-content">
+		{% include 'observability/section-intro.twig' %}
 
-        <div class="observability-cards">
-            <article class="observability-card">
-                <h3>Alert fatigue</h3>
-                <p>Too many noisy alerts hide the incidents that matter most.
-                </p>
-            </article>
-            <article class="observability-card">
-                <h3>Cost sprawl</h3>
-                <p>Unmanaged ingestion and retention policies inflate platform
-                    spend.</p>
-            </article>
-            <article class="observability-card">
-                <h3>Blind spots</h3>
-                <p>Disconnected logs, metrics, and traces prevent fast
-                    root-cause analysis.</p>
-            </article>
-        </div>
-    </div>
+		<article class="card-large">
+			<div class="cards-micro">
+				{% for card in cards %}
+					{% include 'observability/card-micro.twig' %}
+				{% endfor %}
+			</div>
+		</article>
+	</block-content>
 </section>
