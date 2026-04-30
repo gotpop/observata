@@ -9,7 +9,7 @@ footer {
     display: grid;
     padding-block: 5rem;
 
-    .footer-content {
+    .block-content {
         display: grid;
         grid-column: content;
         grid-template-columns: 1fr;
