@@ -14,7 +14,7 @@ const subpageShaderConfig = {
       id: "idmmr8zyxrodm90feqn",
       props: {
         center: {
-          x: 0.14,
+          x: 0.2,
           y: 1,
         },
         glossiness: 200,
