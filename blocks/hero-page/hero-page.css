@@ -1,30 +1,24 @@
 .block-hero-page {
-    position: relative;
-    overflow: hidden;
     background: var(--colour-background-bg-white);
-    min-height: 400px;
     display: grid;
-    justify-content: center;
     align-items: center;
     background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
     grid-column: full;
+    grid-template-rows: 6rem 1fr;
+    display: grid;
+    grid-template-columns: subgrid;
 
     .hero-page-content {
-        max-width: 712px;
         width: 100%;
         z-index: 3;
         display: grid;
         grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
         padding: 5rem 2rem;
-    }
-
-    .hero-page-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 11px;
+        padding: 5rem 2rem;
+        grid-row: 2;
+        grid-column: content;
+        text-align: left;
+        row-gap: var(--spacing-spacing-40)
     }
 
     .heading-hero-page {
@@ -34,6 +28,8 @@
         line-height: 60px;
         letter-spacing: -1px;
         margin: 0;
+        text-box: trim-both cap alphabetic;
+
 
         i {
             color: var(--colour-secondary-500);
@@ -48,5 +44,6 @@
         letter-spacing: -0.4px;
         max-width: 60ch;
         margin: 0;
+        text-box: trim-both cap alphabetic;
     }
 }

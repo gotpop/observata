@@ -1,15 +1,13 @@
 {% set heading = attributes.heading|default('') %}
 {% set subheading = attributes.subheading|default('') %}
 
-<section class="block-hero-page">
+<section class="block-hero-page" aria-labeled-by="heading-hero">
 	<div class="hero-page-content">
-		<div class="hero-page-text">
-			{% if heading %}
-				<h1 class="heading-hero-page">{{ heading|wp_kses_post }}</h1>
-			{% endif %}
-			{% if subheading %}
-				<p class="hero-page-subheading">{{ subheading|wp_kses_post }}</p>
-			{% endif %}
-		</div>
+		{% if heading %}
+			<h1 id="heading-hero-page" class="heading-hero-page">{{ heading|wp_kses_post }}</h1>
+		{% endif %}
+		{% if subheading %}
+			<p class="hero-page-subheading">{{ subheading|wp_kses_post }}</p>
+		{% endif %}
 	</div>
 </section>
