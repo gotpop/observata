@@ -15,9 +15,18 @@
             "a ."
             ". b";
         gap: var(--spacing-spacing-50);
+        z-index: 1;
     }
 
 
+    .subpage-shader {
+        width: 100%;
+        aspect-ratio: 1;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        grid-column: content;
+    }
 
 
     .intro-page-card {
