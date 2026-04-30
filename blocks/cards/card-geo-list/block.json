@@ -8,7 +8,8 @@
     "parent": [
         "observata/intro",
         "observata/intro-page",
-        "observata/cards-grid-geo"
+        "observata/cards-grid-geo",
+        "observata/cards-grid-graphic"
     ],
     "supports": {
         "html": false,

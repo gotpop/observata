@@ -2,12 +2,29 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import { TextControl } from '@wordpress/components';
+import { SelectControl } from '@wordpress/components';
 
-const CARD_GRAPHIC_TEMPLATE = [
-    ['observata/card-graphic', { heading: 'Unified observability platform', bodyText: 'Gain complete visibility across your entire infrastructure with real-time monitoring, intelligent alerting, and actionable insights.', graphic: 'ribbon-star', graphicPosition: 'left' }],
-    ['observata/card-graphic', { heading: 'Seamless data integration', bodyText: 'Connect every data source effortlessly with our extensive library of pre-built integrations and flexible API architecture.', graphic: 'connected-dots', graphicPosition: 'right' }],
-    ['observata/card-graphic', { heading: 'Global scale, zero limits', bodyText: 'Built for enterprise-grade performance with elastic scaling that grows with your needs. No compromises on speed or reliability.', graphic: 'globe-dots', graphicPosition: 'left' }],
+const SCIENCE_GRAPHICS = [
+    { label: 'None', value: '' },
+    { label: 'Connected Dots', value: 'connected-dots-graphic' },
+    { label: 'Donut Plane', value: 'donut-plane-graphic' },
+    { label: 'Globe Dots', value: 'globe-dots-graphic' },
+    { label: 'Globe Lines', value: 'globe-lines-graphic' },
+    { label: 'Infinity Twist', value: 'infinity-twist-graphic' },
+    { label: 'Plane Distortion', value: 'plane-distortion-graphic' },
+    { label: 'Ribbon Star', value: 'ribbon-star-graphic' },
+    { label: 'Ribbon Wave', value: 'ribbon-wave-graphic' },
+    { label: 'Sine Flute', value: 'sine-flute-graphic' },
+    { label: 'Sine Wave', value: 'sine-wave-graphic' },
+    { label: 'Squares Rotating', value: 'squares-rotating-graphic' },
+    { label: 'Swooping Lines', value: 'swooping-lines' },
+    { label: 'Target', value: 'target-graphic' },
+    { label: 'Target Plane', value: 'target-plane-graphic' },
+    { label: 'Waveform', value: 'waveform-graphic' },
+];
+
+const CARD_GEO_LIST_TEMPLATE = [
+    ['observata/card-geo-list', { cardTitle: 'Unified Data Ingestion', listItem1: 'Centralise all your observability data into one platform', listItem2: 'Unify logs, metrics, and traces across your entire stack', iconGeo: '01' }],
 ];
 
 export default function CardsGridGraphicEdit({ attributes, setAttributes }) {
@@ -16,23 +33,20 @@ export default function CardsGridGraphicEdit({ attributes, setAttributes }) {
     return (
         <div {...blockProps}>
             <div className="observata-controls">
-                <TextControl
-                    label="Section Title"
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label="Intro Text"
-                    value={attributes.introText}
-                    onChange={(value) => setAttributes({ introText: value })}
+
+                <SelectControl
+                    label="Background Graphic"
+                    value={attributes.backgroundGraphic}
+                    options={SCIENCE_GRAPHICS}
+                    onChange={(value) => setAttributes({ backgroundGraphic: value })}
                 />
             </div>
 
             <div className="cards-container">
                 <InnerBlocks
-                    template={CARD_GRAPHIC_TEMPLATE}
+                    template={CARD_GEO_LIST_TEMPLATE}
                     templateLock="insert"
-                    allowedBlocks={['observata/card-graphic']}
+                    allowedBlocks={['observata/card-geo-list']}
                 />
             </div>
         </div>

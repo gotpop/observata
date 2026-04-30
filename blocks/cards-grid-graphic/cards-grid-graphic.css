@@ -5,6 +5,25 @@
     grid-column: full;
     grid-template-columns: subgrid;
     display: grid;
+    border-bottom: 1px solid var(--colour-border-border-gray);
+    padding-block: 5rem;
+    overflow: clip;
+
+    .background-graphic {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: auto;
+        opacity: .9;
+        pointer-events: none;
+        z-index: 0;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
 
     .block-content {
         display: grid;
