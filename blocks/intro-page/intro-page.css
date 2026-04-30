@@ -6,6 +6,7 @@
     grid-template-columns: subgrid;
     display: grid;
     padding-block: 5rem;
+    overflow: clip;
 
 
     .block-content {
