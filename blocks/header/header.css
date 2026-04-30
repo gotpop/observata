@@ -1,18 +1,31 @@
+@keyframes nav {
+    to {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(2px);
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid var(--colour-border-border-gray);
+    }
+}
+
 .header {
     /* position: sticky; */
-    top: 3rem;
+    top: 0;
     z-index: 999;
     position: fixed;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: [full-start] minmax(1rem, 1fr) [content-start] minmax(420px, 1200px) [content-start] minmax(1rem, 1fr) [full-end];
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* grid-template-columns: [full-start] minmax(1rem, 1fr) [content-start] minmax(420px, 1200px) [content-start] minmax(1rem, 1fr) [full-end]; */
 
 
     .header-content {
+        margin-top: 3rem;
+        max-width: 1200px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* margin: 0 80px; */
         background: white;
         padding: 18px 28px;
         border-radius: 4.5rem;
@@ -20,6 +33,10 @@
         width: stretch;
         max-width: 1200px;
         grid-column: content;
+        animation: nav linear forwards;
+        animation-timeline: scroll(nearest);
+        animation-range-end: 300px;
+        border: 1px solid white;
     }
 
     .header-logo {
