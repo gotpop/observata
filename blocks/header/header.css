@@ -90,6 +90,16 @@ nav[role="navigation"] {
     gap: 6px;
 }
 
+/* Reset button styles for placeholder (non-page) parent items */
+.menu-link--placeholder {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+}
+
 .menu-arrow {
     transition: transform 0.2s ease;
 }

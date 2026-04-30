@@ -15,12 +15,20 @@
 						{% for item in main_menu.items %}
 							{% if item.children %}
 								<li class="menu-item menu-item-has-children menu-item-{{ item.slug|esc_attr }}">
-									<a href="{{ item.link }}" class="menu-link" aria-haspopup="true" aria-expanded="false">
-										<span>{{ item.title|esc_html }}</span>
-										<svg class="menu-arrow" width="10" height="6" viewbox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-										</svg>
-									</a>
+									{% if item.link == '#' %}
+										<button class="menu-link menu-link--placeholder" aria-haspopup="true" aria-expanded="false">
+										{% else %}
+											<a href="{{ item.link }}" class="menu-link" aria-haspopup="true" aria-expanded="false">
+											{% endif %}
+											<span>{{ item.title|esc_html }}</span>
+											<svg class="menu-arrow" width="10" height="6" viewbox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+											{% if item.link == '#' %}
+											</button>
+									{% else %}
+										</a>
+									{% endif %}
 									<ul class="submenu">
 										{% for child in item.children %}
 											<li class="submenu-item menu-item-{{ child.slug|esc_attr }}">
