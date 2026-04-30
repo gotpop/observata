@@ -8,32 +8,24 @@
 {% set graphic = attributes.graphic|default('connected-dots') %}
 
 <section class="block-intro-page">
-	<div class="intro-page-graphic">
-		<img src="{{ function('get_template_directory_uri') }}/assets/svg/graphics/{{ graphic }}-graphic.svg" alt="{{ graphic|replace({'-': ' '})|title }} graphic"/>
-	</div>
-	<div class="intro-page-content">
-		{% if heading %}
-			<h2 class="intro-page-heading">{{ heading|wp_kses_post }}</h2>
-		{% endif %}
-		<div class="intro-page-cards">
-			<article class="intro-page-card">
-				<div class="intro-page-card-icon">
-					<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card_one_icon }}-icon-geo.svg" alt="" aria-hidden="true"/>
-				</div>
-				<div class="intro-page-card-body">
-					<h3 class="intro-page-card-title">{{ card_one_title|wp_kses_post }}</h3>
-					<p class="intro-page-card-text">{{ card_one_text|wp_kses_post }}</p>
-				</div>
-			</article>
-			<article class="intro-page-card">
-				<div class="intro-page-card-icon">
-					<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card_two_icon }}-icon-geo.svg" alt="" aria-hidden="true"/>
-				</div>
-				<div class="intro-page-card-body">
-					<h3 class="intro-page-card-title">{{ card_two_title|wp_kses_post }}</h3>
-					<p class="intro-page-card-text">{{ card_two_text|wp_kses_post }}</p>
-				</div>
-			</article>
-		</div>
-	</div>
+	<block-content class="block-content">
+		<article class="intro-page-card">
+			<div class="intro-page-card-icon">
+				<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card_one_icon }}-icon-geo.svg" alt="" aria-hidden="true"/>
+			</div>
+			<div class="intro-page-card-body">
+				<h3 class="intro-page-card-title">{{ card_one_title|wp_kses_post }}</h3>
+				<p class="intro-page-card-text">{{ card_one_text|wp_kses_post }}</p>
+			</div>
+		</article>
+		<article class="intro-page-card">
+			<div class="intro-page-card-icon">
+				<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card_two_icon }}-icon-geo.svg" alt="" aria-hidden="true"/>
+			</div>
+			<div class="intro-page-card-body">
+				<h3 class="intro-page-card-title">{{ card_two_title|wp_kses_post }}</h3>
+				<p class="intro-page-card-text">{{ card_two_text|wp_kses_post }}</p>
+			</div>
+		</article>
+	</block-content>
 </section>

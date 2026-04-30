@@ -1,9 +1,14 @@
+@view-transition {
+    navigation: auto;
+}
+
 html {
     min-height: 100dvh;
     font-family: var(--typography-family-inter), system-ui, -apple-system, sans-serif;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
+
 
 /* WebKit scrollbar styling */
 ::-webkit-scrollbar {

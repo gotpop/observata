@@ -1,50 +1,24 @@
 .block-intro-page {
     background-color: var(--colour-surface-white);
-    background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
     border-bottom: 1px solid var(--colour-border-border-gray);
-    border-top: 1px solid var(--colour-border-border-gray);
     position: relative;
     grid-column: full;
     grid-template-columns: subgrid;
     display: grid;
     padding-block: 5rem;
 
-    .intro-page-graphic {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0.15;
-        pointer-events: none;
 
-        img {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    .intro-page-content {
+    .block-content {
         display: grid;
         grid-column: content;
-        gap: var(--spacing-spacing-50);
-        position: relative;
-        z-index: 1;
-    }
-
-    .intro-page-heading {
-        font-size: var(--font-size-h2);
-        font-weight: 600;
-        text-align: center;
-        margin: 0;
-    }
-
-    .intro-page-cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "a ."
+            ". b";
         gap: var(--spacing-spacing-50);
     }
+
+
+
 
     .intro-page-card {
         display: flex;
@@ -54,6 +28,10 @@
         border-radius: 8px;
         padding: var(--spacing-spacing-32);
         background-color: var(--colour-surface-white);
+
+        &:last-child {
+            grid-area: b;
+        }
     }
 
     .intro-page-card-icon {
