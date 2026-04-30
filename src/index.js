@@ -12,7 +12,6 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardSwooshIconEdit from './card-swoosh-icon/edit';
 import CardSwooshIconSave from './card-swoosh-icon/save';
-import CardsEdit from './cards/edit';
 import CardsGridEdit from './cards-grid/edit';
 import CardsGridGeoEdit from './cards-grid-geo/edit';
 import CardsGridGeoSave from './cards-grid-geo/save';
@@ -21,7 +20,6 @@ import CardsGridGraphicSave from './cards-grid-graphic/save';
 import CardsGridMicroEdit from './cards-grid-micro/edit';
 import CardsGridMicroSave from './cards-grid-micro/save';
 import CardsGridSave from './cards-grid/save';
-import CardsSave from './cards/save';
 import CardsTripleEdit from './cards-triple/edit';
 import CardsTripleSave from './cards-triple/save';
 import HeroEdit from './hero/edit';
@@ -49,7 +47,6 @@ import cardsGridGeoMetadata from '../blocks/cards-grid-geo/block.json';
 import cardsGridGraphicMetadata from '../blocks/cards-grid-graphic/block.json';
 import cardsGridMetadata from '../blocks/cards-grid/block.json';
 import cardsGridMicroMetadata from '../blocks/cards-grid-micro/block.json';
-import cardsMetadata from '../blocks/cards/block.json';
 import cardsTripleMetadata from '../blocks/cards-triple/block.json';
 import footerMetadata from '../blocks/footer/block.json';
 import headerMetadata from '../blocks/header/block.json';
@@ -77,11 +74,6 @@ function DynamicSave() {
 registerBlockType(heroMetadata.name, {
     edit: HeroEdit,
     save: HeroSave,
-});
-
-registerBlockType(cardsMetadata.name, {
-    edit: CardsEdit,
-    save: CardsSave,
 });
 
 registerBlockType(cardMetadata.name, {
