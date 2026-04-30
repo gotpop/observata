@@ -22,6 +22,17 @@ function observata_register_blocks()
 		true
 	);
 
+	wp_localize_script('observata-blocks', 'observata', [
+		'templateUrl' => get_template_directory_uri(),
+	]);
+
+	// Ensure templateUrl is available even when blocks load via block.json editorScript handles
+	add_action('admin_enqueue_scripts', function () {
+		$script = 'window.observata = window.observata || {};';
+		$script .= 'window.observata.templateUrl = ' . wp_json_encode(get_template_directory_uri()) . ';';
+		wp_add_inline_script('wp-blocks', $script, 'before');
+	});
+
 	// Recursively discover blocks in blocks/ and any subdirectories
 	$iterator = new RecursiveIteratorIterator(
 		new RecursiveDirectoryIterator(get_template_directory() . '/blocks', RecursiveDirectoryIterator::SKIP_DOTS)
