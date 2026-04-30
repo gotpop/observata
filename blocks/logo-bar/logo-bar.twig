@@ -1,11 +1,18 @@
 {% set logos = attributes.logos|default([]) %}
 
-<div class="logo-bar">
-	{% for logo in logos %}
-		{% if logo.src %}
-			<div class="logo-bar__item">
-				<img src="{{ logo.src }}" alt="{{ logo.alt|default('') }}"/>
-			</div>
-		{% endif %}
-	{% endfor %}
-</div>
+<section-trust class="logo-bar">
+	<block-content class="block-content">
+		<div class="logo-item">
+			<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/bar/af-logo.svg" alt="AF"/>
+		</div>
+		<div class="logo-item">
+			<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/bar/tele-dark-logo.svg" alt="Tele Dark"/>
+		</div>
+		<div class="logo-item">
+			<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/bar/elastic-logo.svg" alt="Elastic"/>
+		</div>
+		<div class="logo-item">
+			<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/bar/crowdstrike-logo.svg" alt="Crowdstrike"/>
+		</div>
+	</block-content>
+</section-trust>

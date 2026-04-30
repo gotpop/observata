@@ -1,11 +1,27 @@
 .logo-bar {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     gap: 55px;
     padding: 2rem 4rem;
+    background: var(--colour-surface-surface);
+    grid-column: full;
+    grid-template-columns: subgrid;
+    border-bottom: 1px solid var(--colour-border-border-gray);
 
-    .logo-bar__item {
+    .block-content {
+        display: grid;
+        grid-column: content;
+        grid-auto-columns: min-content;
+        gap: var(--spacing-spacing-50);
+        grid-auto-flow: column;
+        justify-content: center;
+        align-content: stretch;
+        justify-items: stretch;
+        align-items: start;
+    }
+
+    .logo-item {
         display: flex;
         align-items: center;
         max-width: 300px;

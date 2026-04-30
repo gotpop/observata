@@ -18,7 +18,8 @@
   --spacing-spacing-50: 50px;
   --spacing-spacing-64: 64px;
   --spacing-spacing-80: 80px;
-
+  --spacing-spacing-160: 160;
+  --spacing-spacing-320: 320;
 
 
   /* Radius */
@@ -31,21 +32,83 @@
   --radius-radius-pill: 9999px;
 
 
+  /* Sizing */
   --sizing-width-site: 1440;
   --sizing-width-content: 1200;
 
-  --spacing-spacing-160: 160;
-  --spacing-spacing-320: 320;
+
+  /* Brand colours */
+  --colour-brand-dark: #113768;
+  --colour-brand-light: #0598ce;
 
 
+  /* Primary */
+  --colour-secondary-100: #d9f5ff;
+  --colour-secondary-200: #9bdbf2;
+  --colour-secondary-300: #5bc1e6;
+  --colour-secondary-400: #38b1de;
+  --colour-secondary-500: #0598ce;
+  --colour-secondary-600: #0796ca;
+  --colour-secondary-700: #0679a3;
+  --colour-secondary-800: #094054;
+  --colour-secondary-900: #032d3c;
+
+  /* Secondary */
+  --colour-primary-100: #cae1ff;
+  --colour-primary-200: #90b2dc;
+  --colour-primary-300: #7399c6;
+  --colour-primary-400: #567fb1;
+  --colour-primary-500: #416a9d;
+  --colour-primary-600: #2a568e;
+  --colour-primary-700: #113768;
+  --colour-primary-800: #103361;
+  --colour-primary-900: #0a1f3a;
+
+
+  /* Neutral */
   --colour-neutral-white: #ffffff;
+  --colour-neutral-100: #fafafa;
+  --colour-neutral-500: #7f7f7f;
+  --colour-neutral-600: #626262;
+  --colour-neutral-300: #b1b1b1;
+  --colour-neutral-400: #939393;
+  --colour-neutral-700: #484848;
+  --colour-neutral-200: #dbdbdb;
+  --colour-neutral-800: #2e2e2e;
+  --colour-neutral-900: #1e1e1e;
+  --colour-neutral-black: #000000;
+
+
+  /* Accent 1 */
+  --colour-accent-2-100: #ffecc2;
+  --colour-accent-2-400: #d19921;
+  --colour-accent-2-200: #e7c273;
+  --colour-accent-2-500: #9d7318;
+  --colour-accent-2-800: #3c2f14;
+  --colour-accent-2-600: #7e5c12;
+  --colour-accent-2-700: #5a4415;
+  --colour-accent-2-300: #dfac3e;
+  --colour-accent-2-900: #2d230e;
+  --colour-accent-1-200: #efaedc;
+  --colour-accent-1-400: #572f4c;
+  --colour-accent-1-100: #ffebf9;
+  --colour-accent-1-500: #572f4c;
+  --colour-accent-1-600: #572f4c;
+  --colour-accent-1-900: #2f1a29;
+  --colour-accent-1-700: #572f4c;
+  --colour-accent-1-300: #e08ac7;
+  --colour-accent-1-800: #3b2134;
+
+
+
+  --icon-line-bg-colour: #ff0000;
+
   --icon-line-colour: var(--colour-brand-light);
   --icon-circle-colour: var(--colour-brand-dark);
   --icon-line-stroke: 0.8999999761581421;
 
 
-  --colour-brand-dark: #113768;
-  --colour-brand-light: #0598ce;
+
 
 
 
@@ -79,56 +142,7 @@
   --colour-success-800: #55ff33;
   --colour-success-900: #55ff33;
 
-  --colour-neutral-100: #fafafa;
-  --colour-neutral-500: #7f7f7f;
-  --colour-neutral-600: #626262;
-  --colour-neutral-300: #b1b1b1;
-  --colour-neutral-400: #939393;
-  --colour-neutral-700: #484848;
-  --colour-neutral-200: #dbdbdb;
-  --colour-neutral-800: #2e2e2e;
-  --colour-neutral-900: #1e1e1e;
 
-  --colour-accent-2-100: #ffecc2;
-  --colour-accent-2-400: #d19921;
-  --colour-accent-2-200: #e7c273;
-  --colour-accent-2-500: #9d7318;
-  --colour-accent-2-800: #3c2f14;
-  --colour-accent-2-600: #7e5c12;
-  --colour-accent-2-700: #5a4415;
-  --colour-accent-2-300: #dfac3e;
-  --colour-accent-2-900: #2d230e;
-  --colour-accent-1-200: #efaedc;
-  --colour-accent-1-400: #572f4c;
-  --colour-accent-1-100: #ffebf9;
-  --colour-accent-1-500: #572f4c;
-  --colour-accent-1-600: #572f4c;
-  --colour-accent-1-900: #2f1a29;
-  --colour-accent-1-700: #572f4c;
-  --colour-accent-1-300: #e08ac7;
-  --colour-accent-1-800: #3b2134;
-
-  --colour-secondary-200: #9bdbf2;
-  --colour-secondary-400: #38b1de;
-  --colour-secondary-300: #5bc1e6;
-  --colour-secondary-600: #0796ca;
-  --colour-secondary-900: #032d3c;
-  --colour-secondary-700: #0679a3;
-  --colour-secondary-800: #094054;
-  --colour-secondary-100: #d9f5ff;
-  --colour-secondary-500: #0598ce;
-
-  --colour-primary-300: #7399c6;
-  --colour-primary-200: #90b2dc;
-  --colour-primary-500: #416a9d;
-  --colour-primary-100: #cae1ff;
-  --colour-primary-900: #0a1f3a;
-  --colour-primary-600: #2a568e;
-  --colour-primary-700: #113768;
-  --colour-primary-400: #567fb1;
-  --colour-primary-800: #103361;
-  --colour-neutral-black: #000000;
-  --icon-line-bg-colour: #ff0000;
   --color: #ffffff;
 
 
