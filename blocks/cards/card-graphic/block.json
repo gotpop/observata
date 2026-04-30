@@ -27,7 +27,7 @@
         }
     },
     "render": "file:render.php",
-    "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css",
+    "editorScript": "file:../../../build/index.js",
+    "editorStyle": "file:../../../build/index.css",
     "style": "file:card-graphic.css"
 }

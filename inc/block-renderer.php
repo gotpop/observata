@@ -7,7 +7,9 @@ function observata_render_block_twig($attributes, $content, $block)
 {
     $block_name = $block->block_type->name;
     $template_name = str_replace('observata/', '', $block_name);
-    $template_path = get_template_directory() . "/blocks/{$template_name}/{$template_name}.twig";
+
+    // Search recursively for the twig template under blocks/
+    $template_path = observata_find_block_template($template_name);
 
     $context = array_merge(
         \Timber\Timber::context(),
@@ -23,13 +25,35 @@ function observata_render_block_twig($attributes, $content, $block)
         $context['main_menu'] = \Timber\Timber::get_menu('main-menu');
     }
 
-    if (!file_exists($template_path)) {
+    if (!$template_path) {
         return '';
     }
 
+    // Build relative path from blocks/ dir for Timber::compile
+    $blocks_dir = get_template_directory() . '/blocks/';
+    $twig_relative = str_replace($blocks_dir, '', $template_path);
+
     try {
-        return \Timber\Timber::compile("{$template_name}/{$template_name}.twig", $context);
+        return \Timber\Timber::compile($twig_relative, $context);
     } catch (\Exception $e) {
         return '';
     }
+}
+
+/**
+ * Recursively find a block's twig template under blocks/.
+ */
+function observata_find_block_template(string $template_name): ?string
+{
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator(get_template_directory() . '/blocks', RecursiveDirectoryIterator::SKIP_DOTS)
+    );
+
+    foreach ($iterator as $file) {
+        if ($file->getFilename() === "{$template_name}.twig") {
+            return $file->getPathname();
+        }
+    }
+
+    return null;
 }

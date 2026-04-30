@@ -23,7 +23,7 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:cards-grid-graphic.css",
-        "file:../card-graphic/card-graphic.css"
+        "file:../cards/card-graphic/card-graphic.css"
     ],
     "editorStyle": [
         "file:cards-grid-graphic.css",

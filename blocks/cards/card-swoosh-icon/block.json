@@ -1,13 +1,12 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/card-geo",
-    "title": "Card with Geo Icon",
+    "name": "observata/card-swoosh-icon",
+    "title": "Card with Swoosh Background",
     "category": "theme",
-    "description": "A feature card with a geometric icon, used inside the Intro block.",
+    "description": "A benefit card with swoosh gradient background and numbered icon.",
     "parent": [
-        "observata/intro",
-        "observata/cards-grid-geo"
+        "observata/cards-grid"
     ],
     "supports": {
         "html": false,
@@ -22,12 +21,12 @@
             "type": "string",
             "default": ""
         },
-        "iconGeo": {
+        "iconNumber": {
             "type": "string",
-            "default": "24"
+            "default": "01"
         }
     },
     "render": "file:render.php",
-    "editorScript": "file:../../build/index.js",
-    "style": "file:card-geo.css"
+    "editorScript": "file:../../../build/index.js",
+    "style": "file:card-swoosh-icon.css"
 }

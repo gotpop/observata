@@ -22,19 +22,29 @@ function observata_register_blocks()
 		true
 	);
 
-	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
-		$block_name = basename(dirname($block_json));
-		$twig_template = get_template_directory() . "/blocks/{$block_name}/{$block_name}.twig";
+	// Recursively discover blocks in blocks/ and any subdirectories
+	$iterator = new RecursiveIteratorIterator(
+		new RecursiveDirectoryIterator(get_template_directory() . '/blocks', RecursiveDirectoryIterator::SKIP_DOTS)
+	);
+
+	foreach ($iterator as $file) {
+		if ($file->getFilename() !== 'block.json') {
+			continue;
+		}
+
+		$block_dir = $file->getPath();
+		$block_name = basename($block_dir);
+		$twig_template = "{$block_dir}/{$block_name}.twig";
 
 		if (file_exists($twig_template)) {
 			// Use Twig renderer
 			register_block_type_from_metadata(
-				dirname($block_json),
+				$block_dir,
 				['render_callback' => 'observata_render_block_twig']
 			);
 		} else {
 			// Use standard PHP renderer
-			register_block_type(dirname($block_json));
+			register_block_type($block_dir);
 		}
 	}
 }
@@ -50,8 +60,16 @@ function observata_allowed_blocks($allowed_blocks, $editor_context)
 {
 	$allowed = [];
 
-	foreach (glob(get_template_directory() . '/blocks/*/block.json') as $block_json) {
-		$metadata = json_decode(file_get_contents($block_json), true);
+	$iterator = new RecursiveIteratorIterator(
+		new RecursiveDirectoryIterator(get_template_directory() . '/blocks', RecursiveDirectoryIterator::SKIP_DOTS)
+	);
+
+	foreach ($iterator as $file) {
+		if ($file->getFilename() !== 'block.json') {
+			continue;
+		}
+
+		$metadata = json_decode(file_get_contents($file->getPathname()), true);
 
 		// Skip internal blocks
 		if (!empty($metadata['name']) && $metadata['name'] === 'observata/section-intro') {
