@@ -2,6 +2,8 @@ import CalloutEdit from './callout/edit';
 import CalloutSave from './callout/save';
 import CardEdit from './card/edit';
 import CardGeoEdit from './card-geo/edit';
+import CardGeoListEdit from './card-geo-list/edit';
+import CardGeoListSave from './card-geo-list/save';
 import CardGeoSave from './card-geo/save';
 import CardGraphicEdit from './card-graphic/edit';
 import CardGraphicSave from './card-graphic/save';
@@ -37,6 +39,7 @@ import ObservabilitySave from './observability/save';
 import PartnershipEdit from './partnership/edit';
 import PartnershipSave from './partnership/save';
 import calloutMetadata from '../blocks/callout/block.json';
+import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
 import cardGraphicMetadata from '../blocks/cards/card-graphic/block.json';
 import cardMetadata from '../blocks/cards/card/block.json';
@@ -94,6 +97,11 @@ registerBlockType(introMetadata.name, {
 registerBlockType(cardGeoMetadata.name, {
     edit: CardGeoEdit,
     save: CardGeoSave,
+});
+
+registerBlockType(cardGeoListMetadata.name, {
+    edit: CardGeoListEdit,
+    save: CardGeoListSave,
 });
 
 registerBlockType(cardMicroMetadata.name, {

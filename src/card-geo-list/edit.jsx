@@ -1,0 +1,55 @@
+import { RichText, useBlockProps } from '@wordpress/block-editor';
+
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+
+const iconOptions = Array.from({ length: 30 }, (_, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return { label: num, value: num };
+});
+
+export default function CardGeoListEdit({ attributes, setAttributes }) {
+    const { cardTitle, listItem1, listItem2, iconGeo } = attributes;
+    const blockProps = useBlockProps({ className: 'card-geo-list' });
+
+    return (
+        <article {...blockProps}>
+            <div className="intro-card-icon is-placeholder">
+                <span className="icon-geo">{iconGeo}</span>
+            </div>
+            <div className="intro-card-body">
+                <RichText
+                    tagName="h3"
+                    className="intro-card-title"
+                    value={cardTitle}
+                    onChange={(val) => setAttributes({ cardTitle: val })}
+                    placeholder={__('Card title…', 'observata')}
+                />
+                <ul className="card-geo-list-items">
+                    <li>
+                        <RichText
+                            tagName="span"
+                            value={listItem1}
+                            onChange={(val) => setAttributes({ listItem1: val })}
+                            placeholder={__('List item 1…', 'observata')}
+                        />
+                    </li>
+                    <li>
+                        <RichText
+                            tagName="span"
+                            value={listItem2}
+                            onChange={(val) => setAttributes({ listItem2: val })}
+                            placeholder={__('List item 2…', 'observata')}
+                        />
+                    </li>
+                </ul>
+                <SelectControl
+                    label={__('Icon', 'observata')}
+                    value={iconGeo}
+                    options={iconOptions}
+                    onChange={(val) => setAttributes({ iconGeo: val })}
+                />
+            </div>
+        </article>
+    );
+}

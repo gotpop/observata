@@ -1,0 +1,46 @@
+.card-geo-list {
+    padding: var(--spacing-spacing-40);
+    border: 1px solid var(--colour-border-border-gray);
+    border-radius: var(--radius-radius-card);
+    position: relative;
+
+    .icon-geo {
+        --size: 5.25rem;
+
+        border-radius: 50%;
+        width: var(--size);
+        height: var(--size);
+        border: 1px solid var(--colour-border-border-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: calc(var(--size) / -3.5) calc(var(--size) / -3.5) auto auto;
+        position: absolute;
+        background-color: var(--colour-surface-white);
+
+        svg {
+            width: 3.467rem;
+            height: 3.467rem;
+        }
+    }
+
+    h3 {
+        margin-bottom: var(--spacing-spacing-32);
+        text-box: trim-both cap alphabetic;
+        max-width: 12ch;
+        text-wrap: balance;
+    }
+
+    .card-geo-list-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            text-box: trim-both cap alphabetic;
+            color: var(--colour-text-body-default);
+            font-size: var(--typography-size-16);
+            line-height: 1.5;
+        }
+    }
+}
