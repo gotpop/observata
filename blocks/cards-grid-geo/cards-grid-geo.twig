@@ -3,10 +3,6 @@
 
 <section class="block-cards-grid-geo">
 	<block-content class="block-content">
-		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
-
-		<div class="cards-container">
-			{{ content|raw }}
-		</div>
+		{{ content|raw }}
 	</block-content>
 </section>

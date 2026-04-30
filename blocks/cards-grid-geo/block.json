@@ -23,7 +23,7 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:cards-grid-geo.css",
-        "file:../cards/card-geo/card-geo.css"
+        "file:../cards/card-geo-list/card-geo-list.css"
     ],
     "editorStyle": [
         "file:cards-grid-geo.css",
