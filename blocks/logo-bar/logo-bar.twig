@@ -1,0 +1,11 @@
+{% set logos = attributes.logos|default([]) %}
+
+<div class="logo-bar">
+	{% for logo in logos %}
+		{% if logo.src %}
+			<div class="logo-bar__item">
+				<img src="{{ logo.src }}" alt="{{ logo.alt|default('') }}"/>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>

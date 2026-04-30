@@ -1,0 +1,18 @@
+.logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    padding: 2rem 4rem;
+
+    .logo-bar__item {
+        display: flex;
+        align-items: center;
+        max-width: 300px;
+
+        img {
+            max-width: 200px;
+            max-height: 30px;
+        }
+    }
+}

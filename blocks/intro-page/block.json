@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/intro-page",
+    "title": "Intro Page",
+    "category": "theme",
+    "description": "Sub-page intro section with two feature cards, icons, and a graphic element.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "cardOneTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "cardOneText": {
+            "type": "string",
+            "default": ""
+        },
+        "cardOneIcon": {
+            "type": "string",
+            "default": "01"
+        },
+        "cardTwoTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "cardTwoText": {
+            "type": "string",
+            "default": ""
+        },
+        "cardTwoIcon": {
+            "type": "string",
+            "default": "02"
+        },
+        "graphic": {
+            "type": "string",
+            "default": "connected-dots"
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css",
+    "style": "file:intro-page.css"
+}
