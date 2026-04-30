@@ -1,3 +1,5 @@
+import { InnerBlocks } from '@wordpress/block-editor';
+
 export default function IntroPageSave() {
-    return null;
+    return <InnerBlocks.Content />;
 }

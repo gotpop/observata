@@ -29,7 +29,7 @@
     }
 
 
-    .intro-page-card {
+    .card-geo-list {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-spacing-24);
