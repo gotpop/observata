@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
 
 {% block header %}
-	{{ function('do_blocks', '<!-- wp:observata/header /-->') }}
+	{{ header | raw }}
 {% endblock %}
 
 {% block content %}
@@ -9,5 +9,5 @@
 {% endblock %}
 
 {% block footer %}
-	{{ function('do_blocks', '<!-- wp:observata/footer /-->') }}
+	{{ footer | raw }}
 {% endblock %}
