@@ -35,9 +35,7 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Micro" />
-
-            <div className="observata-controls">
+            <BlockLabel name="Grid Cards Micro">
                 <TextControl
                     label="Section Title"
                     value={attributes.sectionTitle}
@@ -48,7 +46,7 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
                     value={attributes.introText}
                     onChange={(value) => setAttributes({ introText: value })}
                 />
-            </div>
+            </BlockLabel>
 
             <div className="cards-container">
                 {cards.map((card, index) => (

@@ -33,17 +33,14 @@ export default function GridCardsGraphicEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Graphic" />
-
-            <div className="observata-controls">
-
+            <BlockLabel name="Grid Cards Graphic">
                 <SelectControl
                     label="Background Graphic"
                     value={attributes.backgroundGraphic}
                     options={SCIENCE_GRAPHICS}
                     onChange={(value) => setAttributes({ backgroundGraphic: value })}
                 />
-            </div>
+            </BlockLabel>
 
             <div className="cards-container">
                 <InnerBlocks

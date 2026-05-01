@@ -59,9 +59,7 @@ export default function GridCardsGeoTechEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Geo Tech" />
-
-            <div className="observata-controls">
+            <BlockLabel name="Grid Cards Geo Tech">
                 <TextControl
                     label="Section Title"
                     value={attributes.sectionTitle}
@@ -72,7 +70,7 @@ export default function GridCardsGeoTechEdit({ attributes, setAttributes }) {
                     value={attributes.introText}
                     onChange={(value) => setAttributes({ introText: value })}
                 />
-            </div>
+            </BlockLabel>
 
             <div className="cards-container">
                 {cards.map((card, index) => (

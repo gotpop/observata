@@ -16,22 +16,18 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Observability" />
-
-            <div className="observability-section-intro">
-                <div className="observata-controls">
-                    <TextControl
-                        label="Section Title"
-                        value={attributes.sectionTitle}
-                        onChange={(value) => setAttributes({ sectionTitle: value })}
-                    />
-                    <TextControl
-                        label="Intro Text"
-                        value={attributes.introText}
-                        onChange={(value) => setAttributes({ introText: value })}
-                    />
-                </div>
-            </div>
+            <BlockLabel name="Observability">
+                <TextControl
+                    label="Section Title"
+                    value={attributes.sectionTitle}
+                    onChange={(value) => setAttributes({ sectionTitle: value })}
+                />
+                <TextControl
+                    label="Intro Text"
+                    value={attributes.introText}
+                    onChange={(value) => setAttributes({ introText: value })}
+                />
+            </BlockLabel>
 
             <article className="card-large">
                 <div className="cards-micro">

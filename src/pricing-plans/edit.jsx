@@ -40,9 +40,7 @@ export default function PlansEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Pricing Plans" />
-
-            <div className="observata-controls">
+            <BlockLabel name="Pricing Plans">
                 <TextControl
                     label="Section Title"
                     value={attributes.sectionTitle}
@@ -53,7 +51,7 @@ export default function PlansEdit({ attributes, setAttributes }) {
                     value={attributes.introText}
                     onChange={(value) => setAttributes({ introText: value })}
                 />
-            </div>
+            </BlockLabel>
 
             <div className="plans-inner-blocks">
                 <InnerBlocks

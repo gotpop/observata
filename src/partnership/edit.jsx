@@ -23,16 +23,15 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Partnership" />
+            <BlockLabel name="Partnership">
+                <TextControl
+                    label={__('Section Title', 'observata')}
+                    value={sectionTitle}
+                    onChange={(val) => setAttributes({ sectionTitle: val })}
+                />
+            </BlockLabel>
 
             <div className="block-content">
-                <div className="observata-controls">
-                    <TextControl
-                        label={__('Section Title', 'observata')}
-                        value={sectionTitle}
-                        onChange={(val) => setAttributes({ sectionTitle: val })}
-                    />
-                </div>
 
                 <div className="phases-wrap">
                     <div className="phase">

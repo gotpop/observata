@@ -19,9 +19,7 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards" />
-
-            <div className="observata-controls">
+            <BlockLabel name="Grid Cards">
                 <TextControl
                     label="Section Title"
                     value={attributes.sectionTitle}
@@ -32,7 +30,7 @@ export default function Edit({ attributes, setAttributes }) {
                     value={attributes.introText}
                     onChange={(value) => setAttributes({ introText: value })}
                 />
-            </div>
+            </BlockLabel>
 
             <div className="cards-container">
                 <InnerBlocks

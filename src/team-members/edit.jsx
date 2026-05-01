@@ -34,9 +34,7 @@ export default function TeamMembersEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Team Members" />
-
-            <div className="observata-controls">
+            <BlockLabel name="Team Members">
                 <TextControl
                     label={__('Section Title', 'observata')}
                     value={attributes.sectionTitle}
@@ -47,7 +45,7 @@ export default function TeamMembersEdit({ attributes, setAttributes }) {
                     value={attributes.introText}
                     onChange={(value) => setAttributes({ introText: value })}
                 />
-            </div>
+            </BlockLabel>
 
             <div className="team-members-editor__grid">
                 <InnerBlocks

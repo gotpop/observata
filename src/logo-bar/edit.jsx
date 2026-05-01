@@ -61,10 +61,6 @@ export default function LogoBarEdit({ attributes, setAttributes }) {
     return (
         <div {...blockProps}>
             <BlockLabel name="Logo Bar" />
-
-            <div className="logo-bar__label">
-                {__('Logo Bar', 'observata')}
-            </div>
             <div className="block-content">
                 {paddedLogos.map((logo, index) => {
                     const src = getLogoSrc(logo, index);

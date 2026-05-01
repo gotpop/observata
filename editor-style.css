@@ -21,17 +21,30 @@
 
 
 
-.block-editor-block-list__block {
-    padding: 1rem;
-    border: dashed 2px grey;
-    position: relative;
+.block-editor-block-list__block.wp-block:not(h1) {
     background-color: #f5f5f5;
     border-radius: 5px;
-    /* display: flex !important; */
+    border: dashed 2px grey;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    /* align-items: start; */
+
+    .intro {
+        display: flex;
+        width: stretch;
+    }
 
     .block-editor-block-list__block {
         background-color: white;
         padding: 1rem;
         border: dashed 1px grey;
+    }
+
+
+    .block-editor-block-list__layout {
+        display: flex;
+        gap: 1rem;
     }
 }
