@@ -3,8 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import { TextControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import SectionIntro from '../components/section-intro';
 
 const MEMBER_TEMPLATE = [
     ['observata/card-team-member', {
@@ -34,18 +33,8 @@ export default function TeamMembersEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Team Members">
-                <TextControl
-                    label={__('Section Title', 'observata')}
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label={__('Intro Text', 'observata')}
-                    value={attributes.introText}
-                    onChange={(value) => setAttributes({ introText: value })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Team Members" />
+            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="team-members-editor__grid">
                 <InnerBlocks

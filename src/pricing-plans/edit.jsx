@@ -3,7 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import { TextControl } from '@wordpress/components';
+import SectionIntro from '../components/section-intro';
 
 const PLAN_TEMPLATE = [
     ['observata/plan', {
@@ -40,18 +40,8 @@ export default function PlansEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Pricing Plans">
-                <TextControl
-                    label="Section Title"
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label="Intro Text"
-                    value={attributes.introText}
-                    onChange={(value) => setAttributes({ introText: value })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Pricing Plans" />
+            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="plans-inner-blocks">
                 <InnerBlocks

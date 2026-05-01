@@ -3,7 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import { TextControl } from '@wordpress/components';
+import SectionIntro from '../components/section-intro';
 
 const CARD_TEMPLATE = [
     ['observata/card-rich-text', {
@@ -25,18 +25,8 @@ export default function GridCardsRichTextEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Rich Text">
-                <TextControl
-                    label="Section Title"
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label="Intro Text"
-                    value={attributes.introText}
-                    onChange={(value) => setAttributes({ introText: value })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Grid Cards Rich Text" />
+            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="grid-cards-rich-text-editor__grid">
                 <InnerBlocks

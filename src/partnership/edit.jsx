@@ -1,6 +1,7 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import SectionIntro from '../components/section-intro';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -23,13 +24,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Partnership">
-                <TextControl
-                    label={__('Section Title', 'observata')}
-                    value={sectionTitle}
-                    onChange={(val) => setAttributes({ sectionTitle: val })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Partnership" />
+            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="block-content">
 

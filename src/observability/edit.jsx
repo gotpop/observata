@@ -3,7 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import { TextControl } from '@wordpress/components';
+import SectionIntro from '../components/section-intro';
 
 const CARD_TEMPLATE = [
     ['observata/card-micro', { cardTitle: 'Alert fatigue', cardDescription: 'Too many noisy alerts hide the incidents that matter most.' }],
@@ -16,18 +16,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Observability">
-                <TextControl
-                    label="Section Title"
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label="Intro Text"
-                    value={attributes.introText}
-                    onChange={(value) => setAttributes({ introText: value })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Observability" />
+            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <article className="card-large">
                 <div className="cards-micro">

@@ -3,6 +3,7 @@ import './editor.css';
 import { Button, TextControl } from '@wordpress/components';
 
 import BlockLabel from '../components/block-label';
+import SectionIntro from '../components/section-intro';
 import { useBlockProps } from '@wordpress/block-editor';
 
 const DEFAULT_CARDS = [
@@ -35,18 +36,8 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Micro">
-                <TextControl
-                    label="Section Title"
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label="Intro Text"
-                    value={attributes.introText}
-                    onChange={(value) => setAttributes({ introText: value })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Grid Cards Micro" />
+            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="cards-container">
                 {cards.map((card, index) => (
