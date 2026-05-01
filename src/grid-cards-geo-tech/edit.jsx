@@ -3,6 +3,7 @@ import './editor.css';
 import { Button, SelectControl, TextControl } from '@wordpress/components';
 
 import BlockLabel from '../components/block-label';
+import GeoIcon from '../components/geo-icon';
 import SectionIntro from '../components/section-intro';
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -76,12 +77,15 @@ export default function GridCardsGeoTechEdit({ attributes, setAttributes }) {
                             value={card.cardText}
                             onChange={(value) => updateCard(index, 'cardText', value)}
                         />
-                        <SelectControl
-                            label={`Card ${index + 1} Geo Icon`}
-                            value={card.iconGeo}
-                            options={iconOptions}
-                            onChange={(value) => updateCard(index, 'iconGeo', value)}
-                        />
+                        <div className="card-geo-tech-icon-row">
+                            <GeoIcon number={card.iconGeo} className="card-geo-tech-preview-icon" />
+                            <SelectControl
+                                label={`Card ${index + 1} Geo Icon`}
+                                value={card.iconGeo}
+                                options={iconOptions}
+                                onChange={(value) => updateCard(index, 'iconGeo', value)}
+                            />
+                        </div>
                         <SelectControl
                             label={`Card ${index + 1} Background Graphic`}
                             value={card.backgroundGraphic}

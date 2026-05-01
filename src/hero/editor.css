@@ -1,9 +1,13 @@
 /* Editor-specific overrides for the Hero block */
 
 /* Remove sticky positioning — it breaks the block editor layout */
-.block-editor-block-list__block .block-hero-home {
+.block-editor-block-list__block.block-hero-home {
     position: relative;
     min-height: 500px;
+
+    .hero-content {
+        margin: 0 auto;
+    }
 }
 
 /* Disable the scroll-driven overlay animation in the editor */
@@ -26,4 +30,9 @@
 /* Give the CTA field labels a lighter style to fit the hero */
 .block-hero-home .hero-cta-fields .components-base-control__label {
     color: var(--colour-text-text-hero-subheading, #666);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }

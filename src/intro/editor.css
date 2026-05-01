@@ -13,9 +13,31 @@
     .block-content {
         display: flex !important;
 
-        article {
+        /* article {
             max-width: 200px !important;
-        }
+        } */
+    }
+
+    .card-geo h3 {
+        max-width: max-content;
+    }
+
+    .intro-card-icon {
+        --size: 5.25rem;
+
+        position: absolute;
+        inset: -1rem -1rem auto auto;
+
+        border-radius: 50%;
+        width: var(--size);
+        height: var(--size);
+        border: 1px solid var(--colour-border-border-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: calc(var(--size) / -3.5) calc(var(--size) / -3.5) auto auto;
+        position: absolute;
+        background-color: var(--colour-surface-white);
     }
 }
 
