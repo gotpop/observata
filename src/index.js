@@ -10,6 +10,8 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardSwooshIconEdit from './card-swoosh-icon/edit';
 import CardSwooshIconSave from './card-swoosh-icon/save';
+import CardTechEdit from './card-tech/edit';
+import CardTechSave from './card-tech/save';
 import GridCardsEdit from './grid-cards/edit';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
@@ -42,6 +44,7 @@ import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
 import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardSwooshIconMetadata from '../blocks/cards/card-swoosh-icon/block.json';
+import cardTechMetadata from '../blocks/cards/card-tech/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import gridCardsGeoMetadata from '../blocks/repeatable/grid-cards-geo/block.json';
 import gridCardsGraphicMetadata from '../blocks/repeatable/grid-cards-graphic/block.json';
@@ -174,4 +177,9 @@ registerBlockType(gridCardsMicroMetadata.name, {
 registerBlockType(gridCardsGraphicMetadata.name, {
     edit: GridCardsGraphicEdit,
     save: GridCardsGraphicSave,
+});
+
+registerBlockType(cardTechMetadata.name, {
+    edit: CardTechEdit,
+    save: CardTechSave,
 });
