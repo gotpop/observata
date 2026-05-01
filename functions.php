@@ -90,6 +90,22 @@ function observata_setup()
 	add_theme_support('wp-block-styles');
 	add_theme_support('editor-styles');
 	add_editor_style('editor-style.css');
+	add_editor_style('client/css/global/fonts.css');
+	add_editor_style('client/css/global/variables.css');
+	add_editor_style('client/css/global/layout.css');
+
+	// Auto-discover all block CSS files and register as editor styles.
+	$blocks_dir = get_template_directory() . '/blocks';
+	$iterator = new RecursiveIteratorIterator(
+		new RecursiveDirectoryIterator($blocks_dir, RecursiveDirectoryIterator::SKIP_DOTS)
+	);
+	foreach ($iterator as $file) {
+		if ($file->isFile() && $file->getExtension() === 'css') {
+			$relative = str_replace(get_template_directory() . '/', '', $file->getPathname());
+			add_editor_style($relative);
+		}
+	}
+
 	add_theme_support('appearance-tools');
 	add_theme_support('woocommerce');
 	global $content_width;
