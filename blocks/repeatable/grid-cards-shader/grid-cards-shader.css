@@ -16,6 +16,12 @@
         gap: var(--spacing-spacing-50);
     }
 
+    .block-cards {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
     .intro-heading {
         font-size: 40px;
         font-family: var(--typography-family-gantari);
@@ -31,11 +37,5 @@
         font-weight: var(--fonts-weight-font-weight-regular);
         color: var(--fonts-colour-text-body);
         line-height: 24px;
-    }
-
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
-        gap: 40px;
     }
 }

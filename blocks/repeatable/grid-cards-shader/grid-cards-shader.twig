@@ -5,8 +5,8 @@
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
-		<div class="cards-container">
+		<block-cards class="block-cards" data-columns="2">
 			{{ content|raw }}
-		</div>
+		</block-cards>
 	</block-content>
 </section>
