@@ -8,7 +8,7 @@
 
 <section class="block-team-members">
 	<block-content class="block-content">
-		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
+		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<div class="team-members-grid">
 			{{ content|raw }}

@@ -71,9 +71,24 @@ require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/block-renderer.php';
 require get_template_directory() . '/inc/blocks.php';
 
-// Init Timber and point it to the views/ and blocks/ directories for Twig templates.
+// Init Timber with views/ directory only.
+// Block templates are loaded via Twig paths added in the timber/loader/loader filter.
 \Timber\Timber::init();
-\Timber\Timber::$dirname = ['views', 'blocks'];
+\Timber\Timber::$dirname = ['views'];
+
+// Add blocks/ directory and theme root to Twig's search paths.
+// This avoids Timber's LocationManager scanning blocks/ subdirectories,
+// while still allowing Timber::compile('blocks/...') to resolve correctly.
+add_filter('timber/loader/loader', function ($loader) {
+	$theme_root = get_template_directory();
+	// Add theme root so 'blocks/...' paths resolve
+	$loader->addPath($theme_root);
+	// Add blocks/ root so relative includes like 'section-intro/section-intro.twig' work
+	$loader->addPath($theme_root . '/blocks');
+	// Add views/ so existing view includes work from within block templates
+	$loader->addPath($theme_root . '/views');
+	return $loader;
+});
 
 // Theme setup: supports, menus, text domain.
 add_action('after_setup_theme', 'observata_setup');
@@ -123,10 +138,6 @@ function observata_enqueue()
 	$version = file_exists($style_path) ? md5_file($style_path) : null;
 	wp_enqueue_style('observata-style', get_stylesheet_uri(), [], $version);
 
-	$hero_style_path = get_template_directory() . '/blocks/hero/hero.css';
-	if (file_exists($hero_style_path)) {
-		wp_enqueue_style('observata-hero', get_template_directory_uri() . '/blocks/hero/hero.css', ['observata-style'], md5_file($hero_style_path));
-	}
 
 	$client_asset_path = get_template_directory() . '/build/client.asset.php';
 	if (file_exists($client_asset_path)) {
