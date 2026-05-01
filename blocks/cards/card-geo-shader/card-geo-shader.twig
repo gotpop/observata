@@ -1,11 +1,11 @@
 {% set card_title = attributes.cardTitle|default('') %}
 {% set card_text = attributes.cardText|default('') %}
-{% set icon_number = attributes.iconNumber|default('01') %}
+{% set icon_geo = attributes.iconGeo|default('01') %}
 
 <article class="wp-block-observata-card-geo-shader">
 	<div class="swoosh-background">
-		<div class="icon-circle">
-			<span class="icon-number">{{ icon_number|esc_html }}</span>
+		<div class="intro-card-icon icon-{{ icon_geo }}" aria-hidden="true">
+			{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 		</div>
 	</div>
 

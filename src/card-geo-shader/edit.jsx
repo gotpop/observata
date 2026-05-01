@@ -1,11 +1,16 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import { TextControl } from '@wordpress/components';
+import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
+const iconOptions = Array.from({ length: 30 }, (_, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return { label: num, value: num };
+});
+
 export default function CardGeoShaderEdit({ attributes, setAttributes }) {
-    const { cardTitle, cardText, iconNumber } = attributes;
+    const { cardTitle, cardText, iconGeo } = attributes;
     const blockProps = useBlockProps();
 
     return (
@@ -13,13 +18,8 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
             <BlockLabel name="Card Geo Shader" />
 
             <div className="swoosh-background">
-                <div className="icon-circle">
-                    <span className="icon-number">
-                        <TextControl
-                            value={iconNumber}
-                            onChange={(val) => setAttributes({ iconNumber: val })}
-                        />
-                    </span>
+                <div className="intro-card-icon is-placeholder">
+                    <span className="icon-geo">{iconGeo}</span>
                 </div>
             </div>
             <div className="card-body">
@@ -36,6 +36,12 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
                     value={cardText}
                     onChange={(val) => setAttributes({ cardText: val })}
                     placeholder={__('Card text…', 'observata')}
+                />
+                <SelectControl
+                    label={__('Icon', 'observata')}
+                    value={iconGeo}
+                    options={iconOptions}
+                    onChange={(val) => setAttributes({ iconGeo: val })}
                 />
             </div>
         </article>

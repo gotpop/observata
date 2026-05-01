@@ -4,9 +4,9 @@
     "name": "observata/card-geo-shader",
     "title": "Card with Geo Shader",
     "category": "theme",
-    "description": "A benefit card with swoosh gradient background and numbered icon.",
+    "description": "A benefit card with swoosh gradient background and geo icon.",
     "parent": [
-        "observata/grid-cards"
+        "observata/grid-cards-shader"
     ],
     "supports": {
         "html": false,
@@ -21,7 +21,7 @@
             "type": "string",
             "default": ""
         },
-        "iconNumber": {
+        "iconGeo": {
             "type": "string",
             "default": "01"
         }
