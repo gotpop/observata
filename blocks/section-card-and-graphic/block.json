@@ -1,8 +1,8 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/card-graphic",
-    "title": "Card with Graphic",
+    "name": "observata/section-card-and-graphic",
+    "title": "Section Card and Graphic",
     "category": "theme",
     "description": "A single-column section with an SVG graphic illustration and accompanying text content.",
     "supports": {
@@ -27,7 +27,7 @@
         }
     },
     "render": "file:render.php",
-    "editorScript": "file:../../../build/index.js",
-    "editorStyle": "file:../../../build/index.css",
-    "style": "file:card-graphic.css"
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css",
+    "style": "file:section-card-and-graphic.css"
 }

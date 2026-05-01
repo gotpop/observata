@@ -3,18 +3,18 @@
 {% set graphic = attributes.graphic|default('ribbon-star') %}
 {% set graphic_position = attributes.graphicPosition|default('left') %}
 
-<section class="block-card-graphic graphic-{{ graphic_position }}">
+<section class="block-section-card-and-graphic graphic-{{ graphic_position }}">
 	<block-content class="block-content">
-		<div class="card-graphic__inner">
-			<div class="card-graphic__visual">
+		<div class="section-card-and-graphic__inner">
+			<div class="section-card-and-graphic__visual">
 				<img src="{{ function('get_template_directory_uri') }}/assets/svg/graphics/{{ graphic }}-graphic.svg" alt="{{ graphic|replace({'-': ' '})|title }} graphic"/>
 			</div>
-			<div class="card-graphic__body">
+			<div class="section-card-and-graphic__body">
 				{% if heading %}
-					<h2 class="card-graphic__heading">{{ heading|wp_kses_post }}</h2>
+					<h2 class="section-card-and-graphic__heading">{{ heading|wp_kses_post }}</h2>
 				{% endif %}
 				{% if body_text %}
-					<p class="card-graphic__text">{{ body_text|wp_kses_post }}</p>
+					<p class="section-card-and-graphic__text">{{ body_text|wp_kses_post }}</p>
 				{% endif %}
 			</div>
 		</div>

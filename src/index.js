@@ -5,8 +5,6 @@ import CardGeoEdit from './card-geo/edit';
 import CardGeoListEdit from './card-geo-list/edit';
 import CardGeoListSave from './card-geo-list/save';
 import CardGeoSave from './card-geo/save';
-import CardGraphicEdit from './card-graphic/edit';
-import CardGraphicSave from './card-graphic/save';
 import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
 import CardSave from './card/save';
@@ -38,10 +36,11 @@ import ObservabilityEdit from './observability/edit';
 import ObservabilitySave from './observability/save';
 import PartnershipEdit from './partnership/edit';
 import PartnershipSave from './partnership/save';
+import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
+import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import calloutMetadata from '../blocks/callout/block.json';
 import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
-import cardGraphicMetadata from '../blocks/cards/card-graphic/block.json';
 import cardMetadata from '../blocks/cards/card/block.json';
 import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
@@ -61,6 +60,7 @@ import logoBarMetadata from '../blocks/logo-bar/block.json';
 import observabilityMetadata from '../blocks/observability/block.json';
 import partnershipMetadata from '../blocks/partnership/block.json';
 import { registerBlockType } from '@wordpress/blocks';
+import sectionCardAndGraphicMetadata from '../blocks/section-card-and-graphic/block.json';
 import { useBlockProps } from '@wordpress/block-editor';
 
 function createDynamicEdit(label) {
@@ -154,9 +154,9 @@ registerBlockType(logoBarMetadata.name, {
     save: LogoBarSave,
 });
 
-registerBlockType(cardGraphicMetadata.name, {
-    edit: CardGraphicEdit,
-    save: CardGraphicSave,
+registerBlockType(sectionCardAndGraphicMetadata.name, {
+    edit: SectionCardAndGraphicEdit,
+    save: SectionCardAndGraphicSave,
 });
 
 registerBlockType(heroPageMetadata.name, {

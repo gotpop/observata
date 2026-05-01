@@ -21,34 +21,34 @@ const GRAPHIC_OPTIONS = [
     { label: 'Waveform', value: 'waveform' },
 ];
 
-export default function CardGraphicEdit({ attributes, setAttributes }) {
+export default function SectionCardAndGraphicEdit({ attributes, setAttributes }) {
     const { heading, bodyText, graphic, graphicPosition } = attributes;
     const blockProps = useBlockProps({
-        className: `block-card-graphic graphic-${graphicPosition}`,
+        className: `block-section-card-and-graphic graphic-${graphicPosition}`,
     });
 
     return (
         <section {...blockProps}>
             <div className="block-content">
-                <div className="card-graphic__inner">
-                    <div className="card-graphic__visual">
+                <div className="section-card-and-graphic__inner">
+                    <div className="section-card-and-graphic__visual">
                         <img
                             src={`${window.observata?.templateUrl || ''}/assets/svg/graphics/${graphic}-graphic.svg`}
                             alt={`${graphic} graphic`}
                         />
                     </div>
-                    <div className="card-graphic__body">
+                    <div className="section-card-and-graphic__body">
                         <div className="observata-controls">
                             <RichText
                                 tagName="h2"
-                                className="card-graphic__heading"
+                                className="section-card-and-graphic__heading"
                                 value={heading}
                                 onChange={(val) => setAttributes({ heading: val })}
                                 placeholder={__('Heading…', 'observata')}
                             />
                             <RichText
                                 tagName="p"
-                                className="card-graphic__text"
+                                className="section-card-and-graphic__text"
                                 value={bodyText}
                                 onChange={(val) => setAttributes({ bodyText: val })}
                                 placeholder={__('Body text…', 'observata')}

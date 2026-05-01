@@ -1,4 +1,4 @@
-.block-card-graphic {
+.block-section-card-and-graphic {
     border-bottom: 1px solid var(--colour-border-border-gray);
     border-top: 1px solid var(--colour-border-border-gray);
     position: relative;
@@ -12,14 +12,14 @@
         grid-column: content;
     }
 
-    .card-graphic__inner {
+    .section-card-and-graphic__inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-spacing-50);
         align-items: center;
     }
 
-    &.graphic-right .card-graphic__inner {
+    &.graphic-right .section-card-and-graphic__inner {
         direction: rtl;
 
         >* {
@@ -27,7 +27,7 @@
         }
     }
 
-    .card-graphic__visual {
+    .section-card-and-graphic__visual {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -38,19 +38,19 @@
         }
     }
 
-    .card-graphic__body {
+    .section-card-and-graphic__body {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-spacing-24);
     }
 
-    .card-graphic__heading {
+    .section-card-and-graphic__heading {
         font-size: var(--font-size-h2);
         font-weight: 600;
         margin: 0;
     }
 
-    .card-graphic__text {
+    .section-card-and-graphic__text {
         font-size: var(--font-size-body);
         line-height: 1.6;
         margin: 0;

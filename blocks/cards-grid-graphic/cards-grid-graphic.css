@@ -38,7 +38,7 @@
         gap: 0;
     }
 
-    .cards-container>.block-card-graphic {
+    .cards-container>.block-section-card-and-graphic {
         border-bottom: 1px solid var(--colour-border-border-gray);
 
         &:last-child {
