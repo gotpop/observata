@@ -1,13 +1,11 @@
 import CalloutEdit from './callout/edit';
 import CalloutSave from './callout/save';
-import CardEdit from './card/edit';
 import CardGeoEdit from './card-geo/edit';
 import CardGeoListEdit from './card-geo-list/edit';
 import CardGeoListSave from './card-geo-list/save';
 import CardGeoSave from './card-geo/save';
 import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
-import CardSave from './card/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardSwooshIconEdit from './card-swoosh-icon/edit';
@@ -41,7 +39,6 @@ import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import calloutMetadata from '../blocks/callout/block.json';
 import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
-import cardMetadata from '../blocks/cards/card/block.json';
 import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardSwooshIconMetadata from '../blocks/cards/card-swoosh-icon/block.json';
@@ -77,11 +74,6 @@ function DynamicSave() {
 registerBlockType(heroMetadata.name, {
     edit: HeroEdit,
     save: HeroSave,
-});
-
-registerBlockType(cardMetadata.name, {
-    edit: CardEdit,
-    save: CardSave,
 });
 
 registerBlockType(calloutMetadata.name, {
