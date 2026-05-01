@@ -1,0 +1,53 @@
+{#
+  Card Team Member - displays a team member with photo, name, role, bio and social links.
+#}
+
+{% set member_name = attributes.name|default('') %}
+{% set member_role = attributes.role|default('') %}
+{% set member_bio = attributes.bio|default('') %}
+{% set image_url = attributes.imageUrl|default('') %}
+{% set image_alt = attributes.imageAlt|default(member_name) %}
+{% set linkedin_url = attributes.linkedinUrl|default('') %}
+{% set twitter_url = attributes.twitterUrl|default('') %}
+
+<div class="card-team-member">
+	<div class="card-team-member__photo-wrapper">
+		{% if image_url %}
+			<img class="card-team-member__photo" src="{{ image_url }}" alt="{{ image_alt }}"/>
+		{% else %}
+			<div class="card-team-member__photo card-team-member__photo--placeholder">
+				<svg width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="24" cy="18" r="10" stroke="currentColor" stroke-width="2"/>
+					<path d="M6 44c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+				</svg>
+			</div>
+		{% endif %}
+	</div>
+
+	<div class="card-team-member__info">
+		<h3 class="card-team-member__name">{{ member_name|wp_kses_post }}</h3>
+		<span class="card-team-member__role">{{ member_role|wp_kses_post }}</span>
+		{% if member_bio %}
+			<p class="card-team-member__bio">{{ member_bio|wp_kses_post }}</p>
+		{% endif %}
+	</div>
+
+	{% if linkedin_url or twitter_url %}
+		<div class="card-team-member__social">
+			{% if linkedin_url %}
+				<a href="{{ linkedin_url }}" class="card-team-member__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+					<svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
+			{% endif %}
+			{% if twitter_url %}
+				<a href="{{ twitter_url }}" class="card-team-member__social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+					<svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>

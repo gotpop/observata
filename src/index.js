@@ -12,6 +12,8 @@ import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
+import CardTeamMemberEdit from './card-team-member/edit';
+import CardTeamMemberSave from './card-team-member/save';
 import GridCardsEdit from './grid-cards/edit';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
@@ -48,6 +50,8 @@ import PlansEdit from './pricing-plans/edit';
 import PlansSave from './pricing-plans/save';
 import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
+import TeamMembersEdit from './team-members/edit';
+import TeamMembersSave from './team-members/save';
 import calloutMetadata from '../blocks/repeatable/callout/block.json';
 import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
@@ -55,6 +59,7 @@ import cardGeoShaderMetadata from '../blocks/cards/card-geo-shader/block.json';
 import cardGeoTechMetadata from '../blocks/cards/card-geo-tech/block.json';
 import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
+import cardTeamMemberMetadata from '../blocks/cards/card-team-member/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import gridCardsGeoMetadata from '../blocks/repeatable/grid-cards-geo/block.json';
 import gridCardsGeoTechMetadata from '../blocks/repeatable/grid-cards-geo-tech/block.json';
@@ -76,6 +81,7 @@ import planMetadata from '../blocks/cards/card-pricing-plan/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import { registerBlockType } from '@wordpress/blocks';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
+import teamMembersMetadata from '../blocks/repeatable/team-members/block.json';
 import { useBlockProps } from '@wordpress/block-editor';
 
 function createDynamicEdit(label) {
@@ -222,4 +228,14 @@ registerBlockType(planFeaturesTableMetadata.name, {
 registerBlockType(planFeaturesRowMetadata.name, {
     edit: PlanFeaturesRowEdit,
     save: PlanFeaturesRowSave,
+});
+
+registerBlockType(teamMembersMetadata.name, {
+    edit: TeamMembersEdit,
+    save: TeamMembersSave,
+});
+
+registerBlockType(cardTeamMemberMetadata.name, {
+    edit: CardTeamMemberEdit,
+    save: CardTeamMemberSave,
 });

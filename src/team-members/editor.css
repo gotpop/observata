@@ -1,0 +1,53 @@
+/* Team Members - Editor styles */
+.team-members-editor__grid {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+/* Card team member editor */
+.card-team-member-editor {
+    border: 1px solid #333;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.card-team-member-editor__photo {
+    margin-bottom: 0.75rem;
+}
+
+.card-team-member-editor__upload-btn {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #555;
+    border-radius: 0.375rem;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.8rem;
+    transition: border-color 0.2s;
+}
+
+.card-team-member-editor__upload-btn:hover {
+    border-color: #6c5ce7;
+}
+
+.card-team-member-editor__upload-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-team-member-editor__social {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-team-member-editor__social .components-base-control {
+    flex: 1;
+}

@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card-team-member",
+    "title": "Card Team Member",
+    "category": "theme",
+    "description": "A team member card with photo, name, role, bio and social links.",
+    "parent": [
+        "observata/team-members"
+    ],
+    "supports": {
+        "html": false,
+        "reusable": false
+    },
+    "attributes": {
+        "name": {
+            "type": "string",
+            "default": "Team Member"
+        },
+        "role": {
+            "type": "string",
+            "default": "Role"
+        },
+        "bio": {
+            "type": "string",
+            "default": ""
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "linkedinUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "twitterUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../../build/index.js",
+    "style": "file:card-team-member.css"
+}

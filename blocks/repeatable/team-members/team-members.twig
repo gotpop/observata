@@ -1,0 +1,17 @@
+{#
+  Team Members - grid section with section intro and team member cards.
+  Inner blocks (observata/card-team-member) render as cards.
+#}
+
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+
+<section class="block-team-members">
+	<block-content class="block-content">
+		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
+
+		<div class="team-members-grid">
+			{{ content|raw }}
+		</div>
+	</block-content>
+</section>

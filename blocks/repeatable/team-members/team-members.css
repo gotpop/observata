@@ -1,0 +1,42 @@
+/* Team Members Section */
+.block-team-members {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--colour-surface-white);
+    border-bottom: 1px solid var(--colour-border-border-gray);
+    grid-column: full;
+    grid-template-columns: subgrid;
+    display: grid;
+    padding-block: 5rem;
+}
+
+.block-team-members .block-content {
+    display: grid;
+    grid-column: content;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-spacing-50, 2rem);
+}
+
+.block-team-members .intro-heading {
+    font-size: 40px;
+    font-family: var(--typography-family-gantari);
+    font-weight: var(--typography-weight-bold);
+    color: var(--fonts-colour-text-heading);
+    line-height: var(--line-height-heading-h2);
+    letter-spacing: -0.8px;
+}
+
+.block-team-members .text-wide {
+    font-size: 16px;
+    font-family: var(--fonts-family-font-inter);
+    font-weight: var(--fonts-weight-font-weight-regular);
+    color: var(--fonts-colour-text-body);
+    line-height: 24px;
+}
+
+/* Grid layout */
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-spacing-50, 2rem);
+}
