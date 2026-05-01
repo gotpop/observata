@@ -1,0 +1,35 @@
+/* Plan Features Row - table row styling */
+.plan-features-row {
+    display: table-row;
+    border-bottom: 1px solid var(--color-border, #2a2a3a);
+}
+
+.plan-features-row:last-child {
+    border-bottom: none;
+}
+
+.plan-features-row__name {
+    padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text, #e0e0e0);
+    font-weight: 400;
+}
+
+.plan-features-row__value {
+    padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.plan-features-row__value--check {
+    color: var(--color-accent, #6c5ce7);
+}
+
+.plan-features-row__value--dash {
+    color: var(--color-text-muted, #666);
+}
+
+.plan-features-row__dash {
+    font-size: var(--font-size-lg, 1.25rem);
+    color: var(--color-text-muted, #666);
+}

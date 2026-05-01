@@ -1,0 +1,97 @@
+/* Plan Features Table */
+.plan-features-table {
+    --pft-gap: var(--space-lg, 1.5rem);
+    width: 100%;
+}
+
+.plan-features-table__header {
+    text-align: center;
+    margin-bottom: var(--pft-gap);
+}
+
+.plan-features-table__title {
+    font-size: var(--font-size-2xl, 2rem);
+    font-weight: 700;
+    color: var(--color-heading, #fff);
+    margin-bottom: var(--space-xs, 0.5rem);
+}
+
+.plan-features-table__subtitle {
+    font-size: var(--font-size-base, 1rem);
+    color: var(--color-text-muted, #999);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Inline plan cards */
+.plan-features-table__cards {
+    display: flex;
+    gap: var(--space-md, 1rem);
+    justify-content: center;
+    margin-bottom: var(--pft-gap);
+}
+
+.plan-features-table__card {
+    background: var(--color-surface, #1a1a2e);
+    border: 1px solid var(--color-border, #2a2a3a);
+    border-radius: var(--radius-md, 0.5rem);
+    padding: var(--space-md, 1rem) var(--space-lg, 1.5rem);
+    text-align: center;
+    min-width: 180px;
+    flex: 1;
+    max-width: 240px;
+}
+
+.plan-features-table__card--highlighted {
+    border-color: var(--color-accent, #6c5ce7);
+    background: var(--color-surface-alt, #22223a);
+    transform: scale(1.05);
+}
+
+.plan-features-table__card-name {
+    font-size: var(--font-size-base, 1rem);
+    font-weight: 600;
+    color: var(--color-heading, #fff);
+    margin-bottom: var(--space-xs, 0.25rem);
+}
+
+.plan-features-table__card-price {
+    display: block;
+    font-size: var(--font-size-2xl, 2rem);
+    font-weight: 700;
+    color: var(--color-accent, #6c5ce7);
+    margin-bottom: var(--space-xs, 0.5rem);
+}
+
+.plan-features-table__card-desc {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text-muted, #999);
+    margin: 0;
+}
+
+/* Table */
+.plan-features-table__table-wrapper {
+    overflow-x: auto;
+}
+
+.plan-features-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.plan-features-table__head-row {
+    border-bottom: 2px solid var(--color-border, #2a2a3a);
+}
+
+.plan-features-table__head-cell {
+    padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--color-text-muted, #999);
+    text-align: center;
+}
+
+.plan-features-table__head-cell:first-child {
+    text-align: left;
+}

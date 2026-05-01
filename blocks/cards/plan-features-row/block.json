@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/plan-features-row",
+    "title": "Plan Feature Row",
+    "category": "theme",
+    "description": "A table row with a feature name and check/dash values for each plan.",
+    "parent": [
+        "observata/plan-features-table"
+    ],
+    "supports": {
+        "html": false,
+        "reusable": false
+    },
+    "attributes": {
+        "featureName": {
+            "type": "string",
+            "default": "Feature"
+        },
+        "plan1Value": {
+            "type": "string",
+            "default": "check"
+        },
+        "plan2Value": {
+            "type": "string",
+            "default": "check"
+        },
+        "plan3Value": {
+            "type": "string",
+            "default": "dash"
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../../build/index.js",
+    "style": "file:plan-features-row.css"
+}

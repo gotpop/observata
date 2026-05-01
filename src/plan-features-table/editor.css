@@ -1,0 +1,51 @@
+/* Plan Features Table - Editor styles */
+.plan-features-table-editor__cards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.plan-features-table-editor__card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.plan-features-table-editor__card--highlighted {
+    border-color: #6c5ce7;
+    background: rgba(108, 92, 231, 0.05);
+}
+
+.plan-features-table-editor__rows {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+.plan-features-table-editor__rows strong {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Feature row editor */
+.plan-features-row-editor {
+    border: 1px solid #333;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.plan-features-row-editor__selects {
+    display: flex;
+    gap: 1rem;
+}
+
+.plan-features-row-editor__selects .components-base-control {
+    flex: 1;
+}

@@ -39,6 +39,10 @@ import ObservabilitySave from './observability/save';
 import PartnershipEdit from './partnership/edit';
 import PartnershipSave from './partnership/save';
 import PlanEdit from './card-pricing-plan/edit';
+import PlanFeaturesRowEdit from './plan-features-row/edit';
+import PlanFeaturesRowSave from './plan-features-row/save';
+import PlanFeaturesTableEdit from './plan-features-table/edit';
+import PlanFeaturesTableSave from './plan-features-table/save';
 import PlanSave from './card-pricing-plan/save';
 import PlansEdit from './pricing-plans/edit';
 import PlansSave from './pricing-plans/save';
@@ -66,6 +70,8 @@ import introPageMetadata from '../blocks/intro-page/block.json';
 import logoBarMetadata from '../blocks/logo-bar/block.json';
 import observabilityMetadata from '../blocks/observability/block.json';
 import partnershipMetadata from '../blocks/partnership/block.json';
+import planFeaturesRowMetadata from '../blocks/cards/plan-features-row/block.json';
+import planFeaturesTableMetadata from '../blocks/repeatable/plan-features-table/block.json';
 import planMetadata from '../blocks/cards/card-pricing-plan/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import { registerBlockType } from '@wordpress/blocks';
@@ -206,4 +212,14 @@ registerBlockType(planMetadata.name, {
 registerBlockType(plansMetadata.name, {
     edit: PlansEdit,
     save: PlansSave,
+});
+
+registerBlockType(planFeaturesTableMetadata.name, {
+    edit: PlanFeaturesTableEdit,
+    save: PlanFeaturesTableSave,
+});
+
+registerBlockType(planFeaturesRowMetadata.name, {
+    edit: PlanFeaturesRowEdit,
+    save: PlanFeaturesRowSave,
 });
