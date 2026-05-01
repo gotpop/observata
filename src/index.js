@@ -15,6 +15,8 @@ import CardSimpleSave from './card-simple/save';
 import GridCardsEdit from './grid-cards/edit';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
+import GridCardsGeoTechEdit from './grid-cards-geo-tech/edit';
+import GridCardsGeoTechSave from './grid-cards-geo-tech/save';
 import GridCardsGraphicEdit from './grid-cards-graphic/edit';
 import GridCardsGraphicSave from './grid-cards-graphic/save';
 import GridCardsMicroEdit from './grid-cards-micro/edit';
@@ -47,6 +49,7 @@ import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import gridCardsGeoMetadata from '../blocks/repeatable/grid-cards-geo/block.json';
+import gridCardsGeoTechMetadata from '../blocks/repeatable/grid-cards-geo-tech/block.json';
 import gridCardsGraphicMetadata from '../blocks/repeatable/grid-cards-graphic/block.json';
 import gridCardsMetadata from '../blocks/repeatable/grid-cards/block.json';
 import gridCardsMicroMetadata from '../blocks/repeatable/grid-cards-micro/block.json';
@@ -182,4 +185,9 @@ registerBlockType(gridCardsGraphicMetadata.name, {
 registerBlockType(cardGeoTechMetadata.name, {
     edit: CardGeoTechEdit,
     save: CardGeoTechSave,
+});
+
+registerBlockType(gridCardsGeoTechMetadata.name, {
+    edit: GridCardsGeoTechEdit,
+    save: GridCardsGeoTechSave,
 });

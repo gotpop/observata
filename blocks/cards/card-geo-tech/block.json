@@ -6,7 +6,8 @@
     "category": "theme",
     "description": "A feature card with a geo icon and a selectable tech graphic background.",
     "parent": [
-        "observata/grid-cards-graphic"
+        "observata/grid-cards-graphic",
+        "observata/grid-cards-geo-tech"
     ],
     "supports": {
         "html": false,
