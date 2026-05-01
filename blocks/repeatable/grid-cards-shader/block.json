@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/grid-cards",
-    "title": "Grid Cards",
+    "name": "observata/grid-cards-shader",
+    "title": "Grid Cards Shader",
     "category": "theme",
-    "description": "Six-card grid section.",
+    "description": "Six-card shader grid section.",
     "supports": {
         "html": false,
         "multiple": false
@@ -19,14 +19,13 @@
             "default": ""
         }
     },
-    "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "style": [
-        "file:grid-cards.css",
+        "file:grid-cards-shader.css",
         "file:../cards/card-geo-shader/card-geo-shader.css"
     ],
     "editorStyle": [
-        "file:grid-cards.css",
+        "file:grid-cards-shader.css",
         "file:../cards/card-geo-shader/card-geo-shader.css",
         "file:../../build/index.css"
     ]

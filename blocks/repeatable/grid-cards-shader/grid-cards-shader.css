@@ -1,4 +1,4 @@
-.block-grid-cards {
+.block-grid-cards-shader {
     position: relative;
     overflow: hidden;
     background-color: var(--colour-surface-white);
@@ -18,7 +18,7 @@
 }
 
 
-.block-grid-cards .intro-heading {
+.block-grid-cards-shader .intro-heading {
     font-size: 40px;
     font-family: var(--typography-family-gantari);
     font-weight: var(--typography-weight-bold);
@@ -27,7 +27,7 @@
     letter-spacing: -0.8px;
 }
 
-.block-grid-cards .text-wide {
+.block-grid-cards-shader .text-wide {
     font-size: 16px;
     font-family: var(--fonts-family-font-inter);
     font-weight: var(--fonts-weight-font-weight-regular);
@@ -35,7 +35,7 @@
     line-height: 24px;
 }
 
-.block-grid-cards .cards-container {
+.block-grid-cards-shader .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
     gap: 40px;

@@ -17,7 +17,6 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTeamMemberEdit from './card-team-member/edit';
 import CardTeamMemberSave from './card-team-member/save';
-import GridCardsEdit from './grid-cards/edit';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
 import GridCardsGeoTechEdit from './grid-cards-geo-tech/edit';
@@ -28,7 +27,8 @@ import GridCardsMicroEdit from './grid-cards-micro/edit';
 import GridCardsMicroSave from './grid-cards-micro/save';
 import GridCardsRichTextEdit from './grid-cards-rich-text/edit';
 import GridCardsRichTextSave from './grid-cards-rich-text/save';
-import GridCardsSave from './grid-cards/save';
+import GridCardsShaderEdit from './grid-cards-shader/edit';
+import GridCardsShaderSave from './grid-cards-shader/save';
 import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
 import HeroEdit from './hero/edit';
@@ -69,9 +69,9 @@ import footerMetadata from '../blocks/template/footer/block.json';
 import gridCardsGeoMetadata from '../blocks/repeatable/grid-cards-geo/block.json';
 import gridCardsGeoTechMetadata from '../blocks/repeatable/grid-cards-geo-tech/block.json';
 import gridCardsGraphicMetadata from '../blocks/repeatable/grid-cards-graphic/block.json';
-import gridCardsMetadata from '../blocks/repeatable/grid-cards/block.json';
 import gridCardsMicroMetadata from '../blocks/repeatable/grid-cards-micro/block.json';
 import gridCardsRichTextMetadata from '../blocks/repeatable/grid-cards-rich-text/block.json';
+import gridCardsShaderMetadata from '../blocks/repeatable/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/repeatable/grid-cards-simple/block.json';
 import headerMetadata from '../blocks/template/header/block.json';
 import heroMetadata from '../blocks/hero-home/block.json';
@@ -141,9 +141,9 @@ registerBlockType(footerMetadata.name, {
     save: DynamicSave,
 });
 
-registerBlockType(gridCardsMetadata.name, {
-    edit: GridCardsEdit,
-    save: GridCardsSave,
+registerBlockType(gridCardsShaderMetadata.name, {
+    edit: GridCardsShaderEdit,
+    save: GridCardsShaderSave,
 });
 
 registerBlockType(gridCardsSimpleMetadata.name, {

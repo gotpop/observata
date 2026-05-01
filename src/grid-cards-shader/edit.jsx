@@ -15,11 +15,11 @@ const CARD_TEMPLATE = [
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-    const blockProps = useBlockProps({ className: 'observata-grid-cards-editor' });
+    const blockProps = useBlockProps({ className: 'observata-grid-cards-shader-editor' });
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards">
+            <BlockLabel name="Grid Cards Shader">
                 <TextControl
                     label="Section Title"
                     value={attributes.sectionTitle}
