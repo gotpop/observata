@@ -1,5 +1,3 @@
-{% set heading = attributes.heading|default('') %}
-{% set body_text = attributes.bodyText|default('') %}
 {% set graphic = attributes.graphic|default('ribbon-star') %}
 {% set graphic_position = attributes.graphicPosition|default('left') %}
 
@@ -10,12 +8,7 @@
 				<img src="{{ function('get_template_directory_uri') }}/assets/svg/graphics/{{ graphic }}-graphic.svg" alt="{{ graphic|replace({'-': ' '})|title }} graphic"/>
 			</div>
 			<div class="section-card-and-graphic__body">
-				{% if heading %}
-					<h2 class="section-card-and-graphic__heading">{{ heading|wp_kses_post }}</h2>
-				{% endif %}
-				{% if body_text %}
-					<p class="section-card-and-graphic__text">{{ body_text|wp_kses_post }}</p>
-				{% endif %}
+				{{ content|raw }}
 			</div>
 		</div>
 	</block-content>

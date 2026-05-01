@@ -9,7 +9,8 @@
         "observata/intro",
         "observata/intro-page",
         "observata/grid-cards-geo",
-        "observata/grid-cards-graphic"
+        "observata/grid-cards-graphic",
+        "observata/section-card-and-graphic"
     ],
     "supports": {
         "html": false,

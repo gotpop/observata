@@ -4,19 +4,11 @@
     "name": "observata/section-card-and-graphic",
     "title": "Section Card and Graphic",
     "category": "theme",
-    "description": "A single-column section with an SVG graphic illustration and accompanying text content.",
+    "description": "A single-column section with an SVG graphic illustration and an editable card-geo-list.",
     "supports": {
         "html": false
     },
     "attributes": {
-        "heading": {
-            "type": "string",
-            "default": ""
-        },
-        "bodyText": {
-            "type": "string",
-            "default": ""
-        },
         "graphic": {
             "type": "string",
             "default": "ribbon-star"

@@ -1,4 +1,4 @@
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
@@ -22,8 +22,12 @@ const GRAPHIC_OPTIONS = [
     { label: 'Waveform', value: 'waveform' },
 ];
 
+const CARD_TEMPLATE = [
+    ['observata/card-geo-list', { cardTitle: 'Unified Data Ingestion', listItem1: 'Centralise all your observability data into one platform', listItem2: 'Unify logs, metrics, and traces across your entire stack', iconGeo: '01' }],
+];
+
 export default function SectionCardAndGraphicEdit({ attributes, setAttributes }) {
-    const { heading, bodyText, graphic, graphicPosition } = attributes;
+    const { graphic, graphicPosition } = attributes;
     const blockProps = useBlockProps({
         className: `block-section-card-and-graphic graphic-${graphicPosition}`,
     });
@@ -31,6 +35,24 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
     return (
         <section {...blockProps}>
             <BlockLabel name="Section Card & Graphic" />
+
+            <div className="observata-controls">
+                <SelectControl
+                    label={__('Graphic', 'observata')}
+                    value={graphic}
+                    options={GRAPHIC_OPTIONS}
+                    onChange={(val) => setAttributes({ graphic: val })}
+                />
+                <SelectControl
+                    label={__('Graphic Position', 'observata')}
+                    value={graphicPosition}
+                    options={[
+                        { label: 'Left', value: 'left' },
+                        { label: 'Right', value: 'right' },
+                    ]}
+                    onChange={(val) => setAttributes({ graphicPosition: val })}
+                />
+            </div>
 
             <div className="block-content">
                 <div className="section-card-and-graphic__inner">
@@ -41,37 +63,11 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
                         />
                     </div>
                     <div className="section-card-and-graphic__body">
-                        <div className="observata-controls">
-                            <RichText
-                                tagName="h2"
-                                className="section-card-and-graphic__heading"
-                                value={heading}
-                                onChange={(val) => setAttributes({ heading: val })}
-                                placeholder={__('Heading…', 'observata')}
-                            />
-                            <RichText
-                                tagName="p"
-                                className="section-card-and-graphic__text"
-                                value={bodyText}
-                                onChange={(val) => setAttributes({ bodyText: val })}
-                                placeholder={__('Body text…', 'observata')}
-                            />
-                            <SelectControl
-                                label={__('Graphic', 'observata')}
-                                value={graphic}
-                                options={GRAPHIC_OPTIONS}
-                                onChange={(val) => setAttributes({ graphic: val })}
-                            />
-                            <SelectControl
-                                label={__('Graphic Position', 'observata')}
-                                value={graphicPosition}
-                                options={[
-                                    { label: 'Left', value: 'left' },
-                                    { label: 'Right', value: 'right' },
-                                ]}
-                                onChange={(val) => setAttributes({ graphicPosition: val })}
-                            />
-                        </div>
+                        <InnerBlocks
+                            template={CARD_TEMPLATE}
+                            templateLock={false}
+                            allowedBlocks={['observata/card-geo-list']}
+                        />
                     </div>
                 </div>
             </div>
