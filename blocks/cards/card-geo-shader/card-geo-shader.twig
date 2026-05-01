@@ -2,19 +2,17 @@
 {% set card_text = attributes.cardText|default('') %}
 {% set icon_geo = attributes.iconGeo|default('01') %}
 
-<article class="wp-block-observata-card-geo-shader">
-	<div class="swoosh-background">
-		<div class="intro-card-icon icon-{{ icon_geo }}" aria-hidden="true">
-			{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-		</div>
+<article class="card-geo-shader">
+	<div class="icon icon-{{ icon_geo }}" aria-hidden="true">
+		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	</div>
 
-	<div class="card-body">
+	<div class="body">
 		{% if card_title %}
-			<h3 class="card-title">{{ card_title|wp_kses_post }}</h3>
+			<h3 class="title">{{ card_title|wp_kses_post }}</h3>
 		{% endif %}
 		{% if card_text %}
-			<p class="card-text">{{ card_text|wp_kses_post }}</p>
+			<p class="text">{{ card_text|wp_kses_post }}</p>
 		{% endif %}
 	</div>
 </article>

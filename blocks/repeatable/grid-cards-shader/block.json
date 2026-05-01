@@ -4,7 +4,7 @@
     "name": "observata/grid-cards-shader",
     "title": "Grid Cards Shader",
     "category": "theme",
-    "description": "Six-card shader grid section.",
+    "description": "Multi-card shader grid section.",
     "supports": {
         "html": false,
         "multiple": false

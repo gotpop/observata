@@ -15,28 +15,27 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-spacing-50);
     }
-}
 
+    .intro-heading {
+        font-size: 40px;
+        font-family: var(--typography-family-gantari);
+        font-weight: var(--typography-weight-bold);
+        color: var(--fonts-colour-text-heading);
+        line-height: var(--line-height-heading-h2);
+        letter-spacing: -0.8px;
+    }
 
-.block-grid-cards-shader .intro-heading {
-    font-size: 40px;
-    font-family: var(--typography-family-gantari);
-    font-weight: var(--typography-weight-bold);
-    color: var(--fonts-colour-text-heading);
-    line-height: var(--line-height-heading-h2);
-    letter-spacing: -0.8px;
-}
+    .text-wide {
+        font-size: 16px;
+        font-family: var(--fonts-family-font-inter);
+        font-weight: var(--fonts-weight-font-weight-regular);
+        color: var(--fonts-colour-text-body);
+        line-height: 24px;
+    }
 
-.block-grid-cards-shader .text-wide {
-    font-size: 16px;
-    font-family: var(--fonts-family-font-inter);
-    font-weight: var(--fonts-weight-font-weight-regular);
-    color: var(--fonts-colour-text-body);
-    line-height: 24px;
-}
-
-.block-grid-cards-shader .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
-    gap: 40px;
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+        gap: 40px;
+    }
 }

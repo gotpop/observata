@@ -1,62 +1,40 @@
-.wp-block-observata-card-geo-shader {
-    position: relative;
-    overflow: hidden;
-}
-
-.wp-block-observata-card-geo-shader .swoosh-background {
-    position: absolute;
-    inset: 0;
+.card-geo-shader {
+    padding: var(--spacing-spacing-40);
+    border: 1px solid var(--colour-border-border-gray);
     border-radius: var(--radius-radius-card);
-    aspect-ratio: 1440/445;
-}
+    position: relative;
 
-.wp-block-observata-card-geo-shader .intro-card-icon {
-    position: absolute;
-    top: 32px;
-    left: 32px;
-    background: var(--colour-secondary-500);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .icon {
+        --size: 5.25rem;
 
-.wp-block-observata-card-geo-shader .intro-card-icon svg {
-    width: 34px;
-    height: 34px;
-}
+        border-radius: 50%;
+        width: var(--size);
+        height: var(--size);
+        border: 1px solid var(--colour-border-border-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: calc(var(--size) / -3.5) calc(var(--size) / -3.5) auto auto;
+        position: absolute;
+        background-color: var(--colour-surface-white);
 
-.wp-block-observata-card-geo-shader .intro-card-icon.is-placeholder {
-    background: var(--colour-secondary-500);
-}
+        svg {
+            width: 34px;
+            height: 34px;
+        }
+    }
 
-.wp-block-observata-card-geo-shader .intro-card-icon .icon-geo {
-    font-family: var(--typography-family-gantari);
-    font-size: 20px;
-    font-weight: var(--typography-weight-bold);
-    color: #fff;
-}
+    h3 {
+        margin-bottom: var(--spacing-spacing-32);
+        text-box: trim-both cap alphabetic;
+        max-width: 12ch;
+        text-wrap: balance;
+    }
 
-.wp-block-observata-card-geo-shader .card-body {
-    padding: 32px;
-    padding-left: 80px;
-    padding-top: 100px;
-}
-
-.wp-block-observata-card-geo-shader .card-title {
-    font-family: var(--typography-family-gantari);
-    font-size: 20px;
-    font-weight: var(--typography-weight-bold);
-    color: var(--fonts-colour-text-heading);
-    line-height: 1.2;
-}
-
-.wp-block-observata-card-geo-shader .card-text {
-    font-family: var(--fonts-family-font-inter);
-    font-size: 16px;
-    font-weight: var(--fonts-weight-font-weight-regular);
-    color: var(--fonts-colour-text-body);
-    line-height: 1.45;
+    p {
+        text-box: trim-both cap alphabetic;
+        color: var(--colour-text-body-default);
+        font-size: var(--typography-size-16);
+        line-height: 1.5;
+    }
 }

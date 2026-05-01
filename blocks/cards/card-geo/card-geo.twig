@@ -6,8 +6,8 @@
 	<div class="intro-card-icon" aria-hidden="true">
 		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	</div>
-	<div class="intro-card-body">
-		<h3 class="intro-card-title">{{ card_title|esc_html }}</h3>
-		<p class="intro-card-text">{{ card_text|wp_kses_post }}</p>
+	<div class="body">
+		<h3 class="title">{{ card_title|esc_html }}</h3>
+		<p class="text">{{ card_text|wp_kses_post }}</p>
 	</div>
 </article>
