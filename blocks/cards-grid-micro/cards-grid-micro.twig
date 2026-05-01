@@ -1,12 +1,18 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
+{% set cards = attributes.cards|default([]) %}
 
 <section class="block-cards-grid-micro">
 	<block-content class="block-content">
 		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<div class="cards-container">
-			{{ content|raw }}
+			{% for card in cards %}
+				<article class="card-micro">
+					<h3 class="card-micro-heading">{{ card.cardTitle|default('')|esc_html }}</h3>
+					<p class="card-micro-body">{{ card.cardDescription|default('')|wp_kses_post }}</p>
+				</article>
+			{% endfor %}
 		</div>
 	</block-content>
 </section>

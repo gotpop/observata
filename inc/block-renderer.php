@@ -26,6 +26,7 @@ function observata_render_block_twig($attributes, $content, $block)
     }
 
     if (!$template_path) {
+        error_log("[observata] No twig template found for: {$template_name}");
         return '';
     }
 
@@ -36,6 +37,7 @@ function observata_render_block_twig($attributes, $content, $block)
     try {
         return \Timber\Timber::compile($twig_relative, $context);
     } catch (\Exception $e) {
+        error_log("[observata] Twig error for {$template_name}: " . $e->getMessage());
         return '';
     }
 }

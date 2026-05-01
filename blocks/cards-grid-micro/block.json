@@ -4,7 +4,7 @@
     "name": "observata/cards-grid-micro",
     "title": "Cards Grid Micro",
     "category": "theme",
-    "description": "Grid section with micro card blocks. Add Card Micro blocks inside.",
+    "description": "Grid section with micro cards. Card data is stored as block attributes and rendered dynamically.",
     "supports": {
         "html": false,
         "multiple": true
@@ -17,6 +17,35 @@
         "introText": {
             "type": "string",
             "default": ""
+        },
+        "cards": {
+            "type": "array",
+            "default": [
+                {
+                    "cardTitle": "Log analytics",
+                    "cardDescription": "Real-time log ingestion, parsing, and correlation across your entire infrastructure."
+                },
+                {
+                    "cardTitle": "Infrastructure monitoring",
+                    "cardDescription": "Track host, container, and orchestration metrics with intelligent alerting and dashboards."
+                },
+                {
+                    "cardTitle": "APM & tracing",
+                    "cardDescription": "Distributed tracing and application performance monitoring with OpenTelemetry native support."
+                },
+                {
+                    "cardTitle": "Security analytics",
+                    "cardDescription": "Detect threats and anomalies with SIEM-powered security analytics and automated response."
+                },
+                {
+                    "cardTitle": "Cloud cost optimisation",
+                    "cardDescription": "Identify waste and right-size resources across your cloud deployments with actionable recommendations."
+                },
+                {
+                    "cardTitle": "Custom integrations",
+                    "cardDescription": "Connect any data source with our flexible API and extensive library of pre-built connectors."
+                }
+            ]
         }
     },
     "render": "file:render.php",
