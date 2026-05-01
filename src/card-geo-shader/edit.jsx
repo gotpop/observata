@@ -4,13 +4,13 @@ import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-export default function CardSwooshIconEdit({ attributes, setAttributes }) {
+export default function CardGeoShaderEdit({ attributes, setAttributes }) {
     const { cardTitle, cardText, iconNumber } = attributes;
     const blockProps = useBlockProps();
 
     return (
         <article {...blockProps}>
-            <BlockLabel name="Card Swoosh Icon" />
+            <BlockLabel name="Card Geo Shader" />
 
             <div className="swoosh-background">
                 <div className="icon-circle">

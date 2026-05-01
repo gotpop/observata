@@ -1,17 +1,17 @@
-.wp-block-observata-card-swoosh-icon {
+.wp-block-observata-card-geo-shader {
     position: relative;
     overflow: hidden;
 }
 
-.wp-block-observata-card-swoosh-icon .swoosh-background {
+.wp-block-observata-card-geo-shader .swoosh-background {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #14,52,103 0%, #27,80,134 0.85%, #40,108,165 0.545%, #94,145,187 0.39%, #128,114,162 0.635%, #147,182,210 0.39%, #239,174,220 0.08%, #255,255,255 1%);
+    /* background: linear-gradient(135deg, #14, 52, 103 0%, #27, 80, 134 0.85%, #40, 108, 165 0.545%, #94, 145, 187 0.39%, #128, 114, 162 0.635%, #147, 182, 210 0.39%, #239, 174, 220 0.08%, #255, 255, 255 1%); */
     border-radius: var(--radius-radius-card);
     aspect-ratio: 1440/445;
 }
 
-.wp-block-observata-card-swoosh-icon .icon-circle {
+.wp-block-observata-card-geo-shader .icon-circle {
     position: absolute;
     background: var(--colour-secondary-500);
     border-radius: 50%;
@@ -22,19 +22,19 @@
     justify-content: center;
 }
 
-.wp-block-observata-card-swoosh-icon .icon-number {
+.wp-block-observata-card-geo-shader .icon-number {
     font-family: var(--typography-family-gantari);
     font-size: 32px;
     font-weight: var(--typography-weight-bold);
     color: #fff;
 }
 
-.wp-block-observata-card-swoosh-icon .card-body {
+.wp-block-observata-card-geo-shader .card-body {
     padding: 32px;
     padding-left: 80px;
 }
 
-.wp-block-observata-card-swoosh-icon .card-title {
+.wp-block-observata-card-geo-shader .card-title {
     font-family: var(--typography-family-gantari);
     font-size: 20px;
     font-weight: var(--typography-weight-bold);
@@ -42,7 +42,7 @@
     line-height: 1.2;
 }
 
-.wp-block-observata-card-swoosh-icon .card-text {
+.wp-block-observata-card-geo-shader .card-text {
     font-family: var(--fonts-family-font-inter);
     font-size: 16px;
     font-weight: var(--fonts-weight-font-weight-regular);

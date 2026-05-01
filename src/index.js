@@ -4,14 +4,14 @@ import CardGeoEdit from './card-geo/edit';
 import CardGeoListEdit from './card-geo-list/edit';
 import CardGeoListSave from './card-geo-list/save';
 import CardGeoSave from './card-geo/save';
+import CardGeoShaderEdit from './card-geo-shader/edit';
+import CardGeoShaderSave from './card-geo-shader/save';
 import CardGeoTechEdit from './card-geo-tech/edit';
 import CardGeoTechSave from './card-geo-tech/save';
 import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
-import CardSwooshIconEdit from './card-swoosh-icon/edit';
-import CardSwooshIconSave from './card-swoosh-icon/save';
 import GridCardsEdit from './grid-cards/edit';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
@@ -41,10 +41,10 @@ import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import calloutMetadata from '../blocks/repeatable/callout/block.json';
 import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
+import cardGeoShaderMetadata from '../blocks/cards/card-geo-shader/block.json';
 import cardGeoTechMetadata from '../blocks/cards/card-geo-tech/block.json';
 import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
-import cardSwooshIconMetadata from '../blocks/cards/card-swoosh-icon/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import gridCardsGeoMetadata from '../blocks/repeatable/grid-cards-geo/block.json';
 import gridCardsGraphicMetadata from '../blocks/repeatable/grid-cards-graphic/block.json';
@@ -124,9 +124,9 @@ registerBlockType(gridCardsSimpleMetadata.name, {
     save: GridCardsSimpleSave,
 });
 
-registerBlockType(cardSwooshIconMetadata.name, {
-    edit: CardSwooshIconEdit,
-    save: CardSwooshIconSave,
+registerBlockType(cardGeoShaderMetadata.name, {
+    edit: CardGeoShaderEdit,
+    save: CardGeoShaderSave,
 });
 
 registerBlockType(partnershipMetadata.name, {

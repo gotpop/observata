@@ -23,11 +23,11 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards.css",
-        "file:../cards/card-swoosh-icon/card-swoosh-icon.css"
+        "file:../cards/card-geo-shader/card-geo-shader.css"
     ],
     "editorStyle": [
         "file:grid-cards.css",
-        "file:../cards/card-swoosh-icon/card-swoosh-icon.css",
+        "file:../cards/card-geo-shader/card-geo-shader.css",
         "file:../../build/index.css"
     ]
 }
