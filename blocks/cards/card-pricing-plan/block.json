@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/plan",
+    "title": "Plan Card",
+    "category": "theme",
+    "description": "A pricing plan card with a dynamic feature list.",
+    "parent": [
+        "observata/plans"
+    ],
+    "supports": {
+        "html": false,
+        "reusable": false
+    },
+    "attributes": {
+        "planName": {
+            "type": "string",
+            "default": "Starter"
+        },
+        "planPrice": {
+            "type": "string",
+            "default": "$0"
+        },
+        "planPricePeriod": {
+            "type": "string",
+            "default": "/month"
+        },
+        "planDescription": {
+            "type": "string",
+            "default": "Perfect for getting started with basic observability."
+        },
+        "planFeatures": {
+            "type": "array",
+            "default": [
+                "Up to 5 hosts monitored",
+                "1-day log retention",
+                "Basic dashboards",
+                "Community support"
+            ]
+        },
+        "ctaText": {
+            "type": "string",
+            "default": "Get started"
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": "#"
+        },
+        "isHighlighted": {
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../../build/index.js",
+    "style": "file:card-pricing-plan.css"
+}

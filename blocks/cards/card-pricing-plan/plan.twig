@@ -1,0 +1,43 @@
+{% set plan_name = attributes.planName|default('Starter') %}
+{% set plan_price = attributes.planPrice|default('$0') %}
+{% set plan_price_period = attributes.planPricePeriod|default('/month') %}
+{% set plan_description = attributes.planDescription|default('') %}
+{% set plan_features = attributes.planFeatures|default([]) %}
+{% set cta_text = attributes.ctaText|default('Get started') %}
+{% set cta_url = attributes.ctaUrl|default('#') %}
+{% set is_highlighted = attributes.isHighlighted|default(false) %}
+
+<article class="plan-card{{ is_highlighted ? ' plan-card--highlighted' : '' }}">
+	<div class="plan-card-header">
+		<h3 class="plan-card-name">{{ plan_name|esc_html }}</h3>
+		{% if is_highlighted %}
+			<span class="plan-card-badge">Popular</span>
+		{% endif %}
+	</div>
+
+	<div class="plan-card-pricing">
+		<span class="plan-card-price">{{ plan_price|esc_html }}</span>
+		<span class="plan-card-period">{{ plan_price_period|esc_html }}</span>
+	</div>
+
+	<p class="plan-card-description">{{ plan_description|wp_kses_post }}</p>
+
+	{% if plan_features is not empty %}
+		<ul class="plan-card-features">
+			{% for feature in plan_features %}
+				<li class="plan-card-feature">
+					<span class="plan-card-feature-icon" aria-hidden="true">
+						<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 8.5L6.5 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</span>
+					<span>{{ feature|esc_html }}</span>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<a href="{{ cta_url|esc_url }}" class="plan-card-cta{{ is_highlighted ? ' plan-card-cta--primary' : '' }}">
+		{{ cta_text|esc_html }}
+	</a>
+</article>

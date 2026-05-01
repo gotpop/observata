@@ -38,6 +38,10 @@ import ObservabilityEdit from './observability/edit';
 import ObservabilitySave from './observability/save';
 import PartnershipEdit from './partnership/edit';
 import PartnershipSave from './partnership/save';
+import PlanEdit from './card-pricing-plan/edit';
+import PlanSave from './card-pricing-plan/save';
+import PlansEdit from './pricing-plans/edit';
+import PlansSave from './pricing-plans/save';
 import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import calloutMetadata from '../blocks/repeatable/callout/block.json';
@@ -62,6 +66,8 @@ import introPageMetadata from '../blocks/intro-page/block.json';
 import logoBarMetadata from '../blocks/logo-bar/block.json';
 import observabilityMetadata from '../blocks/observability/block.json';
 import partnershipMetadata from '../blocks/partnership/block.json';
+import planMetadata from '../blocks/cards/card-pricing-plan/block.json';
+import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import { registerBlockType } from '@wordpress/blocks';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
 import { useBlockProps } from '@wordpress/block-editor';
@@ -190,4 +196,14 @@ registerBlockType(cardGeoTechMetadata.name, {
 registerBlockType(gridCardsGeoTechMetadata.name, {
     edit: GridCardsGeoTechEdit,
     save: GridCardsGeoTechSave,
+});
+
+registerBlockType(planMetadata.name, {
+    edit: PlanEdit,
+    save: PlanSave,
+});
+
+registerBlockType(plansMetadata.name, {
+    edit: PlansEdit,
+    save: PlansSave,
 });

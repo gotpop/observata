@@ -1,0 +1,79 @@
+.observata-plans-editor {
+    border: 1px dashed #ccc;
+    padding: 1.5rem;
+    border-radius: 4px;
+
+    .observata-controls {
+        padding: 1rem;
+        background: #f0f0f0;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+
+        .components-text-control {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .plans-inner-blocks {
+        .block-editor-inner-blocks {
+            .block-editor-block-list__layout {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                align-items: start;
+            }
+        }
+    }
+
+    .plan-card-features-editor {
+        padding: 0.75rem;
+        background: #fafafa;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+
+        strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .plan-feature-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        .components-text-control {
+            flex: 1;
+        }
+    }
+
+    .plan-card-cta-editor {
+        display: flex;
+        gap: 1rem;
+
+        .components-text-control {
+            flex: 1;
+        }
+    }
+
+    .plan-card-pricing {
+        display: flex;
+        gap: 1rem;
+
+        .components-text-control {
+            flex: 1;
+        }
+    }
+
+    .plan-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .components-base-control {
+            margin-bottom: 0;
+        }
+    }
+}

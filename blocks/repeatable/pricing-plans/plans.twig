@@ -1,0 +1,13 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+{% set inner_blocks = attributes.innerBlocks|default([]) %}
+
+<section class="block-plans">
+	<block-content class="block-content">
+		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
+
+		<div class="plans-container">
+			{{ content|raw }}
+		</div>
+	</block-content>
+</section>
