@@ -3,9 +3,9 @@
 {% set icon_geo = attributes.iconGeo|default('24') %}
 {% set background_graphic = attributes.backgroundGraphic|default('') %}
 
-<article class="card-tech icon-{{ icon_geo }}">
+<article class="card-geo-tech icon-{{ icon_geo }}">
 	{% if background_graphic %}
-		<div class="card-tech-graphic" aria-hidden="true">
+		<div class="card-geo-tech-graphic" aria-hidden="true">
 			{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
 		</div>
 	{% endif %}

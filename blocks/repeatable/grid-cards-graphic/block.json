@@ -27,7 +27,8 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards-graphic.css",
-        "file:../cards/card-geo-list/card-geo-list.css"
+        "file:../cards/card-geo-list/card-geo-list.css",
+        "file:../cards/card-geo-tech/card-geo-tech.css"
     ],
     "editorStyle": [
         "file:grid-cards-graphic.css",

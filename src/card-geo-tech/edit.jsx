@@ -28,13 +28,13 @@ const graphicOptions = [
     { label: 'Waveform', value: 'waveform-graphic' },
 ];
 
-export default function CardTechEdit({ attributes, setAttributes }) {
+export default function CardGeoTechEdit({ attributes, setAttributes }) {
     const { cardTitle, cardText, iconGeo, backgroundGraphic } = attributes;
-    const blockProps = useBlockProps({ className: 'card-tech' });
+    const blockProps = useBlockProps({ className: 'card-geo-tech' });
 
     return (
         <article {...blockProps}>
-            <BlockLabel name="Card Tech" />
+            <BlockLabel name="Card Geo Tech" />
 
             <div className="intro-card-icon is-placeholder">
                 <span className="icon-geo">{iconGeo}</span>

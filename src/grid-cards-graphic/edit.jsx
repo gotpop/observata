@@ -49,7 +49,7 @@ export default function GridCardsGraphicEdit({ attributes, setAttributes }) {
                 <InnerBlocks
                     template={CARD_GEO_LIST_TEMPLATE}
                     templateLock="insert"
-                    allowedBlocks={['observata/card-geo-list']}
+                    allowedBlocks={['observata/card-geo-list', 'observata/card-geo-tech']}
                 />
             </div>
         </div>

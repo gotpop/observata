@@ -1,11 +1,11 @@
-.card-tech {
+.card-geo-tech {
     padding: var(--spacing-spacing-40);
     border: 1px solid var(--colour-border-border-gray);
     border-radius: var(--radius-radius-card);
     position: relative;
     overflow: hidden;
 
-    .card-tech-graphic {
+    .card-geo-tech-graphic {
         position: absolute;
         inset: 0;
         display: flex;

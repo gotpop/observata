@@ -1,8 +1,8 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/card-tech",
-    "title": "Card with Tech Graphic",
+    "name": "observata/card-geo-tech",
+    "title": "Card with Geo & Tech Graphic",
     "category": "theme",
     "description": "A feature card with a geo icon and a selectable tech graphic background.",
     "parent": [
@@ -32,5 +32,5 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-tech.css"
+    "style": "file:card-geo-tech.css"
 }
