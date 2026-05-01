@@ -7,7 +7,7 @@
     "description": "A feature card with a geometric icon, used inside the Intro block.",
     "parent": [
         "observata/intro",
-        "observata/cards-grid-geo"
+        "observata/grid-cards-geo"
     ],
     "supports": {
         "html": false,

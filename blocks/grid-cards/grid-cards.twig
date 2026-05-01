@@ -1,0 +1,12 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+
+<section class="block-grid-cards">
+	<block-content class="block-content">
+		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
+
+		<div class="cards-container">
+			{{ content|raw }}
+		</div>
+	</block-content>
+</section>

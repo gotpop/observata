@@ -7,7 +7,7 @@
     "description": "A small card with title and description, used inside the Observability block.",
     "parent": [
         "observata/observability",
-        "observata/cards-grid-micro"
+        "observata/grid-cards-micro"
     ],
     "supports": {
         "html": false,

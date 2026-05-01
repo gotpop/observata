@@ -10,16 +10,16 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardSwooshIconEdit from './card-swoosh-icon/edit';
 import CardSwooshIconSave from './card-swoosh-icon/save';
-import CardsGridEdit from './cards-grid/edit';
-import CardsGridGeoEdit from './cards-grid-geo/edit';
-import CardsGridGeoSave from './cards-grid-geo/save';
-import CardsGridGraphicEdit from './cards-grid-graphic/edit';
-import CardsGridGraphicSave from './cards-grid-graphic/save';
-import CardsGridMicroEdit from './cards-grid-micro/edit';
-import CardsGridMicroSave from './cards-grid-micro/save';
-import CardsGridSave from './cards-grid/save';
-import CardsTripleEdit from './cards-triple/edit';
-import CardsTripleSave from './cards-triple/save';
+import GridCardsEdit from './grid-cards/edit';
+import GridCardsGeoEdit from './grid-cards-geo/edit';
+import GridCardsGeoSave from './grid-cards-geo/save';
+import GridCardsGraphicEdit from './grid-cards-graphic/edit';
+import GridCardsGraphicSave from './grid-cards-graphic/save';
+import GridCardsMicroEdit from './grid-cards-micro/edit';
+import GridCardsMicroSave from './grid-cards-micro/save';
+import GridCardsSave from './grid-cards/save';
+import GridCardsSimpleEdit from './grid-cards-simple/edit';
+import GridCardsSimpleSave from './grid-cards-simple/save';
 import HeroEdit from './hero/edit';
 import HeroPageEdit from './hero-page/edit';
 import HeroPageSave from './hero-page/save';
@@ -42,12 +42,12 @@ import cardGeoMetadata from '../blocks/cards/card-geo/block.json';
 import cardMicroMetadata from '../blocks/cards/card-micro/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardSwooshIconMetadata from '../blocks/cards/card-swoosh-icon/block.json';
-import cardsGridGeoMetadata from '../blocks/cards-grid-geo/block.json';
-import cardsGridGraphicMetadata from '../blocks/cards-grid-graphic/block.json';
-import cardsGridMetadata from '../blocks/cards-grid/block.json';
-import cardsGridMicroMetadata from '../blocks/cards-grid-micro/block.json';
-import cardsTripleMetadata from '../blocks/cards-triple/block.json';
 import footerMetadata from '../blocks/footer/block.json';
+import gridCardsGeoMetadata from '../blocks/grid-cards-geo/block.json';
+import gridCardsGraphicMetadata from '../blocks/grid-cards-graphic/block.json';
+import gridCardsMetadata from '../blocks/grid-cards/block.json';
+import gridCardsMicroMetadata from '../blocks/grid-cards-micro/block.json';
+import gridCardsSimpleMetadata from '../blocks/grid-cards-simple/block.json';
 import headerMetadata from '../blocks/header/block.json';
 import heroMetadata from '../blocks/hero/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
@@ -111,14 +111,14 @@ registerBlockType(footerMetadata.name, {
     save: DynamicSave,
 });
 
-registerBlockType(cardsGridMetadata.name, {
-    edit: CardsGridEdit,
-    save: CardsGridSave,
+registerBlockType(gridCardsMetadata.name, {
+    edit: GridCardsEdit,
+    save: GridCardsSave,
 });
 
-registerBlockType(cardsTripleMetadata.name, {
-    edit: CardsTripleEdit,
-    save: CardsTripleSave,
+registerBlockType(gridCardsSimpleMetadata.name, {
+    edit: GridCardsSimpleEdit,
+    save: GridCardsSimpleSave,
 });
 
 registerBlockType(cardSwooshIconMetadata.name, {
@@ -161,17 +161,17 @@ registerBlockType(introPageMetadata.name, {
     save: IntroPageSave,
 });
 
-registerBlockType(cardsGridGeoMetadata.name, {
-    edit: CardsGridGeoEdit,
-    save: CardsGridGeoSave,
+registerBlockType(gridCardsGeoMetadata.name, {
+    edit: GridCardsGeoEdit,
+    save: GridCardsGeoSave,
 });
 
-registerBlockType(cardsGridMicroMetadata.name, {
-    edit: CardsGridMicroEdit,
-    save: CardsGridMicroSave,
+registerBlockType(gridCardsMicroMetadata.name, {
+    edit: GridCardsMicroEdit,
+    save: GridCardsMicroSave,
 });
 
-registerBlockType(cardsGridGraphicMetadata.name, {
-    edit: CardsGridGraphicEdit,
-    save: CardsGridGraphicSave,
+registerBlockType(gridCardsGraphicMetadata.name, {
+    edit: GridCardsGraphicEdit,
+    save: GridCardsGraphicSave,
 });

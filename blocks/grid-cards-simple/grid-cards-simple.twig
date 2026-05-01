@@ -1,0 +1,53 @@
+{# /**
+ * Cards Triple Block Template
+ *
+ * @param string sectionTitle   Section heading
+ * @param string card1Title     Card 1 title
+ * @param string card1Text      Card 1 description
+ * @param string card1IconNumber Card 1 icon number
+ * @param string card2Title     Card 2 title
+ * @param string card2Text      Card 2 description
+ * @param string card2IconNumber Card 2 icon number
+ * @param string card3Title     Card 3 title
+ * @param string card3Text      Card 3 description
+ * @param string card3IconNumber Card 3 icon number
+ */ #}
+
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set card1_title = attributes.card1Title|default('Search as a Service') %}
+{% set card1_text = attributes.card1Text|default('Enable your employees to securely and fast locate information across all internal systems.') %}
+{% set card1_icon = attributes.card1IconNumber|default('01') %}
+{% set card2_title = attributes.card2Title|default('MDR as a Service') %}
+{% set card2_text = attributes.card2Text|default('We protect your critical assets 24/7. Detecting threats, responding fast and preventing attacks.') %}
+{% set card2_icon = attributes.card2IconNumber|default('02') %}
+{% set card3_title = attributes.card3Title|default('Observability as a Service') %}
+{% set card3_text = attributes.card3Text|default('Powered by Elastic. Managed by experts. Detect early, respond fast.') %}
+{% set card3_icon = attributes.card3IconNumber|default('03') %}
+
+<section class="block-grid-cards-simple">
+	<block-content class="block-content">
+		{% if section_title %}
+			<h2 class="section-title">{{ section_title|wp_kses_post }}</h2>
+		{% endif %}
+
+		<div class="cards-container">
+			{{ function('observata_render_block', 'observata/card-swoosh-icon', {
+            'cardTitle': card1_title,
+            'cardText': card1_text,
+            'iconNumber': card1_icon
+        })|raw }}
+
+			{{ function('observata_render_block', 'observata/card-swoosh-icon', {
+            'cardTitle': card2_title,
+            'cardText': card2_text,
+            'iconNumber': card2_icon
+        })|raw }}
+
+			{{ function('observata_render_block', 'observata/card-swoosh-icon', {
+            'cardTitle': card3_title,
+            'cardText': card3_text,
+            'iconNumber': card3_icon
+        })|raw }}
+		</div>
+	</block-content>
+</section>
