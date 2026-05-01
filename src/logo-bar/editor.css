@@ -1,0 +1,10 @@
+/* Editor-specific overrides */
+
+.logo-bar__item img {
+    max-width: 200px;
+    max-height: 30px;
+}
+
+.logo-bar__actions {
+    display: none;
+}

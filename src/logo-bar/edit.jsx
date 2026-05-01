@@ -1,3 +1,5 @@
+import './editor.css';
+
 import { MediaUpload, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
