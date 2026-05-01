@@ -22,6 +22,7 @@ yarn-error.log*
 .cache
 .sass-cache
 .parcel-cache
+cache/
 
 # Source maps
 *.map
