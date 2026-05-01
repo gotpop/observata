@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Global Block Styles
+   Central stylesheet aggregating all Gutenberg block CSS.
+   Loaded on both frontend and editor via style.css / editor-style.css.
+   ========================================================================== */
+
+/* --- Template blocks --- */
+@import '../../blocks/template/header/header.css';
+@import '../../blocks/template/footer/footer.css';
+@import '../../blocks/template/section-intro/section-intro.css';
+
+/* --- Hero blocks --- */
+@import '../../blocks/hero-home/hero-home.css';
+@import '../../blocks/hero-page/hero-page.css';
+
+/* --- Intro blocks --- */
+@import '../../blocks/intro-home/intro-home.css';
+@import '../../blocks/intro-page/intro-page.css';
+
+/* --- Card blocks --- */
+@import '../../blocks/cards/card-geo/card-geo.css';
+@import '../../blocks/cards/card-geo-list/card-geo-list.css';
+@import '../../blocks/cards/card-geo-shader/card-geo-shader.css';
+@import '../../blocks/cards/card-geo-tech/card-geo-tech.css';
+@import '../../blocks/cards/card-micro/card-micro.css';
+@import '../../blocks/cards/card-pricing-plan/card-pricing-plan.css';
+@import '../../blocks/cards/card-rich-text/card-rich-text.css';
+@import '../../blocks/cards/card-simple/card-simple.css';
+@import '../../blocks/cards/card-team-member/card-team-member.css';
+@import '../../blocks/cards/plan-features-row/plan-features-row.css';
+
+/* --- Repeatable / Grid blocks --- */
+@import '../../blocks/repeatable/callout/callout.css';
+@import '../../blocks/repeatable/grid-cards/grid-cards.css';
+@import '../../blocks/repeatable/grid-cards-geo/grid-cards-geo.css';
+@import '../../blocks/repeatable/grid-cards-geo-tech/grid-cards-geo-tech.css';
+@import '../../blocks/repeatable/grid-cards-graphic/grid-cards-graphic.css';
+@import '../../blocks/repeatable/grid-cards-micro/grid-cards-micro.css';
+@import '../../blocks/repeatable/grid-cards-rich-text/grid-cards-rich-text.css';
+@import '../../blocks/repeatable/grid-cards-simple/grid-cards-simple.css';
+@import '../../blocks/repeatable/plan-features-table/plan-features-table.css';
+@import '../../blocks/repeatable/pricing-plans/pricing-plans.css';
+@import '../../blocks/repeatable/section-card-and-graphic/section-card-and-graphic.css';
+@import '../../blocks/repeatable/team-members/team-members.css';
+
+/* --- Other blocks --- */
+@import '../../blocks/logo-bar/logo-bar.css';
+@import '../../blocks/observability/observability.css';
+@import '../../blocks/partnership/partnership.css';

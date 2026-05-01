@@ -34,24 +34,25 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Section Card & Graphic" />
-
-            <div className="observata-controls">
-                <SelectControl
-                    label={__('Graphic', 'observata')}
-                    value={graphic}
-                    options={GRAPHIC_OPTIONS}
-                    onChange={(val) => setAttributes({ graphic: val })}
-                />
-                <SelectControl
-                    label={__('Graphic Position', 'observata')}
-                    value={graphicPosition}
-                    options={[
-                        { label: 'Left', value: 'left' },
-                        { label: 'Right', value: 'right' },
-                    ]}
-                    onChange={(val) => setAttributes({ graphicPosition: val })}
-                />
+            <div className='intro'>
+                <BlockLabel name="Section Card & Graphic" />
+                <div className="observata-controls">
+                    <SelectControl
+                        label={__('Graphic', 'observata')}
+                        value={graphic}
+                        options={GRAPHIC_OPTIONS}
+                        onChange={(val) => setAttributes({ graphic: val })}
+                    />
+                    <SelectControl
+                        label={__('Graphic Position', 'observata')}
+                        value={graphicPosition}
+                        options={[
+                            { label: 'Left', value: 'left' },
+                            { label: 'Right', value: 'right' },
+                        ]}
+                        onChange={(val) => setAttributes({ graphicPosition: val })}
+                    />
+                </div>
             </div>
 
             <div className="block-content">
