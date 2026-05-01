@@ -1,0 +1,17 @@
+{#
+  Grid Cards Rich Text - grid section with section intro and rich text cards.
+  Inner blocks (observata/card-rich-text) render as cards.
+#}
+
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+
+<section class="block-grid-cards-rich-text">
+	<block-content class="block-content">
+		{% include 'section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
+
+		<div class="grid-cards-rich-text-container">
+			{{ content|raw }}
+		</div>
+	</block-content>
+</section>

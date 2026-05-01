@@ -10,6 +10,9 @@ import CardGeoTechEdit from './card-geo-tech/edit';
 import CardGeoTechSave from './card-geo-tech/save';
 import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
+import CardRichTextEdit from './card-rich-text/edit';
+import CardRichTextMetadata from '../blocks/cards/card-rich-text/block.json';
+import CardRichTextSave from './card-rich-text/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTeamMemberEdit from './card-team-member/edit';
@@ -23,6 +26,8 @@ import GridCardsGraphicEdit from './grid-cards-graphic/edit';
 import GridCardsGraphicSave from './grid-cards-graphic/save';
 import GridCardsMicroEdit from './grid-cards-micro/edit';
 import GridCardsMicroSave from './grid-cards-micro/save';
+import GridCardsRichTextEdit from './grid-cards-rich-text/edit';
+import GridCardsRichTextSave from './grid-cards-rich-text/save';
 import GridCardsSave from './grid-cards/save';
 import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
@@ -66,6 +71,7 @@ import gridCardsGeoTechMetadata from '../blocks/repeatable/grid-cards-geo-tech/b
 import gridCardsGraphicMetadata from '../blocks/repeatable/grid-cards-graphic/block.json';
 import gridCardsMetadata from '../blocks/repeatable/grid-cards/block.json';
 import gridCardsMicroMetadata from '../blocks/repeatable/grid-cards-micro/block.json';
+import gridCardsRichTextMetadata from '../blocks/repeatable/grid-cards-rich-text/block.json';
 import gridCardsSimpleMetadata from '../blocks/repeatable/grid-cards-simple/block.json';
 import headerMetadata from '../blocks/template/header/block.json';
 import heroMetadata from '../blocks/hero-home/block.json';
@@ -228,6 +234,16 @@ registerBlockType(planFeaturesTableMetadata.name, {
 registerBlockType(planFeaturesRowMetadata.name, {
     edit: PlanFeaturesRowEdit,
     save: PlanFeaturesRowSave,
+});
+
+registerBlockType(gridCardsRichTextMetadata.name, {
+    edit: GridCardsRichTextEdit,
+    save: GridCardsRichTextSave,
+});
+
+registerBlockType(CardRichTextMetadata.name, {
+    edit: CardRichTextEdit,
+    save: CardRichTextSave,
 });
 
 registerBlockType(teamMembersMetadata.name, {

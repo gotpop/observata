@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/grid-cards-rich-text",
+    "title": "Grid Cards Rich Text",
+    "category": "theme",
+    "description": "A grid section containing rich text cards.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "introText": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": [
+        "file:grid-cards-rich-text.css",
+        "file:../cards/card-rich-text/card-rich-text.css"
+    ],
+    "editorStyle": [
+        "file:grid-cards-rich-text.css",
+        "file:../../build/index.css"
+    ]
+}
