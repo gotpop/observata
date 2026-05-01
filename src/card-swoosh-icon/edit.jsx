@@ -1,5 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -9,6 +10,8 @@ export default function CardSwooshIconEdit({ attributes, setAttributes }) {
 
     return (
         <article {...blockProps}>
+            <BlockLabel name="Card Swoosh Icon" />
+
             <div className="swoosh-background">
                 <div className="icon-circle">
                     <span className="icon-number">

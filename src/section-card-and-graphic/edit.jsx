@@ -1,5 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -29,6 +30,8 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Section Card & Graphic" />
+
             <div className="block-content">
                 <div className="section-card-and-graphic__inner">
                     <div className="section-card-and-graphic__visual">

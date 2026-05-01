@@ -1,5 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -22,6 +23,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Partnership" />
+
             <div className="block-content">
                 <div className="observata-controls">
                     <TextControl

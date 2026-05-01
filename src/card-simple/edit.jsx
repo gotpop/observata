@@ -1,6 +1,7 @@
-import { MediaUpload, MediaUploadCheck, RichText, useBlockProps } from '@wordpress/block-editor';
 import { Button, PanelBody, TextControl } from '@wordpress/components';
+import { MediaUpload, MediaUploadCheck, RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { InspectorControls } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
@@ -41,6 +42,8 @@ export default function Edit({ attributes, setAttributes }) {
             </InspectorControls>
 
             <div {...blockProps}>
+                <BlockLabel name="Card Simple" />
+
                 <div className="card-simple">
                     {imageUrl && (
                         <img className="card-simple__image" src={imageUrl} alt={imageAlt} />

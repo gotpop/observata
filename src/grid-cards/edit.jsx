@@ -2,6 +2,7 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 
 const CARD_TEMPLATE = [
@@ -18,6 +19,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
+            <BlockLabel name="Grid Cards" />
+
             <div className="observata-controls">
                 <TextControl
                     label="Section Title"

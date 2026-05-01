@@ -2,6 +2,7 @@ import './editor.css';
 
 import { Button, TextControl } from '@wordpress/components';
 
+import BlockLabel from '../components/block-label';
 import { useBlockProps } from '@wordpress/block-editor';
 
 const DEFAULT_CARDS = [
@@ -34,6 +35,8 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
+            <BlockLabel name="Grid Cards Micro" />
+
             <div className="observata-controls">
                 <TextControl
                     label="Section Title"

@@ -2,6 +2,7 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -14,6 +15,8 @@ export default function HeroEdit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Hero" />
+
             <div className="hero-content">
                 <div className="hero-text">
                     <RichText

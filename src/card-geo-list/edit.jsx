@@ -1,5 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -14,6 +15,8 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
 
     return (
         <article {...blockProps}>
+            <BlockLabel name="Card Geo List" />
+
             <div className="intro-card-icon is-placeholder">
                 <span className="icon-geo">{iconGeo}</span>
             </div>

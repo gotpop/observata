@@ -1,5 +1,6 @@
 import { MediaUpload, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -59,6 +60,8 @@ export default function LogoBarEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
+            <BlockLabel name="Logo Bar" />
+
             <div className="logo-bar__label">
                 {__('Logo Bar', 'observata')}
             </div>

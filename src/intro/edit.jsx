@@ -2,6 +2,7 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 
 const CARD_GEO_TEMPLATE = [
     ['observata/card-geo', { cardTitle: 'Embedded experts', cardText: 'We embed directly into your environment to tune pipelines and triage alerts. Eliminate skill gaps and lower overhead with 24/7 lifecycle coverage and executive-level reporting.', iconGeo: '24' }],
@@ -16,6 +17,8 @@ export default function IntroEdit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Intro" />
+
             <div className="logo-strip is-placeholder">
                 <div className="logo-item"><span>AF</span></div>
                 <div className="logo-item"><span>Tele2</span></div>

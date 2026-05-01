@@ -1,6 +1,7 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl } from '@wordpress/components';
 
+import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
 
 export default function CalloutEdit({ attributes, setAttributes }) {
@@ -11,6 +12,8 @@ export default function CalloutEdit({ attributes, setAttributes }) {
 
     return (
         <aside {...blockProps}>
+            <BlockLabel name="Callout" />
+
             <div className="callout-inner">
                 <SelectControl
                     label={__('Variant', 'observata')}

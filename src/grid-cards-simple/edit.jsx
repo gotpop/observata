@@ -1,5 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -26,6 +27,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Grid Cards Simple" />
+
             <div className="block-content">
                 <div className="cards-container">
                     <div className="card-edit">

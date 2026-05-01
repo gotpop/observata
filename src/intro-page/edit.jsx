@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -30,6 +31,8 @@ export default function IntroPageEdit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Intro Page" />
+
             <div className="intro-page-controls">
                 <SelectControl
                     label={__('Graphic', 'observata')}

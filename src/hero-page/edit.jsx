@@ -1,5 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
 
 export default function HeroPageEdit({ attributes, setAttributes }) {
@@ -10,6 +11,8 @@ export default function HeroPageEdit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
+            <BlockLabel name="Hero Page" />
+
             <div className="hero-page-content">
                 <div className="hero-page-text">
                     <RichText

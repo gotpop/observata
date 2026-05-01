@@ -2,6 +2,7 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 
 const SCIENCE_GRAPHICS = [
@@ -32,6 +33,8 @@ export default function GridCardsGraphicEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
+            <BlockLabel name="Grid Cards Graphic" />
+
             <div className="observata-controls">
 
                 <SelectControl
