@@ -11,11 +11,17 @@
 }
 
 .card-micro-heading {
-    color: var(--colour-text-heading-default);
-    font-size: 1rem;
-    font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 24px;
+    color: var(--colour-text-heading-default);
+    font-weight: 600;
+    line-height: 24px;
+    font-size: var(--size-body-md);
 }
 
-.card-micro-body {}
+.card-micro-body {
+    color: var(--colour-text-body-default);
+    font-size: var(--size-body-sm);
+    font-weight: 400;
+    line-height: 22px;
+}

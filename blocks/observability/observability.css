@@ -21,13 +21,27 @@
         grid-template-columns: 1fr;
         row-gap: var(--spacing-spacing-24);
         max-width: 600px;
+
+        .title {
+            color: var(--colour-text-heading-default, #2E2E2E);
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+        }
+
+        .body {
+            color: var(--colour-text-body-default);
+            font-size: var(--size-body-md);
+            font-weight: 400;
+            line-height: 24px;
+        }
     }
 
     .layout-micro {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 288px));
         gap: var(--spacing-spacing-24);
-        max-width: 800px;
     }
 
     .card-large {
@@ -48,17 +62,19 @@
 
 
 
-    .gfx {
+    .graphic-dots {
+        --size: 460px;
+
         position: relative;
-        height: 500px;
-        width: 500px;
+        height: var(--size);
+        width: var(--size);
         position: absolute;
-        inset: -5rem -5rem auto auto;
+        inset: -7rem -7rem auto auto;
         overflow: clip;
 
         svg {
-            height: 500px;
-            width: 500px;
+            height: var(--size);
+            width: var(--size);
             position: absolute;
         }
 
