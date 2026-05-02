@@ -15,9 +15,23 @@
         gap: var(--spacing-spacing-50);
     }
 
+
+    .card-large-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: var(--spacing-spacing-24);
+        max-width: 600px;
+    }
+
+    .layout-micro {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--spacing-spacing-24);
+        max-width: 800px;
+    }
+
     .card-large {
         background-color: var(--colour-surface-white);
-        background-image: url('../../assets/img/connected-dots.png');
         border-radius: var(--radius-radius-large);
         border: 1px solid var(--colour-accent-1-200);
         flex-direction: column;
@@ -28,17 +42,32 @@
         background-size: 500px;
         display: grid;
         grid-template-columns: 1fr;
+        overflow: clip;
+        position: relative;
     }
 
-    .card-large-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: var(--spacing-spacing-24)
-    }
 
-    .layout-micro {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: var(--spacing-spacing-24);
+
+    .gfx {
+        position: relative;
+        height: 500px;
+        width: 500px;
+        position: absolute;
+        inset: -5rem -5rem auto auto;
+        overflow: clip;
+
+        svg {
+            height: 500px;
+            width: 500px;
+            position: absolute;
+        }
+
+        .grad {
+            background: radial-gradient(circle, #EA5EC1, #0598ce);
+            height: 400px;
+            position: absolute;
+            inset: 0;
+            mix-blend-mode: color;
+        }
     }
 }

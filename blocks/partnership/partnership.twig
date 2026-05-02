@@ -11,6 +11,9 @@
 {% set phase2_text2 = attributes.phase2Text2|default('Our experts will audit your current set-up and optimise for success.') %}
 
 <section class="block-partnership">
+	<graphic-swooping class="graphic-swooping">
+		{% include 'graphics/tech/swooping-lines.twig' %}
+	</graphic-swooping>
 	<block-content class="block-content">
 		{% if section_title %}
 			<h2 class="section-title">{{ section_title|wp_kses_post }}</h2>
@@ -44,6 +47,7 @@
 			<div class="icon-circle"></div>
 			<div class="arrow-icon"></div>
 		</div>
+
 
 		{% if cta_text %}
 			<a href="{{ cta_url|esc_url }}" class="partnership-cta">{{ cta_text|esc_html }}</a>
