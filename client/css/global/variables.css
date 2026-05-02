@@ -165,9 +165,9 @@
 :root {
   /* Font scale */
   --size-body-xs: var(--typography-size-12);
+  --size-body-sm: var(--typography-size-14);
   --size-body-md: var(--typography-size-16);
   --size-body-lg: var(--typography-size-20);
-  --size-body-sm: var(--typography-size-14);
   --size-heading-h1: var(--typography-size-56);
   --size-heading-h2: var(--spacing-spacing-40);
   --size-heading-h4: var(--typography-size-24);
