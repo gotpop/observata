@@ -22,11 +22,13 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards-shader.css",
-        "file:../cards/card-geo-shader/card-geo-shader.css"
+        "file:../cards/card-geo-shader/card-geo-shader.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:grid-cards-shader.css",
         "file:../cards/card-geo-shader/card-geo-shader.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }

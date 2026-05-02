@@ -23,11 +23,13 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:observability.css",
-        "file:../cards/card-micro/card-micro.css"
+        "file:../cards/card-micro/card-micro.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:observability.css",
         "file:../cards/card-micro/card-micro.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }

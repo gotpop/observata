@@ -23,10 +23,12 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:team-members.css",
-        "file:../cards/card-team-member/card-team-member.css"
+        "file:../cards/card-team-member/card-team-member.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:team-members.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }

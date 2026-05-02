@@ -52,10 +52,12 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards-micro.css",
-        "file:../cards/card-micro/card-micro.css"
+        "file:../cards/card-micro/card-micro.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:grid-cards-micro.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }

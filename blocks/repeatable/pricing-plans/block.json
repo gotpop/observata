@@ -23,10 +23,12 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:pricing-plans.css",
-        "file:../cards/card-pricing-plan/card-pricing-plan.css"
+        "file:../cards/card-pricing-plan/card-pricing-plan.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:pricing-plans.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }

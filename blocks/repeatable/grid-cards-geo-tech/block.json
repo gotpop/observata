@@ -64,10 +64,12 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards-geo-tech.css",
-        "file:../cards/card-geo-tech/card-geo-tech.css"
+        "file:../cards/card-geo-tech/card-geo-tech.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:grid-cards-geo-tech.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }

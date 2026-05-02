@@ -23,10 +23,12 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards-rich-text.css",
-        "file:../cards/card-rich-text/card-rich-text.css"
+        "file:../cards/card-rich-text/card-rich-text.css",
+        "file:../template/section-intro/section-intro.css"
     ],
     "editorStyle": [
         "file:grid-cards-rich-text.css",
+        "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ]
 }
