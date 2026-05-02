@@ -1,5 +1,4 @@
 /* Collection name: Base */
-/* Mode: Default */
 :root {
   /* Spacing */
   --spacing-spacing-1: 1px;
@@ -21,7 +20,6 @@
   --spacing-spacing-160: 160;
   --spacing-spacing-320: 320;
 
-
   /* Radius */
   --radius-radius-minimal: 4px;
   --radius-radius-standard: 8px;
@@ -31,18 +29,16 @@
   --radius-radius-card: 24px;
   --radius-radius-pill: 9999px;
 
-
   /* Sizing */
   --sizing-width-site: 1440;
   --sizing-width-content: 1200;
-
 
   /* Brand colours */
   --colour-brand-dark: #113768;
   --colour-brand-light: #0598ce;
 
-
   /* Primary */
+  --colour-primary-base: var(--colour-brand-dark);
   --colour-secondary-100: #d9f5ff;
   --colour-secondary-200: #9bdbf2;
   --colour-secondary-300: #5bc1e6;
@@ -54,6 +50,7 @@
   --colour-secondary-900: #032d3c;
 
   /* Secondary */
+  --colour-secondary-base: var(--colour-brand-light);
   --colour-primary-100: #cae1ff;
   --colour-primary-200: #90b2dc;
   --colour-primary-300: #7399c6;
@@ -63,7 +60,6 @@
   --colour-primary-700: #113768;
   --colour-primary-800: #103361;
   --colour-primary-900: #0a1f3a;
-
 
   /* Neutral */
   --colour-neutral-white: #ffffff;
@@ -78,49 +74,31 @@
   --colour-neutral-900: #1e1e1e;
   --colour-neutral-black: #000000;
 
-
   /* Accent 1 */
-  --colour-accent-2-100: #ffecc2;
-  --colour-accent-2-400: #d19921;
-  --colour-accent-2-200: #e7c273;
-  --colour-accent-2-500: #9d7318;
-  --colour-accent-2-800: #3c2f14;
-  --colour-accent-2-600: #7e5c12;
-  --colour-accent-2-700: #5a4415;
-  --colour-accent-2-300: #dfac3e;
-  --colour-accent-2-900: #2d230e;
-  --colour-accent-1-200: #efaedc;
-  --colour-accent-1-400: #572f4c;
+  --colour-accent-1-base: #ea5ec1;
   --colour-accent-1-100: #ffebf9;
+  --colour-accent-1-200: #efaedc;
+  --colour-accent-1-300: #e08ac7;
+  --colour-accent-1-400: #572f4c;
   --colour-accent-1-500: #572f4c;
   --colour-accent-1-600: #572f4c;
-  --colour-accent-1-900: #2f1a29;
   --colour-accent-1-700: #572f4c;
-  --colour-accent-1-300: #e08ac7;
   --colour-accent-1-800: #3b2134;
+  --colour-accent-1-900: #2f1a29;
 
-
-
-  --icon-line-bg-colour: #ff0000;
-
-  --icon-line-colour: var(--colour-brand-light);
-  --icon-circle-colour: var(--colour-brand-dark);
-  --icon-line-stroke: 0.8999999761581421;
-
-
-
-
-
-
-
-  --colour-primary-base: var(--colour-brand-dark);
-  --colour-secondary-base: var(--colour-brand-light);
-
-
-  --colour-accent-1-base: #ea5ec1;
+  /* Accent 2 */
   --colour-accent-2-base: #d19921;
-  --colour-success-base: #55ff33;
+  --colour-accent-2-100: #ffecc2;
+  --colour-accent-2-200: #e7c273;
+  --colour-accent-2-300: #dfac3e;
+  --colour-accent-2-400: #d19921;
+  --colour-accent-2-500: #9d7318;
+  --colour-accent-2-600: #7e5c12;
+  --colour-accent-2-700: #5a4415;
+  --colour-accent-2-800: #3c2f14;
+  --colour-accent-2-900: #2d230e;
 
+  /* Warning */
   --colour-warning-base: #ff3337;
   --colour-warning-900: #ff3337;
   --colour-warning-800: #ff3337;
@@ -132,6 +110,8 @@
   --colour-warning-200: #ff3337;
   --colour-warning-100: #ff3337;
 
+  /* Success */
+  --colour-success-base: #55ff33;
   --colour-success-100: #55ff33;
   --colour-success-200: #55ff33;
   --colour-success-300: #55ff33;
@@ -142,41 +122,48 @@
   --colour-success-800: #55ff33;
   --colour-success-900: #55ff33;
 
-
-  --color: #ffffff;
-
-
-  --typography-size-18: 18;
-  --typography-line-height-default: 1.5;
-  --typography-size-12: 12;
-  --typography-line-height-tight: 1.100000023841858;
-  --typography-weight-bold: 700;
-  --typography-line-height-relaxed: 1.7000000476837158;
-
-  --typography-weight-medium: 500;
-  --typography-weight-regular: 400;
-  --typography-weight-semi: 600;
-
-  --typography-size-14: 14px;
-  --typography-size-32: 32px;
-  --typography-size-80: 80px;
-  --typography-size-16: 16px;
-  --typography-size-28: 28px;
-  --typography-size-20: 20px;
-  --typography-size-24: 24px;
-  --typography-size-10: 10px;
-  --typography-size-60: 60px;
-  --typography-size-48: 48px;
-  --typography-size-40: 40px;
-  --typography-size-56: 56px;
-
+  /* Family */
   --typography-family-inter: Inter;
   --typography-family-gantari: Gantari;
+
+  /* Line height */
+  --typography-line-height-default: 1.5;
+  --typography-line-height-tight: 1.100000023841858;
+  --typography-line-height-relaxed: 1.7000000476837158;
+
+  /* Weight */
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semi: 600;
+  --typography-weight-bold: 700;
+
+  /* Size */
+  --typography-size-12: 12;
+  --typography-size-10: 10px;
+  --typography-size-14: 14px;
+  --typography-size-16: 16px;
+  --typography-size-18: 18px;
+  --typography-size-20: 20px;
+  --typography-size-24: 24px;
+  --typography-size-28: 28px;
+  --typography-size-32: 32px;
+  --typography-size-40: 40px;
+  --typography-size-48: 48px;
+  --typography-size-56: 56px;
+  --typography-size-60: 60px;
+  --typography-size-80: 80px;
+
+
+  /* Lines */
+  --icon-line-bg-colour: #ff0000;
+  --icon-line-colour: var(--colour-brand-light);
+  --icon-circle-colour: var(--colour-brand-dark);
+  --icon-line-stroke: 0.9;
 }
 
 /* Collection name: Typography */
-/* Mode: Mode 1 */
 :root {
+  /* Font scale */
   --size-body-xs: var(--typography-size-12);
   --size-body-md: var(--typography-size-16);
   --size-body-lg: var(--typography-size-20);
@@ -186,6 +173,8 @@
   --size-heading-h4: var(--typography-size-24);
   --size-heading-h3: var(--typography-size-32);
   --size-hero-default: var(--typography-size-56);
+
+  /* Line height */
   --line-height-hero-default: var(--typography-size-56);
   --line-height-heading-h1: 56px;
   --line-height-heading-h2: 40px;
@@ -198,7 +187,6 @@
 }
 
 /* Collection name: Alias */
-/* Mode: Bright */
 :root {
   /* Hero */
   --colour-text-text-hero: var(--colour-text-heading-default);
@@ -207,22 +195,6 @@
   --colour-text-heading-default: var(--colour-neutral-800);
   --colour-text-body-default: var(--colour-neutral-600);
 
-  --colour-surface-success: #e8ffea;
-  --colour-surface-surface: var(--colour-neutral-white);
-  --colour-surface-dark: #181e25;
-  --colour-surface-light-gray: #f0f0f0;
-  --colour-surface-white: var(--colour-neutral-white);
-  --colour-border-border-gray: #e5e7ea;
-  --colour-border-border-light: #f2f3f5;
-}
-
-/* Collection name: Alias */
-/* Mode: Dimmed */
-:root {
-  --colour-text-text-hero: var(--colour-text-heading-default);
-  --colour-text-body-default: var(--colour-neutral-600);
-  --colour-text-text-hero-subheading: var(--colour-text-body-default);
-  --colour-text-heading-default: var(--colour-neutral-800);
   --colour-surface-success: #e8ffea;
   --colour-surface-surface: var(--colour-neutral-white);
   --colour-surface-dark: #181e25;
