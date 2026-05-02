@@ -1,4 +1,5 @@
 {% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
 {% set cta_text = attributes.ctaText|default('Discover how partnership works') %}
 {% set cta_url = attributes.ctaUrl|default('#partnership-phase') %}
 {% set phase1_number = attributes.phase1Number|default('01') %}
@@ -15,9 +16,7 @@
 		{% include 'graphics/tech/swooping-lines.twig' %}
 	</graphic-swooping>
 	<block-content class="block-content">
-		{% if section_title %}
-			<h2 class="section-title">{{ section_title|wp_kses_post }}</h2>
-		{% endif %}
+		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<div class="phases-wrap">
 			<div class="phase">

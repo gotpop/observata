@@ -12,7 +12,11 @@
     "attributes": {
         "sectionTitle": {
             "type": "string",
-            "default": ""
+            "default": "The journey to partnership"
+        },
+        "introText": {
+            "type": "string",
+            "default": "We don't just do projects. We enter long-term alliances where your success is directly tied to ours."
         },
         "ctaText": {
             "type": "string",
@@ -57,6 +61,13 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css",
-    "style": "file:partnership.css"
+    "style": [
+        "file:partnership.css",
+        "file:../template/section-intro/section-intro.css"
+    ],
+    "editorStyle": [
+        "file:partnership.css",
+        "file:../template/section-intro/section-intro.css",
+        "file:../../build/index.css"
+    ]
 }
