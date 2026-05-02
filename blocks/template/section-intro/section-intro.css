@@ -13,3 +13,10 @@
 	margin-bottom: 1.5rem;
 	color: var(--color-text-muted, #666);
 }
+
+
+.section-intro {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}

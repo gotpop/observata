@@ -200,10 +200,13 @@
 /* Collection name: Alias */
 /* Mode: Bright */
 :root {
+  /* Hero */
   --colour-text-text-hero: var(--colour-text-heading-default);
-  --colour-text-body-default: var(--colour-neutral-600);
   --colour-text-text-hero-subheading: var(--colour-text-body-default);
+  /* Text */
   --colour-text-heading-default: var(--colour-neutral-800);
+  --colour-text-body-default: var(--colour-neutral-600);
+
   --colour-surface-success: #e8ffea;
   --colour-surface-surface: var(--colour-neutral-white);
   --colour-surface-dark: #181e25;

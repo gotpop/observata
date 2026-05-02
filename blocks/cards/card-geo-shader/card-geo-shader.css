@@ -57,21 +57,12 @@
     p {
         text-box: trim-both cap alphabetic;
         color: var(--colour-text-body-default);
-        font-size: var(--typography-size-16);
+        font-size: var(--typography-size-14);
         line-height: 1.5;
 
         color: var(--colour-text-body-default, #626262);
-        leading-trim: both;
-        text-edge: cap;
-
-        /* cards/Body card */
-        /* font-family: Inter; */
-        font-size: var(--Fonts-Size-font-size-16, 1rem);
-        font-style: normal;
-        font-weight: 400;
         line-height: 1.5rem;
-        /* 150% */
 
-        max-width: 50ch;
+        max-width: 60ch;
     }
 }

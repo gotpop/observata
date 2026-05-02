@@ -1,10 +1,12 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
 
-{% if section_title %}
-	<h2 class="section-intro-title">{{ section_title|esc_html }}</h2>
-{% endif %}
+<section-intro class="section-intro">
+	{% if section_title %}
+		<h2 class="section-intro-title">{{ section_title|esc_html }}</h2>
+	{% endif %}
 
-{% if intro_text %}
-	<p class="section-intro-text">{{ intro_text|esc_html }}</p>
-{% endif %}
+	{% if intro_text %}
+		<p class="section-intro-text">{{ intro_text|esc_html }}</p>
+	{% endif %}
+</section-intro>
