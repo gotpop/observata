@@ -35,13 +35,13 @@ function getCardGeoShaderConfig(colours: { colorA: string; colorB: string }) {
           shape3dType: "ribbon",
           speed: 0,
           transform: {
-            offsetX: -0.15,
+            offsetX: -0.1,
             rotation: 73,
-            scale: 1.37,
+            scale: 1.09,
             anchorX: 0.65,
             anchorY: 0.15,
           },
-          zoom: 91,
+          zoom: 85,
         },
         children: [
           {

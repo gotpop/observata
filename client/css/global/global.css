@@ -61,6 +61,7 @@ h6,
     font-weight: var(--typography-weight-bold);
     margin: 0;
     line-height: 1.2;
+    text-box: trim-both cap alphabetic;
 }
 
 h1,
@@ -98,6 +99,7 @@ input,
 textarea,
 select {
     font-family: var(--typography-family-inter), system-ui, -apple-system, sans-serif;
+    text-box: trim-both cap alphabetic;
 }
 
 /* .site {

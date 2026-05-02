@@ -1,5 +1,3 @@
-import "./shaders/card-1"
-import "./shaders/card-2"
 import "./shaders/home"
 import "./shaders/subpage"
 
