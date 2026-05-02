@@ -6,9 +6,15 @@
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<article class="card-large">
-			<div class="cards-micro">
+			{% include 'graphics/tech/connected-dots-graphic.twig' %}
+
+			<layout-micro class="layout-micro">
 				{{ content|raw }}
-			</div>
+			</layout-micro>
+			<card-large-content class="card-large-content">
+				<h4>Tools aren’t the answer — ownership is</h4>
+				<p>When observability is split across teams, costs skyrocket and visibility suffers. Consolidating your tech stack isn’t enough; you need to solve the root cause. We provide the structural ownership required to turn disjointed data into a high-performing, unified operation.</p>
+			</card-large-content>
 		</article>
 	</block-content>
 </section>
