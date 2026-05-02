@@ -3,9 +3,9 @@
 {% set icon_geo = attributes.iconGeo|default('01') %}
 
 <article class="card-geo-shader">
-	<div class="icon icon-{{ icon_geo }}" aria-hidden="true">
-		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	</div>
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+
+	<canvas class="shader" width="320" height="320" aria-hidden="true"></canvas>
 
 	<div class="body">
 		{% if card_title %}

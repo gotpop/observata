@@ -1,11 +1,15 @@
 .card-geo-shader {
-    padding: var(--spacing-spacing-40);
+    padding-block: var(--spacing-spacing-40);
+    padding-inline: var(--spacing-spacing-40) 5rem;
     border: 1px solid var(--colour-border-border-gray);
     border-radius: var(--radius-radius-card);
     position: relative;
+    overflow: clip;
 
-    .icon {
-        --size: 5.25rem;
+
+
+    .icon-geo {
+        --size: 3.75rem;
 
         border-radius: 50%;
         width: var(--size);
@@ -14,21 +18,40 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        inset: calc(var(--size) / -3.5) calc(var(--size) / -3.5) auto auto;
+        inset: 1.5rem 1.5rem auto auto;
         position: absolute;
         background-color: var(--colour-surface-white);
+        z-index: 1;
 
         svg {
-            width: 34px;
-            height: 34px;
+            width: 2.31575rem;
+            height: 2.31575rem;
         }
+    }
+
+    .shader {
+        position: absolute;
+        inset: 0 0 auto auto;
+        max-width: 100%;
+        z-index: 0;
     }
 
     h3 {
         margin-bottom: var(--spacing-spacing-32);
         text-box: trim-both cap alphabetic;
-        max-width: 12ch;
+        max-width: 20ch;
         text-wrap: balance;
+
+
+        color: var(--colour-text-heading-default, #2E2E2E);
+
+
+
+        font-family: var(--Fonts-Family-font-gantari, Gantari);
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
     }
 
     p {
@@ -36,5 +59,19 @@
         color: var(--colour-text-body-default);
         font-size: var(--typography-size-16);
         line-height: 1.5;
+
+        color: var(--colour-text-body-default, #626262);
+        leading-trim: both;
+        text-edge: cap;
+
+        /* cards/Body card */
+        /* font-family: Inter; */
+        font-size: var(--Fonts-Size-font-size-16, 1rem);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5rem;
+        /* 150% */
+
+        max-width: 50ch;
     }
 }
