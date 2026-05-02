@@ -1,7 +1,9 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
+{% set text_align = attributes.textAlign|default('') %}
+{% set center_class = text_align == 'center' ? ' section-intro--center' : '' %}
 
-<section-intro class="section-intro">
+<section-intro class="section-intro{{ center_class }}">
 	{% if section_title %}
 		<h2 class="section-intro-title">{{ section_title|esc_html }}</h2>
 	{% endif %}

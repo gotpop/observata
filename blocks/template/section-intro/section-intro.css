@@ -20,4 +20,17 @@
 		line-height: 24px;
 		max-width: 120ch;
 	}
+
+	&.section-intro--center {
+		justify-items: center;
+
+		.section-intro-title,
+		.section-intro-text {
+			text-align: center;
+		}
+
+		.section-intro-text {
+			max-width: 80ch;
+		}
+	}
 }
