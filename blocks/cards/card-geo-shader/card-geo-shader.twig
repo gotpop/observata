@@ -1,11 +1,12 @@
 {% set card_title = attributes.cardTitle|default('') %}
 {% set card_text = attributes.cardText|default('') %}
 {% set icon_geo = attributes.iconGeo|default('01') %}
+{% set shader_colour = attributes.shaderColour|default('blue') %}
 
 <article class="card-geo-shader">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 
-	<canvas class="shader" width="320" height="320" aria-hidden="true"></canvas>
+	<canvas class="shader" id="shader-{{ shader_colour }}" width="320" height="320" aria-hidden="true"></canvas>
 
 	<div class="body">
 		{% if card_title %}

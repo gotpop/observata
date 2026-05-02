@@ -24,6 +24,10 @@
         "iconGeo": {
             "type": "string",
             "default": "01"
+        },
+        "shaderColour": {
+            "type": "string",
+            "default": "blue"
         }
     },
     "render": "file:render.php",

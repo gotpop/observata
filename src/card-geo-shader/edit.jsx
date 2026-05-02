@@ -1,3 +1,5 @@
+import './editor.css';
+
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
@@ -11,17 +13,14 @@ const iconOptions = Array.from({ length: 30 }, (_, i) => {
 });
 
 export default function CardGeoShaderEdit({ attributes, setAttributes }) {
-    const { cardTitle, cardText, iconGeo } = attributes;
+    const { cardTitle, cardText, iconGeo, shaderColour = "blue" } = attributes;
     const blockProps = useBlockProps();
 
     return (
         <article {...blockProps}>
             <BlockLabel name="Card Geo Shader" />
-
-            <div className="swoosh-background">
-                <div className="intro-card-icon">
-                    <GeoIcon number={iconGeo} />
-                </div>
+            <div className="intro-card-icon">
+                <GeoIcon number={iconGeo} />
             </div>
             <div className="card-body">
                 <RichText
@@ -39,10 +38,19 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
                     placeholder={__('Card text…', 'observata')}
                 />
                 <SelectControl
-                    label={__('Icon', 'observata')}
+                    label={__('Icon geo', 'observata')}
                     value={iconGeo}
                     options={iconOptions}
                     onChange={(val) => setAttributes({ iconGeo: val })}
+                />
+                <SelectControl
+                    label={__('Shader colour', 'observata')}
+                    value={shaderColour}
+                    options={[
+                        { label: __('Blue', 'observata'), value: 'blue' },
+                        { label: __('Pink', 'observata'), value: 'pink' },
+                    ]}
+                    onChange={(val) => setAttributes({ shaderColour: val })}
                 />
             </div>
         </article>
