@@ -78,9 +78,10 @@
             position: absolute;
         }
 
-        .grad {
-            background: radial-gradient(circle, #EA5EC1, #0598ce);
-            height: 400px;
+        .gradient {
+            background: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-500));
+            height: var(--size);
+            width: var(--size);
             position: absolute;
             inset: 0;
             mix-blend-mode: color;
