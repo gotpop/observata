@@ -17,7 +17,7 @@
     .card-large {
         background-color: var(--colour-surface-white);
         background-image: url('../../assets/img/connected-dots.png');
-        border-radius: var(--radius-radius-large);
+        border-radius: var(--radius-large);
         border: 1px solid var(--colour-accent-1-200);
         padding: var(--spacing-spacing-16);
         background-repeat: no-repeat;

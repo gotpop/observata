@@ -1,7 +1,8 @@
 .block-section-card-and-graphic {
-    border-bottom: 1px solid var(--colour-border-border-gray);
-    border-top: 1px solid var(--colour-border-border-gray);
     position: relative;
+    overflow: clip;
+    background-color: var(--colour-surface-white);
+    border-bottom: 1px solid var(--colour-border-border-gray);
     grid-column: full;
     grid-template-columns: subgrid;
     display: grid;

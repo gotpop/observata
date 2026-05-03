@@ -22,13 +22,14 @@
   --spacing-spacing-320: 320;
 
   /* Radius */
-  --radius-radius-minimal: 4px;
-  --radius-radius-standard: 8px;
-  --radius-radius-comfortable: 13px;
-  --radius-radius-generous: 16px;
-  --radius-radius-large: 20px;
-  --radius-radius-card: 24px;
-  --radius-radius-pill: 9999px;
+  --radius-minimal: 4px;
+  --radius-standard: 8px;
+  --radius-comfortable: 13px;
+  --radius-generous: 16px;
+  --radius-large: 20px;
+  --radius-card: 24px;
+  --radius-pill: 9999px;
+  --radius-circle: 50%;
 
   /* Sizing */
   --sizing-width-site: 1440;
@@ -40,18 +41,6 @@
 
   /* Primary */
   --colour-primary-base: var(--colour-brand-dark);
-  --colour-secondary-100: #d9f5ff;
-  --colour-secondary-200: #9bdbf2;
-  --colour-secondary-300: #5bc1e6;
-  --colour-secondary-400: #38b1de;
-  --colour-secondary-500: #0598ce;
-  --colour-secondary-600: #0796ca;
-  --colour-secondary-700: #0679a3;
-  --colour-secondary-800: #094054;
-  --colour-secondary-900: #032d3c;
-
-  /* Secondary */
-  --colour-secondary-base: var(--colour-brand-light);
   --colour-primary-100: #cae1ff;
   --colour-primary-200: #90b2dc;
   --colour-primary-300: #7399c6;
@@ -61,6 +50,18 @@
   --colour-primary-700: #113768;
   --colour-primary-800: #103361;
   --colour-primary-900: #0a1f3a;
+
+  /* Secondary */
+  --colour-secondary-base: var(--colour-brand-light);
+  --colour-secondary-100: #d9f5ff;
+  --colour-secondary-200: #9bdbf2;
+  --colour-secondary-300: #5bc1e6;
+  --colour-secondary-400: #38b1de;
+  --colour-secondary-500: #0598ce;
+  --colour-secondary-600: #0796ca;
+  --colour-secondary-700: #0679a3;
+  --colour-secondary-800: #094054;
+  --colour-secondary-900: #032d3c;
 
   /* Neutral */
   --colour-neutral-white: #ffffff;
@@ -196,11 +197,13 @@
   --colour-text-heading-default: var(--colour-neutral-800);
   --colour-text-body-default: var(--colour-neutral-600);
 
+  /* Surface */
   --colour-surface-success: #e8ffea;
   --colour-surface-surface: var(--colour-neutral-white);
   --colour-surface-dark: #181e25;
   --colour-surface-light-gray: #f0f0f0;
   --colour-surface-white: var(--colour-neutral-white);
+  --colour-surface-white-transparent: rgba(255, 255, 255, .8);
   --colour-border-border-gray: #e5e7ea;
   --colour-border-border-light: #f2f3f5;
 }

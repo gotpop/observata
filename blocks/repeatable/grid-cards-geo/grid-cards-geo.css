@@ -11,30 +11,8 @@
     .block-content {
         display: grid;
         grid-column: content;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content;
         gap: var(--spacing-spacing-50);
     }
-}
-
-.block-grid-cards-geo .intro-heading {
-    font-size: 40px;
-    font-family: var(--typography-family-gantari);
-    font-weight: var(--typography-weight-bold);
-    color: var(--fonts-colour-text-heading);
-    line-height: var(--line-height-heading-h2);
-    letter-spacing: -0.8px;
-}
-
-.block-grid-cards-geo .text-wide {
-    font-size: 16px;
-    font-family: var(--fonts-family-font-inter);
-    font-weight: var(--fonts-weight-font-weight-regular);
-    color: var(--fonts-colour-text-body);
-    line-height: 24px;
-}
-
-.block-grid-cards-geo .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
-    gap: 40px;
 }

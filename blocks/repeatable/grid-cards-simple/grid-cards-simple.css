@@ -13,7 +13,7 @@
         grid-column: content;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 40px;
-        border-radius: var(--radius-radius-card, 24px);
+        border-radius: var(--radius-card, 24px);
         border: 1px solid var(--colour-Border-border-gray, #E5E7EA);
         background: var(--colour-Background-bg-white, #FFF);
         padding: var(--spacing-spacing-80);

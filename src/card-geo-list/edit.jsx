@@ -1,3 +1,5 @@
+import './editor.css';
+
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import { SelectControl } from '@wordpress/components';

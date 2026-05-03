@@ -1,13 +1,13 @@
 .block-grid-cards-graphic {
     position: relative;
-    overflow: hidden;
+    overflow: clip;
     background-color: var(--colour-surface-white);
+    border-bottom: 1px solid var(--colour-border-border-gray);
     grid-column: full;
     grid-template-columns: subgrid;
     display: grid;
-    border-bottom: 1px solid var(--colour-border-border-gray);
     padding-block: 5rem;
-    overflow: clip;
+
 
     .background-graphic {
         position: absolute;
@@ -35,7 +35,6 @@
     .cards-container {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 0;
     }
 
     .cards-container>.block-section-card-and-graphic {

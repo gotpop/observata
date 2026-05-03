@@ -1,0 +1,7 @@
+.intro-card-body,
+.card-geo-list-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+    gap: var(--spacing-spacing-16);
+}

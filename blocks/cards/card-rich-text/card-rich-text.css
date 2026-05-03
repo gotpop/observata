@@ -6,7 +6,7 @@
     padding: var(--spacing-spacing-40, 1.5rem);
     background: var(--colour-surface-white, #fff);
     border: 1px solid var(--colour-border-border-gray, #e2e2e2);
-    border-radius: var(--radius-radius-md, 0.5rem);
+    border-radius: var(--radius-md, 0.5rem);
 }
 
 .card-rich-text__title {

@@ -2,7 +2,7 @@
     padding-block: var(--spacing-spacing-40);
     padding-inline: var(--spacing-spacing-40) 5rem;
     border: 1px solid var(--colour-border-border-gray);
-    border-radius: var(--radius-radius-card);
+    border-radius: var(--radius-card);
     position: relative;
     overflow: clip;
 

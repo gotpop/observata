@@ -15,6 +15,7 @@
         grid-template-areas:
             "a ."
             ". b";
+        grid-template-columns: 1fr 1fr;
         gap: var(--spacing-spacing-50);
         z-index: 1;
     }
