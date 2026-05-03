@@ -45,7 +45,10 @@
 				</div>
 			</article>
 			{% if cta_text %}
-				<a href="{{ cta_url|esc_url }}" class="cta-primary cta-partnership">{{ cta_text|esc_html }}</a>
+				<a href="{{ cta_url|esc_url }}" class="cta-primary cta-partnership">
+					<span>{{ cta_text|esc_html }}</span>
+					{% include 'icons/lucide/arrow-right.twig' %}
+				</a>
 			{% endif %}
 		</block-body>
 	</block-content>

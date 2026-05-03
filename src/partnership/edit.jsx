@@ -1,9 +1,9 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import SectionIntro from '../components/section-intro';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
+import SectionIntro from '../components/section-intro';
 
 export default function Edit({ attributes, setAttributes }) {
     const {
@@ -32,11 +32,6 @@ export default function Edit({ attributes, setAttributes }) {
                 <div className="phases-wrap">
                     <div className="phase">
                         <div className="phase-box">
-                            <TextControl
-                                label={__('Phase 1 Number', 'observata')}
-                                value={phase1Number}
-                                onChange={(val) => setAttributes({ phase1Number: val })}
-                            />
                             <RichText
                                 tagName="div"
                                 className="phase-title"
@@ -65,11 +60,6 @@ export default function Edit({ attributes, setAttributes }) {
 
                     <div className="phase">
                         <div className="phase-box">
-                            <TextControl
-                                label={__('Phase 2 Number', 'observata')}
-                                value={phase2Number}
-                                onChange={(val) => setAttributes({ phase2Number: val })}
-                            />
                             <RichText
                                 tagName="div"
                                 className="phase-title"
@@ -84,13 +74,6 @@ export default function Edit({ attributes, setAttributes }) {
                                 className="phase-text"
                                 value={phase2Text1}
                                 onChange={(val) => setAttributes({ phase2Text1: val })}
-                                placeholder={__('Phase text…', 'observata')}
-                            />
-                            <RichText
-                                tagName="p"
-                                className="phase-text"
-                                value={phase2Text2}
-                                onChange={(val) => setAttributes({ phase2Text2: val })}
                                 placeholder={__('Phase text…', 'observata')}
                             />
                         </div>
