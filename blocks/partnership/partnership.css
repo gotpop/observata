@@ -9,15 +9,7 @@
     display: grid;
     padding-block: 5rem;
     position: relative;
-
-
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-spacing-50);
-        grid-row: 1;
-    }
+    grid-template-rows: 1fr min-content;
 
     .graphic-swooping {
         display: grid;
@@ -29,62 +21,90 @@
             grid-column: svg;
         }
     }
-}
 
+    .block-content {
+        display: grid;
+        grid-column: content;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+        gap: var(--spacing-spacing-50);
+        grid-row: 1;
+    }
 
+    .block-body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 485px));
+        gap: var(--spacing-spacing-60);
+        justify-content: center;
+    }
 
+    .phase {
+        background-color: var(--colour-surface-white);
+        border-radius: var(--radius-radius-card);
+        border: 1px solid var(--colour-border-border-gray);
+        display: grid;
+        gap: var(--spacing-spacing-24);
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+        padding: var(--spacing-spacing-40);
+    }
 
+    .phase-title {
+        color: var(--colour-primary-500);
+        font-size: var(--size-body-sm);
+        font-weight: 500;
+        line-height: 24px;
+    }
 
+    .phase-content {
+        grid-template-rows: min-content;
+        display: grid;
+        gap: var(--spacing-spacing-24);
+        grid-template-columns: repeat(auto-fit, minmax(150px, 188px));
 
+        .phase-two & {
+            grid-template-columns: 1fr;
+        }
+    }
 
+    .phase-item {
+        grid-template-rows: min-content;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-spacing-20);
+    }
 
+    .phase-item-title {
+        color: var(--colour-text-heading-default);
+        font-size: var(--size-body-lg);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+    }
 
+    .phase-text {
+        color: var(--colour-text-body-default);
+        font-size: var(--size-body-sm);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
 
-
-.block-partnership .phases-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.block-partnership .phase {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-.block-partnership .phase-box {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: var(--radius-radius-card);
-    padding: 16px;
-}
-
-.block-partnership .phase-number {
-    font-family: var(--typography-family-font-inter);
-    font-size: 14px;
-    font-weight: var(--fonts-weight-font-weight-medium);
-    color: var(--colour-primary-500);
-    background: var(--colour-surface-white, white);
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.block-partnership .phase-title {
-    font-family: var(--typography-family-font-gantari);
-    font-size: 16px;
-    font-weight: var(--typography-weight-bold);
-    color: var(--fonts-colour-text-heading);
-    margin-bottom: 4px;
-}
-
-.block-partnership .phase-content {
-    font-family: var(--typography-family-font-inter);
-    font-size: 14px;
-    font-weight: var(--fonts-weight-font-weight-regular);
-    color: var(--fonts-colour-text-body);
-    line-height: 1.5;
+    .cta-primary {
+        align-items: center;
+        align-self: start;
+        background: var(--colour-accent-1-base);
+        border-radius: var(--radius-radius-pill);
+        border: 1px solid var(--colour-accent-1-300);
+        color: var(--colour-accent-1-100);
+        display: inline-flex;
+        font-size: var(--size-body-md);
+        font-weight: 500;
+        gap: var(--spacing-spacing-16);
+        grid-column: 1 / -1;
+        justify-content: center;
+        justify-self: center;
+        padding: var(--spacing-spacing-16) var(--spacing-spacing-24);
+        text-decoration: none;
+    }
 }

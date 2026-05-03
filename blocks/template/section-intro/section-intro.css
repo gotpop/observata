@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--spacing-spacing-32);
+	grid-template-rows: min-content;
 
 	.section-intro-title {
 		font-size: 40px;
@@ -30,7 +31,8 @@
 		}
 
 		.section-intro-text {
-			max-width: 80ch;
+			max-width: 60ch;
+			text-wrap: pretty;
 		}
 	}
 }

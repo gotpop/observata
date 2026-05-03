@@ -17,39 +17,36 @@
 	</graphic-swooping>
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text, 'textAlign': 'center' } } %}
-
-		<div class="phases-wrap">
-			<div class="phase">
-				<div class="phase-box">
-					<div class="phase-number">{{ phase1_number }}</div>
-					<div class="phase-title">{{ phase1_title }}</div>
+		<block-body class="block-body">
+			<article class="phase phase-one">
+				<div class="phase-header">
+					<h3 class="phase-title">{{ phase1_title }}</h3>
 				</div>
 				<div class="phase-content">
-					<p class="phase-text">{{ phase1_text1 }}</p>
-					<p class="phase-text">{{ phase1_text2 }}</p>
+					<div class="phase-item">
+						<h4 class="phase-item-title">Migration path</h4>
+						<p class="phase-text">{{ phase1_text1 }}</p>
+					</div>
+					<div class="phase-item">
+						<h4 class="phase-item-title">Optimisation path</h4>
+						<p class="phase-text">{{ phase1_text2 }}</p>
+					</div>
 				</div>
-			</div>
-
-			<div class="phase">
-				<div class="phase-box">
-					<div class="phase-number">{{ phase2_number }}</div>
-					<div class="phase-title">{{ phase2_title }}</div>
+			</article>
+			<article class="phase phase-two">
+				<div class="phase-header">
+					<h3 class="phase-title">{{ phase2_title }}</h3>
 				</div>
 				<div class="phase-content">
-					<p class="phase-text">{{ phase2_text1 }}</p>
-					<p class="phase-text">{{ phase2_text2 }}</p>
+					<div class="phase-item">
+						<h4 class="phase-item-title">Partnership phase</h4>
+						<p class="phase-text">{{ phase1_text2 }}</p>
+					</div>
 				</div>
-			</div>
-		</div>
-
-		<div class="icon-container">
-			<div class="icon-circle"></div>
-			<div class="arrow-icon"></div>
-		</div>
-
-
-		{% if cta_text %}
-			<a href="{{ cta_url|esc_url }}" class="partnership-cta">{{ cta_text|esc_html }}</a>
-		{% endif %}
+			</article>
+			{% if cta_text %}
+				<a href="{{ cta_url|esc_url }}" class="cta-primary cta-partnership">{{ cta_text|esc_html }}</a>
+			{% endif %}
+		</block-body>
 	</block-content>
 </section>
