@@ -16,11 +16,12 @@
         },
         "iconGeo": {
             "type": "string",
-            "default": "24"
+            "default": ""
         }
     },
     "supports": {
         "html": false
     },
-    "textdomain": "observata"
+    "textdomain": "observata",
+    "style": "file:card-simple.css"
 }

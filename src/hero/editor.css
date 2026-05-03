@@ -8,6 +8,13 @@
     .hero-content {
         margin: 0 auto;
     }
+
+    .heading-hero {
+        em {
+            color: var(--colour-secondary-500);
+            font-style: normal;
+        }
+    }
 }
 
 /* Disable the scroll-driven overlay animation in the editor */
