@@ -34,9 +34,17 @@
             "type": "string",
             "default": "The entry point"
         },
+        "phase1ItemTitle1": {
+            "type": "string",
+            "default": "Migration path"
+        },
         "phase1Text1": {
             "type": "string",
             "default": "Migrate from your current observability tool to Elastic at no extra cost."
+        },
+        "phase1ItemTitle2": {
+            "type": "string",
+            "default": "Optimisation path"
         },
         "phase1Text2": {
             "type": "string",
@@ -49,6 +57,10 @@
         "phase2Title": {
             "type": "string",
             "default": "The partnership"
+        },
+        "phase2ItemTitle1": {
+            "type": "string",
+            "default": "Partnership phase"
         },
         "phase2Text1": {
             "type": "string",

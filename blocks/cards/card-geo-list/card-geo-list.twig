@@ -4,14 +4,16 @@
 {% set icon_geo = attributes.iconGeo|default('24') %}
 
 <article class="card-geo-list icon-{{ icon_geo }}">
-	<div class="intro-card-icon" aria-hidden="true">
-		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	</div>
-	<div class="intro-card-body">
-		<h3 class="intro-card-title">{{ card_title|esc_html }}</h3>
-		<ul class="card-geo-list-items">
-			<li>{{ list_item_1|esc_html }}</li>
-			<li>{{ list_item_2|esc_html }}</li>
-		</ul>
-	</div>
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	<h3 class="title">{{ card_title|esc_html }}</h3>
+	<ul class="list-items">
+		<li class="list-item">
+			{% include 'icons/platform/stack.twig' %}
+			<p>{{ list_item_1|esc_html }}</p>
+		</li>
+		<li class="list-item">
+			{% include 'icons/platform/increase.twig' %}
+			<p>{{ list_item_2|esc_html }}</p>
+		</li>
+	</ul>
 </article>

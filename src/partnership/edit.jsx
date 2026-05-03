@@ -14,9 +14,12 @@ export default function Edit({ attributes, setAttributes }) {
         ctaText,
         ctaUrl,
         phase1Title,
+        phase1ItemTitle1,
         phase1Text1,
+        phase1ItemTitle2,
         phase1Text2,
         phase2Title,
+        phase2ItemTitle1,
         phase2Text1,
         phase2Text2,
     } = attributes;
@@ -42,7 +45,13 @@ export default function Edit({ attributes, setAttributes }) {
                         </div>
                         <div className="phase-content">
                             <div className="phase-item">
-                                <h4 className="phase-item-title">Migration path</h4>
+                                <RichText
+                                    tagName="h4"
+                                    className="phase-item-title"
+                                    value={phase1ItemTitle1}
+                                    onChange={(val) => setAttributes({ phase1ItemTitle1: val })}
+                                    placeholder={__('Item title…', 'observata')}
+                                />
                                 <RichText
                                     tagName="p"
                                     className="phase-text"
@@ -52,7 +61,13 @@ export default function Edit({ attributes, setAttributes }) {
                                 />
                             </div>
                             <div className="phase-item">
-                                <h4 className="phase-item-title">Optimisation path</h4>
+                                <RichText
+                                    tagName="h4"
+                                    className="phase-item-title"
+                                    value={phase1ItemTitle2}
+                                    onChange={(val) => setAttributes({ phase1ItemTitle2: val })}
+                                    placeholder={__('Item title…', 'observata')}
+                                />
                                 <RichText
                                     tagName="p"
                                     className="phase-text"
@@ -76,7 +91,13 @@ export default function Edit({ attributes, setAttributes }) {
                         </div>
                         <div className="phase-content">
                             <div className="phase-item">
-                                <h4 className="phase-item-title">Partnership phase</h4>
+                                <RichText
+                                    tagName="h4"
+                                    className="phase-item-title"
+                                    value={phase2ItemTitle1}
+                                    onChange={(val) => setAttributes({ phase2ItemTitle1: val })}
+                                    placeholder={__('Item title…', 'observata')}
+                                />
                                 <RichText
                                     tagName="p"
                                     className="phase-text"

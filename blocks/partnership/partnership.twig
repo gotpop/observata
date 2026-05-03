@@ -4,10 +4,13 @@
 {% set cta_url = attributes.ctaUrl|default('#partnership-phase') %}
 {% set phase1_number = attributes.phase1Number|default('01') %}
 {% set phase1_title = attributes.phase1Title|default('The entry point') %}
+{% set phase1_item_title1 = attributes.phase1ItemTitle1|default('Migration path') %}
 {% set phase1_text1 = attributes.phase1Text1|default('Migrate from your current observability tool to Elastic at no extra cost.') %}
+{% set phase1_item_title2 = attributes.phase1ItemTitle2|default('Optimisation path') %}
 {% set phase1_text2 = attributes.phase1Text2|default('Our experts will audit your current set-up and optimise for success.') %}
 {% set phase2_number = attributes.phase2Number|default('02') %}
 {% set phase2_title = attributes.phase2Title|default('The partnership') %}
+{% set phase2_item_title1 = attributes.phase2ItemTitle1|default('Partnership phase') %}
 {% set phase2_text1 = attributes.phase2Text1|default("Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives.") %}
 {% set phase2_text2 = attributes.phase2Text2|default('Our experts will audit your current set-up and optimise for success.') %}
 
@@ -24,11 +27,11 @@
 				</div>
 				<div class="phase-content">
 					<div class="phase-item">
-						<h4 class="phase-item-title">Migration path</h4>
+						<h4 class="phase-item-title">{{ phase1_item_title1 }}</h4>
 						<p class="phase-text">{{ phase1_text1 }}</p>
 					</div>
 					<div class="phase-item">
-						<h4 class="phase-item-title">Optimisation path</h4>
+						<h4 class="phase-item-title">{{ phase1_item_title2 }}</h4>
 						<p class="phase-text">{{ phase1_text2 }}</p>
 					</div>
 				</div>
@@ -39,7 +42,7 @@
 				</div>
 				<div class="phase-content">
 					<div class="phase-item">
-						<h4 class="phase-item-title">Partnership phase</h4>
+						<h4 class="phase-item-title">{{ phase2_item_title1 }}</h4>
 						<p class="phase-text">{{ phase1_text2 }}</p>
 					</div>
 				</div>
