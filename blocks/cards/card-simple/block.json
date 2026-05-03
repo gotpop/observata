@@ -4,16 +4,8 @@
     "name": "observata/card-simple",
     "title": "Card Simple",
     "category": "theme",
-    "description": "A simple card with image, title and description.",
+    "description": "A simple card with geo icon, title and description.",
     "attributes": {
-        "imageUrl": {
-            "type": "string",
-            "default": ""
-        },
-        "imageAlt": {
-            "type": "string",
-            "default": ""
-        },
         "title": {
             "type": "string",
             "default": ""
@@ -24,12 +16,11 @@
         },
         "iconGeo": {
             "type": "string",
-            "default": ""
+            "default": "24"
         }
     },
     "supports": {
         "html": false
     },
-    "textdomain": "observata",
-    "style": "file:card-simple.css"
+    "textdomain": "observata"
 }

@@ -1,24 +1,11 @@
-{# /**
- * Card Simple Block Template
- *
- * @param string imageUrl     Card image URL
- * @param string imageAlt     Card image alt text
- * @param string title        Card title
- * @param string description  Card description
- * @param string iconGeo      Geo icon number (e.g. "01")
- */ #}
-{% set icon_geo = attributes.iconGeo|default('') %}
 {% set title = attributes.title|default('') %}
 {% set description = attributes.description|default('') %}
+{% set icon_geo = attributes.iconGeo|default('24') %}
 
-<article class="card-simple{% if icon_geo %} icon-{{ icon_geo }}{% endif %}">
-	{% if icon_geo %}
-		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	{% endif %}
-	{% if title %}
-		<h3 class="title">{{ title|wp_kses_post }}</h3>
-	{% endif %}
-	{% if description %}
-		<p class="body">{{ description|wp_kses_post }}</p>
-	{% endif %}
+<article class="card-simple icon-{{ icon_geo }}">
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	<div class="intro-card-body">
+		<h3 class="card-simple__title">{{ title|wp_kses_post }}</h3>
+		<p class="card-simple__description">{{ description|wp_kses_post }}</p>
+	</div>
 </article>
