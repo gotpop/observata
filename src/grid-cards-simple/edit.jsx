@@ -1,100 +1,27 @@
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 
-const iconOptions = Array.from({ length: 30 }, (_, i) => {
-    const num = String(i + 1).padStart(2, '0');
-    return { label: num, value: num };
-});
+const CARD_SIMPLE_TEMPLATE = [
+    ['observata/card-simple', { title: 'Search as a Service', description: 'Enable your employees to securely and fast locate information across all internal systems.', iconGeo: '01' }],
+    ['observata/card-simple', { title: 'MDR as a Service', description: 'We protect your critical assets 24/7. Detecting threats, responding fast and preventing attacks.', iconGeo: '02' }],
+    ['observata/card-simple', { title: 'Observability as a Service', description: 'Powered by Elastic. Managed by experts. Detect early, respond fast.', iconGeo: '03' }],
+];
 
-export default function Edit({ attributes, setAttributes }) {
-    const {
-        sectionTitle,
-        card1Title,
-        card1Text,
-        card1IconNumber,
-        card2Title,
-        card2Text,
-        card2IconNumber,
-        card3Title,
-        card3Text,
-        card3IconNumber,
-    } = attributes;
-
-    const blockProps = useBlockProps({ className: 'block-grid-cards-simple' });
+export default function GridCardsSimpleEdit({ attributes, setAttributes }) {
+    const blockProps = useBlockProps({ className: 'observata-grid-cards-simple-editor' });
 
     return (
-        <section {...blockProps}>
+        <div {...blockProps}>
             <BlockLabel name="Grid Cards Simple" />
 
-            <div className="block-content">
-                <div className="cards-container">
-                    <div className="card-edit">
-                        <SelectControl
-                            label={__('Card 1 Icon', 'observata')}
-                            value={card1IconNumber}
-                            options={iconOptions}
-                            onChange={(val) => setAttributes({ card1IconNumber: val })}
-                        />
-                        <RichText
-                            tagName="h3"
-                            value={card1Title}
-                            onChange={(val) => setAttributes({ card1Title: val })}
-                            placeholder={__('Card 1 title…', 'observata')}
-                        />
-                        <RichText
-                            tagName="p"
-                            value={card1Text}
-                            onChange={(val) => setAttributes({ card1Text: val })}
-                            placeholder={__('Card 1 text…', 'observata')}
-                        />
-                    </div>
-
-                    <div className="card-edit">
-                        <SelectControl
-                            label={__('Card 2 Icon', 'observata')}
-                            value={card2IconNumber}
-                            options={iconOptions}
-                            onChange={(val) => setAttributes({ card2IconNumber: val })}
-                        />
-                        <RichText
-                            tagName="h3"
-                            value={card2Title}
-                            onChange={(val) => setAttributes({ card2Title: val })}
-                            placeholder={__('Card 2 title…', 'observata')}
-                        />
-                        <RichText
-                            tagName="p"
-                            value={card2Text}
-                            onChange={(val) => setAttributes({ card2Text: val })}
-                            placeholder={__('Card 2 text…', 'observata')}
-                        />
-                    </div>
-
-                    <div className="card-edit">
-                        <SelectControl
-                            label={__('Card 3 Icon', 'observata')}
-                            value={card3IconNumber}
-                            options={iconOptions}
-                            onChange={(val) => setAttributes({ card3IconNumber: val })}
-                        />
-                        <RichText
-                            tagName="h3"
-                            value={card3Title}
-                            onChange={(val) => setAttributes({ card3Title: val })}
-                            placeholder={__('Card 3 title…', 'observata')}
-                        />
-                        <RichText
-                            tagName="p"
-                            value={card3Text}
-                            onChange={(val) => setAttributes({ card3Text: val })}
-                            placeholder={__('Card 3 text…', 'observata')}
-                        />
-                    </div>
-                </div>
+            <div className="cards-container">
+                <InnerBlocks
+                    template={CARD_SIMPLE_TEMPLATE}
+                    templateLock={false}
+                    allowedBlocks={['observata/card-simple']}
+                />
             </div>
-        </section>
+        </div>
     );
 }

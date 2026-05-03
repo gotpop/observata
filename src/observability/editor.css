@@ -19,15 +19,28 @@
         background-image: url('../../assets/img/connected-dots.png');
         border-radius: var(--radius-radius-large);
         border: 1px solid var(--colour-accent-1-200);
-        padding: var(--spacing-spacing-80);
+        padding: var(--spacing-spacing-16);
         background-repeat: no-repeat;
         background-position: top -200px right -200px;
         background-size: 500px;
+
+    }
+
+    .block-editor-block-list__layout {
+        grid-template-columns: 1fr 1fr 1fr !important;
     }
 
     .cards-micro {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
         gap: var(--spacing-spacing-24);
+        grid-column: 1 / -1;
+    }
+
+    .card-micro {
+
+        h3,
+        p {
+            margin: 0;
+        }
     }
 }

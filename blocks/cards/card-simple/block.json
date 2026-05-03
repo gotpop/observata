@@ -21,6 +21,10 @@
         "description": {
             "type": "string",
             "default": ""
+        },
+        "iconGeo": {
+            "type": "string",
+            "default": ""
         }
     },
     "supports": {

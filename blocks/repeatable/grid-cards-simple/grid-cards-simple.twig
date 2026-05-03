@@ -1,48 +1,7 @@
-{# /**
- * Grid Cards Simple Block Template
- *
- * @param string sectionTitle   Section heading
- * @param string card1Title     Card 1 title
- * @param string card1Text      Card 1 description
- * @param string card1IconNumber Card 1 icon number
- * @param string card2Title     Card 2 title
- * @param string card2Text      Card 2 description
- * @param string card2IconNumber Card 2 icon number
- * @param string card3Title     Card 3 title
- * @param string card3Text      Card 3 description
- * @param string card3IconNumber Card 3 icon number
- */ #}
-
 {% set section_title = attributes.sectionTitle|default('') %}
-{% set cards = [
-    {
-        title: attributes.card1Title|default('Search as a Service'),
-        text: attributes.card1Text|default('Enable your employees to securely and fast locate information across all internal systems.'),
-        icon: attributes.card1IconNumber|default('01')
-    },
-    {
-        title: attributes.card2Title|default('MDR as a Service'),
-        text: attributes.card2Text|default('We protect your critical assets 24/7. Detecting threats, responding fast and preventing attacks.'),
-        icon: attributes.card2IconNumber|default('02')
-    },
-    {
-        title: attributes.card3Title|default('Observability as a Service'),
-        text: attributes.card3Text|default('Powered by Elastic. Managed by experts. Detect early, respond fast.'),
-        icon: attributes.card3IconNumber|default('03')
-    }
-] %}
 
 <section class="block-grid-cards-simple">
 	<block-content class="block-content">
-		{% for card in cards %}
-			{% include 'cards/card-simple/card-simple.twig' with {
-				'attributes': {
-					'imageUrl': function('get_template_directory_uri') ~ '/assets/svg/geo/' ~ card.icon ~ '-icon-geo.svg',
-					'imageAlt': 'Icon ' ~ card.icon,
-					'title': card.title,
-					'description': card.text
-				}
-			} %}
-		{% endfor %}
+		{{ content|raw }}
 	</block-content>
 </section>

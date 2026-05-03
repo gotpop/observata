@@ -1,0 +1,11 @@
+.observata-grid-cards-simple-editor {
+    border: 1px dashed #ccc;
+    padding: 1.5rem;
+    border-radius: 4px;
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+        gap: 40px;
+    }
+}
