@@ -7,20 +7,13 @@
  * @param string description  Card description
  * @param string iconGeo      Geo icon number (e.g. "01")
  */ #}
-
-{% set image_url = attributes.imageUrl|default('') %}
-{% set image_alt = attributes.imageAlt|default('') %}
+{% set icon_geo = attributes.iconGeo|default('') %}
 {% set title = attributes.title|default('') %}
 {% set description = attributes.description|default('') %}
-{% set icon_geo = attributes.iconGeo|default('') %}
 
 <article class="card-simple{% if icon_geo %} icon-{{ icon_geo }}{% endif %}">
 	{% if icon_geo %}
-		<div class="card-simple__icon" aria-hidden="true">
-			{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-		</div>
-	{% elseif image_url %}
-		<img class="card-simple__image" src="{{ image_url }}" alt="{{ image_alt }}"/>
+		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	{% endif %}
 	{% if title %}
 		<h3 class="card-simple__title">{{ title|wp_kses_post }}</h3>
