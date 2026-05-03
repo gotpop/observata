@@ -52,6 +52,12 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css",
-    "style": "file:grid-cards-simple.css"
+    "editorStyle": [
+        "file:../cards/card-simple/card-simple.css",
+        "file:../../build/index.css"
+    ],
+    "style": [
+        "file:../cards/card-simple/card-simple.css",
+        "file:grid-cards-simple.css"
+    ]
 }

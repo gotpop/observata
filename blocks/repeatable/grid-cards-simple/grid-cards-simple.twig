@@ -35,13 +35,14 @@
 <section class="block-grid-cards-simple">
 	<block-content class="block-content">
 		{% for card in cards %}
-			<div class="card-simple-item">
-				<div class="card-simple-item__icon">
-					<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card.icon }}-icon-geo.svg" alt="Icon {{ card.icon }}"/>
-				</div>
-				<h3 class="card-simple-item__title">{{ card.title|wp_kses_post }}</h3>
-				<p class="card-simple-item__text">{{ card.text|wp_kses_post }}</p>
-			</div>
+			{% include 'cards/card-simple/card-simple.twig' with {
+				'attributes': {
+					'imageUrl': function('get_template_directory_uri') ~ '/assets/svg/geo/' ~ card.icon ~ '-icon-geo.svg',
+					'imageAlt': 'Icon ' ~ card.icon,
+					'title': card.title,
+					'description': card.text
+				}
+			} %}
 		{% endfor %}
 	</block-content>
 </section>
