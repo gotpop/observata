@@ -35,7 +35,7 @@
         grid-column: content;
         animation: nav linear forwards;
         animation-timeline: scroll(nearest);
-        animation-range-end: 300px;
+        animation-range-end: 100px;
         border: 1px solid white;
     }
 
