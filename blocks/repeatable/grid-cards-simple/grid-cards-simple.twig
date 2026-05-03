@@ -33,21 +33,15 @@
 ] %}
 
 <section class="block-grid-cards-simple">
-	<div class="block-content">
-		{% if section_title %}
-			<h2 class="section-title">{{ section_title|wp_kses_post }}</h2>
-		{% endif %}
-
-		<div class="cards-container">
-			{% for card in cards %}
-				<div class="card-simple-item">
-					<div class="card-simple-item__icon">
-						<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card.icon }}-icon-geo.svg" alt="Icon {{ card.icon }}"/>
-					</div>
-					<h3 class="card-simple-item__title">{{ card.title|wp_kses_post }}</h3>
-					<p class="card-simple-item__text">{{ card.text|wp_kses_post }}</p>
+	<block-content class="block-content">
+		{% for card in cards %}
+			<div class="card-simple-item">
+				<div class="card-simple-item__icon">
+					<img src="{{ function('get_template_directory_uri') }}/assets/svg/geo/{{ card.icon }}-icon-geo.svg" alt="Icon {{ card.icon }}"/>
 				</div>
-			{% endfor %}
-		</div>
-	</div>
+				<h3 class="card-simple-item__title">{{ card.title|wp_kses_post }}</h3>
+				<p class="card-simple-item__text">{{ card.text|wp_kses_post }}</p>
+			</div>
+		{% endfor %}
+	</block-content>
 </section>
