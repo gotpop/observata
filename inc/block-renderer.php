@@ -51,11 +51,14 @@ function observata_render_block_twig($attributes, $content, $block)
         return '';
     }
 
+    // Ensure inner blocks are rendered (they may arrive as raw block delimiters)
+    $rendered_content = $content ? do_blocks($content) : '';
+
     $context = array_merge(
         \Timber\Timber::context(),
         [
             'attributes' => $attributes,
-            'content' => $content,
+            'content' => $rendered_content,
             'block' => $block,
         ]
     );
