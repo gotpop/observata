@@ -16,9 +16,9 @@
 		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	{% endif %}
 	{% if title %}
-		<h3 class="card-simple__title">{{ title|wp_kses_post }}</h3>
+		<h3 class="title">{{ title|wp_kses_post }}</h3>
 	{% endif %}
 	{% if description %}
-		<p class="card-simple__description">{{ description|wp_kses_post }}</p>
+		<p class="body">{{ description|wp_kses_post }}</p>
 	{% endif %}
 </article>

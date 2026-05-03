@@ -1,0 +1,12 @@
+.wp-block-observata-card-simple {
+    margin: 0;
+
+    .card-simple {
+        gap: 1rem;
+    }
+
+    h3,
+    p {
+        margin: 0;
+    }
+}

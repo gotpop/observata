@@ -1,3 +1,5 @@
+import './editor.css';
+
 import { MediaUpload, MediaUploadCheck, RichText, useBlockProps } from '@wordpress/block-editor';
 import { Button, PanelBody, SelectControl, TextControl } from '@wordpress/components';
 

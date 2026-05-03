@@ -1,24 +1,31 @@
 .card-simple {
-    display: flex;
-    flex-direction: column;
-    gap: var(--wp--preset--spacing--20, 0.75rem);
-}
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-spacing-24);
 
-.card-simple__image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: var(--wp--custom--border-radius--sm, 0.25rem);
-}
+    .icon-geo {
+        --icon-size-outer: 66px;
+        --icon-size-inner: 32px;
+    }
 
-.card-simple__title {
-    margin: 0;
-    font-size: var(--wp--preset--font-size--medium, 1rem);
-    font-weight: 600;
-}
+    .title {
+        color: var(--colour-text-heading-default);
+        text-box: trim-both cap alphabetic;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.48px;
+    }
 
-.card-simple__description {
-    margin: 0;
-    font-size: var(--wp--preset--font-size--small, 0.875rem);
-    color: var(--wp--preset--color--neutral-500, #666);
+    .body {
+        color: var(--colour-text-body-default);
+        text-box: trim-both cap alphabetic;
+        font-size: var(--size-body-md);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 145%;
+        letter-spacing: -0.08px;
+        text-wrap: pretty;
+    }
 }

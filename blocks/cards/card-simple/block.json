@@ -30,5 +30,6 @@
     "supports": {
         "html": false
     },
-    "textdomain": "observata"
+    "textdomain": "observata",
+    "style": "file:card-simple.css"
 }
