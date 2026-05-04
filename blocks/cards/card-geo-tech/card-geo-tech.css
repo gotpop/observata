@@ -62,6 +62,7 @@
         font-weight: 400;
         line-height: 1.5;
         line-height: 22px;
-        max-width: 40ch;
+        max-width: 50ch;
+        text-wrap: pretty;
     }
 }
