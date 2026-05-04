@@ -77,16 +77,16 @@
   --colour-neutral-black: #000000;
 
   /* Accent 1 */
-  --colour-accent-1-base: #ea5ec1;
+  --colour-accent-1-base: #EA5EC1;
   --colour-accent-1-100: #ffebf9;
   --colour-accent-1-200: #efaedc;
   --colour-accent-1-300: #e08ac7;
-  --colour-accent-1-400: #572f4c;
-  --colour-accent-1-500: #572f4c;
-  --colour-accent-1-600: #572f4c;
+  --colour-accent-1-400: #c374ad;
+  --colour-accent-1-500: #ab5b95;
+  --colour-accent-1-600: #8a4b79;
   --colour-accent-1-700: #572f4c;
   --colour-accent-1-800: #3b2134;
-  --colour-accent-1-900: #2f1a29;
+  --colour-accent-1-900: #2F1A29;
 
   /* Accent 2 */
   --colour-accent-2-base: #d19921;
