@@ -1,9 +1,7 @@
 .block-partnership {
-    position: relative;
     overflow: hidden;
     background-color: var(--colour-surface-white);
     border-bottom: 1px solid var(--colour-border-border-gray);
-    position: relative;
     grid-column: full;
     grid-template-columns: subgrid;
     display: grid;
@@ -14,41 +12,32 @@
 
 
     .graphic-tech {
-        display: grid;
         grid-column: breakout;
         grid-row: 1;
-        grid-template-columns: 1fr [svg-start] 1440px [svg-end] 1fr;
         position: relative;
         z-index: 0;
-        color: black;
+        pointer-events: none;
 
-        svg {
-            /* grid-column: svg;
-            grid-column: svg; */
-            width: 100%;
-            height: auto;
+        &:after {
+            background: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-200));
+            content: '';
+            inset: -30px 0 0 0;
+            mask-image: url(#mask);
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            min-height: 520px;
             position: absolute;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            left: 50%;
-            mix-blend-mode: color;
+            z-index: 1;
+        }
+
+        .mask-source {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
         }
     }
-
-    .gradient {
-        background: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-500));
-        height: 1000px;
-        width: var(--size);
-        position: absolute;
-        inset: 0;
-        mix-blend-mode: color;
-        /* mask-image: ; */
-        z-index: 1;
-        content: '';
-        width: 1000px;
-        mask-image: url(#mask);
-    }
-
 
 
     .block-content {
@@ -59,12 +48,14 @@
         gap: var(--spacing-spacing-60);
         grid-row: 1;
         z-index: 1;
+        /* min-height: 520px; */
     }
 
     .block-body {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 485px));
         gap: var(--spacing-spacing-60);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 485px));
+        grid-template-rows: min-content;
         justify-content: center;
     }
 
