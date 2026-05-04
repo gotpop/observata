@@ -9,7 +9,7 @@
 	{% endif %}
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	<div class="content">
-		<h3 class="heading">{{ card_title|esc_html }}</h3>
-		<p class="body">{{ card_text|wp_kses_post }}</p>
+		<h3 class="heading">{{ card_title|esc_html|replace({'<br>', '<br/>', '<br />': ''}) }}</h3>
+		<p class="body">{{ card_text|wp_kses_post|replace({'<br>', '<br/>', '<br />': ''}) }}</p>
 	</div>
 </article>

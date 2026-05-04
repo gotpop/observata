@@ -47,6 +47,7 @@ export default function CardGeoTechEdit({ attributes, setAttributes }) {
                     value={cardTitle}
                     onChange={(val) => setAttributes({ cardTitle: val })}
                     placeholder={__('Card title…', 'observata')}
+                    disableLineBreaks
                 />
                 <RichText
                     tagName="p"
@@ -54,6 +55,7 @@ export default function CardGeoTechEdit({ attributes, setAttributes }) {
                     value={cardText}
                     onChange={(val) => setAttributes({ cardText: val })}
                     placeholder={__('Card description…', 'observata')}
+                    disableLineBreaks
                 />
                 <SelectControl
                     label={__('Geo Icon', 'observata')}
