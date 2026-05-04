@@ -1,6 +1,6 @@
 site-layout {
     display: grid;
-    grid-template-columns: [full-start] 1fr [breakout-start] 100px [content-start] minmax(420px, 1200px) [content-end] 100px [breakout-end] 1fr [full-end];
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [breakout-start] 100px [content-start] minmax(420px, 1200px) [content-end] 100px [breakout-end] minmax(1rem, 1fr) [full-end];
 }
 
 site-container {
@@ -9,16 +9,8 @@ site-container {
     grid-template-columns: subgrid;
 }
 
-
 main {
     display: grid;
     grid-column: full;
     grid-template-columns: subgrid;
-}
-
-
-footer {
-    display: grid;
-    grid-column: full;
-    /* grid-template-columns: subgrid; */
 }
