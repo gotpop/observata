@@ -3,7 +3,6 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
-import SectionIntro from '../components/section-intro';
 
 const CARD_TEMPLATE = [
     ['observata/card-geo-tech', { cardTitle: 'Log analytics', cardText: 'Real-time log ingestion, parsing, and correlation across your entire infrastructure.', iconGeo: '01' }],
@@ -20,8 +19,6 @@ export default function GridCardsGeoTechEdit({ attributes, setAttributes }) {
     return (
         <div {...blockProps}>
             <BlockLabel name="Grid Cards Geo Tech" />
-            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
-
             <div className="cards-container">
                 <InnerBlocks
                     template={CARD_TEMPLATE}
