@@ -5,12 +5,10 @@
     position: relative;
     overflow: hidden;
 
-    .card-geo-tech-graphic {
+
+
+    .graphic-tech {
         position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         opacity: 0.8;
         pointer-events: none;
 
@@ -20,9 +18,22 @@
         }
     }
 
+    &.target-plane-graphic .graphic-tech {
+        inset: 53px -180px auto auto;
+        width: 333px;
+        height: 228px;
+    }
+
+    &.target-graphic .graphic-tech {
+        inset: -59px -60px auto auto;
+        width: 228px;
+        height: 228px;
+    }
+
     .icon-geo {
         --icon-size-outer: 60px;
         --icon-size-inner: 30px;
+        --icon-border-colour: var(--colour-secondary-500);
 
         inset: 1.5rem 1.5rem auto auto;
         position: absolute;
