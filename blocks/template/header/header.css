@@ -37,6 +37,7 @@
         animation-timeline: scroll(nearest);
         animation-range-end: 100px;
         border: 1px solid white;
+        border: 1px solid var(--colour-border-border-gray);
     }
 
     .header-logo {

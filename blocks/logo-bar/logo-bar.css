@@ -1,8 +1,5 @@
 .logo-bar {
     display: grid;
-    align-items: center;
-    justify-content: center;
-    gap: 55px;
     padding: 2rem 4rem;
     background: var(--colour-surface-surface);
     grid-column: full;
@@ -16,9 +13,7 @@
         gap: var(--spacing-spacing-50);
         grid-auto-flow: column;
         justify-content: center;
-        align-content: stretch;
         justify-items: stretch;
-        align-items: start;
     }
 
     .logo-item {

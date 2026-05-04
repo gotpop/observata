@@ -1,15 +1,13 @@
 {% set graphic = attributes.graphic|default('ribbon-star') %}
 {% set graphic_position = attributes.graphicPosition|default('left') %}
 
-<section class="block-section-card-and-graphic graphic-{{ graphic_position }}">
+<section class="block-section-card-and-graphic graphic-{{ graphic }} position-{{ graphic_position }}">
 	<block-content class="block-content">
-		<div class="section-card-and-graphic__inner">
-			<div class="section-card-and-graphic__visual">
-				<img src="{{ function('get_template_directory_uri') }}/assets/svg/graphics/{{ graphic }}-graphic.svg" alt="{{ graphic|replace({'-': ' '})|title }} graphic"/>
-			</div>
-			<div class="section-card-and-graphic__body">
-				{{ content|raw }}
-			</div>
+		{% if graphic %}
+			{% include 'views/graphics/tech/' ~ graphic ~ '-graphic.twig' %}
+		{% endif %}
+		<div class="content">
+			{{ content|raw }}
 		</div>
 	</block-content>
 </section>

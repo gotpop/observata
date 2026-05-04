@@ -35,8 +35,10 @@
         --size: 48px;
 
         display: grid;
-        grid-template-columns: 48px 1fr;
+        grid-template-columns: 1fr;
         gap: var(--spacing-spacing-16);
+        position: relative;
+        padding-left: 70px;
 
         &:first-child {
             p {
@@ -61,7 +63,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
+        position: absolute;
         top: -5px;
     }
 }

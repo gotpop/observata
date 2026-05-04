@@ -30,6 +30,7 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
                     value={cardTitle}
                     onChange={(val) => setAttributes({ cardTitle: val })}
                     placeholder={__('Card title…', 'observata')}
+                    disableLineBreaks
                 />
                 <ul className="card-geo-list-items">
                     <li>
@@ -38,6 +39,7 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
                             value={listItem1}
                             onChange={(val) => setAttributes({ listItem1: val })}
                             placeholder={__('List item 1…', 'observata')}
+                            disableLineBreaks
                         />
                     </li>
                     <li>
@@ -46,6 +48,7 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
                             value={listItem2}
                             onChange={(val) => setAttributes({ listItem2: val })}
                             placeholder={__('List item 2…', 'observata')}
+                            disableLineBreaks
                         />
                     </li>
                 </ul>
