@@ -1,9 +1,9 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import GeoIcon from '../components/geo-icon';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
+import GeoIcon from '../components/geo-icon';
 
 const iconOptions = Array.from({ length: 30 }, (_, i) => {
     const num = String(i + 1).padStart(2, '0');
@@ -23,18 +23,20 @@ export default function CardGeoEdit({ attributes, setAttributes }) {
             </div>
             <div className="intro-card-body">
                 <RichText
-                    tagName="h3"
                     className="intro-card-title"
-                    value={cardTitle}
+                    disableLineBreaks
                     onChange={(val) => setAttributes({ cardTitle: val })}
                     placeholder={__('Card title…', 'observata')}
+                    tagName="h3"
+                    value={cardTitle}
                 />
                 <RichText
-                    tagName="p"
                     className="intro-card-text"
-                    value={cardText}
+                    disableLineBreaks
                     onChange={(val) => setAttributes({ cardText: val })}
                     placeholder={__('Card description…', 'observata')}
+                    tagName="p"
+                    value={cardText}
                 />
                 <SelectControl
                     label={__('Icon', 'observata')}

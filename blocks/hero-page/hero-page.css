@@ -2,6 +2,7 @@
     background: var(--colour-background-bg-white);
     display: grid;
     align-items: center;
+    /* background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%); */
     background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
     grid-column: full;
     grid-template-rows: 6rem 1fr;

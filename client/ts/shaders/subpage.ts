@@ -14,18 +14,18 @@ const subpageShaderConfig = {
       id: "idmmr8zyxrodm90feqn",
       props: {
         center: {
-          x: 0.2,
-          y: 1,
+          x: 0.3085,
+          y: 0.77,
         },
         glossiness: 200,
         lighting: 197,
         shape3d: {
           type: "ribbon",
-          angle: 127,
+          angle: 138,
           twist: 24,
           width: 73,
           thickness: 20,
-          seed: 25,
+          seed: 21.2,
         },
         shape3dType: "ribbon",
         speed: 0,
@@ -78,7 +78,7 @@ const initSubpageShaders = async () => {
 
   if (!canvas) return
 
-  canvas.style.width = "1200px"
+  canvas.style.width = "1400px"
   canvas.style.height = "900px"
 
   if (!window.isSecureContext || !("gpu" in navigator)) {
