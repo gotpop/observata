@@ -17,50 +17,8 @@
         "introText": {
             "type": "string",
             "default": ""
-        },
-        "cards": {
-            "type": "array",
-            "default": [
-                {
-                    "cardTitle": "Log analytics",
-                    "cardText": "Real-time log ingestion, parsing, and correlation across your entire infrastructure.",
-                    "iconGeo": "01",
-                    "backgroundGraphic": ""
-                },
-                {
-                    "cardTitle": "Infrastructure monitoring",
-                    "cardText": "Track host, container, and orchestration metrics with intelligent alerting and dashboards.",
-                    "iconGeo": "02",
-                    "backgroundGraphic": ""
-                },
-                {
-                    "cardTitle": "APM & tracing",
-                    "cardText": "Distributed tracing and application performance monitoring with OpenTelemetry native support.",
-                    "iconGeo": "03",
-                    "backgroundGraphic": ""
-                },
-                {
-                    "cardTitle": "Security analytics",
-                    "cardText": "Detect threats and anomalies with SIEM-powered security analytics and automated response.",
-                    "iconGeo": "04",
-                    "backgroundGraphic": ""
-                },
-                {
-                    "cardTitle": "Cloud cost optimisation",
-                    "cardText": "Identify waste and right-size resources across your cloud deployments with actionable recommendations.",
-                    "iconGeo": "05",
-                    "backgroundGraphic": ""
-                },
-                {
-                    "cardTitle": "Custom integrations",
-                    "cardText": "Connect any data source with our flexible API and extensive library of pre-built connectors.",
-                    "iconGeo": "06",
-                    "backgroundGraphic": ""
-                }
-            ]
         }
     },
-    "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:grid-cards-geo-tech.css",

@@ -1,20 +1,12 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
-{% set cards = attributes.cards|default([]) %}
 
 <section class="block-grid-cards-geo-tech">
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<div class="cards-container">
-			{% for card in cards %}
-				{{ function('observata_render_block', 'observata/card-geo-tech', {
-					'cardTitle': card.cardTitle,
-					'cardText': card.cardText,
-					'iconGeo': card.iconGeo,
-					'backgroundGraphic': card.backgroundGraphic
-				})|raw }}
-			{% endfor %}
+			{{ content|raw }}
 		</div>
 	</block-content>
 </section>
