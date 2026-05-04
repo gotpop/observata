@@ -12,8 +12,7 @@
         display: grid;
         grid-column: content;
         grid-template-columns: 1fr;
-        gap: var(--spacing-spacing-32);
-        grid-template-columns: 1fr;
+        gap: var(--spacing-spacing-50);
         grid-template-rows: min-content;
     }
 
