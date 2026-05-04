@@ -4,10 +4,27 @@
     "private": true,
     "scripts": {
         "build": "wp-scripts build --config webpack.config.js",
-        "start": "wp-scripts start --config webpack.config.js"
+        "start": "wp-scripts start --config webpack.config.js",
+        "lint": "npm run lint:ts && npm run lint:css",
+        "lint:ts": "eslint src/ client/",
+        "lint:css": "stylelint '**/*.css'",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
     },
     "devDependencies": {
-        "@wordpress/scripts": "^30.0.0"
+        "@eslint/js": "^10.0.1",
+        "@stylelint/postcss-css-in-js": "^0.38.0",
+        "@typescript-eslint/eslint-plugin": "^8.59.1",
+        "@typescript-eslint/parser": "^8.59.1",
+        "@wordpress/scripts": "^30.0.0",
+        "eslint": "^10.3.0",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "prettier": "^3.8.3",
+        "prettier-plugin-twig-melody": "^0.4.6",
+        "stylelint": "^17.10.0",
+        "stylelint-config-standard": "^40.0.0",
+        "typescript": "^6.0.3"
     },
     "dependencies": {
         "shaders": "^2.5.95"
