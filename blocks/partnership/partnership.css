@@ -8,7 +8,7 @@
     padding-block: 5rem;
     position: relative;
     grid-template-rows: 1fr min-content;
-    grid-template-columns: [full-start] 1fr [breakout-start] 100px [content-start] minmax(420px, 1200px) [content-end] 100px [breakout-end] 1fr [full-end];
+    grid-template-columns: subgrid;
 
 
     .graphic-tech {

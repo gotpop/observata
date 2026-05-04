@@ -1,6 +1,6 @@
 site-layout {
     display: grid;
-    grid-template-columns: [full-start] 1fr [content-start] minmax(420px, 1200px) [content-end] 1fr [full-end];
+    grid-template-columns: [full-start] 1fr [breakout-start] 100px [content-start] minmax(420px, 1200px) [content-end] 100px [breakout-end] 1fr [full-end];
 }
 
 site-container {
