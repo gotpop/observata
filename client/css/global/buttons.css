@@ -10,4 +10,10 @@
         gap: var(--spacing-spacing-16);
         padding: var(--spacing-spacing-16) var(--spacing-spacing-24);
         text-decoration: none;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: var(--colour-accent-1-600);
+            color: white;
+        }
     }

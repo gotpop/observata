@@ -34,13 +34,17 @@
     background-image: var(--grad-radial-white), var(--grad-linear);
     display: grid;
     grid-column: full;
+    grid-template-areas:
+        ". . ."
+        ". hero ."
+        ". . .";
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 13rem min-content 1fr;
     justify-content: center;
     min-height: var(--height-hero-home);
     overflow: clip;
     position: sticky;
     top: 0;
-    grid-template-rows: 13rem min-content 1fr;
-    grid-template-columns: 1fr max-content 1fr;
 
     &::after {
         animation: background-animation linear;
@@ -66,19 +70,12 @@
     }
 
     .hero-content {
-        z-index: 3;
         display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        grid-template-rows: repeat(2, fit-content(100%));
-        gap: 32px;
-        text-align: center;
-        display: grid;
+        gap: var(--spacing-spacing-32);
+        grid-area: hero;
         grid-template-columns: 1fr;
-        justify-items: center;
-
-
-        grid-row: 2;
-        grid-column: 2;
+        text-align: center;
+        z-index: 2;
     }
 
     .hero-text {
