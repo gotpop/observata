@@ -6,9 +6,9 @@
 					{% if item.children %}
 						<li class="menu-item menu-item-has-children menu-item-{{ item.slug|esc_attr }}">
 							{% if item.link == '#' %}
-								<button class="menu-link menu-link--placeholder" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-1">
+								<button class="menu-link menu-link--placeholder" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-{{ loop.index }}">
 								{% else %}
-									<a href="{{ item.link }}" class="menu-link" aria-haspopup="true" aria-expanded="false">
+									<a href="{{ item.link }}" class="menu-link" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-{{ loop.index }}">
 									{% endif %}
 									<span>{{ item.title|esc_html }}</span>
 									<svg class="menu-arrow" width="10" height="6" viewbox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@
 							{% else %}
 								</a>
 							{% endif %}
-							<div class="sub-wrapper" id="submenu-1">
+							<div class="sub-wrapper" id="submenu-{{ loop.index }}">
 								<ul class="submenu">
 									{% for child in item.children %}
 										<li class="submenu-item menu-item-{{ child.slug|esc_attr }}">
