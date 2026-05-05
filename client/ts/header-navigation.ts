@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (trigger && headerContent) {
 		trigger.addEventListener('click', () => {
-			const isOpen = headerContent.classList.toggle('open');
+			const isOpen = headerContent.classList.toggle('is-open');
 			trigger.setAttribute('aria-expanded', String(isOpen));
 			const label = trigger.querySelector('.sr-only');
 			if (label) {

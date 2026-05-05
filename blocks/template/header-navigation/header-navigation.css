@@ -4,39 +4,31 @@
 	transition: grid-template-rows 0.3s ease-in-out;
 	grid-template-rows: 0fr;
 	overflow: hidden;
-    
-    .is-open & {
-        grid-template-rows: 1fr;
-    }
+
+	.is-open & {
+		grid-template-rows: 1fr;
+	}
 
 	@media (width >= 40rem) {
 		gap: 32px;
 		display: flex;
 	}
-}
 
-nav[role='navigation'] {
-	position: relative;
-	overflow: hidden;
-	display: grid;
-	grid-template-columns: 1fr;
-}
-
-.menu-item {
-    padding: 1rem;
+	.navigation {
+		overflow: hidden;
+	}
 }
 
 .sub-wrapper {
-    display: grid;
-    transition: grid-template-rows 0.3s ease-in-out;
+	display: grid;
+	transition: grid-template-rows 0.3s ease-in-out;
 	grid-template-rows: 0fr;
-	overflow: hidden;
 
-    .is-open & {
-        grid-template-rows: 1fr;
-    }
-}
+	.submenu {
+		overflow: hidden;
+	}
 
-.submenu {
-    /* display: flex; */
+	[aria-expanded='true'] + & {
+		grid-template-rows: 1fr;
+	}
 }
