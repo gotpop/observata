@@ -1,6 +1,23 @@
+/* sm	40rem (640px)	@media (width >= 40rem) { ... }
+md	48rem (768px)	@media (width >= 48rem) { ... }
+lg	64rem (1024px)	@media (width >= 64rem) { ... }
+xl	80rem (1280px)	@media (width >= 80rem) { ... }
+2xl	96rem (1536px)	@media (width >= 96rem) { ... } */
+
+
 site-layout {
+    --b: 0px;
+
+    @media (width >=40rem) {
+        --b: 10px;
+    }
+
+    @media (width >=48rem) {
+        --b: 100px;
+    }
+
     display: grid;
-    grid-template-columns: [full-start] minmax(1rem, 1fr) [breakout-start] 100px [content-start] minmax(420px, 1200px) [content-end] 100px [breakout-end] minmax(1rem, 1fr) [full-end];
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [breakout-start] var(--b) [content-start] minmax(420px, 1200px) [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
 }
 
 site-container {
