@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Toggle submenu aria-expanded on menu items with children
-	const menuItemsWithChildren = document.querySelectorAll('.menu-item-has-children > .menu-link');
+	const menuItemsWithChildren = document.querySelectorAll('.menu-item-has-children > .menu-button');
 	menuItemsWithChildren.forEach((menuItem) => {
 		menuItem.addEventListener('click', (e) => {
 			e.preventDefault();
