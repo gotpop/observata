@@ -16,5 +16,8 @@
 	},
 	"[twig]": {
 		"editor.defaultFormatter": "serhatkaya.twig-formatter"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
 	}
 }
