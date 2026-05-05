@@ -6,28 +6,11 @@
 					{% if item.children %}
 						<li class="menu-item menu-item-has-children menu-item-{{ item.slug|esc_attr }}">
 							{% if item.link == '#' %}
-								<button class="menu-link menu-link--placeholder" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-{{ loop.index }}">
-								{% else %}
-									<a href="{{ item.link }}" class="menu-link" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-{{ loop.index }}">
-									{% endif %}
-									<span>{{ item.title|esc_html }}</span>
-									<svg class="menu-arrow" width="10" height="6" viewbox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-									{% if item.link == '#' %}
-									</button>
+								{% include 'template/header-navigation/menu-item-button.twig' %}
 							{% else %}
-								</a>
+								{% include 'template/header-navigation/menu-item-anchor.twig' %}
 							{% endif %}
-							<div class="sub-wrapper" id="submenu-{{ loop.index }}">
-								<ul class="submenu">
-									{% for child in item.children %}
-										<li class="submenu-item menu-item-{{ child.slug|esc_attr }}">
-											<a href="{{ child.link }}">{{ child.title|esc_html }}</a>
-										</li>
-									{% endfor %}
-								</ul>
-							</div>
+							{% include 'template/header-navigation/menu-submenu.twig' %}
 						</li>
 					{% else %}
 						<li class="menu-item menu-item-{{ item.slug|esc_attr }}">

@@ -1,0 +1,9 @@
+<div class="sub-wrapper" id="submenu-{{ loop.index }}">
+	<ul class="submenu">
+		{% for child in item.children %}
+			<li class="submenu-item menu-item-{{ child.slug|esc_attr }}">
+				<a href="{{ child.link }}">{{ child.title|esc_html }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
