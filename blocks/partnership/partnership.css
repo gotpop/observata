@@ -9,9 +9,9 @@
 		pointer-events: none;
 
 		&:after {
-			background: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-200));
+			background-image: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-200));
 			content: '';
-			inset: -30px 0 0 0;
+			top: 60px;
 			mask-image: url(#mask);
 			mask-position: center;
 			mask-repeat: no-repeat;
@@ -19,6 +19,18 @@
 			min-height: 520px;
 			position: absolute;
 			z-index: 1;
+			width: 1440px;
+			left: 50%;
+			transform: translateX(-50%);
+			transition: all 0.3s ease;
+
+			@media (width >=40rem) {
+				top: 100px;
+			}
+
+			@media (width >=80rem) {
+				top: -30px;
+			}
 		}
 
 		.mask-source {
