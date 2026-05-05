@@ -37,6 +37,9 @@
 		grid-template-areas: "logo trigger" "nav nav";
 		grid-template-columns:  1fr 200px;
 		grid-template-rows: min-content 1fr;
+		gap: var(--spacing-spacing-16);
+		padding: var(--spacing-spacing-16);
+		padding-block: var(--spacing-spacing-24);
 		
 		@media (width >= 40rem) {
 			margin-block: 3rem 0;

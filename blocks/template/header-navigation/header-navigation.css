@@ -21,3 +21,22 @@ nav[role='navigation'] {
 	display: grid;
 	grid-template-columns: 1fr;
 }
+
+.menu-item {
+    padding: 1rem;
+}
+
+.sub-wrapper {
+    display: grid;
+    transition: grid-template-rows 0.3s ease-in-out;
+	grid-template-rows: 0fr;
+	overflow: hidden;
+
+    .is-open & {
+        grid-template-rows: 1fr;
+    }
+}
+
+.submenu {
+    /* display: flex; */
+}
