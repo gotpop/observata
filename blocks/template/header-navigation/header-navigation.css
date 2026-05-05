@@ -1,5 +1,13 @@
 .header-navigation {
-	display: none;
+	display: grid;
+	grid-area: nav;
+	transition: grid-template-rows 0.3s ease-in-out;
+	grid-template-rows: 0fr;
+	overflow: hidden;
+    
+    .is-open & {
+        grid-template-rows: 1fr;
+    }
 
 	@media (width >= 40rem) {
 		gap: 32px;
@@ -9,104 +17,7 @@
 
 nav[role='navigation'] {
 	position: relative;
-}
-
-.menu-list {
-	list-style: none;
-	display: flex;
-	gap: 2rem;
-	align-items: center;
-}
-
-.menu-item a {
-	color: var(--colour-text-body-default, #626262);
-	font-family: Inter;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	text-decoration: none;
-}
-
-/* Menu items with children */
-.menu-item-has-children {
-	position: relative;
-}
-
-.menu-item-has-children > .menu-link {
-	display: flex;
-	align-items: center;
-	gap: 6px;
-}
-
-/* Reset button styles for placeholder (non-page) parent items */
-.menu-link--placeholder {
-	background: none;
-	border: none;
-	cursor: pointer;
-	font: inherit;
-	color: inherit;
-	padding: 0;
-}
-
-.menu-arrow {
-	transition: transform 0.2s ease;
-}
-
-.menu-item-has-children:hover .menu-arrow {
-	transform: rotate(180deg);
-}
-
-/* Submenu dropdown */
-.submenu {
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	list-style: none;
-	padding: 0;
-	margin: 8px 0 0;
-	background: white;
-	border-radius: 12px;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-	min-width: 200px;
-	opacity: 0;
-	visibility: hidden;
-	transition:
-		opacity 0.2s ease,
-		visibility 0.2s ease;
-	z-index: 1000;
 	overflow: hidden;
-}
-
-.menu-item-has-children:hover > .submenu {
-	opacity: 1;
-	visibility: visible;
-}
-
-.submenu-item {
-	border-bottom: 1px solid #f0f0f0;
-}
-
-.submenu-item:last-child {
-	border-bottom: none;
-}
-
-.submenu-item a {
-	display: block;
-	padding: 12px 20px;
-	color: var(--colour-text-body-default, #626262);
-	font-family: Inter, sans-serif;
-	font-size: 14px;
-	font-weight: 400;
-	text-decoration: none;
-	transition:
-		background 0.15s ease,
-		color 0.15s ease;
-	white-space: nowrap;
-}
-
-.submenu-item a:hover {
-	background: #f8f8f8;
-	color: var(--fonts-colour-text-heading, #1a1a1a);
+	display: grid;
+	grid-template-columns: 1fr;
 }

@@ -31,7 +31,13 @@
 		animation-timeline: scroll(nearest);
 		animation-range-end: 100px;
 		border: 1px solid var(--colour-border-border-gray);
+		flex-direction: column;
 
+		display: grid;
+		grid-template-areas: "logo trigger" "nav nav";
+		grid-template-columns:  1fr 200px;
+		grid-template-rows: min-content 1fr;
+		
 		@media (width >= 40rem) {
 			margin-block: 3rem 0;
 			margin-inline: 1rem;
@@ -42,4 +48,14 @@
 	h1 {
 		font-size: 2rem;
 	}
+}
+
+
+.container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+.container.expanded {
+  grid-template-rows: 1fr;
 }

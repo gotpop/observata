@@ -1,6 +1,7 @@
 .header-logo {
 	display: flex;
 	align-items: center;
+	grid-area: logo;
 
 	svg {
 		max-width: 130px;

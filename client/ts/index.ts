@@ -1,11 +1,12 @@
-import "./shaders/home"
-import "./shaders/subpage"
+import './header-navigation';
+import './shaders/home';
+import './shaders/subpage';
 
-import { initCardGeoShader } from "./shaders/card-geo-shader"
+import { initCardGeoShader } from './shaders/card-geo-shader';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const canvases = document.querySelectorAll<HTMLCanvasElement>(".card-geo-shader canvas")
-  for (const canvas of canvases) {
-    void initCardGeoShader(canvas)
-  }
-})
+document.addEventListener('DOMContentLoaded', () => {
+	const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
+	for (const canvas of canvases) {
+		void initCardGeoShader(canvas);
+	}
+});
