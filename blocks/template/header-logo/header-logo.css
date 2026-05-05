@@ -1,6 +1,12 @@
 .header-logo {
 	display: flex;
 	align-items: center;
+
+	svg {
+		max-width: 130px;
+		height: auto;
+		display: flex;
+	}
 }
 
 .header-logo h1 a {

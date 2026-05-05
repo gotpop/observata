@@ -83,7 +83,12 @@ function observata_allowed_blocks($allowed_blocks, $editor_context)
 		$metadata = json_decode(file_get_contents($file->getPathname()), true);
 
 		// Skip internal blocks
-		if (!empty($metadata['name']) && $metadata['name'] === 'observata/section-intro') {
+		if (!empty($metadata['name']) && in_array($metadata['name'], [
+			'observata/section-intro',
+			'observata/header-logo',
+			'observata/header-navigation',
+			'observata/header-navigation-trigger',
+		])) {
 			continue;
 		}
 

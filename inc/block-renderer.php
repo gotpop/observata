@@ -66,6 +66,20 @@ function observata_render_block_twig($attributes, $content, $block)
     // Add WordPress main menu to context for header block
     if ($template_name === 'header') {
         $context['main_menu'] = \Timber\Timber::get_menu('main-menu');
+
+        // Enqueue styles for header partial blocks (included via Twig, not as WP blocks)
+        $partials = ['header-logo', 'header-navigation', 'header-navigation-trigger'];
+        foreach ($partials as $partial) {
+            $css_file = get_template_directory() . "/blocks/template/{$partial}/{$partial}.css";
+            if (file_exists($css_file)) {
+                wp_enqueue_style(
+                    "observata-{$partial}",
+                    get_template_directory_uri() . "/blocks/template/{$partial}/{$partial}.css",
+                    [],
+                    filemtime($css_file)
+                );
+            }
+        }
     }
 
     try {

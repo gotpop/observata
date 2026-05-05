@@ -1,0 +1,13 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/header-navigation",
+    "title": "Header Navigation",
+    "category": "theme",
+    "description": "Navigation partial for the header.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "style": "file:header-navigation.css"
+}

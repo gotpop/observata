@@ -1,7 +1,3 @@
-@import './header-logo.css';
-@import 'header-navigation.css';
-@import 'header-navigation-trigger.css';
-
 @keyframes nav {
 	to {
 		background-color: rgba(255, 255, 255, 0.95);
@@ -31,12 +27,9 @@
 		border-radius: 0 0 4.5rem 4.5rem;
 		corner-shape: squircle;
 		width: stretch;
-		max-width: 1200px;
-		grid-column: content;
 		animation: nav linear forwards;
 		animation-timeline: scroll(nearest);
 		animation-range-end: 100px;
-		border: 1px solid white;
 		border: 1px solid var(--colour-border-border-gray);
 
 		@media (width >= 40rem) {

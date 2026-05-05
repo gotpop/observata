@@ -1,0 +1,13 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/header-logo",
+    "title": "Header Logo",
+    "category": "theme",
+    "description": "Logo partial for the header.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "style": "file:header-logo.css"
+}
