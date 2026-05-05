@@ -2,7 +2,7 @@
 	<ul class="submenu">
 		{% for child in item.children %}
 			<li class="submenu-item menu-item-{{ child.slug|esc_attr }}">
-				<a href="{{ child.link }}">{{ child.title|esc_html }}</a>
+				<a class="menu-anchor" href="{{ child.link }}">{{ child.title|esc_html }}</a>
 			</li>
 		{% endfor %}
 	</ul>
