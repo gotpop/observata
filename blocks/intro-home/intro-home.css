@@ -1,55 +1,55 @@
 .block-intro {
-    anchor-name: --intro-anchor;
-    background-color: var(--colour-surface-white);
-    border-bottom: 1px solid var(--colour-border-border-gray);
-    border-top: 1px solid var(--colour-border-border-gray);
-    position: relative;
-    grid-column: full;
-    grid-template-columns: subgrid;
-    display: grid;
-    padding-block: 5rem;
+	anchor-name: --intro-anchor;
+	background-color: var(--colour-surface-white);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	border-top: 1px solid var(--colour-border-border-gray);
+	position: relative;
+	grid-column: full;
+	grid-template-columns: subgrid;
+	display: grid;
+	padding-block: 5rem;
 
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+		gap: var(--spacing-spacing-50);
 
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-        gap: var(--spacing-spacing-50);
+		article:last-child {
+			grid-column: 1 / -1;
 
-        article:last-child {
-            grid-column: 1 / -1;
-
-            @media (width >=1212px) {
-                grid-column: span 1;
-            }
-        }
-    }
+			@media (width >=1212px) {
+				grid-column: span 1;
+			}
+		}
+	}
 }
 
 .logo-strip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 55px;
-    padding: 2rem 4rem;
-    position: absolute;
-    position-anchor: --intro-anchor;
-    position-area: center top;
-    background-color: white;
-    border-radius: 8rem 8rem 0 0;
-    border: 1px solid var(--colour-border-border-gray);
-    border-bottom: none;
-    corner-shape: squircle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 55px;
+	padding: 2rem 4rem;
+	position: absolute;
+	position-anchor: --intro-anchor;
+	position-area: center top;
+	background-color: white;
+	border-radius: 8rem 8rem 0 0;
+	border: 1px solid var(--colour-border-border-gray);
+	border-bottom: none;
+	corner-shape: squircle;
 
-    .logo-item {
-        display: flex;
-        align-items: center;
-        max-width: 300px;
+	.logo-item {
+		display: flex;
+		align-items: center;
+		max-width: 300px;
+		flex: 0 0 auto;
 
-        img {
-            max-width: 200px;
-            max-height: 30px;
-        }
-    }
-
+		img {
+			max-width: 200px;
+			max-height: 30px;
+		}
+	}
 }
