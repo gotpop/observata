@@ -1,13 +1,6 @@
 .block-intro {
 	anchor-name: --intro-anchor;
-	background-color: var(--colour-surface-white);
-	border-bottom: 1px solid var(--colour-border-border-gray);
 	border-top: 1px solid var(--colour-border-border-gray);
-	position: relative;
-	grid-column: full;
-	grid-template-columns: subgrid;
-	display: grid;
-	padding-block: 5rem;
 
 	.block-content {
 		display: grid;

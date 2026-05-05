@@ -33,3 +33,17 @@ main {
 	grid-column: full;
 	grid-template-columns: subgrid;
 }
+
+.section-block {
+	background-color: var(--colour-surface-white);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	display: grid;
+	grid-column: full;
+	grid-template-columns: subgrid;
+	padding-block: 2rem;
+	position: relative;
+
+	@media (width >=40rem) {
+		padding-block: 5rem;
+	}
+}
