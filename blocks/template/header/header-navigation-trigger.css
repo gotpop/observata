@@ -1,0 +1,7 @@
+.trigger-navigation {
+	display: flex;
+
+	@media (width >= 40rem) {
+		display: none;
+	}
+}
