@@ -7,24 +7,25 @@
 	<block-content class="block-content">
 		<footer-top class="footer-top">
 			<div class="footer-contact">
-				<div class="footer-logo">
-					<a href="{{ function('home_url', '/') }}" title="{{ function('get_bloginfo', 'name')|esc_attr }}">
-						<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/observata-white-logo.svg" alt="{{ function('get_bloginfo', 'name')|esc_attr }}" class="logo-image">
-					</a>
-				</div>
-				<div class="footer-contact-item">
-					<p class="footer-label">Email</p>
-					<p class="footer-value">
-						<a href="mailto:{{ contact_email|esc_html }}">{{ contact_email|esc_html }}</a>
-					</p>
-				</div>
-
-				<div class="footer-contact-item">
-					<p class="footer-label">Address</p>
-					<p class="footer-value">{{ contact_address|esc_html }}</p>
-				</div>
+				<a class="footer-logo" href="{{ function('home_url', '/') }}" title="{{ function('get_bloginfo', 'name')|esc_attr }}">
+					{% include 'logos/logo-observata-white-logo.twig' %}
+				</a>
+				<article class="contact">
+					<h4>Contact us</h4>
+					<ul class="list-contact">
+						<li class="list-item">
+							<strong>Email:</strong>
+							<span>
+								<a class="anchor" href="mailto:{{ contact_email|esc_html }}">{{ contact_email|esc_html }}</a>
+							</span>
+						</li>
+						<li class="list-item">
+							<strong>Address:</strong>
+							<span>{{ contact_address|esc_html }}</span>
+						</li>
+					</ul>
+				</article>
 			</div>
-			<div class="footer-links"></div>
 		</footer-top>
 		<footer-bottom class="footer-bottom">
 			<div class="footer-locations">

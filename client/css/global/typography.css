@@ -7,3 +7,13 @@
   --size-heading-h4: var(--typography-size-24);
   --size-heading-h3: var(--typography-size-32);
   --size-hero-default: var(--typography-size-56); */
+
+
+
+  .anchor {
+    text-decoration-thickness: 1px;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    color: white;
+    text-decoration-color: var(--colour-primary-400);
+  }
