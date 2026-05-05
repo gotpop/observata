@@ -1,4 +1,4 @@
-@import 'header-logo.css';
+@import './header-logo.css';
 @import 'header-navigation.css';
 @import 'header-navigation-trigger.css';
 
@@ -14,7 +14,6 @@
 }
 
 .header {
-	/* position: sticky; */
 	top: 0;
 	z-index: 999;
 	position: fixed;
@@ -23,15 +22,13 @@
 	justify-content: center;
 
 	.header-content {
-		margin-top: 3rem;
-		margin-inline: 1rem;
 		max-width: 1200px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		background: white;
 		padding: 18px 28px;
-		border-radius: 4.5rem;
+		border-radius: 0 0 4.5rem 4.5rem;
 		corner-shape: squircle;
 		width: stretch;
 		max-width: 1200px;
@@ -41,6 +38,12 @@
 		animation-range-end: 100px;
 		border: 1px solid white;
 		border: 1px solid var(--colour-border-border-gray);
+
+		@media (width >= 40rem) {
+			margin-block: 3rem 0;
+			margin-inline: 1rem;
+			border-radius: 4.5rem;
+		}
 	}
 
 	h1 {
