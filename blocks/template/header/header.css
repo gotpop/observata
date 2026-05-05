@@ -23,7 +23,7 @@
 		justify-content: space-between;
 		align-items: center;
 		background: white;
-		padding: 18px 28px;
+
 		border-radius: 0 0 4.5rem 4.5rem;
 		corner-shape: squircle;
 		width: stretch;
@@ -34,17 +34,21 @@
 		flex-direction: column;
 
 		display: grid;
-		grid-template-areas: "logo trigger" "nav nav";
-		grid-template-columns:  1fr 200px;
+		grid-template-areas: 'logo trigger' 'nav nav';
+		grid-template-columns: 1fr 200px;
 		grid-template-rows: min-content 1fr;
 		gap: var(--spacing-spacing-16);
 		padding: var(--spacing-spacing-16);
 		padding-block: var(--spacing-spacing-24);
-		
+
 		@media (width >= 40rem) {
 			margin-block: 3rem 0;
 			margin-inline: 1rem;
 			border-radius: 4.5rem;
+			grid-template-areas: 'logo nav';
+			grid-template-rows: min-content;
+			grid-template-columns: 200px 1fr;
+			padding: 18px 28px;
 		}
 	}
 
@@ -53,12 +57,11 @@
 	}
 }
 
-
 .container {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease-in-out;
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.3s ease-in-out;
 }
 .container.expanded {
-  grid-template-rows: 1fr;
+	grid-template-rows: 1fr;
 }
