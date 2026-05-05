@@ -13,9 +13,16 @@
     .block-content {
         display: grid;
         grid-column: content;
-        /* grid-template-columns: repeat(auto-fit, minmax(28px, 1fr)); */
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
         gap: var(--spacing-spacing-50);
+
+        article:last-child {
+            grid-column: 1 / -1;
+
+            @media (width >=1212px) {
+                grid-column: span 1;
+            }
+        }
     }
 }
 

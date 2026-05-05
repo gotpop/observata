@@ -5,30 +5,13 @@
 
 <footer class="footer" role="contentinfo">
 	<block-content class="block-content">
-		<div class="footer-top">
-			<div class="footer-logo">
-				<a href="{{ function('home_url', '/') }}" title="{{ function('get_bloginfo', 'name')|esc_attr }}">
-					<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/observata-white-logo.svg" alt="{{ function('get_bloginfo', 'name')|esc_attr }}" class="logo-image">
-				</a>
-			</div>
-
-			<div class="footer-links">
-				<a href="https://observata.com/managed-detection-and-response-services/" class="footer-link">Services</a>
-				<a href="https://observata.com/pricing/" class="footer-link">Pricing</a>
-				<a href="https://observata.com/resources/" class="footer-link">Resources</a>
-				<a href="https://observata.com/about-us/" class="footer-link">About Us</a>
-				<a href="https://observata.com/contact-us/" class="footer-link">Contact Us</a>
-				<a href="https://observata.com/observability-overview/" class="footer-link">Observability</a>
-				<a href="https://observata.com/cybersecurity-overview/" class="footer-link">Cybersecurity</a>
-			</div>
-		</div>
-
-		<div class="footer-bottom">
-			<div class="footer-locations">
-				<p>{{ locations|esc_html }}</p>
-			</div>
-
+		<footer-top class="footer-top">
 			<div class="footer-contact">
+				<div class="footer-logo">
+					<a href="{{ function('home_url', '/') }}" title="{{ function('get_bloginfo', 'name')|esc_attr }}">
+						<img src="{{ function('get_template_directory_uri') }}/assets/svg/logos/observata-white-logo.svg" alt="{{ function('get_bloginfo', 'name')|esc_attr }}" class="logo-image">
+					</a>
+				</div>
 				<div class="footer-contact-item">
 					<p class="footer-label">Email</p>
 					<p class="footer-value">
@@ -41,10 +24,15 @@
 					<p class="footer-value">{{ contact_address|esc_html }}</p>
 				</div>
 			</div>
-
+			<div class="footer-links"></div>
+		</footer-top>
+		<footer-bottom class="footer-bottom">
+			<div class="footer-locations">
+				<p>{{ locations|esc_html }}</p>
+			</div>
 			<div class="footer-copyright">
 				<p>{{ copyright|esc_html }}</p>
 			</div>
-		</div>
+		</footer-bottom>
 	</block-content>
 </footer>

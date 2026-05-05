@@ -14,4 +14,9 @@
         gap: var(--spacing-spacing-50);
         color: white;
     }
+
+    .footer-top {
+        display: grid;
+        grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
+    }
 }
