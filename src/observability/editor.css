@@ -1,46 +1,43 @@
 .observata-observability-editor {
-    border: 1px dashed #ccc;
-    padding: 1.5rem;
-    border-radius: 4px;
+	border: 1px dashed #ccc;
+	padding: 1.5rem;
+	border-radius: 4px;
 
-    .observata-controls {
-        padding: 1rem;
-        background: #f0f0f0;
-        border-radius: 4px;
-        margin-bottom: 1.5rem;
+	.observata-controls {
+		padding: 1rem;
+		background: #f0f0f0;
+		border-radius: 4px;
+		margin-bottom: 1.5rem;
 
-        .components-text-control {
-            margin-bottom: 1rem;
-        }
-    }
+		.components-text-control {
+			margin-bottom: 1rem;
+		}
+	}
 
-    .card-large {
-        background-color: var(--colour-surface-white);
-        background-image: url('../../assets/img/connected-dots.png');
-        border-radius: var(--radius-large);
-        border: 1px solid var(--colour-accent-1-200);
-        padding: var(--spacing-spacing-16);
-        background-repeat: no-repeat;
-        background-position: top -200px right -200px;
-        background-size: 500px;
+	.card-large {
+		background-color: var(--colour-surface-white);
+		border-radius: var(--radius-large);
+		border: 1px solid var(--colour-accent-1-200);
+		padding: var(--spacing-spacing-16);
+		background-repeat: no-repeat;
+		background-position: top -200px right -200px;
+		background-size: 500px;
+	}
 
-    }
+	.block-editor-block-list__layout {
+		grid-template-columns: 1fr 1fr 1fr !important;
+	}
 
-    .block-editor-block-list__layout {
-        grid-template-columns: 1fr 1fr 1fr !important;
-    }
+	.cards-micro {
+		display: grid;
+		gap: var(--spacing-spacing-24);
+		grid-column: 1 / -1;
+	}
 
-    .cards-micro {
-        display: grid;
-        gap: var(--spacing-spacing-24);
-        grid-column: 1 / -1;
-    }
-
-    .card-micro {
-
-        h3,
-        p {
-            margin: 0;
-        }
-    }
+	.card-micro {
+		h3,
+		p {
+			margin: 0;
+		}
+	}
 }
