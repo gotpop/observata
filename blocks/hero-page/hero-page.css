@@ -66,7 +66,7 @@
 	.heading-hero-page {
 		font-size: 56px;
 		font-weight: var(--typography-weight-bold);
-		color: var(--colour-text-text-hero);
+		color: var(--colour-text-hero);
 		line-height: 60px;
 		letter-spacing: -1px;
 		margin: 0;
@@ -82,7 +82,7 @@
 		z-index: 1;
 		font-size: 20px;
 		font-weight: var(--fonts-weight-font-weight-regular);
-		color: var(--colour-text-text-hero-subheading);
+		color: var(--colour-text-hero-subheading);
 		line-height: 31px;
 		letter-spacing: -0.4px;
 		max-width: 60ch;

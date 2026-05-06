@@ -88,7 +88,7 @@
 		h1 {
 			font-size: var(--size-hero-default);
 			font-weight: var(--typography-weight-bold);
-			color: var(--colour-text-text-hero);
+			color: var(--colour-text-hero);
 			line-height: 60px;
 			letter-spacing: -1px;
 			margin-bottom: 1rem;
@@ -117,7 +117,7 @@
 	}
 
 	.hero-text p.hero-subheading {
-		color: var(--colour-text-text-hero-subheading);
+		color: var(--colour-text-hero-subheading);
 		font-size: var(--size-body-lg);
 		font-weight: var(--fonts-weight-font-weight-regular);
 		letter-spacing: -0.4px;

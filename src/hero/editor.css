@@ -2,44 +2,44 @@
 
 /* Remove sticky positioning — it breaks the block editor layout */
 .block-editor-block-list__block.block-hero-home {
-    position: relative;
-    min-height: 500px;
+	position: relative;
+	min-height: 500px;
 
-    .hero-content {
-        margin: 0 auto;
-    }
+	.hero-content {
+		margin: 0 auto;
+	}
 
-    .heading-hero {
-        em {
-            color: var(--colour-secondary-500);
-            font-style: normal;
-        }
-    }
+	.heading-hero {
+		em {
+			color: var(--colour-secondary-500);
+			font-style: normal;
+		}
+	}
 }
 
 /* Disable the scroll-driven overlay animation in the editor */
 .block-editor-block-list__block .block-hero-home::after {
-    display: none;
+	display: none;
 }
 
 /* Style the CTA fields to fit the hero design */
 .block-hero-home .hero-cta-fields {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
 }
 
 .block-hero-home .hero-cta-fields .components-base-control {
-    flex: 1 1 200px;
-    min-width: 200px;
+	flex: 1 1 200px;
+	min-width: 200px;
 }
 
 /* Give the CTA field labels a lighter style to fit the hero */
 .block-hero-home .hero-cta-fields .components-base-control__label {
-    color: var(--colour-text-text-hero-subheading, #666);
+	color: var(--colour-text-hero-subheading, #666);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+	position: relative;
+	z-index: 1;
 }

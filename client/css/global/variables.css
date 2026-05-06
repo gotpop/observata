@@ -190,8 +190,8 @@
 /* Collection name: Alias */
 :root {
 	/* Hero */
-	--colour-text-text-hero: var(--colour-text-heading-default);
-	--colour-text-text-hero-subheading: var(--colour-text-body-default);
+	--colour-text-hero: var(--colour-text-heading-default);
+	--colour-text-hero-subheading: var(--colour-text-body-default);
 	/* Text */
 	--colour-text-heading-default: var(--colour-neutral-800);
 	--colour-text-body-default: var(--colour-neutral-600);

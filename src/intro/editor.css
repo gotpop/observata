@@ -1,59 +1,59 @@
 /* Editor-specific overrides for the Intro block */
 .block-editor-block-list__block.block-intro {
-    position: relative;
+	position: relative;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    .block-editor-block-list__layout {
-        display: flex !important;
-        justify-content: space-between;
-    }
+	.block-editor-block-list__layout {
+		display: flex !important;
+		justify-content: space-between;
+	}
 
-    .block-content {
-        display: flex !important;
+	.block-content {
+		display: flex !important;
 
-        /* article {
+		/* article {
             max-width: 200px !important;
         } */
-    }
+	}
 
-    .card-geo h3 {
-        max-width: max-content;
-    }
+	.card-geo h3 {
+		max-width: max-content;
+	}
 
-    .intro-card-icon {
-        --size: 5.25rem;
+	.intro-card-icon {
+		--size: 5.25rem;
 
-        position: absolute;
-        inset: -1rem -1rem auto auto;
+		position: absolute;
+		inset: -1rem -1rem auto auto;
 
-        border-radius: 50%;
-        width: var(--size);
-        height: var(--size);
-        border: 1px solid var(--colour-border-border-gray);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        inset: calc(var(--size) / -3.5) calc(var(--size) / -3.5) auto auto;
-        position: absolute;
-        background-color: var(--colour-surface-white);
-    }
+		border-radius: 50%;
+		width: var(--size);
+		height: var(--size);
+		border: 1px solid var(--colour-border-border-gray);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		inset: calc(var(--size) / -3.5) calc(var(--size) / -3.5) auto auto;
+		position: absolute;
+		background-color: var(--colour-surface-white);
+	}
 }
 
 .block-editor-block-list__block .logo-strip {
-    position: relative;
-    position-anchor: auto;
-    position-area: auto;
-    margin-bottom: 2rem;
-    display: none;
+	position: relative;
+	position-anchor: auto;
+	position-area: auto;
+	margin-bottom: 2rem;
+	display: none;
 }
 
 /* Placeholder icon styling for card-geo inner blocks */
 .block-intro .intro-card-icon.is-placeholder .icon-geo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.75rem;
-    color: var(--colour-text-text-hero-subheading, #999);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.75rem;
+	color: var(--colour-text-hero-subheading, #999);
 }
