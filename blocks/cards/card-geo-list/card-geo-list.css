@@ -13,8 +13,19 @@
 	grid-template-rows: min-content;
 
 	.icon-geo {
-		inset: -1.5rem -1.5rem auto auto;
+		--icon-size-outer: 3.25rem;
+		--icon-size-inner: 2rem;
+
 		position: absolute;
+		inset: 1rem 1rem auto auto;
+		transition: all 0.3s ease-in-out;
+
+		@media (width >=40rem) {
+			--icon-size-outer: 5.25rem;
+			--icon-size-inner: 3.467rem;
+
+			inset: calc(var(--icon-size-outer) / -3.5) calc(var(--icon-size-outer) / -3.5) auto auto;
+		}
 	}
 
 	.heading {
