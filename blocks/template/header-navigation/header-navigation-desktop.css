@@ -24,13 +24,14 @@
 	.sub-menu-wrapper {
 		display: none;
 		gap: var(--spacing-16);
-		left: -50%;
+		left: 50%;
 		margin: 0;
 		padding-block-start: var(--spacing-24);
 		position: absolute;
 		top: 10px;
 		width: max-content;
 		z-index: 999;
+		transform: translateX(-50%);
 
 		[aria-expanded='true'] + & {
 			grid-template-rows: 1fr;
