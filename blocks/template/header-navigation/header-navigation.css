@@ -34,6 +34,11 @@
 	transition: grid-template-rows 0.3s ease-in-out;
 	grid-template-rows: 0fr;
 
+	@media (width >= 40rem) {
+		grid-template-rows: 1fr;
+		display: none;
+	}
+
 	.submenu {
 		overflow: hidden;
 	}
@@ -47,7 +52,7 @@
 
 		@media (width >= 40rem) {
 			position: absolute;
-			top: 35px;
+			top: 10px;
 			background: white;
 			padding: 2rem;
 			display: flex;
@@ -58,6 +63,7 @@
 			width: max-content;
 			margin: 0;
 			border: 1px solid var(--colour-border-border-gray);
+			display: flex;
 
 			.submenu {
 				display: flex;
