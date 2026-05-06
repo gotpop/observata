@@ -1,33 +1,51 @@
 .logo-bar {
-	display: grid;
-	padding: var(--spacing-16);
 	background: var(--colour-surface-surface);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	border-bottom: 1px solid var(--colour-border-border-gray);
+	padding: var(--spacing-24);
 
 	@media (width >=40rem) {
 		padding: var(--spacing-32) var(--spacing-64);
 	}
 
 	.block-content {
-		display: grid;
-		grid-column: content;
-		grid-auto-columns: min-content;
-		gap: var(--spacing-50);
-		grid-auto-flow: column;
+		display: flex;
+		flex-wrap: wrap;
+		grid-column: full;
+		column-gap: var(--spacing-16);
+		row-gap: var(--spacing-24);
 		justify-content: center;
 		justify-items: stretch;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+		@media (width >=40rem) {
+			grid-column: content;
+			gap: var(--spacing-50);
+		}
 	}
 
 	.logo-item {
 		display: flex;
 		align-items: center;
-		max-width: 300px;
+		justify-content: center;
+		flex: 1 1 120px;
+
+		@media (width >=40rem) {
+			flex: 0 0;
+			max-width: 300px;
+		}
 
 		img {
-			max-width: 200px;
-			max-height: 30px;
+			max-width: 100%;
+			max-height: var(--spacing-24);
+			height: auto;
+
+			@media (width >=40rem) {
+				max-width: 200px;
+				max-height: 30px;
+			}
 		}
 	}
 }

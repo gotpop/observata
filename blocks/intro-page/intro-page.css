@@ -14,7 +14,7 @@
 		gap: var(--spacing-50);
 		z-index: 1;
 
-		@media (width >=64rem) {
+		@media (width >=80rem) {
 			grid-template-areas:
 				'a .'
 				'. b';
@@ -38,7 +38,9 @@
 
 	.card-geo-list {
 		&:last-child {
-			grid-area: b;
+			@media (width >=80rem) {
+				grid-area: b;
+			}
 		}
 	}
 }
