@@ -2,24 +2,26 @@
 
 .heading-hero {
 	color: var(--colour-text-hero);
-	font-size: var(--size, var(---typography-size-40));
+	font-size: var(--size, var(--typography-size-40));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
-	line-height: var(--line-height-heading-lg);
+	line-height: var(--line, var(--line-height-heading-lg));
 
 	@media (width >=40rem) {
+		--line: var(--line-height-heading-xl);
 		--size: var(--size-hero-default);
 	}
 }
 
 .heading-xl {
 	color: var(--colour-text-hero);
-	font-size: var(--size, var(---typography-size-40));
+	font-size: var(--size, var(--typography-size-40));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
-	line-height: var(--line-height-heading-lg);
+	line-height: var(--line, var(--line-height-heading-lg));
 
 	@media (width >=40rem) {
+		--line: var(--line-height-heading-xl);
 		--size: var(--typography-size-56);
 	}
 }

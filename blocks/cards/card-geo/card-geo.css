@@ -3,6 +3,10 @@
 	border: 1px solid var(--colour-border-border-gray);
 	border-radius: var(--radius-card);
 	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content;
+	gap: var(--spacing-32);
 
 	.icon-geo {
 		--size: 5.25rem;
@@ -24,9 +28,7 @@
 		}
 	}
 
-	h3 {
-		margin-bottom: var(--spacing-32);
-		text-box: trim-both cap alphabetic;
+	.title {
 		max-width: 12ch;
 		text-wrap: balance;
 	}

@@ -2,17 +2,6 @@
 	navigation: auto;
 }
 
-html {
-	min-height: 100dvh;
-	font-family:
-		var(--typography-family-inter),
-		system-ui,
-		-apple-system,
-		sans-serif;
-	scrollbar-width: thin;
-	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-}
-
 /* WebKit scrollbar styling */
 ::-webkit-scrollbar {
 	width: 6px;
@@ -37,107 +26,19 @@ html {
 	}
 }
 
-body {
-	padding: 0;
-	margin: 0;
-	background-color: gray;
-	min-height: 100dvh;
-	display: grid;
-	grid-template-columns: 1fr;
-	font-family:
-		var(--typography-family-inter),
-		system-ui,
-		-apple-system,
-		sans-serif;
-}
-
-/* Headings use Gantari font */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-	font-family:
-		var(--typography-family-gantari),
-		var(--typography-family-inter),
-		system-ui,
-		-apple-system,
-		sans-serif;
-	font-weight: var(--typography-weight-bold);
-	margin: 0;
-	line-height: 1.2;
-	text-box: trim-both cap alphabetic;
-}
-
-h1,
-.h1 {
-	font-size: var(--size-heading-xl);
-	line-height: var(--line-height-heading-xl);
-}
-
-h2,
-.h2 {
-	font-size: var(--size-heading-lg);
-	line-height: var(--line-height-heading-lg);
-}
-
-h3,
-.h3 {
-	font-size: var(--size-heading-md);
-	line-height: var(--line-height-heading-md);
-}
-
-h4,
-.h4 {
-	font-size: var(--size-heading-sm);
-	line-height: var(--line-height-heading-sm);
-}
-
-/* Body text uses Inter */
-p,
-span,
-div,
-li,
-a,
-button,
-input,
-textarea,
-select {
-	font-family:
-		var(--typography-family-inter),
-		system-ui,
-		-apple-system,
-		sans-serif;
-	text-box: trim-both cap alphabetic;
-}
-
-/* .site {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content 1fr min-content;
-} */
-
-.site-inner {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr min-content;
-}
-
-.header-homepage {
-	display: flex;
-	justify-content: space-between;
-	position: sticky;
-	top: 0;
-	z-index: 999;
-}
-
 html {
+	background-color: var(--colour-surface-white);
+	min-height: 100dvh;
 	scroll-timeline: --main-timeline;
+	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+	scrollbar-width: thin;
+}
+
+body {
+	display: grid;
+	font-family: var(--font-stack-body);
+	grid-template-columns: 1fr;
+	margin: 0;
+	min-height: 100dvh;
+	padding: 0;
 }

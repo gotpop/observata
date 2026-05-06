@@ -185,6 +185,11 @@
 	--line-height-body-sm: 20px;
 	--line-height-body-md: 24px;
 	--line-height-body-lg: 30px;
+
+	/* Font stack */
+	--font-stack: system-ui, -apple-system, sans-serif;
+	--font-stack-heading: var(--typography-family-gantari), var(--typography-family-inter) var(--font-stack);
+	--font-stack-body: var(--typography-family-inter) var(--font-stack);
 }
 
 /* Collection name: Alias */

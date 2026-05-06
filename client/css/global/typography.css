@@ -1,4 +1,29 @@
 /* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-stack-heading);
+	font-weight: var(--typography-weight-bold);
+	margin: 0;
+	line-height: 1.2;
+	text-box: trim-both cap alphabetic;
+}
+
+p,
+span,
+div,
+li,
+a,
+button,
+input,
+textarea,
+select {
+	font-family: var(--font-stack-body);
+	text-box: trim-both cap alphabetic;
+}
 
 .anchor {
 	color: white;

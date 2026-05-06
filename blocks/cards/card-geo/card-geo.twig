@@ -3,11 +3,7 @@
 {% set icon_geo = attributes.iconGeo|default('24') %}
 
 <article class="card-geo icon-{{ icon_geo }}">
-	<div class="intro-card-icon" aria-hidden="true">
-		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	</div>
-	<div class="body">
-		<h3 class="title">{{ card_title|esc_html }}</h3>
-		<p class="text">{{ card_text|wp_kses_post }}</p>
-	</div>
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	<h3 class="heading-md title">{{ card_title|esc_html }}</h3>
+	<p class="text">{{ card_text|wp_kses_post }}</p>
 </article>

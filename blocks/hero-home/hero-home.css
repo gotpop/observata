@@ -38,7 +38,7 @@
 		'. . .'
 		'. hero .'
 		'. . .';
-	grid-template-columns: 1fr max-content 1fr;
+	grid-template-columns: minmax(var(--spacing-24, 1fr)) min-content minmax(var(--spacing-24, 1fr));
 	grid-template-rows: 13rem min-content 1fr;
 	justify-content: center;
 	min-height: var(--height-hero-home);
@@ -84,18 +84,10 @@
 		align-items: center;
 		justify-self: center;
 		gap: 11px;
-
-		h1 {
-			font-size: var(--size-hero-default);
-			font-weight: var(--typography-weight-bold);
-			color: var(--colour-text-hero);
-			line-height: 60px;
-			letter-spacing: -1px;
-			margin-bottom: 1rem;
-		}
 	}
 
-	.heading-hero {
+	.heading-hero-home {
+		margin-bottom: 1rem;
 		position: relative;
 		right: 9px;
 
