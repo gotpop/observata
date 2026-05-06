@@ -78,12 +78,9 @@
 		padding: 0;
 	}
 
-	.menu-item {
-		position: relative;
-	}
-
 	.menu-item,
 	.submenu-item {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 	}
