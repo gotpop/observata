@@ -1,30 +1,27 @@
 .card-geo-shader {
-	padding-block: var(--spacing-40);
-	padding-inline: var(--spacing-40) 5rem;
-	border: 1px solid var(--colour-border-border-gray);
 	border-radius: var(--radius-card);
-	position: relative;
+	border: 1px solid var(--colour-border-border-gray);
 	overflow: clip;
+	padding-block: var(--spacing-24);
+	padding-inline: var(--spacing-24) 5rem;
+	position: relative;
+	gap: var(--spacing-24);
+	display: grid;
+	grid-template-rows: min-content;
+	grid-template-columns: 1fr;
+
+	@media (width >=40rem) {
+		padding-block: var(--spacing-40);
+		padding-inline: var(--spacing-40) var(--spacing-80);
+	}
 
 	.icon-geo {
-		--size: 3.75rem;
+		--icon-size-outer: 3.25rem;
+		--icon-size-inner: 2.3rem;
 
-		border-radius: 50%;
-		width: var(--size);
-		height: var(--size);
-		border: 1px solid var(--colour-border-border-gray);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		inset: 1.5rem 1.5rem auto auto;
 		position: absolute;
-		background-color: var(--colour-surface-white);
+		inset: 1.5rem 1.5rem auto auto;
 		z-index: 1;
-
-		svg {
-			width: 2.31575rem;
-			height: 2.31575rem;
-		}
 	}
 
 	.shader {
@@ -32,35 +29,16 @@
 		inset: 0 0 auto auto;
 		max-width: 100%;
 		z-index: 0;
-		/* clip-path: ellipse(70% 60% at 60% 40%);
-        transform: rotate(-20deg); */
-		/* Rotate the ellipse. Adjust the angle as needed. */
 	}
 
-	h3 {
-		margin-bottom: var(--spacing-32);
-		text-box: trim-both cap alphabetic;
+	.title {
 		max-width: 20ch;
 		text-wrap: balance;
-
-		color: var(--colour-text-heading-default, #2e2e2e);
-
-		font-family: var(--Fonts-Family-font-gantari, Gantari);
-		font-size: 1.5rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 120%;
 	}
 
-	p {
-		text-box: trim-both cap alphabetic;
-		color: var(--colour-text-body-default);
-		font-size: var(--typography-size-14);
-		line-height: 1.5;
-
-		color: var(--colour-text-body-default, #626262);
-		line-height: 1.5rem;
-
-		max-width: 60ch;
+	.text {
+		line-height: 1.8;
+		max-width: 55ch;
+		text-wrap: pretty;
 	}
 }

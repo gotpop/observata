@@ -41,7 +41,7 @@
 		border: 1px solid var(--colour-accent-1-200);
 		flex-direction: column;
 		gap: var(--spacing-64);
-		padding: var(--spacing-80);
+		padding: var(--spacing-32);
 		background-repeat: no-repeat;
 		background-position: top -200px right -200px;
 		background-size: 500px;
@@ -49,6 +49,10 @@
 		grid-template-columns: 1fr;
 		overflow: clip;
 		position: relative;
+
+		@media (width >=40rem) {
+			padding: var(--spacing-80);
+		}
 	}
 
 	.graphic-tech {

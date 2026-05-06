@@ -40,10 +40,10 @@ main {
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	padding-block: 2rem;
+	padding-block: var(--spacing-48);
 	position: relative;
 
 	@media (width >=40rem) {
-		padding-block: 5rem;
+		padding-block: var(--spacing-80);
 	}
 }

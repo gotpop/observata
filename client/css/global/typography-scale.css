@@ -2,6 +2,7 @@
 
 .heading-hero {
 	color: var(--colour-text-hero);
+	font-family: var(--typography-family-gantari);
 	font-size: var(--size, var(--typography-size-40));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
@@ -15,6 +16,7 @@
 
 .heading-xl {
 	color: var(--colour-text-hero);
+	font-family: var(--typography-family-gantari);
 	font-size: var(--size, var(--typography-size-40));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
@@ -29,23 +31,24 @@
 .heading-lg {
 	color: var(--colour-text-heading-default);
 	font-family: var(--typography-family-gantari);
-	font-size: var(--size, var(---typography-size-20));
+	font-size: var(--size, var(--typography-size-32));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -0.8px;
-	line-height: var(--line-height-heading-lg);
+	line-height: var(--line, var(--line-height-heading-lg));
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-lg);
+		--line: var(--line-height-heading-lg);
 	}
 }
 
 .heading-md {
+	color: var(--colour-text-heading-default);
 	font-family: var(--typography-family-gantari);
 	font-size: var(--size, var(--typography-size-24));
-	line-height: var(--line, var(--line-height-heading-md));
-	color: var(--colour-text-heading-default);
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -0.8px;
+	line-height: var(--line, var(--line-height-heading-md));
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-md);
@@ -54,14 +57,15 @@
 }
 
 .heading-sm {
-	font-family: var(--typography-family-gantari);
-	font-size: var(--size, var(---typography-size-16));
-	line-height: var(--line-height-heading-sm);
 	color: var(--colour-text-heading-default);
+	font-family: var(--typography-family-gantari);
+	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -0.8px;
+	line-height: var(--line, var(--line-height-heading-sm));
 
 	@media (width >=40rem) {
+		--line: var(--line-height-heading-sm);
 		--size: var(--size-heading-sm);
 	}
 }
