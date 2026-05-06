@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const trigger = document.getElementById('trigger-navigation');
 	const headerContent = document.getElementById('header-content');
-	const menuItemsWithChildren = document.querySelectorAll('.menu-item-has-children > .menu-button');
+	const parentMenuItems = document.querySelectorAll('.menu-item-has-children');
 
 	const mq = window.matchMedia('(width >= 40rem)');
 
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (trigger && headerContent) {
 		trigger.addEventListener('click', () => {
 			const isOpen = headerContent.classList.toggle('is-open');
+
 			trigger.setAttribute('aria-expanded', String(isOpen));
 			const label = trigger.querySelector('.sr-only');
 			if (label) {
@@ -23,13 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// --- Submenu toggle: aria-expanded ---
 	function handleSubmenuEnter(e: Event) {
-		const el = e.currentTarget as HTMLElement;
-		el.setAttribute('aria-expanded', 'true');
+		const parent = e.currentTarget as HTMLElement;
+		const button = parent.querySelector('.menu-button') as HTMLElement;
+		if (button) button.setAttribute('aria-expanded', 'true');
 	}
 
 	function handleSubmenuLeave(e: Event) {
-		const el = e.currentTarget as HTMLElement;
-		el.setAttribute('aria-expanded', 'false');
+		const parent = e.currentTarget as HTMLElement;
+		const button = parent.querySelector('.menu-button') as HTMLElement;
+		if (button) button.setAttribute('aria-expanded', 'false');
 	}
 
 	function handleSubmenuClick(e: Event) {
@@ -40,15 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function attachListeners() {
-		menuItemsWithChildren.forEach((menuItem) => {
+		parentMenuItems.forEach((parentItem) => {
+			const button = parentItem.querySelector('.menu-button') as HTMLElement;
 			if (isDesktop()) {
-				menuItem.addEventListener('mouseenter', handleSubmenuEnter);
-				menuItem.addEventListener('mouseleave', handleSubmenuLeave);
-				menuItem.removeEventListener('click', handleSubmenuClick);
+				parentItem.addEventListener('mouseenter', handleSubmenuEnter);
+				parentItem.addEventListener('mouseleave', handleSubmenuLeave);
+				if (button) button.removeEventListener('click', handleSubmenuClick);
 			} else {
-				menuItem.removeEventListener('mouseenter', handleSubmenuEnter);
-				menuItem.removeEventListener('mouseleave', handleSubmenuLeave);
-				menuItem.addEventListener('click', handleSubmenuClick);
+				parentItem.removeEventListener('mouseenter', handleSubmenuEnter);
+				parentItem.removeEventListener('mouseleave', handleSubmenuLeave);
+				if (button) button.addEventListener('click', handleSubmenuClick);
 			}
 		});
 	}
