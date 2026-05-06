@@ -1,51 +1,50 @@
 @keyframes fade-in {
-    to {
-        opacity: 1;
-    }
+	to {
+		opacity: 1;
+	}
 }
 
 .block-intro-page {
-    background-color: var(--colour-surface-white);
-    border-bottom: 1px solid var(--colour-border-border-gray);
-    display: grid;
-    grid-column: full;
-    /* grid-template-columns: subgrid; */
+	background-color: var(--colour-surface-white);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	display: grid;
+	grid-column: full;
+	/* grid-template-columns: subgrid; */
 
-    grid-template-columns: [full-start] 1fr [shader-start] 100px [content-start] minmax(420px, 1200px) [content-end] 100px [shader-end] 1fr [full-end];
-    overflow: clip;
-    padding-block: 5rem;
-    position: relative;
+	grid-template-columns:
+		[full-start] 1fr [shader-start] 100px [content-start] minmax(420px, 1200px)
+		[content-end] 100px [shader-end] 1fr [full-end];
+	overflow: clip;
+	padding-block: 5rem;
+	position: relative;
 
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-areas:
+			'a .'
+			'. b';
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-50);
+		z-index: 1;
+	}
 
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-template-areas:
-            "a ."
-            ". b";
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-spacing-50);
-        z-index: 1;
-    }
+	.subpage-shader {
+		width: 100%;
+		aspect-ratio: 1;
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		grid-column: shader;
+		top: 50%;
+		transform: translateY(-50%);
+		animation: 1.5s fade-in forwards ease-in;
+		opacity: 0;
+	}
 
-
-    .subpage-shader {
-        width: 100%;
-        aspect-ratio: 1;
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        grid-column: shader;
-        top: 50%;
-        transform: translateY(-50%);
-        animation: 1.5s fade-in forwards ease-in;
-        opacity: 0;
-    }
-
-
-    .card-geo-list {
-        &:last-child {
-            grid-area: b;
-        }
-    }
+	.card-geo-list {
+		&:last-child {
+			grid-area: b;
+		}
+	}
 }

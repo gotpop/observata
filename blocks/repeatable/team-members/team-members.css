@@ -14,7 +14,7 @@
 	display: grid;
 	grid-column: content;
 	grid-template-columns: 1fr;
-	gap: var(--spacing-spacing-50, 2rem);
+	gap: var(--spacing-50, 2rem);
 }
 
 .block-team-members .intro-heading {
@@ -38,5 +38,5 @@
 .team-members-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: var(--spacing-spacing-50, 2rem);
+	gap: var(--spacing-50, 2rem);
 }

@@ -1,128 +1,128 @@
 .plan-card {
-    padding: var(--spacing-spacing-40, 2.5rem);
-    border: 1px solid var(--colour-border-border-gray, #e0e0e0);
-    border-radius: var(--radius-card, 12px);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-spacing-24, 1.5rem);
-    background-color: var(--colour-surface-white, #fff);
-    position: relative;
+	padding: var(--spacing-40, 2.5rem);
+	border: 1px solid var(--colour-border-border-gray, #e0e0e0);
+	border-radius: var(--radius-card, 12px);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-24, 1.5rem);
+	background-color: var(--colour-surface-white, #fff);
+	position: relative;
 
-    &.plan-card--highlighted {
-        border-color: var(--colour-accent, #4f46e5);
-        box-shadow: 0 0 0 1px var(--colour-accent, #4f46e5);
-    }
+	&.plan-card--highlighted {
+		border-color: var(--colour-accent, #4f46e5);
+		box-shadow: 0 0 0 1px var(--colour-accent, #4f46e5);
+	}
 }
 
 .plan-card-badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    background-color: var(--colour-accent, #4f46e5);
-    color: var(--colour-surface-white, #fff);
-    font-size: var(--typography-size-12, 0.75rem);
-    font-weight: var(--typography-weight-semibold, 600);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+	display: inline-block;
+	padding: 0.25rem 0.75rem;
+	border-radius: 100px;
+	background-color: var(--colour-accent, #4f46e5);
+	color: var(--colour-surface-white, #fff);
+	font-size: var(--typography-size-12, 0.75rem);
+	font-weight: var(--typography-weight-semibold, 600);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
 }
 
 .plan-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
 }
 
 .plan-card-name {
-    font-family: var(--typography-family-gantari);
-    font-size: var(--typography-size-24, 1.5rem);
-    font-weight: var(--typography-weight-bold, 700);
-    text-box: trim-both cap alphabetic;
+	font-family: var(--typography-family-gantari);
+	font-size: var(--typography-size-24, 1.5rem);
+	font-weight: var(--typography-weight-bold, 700);
+	text-box: trim-both cap alphabetic;
 }
 
 .plan-card-pricing {
-    display: flex;
-    align-items: baseline;
-    gap: 0.25rem;
+	display: flex;
+	align-items: baseline;
+	gap: 0.25rem;
 }
 
 .plan-card-price {
-    font-family: var(--typography-family-gantari);
-    font-size: var(--typography-size-48, 3rem);
-    font-weight: var(--typography-weight-bold, 700);
-    line-height: 1;
-    text-box: trim-both cap alphabetic;
+	font-family: var(--typography-family-gantari);
+	font-size: var(--typography-size-48, 3rem);
+	font-weight: var(--typography-weight-bold, 700);
+	line-height: 1;
+	text-box: trim-both cap alphabetic;
 }
 
 .plan-card-period {
-    font-size: var(--typography-size-16, 1rem);
-    color: var(--colour-text-body-default, #666);
+	font-size: var(--typography-size-16, 1rem);
+	color: var(--colour-text-body-default, #666);
 }
 
 .plan-card-description {
-    font-size: var(--typography-size-16, 1rem);
-    color: var(--colour-text-body-default, #666);
-    line-height: 1.5;
-    text-box: trim-both cap alphabetic;
+	font-size: var(--typography-size-16, 1rem);
+	color: var(--colour-text-body-default, #666);
+	line-height: 1.5;
+	text-box: trim-both cap alphabetic;
 }
 
 .plan-card-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex-grow: 1;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	flex-grow: 1;
 }
 
 .plan-card-feature {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: var(--typography-size-14, 0.875rem);
-    line-height: 1.5;
-    color: var(--colour-text-body-default, #444);
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	font-size: var(--typography-size-14, 0.875rem);
+	line-height: 1.5;
+	color: var(--colour-text-body-default, #444);
 }
 
 .plan-card-feature-icon {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.25rem;
-    height: 1.25rem;
-    color: var(--colour-accent, #4f46e5);
-    margin-top: 0.125rem;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.25rem;
+	height: 1.25rem;
+	color: var(--colour-accent, #4f46e5);
+	margin-top: 0.125rem;
 }
 
 .plan-card-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.875rem 1.5rem;
-    border-radius: var(--radius-button, 8px);
-    font-size: var(--typography-size-16, 1rem);
-    font-weight: var(--typography-weight-semibold, 600);
-    text-decoration: none;
-    border: 1px solid var(--colour-border-border-gray, #e0e0e0);
-    color: var(--colour-text-heading, #111);
-    background: transparent;
-    transition: all 0.15s ease;
-    cursor: pointer;
-    text-box: trim-both cap alphabetic;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.875rem 1.5rem;
+	border-radius: var(--radius-button, 8px);
+	font-size: var(--typography-size-16, 1rem);
+	font-weight: var(--typography-weight-semibold, 600);
+	text-decoration: none;
+	border: 1px solid var(--colour-border-border-gray, #e0e0e0);
+	color: var(--colour-text-heading, #111);
+	background: transparent;
+	transition: all 0.15s ease;
+	cursor: pointer;
+	text-box: trim-both cap alphabetic;
 
-    &:hover {
-        background-color: var(--colour-surface-gray, #f5f5f5);
-    }
+	&:hover {
+		background-color: var(--colour-surface-gray, #f5f5f5);
+	}
 
-    &.plan-card-cta--primary {
-        background-color: var(--colour-accent, #4f46e5);
-        border-color: var(--colour-accent, #4f46e5);
-        color: var(--colour-surface-white, #fff);
+	&.plan-card-cta--primary {
+		background-color: var(--colour-accent, #4f46e5);
+		border-color: var(--colour-accent, #4f46e5);
+		color: var(--colour-surface-white, #fff);
 
-        &:hover {
-            opacity: 0.9;
-        }
-    }
+		&:hover {
+			opacity: 0.9;
+		}
+	}
 }

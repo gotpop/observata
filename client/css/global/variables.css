@@ -1,25 +1,25 @@
 /* Collection name: Base */
 :root {
 	/* Spacing */
-	--spacing-spacing-1: 1px;
-	--spacing-spacing-2: 2px;
-	--spacing-spacing-4: 4px;
-	--spacing-spacing-6: 6px;
-	--spacing-spacing-8: 8px;
-	--spacing-spacing-10: 10px;
-	--spacing-spacing-11: 11px;
-	--spacing-spacing-14: 14px;
-	--spacing-spacing-16: 16px;
-	--spacing-spacing-20: 20px;
-	--spacing-spacing-24: 24px;
-	--spacing-spacing-32: 32px;
-	--spacing-spacing-40: 40px;
-	--spacing-spacing-50: 50px;
-	--spacing-spacing-60: 60px;
-	--spacing-spacing-64: 64px;
-	--spacing-spacing-80: 80px;
-	--spacing-spacing-160: 160px;
-	--spacing-spacing-320: 320px;
+	--spacing-1: 1px;
+	--spacing-2: 2px;
+	--spacing-4: 4px;
+	--spacing-6: 6px;
+	--spacing-8: 8px;
+	--spacing-10: 10px;
+	--spacing-11: 11px;
+	--spacing-14: 14px;
+	--spacing-16: 16px;
+	--spacing-20: 20px;
+	--spacing-24: 24px;
+	--spacing-32: 32px;
+	--spacing-40: 40px;
+	--spacing-50: 50px;
+	--spacing-60: 60px;
+	--spacing-64: 64px;
+	--spacing-80: 80px;
+	--spacing-160: 160px;
+	--spacing-320: 320px;
 
 	/* Radius */
 	--radius-minimal: 4px;
@@ -167,7 +167,7 @@
 	/* Font scale */
 	--size-hero-default: var(--typography-size-56);
 	--size-heading-xl: var(--typography-size-56);
-	--size-heading-lg: var(--spacing-spacing-40);
+	--size-heading-lg: var(--spacing-40);
 	--size-heading-md: var(--typography-size-32);
 	--size-heading-sm: var(--typography-size-24);
 	--size-body-lg: var(--typography-size-20);

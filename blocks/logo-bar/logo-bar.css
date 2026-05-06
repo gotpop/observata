@@ -1,29 +1,29 @@
 .logo-bar {
-    display: grid;
-    padding: 2rem 4rem;
-    background: var(--colour-surface-surface);
-    grid-column: full;
-    grid-template-columns: subgrid;
-    border-bottom: 1px solid var(--colour-border-border-gray);
+	display: grid;
+	padding: 2rem 4rem;
+	background: var(--colour-surface-surface);
+	grid-column: full;
+	grid-template-columns: subgrid;
+	border-bottom: 1px solid var(--colour-border-border-gray);
 
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-auto-columns: min-content;
-        gap: var(--spacing-spacing-50);
-        grid-auto-flow: column;
-        justify-content: center;
-        justify-items: stretch;
-    }
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-auto-columns: min-content;
+		gap: var(--spacing-50);
+		grid-auto-flow: column;
+		justify-content: center;
+		justify-items: stretch;
+	}
 
-    .logo-item {
-        display: flex;
-        align-items: center;
-        max-width: 300px;
+	.logo-item {
+		display: flex;
+		align-items: center;
+		max-width: 300px;
 
-        img {
-            max-width: 200px;
-            max-height: 30px;
-        }
-    }
+		img {
+			max-width: 200px;
+			max-height: 30px;
+		}
+	}
 }

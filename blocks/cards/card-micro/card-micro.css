@@ -1,25 +1,25 @@
 .card-micro {
-    display: flex;
-    padding: var(--spacing-spacing-16);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-spacing-16);
-    border-radius: var(--radius-comfortable, 0.8125rem);
-    border: 1px solid var(--colour-brand-light);
-    background-color: var(--colour-surface-white);
-    backdrop-filter: blur(5px);
+	display: flex;
+	padding: var(--spacing-16);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--spacing-16);
+	border-radius: var(--radius-comfortable, 0.8125rem);
+	border: 1px solid var(--colour-brand-light);
+	background-color: var(--colour-surface-white);
+	backdrop-filter: blur(5px);
 }
 
 .card-micro-heading {
-    font-weight: 600;
-    line-height: 24px;
-    color: var(--colour-text-heading-default);
-    font-size: var(--size-body-md);
+	font-weight: 600;
+	line-height: 24px;
+	color: var(--colour-text-heading-default);
+	font-size: var(--size-body-md);
 }
 
 .card-micro-body {
-    color: var(--colour-text-body-default);
-    font-size: var(--size-body-sm);
-    font-weight: 400;
-    line-height: 22px;
+	color: var(--colour-text-body-default);
+	font-size: var(--size-body-sm);
+	font-weight: 400;
+	line-height: 22px;
 }

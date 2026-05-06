@@ -1,25 +1,25 @@
 .block-grid-cards-geo-tech {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--colour-surface-white);
-    border-bottom: 1px solid var(--colour-border-border-gray);
-    grid-column: full;
-    grid-template-columns: subgrid;
-    display: grid;
-    padding-block: 5rem;
+	position: relative;
+	overflow: hidden;
+	background-color: var(--colour-surface-white);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	grid-column: full;
+	grid-template-columns: subgrid;
+	display: grid;
+	padding-block: 5rem;
 
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-spacing-50);
-        grid-template-rows: min-content;
-    }
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-50);
+		grid-template-rows: min-content;
+	}
 
-    .layout-cards {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-spacing-32);
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    }
+	.layout-cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-32);
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
 }

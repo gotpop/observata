@@ -1,148 +1,147 @@
 @keyframes background-animation {
-    0% {
-        height: 0px;
-    }
+	0% {
+		height: 0px;
+	}
 
-    30% {
-        height: 900px;
-        background-color: transparent;
-        backdrop-filter: blur(0px);
-    }
+	30% {
+		height: 900px;
+		background-color: transparent;
+		backdrop-filter: blur(0px);
+	}
 
-    100% {
-        backdrop-filter: blur(3px);
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+	100% {
+		backdrop-filter: blur(3px);
+		background-color: rgba(0, 0, 0, 0.8);
+	}
 }
 
 @keyframes fade-in {
-    from {
-        opacity: 0;
-    }
+	from {
+		opacity: 0;
+	}
 
-    to {
-        opacity: 1;
-    }
+	to {
+		opacity: 1;
+	}
 }
 
 .block-hero-home {
-    --height-hero-home: 900px;
-    --grad-radial-white: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%);
-    --grad-linear: linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%);
+	--height-hero-home: 900px;
+	--grad-radial-white: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%);
+	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 
-    background-color: var(--colour-background-bg-white);
-    background-image: var(--grad-radial-white), var(--grad-linear);
-    display: grid;
-    grid-column: full;
-    grid-template-areas:
-        ". . ."
-        ". hero ."
-        ". . .";
-    grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: 13rem min-content 1fr;
-    justify-content: center;
-    min-height: var(--height-hero-home);
-    overflow: clip;
-    position: sticky;
-    top: 0;
+	background-color: var(--colour-background-bg-white);
+	background-image: var(--grad-radial-white), var(--grad-linear);
+	display: grid;
+	grid-column: full;
+	grid-template-areas:
+		'. . .'
+		'. hero .'
+		'. . .';
+	grid-template-columns: 1fr max-content 1fr;
+	grid-template-rows: 13rem min-content 1fr;
+	justify-content: center;
+	min-height: var(--height-hero-home);
+	overflow: clip;
+	position: sticky;
+	top: 0;
 
-    &::after {
-        animation: background-animation linear;
-        animation-range-end: var(--height-hero-home);
-        animation-timeline: --main-timeline;
-        background-color: transparent;
-        content: '';
-        height: 100%;
-        inset: auto 0 0 0;
-        position: absolute;
-        width: 100%;
-        z-index: 999;
-    }
+	&::after {
+		animation: background-animation linear;
+		animation-range-end: var(--height-hero-home);
+		animation-timeline: --main-timeline;
+		background-color: transparent;
+		content: '';
+		height: 100%;
+		inset: auto 0 0 0;
+		position: absolute;
+		width: 100%;
+		z-index: 999;
+	}
 
-    .hero-shader {
-        animation: 1s fade-in forwards ease-in;
-        inset: auto auto -280px 50%;
-        height: 1037px;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 2422px;
-        z-index: 2;
-    }
+	.hero-shader {
+		animation: 1s fade-in forwards ease-in;
+		inset: auto auto -280px 50%;
+		height: 1037px;
+		position: absolute;
+		transform: translateX(-50%);
+		width: 2422px;
+		z-index: 2;
+	}
 
-    .hero-content {
-        display: grid;
-        gap: var(--spacing-spacing-32);
-        grid-area: hero;
-        grid-template-columns: 1fr;
-        text-align: center;
-        z-index: 2;
-    }
+	.hero-content {
+		display: grid;
+		gap: var(--spacing-32);
+		grid-area: hero;
+		grid-template-columns: 1fr;
+		text-align: center;
+		z-index: 2;
+	}
 
-    .hero-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
-        gap: 11px;
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-self: center;
+		gap: 11px;
 
-        h1 {
-            font-size: var(--size-hero-default);
-            font-weight: var(--typography-weight-bold);
-            color: var(--colour-text-text-hero);
-            line-height: 60px;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-        }
-    }
+		h1 {
+			font-size: var(--size-hero-default);
+			font-weight: var(--typography-weight-bold);
+			color: var(--colour-text-text-hero);
+			line-height: 60px;
+			letter-spacing: -1px;
+			margin-bottom: 1rem;
+		}
+	}
 
-    .heading-hero {
-        position: relative;
-        right: 9px;
+	.heading-hero {
+		position: relative;
+		right: 9px;
 
+		i {
+			color: var(--colour-secondary-500);
+		}
 
-        i {
-            color: var(--colour-secondary-500);
-        }
+		span {
+			position: relative;
+		}
 
-        span {
-            position: relative;
-        }
+		.line-two {
+			left: -3px;
+		}
 
-        .line-two {
-            left: -3px;
-        }
+		.line-three {
+			left: 18px;
+		}
+	}
 
-        .line-three {
-            left: 18px;
-        }
-    }
+	.hero-text p.hero-subheading {
+		color: var(--colour-text-text-hero-subheading);
+		font-size: var(--size-body-lg);
+		font-weight: var(--fonts-weight-font-weight-regular);
+		letter-spacing: -0.4px;
+		line-height: 31px;
+		max-width: 60ch;
+	}
 
-    .hero-text p.hero-subheading {
-        color: var(--colour-text-text-hero-subheading);
-        font-size: var(--size-body-lg);
-        font-weight: var(--fonts-weight-font-weight-regular);
-        letter-spacing: -0.4px;
-        line-height: 31px;
-        max-width: 60ch;
-    }
+	.hero-buttons {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-24);
+		flex-direction: column;
+	}
 
-    .hero-buttons {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-spacing-24);
-        flex-direction: column;
-    }
-
-    .hero-read-more {
-        align-items: center;
-        color: var(--colour-primary-500);
-        display: flex;
-        font-size: var(--size-body-md);
-        font-weight: var(--typography-weight-bold);
-        gap: var(--spacing-spacing-8);
-        text-decoration-color: var(--colour-primary-400);
-        text-decoration-thickness: 1px;
-        text-decoration: underline;
-        text-underline-offset: 0.3em;
-    }
+	.hero-read-more {
+		align-items: center;
+		color: var(--colour-primary-500);
+		display: flex;
+		font-size: var(--size-body-md);
+		font-weight: var(--typography-weight-bold);
+		gap: var(--spacing-8);
+		text-decoration-color: var(--colour-primary-400);
+		text-decoration-thickness: 1px;
+		text-decoration: underline;
+		text-underline-offset: 0.3em;
+	}
 }

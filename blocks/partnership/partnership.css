@@ -46,14 +46,14 @@
 		grid-column: content;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-spacing-60);
+		gap: var(--spacing-60);
 		grid-row: 1;
 		z-index: 1;
 	}
 
 	.block-body {
 		display: grid;
-		gap: var(--spacing-spacing-60);
+		gap: var(--spacing-60);
 		grid-template-columns: repeat(auto-fit, minmax(200px, 485px));
 		grid-template-rows: min-content;
 		justify-content: center;
@@ -64,10 +64,10 @@
 		border-radius: var(--radius-card);
 		border: 1px solid var(--colour-border-border-gray);
 		display: grid;
-		gap: var(--spacing-spacing-24);
+		gap: var(--spacing-24);
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		padding: var(--spacing-spacing-40);
+		padding: var(--spacing-40);
 	}
 
 	.phase-title {
@@ -80,7 +80,7 @@
 	.phase-content {
 		grid-template-rows: min-content;
 		display: grid;
-		gap: var(--spacing-spacing-24);
+		gap: var(--spacing-24);
 		grid-template-columns: repeat(auto-fit, minmax(150px, 188px));
 
 		.phase-two & {
@@ -92,7 +92,7 @@
 		grid-template-rows: min-content;
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: var(--spacing-spacing-20);
+		gap: var(--spacing-20);
 	}
 
 	.phase-item-title {

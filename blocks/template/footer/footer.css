@@ -11,7 +11,7 @@
 		display: grid;
 		grid-column: content;
 		grid-template-columns: 1fr;
-		gap: var(--spacing-spacing-50);
+		gap: var(--spacing-50);
 		color: white;
 	}
 
@@ -27,7 +27,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-spacing-32);
+		gap: var(--spacing-32);
 
 		.footer-logo {
 			display: grid;
@@ -43,14 +43,14 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-spacing-20);
+		gap: var(--spacing-20);
 	}
 
 	.list-contact {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-spacing-16);
+		gap: var(--spacing-16);
 		font-size: var(--size-body-sm);
 	}
 

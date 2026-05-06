@@ -1,31 +1,31 @@
 .card-simple {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-spacing-24);
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-24);
 
-    .icon-geo {
-        --icon-size-outer: 66px;
-        --icon-size-inner: 32px;
-    }
+	.icon-geo {
+		--icon-size-outer: 66px;
+		--icon-size-inner: 32px;
+	}
 
-    .title {
-        color: var(--colour-text-heading-default);
-        text-box: trim-both cap alphabetic;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%;
-        letter-spacing: -0.48px;
-    }
+	.title {
+		color: var(--colour-text-heading-default);
+		text-box: trim-both cap alphabetic;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%;
+		letter-spacing: -0.48px;
+	}
 
-    .body {
-        color: var(--colour-text-body-default);
-        text-box: trim-both cap alphabetic;
-        font-size: var(--size-body-md);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 145%;
-        letter-spacing: -0.08px;
-        text-wrap: pretty;
-    }
+	.body {
+		color: var(--colour-text-body-default);
+		text-box: trim-both cap alphabetic;
+		font-size: var(--size-body-md);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 145%;
+		letter-spacing: -0.08px;
+		text-wrap: pretty;
+	}
 }
