@@ -41,14 +41,15 @@
 
 .heading-md {
 	font-family: var(--typography-family-gantari);
-	font-size: var(--size, var(---typography-size-16));
-	line-height: var(--line-height-heading-md);
+	font-size: var(--size, var(--typography-size-24));
+	line-height: var(--line, var(--line-height-heading-md));
 	color: var(--colour-text-heading-default);
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -0.8px;
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-md);
+		--line: var(--line-height-heading-md);
 	}
 }
 
@@ -69,18 +70,19 @@
 	color: var(--colour-text-body-default);
 	font-size: var(--typography-size-14);
 	line-height: 1.5;
+	font-weight: var(--typography-weight-regular);
 }
 
 .body-md {
 	color: var(--colour-text-body-default);
-	font-size: var(--typography-size-14);
-	font-weight: var(--fonts-weight-font-weight-regular);
+	font-size: var(--typography-size-16);
+	font-weight: var(--typography-weight-regular);
 	line-height: 1.5;
 }
 
 .body-lg {
 	color: var(--colour-text-body-default);
 	font-size: var(--typography-size-20);
-	font-weight: var(--fonts-weight-font-weight-regular);
+	font-weight: var(--typography-weight-regular);
 	line-height: 1.5;
 }
