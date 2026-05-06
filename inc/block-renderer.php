@@ -70,11 +70,17 @@ function observata_render_block_twig($attributes, $content, $block)
         // Enqueue styles for header partial blocks (included via Twig, not as WP blocks)
         $partials = ['header-logo', 'header-navigation', 'header-navigation-trigger'];
         foreach ($partials as $partial) {
-            $css_file = get_template_directory() . "/blocks/template/{$partial}/{$partial}.css";
-            if (file_exists($css_file)) {
+            $partial_dir = get_template_directory() . "/blocks/template/{$partial}";
+            if (!is_dir($partial_dir)) {
+                continue;
+            }
+            $css_files = glob("{$partial_dir}/*.css");
+            foreach ($css_files as $css_file) {
+                $css_basename = basename($css_file, '.css');
+                $css_relative = "blocks/template/{$partial}/{$css_basename}.css";
                 wp_enqueue_style(
-                    "observata-{$partial}",
-                    get_template_directory_uri() . "/blocks/template/{$partial}/{$partial}.css",
+                    "observata-{$css_basename}",
+                    get_template_directory_uri() . "/{$css_relative}",
                     [],
                     filemtime($css_file)
                 );

@@ -9,5 +9,8 @@
         "html": false,
         "multiple": false
     },
-    "style": "file:header-navigation.css"
+    "style": [
+        "file:header-navigation.css",
+        "file:header-navigation-desktop.css"
+    ]
 }
