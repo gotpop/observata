@@ -51,6 +51,40 @@
 		position: relative;
 	}
 
+	.graphic-tech {
+		/* grid-column: breakout; */
+		/* grid-row: 1; */
+		position: absolute;
+		z-index: 0;
+		pointer-events: none;
+		inset: 0;
+		color: black;
+		color: white;
+		width: 400px;
+		height: 400px;
+		right: -5rem;
+		top: -5rem;
+		left: auto;
+
+		&:after {
+			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+			content: '';
+			mask-image: url(#mask2);
+			min-height: 520px;
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			transition: all 0.3s ease;
+		}
+
+		.mask-source {
+			position: absolute;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+		}
+	}
+
 	.graphic-dots {
 		--size: 460px;
 

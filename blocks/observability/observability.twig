@@ -6,10 +6,8 @@
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<article class="card-large">
-			<graphic-dots class="graphic-dots">
-				{% include 'graphics/tech/connected-dots-graphic.twig' %}
-				<div class="gradient"></div>
-			</graphic-dots>
+			{% include 'graphics/tech/connected-dots-graphic-mono.twig' %}
+
 
 			<layout-micro class="layout-micro">
 				{{ content|raw }}

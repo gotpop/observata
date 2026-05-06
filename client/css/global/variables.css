@@ -18,8 +18,8 @@
 	--spacing-spacing-60: 60px;
 	--spacing-spacing-64: 64px;
 	--spacing-spacing-80: 80px;
-	--spacing-spacing-160: 160;
-	--spacing-spacing-320: 320;
+	--spacing-spacing-160: 160px;
+	--spacing-spacing-320: 320px;
 
 	/* Radius */
 	--radius-minimal: 4px;
@@ -140,8 +140,8 @@
 	--typography-weight-bold: 700;
 
 	/* Size */
-	--typography-size-12: 12;
 	--typography-size-10: 10px;
+	--typography-size-12: 12px;
 	--typography-size-14: 14px;
 	--typography-size-16: 16px;
 	--typography-size-18: 18px;
@@ -165,28 +165,22 @@
 /* Collection name: Typography */
 :root {
 	/* Font scale */
-	--size-body-xs: var(--typography-size-12);
-	--size-body-sm: var(--typography-size-14);
-	--size-body-md: var(--typography-size-16);
+	--size-hero-default: var(--typography-size-56);
+	--size-heading-xl: var(--typography-size-56);
+	--size-heading-lg: var(--spacing-spacing-40);
+	--size-heading-md: var(--typography-size-32);
+	--size-heading-sm: var(--typography-size-24);
 	--size-body-lg: var(--typography-size-20);
-	--size-heading-h1: var(--typography-size-56);
-	--size-heading-h2: var(--spacing-spacing-40);
-	--size-heading-h4: var(--typography-size-24);
-	--size-heading-h3: var(--typography-size-32);
-
-	--size-hero-default: var(--typography-size-40);
-
-	@media (width >=40rem) {
-		--size-hero-default: var(--typography-size-56);
-	}
+	--size-body-md: var(--typography-size-16);
+	--size-body-sm: var(--typography-size-14);
+	--size-body-xs: var(--typography-size-12);
 
 	/* Line height */
 	--line-height-hero-default: var(--typography-size-56);
-
-	--line-height-heading-h1: 56px;
-	--line-height-heading-h2: 40px;
-	--line-height-heading-h3: 32px;
-	--line-height-heading-h4: 24px;
+	--line-height-heading-xl: 56px;
+	--line-height-heading-lg: 40px;
+	--line-height-heading-md: 32px;
+	--line-height-heading-sm: 24px;
 	--line-height-body-xs: 18px;
 	--line-height-body-sm: 20px;
 	--line-height-body-md: 24px;

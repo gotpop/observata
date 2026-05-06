@@ -9,7 +9,7 @@
 		font-family: var(--typography-family-gantari);
 		font-weight: var(--typography-weight-bold);
 		color: var(--colour-text-heading-default);
-		line-height: var(--line-height-heading-h2);
+		line-height: var(--line-height-heading-lg);
 		letter-spacing: -0.8px;
 	}
 

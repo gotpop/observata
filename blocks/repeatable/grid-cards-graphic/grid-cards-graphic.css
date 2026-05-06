@@ -1,64 +1,63 @@
 .block-grid-cards-graphic {
-    position: relative;
-    overflow: clip;
-    background-color: var(--colour-surface-white);
-    border-bottom: 1px solid var(--colour-border-border-gray);
-    grid-column: full;
-    grid-template-columns: subgrid;
-    display: grid;
-    padding-block: 5rem;
+	position: relative;
+	overflow: clip;
+	background-color: var(--colour-surface-white);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	grid-column: full;
+	grid-template-columns: subgrid;
+	display: grid;
+	padding-block: 5rem;
 
+	.background-graphic {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 400px;
+		height: auto;
+		opacity: 0.9;
+		pointer-events: none;
+		z-index: 0;
 
-    .background-graphic {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 400px;
-        height: auto;
-        opacity: .9;
-        pointer-events: none;
-        z-index: 0;
+		svg {
+			width: 100%;
+			height: auto;
+		}
+	}
 
-        svg {
-            width: 100%;
-            height: auto;
-        }
-    }
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
 
-    .block-content {
-        display: grid;
-        grid-column: content;
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
+	.cards-container {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
 
-    .cards-container {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+	.cards-container > .block-section-card-and-graphic {
+		border-bottom: 1px solid var(--colour-border-border-gray);
 
-    .cards-container>.block-section-card-and-graphic {
-        border-bottom: 1px solid var(--colour-border-border-gray);
-
-        &:last-child {
-            border-bottom: none;
-        }
-    }
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 }
 
 .block-grid-cards-graphic .intro-heading {
-    font-size: 40px;
-    font-family: var(--typography-family-gantari);
-    font-weight: var(--typography-weight-bold);
-    color: var(--fonts-colour-text-heading);
-    line-height: var(--line-height-heading-h2);
-    letter-spacing: -0.8px;
+	font-size: 40px;
+	font-family: var(--typography-family-gantari);
+	font-weight: var(--typography-weight-bold);
+	color: var(--fonts-colour-text-heading);
+	line-height: var(--line-height-heading-lg);
+	letter-spacing: -0.8px;
 }
 
 .block-grid-cards-graphic .text-wide {
-    font-size: 16px;
-    font-family: var(--fonts-family-font-inter);
-    font-weight: var(--fonts-weight-font-weight-regular);
-    color: var(--fonts-colour-text-body);
-    line-height: 24px;
+	font-size: 16px;
+	font-family: var(--fonts-family-font-inter);
+	font-weight: var(--fonts-weight-font-weight-regular);
+	color: var(--fonts-colour-text-body);
+	line-height: 24px;
 }
