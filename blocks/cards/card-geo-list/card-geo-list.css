@@ -42,14 +42,11 @@
 
 		&:first-child {
 			p {
-				max-width: 30ch;
+				max-width: 26ch;
 			}
 		}
 
-		p {
-			color: var(--colour-text-body-default);
-			font-size: var(--typography-size-16);
-			line-height: 1.5;
+		.body-md {
 			text-wrap: pretty;
 		}
 	}

@@ -19,6 +19,12 @@
 	background: rgba(0, 0, 0, 0.4);
 }
 
+/* Text selection */
+::selection {
+	background-color: var(--colour-primary-700);
+	color: var(--colour-neutral-white);
+}
+
 /* Firefox scrollbar hover */
 @media (hover: hover) {
 	html:hover {

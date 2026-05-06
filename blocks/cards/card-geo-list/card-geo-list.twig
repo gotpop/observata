@@ -5,15 +5,15 @@
 
 <article class="card-geo-list icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<h3 class="heading">{{ card_title|esc_html }}</h3>
+	<h3 class="heading-md heading">{{ card_title|esc_html }}</h3>
 	<ul class="list-items">
 		<li class="list-item">
 			{% include 'icons/platform/stack.twig' %}
-			<p>{{ list_item_1|esc_html }}</p>
+			<p class="body-md">{{ list_item_1|esc_html }}</p>
 		</li>
 		<li class="list-item">
 			{% include 'icons/platform/increase.twig' %}
-			<p>{{ list_item_2|esc_html }}</p>
+			<p class="body-md">{{ list_item_2|esc_html }}</p>
 		</li>
 	</ul>
 </article>
