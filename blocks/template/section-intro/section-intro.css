@@ -4,24 +4,6 @@
 	gap: var(--spacing-32);
 	grid-template-rows: min-content;
 
-	/* .section-intro-title {
-		font-size: 40px;
-		font-family: var(--typography-family-gantari);
-		font-weight: var(--typography-weight-bold);
-		color: var(--colour-text-heading-default);
-		line-height: var(--line-height-heading-lg);
-		letter-spacing: -0.8px;
-	} */
-
-	.section-intro-text {
-		font-size: 16px;
-		font-family: var(--fonts-family-font-inter);
-		font-weight: var(--fonts-weight-font-weight-regular);
-		color: var(--colour-text-body-default);
-		line-height: 24px;
-		max-width: 120ch;
-	}
-
 	&.section-intro--center {
 		justify-items: center;
 
