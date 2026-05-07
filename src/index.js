@@ -53,6 +53,8 @@ import PlanFeaturesTableSave from './plan-features-table/save';
 import PlanSave from './card-pricing-plan/save';
 import PlansEdit from './pricing-plans/edit';
 import PlansSave from './pricing-plans/save';
+import PricingTabsEdit from './pricing-tabs/edit';
+import PricingTabsSave from './pricing-tabs/save';
 import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import TeamMembersEdit from './team-members/edit';
@@ -85,6 +87,7 @@ import planFeaturesRowMetadata from '../blocks/cards/plan-features-row/block.jso
 import planFeaturesTableMetadata from '../blocks/repeatable/plan-features-table/block.json';
 import planMetadata from '../blocks/cards/card-pricing-plan/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
+import pricingTabsMetadata from '../blocks/repeatable/pricing-tabs/block.json';
 import { registerBlockType } from '@wordpress/blocks';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
 import teamMembersMetadata from '../blocks/repeatable/team-members/block.json';
@@ -224,6 +227,11 @@ registerBlockType(planMetadata.name, {
 registerBlockType(plansMetadata.name, {
     edit: PlansEdit,
     save: PlansSave,
+});
+
+registerBlockType(pricingTabsMetadata.name, {
+    edit: PricingTabsEdit,
+    save: PricingTabsSave,
 });
 
 registerBlockType(planFeaturesTableMetadata.name, {

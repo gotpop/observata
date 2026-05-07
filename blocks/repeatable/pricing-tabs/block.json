@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "observata/pricing-tabs",
+  "title": "Pricing Tabs",
+  "category": "theme",
+  "description": "Tabbed pricing section with MDR, Observability, and Search tabs. Each tab contains pricing blocks.",
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "attributes": {
+    "activeTab": {
+      "type": "string",
+      "default": "mdr"
+    },
+    "mdrInnerBlocks": {
+      "type": "array",
+      "default": []
+    },
+    "observabilityInnerBlocks": {
+      "type": "array",
+      "default": []
+    },
+    "searchInnerBlocks": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:../../build/index.js",
+  "style": [
+    "file:pricing-tabs.css",
+    "file:../plan-features-table/plan-features-table.css",
+    "file:../pricing-plans/pricing-plans.css"
+  ],
+  "editorStyle": [
+    "file:../../build/index.css"
+  ]
+}

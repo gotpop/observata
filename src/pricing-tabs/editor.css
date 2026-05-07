@@ -1,0 +1,43 @@
+.observata-pricing-tabs-editor {
+    padding: var(--spacing-40, 1.5rem);
+    background: var(--color-surface, #1a1a2e);
+    border: 1px solid var(--color-border, #2a2a3a);
+    border-radius: var(--radius--md, 0.5rem);
+}
+
+.pricing-tabs-editor__header {
+    margin-bottom: var(--spacing-30, 0.75rem);
+}
+
+.pricing-tabs-editor__label {
+    display: block;
+    font-size: var(--font-size-lg, 1.125rem);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-heading, #fff);
+    margin-bottom: var(--spacing-10, 0.25rem);
+}
+
+.pricing-tabs-editor__tabs {
+    margin-bottom: var(--spacing-30, 0.75rem);
+    display: flex;
+    gap: var(--spacing-10, 0.25rem);
+    padding-bottom: var(--spacing-20, 0.5rem);
+    border-bottom: 1px solid var(--color-border, #2a2a3a);
+}
+
+.pricing-tabs-editor__content {
+    background: var(--color-surface-alt, #22223a);
+    border: 1px solid var(--color-border, #2a2a3a);
+    border-radius: var(--radius--sm, 0.25rem);
+    padding: var(--spacing-20, 0.5rem);
+}
+
+/* Style the InnerBlocks area */
+.observata-pricing-tabs-editor .block-editor-block-list__layout {
+    display: grid;
+    gap: var(--spacing-40, 1.5rem);
+}
+
+.pricing-tabs-editor__content .block-editor-block-list__block {
+    margin: 0 !important;
+}

@@ -1,6 +1,7 @@
 import './header-navigation';
 import './shaders/home';
 import './shaders/subpage';
+import './pricing-tabs';
 
 import { initCardGeoShader } from './shaders/card-geo-shader';
 

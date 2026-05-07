@@ -88,6 +88,34 @@ function observata_render_block_twig($attributes, $content, $block)
         }
     }
 
+    // Special handling for pricing-tabs to pre-render inner blocks for each tab
+    if ($template_name === 'pricing-tabs') {
+        $rendered_tabs = [];
+        $tab_names = ['mdr', 'observability', 'search'];
+
+        foreach ($tab_names as $tab_name) {
+            $inner_blocks = $attributes[$tab_name . 'InnerBlocks'] ?? [];
+            $tab_rendered_content = '';
+
+            foreach ($inner_blocks as $inner_block) {
+                if (empty($inner_block['name']) || empty($inner_block['attributes'])) {
+                    continue;
+                }
+
+                $block_html = do_blocks(
+                    "<!-- wp:{$inner_block['name']} " .
+                    wp_json_encode($inner_block['attributes']) .
+                    " /-->"
+                );
+                $tab_rendered_content .= $block_html;
+            }
+
+            $rendered_tabs[$tab_name] = $tab_rendered_content;
+        }
+
+        $context['renderedTabs'] = $rendered_tabs;
+    }
+
     try {
         return \Timber\Timber::compile('blocks/' . $twig_relative, $context);
     } catch (\Exception $e) {

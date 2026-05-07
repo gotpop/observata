@@ -1,0 +1,43 @@
+{% set active_tab = attributes.activeTab|default('mdr') %}
+
+<section class="section-block pricing-tabs" data-active-tab="{{ active_tab }}">
+	<block-content class="block-content">
+		<div class="pricing-tabs__header">
+			<nav class="pricing-tabs__nav" role="tablist" aria-label="Pricing options">
+				<button class="pricing-tabs__tab {% if active_tab == 'mdr' %}is-active{% endif %}" role="tab" aria-selected="{% if active_tab == 'mdr' %}true{% else %}false{% endif %}" aria-controls="pricing-tabs-panel-mdr" id="pricing-tabs-tab-mdr" data-tab="mdr">
+					MDR
+				</button>
+				<button class="pricing-tabs__tab {% if active_tab == 'observability' %}is-active{% endif %}" role="tab" aria-selected="{% if active_tab == 'observability' %}true{% else %}false{% endif %}" aria-controls="pricing-tabs-panel-observability" id="pricing-tabs-tab-observability" data-tab="observability">
+					Observability
+				</button>
+				<button class="pricing-tabs__tab {% if active_tab == 'search' %}is-active{% endif %}" role="tab" aria-selected="{% if active_tab == 'search' %}true{% else %}false{% endif %}" aria-controls="pricing-tabs-panel-search" id="pricing-tabs-tab-search" data-tab="search">
+					Search
+				</button>
+			</nav>
+		</div>
+
+		<div
+			class="pricing-tabs__content">
+			{# MDR Tab #}
+			<div id="pricing-tabs-panel-mdr" class="pricing-tabs__panel {% if active_tab == 'mdr' %}is-active{% endif %}" role="tabpanel" aria-labelledby="pricing-tabs-tab-mdr" data-panel="mdr">
+				{% if renderedTabs.mdr is defined %}
+					{{ renderedTabs.mdr|raw }}
+				{% endif %}
+			</div>
+
+			{# Observability Tab #}
+			<div id="pricing-tabs-panel-observability" class="pricing-tabs__panel {% if active_tab == 'observability' %}is-active{% endif %}" role="tabpanel" aria-labelledby="pricing-tabs-tab-observability" data-panel="observability">
+				{% if renderedTabs.observability is defined %}
+					{{ renderedTabs.observability|raw }}
+				{% endif %}
+			</div>
+
+			{# Search Tab #}
+			<div id="pricing-tabs-panel-search" class="pricing-tabs__panel {% if active_tab == 'search' %}is-active{% endif %}" role="tabpanel" aria-labelledby="pricing-tabs-tab-search" data-panel="search">
+				{% if renderedTabs.search is defined %}
+					{{ renderedTabs.search|raw }}
+				{% endif %}
+			</div>
+		</div>
+	</block-content>
+</section>
