@@ -85,8 +85,9 @@
 
 	.hero-text {
 		display: grid;
-		grid-template-columns: 1fr;
 		gap: var(--spacing-24);
+		grid-template-columns: 1fr;
+		justify-items: center;
 	}
 
 	.heading-hero-home {
