@@ -129,6 +129,27 @@ function observata_render_block_twig($attributes, $content, $block)
         }
     }
 
+    // Add footer menus to context for footer block
+    if ($template_name === 'footer') {
+        $footer_menus = [
+            'footer_support' => 'footer-support',
+            'footer_services' => 'footer-services',
+            'footer_resources' => 'footer-resources',
+            'footer_company' => 'footer-company',
+        ];
+
+        foreach ($footer_menus as $key => $location) {
+            if (has_nav_menu($location)) {
+                $menu_items = wp_get_nav_menu_items(get_nav_menu_locations()[$location]);
+                $menu_obj = wp_get_nav_menu_object(get_nav_menu_locations()[$location]);
+                $context[$key] = [
+                    'name' => $menu_obj->name,
+                    'items' => $menu_items,
+                ];
+            }
+        }
+    }
+
     // Special handling for pricing-tabs to pre-render inner blocks for each tab.
     // Uses recursive serialization to preserve nested inner blocks (e.g. plan-features-row
     // inside plan-features-table) so the full block tree is processed by do_blocks().

@@ -127,7 +127,13 @@ function observata_setup()
 	if (!isset($content_width)) {
 		$content_width = 1920;
 	}
-	register_nav_menus(array('main-menu' => esc_html__('Main Menu', 'observata')));
+	register_nav_menus(array(
+		'main-menu' => esc_html__('Main Menu', 'observata'),
+		'footer-support' => esc_html__('Footer support', 'observata'),
+		'footer-services' => esc_html__('Footer services', 'observata'),
+		'footer-resources' => esc_html__('Footer resources', 'observata'),
+		'footer-company' => esc_html__('Footer company', 'observata'),
+	));
 }
 
 // Enqueue theme stylesheet and compiled client JS (with cache-busting).
