@@ -16,8 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			trigger.setAttribute('aria-expanded', String(isOpen));
 			const label = trigger.querySelector('.sr-only');
+
 			if (label) {
 				label.textContent = isOpen ? 'Close menu' : 'Open menu';
+			}
+
+			const hasOpenClass = headerContent.classList.contains('is-open');
+			const iconHamburger = document.getElementById('icon-hamburger');
+
+			if (iconHamburger) {
+				iconHamburger.classList.toggle('is-active', hasOpenClass);
 			}
 		});
 	}
@@ -26,17 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	function handleSubmenuEnter(e: Event) {
 		const parent = e.currentTarget as HTMLElement;
 		const button = parent.querySelector('.menu-button') as HTMLElement;
+
 		if (button) button.setAttribute('aria-expanded', 'true');
 	}
 
 	function handleSubmenuLeave(e: Event) {
 		const parent = e.currentTarget as HTMLElement;
 		const button = parent.querySelector('.menu-button') as HTMLElement;
+
 		if (button) button.setAttribute('aria-expanded', 'false');
 	}
 
 	function handleSubmenuClick(e: Event) {
 		e.preventDefault();
+
 		const el = e.currentTarget as HTMLElement;
 		const isExpanded = el.getAttribute('aria-expanded') === 'true';
 		el.setAttribute('aria-expanded', String(!isExpanded));
@@ -45,13 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	function attachListeners() {
 		parentMenuItems.forEach((parentItem) => {
 			const button = parentItem.querySelector('.menu-button') as HTMLElement;
+
 			if (isDesktop()) {
 				parentItem.addEventListener('mouseenter', handleSubmenuEnter);
 				parentItem.addEventListener('mouseleave', handleSubmenuLeave);
+
 				if (button) button.removeEventListener('click', handleSubmenuClick);
 			} else {
 				parentItem.removeEventListener('mouseenter', handleSubmenuEnter);
 				parentItem.removeEventListener('mouseleave', handleSubmenuLeave);
+
 				if (button) button.addEventListener('click', handleSubmenuClick);
 			}
 		});

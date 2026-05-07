@@ -23,7 +23,6 @@
 		justify-content: space-between;
 		align-items: center;
 		background: white;
-
 		border-radius: 0 0 4.5rem 4.5rem;
 		corner-shape: squircle;
 		width: stretch;
@@ -32,14 +31,19 @@
 		animation-range-end: 100px;
 		border: 1px solid var(--colour-border-border-gray);
 		flex-direction: column;
-
 		display: grid;
 		grid-template-areas: 'logo trigger' 'nav nav';
-		grid-template-columns: 1fr 200px;
+		grid-template-columns: 1fr 2rem;
 		grid-template-rows: min-content 1fr;
-		gap: var(--spacing-16);
-		padding: var(--spacing-16);
+		row-gap: 0;
+		column-gap: var(--spacing-16);
+		padding-inline: var(--spacing-32);
 		padding-block: var(--spacing-24);
+
+		&.is-open {
+			row-gap: var(--spacing-16);
+			column-gap: var(--spacing-16);
+		}
 
 		@media (width >= 40rem) {
 			margin-block: 3rem 0;

@@ -4,9 +4,13 @@
 	grid-area: logo;
 
 	svg {
-		max-width: 130px;
+		max-width: 160px;
 		height: auto;
 		display: flex;
+
+		@media (width >= 40rem) {
+			max-width: 130px;
+		}
 	}
 }
 

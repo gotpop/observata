@@ -9,14 +9,13 @@
 
 @scope (button-toggle) {
 	:scope {
-		--background-color: var(--colour-secondary-600);
+		--background-color: transparent;
 		--button-toggle-color: var(--colour-primary-100);
 		/* --padding-right: calc(var(--spacing-md) + var(--scrollbar-width)); */
 		--padding-right: 1rem;
 
 		align-items: center;
 		anchor-name: --buttonToggle;
-		background-color: var(--background-color);
 		border: none;
 		color: var(--button-toggle-color);
 		cursor: pointer;
@@ -37,9 +36,8 @@
 			display: flex;
 			justify-content: center;
 			outline: none;
-			padding-block: var(--spacing-16);
-			padding-inline: var(--spacing-16) var(--padding-right);
 			width: 100%;
+			padding: 0;
 
 			.sr-only {
 				display: none;
@@ -80,6 +78,7 @@ icon-hamburger {
 	position: relative;
 	transition: background 0.2s ease;
 	width: var(--spacing-32);
+	color: var(--colour-secondary-600);
 
 	&::before,
 	&::after {
@@ -111,11 +110,11 @@ icon-hamburger {
 
 	/* Active state when popover is open */
 	&.is-active {
-		--after-bottom: calc(50% - var(--line));
+		--after-bottom: calc(108% - var(--line));
 		--after-rotate: -45deg;
-		--after-y: calc(-var(--spacing-md) / 2 + var(--line));
+		--after-y: calc(32px / 2 + var(--line));
 		--before-rotate: 45deg;
-		--before-y: calc(var(--spacing-md) / 2 - var(--line));
+		--before-y: calc(32px / 2 - var(--line));
 		--hamburger-bg: transparent;
 	}
 }
