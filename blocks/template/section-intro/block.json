@@ -12,11 +12,11 @@
   "attributes": {
     "sectionTitle": {
       "type": "string",
-      "default": ""
+      "default": "Precision operation of your observability and security"
     },
     "introText": {
       "type": "string",
-      "default": ""
+      "default": "We specialise exclusively in Elastic. Our team brings unmatched operational experience to streamline your ingestion, data modelling and AI powered outcomes under one expert-led strategy."
     },
     "textAlign": {
       "type": "string",
