@@ -78,15 +78,9 @@
 		}
 	}
 
-	.hero-page-subheading {
+	.body-hero-page {
 		z-index: 1;
-		font-size: 20px;
-		font-weight: var(--fonts-weight-font-weight-regular);
-		color: var(--colour-text-hero-subheading);
-		line-height: 31px;
-		letter-spacing: -0.4px;
 		max-width: 60ch;
 		margin: 0;
-		text-box: trim-both cap alphabetic;
 	}
 }
