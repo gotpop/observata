@@ -20,39 +20,39 @@
         },
         "plan1Name": {
             "type": "string",
-            "default": "Starter"
+            "default": "Assisted"
         },
         "plan1Price": {
             "type": "string",
-            "default": "$0"
+            "default": "0kr"
         },
         "plan1Description": {
             "type": "string",
-            "default": "For individuals getting started."
+            "default": "Lorem ipsum dolor sit amet."
         },
         "plan2Name": {
             "type": "string",
-            "default": "Pro"
+            "default": "Operated"
         },
         "plan2Price": {
             "type": "string",
-            "default": "$49"
+            "default": "50kr"
         },
         "plan2Description": {
             "type": "string",
-            "default": "For teams that need more power."
+            "default": "Lorem ipsum dolor sit amet."
         },
         "plan3Name": {
             "type": "string",
-            "default": "Enterprise"
+            "default": "Serviced"
         },
         "plan3Price": {
             "type": "string",
-            "default": "Custom"
+            "default": "100kr"
         },
         "plan3Description": {
             "type": "string",
-            "default": "For organisations with complex needs."
+            "default": "Lorem ipsum dolor sit amet."
         }
     },
     "render": "file:render.php",
