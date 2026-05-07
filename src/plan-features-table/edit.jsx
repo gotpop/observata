@@ -7,10 +7,16 @@ import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 const ROW_TEMPLATE = [
-    ['observata/plan-features-row', { featureName: 'Hosts monitored', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Log retention', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Custom dashboards', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Priority support', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Elastic licensing', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Real-time monitoring', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Log aggregation', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Custom dashboards', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Alerting & notifications', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'API access', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: '30-day retention', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Advanced analytics', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Custom integrations', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
+    ['observata/plan-features-row', { featureName: 'Dedicated support', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
     ['observata/plan-features-row', { featureName: 'SLA guarantee', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
 ];
 
