@@ -3,7 +3,7 @@
 .heading-hero {
 	color: var(--colour-text-hero);
 	font-family: var(--typography-family-gantari);
-	font-size: var(--size, var(--typography-size-40));
+	font-size: var(--size, var(--typography-size-32));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
 	line-height: var(--line, var(--line-height-heading-lg));
@@ -71,7 +71,7 @@
 }
 
 .body-hero {
-	color: var(--colour-text-body-default);
+	color: var(--colour-text-hero-subheading);
 	font-size: var(--typography-size-20);
 	font-weight: var(--typography-weight-regular);
 	line-height: 1.5;

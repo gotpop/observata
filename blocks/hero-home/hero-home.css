@@ -34,17 +34,17 @@
 	background-image: var(--grad-radial-white), var(--grad-linear);
 	display: grid;
 	grid-column: full;
-	grid-template-areas:
-		'. . .'
-		'. hero .'
-		'. . .';
-	grid-template-columns: minmax(var(--spacing-24, 1fr)) min-content minmax(var(--spacing-24, 1fr));
-	grid-template-rows: 13rem min-content 1fr;
+	grid-template-columns: subgrid;
+	grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
 	justify-content: center;
 	min-height: var(--height-hero-home);
 	overflow: clip;
 	position: sticky;
 	top: 0;
+
+	@media (width >=40rem) {
+		grid-template-rows: 13rem [hero-start] min-content [hero-end] 1fr;
+	}
 
 	&::after {
 		animation: background-animation linear;
@@ -59,35 +59,37 @@
 		z-index: 999;
 	}
 
-	.hero-shader {
-		animation: 1s fade-in forwards ease-in;
-		inset: auto auto -280px 50%;
-		height: 1037px;
-		position: absolute;
-		transform: translateX(-50%);
-		width: 2422px;
-		z-index: 2;
-	}
-
 	.hero-content {
 		display: grid;
 		gap: var(--spacing-32);
-		grid-area: hero;
+		grid-row: hero;
+		grid-column: content;
 		grid-template-columns: 1fr;
 		text-align: center;
 		z-index: 2;
 	}
 
+	.hero-shader {
+		animation: 1s fade-in forwards ease-in;
+		inset: 10px auto -280px 50%;
+		height: 1037px;
+		position: absolute;
+		transform: translateX(-50%);
+		width: 2422px;
+		z-index: 2;
+
+		@media (width >=40rem) {
+			inset: auto auto -280px 50%;
+		}
+	}
+
 	.hero-text {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-self: center;
-		gap: 11px;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-24);
 	}
 
 	.heading-hero-home {
-		margin-bottom: 1rem;
 		position: relative;
 		right: 9px;
 
@@ -108,20 +110,15 @@
 		}
 	}
 
-	.hero-text p.hero-subheading {
-		color: var(--colour-text-hero-subheading);
-		font-size: var(--size-body-lg);
-		font-weight: var(--fonts-weight-font-weight-regular);
-		letter-spacing: -0.4px;
-		line-height: 31px;
-		max-width: 60ch;
+	.body-hero-home {
+		max-width: min(100%, 60ch);
 	}
 
 	.hero-buttons {
-		display: flex;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-items: center;
 		gap: var(--spacing-24);
-		flex-direction: column;
 	}
 
 	.hero-read-more {
