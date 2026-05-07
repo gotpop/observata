@@ -7,8 +7,8 @@ import { __ } from '@wordpress/i18n';
 
 // Default template for each tab
 const TAB_TEMPLATE = [
-    ['observata/plan-features-table', {}],
-    ['observata/pricing-plans', {}]
+    ['observata/section-intro', {}],
+    ['observata/plan-features-table', {}]
 ];
 
 const TABS = [
@@ -84,7 +84,6 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
                     templateLock={false}
                     allowedBlocks={[
                         'observata/plan-features-table',
-                        'observata/pricing-plans',
                         'observata/section-intro'
                     ]}
                     value={getCurrentInnerBlocks()}
