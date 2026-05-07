@@ -20,7 +20,7 @@
     },
     "textAlign": {
       "type": "string",
-      "default": ""
+      "default": "left"
     }
   },
   "editorScript": "file:../../build/index.js",
