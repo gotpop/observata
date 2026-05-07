@@ -41,6 +41,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 value={phase1Title}
                                 onChange={(val) => setAttributes({ phase1Title: val })}
                                 placeholder={__('Phase title…', 'observata')}
+                                disableLineBreaks
                             />
                         </div>
                         <div className="phase-content">
@@ -51,6 +52,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     value={phase1ItemTitle1}
                                     onChange={(val) => setAttributes({ phase1ItemTitle1: val })}
                                     placeholder={__('Item title…', 'observata')}
+                                    disableLineBreaks
                                 />
                                 <RichText
                                     tagName="p"
@@ -58,6 +60,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     value={phase1Text1}
                                     onChange={(val) => setAttributes({ phase1Text1: val })}
                                     placeholder={__('Phase text…', 'observata')}
+                                    disableLineBreaks
                                 />
                             </div>
                             <div className="phase-item">
@@ -67,6 +70,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     value={phase1ItemTitle2}
                                     onChange={(val) => setAttributes({ phase1ItemTitle2: val })}
                                     placeholder={__('Item title…', 'observata')}
+                                    disableLineBreaks
                                 />
                                 <RichText
                                     tagName="p"
@@ -74,6 +78,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     value={phase1Text2}
                                     onChange={(val) => setAttributes({ phase1Text2: val })}
                                     placeholder={__('Phase text…', 'observata')}
+                                    disableLineBreaks
                                 />
                             </div>
                         </div>
@@ -87,6 +92,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 value={phase2Title}
                                 onChange={(val) => setAttributes({ phase2Title: val })}
                                 placeholder={__('Phase title…', 'observata')}
+                                disableLineBreaks
                             />
                         </div>
                         <div className="phase-content">
@@ -97,6 +103,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     value={phase2ItemTitle1}
                                     onChange={(val) => setAttributes({ phase2ItemTitle1: val })}
                                     placeholder={__('Item title…', 'observata')}
+                                    disableLineBreaks
                                 />
                                 <RichText
                                     tagName="p"
@@ -104,6 +111,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     value={phase2Text1}
                                     onChange={(val) => setAttributes({ phase2Text1: val })}
                                     placeholder={__('Phase text…', 'observata')}
+                                    disableLineBreaks
                                 />
                             </div>
                         </div>
@@ -115,6 +123,7 @@ export default function Edit({ attributes, setAttributes }) {
                             value={ctaText}
                             onChange={(val) => setAttributes({ ctaText: val })}
                             placeholder={__('CTA text…', 'observata')}
+                            disableLineBreaks
                         />
                         <span className="arrow-icon">→</span>
                     </div>

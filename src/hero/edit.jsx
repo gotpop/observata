@@ -25,6 +25,7 @@ export default function HeroEdit({ attributes, setAttributes }) {
                         value={heading}
                         onChange={(val) => setAttributes({ heading: val })}
                         placeholder={__('Hero heading…', 'observata')}
+                        disableLineBreaks
                     />
                     <RichText
                         tagName="p"
@@ -32,6 +33,7 @@ export default function HeroEdit({ attributes, setAttributes }) {
                         value={subheading}
                         onChange={(val) => setAttributes({ subheading: val })}
                         placeholder={__('Subheading…', 'observata')}
+                        disableLineBreaks
                     />
                 </div>
 

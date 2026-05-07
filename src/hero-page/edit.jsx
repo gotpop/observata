@@ -21,12 +21,14 @@ export default function HeroPageEdit({ attributes, setAttributes }) {
                         tagName="h1"
                         className="heading-hero-page"
                         value={heading}
+                        disableLineBreaks
                         onChange={(val) => setAttributes({ heading: val })}
                         placeholder={__('Page heading…', 'observata')}
                     />
                     <RichText
+                        disableLineBreaks
                         tagName="p"
-                        className="hero-page-subheading"
+                        className="body-hero-page"
                         value={subheading}
                         onChange={(val) => setAttributes({ subheading: val })}
                         placeholder={__('Subheading text…', 'observata')}
