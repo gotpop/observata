@@ -17,6 +17,9 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTeamMemberEdit from './card-team-member/edit';
 import CardTeamMemberSave from './card-team-member/save';
+import SectionIntroEdit from './section-intro/edit';
+import SectionIntroSave from './section-intro/save';
+import sectionIntroMetadata from '../blocks/template/section-intro/block.json';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
 import GridCardsGeoTechEdit from './grid-cards-geo-tech/edit';
@@ -262,4 +265,9 @@ registerBlockType(teamMembersMetadata.name, {
 registerBlockType(cardTeamMemberMetadata.name, {
     edit: CardTeamMemberEdit,
     save: CardTeamMemberSave,
+});
+
+registerBlockType(sectionIntroMetadata.name, {
+    edit: SectionIntroEdit,
+    save: SectionIntroSave,
 });

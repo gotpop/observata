@@ -84,7 +84,8 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
                     templateLock={false}
                     allowedBlocks={[
                         'observata/plan-features-table',
-                        'observata/pricing-plans'
+                        'observata/pricing-plans',
+                        'observata/section-intro'
                     ]}
                     value={getCurrentInnerBlocks()}
                     onChange={updateCurrentInnerBlocks}

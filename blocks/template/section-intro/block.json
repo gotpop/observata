@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "observata/section-intro",
+  "title": "Section Intro",
+  "category": "theme",
+  "description": "Section heading and intro text with optional center alignment.",
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "introText": {
+      "type": "string",
+      "default": ""
+    },
+    "textAlign": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:../../build/index.js",
+  "style": "file:section-intro.css",
+  "editorStyle": [
+    "file:../../build/index.css"
+  ]
+}

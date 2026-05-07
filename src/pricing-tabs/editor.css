@@ -52,3 +52,7 @@
 .wp-block-observata-plan-features-row {
 	grid-column: span 2;
 }
+
+.wp-block-observata-section-intro {
+	grid-column: span 2;
+}
