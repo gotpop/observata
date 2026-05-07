@@ -26,6 +26,56 @@
 					</ul>
 				</article>
 			</div>
+			<div class="footer-menus">
+				{% if footer_support %}
+					<div class="footer-menu-column">
+						<h4>{{ footer_support.name|default('Support') }}</h4>
+						<ul class="footer-menu-list">
+							{% for item in footer_support.items %}
+								<li class="footer-menu-item">
+									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+				{% if footer_services %}
+					<div class="footer-menu-column">
+						<h4>{{ footer_services.name|default('Services') }}</h4>
+						<ul class="footer-menu-list">
+							{% for item in footer_services.items %}
+								<li class="footer-menu-item">
+									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+				{% if footer_resources %}
+					<div class="footer-menu-column">
+						<h4>{{ footer_resources.name|default('Resources') }}</h4>
+						<ul class="footer-menu-list">
+							{% for item in footer_resources.items %}
+								<li class="footer-menu-item">
+									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+				{% if footer_company %}
+					<div class="footer-menu-column">
+						<h4>{{ footer_company.name|default('Company') }}</h4>
+						<ul class="footer-menu-list">
+							{% for item in footer_company.items %}
+								<li class="footer-menu-item">
+									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</div>
 		</footer-top>
 		<footer-bottom class="footer-bottom">
 			<div class="footer-locations">

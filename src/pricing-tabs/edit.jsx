@@ -7,7 +7,7 @@ import { __ } from '@wordpress/i18n';
 
 // Default template for each tab
 const TAB_TEMPLATE = [
-    ['observata/section-intro', {}],
+    ['observata/section-intro', { textAlign: 'center' }],
     ['observata/plan-features-table', {}]
 ];
 
