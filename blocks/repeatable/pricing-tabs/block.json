@@ -31,6 +31,7 @@
   "style": [
     "file:pricing-tabs.css",
     "file:../plan-features-table/plan-features-table.css",
+    "file:../cards/plan-features-row/plan-features-row.css",
     "file:../pricing-plans/pricing-plans.css"
   ],
   "editorStyle": [

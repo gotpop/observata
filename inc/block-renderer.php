@@ -4,6 +4,47 @@
  */
 
 /**
+ * Recursively serialize an array of block objects into WordPress
+ * block-delimiter HTML comments, preserving the full nesting tree.
+ *
+ * The controlled InnerBlocks (value/onChange) stores blocks as:
+ *   [ name, attributes, innerBlocks ]
+ * This function converts them to the <!-- wp:... --> format do_blocks() expects.
+ *
+ * @param array $blocks Array of block objects from InnerBlocks onChange.
+ * @return string Serialized block-delimiter HTML.
+ */
+function observata_serialize_blocks_recursive(array $blocks): string
+{
+    $output = '';
+
+    foreach ($blocks as $block) {
+        if (empty($block['name'])) {
+            continue;
+        }
+
+        $attrs = '';
+        if (!empty($block['attributes'])) {
+            $attrs = ' ' . wp_json_encode(
+                $block['attributes'],
+                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+            );
+        }
+
+        if (!empty($block['innerBlocks'])) {
+            // Block with children — use opening/closing delimiters
+            $inner = observata_serialize_blocks_recursive($block['innerBlocks']);
+            $output .= "<!-- wp:{$block['name']}{$attrs} -->{$inner}<!-- /wp:{$block['name']} -->";
+        } else {
+            // Leaf block — self-closing delimiter
+            $output .= "<!-- wp:{$block['name']}{$attrs} /-->";
+        }
+    }
+
+    return $output;
+}
+
+/**
  * Cached mapping of template_name => relative path from blocks/ dir.
  * Built once per request to avoid repeated filesystem scans.
  */
@@ -88,29 +129,17 @@ function observata_render_block_twig($attributes, $content, $block)
         }
     }
 
-    // Special handling for pricing-tabs to pre-render inner blocks for each tab
+    // Special handling for pricing-tabs to pre-render inner blocks for each tab.
+    // Uses recursive serialization to preserve nested inner blocks (e.g. plan-features-row
+    // inside plan-features-table) so the full block tree is processed by do_blocks().
     if ($template_name === 'pricing-tabs') {
         $rendered_tabs = [];
         $tab_names = ['mdr', 'observability', 'search'];
 
         foreach ($tab_names as $tab_name) {
             $inner_blocks = $attributes[$tab_name . 'InnerBlocks'] ?? [];
-            $tab_rendered_content = '';
-
-            foreach ($inner_blocks as $inner_block) {
-                if (empty($inner_block['name']) || empty($inner_block['attributes'])) {
-                    continue;
-                }
-
-                $block_html = do_blocks(
-                    "<!-- wp:{$inner_block['name']} " .
-                    wp_json_encode($inner_block['attributes']) .
-                    " /-->"
-                );
-                $tab_rendered_content .= $block_html;
-            }
-
-            $rendered_tabs[$tab_name] = $tab_rendered_content;
+            $serialized = observata_serialize_blocks_recursive($inner_blocks);
+            $rendered_tabs[$tab_name] = do_blocks($serialized);
         }
 
         $context['renderedTabs'] = $rendered_tabs;
