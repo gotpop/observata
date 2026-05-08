@@ -26,16 +26,6 @@ export default function PlanFeaturesTableEdit({ attributes, setAttributes }) {
     return (
         <div {...blockProps}>
             <BlockLabel name="Plan Features Table">
-                <TextControl
-                    label={__('Section Title', 'observata')}
-                    value={attributes.sectionTitle}
-                    onChange={(value) => setAttributes({ sectionTitle: value })}
-                />
-                <TextControl
-                    label={__('Section Subtitle', 'observata')}
-                    value={attributes.sectionSubtitle}
-                    onChange={(value) => setAttributes({ sectionSubtitle: value })}
-                />
             </BlockLabel>
 
             <div className="plan-features-table-editor__cards">

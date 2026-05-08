@@ -4,28 +4,23 @@
 #}
 
 <section class="plan-features-table">
-	<div class="plan-features-table__header">
-		<h2 class="plan-features-table__title">{{ attributes.sectionTitle }}</h2>
-		<p class="plan-features-table__subtitle">{{ attributes.sectionSubtitle }}</p>
-	</div>
-
-	<div class="plan-features-table__cards">
-		<div class="plan-features-table__card">
-			<h3 class="plan-features-table__card-name">{{ attributes.plan1Name }}</h3>
-			<span class="plan-features-table__card-price">{{ attributes.plan1Price }}</span>
-			<p class="plan-features-table__card-desc">{{ attributes.plan1Description }}</p>
+	<plan-cards class="plan-features-table__cards">
+		<div class="plan-card">
+			<h3 class="plan-title">{{ attributes.plan1Name }}</h3>
+			<span class="plan-price">{{ attributes.plan1Price }}</span>
+			<p class="plan-description">{{ attributes.plan1Description }}</p>
 		</div>
-		<div class="plan-features-table__card plan-features-table__card--highlighted">
-			<h3 class="plan-features-table__card-name">{{ attributes.plan2Name }}</h3>
-			<span class="plan-features-table__card-price">{{ attributes.plan2Price }}</span>
-			<p class="plan-features-table__card-desc">{{ attributes.plan2Description }}</p>
+		<div class="plan-card plan-card-highlighted">
+			<h3 class="plan-title">{{ attributes.plan2Name }}</h3>
+			<span class="plan-price">{{ attributes.plan2Price }}</span>
+			<p class="plan-description">{{ attributes.plan2Description }}</p>
 		</div>
-		<div class="plan-features-table__card">
-			<h3 class="plan-features-table__card-name">{{ attributes.plan3Name }}</h3>
-			<span class="plan-features-table__card-price">{{ attributes.plan3Price }}</span>
-			<p class="plan-features-table__card-desc">{{ attributes.plan3Description }}</p>
+		<div class="plan-card">
+			<h3 class="plan-title">{{ attributes.plan3Name }}</h3>
+			<span class="plan-price">{{ attributes.plan3Price }}</span>
+			<p class="plan-description">{{ attributes.plan3Description }}</p>
 		</div>
-	</div>
+	</plan-cards>
 
 	<div class="plan-features-table__table-wrapper">
 		<table class="plan-features-table__table">

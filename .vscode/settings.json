@@ -19,5 +19,7 @@
 	},
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"cssCustomProperties.files": ["**/*.css"],
+	"cssCustomProperties.languages": ["css"]
 }
