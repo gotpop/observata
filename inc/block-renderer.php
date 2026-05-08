@@ -132,10 +132,10 @@ function observata_render_block_twig($attributes, $content, $block)
     // Add footer menus to context for footer block
     if ($template_name === 'footer') {
         $footer_menus = [
-            'footer_support' => 'footer-support',
-            'footer_services' => 'footer-services',
-            'footer_resources' => 'footer-resources',
-            'footer_company' => 'footer-company',
+            'footer_1' => 'footer-1',
+            'footer_2' => 'footer-2',
+            'footer_3' => 'footer-3',
+            'footer_4' => 'footer-4',
         ];
 
         foreach ($footer_menus as $key => $location) {

@@ -27,11 +27,11 @@
 				</article>
 			</div>
 			<div class="footer-menus">
-				{% if footer_support %}
+				{% if footer_1 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_support.name|default('Support') }}</h4>
+						<h4>{{ footer_1.name|default('Footer 1') }}</h4>
 						<ul class="footer-menu-list">
-							{% for item in footer_support.items %}
+							{% for item in footer_1.items %}
 								<li class="footer-menu-item">
 									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
 								</li>
@@ -39,11 +39,11 @@
 						</ul>
 					</div>
 				{% endif %}
-				{% if footer_services %}
+				{% if footer_2 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_services.name|default('Services') }}</h4>
+						<h4>{{ footer_2.name|default('Footer 2') }}</h4>
 						<ul class="footer-menu-list">
-							{% for item in footer_services.items %}
+							{% for item in footer_2.items %}
 								<li class="footer-menu-item">
 									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
 								</li>
@@ -51,11 +51,11 @@
 						</ul>
 					</div>
 				{% endif %}
-				{% if footer_resources %}
+				{% if footer_3 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_resources.name|default('Resources') }}</h4>
+						<h4>{{ footer_3.name|default('Footer 3') }}</h4>
 						<ul class="footer-menu-list">
-							{% for item in footer_resources.items %}
+							{% for item in footer_3.items %}
 								<li class="footer-menu-item">
 									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
 								</li>
@@ -63,11 +63,11 @@
 						</ul>
 					</div>
 				{% endif %}
-				{% if footer_company %}
+				{% if footer_4 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_company.name|default('Company') }}</h4>
+						<h4>{{ footer_4.name|default('Footer 4') }}</h4>
 						<ul class="footer-menu-list">
-							{% for item in footer_company.items %}
+							{% for item in footer_4.items %}
 								<li class="footer-menu-item">
 									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
 								</li>

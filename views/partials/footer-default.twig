@@ -1,49 +1,51 @@
 <footer id="footer" role="contentinfo">
-	{% if function('has_nav_menu', 'footer-support') or function('has_nav_menu', 'footer-services') or function('has_nav_menu', 'footer-resources') or function('has_nav_menu', 'footer-company') %}
-	<div class="footer-nav">
-		{% if function('has_nav_menu', 'footer-support') %}
-		<nav class="footer-nav-section">
-			{{ function('wp_nav_menu', {
-				'theme_location': 'footer-support',
+	{% if function('has_nav_menu', 'footer-1') or function('has_nav_menu', 'footer-2') or function('has_nav_menu', 'footer-3') or function('has_nav_menu', 'footer-4') %}
+		<div class="footer-nav">
+			{% if function('has_nav_menu', 'footer-1') %}
+				<nav class="footer-nav-section">
+					{{ function('wp_nav_menu', {
+				'theme_location': 'footer-1',
 				'container': false,
 				'fallback_cb': false,
 				'depth': 1
 			}) }}
-		</nav>
-		{% endif %}
-		{% if function('has_nav_menu', 'footer-services') %}
-		<nav class="footer-nav-section">
-			{{ function('wp_nav_menu', {
-				'theme_location': 'footer-services',
+				</nav>
+			{% endif %}
+			{% if function('has_nav_menu', 'footer-2') %}
+				<nav class="footer-nav-section">
+					{{ function('wp_nav_menu', {
+				'theme_location': 'footer-2',
 				'container': false,
 				'fallback_cb': false,
 				'depth': 1
 			}) }}
-		</nav>
-		{% endif %}
-		{% if function('has_nav_menu', 'footer-resources') %}
-		<nav class="footer-nav-section">
-			{{ function('wp_nav_menu', {
-				'theme_location': 'footer-resources',
+				</nav>
+			{% endif %}
+			{% if function('has_nav_menu', 'footer-3') %}
+				<nav class="footer-nav-section">
+					{{ function('wp_nav_menu', {
+				'theme_location': 'footer-3',
 				'container': false,
 				'fallback_cb': false,
 				'depth': 1
 			}) }}
-		</nav>
-		{% endif %}
-		{% if function('has_nav_menu', 'footer-company') %}
-		<nav class="footer-nav-section">
-			{{ function('wp_nav_menu', {
-				'theme_location': 'footer-company',
+				</nav>
+			{% endif %}
+			{% if function('has_nav_menu', 'footer-4') %}
+				<nav class="footer-nav-section">
+					{{ function('wp_nav_menu', {
+				'theme_location': 'footer-4',
 				'container': false,
 				'fallback_cb': false,
 				'depth': 1
 			}) }}
-		</nav>
-		{% endif %}
-	</div>
+				</nav>
+			{% endif %}
+		</div>
 	{% endif %}
 	<div id="copyright">
-		&copy; {{ "now"|date("Y") }} {{ site.name }}
+		&copy;
+		{{ "now"|date("Y") }}
+		{{ site.name }}
 	</div>
 </footer>

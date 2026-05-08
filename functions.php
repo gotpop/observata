@@ -129,10 +129,10 @@ function observata_setup()
 	}
 	register_nav_menus(array(
 		'main-menu' => esc_html__('Main Menu', 'observata'),
-		'footer-support' => esc_html__('Footer support', 'observata'),
-		'footer-services' => esc_html__('Footer services', 'observata'),
-		'footer-resources' => esc_html__('Footer resources', 'observata'),
-		'footer-company' => esc_html__('Footer company', 'observata'),
+		'footer-1' => esc_html__('Footer 1', 'observata'),
+		'footer-2' => esc_html__('Footer 2', 'observata'),
+		'footer-3' => esc_html__('Footer 3', 'observata'),
+		'footer-4' => esc_html__('Footer 4', 'observata'),
 	));
 }
 
