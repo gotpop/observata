@@ -78,7 +78,7 @@ icon-hamburger {
 	position: relative;
 	transition: background 0.2s ease;
 	width: var(--spacing-32);
-	color: var(--colour-secondary-600);
+	color: var(--colour-primary-600);
 
 	&::before,
 	&::after {

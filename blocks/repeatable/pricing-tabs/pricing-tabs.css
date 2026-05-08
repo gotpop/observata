@@ -18,6 +18,10 @@
 	grid-template-columns: subgrid;
 	display: grid;
 	padding-block: 5rem;
+
+	.section-intro {
+		text-align: center;
+	}
 }
 
 .pricing-tabs__header {
@@ -84,6 +88,11 @@
 	display: block;
 	opacity: 1;
 	animation: fadeIn 0.3s ease;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content;
+	gap: var(--spacing-24);
 }
 
 /* View Transitions API animations */

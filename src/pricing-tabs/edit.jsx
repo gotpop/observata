@@ -1,9 +1,10 @@
 import './editor.css';
 
-import { useState } from '@wordpress/element';
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { Button, ButtonGroup } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+
+import BlockLabel from '../components/block-label';
+import { useState } from '@wordpress/element';
 
 // Default template for each tab
 const TAB_TEMPLATE = [
@@ -57,11 +58,7 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <div className="pricing-tabs-editor__header">
-                <label className="pricing-tabs-editor__label">
-                    {__('Pricing Tabs', 'observata')}
-                </label>
-            </div>
+            <BlockLabel name="Pricing tabs" />
 
             <div className="pricing-tabs-editor__tabs">
                 <ButtonGroup>

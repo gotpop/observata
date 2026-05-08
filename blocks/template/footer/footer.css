@@ -58,6 +58,7 @@
 	.footer-bottom {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: var(--spacing-24);
 	}
 
 	.footer-copyright {
@@ -68,7 +69,7 @@
 
 	.footer-menus {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 		gap: var(--spacing-32);
 	}
 
@@ -76,7 +77,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-16);
+		gap: var(--spacing-24);
 
 		h4 {
 			color: white;
@@ -87,13 +88,12 @@
 	}
 
 	.footer-menu-list {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: min-content;
-		gap: var(--spacing-12);
+		gap: var(--spacing-16);
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.footer-menu-item {
