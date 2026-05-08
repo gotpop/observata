@@ -12,7 +12,7 @@
   "attributes": {
     "activeTab": {
       "type": "string",
-      "default": "mdr"
+      "default": "observability"
     },
     "mdrInnerBlocks": {
       "type": "array",

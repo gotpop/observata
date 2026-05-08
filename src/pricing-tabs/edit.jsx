@@ -19,7 +19,7 @@ const TABS = [
 ];
 
 export default function PricingTabsEdit({ attributes, setAttributes }) {
-    const [localActiveTab, setLocalActiveTab] = useState(attributes.activeTab || 'mdr');
+    const [localActiveTab, setLocalActiveTab] = useState(attributes.activeTab || 'observability');
     const blockProps = useBlockProps({ className: 'observata-pricing-tabs-editor' });
 
     const handleTabClick = (tabId) => {
