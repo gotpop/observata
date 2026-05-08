@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/contact-form",
+    "title": "Contact Form",
+    "category": "theme",
+    "description": "Embedded contact form via Zoho.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "formUrl": {
+            "type": "string",
+            "default": "https://forms.zohopublic.eu/Observata/form/Contactusforwebsite/formperma/WZY4ixkroGhjj-TNFSI45yFNmi5QFNBVWTdBcPxWMTE"
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": [
+        "file:contact-form.css",
+        "file:../../build/index.css"
+    ],
+    "style": [
+        "file:contact-form.css"
+    ]
+}

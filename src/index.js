@@ -10,6 +10,9 @@ import CardRichTextMetadata from '../blocks/cards/card-rich-text/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardTeamMemberMetadata from '../blocks/cards/card-team-member/block.json';
 import planFeaturesRowMetadata from '../blocks/cards/plan-features-row/block.json';
+import contactDetailsMetadata from '../blocks/contact-details/block.json';
+import contactFormMetadata from '../blocks/contact-form/block.json';
+import contactMetadata from '../blocks/contact/block.json';
 import heroMetadata from '../blocks/hero-home/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
@@ -56,6 +59,12 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTeamMemberEdit from './card-team-member/edit';
 import CardTeamMemberSave from './card-team-member/save';
+import ContactDetailsEdit from './contact-details/edit';
+import ContactDetailsSave from './contact-details/save';
+import ContactFormEdit from './contact-form/edit';
+import ContactFormSave from './contact-form/save';
+import ContactEdit from './contact/edit';
+import ContactSave from './contact/save';
 import GridCardsGeoTechEdit from './grid-cards-geo-tech/edit';
 import GridCardsGeoTechSave from './grid-cards-geo-tech/save';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
@@ -273,6 +282,21 @@ registerBlockType(cardTeamMemberMetadata.name, {
 registerBlockType(sectionIntroMetadata.name, {
     edit: SectionIntroEdit,
     save: SectionIntroSave,
+});
+
+registerBlockType(contactMetadata.name, {
+    edit: ContactEdit,
+    save: ContactSave,
+});
+
+registerBlockType(contactDetailsMetadata.name, {
+    edit: ContactDetailsEdit,
+    save: ContactDetailsSave,
+});
+
+registerBlockType(contactFormMetadata.name, {
+    edit: ContactFormEdit,
+    save: ContactFormSave,
 });
 
 registerBlockType(blogPostsMetadata.name, {

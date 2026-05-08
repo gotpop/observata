@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/contact",
+    "title": "Contact",
+    "category": "theme",
+    "description": "Contact section with intro, details and form blocks.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {},
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": [
+        "file:contact.css",
+        "file:../contact-details/contact-details.css",
+        "file:../contact-form/contact-form.css",
+        "file:../template/section-intro/section-intro.css",
+        "file:../../build/index.css"
+    ],
+    "style": [
+        "file:contact.css",
+        "file:../contact-details/contact-details.css",
+        "file:../contact-form/contact-form.css",
+        "file:../template/section-intro/section-intro.css"
+    ]
+}

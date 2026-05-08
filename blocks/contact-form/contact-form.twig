@@ -1,0 +1,10 @@
+{% set form_url = attributes.formUrl|default('') %}
+
+<contact-form class="contact-form">
+	{% if form_url %}
+		<div class="contact-form__wrapper">
+			<iframe class="contact-form__iframe" src="{{ form_url|esc_url }}" title="Contact Form" frameborder="0" loading="lazy" scrolling="no" allowtransparency="true"></iframe>
+		</div>
+	{% endif %}
+</contact-form>
+≈

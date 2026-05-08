@@ -1,0 +1,26 @@
+{% set phone = attributes.phone|default('') %}
+{% set email = attributes.email|default('') %}
+{% set address = attributes.address|default('') %}
+
+<contact-details class="contact-details">
+	{% if phone %}
+		<div class="contact-details__item">
+			<span class="contact-details__label">Phone</span>
+			<a href="tel:{{ phone|replace({' ': '', '(': '', ') ': ''}) }}" class="contact-details__value">{{ phone|esc_html }}</a>
+		</div>
+	{% endif %}
+
+	{% if email %}
+		<div class="contact-details__item">
+			<span class="contact-details__label">Email</span>
+			<a href="mailto:{{ email|esc_html }}" class="contact-details__value">{{ email|esc_html }}</a>
+		</div>
+	{% endif %}
+
+	{% if address %}
+		<div class="contact-details__item">
+			<span class="contact-details__label">Address</span>
+			<span class="contact-details__value">{{ address|esc_html }}</span>
+		</div>
+	{% endif %}
+</contact-details>
