@@ -1,16 +1,12 @@
 <?php
 
 $context = \Timber\Timber::context();
-$post = \Timber\Timber::get_post();
-
-if (!$post) {
-    wp_safe_redirect(home_url('/'));
-    exit;
-}
-
-$post->setup();
-$context['post'] = $post;
+$post_obj = \Timber\Timber::get_post();
+$post_obj->setup();
+$context['post'] = $post_obj;
+$context['content'] = apply_filters('the_content', get_the_content());
 $context['body_class'] = implode(' ', get_body_class());
-$context['show_comments'] = comments_open($post->ID) && !post_password_required($post->ID);
+$context['header'] = do_blocks('<!-- wp:observata/header /-->');
+$context['footer'] = do_blocks('<!-- wp:observata/footer /-->');
 
-\Timber\Timber::render('templates/blog-single.twig', $context);
+\Timber\Timber::render('templates/blog-single-default.twig', $context);
