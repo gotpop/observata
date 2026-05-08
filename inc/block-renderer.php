@@ -150,6 +150,18 @@ function observata_render_block_twig($attributes, $content, $block)
         }
     }
 
+    // Special handling for blog-posts to query latest posts via Timber.
+    if ($template_name === 'blog-posts') {
+        $posts_per_page = $attributes['postsPerPage'] ?? 10;
+        $context['posts'] = \Timber\Timber::get_posts([
+            'post_type' => 'post',
+            'posts_per_page' => $posts_per_page,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_status' => 'publish',
+        ]);
+    }
+
     // Special handling for pricing-tabs to pre-render inner blocks for each tab.
     // Uses recursive serialization to preserve nested inner blocks (e.g. plan-features-row
     // inside plan-features-table) so the full block tree is processed by do_blocks().

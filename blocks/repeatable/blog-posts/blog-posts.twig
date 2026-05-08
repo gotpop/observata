@@ -1,0 +1,39 @@
+{#
+  Blog Posts - displays latest posts in a responsive card grid.
+  Posts are queried in the PHP render callback and passed via context.
+#}
+
+<section class="section-block blog-posts">
+	<block-content class="block-content">
+		<div class="blog-posts__grid">
+			{% for post in posts %}
+				<article id="post-{{ post.ID }}" class="blog-posts__card">
+					{% if post.thumbnail %}
+						<a href="{{ post.link }}" class="blog-posts__image-link">
+							<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="blog-posts__image" loading="lazy"/>
+						</a>
+					{% endif %}
+
+					<div class="blog-posts__content">
+						<time class="blog-posts__date" datetime="{{ post.date|date('c') }}">
+							{{ post.date|date('F j, Y') }}
+						</time>
+
+						<h3 class="blog-posts__title">
+							<a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a>
+						</h3>
+
+						<div class="blog-posts__excerpt">
+							{{ post.excerpt({ strip: true, read_more: false }) }}
+						</div>
+
+						<a href="{{ post.link }}" class="blog-posts__read-more">
+							Read more
+						</a>
+					</div>
+				</article>
+			{% else %}
+				<p class="blog-posts__empty">No posts found.</p>
+			{% endfor %}
+		</block-content>
+	</section>
