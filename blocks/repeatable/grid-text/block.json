@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/grid-text",
+    "title": "Grid Text",
+    "category": "theme",
+    "description": "Grid section with simple text card blocks. Add Card Text Simple blocks inside.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": [
+        "file:../cards/card-text-simple/card-text-simple.css",
+        "file:../../build/index.css"
+    ],
+    "style": [
+        "file:../cards/card-text-simple/card-text-simple.css",
+        "file:grid-text.css"
+    ]
+}

@@ -9,6 +9,7 @@ import planMetadata from '../blocks/cards/card-pricing-plan/block.json';
 import CardRichTextMetadata from '../blocks/cards/card-rich-text/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardTeamMemberMetadata from '../blocks/cards/card-team-member/block.json';
+import cardTextSimpleMetadata from '../blocks/cards/card-text-simple/block.json';
 import planFeaturesRowMetadata from '../blocks/cards/plan-features-row/block.json';
 import contactDetailsMetadata from '../blocks/contact-details/block.json';
 import contactFormMetadata from '../blocks/contact-form/block.json';
@@ -30,6 +31,7 @@ import gridCardsMicroMetadata from '../blocks/repeatable/grid-cards-micro/block.
 import gridCardsRichTextMetadata from '../blocks/repeatable/grid-cards-rich-text/block.json';
 import gridCardsShaderMetadata from '../blocks/repeatable/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/repeatable/grid-cards-simple/block.json';
+import gridTextMetadata from '../blocks/repeatable/grid-text/block.json';
 import planFeaturesTableMetadata from '../blocks/repeatable/plan-features-table/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import pricingTabsMetadata from '../blocks/repeatable/pricing-tabs/block.json';
@@ -60,6 +62,8 @@ import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTeamMemberEdit from './card-team-member/edit';
 import CardTeamMemberSave from './card-team-member/save';
+import CardTextSimpleEdit from './card-text-simple/edit';
+import CardTextSimpleSave from './card-text-simple/save';
 import ContactDetailsEdit from './contact-details/edit';
 import ContactDetailsSave from './contact-details/save';
 import ContactFormEdit from './contact-form/edit';
@@ -80,6 +84,8 @@ import GridCardsShaderEdit from './grid-cards-shader/edit';
 import GridCardsShaderSave from './grid-cards-shader/save';
 import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
+import GridTextEdit from './grid-text/edit';
+import GridTextSave from './grid-text/save';
 import HeroPageEdit from './hero-page/edit';
 import HeroPageSave from './hero-page/save';
 import HeroEdit from './hero/edit';
@@ -310,4 +316,14 @@ registerBlockType(blogPostsMetadata.name, {
 registerBlockType(richTextMetadata.name, {
     edit: RichTextEdit,
     save: RichTextSave,
+});
+
+registerBlockType(cardTextSimpleMetadata.name, {
+    edit: CardTextSimpleEdit,
+    save: CardTextSimpleSave,
+});
+
+registerBlockType(gridTextMetadata.name, {
+    edit: GridTextEdit,
+    save: GridTextSave,
 });

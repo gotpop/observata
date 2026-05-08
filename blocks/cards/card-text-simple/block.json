@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card-text-simple",
+    "title": "Card Text Simple",
+    "category": "theme",
+    "description": "A simple text card with heading and paragraph.",
+    "attributes": {
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "content": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false
+    },
+    "textdomain": "observata",
+    "style": "file:card-text-simple.css"
+}

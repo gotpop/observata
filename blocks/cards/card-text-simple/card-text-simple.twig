@@ -1,0 +1,7 @@
+{% set heading = attributes.heading|default('') %}
+{% set content = attributes.content|default('') %}
+
+<article class="card-text-simple">
+    <h2 class="card-text-simple__heading">{{ heading|wp_kses_post }}</h2>
+    <p class="card-text-simple__content">{{ content|wp_kses_post }}</p>
+</article>

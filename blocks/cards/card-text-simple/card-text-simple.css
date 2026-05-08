@@ -1,0 +1,21 @@
+.card-text-simple {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-text-simple__heading {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.card-text-simple__content {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
