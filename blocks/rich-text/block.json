@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/rich-text",
+    "title": "Rich Text",
+    "category": "theme",
+    "description": "Open rich text editor for formatted content.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "content": {
+            "type": "string",
+            "source": "html",
+            "selector": ".rich-text__content",
+            "default": ""
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": [
+        "file:rich-text.css",
+        "file:../../build/index.css"
+    ],
+    "style": [
+        "file:rich-text.css"
+    ]
+}

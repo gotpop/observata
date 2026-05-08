@@ -20,6 +20,7 @@ import introPageMetadata from '../blocks/intro-page/block.json';
 import logoBarMetadata from '../blocks/logo-bar/block.json';
 import observabilityMetadata from '../blocks/observability/block.json';
 import partnershipMetadata from '../blocks/partnership/block.json';
+import richTextMetadata from '../blocks/rich-text/block.json';
 import blogPostsMetadata from '../blocks/repeatable/blog-posts/block.json';
 import calloutMetadata from '../blocks/repeatable/callout/block.json';
 import gridCardsGeoTechMetadata from '../blocks/repeatable/grid-cards-geo-tech/block.json';
@@ -101,6 +102,8 @@ import PlansEdit from './pricing-plans/edit';
 import PlansSave from './pricing-plans/save';
 import PricingTabsEdit from './pricing-tabs/edit';
 import PricingTabsSave from './pricing-tabs/save';
+import RichTextEdit from './rich-text/edit';
+import RichTextSave from './rich-text/save';
 import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import SectionIntroEdit from './section-intro/edit';
@@ -302,4 +305,9 @@ registerBlockType(contactFormMetadata.name, {
 registerBlockType(blogPostsMetadata.name, {
     edit: BlogPostsEdit,
     save: BlogPostsSave,
+});
+
+registerBlockType(richTextMetadata.name, {
+    edit: RichTextEdit,
+    save: RichTextSave,
 });

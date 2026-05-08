@@ -1,0 +1,24 @@
+.rich-text {
+    width: 100%;
+}
+
+.rich-text__content {
+    line-height: 1.6;
+}
+
+.rich-text__content p {
+    margin-bottom: 1em;
+}
+
+.rich-text__content p:last-child {
+    margin-bottom: 0;
+}
+
+.rich-text__content a {
+    color: #0073aa;
+    text-decoration: underline;
+}
+
+.rich-text__content a:hover {
+    color: #005177;
+}
