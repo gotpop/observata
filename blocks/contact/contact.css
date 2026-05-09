@@ -1,14 +1,13 @@
-.block-content {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--spacing-40);
-	grid-column: content;
-	grid-template-areas: 'intro intro' 'details form';
-	grid-template-columns: 1fr 660px;
-	/* grid-template-rows: min-content 600px; */
-}
-
-.block-content {
+.block-contact {
+	.block-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-40);
+		grid-column: content;
+		grid-template-areas: 'intro intro' 'details form';
+		grid-template-columns: 1fr 660px;
+		/* grid-template-rows: min-content 600px; */
+	}
 	.section-intro {
 		grid-column: 1 / -1;
 		text-align: center;

@@ -6,4 +6,8 @@
 		'. b';
 	gap: var(--spacing-50);
 	z-index: 1;
+
+	.card-geo-list {
+		opacity: 1 !important;
+	}
 }

@@ -1,6 +1,10 @@
+// const observerOptions = {
+// 	threshold: 0.6,
+// 	rootMargin: '0px 0px 0px 0px',
+// };
 const observerOptions = {
-	threshold: 0.6,
-	rootMargin: '0px 0px 0px 0px',
+	threshold: 0.4,
+	rootMargin: '200px 0px 0px 200px',
 };
 
 const observer = new IntersectionObserver((entries) => {

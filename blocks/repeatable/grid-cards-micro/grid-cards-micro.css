@@ -13,4 +13,11 @@
 		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 		gap: var(--spacing-24);
 	}
+
+	.section-intro {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+		row-gap: var(--spacing-32);
+	}
 }
