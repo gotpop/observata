@@ -1,11 +1,16 @@
-.block-grid-text .block-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
+.block-grid-text {
+	.block-content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-32);
+		grid-column: content;
 
-@media (max-width: 768px) {
-    .block-grid-text .block-content {
-        grid-template-columns: 1fr;
-    }
+		.card-text-simple {
+			flex: 1 0 300px;
+
+			.card-text-simple__content {
+				max-width: 100ch;
+			}
+		}
+	}
 }
