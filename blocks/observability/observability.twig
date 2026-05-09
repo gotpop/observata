@@ -1,7 +1,7 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
 
-<section class="section-block block-observability">
+<section class="section-block block-observability" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 

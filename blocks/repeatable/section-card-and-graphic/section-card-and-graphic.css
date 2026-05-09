@@ -319,7 +319,7 @@
 #ribbon-star path {
 	opacity: 0;
 	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.02s * sibling-index());
+	transition-delay: calc(0.04s * sibling-index());
 
 	.in-view & {
 		opacity: 1;
