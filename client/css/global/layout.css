@@ -49,3 +49,10 @@ main {
 		padding-block: var(--spacing-80);
 	}
 }
+
+.content-blog {
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-template-rows: min-content;
+	grid-column: content;
+}
