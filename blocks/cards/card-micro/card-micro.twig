@@ -2,6 +2,6 @@
 {% set card_description = attributes.cardDescription|default('') %}
 
 <article class="card-micro">
-	<h3 class="card-micro-heading">{{ card_title|esc_html }}</h3>
-	<p class="card-micro-body">{{ card_description|wp_kses_post }}</p>
+	<h3 class="card-micro-heading fade-in-up">{{ card_title|esc_html }}</h3>
+	<p class="card-micro-body fade-in-up">{{ card_description|wp_kses_post }}</p>
 </article>
