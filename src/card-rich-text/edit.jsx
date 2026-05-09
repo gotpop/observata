@@ -1,32 +1,34 @@
-import { TextControl, TextareaControl } from '@wordpress/components';
+import './editor.css';
+
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
 
 export default function CardRichTextEdit({ attributes, setAttributes }) {
     const { cardTitle, cardContent } = attributes;
-    const blockProps = useBlockProps({ className: 'card-rich-text-editor' });
+    const blockProps = useBlockProps({ className: 'card-rich-text' });
 
     return (
-        <div {...blockProps}>
+        <article {...blockProps}>
             <BlockLabel name="Card Rich Text" />
-
-            <div className="card-rich-text-editor__controls">
-                <TextControl
-                    label={__('Title', 'observata')}
+            <div className="card-rich-text__body">
+                <RichText
+                    tagName="h3"
+                    className="card-rich-text__title"
                     value={cardTitle}
                     onChange={(val) => setAttributes({ cardTitle: val })}
-                    placeholder={__('Card title', 'observata')}
+                    placeholder={__('Card title…', 'observata')}
+                    disableLineBreaks
                 />
-                <TextareaControl
-                    label={__('Content', 'observata')}
+                <RichText
+                    tagName="div"
+                    className="card-rich-text__content"
                     value={cardContent}
                     onChange={(val) => setAttributes({ cardContent: val })}
                     placeholder={__('Card content…', 'observata')}
-                    rows={5}
                 />
             </div>
-        </div>
+        </article>
     );
 }

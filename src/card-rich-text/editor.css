@@ -1,0 +1,12 @@
+/* Card rich text editor */
+.card-rich-text {
+    border: 1px solid #333;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.card-rich-text__body {
+    margin-top: 0.5rem;
+}

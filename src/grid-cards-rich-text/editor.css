@@ -3,12 +3,3 @@
     border-top: 1px solid #333;
     padding-top: 1rem;
 }
-
-/* Card rich text editor */
-.card-rich-text-editor {
-    border: 1px solid #333;
-    border-radius: 0.375rem;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-    background: rgba(255, 255, 255, 0.02);
-}
