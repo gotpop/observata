@@ -1,11 +1,12 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 const GRAPHIC_OPTIONS = [
     { label: 'Ribbon Star', value: 'ribbon-star' },
+    { label: 'Ribbon Star Mono', value: 'ribbon-star-graphic-mono' },
     { label: 'Ribbon Wave', value: 'ribbon-wave' },
     { label: 'Sine Wave', value: 'sine-wave' },
     { label: 'Sine Flute', value: 'sine-flute' },

@@ -1,3 +1,257 @@
+@keyframes ani-your_css_selector_here {
+	0% {
+		--x-0: 94.62120105201636%;
+		--y-0: 8.49338107638889%;
+		--s-start-0: 0%;
+		--s-end-0: 68.02423689100482%;
+		--c-0: hsla(0, 0%, 100%, 1);
+		--y-1: 91.41927083333333%;
+		--x-1: 5.003470192869667%;
+		--c-1: hsla(154, 0%, 0%, 1);
+		--s-start-1: 0%;
+		--s-end-1: 68.02423689100482%;
+	}
+
+	50% {
+		--x-0: 5.0947910578609%;
+		--y-0: 91.26519097222223%;
+		--s-start-0: 0%;
+		--s-end-0: 106.40702989366325%;
+		--c-0: hsla(0, 0%, 100%, 1);
+		--y-1: 12.744683159722221%;
+		--x-1: 48.09200272744983%;
+		--c-1: hsla(154, 0%, 0%, 1);
+		--s-start-1: 0%;
+		--s-end-1: 68.02423689100482%;
+	}
+
+	100% {
+		--x-0: 95.79102133255407%;
+		--y-0: 92.16471354166667%;
+		--s-start-0: 0%;
+		--s-end-0: 68.02423689100482%;
+		--c-0: hsla(0, 0%, 100%, 1);
+		--y-1: 92.16471354166667%;
+		--x-1: 95.79102133255407%;
+		--c-1: hsla(154, 0%, 0%, 1);
+		--s-start-1: 0%;
+		--s-end-1: 68.02423689100482%;
+	}
+}
+
+@property --x-0 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 94.62120105201636%;
+}
+
+@property --y-0 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 8.49338107638889%;
+}
+
+@property --s-start-0 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --s-end-0 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 68.02423689100482%;
+}
+
+@property --c-0 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsla(0, 0%, 100%, 1);
+}
+
+@property --y-1 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 91.41927083333333%;
+}
+
+@property --x-1 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 5.003470192869667%;
+}
+
+@property --c-1 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsla(154, 0%, 0%, 1);
+}
+
+@property --s-start-1 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --s-end-1 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 68.02423689100482%;
+}
+
+@property --y-2 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --x-2 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 80%;
+}
+
+@property --s-start-2 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --s-end-2 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
+}
+
+@property --c-2 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsla(189, 100%, 56%, 1);
+}
+
+@property --s-start-3 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --s-end-3 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 93.10368008083772%;
+}
+
+@property --c-3 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsla(288, 100%, 76%, 1);
+}
+
+@property --x-3 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 80%;
+}
+
+@property --y-3 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
+}
+
+@property --s-start-4 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --s-end-4 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
+}
+
+@property --c-4 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsla(242, 100%, 70%, 1);
+}
+
+@property --x-4 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 80%;
+}
+
+@property --y-4 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 100%;
+}
+
+@property --c-5 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsla(189, 100%, 76%, 1);
+}
+
+@property --s-start-5 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --s-end-5 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 68.02423689100482%;
+}
+
+@property --x-5 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --y-5 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+#your_css_selector_here {
+	--x-0: 94.62120105201636%;
+	--y-0: 8.49338107638889%;
+	--c-0: hsla(0, 0%, 100%, 1);
+	--y-1: 91.41927083333333%;
+	--x-1: 5.003470192869667%;
+	--c-1: hsla(154, 0%, 0%, 1);
+	--y-2: 0%;
+	--x-2: 80%;
+	--c-2: hsla(189, 100%, 56%, 1);
+	--c-3: hsla(288, 100%, 76%, 1);
+	--x-3: 80%;
+	--y-3: 50%;
+	--c-4: hsla(242, 100%, 70%, 1);
+	--x-4: 80%;
+	--y-4: 100%;
+	--c-5: hsla(189, 100%, 76%, 1);
+	--x-5: 0%;
+	--y-5: 0%;
+	background-color: hsla(250, 100%, 47%, 1);
+	background-image:
+		radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)),
+		radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)),
+		radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)),
+		radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)),
+		radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4)),
+		radial-gradient(circle at var(--x-5) var(--y-5), var(--c-5) var(--s-start-5), transparent var(--s-end-5));
+	animation: ani-your_css_selector_here 10s linear infinite alternate;
+	background-blend-mode: overlay, overlay, normal, normal, normal, normal;
+	will-change: transform, opacity;
+	contain: paint;
+}
+
 .block-section-card-and-graphic {
 	position: relative;
 	overflow: clip;
@@ -13,6 +267,7 @@
 		display: grid;
 		grid-column: content;
 		grid-template-columns: 1fr;
+		position: relative;
 
 		@media (width >=64rem) {
 			grid-template-columns: 1fr 1fr;
@@ -20,10 +275,53 @@
 	}
 
 	.graphic-tech {
+		color: var(--colour-secondary-200);
+		color: white;
+		height: 500px;
+		inset: 0;
+		left: auto;
+		pointer-events: none;
 		position: absolute;
+		position: absolute;
+		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		right: 180px;
-		color: var(--colour-secondary-200);
+		width: 500px;
+		z-index: 0;
+		opacity: 0.6;
+
+		&:after {
+			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+			background-image: conic-gradient(
+				var(--colour-accent-1-400),
+				var(--colour-secondary-400),
+				var(--colour-accent-1-400),
+				var(--colour-secondary-400)
+			);
+			content: '';
+			mask-image: url(#mask2);
+			min-height: 520px;
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			transition: all 0.3s ease;
+		}
+
+		.mask-source {
+			position: absolute;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+#ribbon-star path {
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+	transition-delay: calc(0.02s * sibling-index());
+
+	.in-view & {
+		opacity: 1;
 	}
 }

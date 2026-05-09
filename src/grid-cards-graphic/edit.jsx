@@ -2,8 +2,8 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
+import BlockLabel from '../components/block-label';
 
 const SCIENCE_GRAPHICS = [
     { label: 'None', value: '' },
@@ -14,6 +14,7 @@ const SCIENCE_GRAPHICS = [
     { label: 'Infinity Twist', value: 'infinity-twist-graphic' },
     { label: 'Plane Distortion', value: 'plane-distortion-graphic' },
     { label: 'Ribbon Star', value: 'ribbon-star-graphic' },
+    { label: 'Ribbon Star Mono', value: 'ribbon-star-graphic-mono' },
     { label: 'Ribbon Wave', value: 'ribbon-wave-graphic' },
     { label: 'Sine Flute', value: 'sine-flute-graphic' },
     { label: 'Sine Wave', value: 'sine-wave-graphic' },
