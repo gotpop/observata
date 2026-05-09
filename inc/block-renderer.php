@@ -162,6 +162,39 @@ function observata_render_block_twig($attributes, $content, $block)
         ]);
     }
 
+    // Special handling for blog-pagination to create cycling array of posts.
+    if ($template_name === 'blog-pagination') {
+        $all_posts = \Timber\Timber::get_posts([
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_status' => 'publish',
+        ]);
+
+        if (!empty($all_posts)) {
+            $total_posts = count($all_posts);
+
+            // Find current post position in array
+            $current_post_id = get_the_ID();
+            $current_index = 0;
+            for ($i = 0; $i < $total_posts; $i++) {
+                if ($all_posts[$i]->ID == $current_post_id) {
+                    $current_index = $i;
+                    break;
+                }
+            }
+
+            // Calculate previous and next indices with wrapping
+            $prev_index = ($current_index - 1 + $total_posts) % $total_posts;
+            $next_index = ($current_index + 1) % $total_posts;
+
+            // Pass posts to template
+            $context['prev_post'] = $total_posts > 1 ? $all_posts[$prev_index] : null;
+            $context['next_post'] = $total_posts > 1 ? $all_posts[$next_index] : null;
+        }
+    }
+
     // Special handling for pricing-tabs to pre-render inner blocks for each tab.
     // Uses recursive serialization to preserve nested inner blocks (e.g. plan-features-row
     // inside plan-features-table) so the full block tree is processed by do_blocks().

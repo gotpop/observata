@@ -64,6 +64,7 @@ function observata_register_blocks()
  * Restrict the block inserter to only our custom blocks.
  * observata/card is intentionally included so it can be added
  * inside the Cards block via InnerBlocks.
+ * observata/blog-pagination is only allowed on single blog posts.
  */
 add_filter('allowed_block_types_all', 'observata_allowed_blocks', 10, 2);
 function observata_allowed_blocks($allowed_blocks, $editor_context)
@@ -89,6 +90,13 @@ function observata_allowed_blocks($allowed_blocks, $editor_context)
 			'observata/breadcrumbs',
 		])) {
 			continue;
+		}
+
+		// Restrict blog-pagination to single blog posts only
+		if ($metadata['name'] === 'observata/blog-pagination') {
+			if (!isset($editor_context->post) || $editor_context->post->post_type !== 'post') {
+				continue;
+			}
 		}
 
 		if (!empty($metadata['name'])) {

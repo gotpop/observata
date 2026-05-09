@@ -19,6 +19,7 @@ import heroMetadata from '../blocks/hero-home/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
+import blogPaginationMetadata from '../blocks/blog-pagination/block.json';
 import logoBarMetadata from '../blocks/logo-bar/block.json';
 import observabilityMetadata from '../blocks/observability/block.json';
 import partnershipMetadata from '../blocks/partnership/block.json';
@@ -97,6 +98,8 @@ import IntroPageEdit from './intro-page/edit';
 import IntroPageSave from './intro-page/save';
 import IntroEdit from './intro/edit';
 import IntroSave from './intro/save';
+import BlogPaginationEdit from './blog-pagination/edit';
+import BlogPaginationSave from './blog-pagination/save';
 import LogoBarEdit from './logo-bar/edit';
 import LogoBarSave from './logo-bar/save';
 import ObservabilityEdit from './observability/edit';
@@ -199,6 +202,11 @@ registerBlockType(cardSimpleMetadata.name, {
 registerBlockType(observabilityMetadata.name, {
     edit: ObservabilityEdit,
     save: ObservabilitySave,
+});
+
+registerBlockType(blogPaginationMetadata.name, {
+    edit: BlogPaginationEdit,
+    save: BlogPaginationSave,
 });
 
 registerBlockType(logoBarMetadata.name, {
