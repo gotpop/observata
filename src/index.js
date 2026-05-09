@@ -32,7 +32,7 @@ import gridCardsMicroMetadata from '../blocks/repeatable/grid-cards-micro/block.
 import gridCardsRichTextMetadata from '../blocks/repeatable/grid-cards-rich-text/block.json';
 import gridCardsShaderMetadata from '../blocks/repeatable/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/repeatable/grid-cards-simple/block.json';
-import gridTextMetadata from '../blocks/repeatable/grid-text/block.json';
+import gridCardsTextMetadata from '../blocks/repeatable/grid-cards-text/block.json';
 import planFeaturesTableMetadata from '../blocks/repeatable/plan-features-table/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import pricingTabsMetadata from '../blocks/repeatable/pricing-tabs/block.json';
@@ -85,8 +85,8 @@ import GridCardsShaderEdit from './grid-cards-shader/edit';
 import GridCardsShaderSave from './grid-cards-shader/save';
 import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
-import GridTextEdit from './grid-text/edit';
-import GridTextSave from './grid-text/save';
+import GridCardsTextEdit from './grid-cards-text/edit';
+import GridCardsTextSave from './grid-cards-text/save';
 import HeroBlogEdit from './hero-blog/edit';
 import HeroBlogSave from './hero-blog/save';
 import HeroPageEdit from './hero-page/edit';
@@ -331,7 +331,7 @@ registerBlockType(cardTextSimpleMetadata.name, {
     save: CardTextSimpleSave,
 });
 
-registerBlockType(gridTextMetadata.name, {
-    edit: GridTextEdit,
-    save: GridTextSave,
+registerBlockType(gridCardsTextMetadata.name, {
+    edit: GridCardsTextEdit,
+    save: GridCardsTextSave,
 });

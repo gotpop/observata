@@ -1,8 +1,8 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/grid-text",
-    "title": "Grid Text",
+    "name": "observata/grid-cards-text",
+    "title": "Grid Cards Text",
     "category": "theme",
     "description": "Grid section with simple text card blocks. Add Card Text Simple blocks inside.",
     "supports": {
@@ -22,6 +22,6 @@
     ],
     "style": [
         "file:../cards/card-text-simple/card-text-simple.css",
-        "file:grid-text.css"
+        "file:grid-cards-text.css"
     ]
 }
