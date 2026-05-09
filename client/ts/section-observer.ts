@@ -1,6 +1,9 @@
 const defaultOptions = {
 	threshold: 0.4,
-	rootMargin: '200px 0px 0px 200px',
+	marginTop: '200px',
+	marginBottom: '0px',
+	marginRight: '0px',
+	marginLeft: '200px',
 };
 
 const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -13,17 +16,18 @@ const observerCallback = (entries: IntersectionObserverEntry[]) => {
 	}
 };
 
-const observers = new Map<number, IntersectionObserver>();
+const observers = new Map<string, IntersectionObserver>();
 
-function getObserver(threshold: number): IntersectionObserver {
-	if (!observers.has(threshold)) {
+function getObserver(threshold: number, marginTop: string, marginBottom: string): IntersectionObserver {
+	const key = `${threshold}-${marginTop}-${marginBottom}`;
+	if (!observers.has(key)) {
 		const observer = new IntersectionObserver(observerCallback, {
 			threshold,
-			rootMargin: defaultOptions.rootMargin,
+			rootMargin: `${marginTop} ${defaultOptions.marginRight} ${marginBottom} ${defaultOptions.marginLeft}`,
 		});
-		observers.set(threshold, observer);
+		observers.set(key, observer);
 	}
-	return observers.get(threshold)!;
+	return observers.get(key)!;
 }
 
 export function initSectionObserver() {
@@ -31,9 +35,14 @@ export function initSectionObserver() {
 
 	for (const section of sections) {
 		const thresholdAttr = section.dataset.threshold;
-		const threshold = thresholdAttr ? parseFloat(thresholdAttr) : defaultOptions.threshold;
-		const observer = getObserver(threshold);
+		const marginTopAttr = section.dataset.marginTop;
+		const marginBottomAttr = section.dataset.marginBottom;
 
+		const threshold = thresholdAttr ? parseFloat(thresholdAttr) : defaultOptions.threshold;
+		const marginTop = marginTopAttr || defaultOptions.marginTop;
+		const marginBottom = marginBottomAttr || defaultOptions.marginBottom;
+
+		const observer = getObserver(threshold, marginTop, marginBottom);
 		observer.observe(section);
 	}
 }
