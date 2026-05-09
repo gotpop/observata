@@ -10,5 +10,7 @@
         "multiple": false
     },
     "render": "file:render.php",
-    "style": "file:breadcrumbs.css"
+    "editorScript": "file:../../build/index.js",
+    "style": "file:breadcrumbs.css",
+    "editorStyle": "file:../../build/style-index.css"
 }

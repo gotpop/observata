@@ -42,6 +42,7 @@ import richTextMetadata from '../blocks/rich-text/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import headerMetadata from '../blocks/template/header/block.json';
 import sectionIntroMetadata from '../blocks/template/section-intro/block.json';
+import breadcrumbsMetadata from '../blocks/template/breadcrumbs/block.json';
 import BlogPostsEdit from './blog-posts/edit';
 import BlogPostsSave from './blog-posts/save';
 import CalloutEdit from './callout/edit';
@@ -121,6 +122,8 @@ import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
 import TeamMembersEdit from './team-members/edit';
+import BreadcrumbsEdit from './breadcrumbs/edit';
+import BreadcrumbsSave from './breadcrumbs/save';
 import TeamMembersSave from './team-members/save';
 
 function createDynamicEdit(label) {
@@ -342,4 +345,9 @@ registerBlockType(cardTextSimpleMetadata.name, {
 registerBlockType(gridCardsTextMetadata.name, {
     edit: GridCardsTextEdit,
     save: GridCardsTextSave,
+});
+
+registerBlockType(breadcrumbsMetadata.name, {
+    edit: BreadcrumbsEdit,
+    save: BreadcrumbsSave,
 });
