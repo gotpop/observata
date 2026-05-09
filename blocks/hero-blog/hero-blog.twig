@@ -1,0 +1,16 @@
+{% set heading = attributes.heading|default('') %}
+{% set subheading = attributes.subheading|default('') %}
+
+{# Use post slug for view-transition-name #}
+{% set view_name = post.post_name|default('blog-page') %}
+
+<section class="section-block block-hero-blog" style="view-transition-name: {{ view_name }};" aria-labeled-by="heading-hero-blog">
+	<div class="hero-blog-content">
+		{% if heading %}
+			<h1 id="heading-hero-blog" class="heading-hero-blog" style="view-transition-name: heading-{{ view_name }};">{{ heading|wp_kses_post }}</h1>
+		{% endif %}
+		{% if subheading %}
+			<p class="body-hero body-hero-blog" style="view-transition-name: subheading-{{ view_name }};">{{ subheading|wp_kses_post }}</p>
+		{% endif %}
+	</div>
+</section>

@@ -1,0 +1,13 @@
+/* Editor-specific overrides */
+
+.block-hero-page {
+    .hero-page-content {
+        padding: 1rem 1rem !important;
+    }
+
+    .hero-page-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

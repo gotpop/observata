@@ -7,7 +7,10 @@
 	<block-content class="block-content">
 		<div class="blog-posts__grid">
 			{% for post in posts %}
-				<article id="post-{{ post.ID }}" class="blog-posts__card">
+				{# Use post slug for view-transition-name #}
+				{% set view_name = post.post_name|default('post-' ~ post.ID) %}
+
+				<article id="post-{{ post.ID }}" class="blog-posts__card" style="view-transition-name: {{ view_name }};">
 					{% if post.thumbnail %}
 						<a href="{{ post.link }}" class="blog-posts__image-link">
 							<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="blog-posts__image" loading="lazy"/>
@@ -19,11 +22,11 @@
 							{{ post.date|date('F j, Y') }}
 						</time>
 
-						<h3 class="blog-posts__title">
+						<h3 class="blog-posts__title" style="view-transition-name: heading-{{ view_name }};">
 							<a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a>
 						</h3>
 
-						<div class="blog-posts__excerpt">
+						<div class="blog-posts__excerpt" style="view-transition-name: subheading-{{ view_name }};">
 							{{ post.excerpt({ strip: true, read_more: false }) }}
 						</div>
 

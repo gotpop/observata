@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/hero-blog",
+    "title": "Hero Blog",
+    "category": "theme",
+    "description": "Blog page hero section with gradient background and heading text.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "subheading": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css",
+    "style": "file:hero-blog.css"
+}

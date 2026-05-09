@@ -15,6 +15,7 @@ import contactDetailsMetadata from '../blocks/contact-details/block.json';
 import contactFormMetadata from '../blocks/contact-form/block.json';
 import contactMetadata from '../blocks/contact/block.json';
 import heroMetadata from '../blocks/hero-home/block.json';
+import heroBlogMetadata from '../blocks/hero-blog/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
@@ -86,6 +87,8 @@ import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
 import GridTextEdit from './grid-text/edit';
 import GridTextSave from './grid-text/save';
+import HeroBlogEdit from './hero-blog/edit';
+import HeroBlogSave from './hero-blog/save';
 import HeroPageEdit from './hero-page/edit';
 import HeroPageSave from './hero-page/save';
 import HeroEdit from './hero/edit';
@@ -206,6 +209,11 @@ registerBlockType(logoBarMetadata.name, {
 registerBlockType(sectionCardAndGraphicMetadata.name, {
     edit: SectionCardAndGraphicEdit,
     save: SectionCardAndGraphicSave,
+});
+
+registerBlockType(heroBlogMetadata.name, {
+    edit: HeroBlogEdit,
+    save: HeroBlogSave,
 });
 
 registerBlockType(heroPageMetadata.name, {
