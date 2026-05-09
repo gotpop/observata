@@ -2,15 +2,8 @@
 	.block-content {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--spacing-32);
+		row-gap: var(--spacing-60);
+		column-gap: var(--spacing-60);
 		grid-column: content;
-
-		.card-text-simple {
-			flex: 1 0 300px;
-
-			.card-text-simple__content {
-				max-width: 100ch;
-			}
-		}
 	}
 }

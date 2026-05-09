@@ -12,11 +12,11 @@
     "attributes": {
         "heading": {
             "type": "string",
-            "default": ""
+            "default": "Lorem Ipsum Dolor"
         },
         "subheading": {
             "type": "string",
-            "default": ""
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
     },
     "editorScript": "file:../../build/index.js",

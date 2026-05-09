@@ -1,11 +1,11 @@
 /* Editor-specific overrides */
 
-.block-hero-page {
-    .hero-page-content {
+.block-hero-blog {
+    .hero-blog-content {
         padding: 1rem 1rem !important;
     }
 
-    .hero-page-text {
+    .hero-blog-text {
         display: flex;
         flex-direction: column;
         gap: 1rem;

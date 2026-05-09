@@ -10,7 +10,7 @@
 	}
 }
 
-.block-hero-page {
+.block-hero-blog {
 	background: var(--colour-background-bg-white);
 	display: grid;
 	align-items: center;
@@ -39,7 +39,7 @@
 		animation-range-end: 500px;
 	}
 
-	.hero-page-content {
+	.hero-blog-content {
 		width: 100%;
 		z-index: 3;
 		display: grid;
@@ -63,7 +63,7 @@
 		}
 	}
 
-	.heading-hero-page {
+	.heading-hero-blog {
 		font-size: 56px;
 		font-weight: var(--typography-weight-bold);
 		color: var(--colour-text-hero);
@@ -78,7 +78,7 @@
 		}
 	}
 
-	.body-hero-page {
+	.body-hero-blog {
 		z-index: 1;
 		max-width: 60ch;
 		margin: 0;
