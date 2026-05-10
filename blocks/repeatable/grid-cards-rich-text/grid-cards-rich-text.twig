@@ -7,8 +7,9 @@
 {% set intro_text = attributes.introText|default('') %}
 
 <section class="block-grid-cards-rich-text">
-	<block-content class="block-content">
-		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
+	<block-content
+		class="block-content">
+		{# {% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %} #}
 
 		<div class="grid-cards-rich-text-container">
 			{{ content|raw }}

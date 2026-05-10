@@ -7,9 +7,9 @@
 
 <article class="card-rich-text">
 	{% if card_title %}
-		<h3 class="card-rich-text__title">{{ card_title|raw }}</h3>
+		<h3 class="heading-md">{{ card_title|raw }}</h3>
 	{% endif %}
 	{% if card_content %}
-		<div class="card-rich-text__content">{{ card_content|raw }}</div>
+		<div class="body-md">{{ card_content|raw }}</div>
 	{% endif %}
 </article>

@@ -17,18 +17,14 @@
 						</a>
 					{% endif %}
 
-					<div class="blog-posts__content">
+					<div class="content">
 						<time class="blog-posts__date" datetime="{{ post.date|date('c') }}">
 							{{ post.date|date('F j, Y') }}
 						</time>
 
-						<h3 class="blog-posts__title" style="view-transition-name: heading-{{ view_name }};">
+						<h3 class="heading-md" style="view-transition-name: heading-{{ view_name }};">
 							<a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a>
 						</h3>
-
-						<div class="blog-posts__excerpt" style="view-transition-name: subheading-{{ view_name }};">
-							{{ post.excerpt({ strip: true, read_more: false }) }}
-						</div>
 
 						<a href="{{ post.link }}" class="blog-posts__read-more">
 							Read more

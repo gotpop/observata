@@ -8,35 +8,19 @@
 	grid-template-columns: subgrid;
 	display: grid;
 	padding-block: 5rem;
-}
 
-.block-grid-cards-rich-text .block-content {
-	display: grid;
-	grid-column: content;
-	grid-template-columns: 1fr;
-	gap: var(--spacing-50, 2rem);
-}
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-50, 2rem);
+	}
 
-.block-grid-cards-rich-text .intro-heading {
-	font-size: 40px;
-	font-family: var(--typography-family-gantari);
-	font-weight: var(--typography-weight-bold);
-	color: var(--fonts-colour-text-heading);
-	line-height: var(--line-height-heading-lg);
-	letter-spacing: -0.8px;
-}
-
-.block-grid-cards-rich-text .text-wide {
-	font-size: 16px;
-	font-family: var(--fonts-family-font-inter);
-	font-weight: var(--fonts-weight-font-weight-regular);
-	color: var(--fonts-colour-text-body);
-	line-height: 24px;
-}
-
-/* Grid layout */
-.grid-cards-rich-text-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
-	gap: 40px;
+	.grid-cards-rich-text-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+		gap: var(--spacing-80);
+		max-width: 600px;
+		margin: 0 auto;
+	}
 }
