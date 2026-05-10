@@ -52,10 +52,19 @@ class PricingTabs {
             return;
         }
 
-        // Use View Transitions API for smooth animation
+        // Get current active tab
+        const currentTabId = this.container.getAttribute('data-active-tab') || '';
+
+        // Determine direction based on tab order
+        const tabOrder = ['mdr', 'observability', 'search'];
+        const currentIndex = tabOrder.indexOf(currentTabId);
+        const newIndex = tabOrder.indexOf(tabId);
+        const direction = newIndex > currentIndex ? 'right' : 'left';
+
+        // Use View Transitions API for smooth animation with direction
         try {
             await document.startViewTransition(() => {
-                this.switchTabWithoutTransition(tabId);
+                this.switchTabWithoutTransition(tabId, direction);
             }).finished;
         } catch (error) {
             // AbortError is expected when transitions overlap - safe to ignore
@@ -66,7 +75,7 @@ class PricingTabs {
         }
     }
 
-    private switchTabWithoutTransition(tabId: string): void {
+    private switchTabWithoutTransition(tabId: string, direction: string): void {
         // Update active tab
         this.tabs.forEach((tab) => {
             const isActive = tab.dataset.tab === tabId;
@@ -74,10 +83,17 @@ class PricingTabs {
             tab.setAttribute('aria-selected', String(isActive));
         });
 
-        // Update active panel
+        // Update active panel with directional view-transition-name
         this.panels.forEach((panel, panelTabId) => {
             const isActive = panelTabId === tabId;
             panel.classList.toggle('is-active', isActive);
+
+            // Apply view-transition-name for animation direction
+            if (isActive) {
+                panel.style.viewTransitionName = `panel-${direction}`;
+            } else {
+                panel.style.viewTransitionName = '';
+            }
         });
 
         // Update container data attribute
