@@ -3,14 +3,12 @@
 		{% if prev_post %}
 			<a href="{{ prev_post.guid }}" class="blog-pagination__link blog-pagination__link--prev">
 				<span class="blog-pagination__arrow blog-pagination__arrow--left">&larr;</span>
-				<span class="blog-pagination__label">Previous</span>
 				<span class="blog-pagination__title">{{ prev_post.post_title }}</span>
 			</a>
 		{% endif %}
 
 		{% if next_post %}
 			<a href="{{ next_post.guid }}" class="blog-pagination__link blog-pagination__link--next">
-				<span class="blog-pagination__label">Next</span>
 				<span class="blog-pagination__title">{{ next_post.post_title }}</span>
 				<span class="blog-pagination__arrow blog-pagination__arrow--right">&rarr;</span>
 			</a>

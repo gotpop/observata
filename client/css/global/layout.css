@@ -54,5 +54,5 @@ main {
 	display: grid;
 	grid-template-columns: subgrid;
 	grid-template-rows: min-content;
-	grid-column: content;
+	grid-column: full;
 }

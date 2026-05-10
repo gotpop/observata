@@ -1,63 +1,60 @@
 .blog-pagination {
-    margin: 2rem 0;
-    padding: 1.5rem 0;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
+	padding: 1.5rem 0;
+	border-bottom: 1px solid #e0e0e0;
+	display: grid;
+	grid-column: full;
+	grid-template-columns: subgrid;
+	grid-template-rows: min-content;
 
-.blog-pagination__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+	.blog-pagination__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: var(--spacing-32);
+		grid-column: content;
+	}
 
-.blog-pagination__link {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: #333;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s ease;
-}
+	.blog-pagination__link {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		text-decoration: none;
+		color: #333;
+		padding: 1rem;
+		border-radius: 0.5rem;
+		transition: background-color 0.2s ease;
+	}
 
-.blog-pagination__link:hover {
-    background-color: #f5f5f5;
-}
+	.blog-pagination__link--prev {
+		justify-content: flex-start;
+	}
 
-.blog-pagination__link--prev {
-    justify-content: flex-start;
-}
+	.blog-pagination__link--next {
+		justify-content: flex-end;
+		text-align: right;
+	}
 
-.blog-pagination__link--next {
-    justify-content: flex-end;
-    text-align: right;
-}
+	.blog-pagination__arrow {
+		font-size: 1.25rem;
+		color: #666;
+	}
 
-.blog-pagination__arrow {
-    font-size: 1.25rem;
-    color: #666;
-}
+	.blog-pagination__label {
+		font-size: 0.875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #999;
+	}
 
-.blog-pagination__label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #999;
-}
+	.blog-pagination__title {
+		font-size: 1rem;
+		font-weight: 500;
+		color: #333;
+	}
 
-.blog-pagination__title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-}
-
-.blog-pagination__link:hover .blog-pagination__title {
-    color: #0066cc;
+	.blog-pagination__link:hover .blog-pagination__title {
+		color: #0066cc;
+	}
 }
