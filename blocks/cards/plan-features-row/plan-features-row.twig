@@ -5,32 +5,32 @@
 #}
 
 <tr class="plan-features-row">
-	<td class="plan-features-row__name">{{ attributes.featureName }}</td>
-	<td class="plan-features-row__value plan-features-row__value--{{ attributes.plan1Value }}">
+	<td class="name">{{ attributes.featureName }}</td>
+	<td class="value value--{{ attributes.plan1Value }}">
 		{% if attributes.plan1Value == 'check' %}
 			<svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M5 10L8.5 13.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		{% else %}
-			<span class="plan-features-row__dash">&mdash;</span>
+			<span class="dash">&mdash;</span>
 		{% endif %}
 	</td>
-	<td class="plan-features-row__value plan-features-row__value--{{ attributes.plan2Value }}">
+	<td class="value value--{{ attributes.plan2Value }}">
 		{% if attributes.plan2Value == 'check' %}
 			<svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M5 10L8.5 13.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		{% else %}
-			<span class="plan-features-row__dash">&mdash;</span>
+			<span class="dash">&mdash;</span>
 		{% endif %}
 	</td>
-	<td class="plan-features-row__value plan-features-row__value--{{ attributes.plan3Value }}">
+	<td class="value value--{{ attributes.plan3Value }}">
 		{% if attributes.plan3Value == 'check' %}
 			<svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M5 10L8.5 13.5L15 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		{% else %}
-			<span class="plan-features-row__dash">&mdash;</span>
+			<span class="dash">&mdash;</span>
 		{% endif %}
 	</td>
 </tr>

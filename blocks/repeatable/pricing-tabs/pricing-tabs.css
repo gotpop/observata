@@ -54,7 +54,7 @@
 		padding: var(--spacing-20, 1rem) var(--spacing-40, 2rem);
 		background: transparent;
 		font-size: var(--typography-size-16);
-		font-weight: var(--font-weight-semibold, 600);
+		font-weight: var(--font-weight-semibold);
 		color: var(--colour-text-secondary, #6b7280);
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -89,13 +89,12 @@
 
 	.pricing-tabs__panel {
 		display: none;
-		height: 2000px;
 
 		&.is-active {
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: min-content;
-			gap: var(--spacing-60);
+			gap: var(--spacing-80);
 		}
 	}
 }
@@ -110,7 +109,7 @@
 
 	::view-transition-old(root),
 	::view-transition-new(root) {
-		animation-duration: 180ms;
+		animation: none;
 	}
 
 	/* Panel directional slide animations */

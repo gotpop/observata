@@ -1,41 +1,48 @@
 /* Plan Features Row - table row styling */
 .plan-features-row {
 	display: table-row;
-	border-bottom: 1px solid var(--colour-neutral-500);
+	border-bottom: 1px solid var(--colour-neutral-300);
+
+	&:nth-child(odd) {
+		background: var(--colour-neutral-100);
+	}
 
 	&:last-child {
 		border-bottom: none;
 	}
-}
 
-.plan-features-row__name {
-	padding: var(--spacing-6) var(--spacing-16);
-	font-size: var(--typography-size-16);
-	color: var(--colour-neutral-500);
-	font-weight: 400;
-	vertical-align: middle;
-}
-
-.plan-features-row__value {
-	padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
-	text-align: center;
-	vertical-align: middle;
-}
-
-.plan-features-row__value--check {
-	color: var(--colour-success-500);
-
-	svg {
-		width: 30px;
-		height: 30px;
+	.name {
+		padding: var(--spacing-6) var(--spacing-16);
+		font-size: var(--typography-size-16);
+		color: var(--colour-neutral-600);
+		font-weight: 400;
+		vertical-align: middle;
 	}
-}
 
-.plan-features-row__value--dash {
-	color: var(--colour-warning-500);
-}
+	.value {
+		padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
+		text-align: center;
+		vertical-align: middle;
+	}
 
-.plan-features-row__dash {
-	font-size: var(--typography-size-16);
-	color: var(--colour-neutral-600);
+	.value--check {
+		color: var(--colour-success-700);
+
+		svg {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	.value--dash {
+		.dash {
+			font-size: var(--typography-size-32);
+			color: var(--colour-neutral-600);
+		}
+
+		svg {
+			width: 40px;
+			height: 40px;
+		}
+	}
 }

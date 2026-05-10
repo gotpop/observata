@@ -1,9 +1,10 @@
 .plan-features-table {
-	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: min-content;
 	row-gap: var(--spacing-64);
+	width: min(800px, 100%);
+	margin: 0 auto;
 }
 
 .plan-features-table__cards {

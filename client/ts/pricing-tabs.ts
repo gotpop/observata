@@ -1,115 +1,143 @@
 interface TabButton extends HTMLButtonElement {
-    dataset: {
-        tab: string;
-    };
+	dataset: {
+		tab: string;
+	};
 }
 
 interface TabPanel extends HTMLElement {
-    dataset: {
-        panel: string;
-    };
+	dataset: {
+		panel: string;
+	};
 }
 
 class PricingTabs {
-    private container: HTMLElement;
-    private tabs: TabButton[];
-    private panels: Map<string, TabPanel>;
+	private container: HTMLElement;
+	private tabs: TabButton[];
+	private panels: Map<string, TabPanel>;
 
-    constructor(container: HTMLElement) {
-        this.container = container;
-        this.tabs = Array.from(
-            container.querySelectorAll('.pricing-tabs__tab')
-        ) as TabButton[];
-        this.panels = new Map();
+	constructor(container: HTMLElement) {
+		this.container = container;
+		this.tabs = Array.from(container.querySelectorAll('.pricing-tabs__tab')) as TabButton[];
+		this.panels = new Map();
 
-        // Cache panel references
-        this.tabs.forEach((tab) => {
-            const panelId = tab.getAttribute('aria-controls');
-            if (panelId) {
-                const panel = document.getElementById(panelId);
-                if (panel && panel instanceof HTMLElement) {
-                    this.panels.set(tab.dataset.tab, panel as TabPanel);
-                }
-            }
-        });
+		// Cache panel references
+		this.tabs.forEach((tab) => {
+			const panelId = tab.getAttribute('aria-controls');
+			if (panelId) {
+				const panel = document.getElementById(panelId);
+				if (panel && panel instanceof HTMLElement) {
+					this.panels.set(tab.dataset.tab, panel as TabPanel);
+				}
+			}
+		});
 
-        this.init();
-    }
+		this.init();
+	}
 
-    private init(): void {
-        this.tabs.forEach((tab) => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.switchTab(tab.dataset.tab);
-            });
-        });
-    }
+	private init(): void {
+		this.tabs.forEach((tab) => {
+			tab.addEventListener('click', (e) => {
+				e.preventDefault();
+				this.switchTab(tab.dataset.tab);
+			});
+		});
+	}
 
-    private async switchTab(tabId: string): Promise<void> {
-        // Check if View Transitions API is supported
-        if (!document.startViewTransition) {
-            this.switchTabWithoutTransition(tabId);
-            return;
-        }
+	private async switchTab(tabId: string): Promise<void> {
+		// Check if View Transitions API is supported
+		if (!document.startViewTransition) {
+			this.updateActiveState(tabId);
+			return;
+		}
 
-        // Get current active tab
-        const currentTabId = this.container.getAttribute('data-active-tab') || '';
+		// Get current active tab
+		const currentTabId = this.container.getAttribute('data-active-tab') || '';
 
-        // Determine direction based on tab order
-        const tabOrder = ['mdr', 'observability', 'search'];
-        const currentIndex = tabOrder.indexOf(currentTabId);
-        const newIndex = tabOrder.indexOf(tabId);
-        const direction = newIndex > currentIndex ? 'right' : 'left';
+		// Don't transition if same tab
+		if (currentTabId === tabId) return;
 
-        // Use View Transitions API for smooth animation with direction
-        try {
-            await document.startViewTransition(() => {
-                this.switchTabWithoutTransition(tabId, direction);
-            }).finished;
-        } catch (error) {
-            // AbortError is expected when transitions overlap - safe to ignore
-            if (error instanceof DOMException && error.name === 'AbortError') {
-                return;
-            }
-            throw error;
-        }
-    }
+		// Determine direction based on tab order
+		const tabOrder = ['mdr', 'observability', 'search'];
+		const currentIndex = tabOrder.indexOf(currentTabId);
+		const newIndex = tabOrder.indexOf(tabId);
+		const direction = newIndex > currentIndex ? 'right' : 'left';
 
-    private switchTabWithoutTransition(tabId: string, direction: string): void {
-        // Update active tab
-        this.tabs.forEach((tab) => {
-            const isActive = tab.dataset.tab === tabId;
-            tab.classList.toggle('is-active', isActive);
-            tab.setAttribute('aria-selected', String(isActive));
-        });
+		// Set view-transition-name on BOTH panels BEFORE starting the transition
+		// This prevents flickering — both old and new snapshots need matching names
+		const transitionName = `panel-${direction}`;
+		const oldPanel = this.panels.get(currentTabId);
+		const newPanel = this.panels.get(tabId);
 
-        // Update active panel with directional view-transition-name
-        this.panels.forEach((panel, panelTabId) => {
-            const isActive = panelTabId === tabId;
-            panel.classList.toggle('is-active', isActive);
+		if (oldPanel) {
+			oldPanel.style.viewTransitionName = transitionName;
+		}
+		if (newPanel) {
+			newPanel.style.viewTransitionName = transitionName;
+		}
 
-            // Apply view-transition-name for animation direction
-            if (isActive) {
-                panel.style.viewTransitionName = `panel-${direction}`;
-            } else {
-                panel.style.viewTransitionName = '';
-            }
-        });
+		// Also set tab-underline on both old and new active tabs before transition
+		const oldTab = this.tabs.find((tab) => tab.dataset.tab === currentTabId);
+		const newTab = this.tabs.find((tab) => tab.dataset.tab === tabId);
 
-        // Update container data attribute
-        this.container.setAttribute('data-active-tab', tabId);
-    }
+		if (oldTab) {
+			oldTab.style.viewTransitionName = 'tab-underline';
+		}
+		if (newTab) {
+			newTab.style.viewTransitionName = 'tab-underline';
+		}
+
+		// Use View Transitions API for smooth animation with direction
+		const transition = document.startViewTransition(() => {
+			this.updateActiveState(tabId);
+		});
+
+		// Clean up view-transition-names after transition finishes
+		try {
+			await transition.finished;
+		} catch (error) {
+			// AbortError is expected when transitions overlap - safe to ignore
+			if (error instanceof DOMException && error.name === 'AbortError') {
+				return;
+			}
+			throw error;
+		} finally {
+			this.panels.forEach((panel) => {
+				panel.style.viewTransitionName = '';
+			});
+			this.tabs.forEach((tab) => {
+				tab.style.viewTransitionName = '';
+			});
+		}
+	}
+
+	private updateActiveState(tabId: string): void {
+		// Update active tab
+		this.tabs.forEach((tab) => {
+			const isActive = tab.dataset.tab === tabId;
+			tab.classList.toggle('is-active', isActive);
+			tab.setAttribute('aria-selected', String(isActive));
+		});
+
+		// Update active panel
+		this.panels.forEach((panel, panelTabId) => {
+			const isActive = panelTabId === tabId;
+			panel.classList.toggle('is-active', isActive);
+		});
+
+		// Update container data attribute
+		this.container.setAttribute('data-active-tab', tabId);
+	}
 }
 
 // Initialize pricing tabs on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-    const containers = document.querySelectorAll('.pricing-tabs');
-    containers.forEach((container) => {
-        if (container instanceof HTMLElement) {
-            const tabs = container.querySelectorAll('.pricing-tabs__tab');
-            if (tabs.length > 0) {
-                new PricingTabs(container);
-            }
-        }
-    });
+	const containers = document.querySelectorAll('.pricing-tabs');
+	containers.forEach((container) => {
+		if (container instanceof HTMLElement) {
+			const tabs = container.querySelectorAll('.pricing-tabs__tab');
+			if (tabs.length > 0) {
+				new PricingTabs(container);
+			}
+		}
+	});
 });

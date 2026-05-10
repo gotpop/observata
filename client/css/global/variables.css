@@ -114,16 +114,16 @@
 	--colour-warning-100: #ff3337;
 
 	/* Success */
-	--colour-success-base: #55ff33;
-	--colour-success-100: #55ff33;
-	--colour-success-200: #55ff33;
-	--colour-success-300: #55ff33;
-	--colour-success-400: #55ff33;
-	--colour-success-600: #55ff33;
-	--colour-success-500: #55ff33;
-	--colour-success-700: #55ff33;
-	--colour-success-800: #55ff33;
-	--colour-success-900: #55ff33;
+	--colour-success-base: #00f808;
+	--colour-success-100: #daffdc;
+	--colour-success-200: #a0ffa3;
+	--colour-success-300: #6be76f;
+	--colour-success-400: #4edf53;
+	--colour-success-600: #3fd544;
+	--colour-success-500: #1ed124;
+	--colour-success-700: #0bc011;
+	--colour-success-800: #02a708;
+	--colour-success-900: #028d06;
 
 	/* Family */
 	--typography-family-inter: Inter;
