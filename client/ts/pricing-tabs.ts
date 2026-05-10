@@ -53,9 +53,17 @@ class PricingTabs {
         }
 
         // Use View Transitions API for smooth animation
-        await document.startViewTransition(() => {
-            this.switchTabWithoutTransition(tabId);
-        }).finished;
+        try {
+            await document.startViewTransition(() => {
+                this.switchTabWithoutTransition(tabId);
+            }).finished;
+        } catch (error) {
+            // AbortError is expected when transitions overlap - safe to ignore
+            if (error instanceof DOMException && error.name === 'AbortError') {
+                return;
+            }
+            throw error;
+        }
     }
 
     private switchTabWithoutTransition(tabId: string): void {
@@ -82,7 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const containers = document.querySelectorAll('.pricing-tabs');
     containers.forEach((container) => {
         if (container instanceof HTMLElement) {
-            new PricingTabs(container);
+            const tabs = container.querySelectorAll('.pricing-tabs__tab');
+            if (tabs.length > 0) {
+                new PricingTabs(container);
+            }
         }
     });
 });
