@@ -77,7 +77,6 @@
 				inset: auto 0 0 0;
 				height: 3px;
 				background: var(--colour-primary-700, #1d4ed8);
-				view-transition-name: tab-underline;
 			}
 		}
 	}
@@ -101,17 +100,6 @@
 
 /* View Transitions API animations */
 @media (prefers-reduced-motion: no-preference) {
-	::view-transition-old(tab-underline),
-	::view-transition-new(tab-underline) {
-		animation-duration: 200ms;
-		animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-	}
-
-	::view-transition-old(root),
-	::view-transition-new(root) {
-		animation: none;
-	}
-
 	/* Panel directional slide animations */
 	::view-transition-old(panel-left) {
 		animation: slideOutRight 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
