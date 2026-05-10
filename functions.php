@@ -370,15 +370,21 @@ function observata_speculation_rules()
 
 	// Build speculation rules configuration
 	$rules = [
-		[
-			'source' => 'list',
-			'urls' => $urls,
-			'eagerness' => 'moderate'
+		"prefetch" => [
+			[
+				"source" => "list",
+				"urls" => $urls,
+				"eagerness" => "moderate"
+			]
 		]
 	];
+	$json = wp_json_encode($rules, JSON_UNESCAPED_SLASHES);
+	if ($json === false) {
+		return;
+	}
 	?>
 	<script type="speculationrules">
-		<?php echo wp_json_encode($rules, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
+	<?php echo $json; ?>
 	</script>
 	<?php
 }
