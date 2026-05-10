@@ -11,33 +11,33 @@ export default function ContactDetailsEdit({ attributes, setAttributes }) {
         <div {...blockProps}>
             <BlockLabel name="Contact Details" />
             <div className="contact-details">
-                <div className="contact-details__item">
-                    <span className="contact-details__label">Phone</span>
+                <div className="item">
+                    <span className="label">Phone</span>
                     <RichText
                         tagName="a"
-                        className="contact-details__value"
+                        className="value"
                         value={phone}
                         onChange={(val) => setAttributes({ phone: val })}
                         placeholder={__('Phone number…', 'observata')}
                         disableLineBreaks
                     />
                 </div>
-                <div className="contact-details__item">
-                    <span className="contact-details__label">Email</span>
+                <div className="item">
+                    <span className="label">Email</span>
                     <RichText
                         tagName="a"
-                        className="contact-details__value"
+                        className="value"
                         value={email}
                         onChange={(val) => setAttributes({ email: val })}
                         placeholder={__('Email address…', 'observata')}
                         disableLineBreaks
                     />
                 </div>
-                <div className="contact-details__item">
-                    <span className="contact-details__label">Address</span>
+                <div className="item">
+                    <span className="label">Address</span>
                     <RichText
                         tagName="span"
-                        className="contact-details__value"
+                        className="value"
                         value={address}
                         onChange={(val) => setAttributes({ address: val })}
                         placeholder={__('Address…', 'observata')}

@@ -6,8 +6,8 @@
 		grid-column: content;
 		grid-template-areas: 'intro intro' 'details form';
 		grid-template-columns: 1fr 660px;
-		/* grid-template-rows: min-content 600px; */
 	}
+
 	.section-intro {
 		grid-column: 1 / -1;
 		text-align: center;
@@ -19,12 +19,14 @@
 		}
 	}
 
-	.contact-details {
-		grid-area: details;
-	}
-
 	.contact-form {
 		grid-area: form;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-24);
+		border: 1px solid var(--colour-border-border-gray);
+		padding: var(--spacing-32);
+		border-radius: var(--radius-card);
 
 		iframe {
 			overflow: hidden;
