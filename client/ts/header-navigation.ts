@@ -1,13 +1,11 @@
+import { createMatchMedia } from './utils/breakpoints';
+
 document.addEventListener('DOMContentLoaded', () => {
 	const trigger = document.getElementById('trigger-navigation');
 	const headerContent = document.getElementById('header-content');
 	const parentMenuItems = document.querySelectorAll('.menu-item-has-children');
 
-	const mq = window.matchMedia('(width >= 40rem)');
-
-	function isDesktop(): boolean {
-		return mq.matches;
-	}
+	const mq = createMatchMedia('sm');
 
 	// --- Mobile nav trigger ---
 	if (trigger && headerContent) {
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		parentMenuItems.forEach((parentItem) => {
 			const button = parentItem.querySelector('.menu-button') as HTMLElement;
 
-			if (isDesktop()) {
+			if (mq.matches) {
 				parentItem.addEventListener('mouseenter', handleSubmenuEnter);
 				parentItem.addEventListener('mouseleave', handleSubmenuLeave);
 
