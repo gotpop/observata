@@ -16,10 +16,10 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	view-transition-name: header;
+	/* view-transition-name: header; */
 
 	.header-content {
-		view-transition-name: header-content;
+		/* view-transition-name: header-content; */
 
 		max-width: 1200px;
 		display: flex;

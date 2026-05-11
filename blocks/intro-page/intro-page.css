@@ -6,7 +6,7 @@
 
 .block-intro-page {
 	overflow: clip;
-	view-transition-name: intro-page;
+	/* view-transition-name: intro-page; */
 
 	.block-content {
 		display: grid;
