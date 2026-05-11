@@ -66,7 +66,7 @@ const heroShaderConfig = {
 };
 
 const initHeroShaders = async () => {
-	const canvas = document.getElementById('hero-shader');
+	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
 
 	if (!canvas) return;
 
@@ -92,10 +92,4 @@ const initHeroShaders = async () => {
 	}
 };
 
-if (document.readyState === 'loading') {
-	document.addEventListener('DOMContentLoaded', () => {
-		void initHeroShaders();
-	});
-} else {
-	void initHeroShaders();
-}
+export { initHeroShaders };
