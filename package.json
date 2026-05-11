@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "build": "wp-scripts build --config webpack.config.js",
-        "build:zip": "npm run build && rm -rf dist/observata dist/observata.zip && mkdir -p dist/observata && cp -r *.php style.css screenshot.jpg composer.json composer.lock blocks assets views build vendor inc page-templates dist/observata/ && cd dist && rm -f observata.zip && zip -rq observata.zip observata/",
+        "build:zip": "npm run build && rm -rf dist/observata dist/observata.zip && mkdir -p dist/observata && cp -r *.php style.css screenshot.jpg composer.json composer.lock blocks assets views build vendor inc page-templates client dist/observata/ && cd dist && rm -f observata.zip && zip -rq observata.zip observata/",
         "start": "wp-scripts start --config webpack.config.js",
         "lint": "npm run lint:ts && npm run lint:css",
         "lint:ts": "eslint src/ client/",
