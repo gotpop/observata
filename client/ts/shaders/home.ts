@@ -70,9 +70,6 @@ const initHeroShaders = async () => {
 
 	if (!canvas) return;
 
-	// canvas.style.width = "1600px"
-	// canvas.style.height = "340px"
-
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn('Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
 		return;

@@ -8,12 +8,12 @@ import { initSubpageShaders } from './shaders/subpage';
 import { createMatchMedia } from './utils/breakpoints';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const mq = createMatchMedia('sm');
-
-	void initHeroShaders();
-	void initSubpageShaders();
+	const mq = createMatchMedia('md');
 
 	if (mq.matches) {
+		void initHeroShaders();
+		void initSubpageShaders();
+
 		const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
 
 		for (const canvas of canvases) {
