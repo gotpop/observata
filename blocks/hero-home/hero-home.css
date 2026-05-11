@@ -31,7 +31,13 @@
 	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 
 	background-color: var(--colour-background-bg-white);
-	background-image: var(--grad-radial-white), var(--grad-linear);
+	background-image: url('../../assets/img/shader-ribbon-mobile.png'), var(--grad-radial-white), var(--grad-linear);
+	background-size: 150%, auto, auto;
+	background-position:
+		center bottom 38%,
+		center,
+		center;
+	background-repeat: no-repeat;
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;

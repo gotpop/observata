@@ -33,10 +33,14 @@
 	position-anchor: --intro-anchor;
 	position-area: center top;
 	background-color: white;
-	border-radius: 8rem 8rem 0 0;
+	border-radius: 2rem 2rem 0 0;
 	border: 1px solid var(--colour-border-border-gray);
 	border-bottom: none;
-	corner-shape: squircle;
+
+	@supports (corner-shape: squircle) {
+		border-radius: 8rem 8rem 0 0;
+		corner-shape: squircle;
+	}
 
 	.logo-item {
 		display: flex;

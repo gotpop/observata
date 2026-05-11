@@ -28,10 +28,9 @@
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
 		background: var(--colour-surface-white);
-		border-radius: 0 0 4.5rem 4.5rem;
+		border-radius: 2rem 2rem 0 0;
 		border: 1px solid var(--colour-border-border-gray);
 		column-gap: var(--spacing-16);
-		corner-shape: squircle;
 		display: grid;
 		flex-basis: 100%;
 		grid-template-areas: 'logo trigger' 'nav nav';
@@ -42,6 +41,11 @@
 		padding-block: var(--spacing-24);
 		padding-inline: var(--spacing-32);
 		row-gap: 0;
+
+		@supports (corner-shape: squircle) {
+			border-radius: 0 0 4.5rem 4.5rem;
+			corner-shape: squircle;
+		}
 
 		&.is-open {
 			row-gap: var(--spacing-16);
