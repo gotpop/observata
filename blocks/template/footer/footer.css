@@ -52,7 +52,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-16);
+		gap: var(--spacing-20);
 		font-size: var(--size-body-sm);
 
 		strong {
@@ -71,16 +71,11 @@
 		gap: var(--spacing-24);
 	}
 
-	.footer-copyright {
-		p {
-			text-align: right;
-		}
-	}
-
 	.footer-menus {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 		gap: var(--spacing-32);
+		padding-block-start: var(--spacing-40);
 	}
 
 	.footer-menu-column {
@@ -125,13 +120,23 @@
 
 	.footer-locations {
 		font-size: var(--typography-size-14);
+		text-align: center;
 
 		span {
 			color: var(--colour-primary-100);
 		}
+
+		@media (width >=40rem) {
+			text-align: start;
+		}
 	}
 
 	.footer-copyright {
+		text-align: center;
 		font-size: var(--typography-size-14);
+
+		@media (width >=40rem) {
+			text-align: end;
+		}
 	}
 }

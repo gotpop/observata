@@ -9,6 +9,10 @@
 		border-radius: var(--radius-card);
 		border: 1px solid var(--colour-border-border-gray);
 		background: var(--colour-Background-bg-white, #fff);
-		padding: var(--spacing-80);
+		padding: var(--spacing-40);
+
+		@media (width >=40rem) {
+			padding: var(--spacing-80);
+		}
 	}
 }
