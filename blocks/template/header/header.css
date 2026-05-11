@@ -1,47 +1,47 @@
-@keyframes nav {
+@keyframes header-scroll {
 	to {
-		background-color: rgba(255, 255, 255, 0.95);
 		backdrop-filter: blur(2px);
-		max-width: 100%;
-		margin: 0;
-		border-radius: 0;
+		background-color: rgba(255, 255, 255, 0.95);
 		border-bottom: 1px solid var(--colour-border-border-gray);
+		border-left: 1px solid transparent;
+		border-radius: 0;
+		border-right: 1px solid transparent;
+		border-top: 1px solid transparent;
+		margin: 0;
+		max-width: 100%;
 	}
 }
 
 .header {
-	top: 0;
+	inset: 0 auto auto auto;
 	z-index: 999;
 	position: fixed;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	/* view-transition-name: header; */
 
 	.header-content {
-		/* view-transition-name: header-content; */
-
-		max-width: 1200px;
-		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		background: white;
-		border-radius: 0 0 4.5rem 4.5rem;
-		corner-shape: squircle;
-		width: stretch;
-		animation: nav linear forwards;
-		animation-timeline: scroll(nearest);
+		animation-fill-mode: forwards;
+		animation-name: header-scroll;
 		animation-range-end: 100px;
+		animation-timeline: scroll(nearest);
+		animation-timing-function: linear;
+		background: var(--colour-surface-white);
+		border-radius: 0 0 4.5rem 4.5rem;
 		border: 1px solid var(--colour-border-border-gray);
-		flex-direction: column;
-		display: grid;
-		grid-template-areas: 'logo trigger' 'nav nav';
-		grid-template-columns: 1fr 2rem;
-		grid-template-rows: min-content 1fr;
-		row-gap: 0;
 		column-gap: var(--spacing-16);
-		padding-inline: var(--spacing-32);
+		corner-shape: squircle;
+		display: grid;
+		flex-basis: 100%;
+		grid-template-areas: 'logo trigger' 'nav nav';
+		grid-template-columns: 1fr var(--spacing-32);
+		grid-template-rows: min-content 1fr;
+		justify-content: space-between;
+		max-width: var(--sizing-width-content);
 		padding-block: var(--spacing-24);
+		padding-inline: var(--spacing-32);
+		row-gap: 0;
 
 		&.is-open {
 			row-gap: var(--spacing-16);
@@ -61,17 +61,4 @@
 			border-radius: 4.5rem;
 		}
 	}
-
-	h1 {
-		font-size: 2rem;
-	}
-}
-
-.container {
-	display: grid;
-	grid-template-rows: 0fr;
-	transition: grid-template-rows 0.3s ease-in-out;
-}
-.container.expanded {
-	grid-template-rows: 1fr;
 }

@@ -33,8 +33,8 @@
 	--radius-circle: 50%;
 
 	/* Sizing */
-	--sizing-width-site: 1440;
-	--sizing-width-content: 1200;
+	--sizing-width-site: 1440px;
+	--sizing-width-content: 1200px;
 
 	/* Brand colours */
 	--colour-brand-dark: #113768;
