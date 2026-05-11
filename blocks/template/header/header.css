@@ -28,7 +28,7 @@
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
 		background: var(--colour-surface-white);
-		border-radius: 2rem 2rem 0 0;
+		border-radius: 0 0 2rem 2rem;
 		border: 1px solid var(--colour-border-border-gray);
 		column-gap: var(--spacing-16);
 		display: grid;
