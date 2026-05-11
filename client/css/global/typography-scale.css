@@ -19,20 +19,6 @@
 	}
 }
 
-.heading-xl {
-	color: var(--colour-text-hero);
-	font-family: var(--typography-family-gantari);
-	font-size: var(--size, var(--typography-size-40));
-	font-weight: var(--typography-weight-bold);
-	letter-spacing: -1px;
-	line-height: var(--line, var(--line-height-heading-lg));
-
-	@media (width >=40rem) {
-		--line: var(--line-height-heading-xl);
-		--size: var(--typography-size-56);
-	}
-}
-
 .heading-lg {
 	color: var(--colour-text-heading-default);
 	font-family: var(--typography-family-gantari);

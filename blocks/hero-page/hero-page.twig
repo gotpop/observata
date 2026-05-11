@@ -4,7 +4,7 @@
 <section class="block-hero-page" aria-labeled-by="heading-hero">
 	<div class="hero-page-content">
 		{% if heading %}
-			<h1 id="heading-hero-page" class="heading-hero-page">{{ heading|wp_kses_post }}</h1>
+			<h1 id="heading-hero-page" class="heading-hero heading-hero-page">{{ heading|wp_kses_post }}</h1>
 		{% endif %}
 		{% if subheading %}
 			<p class="body-hero body-hero-page">{{ subheading|wp_kses_post }}</p>
