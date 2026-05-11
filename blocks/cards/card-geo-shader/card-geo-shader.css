@@ -29,6 +29,11 @@
 		inset: 0 0 auto auto;
 		max-width: 100%;
 		z-index: 0;
+		display: none;
+
+		@media (width >=40rem) {
+			display: block;
+		}
 	}
 
 	.title {

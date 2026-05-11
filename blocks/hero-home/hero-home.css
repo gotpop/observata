@@ -81,9 +81,11 @@
 		transform: translateX(-50%);
 		width: 2422px;
 		z-index: 2;
+		display: none;
 
 		@media (width >=40rem) {
 			inset: auto auto -220px 50%;
+			display: block;
 		}
 
 		@media (width >=64rem) {
