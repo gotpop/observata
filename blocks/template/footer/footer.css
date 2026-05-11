@@ -54,6 +54,15 @@
 		grid-template-rows: min-content;
 		gap: var(--spacing-16);
 		font-size: var(--size-body-sm);
+
+		strong {
+			color: var(--colour-neutral-white);
+		}
+
+		span,
+		a {
+			color: var(--colour-primary-100);
+		}
 	}
 
 	.footer-bottom {
@@ -103,13 +112,26 @@
 	}
 
 	.footer-menu-link {
-		color: white;
+		color: var(--colour-primary-100);
 		text-decoration: none;
 		font-size: var(--size-body-sm);
 		transition: opacity 0.2s ease;
 
 		&:hover {
 			opacity: 0.8;
+			text-decoration: underline;
 		}
+	}
+
+	.footer-locations {
+		font-size: var(--typography-size-14);
+
+		span {
+			color: var(--colour-primary-100);
+		}
+	}
+
+	.footer-copyright {
+		font-size: var(--typography-size-14);
 	}
 }

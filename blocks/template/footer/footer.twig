@@ -79,7 +79,7 @@
 		</footer-top>
 		<footer-bottom class="footer-bottom">
 			<div class="footer-locations">
-				<p>{{ locations|esc_html }}</p>
+				<p>{{ locations|esc_html|replace({'|': '<span>|</span>'})|raw }}</p>
 			</div>
 			<div class="footer-copyright">
 				<p>{{ copyright|esc_html }}</p>

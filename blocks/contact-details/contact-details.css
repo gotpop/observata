@@ -5,8 +5,11 @@
 	border: 1px solid var(--colour-border-border-gray);
 	padding: var(--spacing-32);
 	border-radius: var(--radius-card);
-	grid-area: details;
 	align-self: start;
+
+	@media (width >=64rem) {
+		grid-area: details;
+	}
 
 	.item {
 		display: flex;

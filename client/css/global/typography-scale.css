@@ -10,6 +10,11 @@
 
 	@media (width >=40rem) {
 		--line: var(--line-height-heading-xl);
+		--size: var(--typography-size-48);
+	}
+
+	@media (width >=64rem) {
+		--line: var(--line-height-heading-xl);
 		--size: var(--size-hero-default);
 	}
 }
@@ -72,9 +77,13 @@
 
 .body-hero {
 	color: var(--colour-text-hero-subheading);
-	font-size: var(--typography-size-20);
+	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-regular);
 	line-height: 1.5;
+
+	@media (width >=40rem) {
+		--size: var(--typography-size-20);
+	}
 }
 
 .body-lg {

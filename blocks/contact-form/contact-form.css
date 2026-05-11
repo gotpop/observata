@@ -10,7 +10,9 @@
 }
 
 .contact-form__iframe {
-	width: 100%;
-	height: 600px;
-	border: none;
+	height: 699px;
+
+	@media (width >=64rem) {
+		height: 600px;
+	}
 }

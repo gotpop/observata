@@ -49,13 +49,16 @@
 		}
 
 		@media (width >= 40rem) {
-			margin-block: 3rem 0;
-			margin-inline: 1rem;
-			border-radius: 4.5rem;
 			grid-template-areas: 'logo nav';
 			grid-template-rows: min-content;
 			grid-template-columns: 200px 1fr;
 			padding: 18px 28px;
+		}
+
+		@media (width >= 80rem) {
+			margin-block: 3rem 0;
+			margin-inline: 1rem;
+			border-radius: 4.5rem;
 		}
 	}
 
