@@ -1,16 +1,23 @@
 import './header-navigation';
 import './pricing-tabs';
-import './shaders/home';
-import './shaders/subpage';
 
 import { initSectionObserver } from './section-observer';
-import { initCardGeoShader } from './shaders/card-geo-shader';
+import { createMatchMedia } from './utils/breakpoints';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
+	const mq = createMatchMedia('sm');
 
-	for (const canvas of canvases) {
-		void initCardGeoShader(canvas);
+	if (mq.matches) {
+		void import('./shaders/home');
+		void import('./shaders/subpage');
+
+		const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
+
+		for (const canvas of canvases) {
+			void import('./shaders/card-geo-shader').then(({ initCardGeoShader }) => {
+				void initCardGeoShader(canvas);
+			});
+		}
 	}
 
 	initSectionObserver();

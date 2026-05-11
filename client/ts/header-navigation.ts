@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const mq = createMatchMedia('sm');
 
-	// --- Mobile nav trigger ---
 	if (trigger && headerContent) {
 		trigger.addEventListener('click', () => {
 			const isOpen = headerContent.classList.toggle('is-open');
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// --- Submenu toggle: aria-expanded ---
 	function handleSubmenuEnter(e: Event) {
 		const parent = e.currentTarget as HTMLElement;
 		const button = parent.querySelector('.menu-button') as HTMLElement;
@@ -48,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const el = e.currentTarget as HTMLElement;
 		const isExpanded = el.getAttribute('aria-expanded') === 'true';
+
 		el.setAttribute('aria-expanded', String(!isExpanded));
 	}
 
