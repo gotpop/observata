@@ -1,5 +1,5 @@
 /* Mobile menu */
-@media (width <= 40rem) {
+@media (width <= 48rem) {
 	.header-navigation {
 		display: grid;
 		grid-area: nav;

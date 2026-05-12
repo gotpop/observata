@@ -49,7 +49,7 @@
 			--button-toggle-color: var(--colour-secondary-300);
 		}
 
-		@media (width >= 40rem) {
+		@media (width >= 48rem) {
 			display: none;
 		}
 	}
