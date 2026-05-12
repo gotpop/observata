@@ -26,7 +26,7 @@ export default function Edit({ attributes, setAttributes }) {
             <div className="intro-card-body">
                 <RichText
                     tagName="h3"
-                    className="card-simple__title"
+                    className="heading-md"
                     value={title}
                     onChange={(val) => setAttributes({ title: val })}
                     placeholder={__('Card title…', 'observata')}
@@ -35,7 +35,7 @@ export default function Edit({ attributes, setAttributes }) {
                 />
                 <RichText
                     tagName="p"
-                    className="card-simple__description"
+                    className="body-md"
                     value={description}
                     onChange={(val) => setAttributes({ description: val })}
                     placeholder={__('Card description…', 'observata')}
