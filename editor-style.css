@@ -8,46 +8,6 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-.block-editor-block-list__block.wp-block:not(h1) {
-	background-color: #f5f5f5;
-	border-radius: 20px;
-	border: dashed 2px rgb(189, 189, 189);
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-	position: relative;
-	gap: 1rem;
-
-	.intro {
-		display: flex;
-		width: stretch;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.observata-controls {
-		display: flex;
-		gap: 1rem;
-	}
-
-	.block-editor-block-list__block {
-		background-color: white;
-		padding: 1rem;
-		border: dashed 1px grey;
-	}
-
-	.block-editor-block-list__layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-		width: 100%;
-	}
-
-	.block-editor-inner-blocks {
-		width: 100%;
-	}
-}
-
 h1,
 h2,
 h3 {
@@ -102,4 +62,72 @@ input,
 
 * {
 	text-box: unset !important;
+}
+
+.block-editor-block-list__block:not(h1) {
+	background-color: var(--colour-neutral-100);
+	border-radius: var(--radius-generous);
+	border: dashed 2px var(--colour-neutral-200);
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	position: relative;
+	gap: var(--spacing-16);
+	display: flex;
+
+	h1,
+	h2,
+	h3,
+	ul {
+		margin: 0;
+	}
+
+	.observata-controls {
+		display: flex;
+		gap: var(--spacing-16);
+	}
+
+	.block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-16);
+	}
+
+	.block-editor-block-list__block {
+		flex: 1 1 40%;
+		background-color: var(--colour-surface-white);
+		padding: var(--spacing-16);
+		border: dashed 1px var(--colour-neutral-200);
+		margin: 0;
+		border-radius: var(--radius-comfortable);
+	}
+
+	.intro {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		gap: var(--spacing-16);
+	}
+
+	.block-editor-inner-blocks {
+		width: 100%;
+	}
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block.is-highlighted:after,
+.block-editor-block-list__layout .block-editor-block-list__block.is-highlighted ~ .is-multi-selected:after,
+.block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable='true']):focus:after {
+	border-radius: 1rem;
+	outline-offset: 0.5rem;
+	outline-style: dashed;
+}
+
+.section-intro-editor {
+	display: flex;
+	gap: var(--spacing-16);
+	flex-direction: column;
+
+	> * {
+		margin: 0;
+	}
 }

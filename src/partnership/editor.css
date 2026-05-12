@@ -1,55 +1,8 @@
-.block-partnership {
-	border: 1px dashed #ccc;
-	padding: 1.5rem;
-	border-radius: 4px;
+.wp-block-observata-partnership {
+	overflow: visible !important;
 
 	.graphic-swooping {
 		display: none;
-	}
-
-	.block-content {
-		display: grid;
-		gap: var(--spacing-60);
-		grid-template-columns: 1fr;
-	}
-
-	.block-body {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 485px));
-		gap: var(--spacing-60);
-		justify-content: center;
-	}
-
-	.phase {
-		background-color: var(--colour-surface-white);
-		border-radius: var(--radius-card);
-		border: 1px solid var(--colour-border-border-gray);
-		display: grid;
-		gap: var(--spacing-24);
-		grid-template-columns: 1fr;
-		padding: var(--spacing-40);
-
-		h3,
-		h4,
-		p {
-			margin: 0;
-		}
-	}
-
-	.phase-content {
-		display: grid;
-		gap: var(--spacing-24);
-		grid-template-columns: repeat(auto-fit, minmax(150px, 188px));
-	}
-
-	.phase-two .phase-content {
-		grid-template-columns: 1fr;
-	}
-
-	.phase-item {
-		display: grid;
-		gap: var(--spacing-20);
-		grid-template-columns: 1fr;
 	}
 
 	.cta-primary {
@@ -67,12 +20,5 @@
 		justify-content: center;
 		justify-self: center;
 		padding: var(--spacing-16) var(--spacing-24);
-	}
-
-	.observata-controls {
-		padding: 1rem;
-		background: #f0f0f0;
-		border-radius: 4px;
-		margin-top: 1.5rem;
 	}
 }

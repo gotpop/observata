@@ -1,11 +1,5 @@
-.block-editor-block-list__layout {
-	display: grid;
-	grid-column: content;
-	grid-template-areas:
-		'a .'
-		'. b';
-	gap: var(--spacing-50);
-	z-index: 1;
+.wp-block-observata-intro-page {
+	overflow: visible !important;
 
 	.card-geo-list {
 		opacity: 1 !important;

@@ -1,13 +1,18 @@
-/* Editor-specific overrides */
+.wp-block-observata-hero-page {
+	overflow: visible !important;
+	background: var(--colour-neutral-100) !important;
 
-.block-hero-page {
-    .hero-page-content {
-        padding: 1rem 1rem !important;
-    }
+	.hero-page-content::before {
+		display: none !important;
+	}
 
-    .hero-page-text {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+	.hero-page-content {
+		padding: 1rem 1rem !important;
+	}
+
+	.hero-page-text {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
 }
