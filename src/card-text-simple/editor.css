@@ -1,8 +1,4 @@
 .wp-block-observata-card-simple {
-	.intro-card-icon {
-		position: absolute;
-		inset: var(--spacing-16) var(--spacing-16) auto auto;
-	}
 	.intro-card-body {
 		display: flex;
 		flex-direction: column;

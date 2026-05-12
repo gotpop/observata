@@ -21,7 +21,7 @@ export default function CardGeoEdit({ attributes, setAttributes }) {
             <div className="intro-card-icon">
                 <GeoIcon number={iconGeo} />
             </div>
-            <div className="intro-card-body">
+            <div className="card-body">
                 <RichText
                     className="intro-card-title"
                     disableLineBreaks

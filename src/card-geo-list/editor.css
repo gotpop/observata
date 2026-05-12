@@ -6,16 +6,10 @@
 			translate: none;
 		}
 
-		.intro-card-icon {
-			position: absolute;
-			inset: var(--spacing-16) var(--spacing-16) auto auto;
-		}
-
 		.intro-card-body,
 		.card-geo-list-items {
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: min-content;
+			display: flex;
+			flex-direction: column;
 			gap: var(--spacing-16);
 		}
 
