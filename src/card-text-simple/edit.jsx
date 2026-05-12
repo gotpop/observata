@@ -28,6 +28,7 @@ export default function CardTextSimpleEdit({ attributes, setAttributes }) {
                     value={content}
                     onChange={(val) => setAttributes({ content: val })}
                     placeholder={__('Card content…', 'observata')}
+                    disableLineBreaks
                     allowedFormats={[]}
                 />
             </div>

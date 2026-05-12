@@ -16,7 +16,7 @@ export default function RichTextEdit({ attributes, setAttributes }) {
                 value={content}
                 onChange={(val) => setAttributes({ content: val })}
                 placeholder={__('Add your content here…', 'observata')}
-                multiline="p"
+                disableLineBreaks
                 allowedFormats={[]}
             />
         </div>

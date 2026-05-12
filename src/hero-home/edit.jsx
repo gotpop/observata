@@ -8,7 +8,7 @@ import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 export default function HeroEdit({ attributes, setAttributes }) {
-    const { heading, subheading, mediaUrl, mediaId, ctaText, ctaUrl } = attributes;
+    const { heading, subheading, mediaUrl, ctaText, ctaUrl } = attributes;
 
     // Fetch internal pages for dropdown
     const pages = useSelect(select => {

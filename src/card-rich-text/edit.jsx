@@ -28,6 +28,7 @@ export default function CardRichTextEdit({ attributes, setAttributes }) {
                     value={cardContent}
                     onChange={(val) => setAttributes({ cardContent: val })}
                     placeholder={__('Card content…', 'observata')}
+                    disableLineBreaks
                     allowedFormats={[]}
                 />
             </div>

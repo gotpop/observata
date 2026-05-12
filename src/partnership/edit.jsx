@@ -2,7 +2,8 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { TextControl } from '@wordpress/components';
+import { SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
@@ -22,6 +23,20 @@ export default function Edit({ attributes, setAttributes }) {
     } = attributes;
 
     const blockProps = useBlockProps({ className: 'block-partnership' });
+
+    // Fetch internal pages for dropdown
+    const pages = useSelect(select => {
+        const { getEntityRecords } = select('core');
+        return getEntityRecords('postType', 'page', { per_page: 100, _fields: 'id,title,link' });
+    }, []);
+
+    const pageOptions = [
+        { label: __('Select a page...', 'observata'), value: '' },
+        ...(pages || []).map(page => ({
+            label: page.title?.rendered || `Page ${page.id}`,
+            value: page.link
+        }))
+    ];
 
     return (
         <section {...blockProps}>
@@ -135,13 +150,12 @@ export default function Edit({ attributes, setAttributes }) {
                     </div>
                 </div>
 
-                <div className="observata-controls">
-                    <TextControl
-                        label={__('CTA URL', 'observata')}
-                        value={ctaUrl}
-                        onChange={(val) => setAttributes({ ctaUrl: val })}
-                    />
-                </div>
+                <SelectControl
+                    label={__('CTA URL', 'observata')}
+                    value={ctaUrl}
+                    options={pageOptions}
+                    onChange={(val) => setAttributes({ ctaUrl: val })}
+                />
             </div>
         </section>
     );
