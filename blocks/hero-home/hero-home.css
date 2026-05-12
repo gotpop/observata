@@ -49,6 +49,9 @@
 	top: 0;
 
 	@media (width >=40rem) {
+		background-image: var(--grad-radial-white), var(--grad-linear);
+		background-size: auto, auto;
+		background-position: center, center;
 		grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
 	}
 

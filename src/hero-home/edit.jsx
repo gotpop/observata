@@ -8,7 +8,7 @@ import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 export default function HeroEdit({ attributes, setAttributes }) {
-    const { heading, subheading, mediaUrl, ctaText, ctaUrl } = attributes;
+    const { heading, subheading, mediaUrl, ctaText, ctaUrl, readMoreText, readMoreUrl } = attributes;
 
     // Fetch internal pages for dropdown
     const pages = useSelect(select => {
@@ -73,6 +73,26 @@ export default function HeroEdit({ attributes, setAttributes }) {
                             value={ctaUrl}
                             options={pageOptions}
                             onChange={(val) => setAttributes({ ctaUrl: val })}
+                        />
+                    </div>
+
+                    <div className="hero-read-more-fields">
+                        <div className="hero-read-more">
+                            <RichText
+                                tagName="span"
+                                value={readMoreText}
+                                onChange={(val) => setAttributes({ readMoreText: val })}
+                                placeholder={__('Read more text…', 'observata')}
+                                disableLineBreaks
+                                allowedFormats={[]}
+                            />
+                            <span className="arrow-icon">→</span>
+                        </div>
+                        <SelectControl
+                            label={__('Read More URL', 'observata')}
+                            value={readMoreUrl}
+                            options={pageOptions}
+                            onChange={(val) => setAttributes({ readMoreUrl: val })}
                         />
                     </div>
                 </div>

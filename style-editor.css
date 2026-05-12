@@ -206,3 +206,8 @@ input,
 	font-size: 0.75rem;
 	color: var(--colour-text-hero-subheading, #999);
 }
+
+.edit-post-visual-editor__post-title-wrapper {
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	margin-bottom: var(--spacing-32);
+}
