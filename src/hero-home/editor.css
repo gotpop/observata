@@ -3,7 +3,7 @@
 .wp-block-observata-hero-home {
 	&.block-hero-home {
 		position: relative;
-		min-height: 500px;
+		min-height: 300px;
 		overflow: visible;
 		display: flex;
 		flex-direction: column;
@@ -65,12 +65,23 @@
 		}
 	}
 
-	.components-base-control {
-		flex: 1 1 200px;
-		min-width: 200px;
+	.components-base-control__label {
+		color: var(--colour-text-hero-subheading);
 	}
 
-	.components-base-control__label {
-		color: var(--colour-text-hero-subheading, #666);
+	.hero-read-more-fields {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-16);
+
+		.hero-read-more {
+			width: max-content;
+			justify-self: center;
+			align-self: center;
+
+			.arrow-icon {
+				text-decoration: none;
+			}
+		}
 	}
 }

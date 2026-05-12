@@ -54,7 +54,7 @@
 
 		&::before {
 			content: '';
-			width: 2400px;
+			width: 125vw;
 			position: absolute;
 			height: 100%;
 			background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%);
