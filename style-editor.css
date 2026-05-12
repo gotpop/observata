@@ -78,6 +78,18 @@ input,
 	h1,
 	h2,
 	h3,
+	h4 {
+		colo: var(--colour-text-heading-default);
+	}
+
+	p {
+		color: var(--colour-text-body-default);
+		margin: 0;
+	}
+
+	h1,
+	h2,
+	h3,
 	h4,
 	ul {
 		margin: 0;
@@ -139,4 +151,27 @@ input,
 	> * {
 		margin: 0;
 	}
+}
+
+.block-list-appender {
+	> .block-editor-inserter {
+		display: flex;
+		justify-content: center;
+
+		.block-editor-button-block-appender {
+			border-radius: var(--radius-generous);
+			max-width: max-content;
+		}
+	}
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-16);
+}
+
+.intro-card-icon {
+	position: absolute;
+	inset: var(--spacing-16) var(--spacing-16) auto auto;
 }

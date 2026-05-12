@@ -1,14 +1,26 @@
 .wp-block-observata-card-geo-list {
-	.intro-card-icon {
-		position: absolute;
-		inset: var(--spacing-16) var(--spacing-16) auto auto;
-	}
+	&.card-geo-list.wp-block {
+		&:first-child,
+		&:last-child {
+			opacity: 1;
+			translate: none;
+		}
 
-	.intro-card-body,
-	.card-geo-list-items {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: min-content;
-		gap: var(--spacing-16);
+		.intro-card-icon {
+			position: absolute;
+			inset: var(--spacing-16) var(--spacing-16) auto auto;
+		}
+
+		.intro-card-body,
+		.card-geo-list-items {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: min-content;
+			gap: var(--spacing-16);
+		}
+
+		.card-geo-list-items {
+			color: var(--colour-text-body-default);
+		}
 	}
 }

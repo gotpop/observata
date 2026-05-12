@@ -1,7 +1,5 @@
 .wp-block-observata-intro-page {
-	overflow: visible !important;
-
-	.card-geo-list {
-		opacity: 1 !important;
+	&.block-intro-page {
+		overflow: visible;
 	}
 }

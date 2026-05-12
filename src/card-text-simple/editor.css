@@ -1,18 +1,11 @@
-.card-text-simple {
-    border: 1px solid #e0e0e0;
-    background: #f9f9f9;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-.card-text-simple__body {
-    margin-top: 0.5rem;
-}
-
-.card-text-simple__heading {
-    margin: 0 0 0.75rem 0 !important;
-}
-
-.card-text-simple__content {
-    margin: 0 !important;
+.wp-block-observata-card-simple {
+	.intro-card-icon {
+		position: absolute;
+		inset: var(--spacing-16) var(--spacing-16) auto auto;
+	}
+	.intro-card-body {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-16);
+	}
 }
