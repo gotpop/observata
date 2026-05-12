@@ -1,12 +1,12 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/card-text-simple",
-    "title": "Card Text Simple",
+    "name": "observata/body-md",
+    "title": "Body MD",
     "category": "theme",
-    "description": "A simple text card with heading and paragraph.",
+    "description": "A wrapper for core content blocks with body-md styling.",
     "attributes": {
-        "heading": {
+        "content": {
             "type": "string",
             "default": ""
         }
@@ -15,5 +15,6 @@
         "html": false
     },
     "textdomain": "observata",
-    "style": "file:card-text-simple.css"
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:body-md.editor.css"
 }

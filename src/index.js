@@ -10,6 +10,7 @@ import CardRichTextMetadata from '../blocks/cards/card-rich-text/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardTeamMemberMetadata from '../blocks/cards/card-team-member/block.json';
 import cardTextSimpleMetadata from '../blocks/cards/card-text-simple/block.json';
+import bodyMdMetadata from '../blocks/cards/body-md/block.json';
 import planFeaturesRowMetadata from '../blocks/cards/plan-features-row/block.json';
 import contactDetailsMetadata from '../blocks/contact-details/block.json';
 import contactFormMetadata from '../blocks/contact-form/block.json';
@@ -67,6 +68,8 @@ import CardTeamMemberEdit from './card-team-member/edit';
 import CardTeamMemberSave from './card-team-member/save';
 import CardTextSimpleEdit from './card-text-simple/edit';
 import CardTextSimpleSave from './card-text-simple/save';
+import BodyMdEdit from './body-md/edit';
+import BodyMdSave from './body-md/save';
 import ContactDetailsEdit from './contact-details/edit';
 import ContactDetailsSave from './contact-details/save';
 import ContactFormEdit from './contact-form/edit';
@@ -342,6 +345,11 @@ registerBlockType(cardTextSimpleMetadata.name, {
     save: CardTextSimpleSave,
 });
 
+
+registerBlockType(bodyMdMetadata.name, {
+	edit: BodyMdEdit,
+	save: BodyMdSave,
+});
 registerBlockType(gridCardsTextMetadata.name, {
     edit: GridCardsTextEdit,
     save: GridCardsTextSave,
