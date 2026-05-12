@@ -2,12 +2,28 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import { TextControl } from '@wordpress/components';
+import { SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 export default function HeroEdit({ attributes, setAttributes }) {
     const { heading, subheading, mediaUrl, mediaId, ctaText, ctaUrl } = attributes;
+
+    // Fetch internal pages for dropdown
+    const pages = useSelect(select => {
+        const { getEntityRecords } = select('core');
+        return getEntityRecords('postType', 'page', { per_page: 100, _fields: 'id,title,link' });
+    }, []);
+
+    const pageOptions = [
+        { label: __('Select a page...', 'observata'), value: '' },
+        ...(pages || []).map(page => ({
+            label: page.title?.rendered || `Page ${page.id}`,
+            value: page.link
+        }))
+    ];
+
     const blockProps = useBlockProps({
         className: 'block-hero-home',
         style: mediaUrl ? { backgroundImage: `url(${mediaUrl})` } : {},
@@ -39,14 +55,20 @@ export default function HeroEdit({ attributes, setAttributes }) {
 
                 <div className="hero-buttons">
                     <div className="hero-cta-fields">
-                        <TextControl
-                            label={__('CTA Text', 'observata')}
-                            value={ctaText}
-                            onChange={(val) => setAttributes({ ctaText: val })}
-                        />
-                        <TextControl
+                        <div className="cta-primary cta-hero">
+                            <RichText
+                                tagName="span"
+                                value={ctaText}
+                                onChange={(val) => setAttributes({ ctaText: val })}
+                                placeholder={__('CTA text…', 'observata')}
+                                disableLineBreaks
+                            />
+                            <span className="arrow-icon">→</span>
+                        </div>
+                        <SelectControl
                             label={__('CTA URL', 'observata')}
                             value={ctaUrl}
+                            options={pageOptions}
                             onChange={(val) => setAttributes({ ctaUrl: val })}
                         />
                     </div>

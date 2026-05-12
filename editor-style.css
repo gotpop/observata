@@ -67,7 +67,7 @@ input,
 .block-editor-block-list__block:not(h1) {
 	background-color: var(--colour-neutral-100);
 	border-radius: var(--radius-generous);
-	border: dashed 2px var(--colour-neutral-200);
+	border: solid 1px var(--colour-neutral-200);
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;

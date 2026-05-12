@@ -9,8 +9,6 @@ import SectionIntro from '../components/section-intro';
 
 export default function Edit({ attributes, setAttributes }) {
     const {
-        sectionTitle,
-        introText,
         ctaText,
         ctaUrl,
         phase1Title,
@@ -21,7 +19,6 @@ export default function Edit({ attributes, setAttributes }) {
         phase2Title,
         phase2ItemTitle1,
         phase2Text1,
-        phase2Text2,
     } = attributes;
 
     const blockProps = useBlockProps({ className: 'block-partnership' });
