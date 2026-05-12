@@ -13,25 +13,29 @@
 }
 
 .fade-in-from-left {
-	translate: 10px 0;
-	opacity: 0;
-	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.1s * sibling-index());
+	@media (width >=40rem) {
+		translate: 10px 0;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+		transition-delay: calc(0.1s * sibling-index());
 
-	.in-view & {
-		translate: 0 0;
-		opacity: 1;
+		.in-view & {
+			translate: 0 0;
+			opacity: 1;
+		}
 	}
 }
 
 .fade-in-from-right {
-	translate: -10px 0;
-	opacity: 0;
-	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.1s * sibling-index());
+	@media (width >=40rem) {
+		translate: -10px 0;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+		transition-delay: calc(0.1s * sibling-index());
 
-	.in-view & {
-		translate: 0 0;
-		opacity: 1;
+		.in-view & {
+			translate: 0 0;
+			opacity: 1;
+		}
 	}
 }
