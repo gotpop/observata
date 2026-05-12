@@ -78,8 +78,17 @@ input,
 	h1,
 	h2,
 	h3,
+	h4,
 	ul {
 		margin: 0;
+	}
+
+	.components-input-control__container {
+		max-width: max-content;
+
+		.components-select-control__input {
+			max-width: max-content;
+		}
 	}
 
 	.observata-controls {
