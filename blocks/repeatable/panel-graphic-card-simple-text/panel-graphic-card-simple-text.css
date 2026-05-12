@@ -1,0 +1,40 @@
+.block-panel-graphic-card-simple-text {
+	position: relative;
+	overflow: clip;
+	background-color: var(--colour-surface-white);
+	border-bottom: 1px solid var(--colour-border-border-gray);
+	grid-column: full;
+	grid-template-columns: subgrid;
+	display: grid;
+	padding-block: 5rem;
+
+	.background-graphic {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 400px;
+		height: auto;
+		opacity: 0.9;
+		pointer-events: none;
+		z-index: 0;
+
+		svg {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: 1fr;
+		gap: 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	.card-container {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}

@@ -39,6 +39,7 @@ import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import pricingTabsMetadata from '../blocks/repeatable/pricing-tabs/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
 import teamMembersMetadata from '../blocks/repeatable/team-members/block.json';
+import panelGraphicCardSimpleTextMetadata from '../blocks/repeatable/panel-graphic-card-simple-text/block.json';
 import richTextMetadata from '../blocks/rich-text/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import headerMetadata from '../blocks/template/header/block.json';
@@ -124,6 +125,8 @@ import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
+import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
+import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
 import TeamMembersEdit from './team-members/edit';
 import BreadcrumbsEdit from './breadcrumbs/edit';
 import BreadcrumbsSave from './breadcrumbs/save';
@@ -358,4 +361,9 @@ registerBlockType(gridCardsTextMetadata.name, {
 registerBlockType(breadcrumbsMetadata.name, {
     edit: BreadcrumbsEdit,
     save: BreadcrumbsSave,
+});
+
+registerBlockType(panelGraphicCardSimpleTextMetadata.name, {
+    edit: PanelGraphicCardSimpleTextEdit,
+    save: PanelGraphicCardSimpleTextSave,
 });

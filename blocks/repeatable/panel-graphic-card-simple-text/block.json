@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/panel-graphic-card-simple-text",
+    "title": "Panel Graphic Card Simple Text",
+    "category": "theme",
+    "description": "A single Card Text Simple block with an optional background graphic.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "backgroundGraphic": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": [
+        "file:panel-graphic-card-simple-text.css",
+        "file:../cards/card-text-simple/card-text-simple.css"
+    ],
+    "editorStyle": [
+        "file:panel-graphic-card-simple-text.css",
+        "file:../../build/index.css"
+    ]
+}
