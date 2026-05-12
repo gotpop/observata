@@ -31,6 +31,7 @@ export default function Edit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ title: val })}
                     placeholder={__('Card title…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <RichText
                     tagName="p"
@@ -39,6 +40,7 @@ export default function Edit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ description: val })}
                     placeholder={__('Card description…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <SelectControl
                     label={__('Icon', 'observata')}

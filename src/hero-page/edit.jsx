@@ -24,6 +24,7 @@ export default function HeroPageEdit({ attributes, setAttributes }) {
                         disableLineBreaks
                         onChange={(val) => setAttributes({ heading: val })}
                         placeholder={__('Page heading…', 'observata')}
+                        allowedFormats={[]}
                     />
                     <RichText
                         disableLineBreaks
@@ -32,6 +33,7 @@ export default function HeroPageEdit({ attributes, setAttributes }) {
                         value={subheading}
                         onChange={(val) => setAttributes({ subheading: val })}
                         placeholder={__('Subheading text…', 'observata')}
+                        allowedFormats={[]}
                     />
                 </div>
             </div>

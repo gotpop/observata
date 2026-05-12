@@ -32,6 +32,7 @@ export default function CalloutEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ text: val })}
                     placeholder={__('Callout message…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <TextControl
                     label={__('CTA Text (optional)', 'observata')}

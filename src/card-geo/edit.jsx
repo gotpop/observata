@@ -29,6 +29,7 @@ export default function CardGeoEdit({ attributes, setAttributes }) {
                     placeholder={__('Card title…', 'observata')}
                     tagName="h3"
                     value={cardTitle}
+                    allowedFormats={[]}
                 />
                 <RichText
                     className="intro-card-text"
@@ -37,6 +38,7 @@ export default function CardGeoEdit({ attributes, setAttributes }) {
                     placeholder={__('Card description…', 'observata')}
                     tagName="p"
                     value={cardText}
+                    allowedFormats={[]}
                 />
                 <SelectControl
                     label={__('Icon', 'observata')}

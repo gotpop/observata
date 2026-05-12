@@ -17,21 +17,7 @@ export default function RichTextEdit({ attributes, setAttributes }) {
                 onChange={(val) => setAttributes({ content: val })}
                 placeholder={__('Add your content here…', 'observata')}
                 multiline="p"
-                allowedFormats={[
-                    'core/bold',
-                    'core/italic',
-                    'core/link',
-                    'core/strikethrough',
-                    'core/underline',
-                    'core/subscript',
-                    'core/superscript',
-                    'core/text-color',
-                    'core/heading',
-                    'core/paragraph',
-                    'core/list',
-                    'core/quote',
-                    'core/code'
-                ]}
+                allowedFormats={[]}
             />
         </div>
     );

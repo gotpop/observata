@@ -20,6 +20,7 @@ export default function ContactDetailsEdit({ attributes, setAttributes }) {
                         onChange={(val) => setAttributes({ phone: val })}
                         placeholder={__('Phone number…', 'observata')}
                         disableLineBreaks
+                        allowedFormats={[]}
                     />
                 </div>
                 <div className="item">
@@ -31,6 +32,7 @@ export default function ContactDetailsEdit({ attributes, setAttributes }) {
                         onChange={(val) => setAttributes({ email: val })}
                         placeholder={__('Email address…', 'observata')}
                         disableLineBreaks
+                        allowedFormats={[]}
                     />
                 </div>
                 <div className="item">
@@ -42,6 +44,7 @@ export default function ContactDetailsEdit({ attributes, setAttributes }) {
                         onChange={(val) => setAttributes({ address: val })}
                         placeholder={__('Address…', 'observata')}
                         disableLineBreaks
+                        allowedFormats={[]}
                     />
                 </div>
             </div>

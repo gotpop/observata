@@ -18,6 +18,7 @@ export default function CardMicroEdit({ attributes, setAttributes }) {
                 onChange={(val) => setAttributes({ cardTitle: val })}
                 placeholder={__('Card title…', 'observata')}
                 disableLineBreaks
+                allowedFormats={[]}
             />
             <RichText
                 tagName="p"
@@ -26,6 +27,7 @@ export default function CardMicroEdit({ attributes, setAttributes }) {
                 onChange={(val) => setAttributes({ cardDescription: val })}
                 placeholder={__('Card description…', 'observata')}
                 disableLineBreaks
+                allowedFormats={[]}
             />
         </article>
     );

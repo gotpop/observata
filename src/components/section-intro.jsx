@@ -11,6 +11,7 @@ export default function SectionIntro({ attributes, setAttributes }) {
                 onChange={(value) => setAttributes({ sectionTitle: value })}
                 placeholder={__('Section title…', 'observata')}
                 disableLineBreaks
+                allowedFormats={[]}
             />
             <RichText
                 tagName="p"
@@ -19,6 +20,7 @@ export default function SectionIntro({ attributes, setAttributes }) {
                 onChange={(value) => setAttributes({ introText: value })}
                 placeholder={__('Intro text…', 'observata')}
                 disableLineBreaks
+                allowedFormats={[]}
             />
         </div>
     );

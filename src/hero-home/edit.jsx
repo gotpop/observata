@@ -42,6 +42,7 @@ export default function HeroEdit({ attributes, setAttributes }) {
                         onChange={(val) => setAttributes({ heading: val })}
                         placeholder={__('Hero heading…', 'observata')}
                         disableLineBreaks
+                        allowedFormats={[]}
                     />
                     <RichText
                         tagName="p"
@@ -50,6 +51,7 @@ export default function HeroEdit({ attributes, setAttributes }) {
                         onChange={(val) => setAttributes({ subheading: val })}
                         placeholder={__('Subheading…', 'observata')}
                         disableLineBreaks
+                        allowedFormats={[]}
                     />
                 </div>
 
@@ -62,6 +64,7 @@ export default function HeroEdit({ attributes, setAttributes }) {
                                 onChange={(val) => setAttributes({ ctaText: val })}
                                 placeholder={__('CTA text…', 'observata')}
                                 disableLineBreaks
+                                allowedFormats={[]}
                             />
                             <span className="arrow-icon">→</span>
                         </div>

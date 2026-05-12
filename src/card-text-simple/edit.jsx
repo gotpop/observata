@@ -20,6 +20,7 @@ export default function CardTextSimpleEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ heading: val })}
                     placeholder={__('Card heading…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <RichText
                     tagName="p"
@@ -27,6 +28,7 @@ export default function CardTextSimpleEdit({ attributes, setAttributes }) {
                     value={content}
                     onChange={(val) => setAttributes({ content: val })}
                     placeholder={__('Card content…', 'observata')}
+                    allowedFormats={[]}
                 />
             </div>
         </article>

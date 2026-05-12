@@ -46,6 +46,7 @@ export default function PlanEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ planName: val })}
                     placeholder={__('Plan name…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <ToggleControl
                     label={__('Highlighted', 'observata')}
@@ -74,6 +75,7 @@ export default function PlanEdit({ attributes, setAttributes }) {
                 onChange={(val) => setAttributes({ planDescription: val })}
                 placeholder={__('Plan description…', 'observata')}
                 disableLineBreaks
+                allowedFormats={[]}
             />
 
             <div className="plan-card-features-editor">

@@ -30,6 +30,7 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ cardTitle: val })}
                     placeholder={__('Card title…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <RichText
                     tagName="p"
@@ -38,6 +39,7 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ cardText: val })}
                     placeholder={__('Card text…', 'observata')}
                     disableLineBreaks
+                    allowedFormats={[]}
                 />
                 <SelectControl
                     label={__('Icon geo', 'observata')}
