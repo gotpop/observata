@@ -104,7 +104,7 @@ function observata_setup()
 	add_theme_support('align-wide');
 	add_theme_support('wp-block-styles');
 	add_theme_support('editor-styles');
-	add_editor_style('editor-style.css');
+	add_editor_style('style-editor.css');
 	add_editor_style('client/css/global/fonts.css');
 	add_editor_style('client/css/global/variables.css');
 	add_editor_style('client/css/global/layout.css');
