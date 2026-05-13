@@ -48,6 +48,10 @@
 	display: block;
 	aspect-ratio: 16 / 9;
 	overflow: hidden;
+
+	img {
+		display: block;
+	}
 }
 
 .blog-posts__date {
@@ -88,4 +92,34 @@
 .blog-posts__empty {
 	color: var(--colour-neutral-500);
 	font-size: var(--typography-size-16);
+}
+
+.blog-posts__image-container {
+	position: relative;
+}
+
+.blog-posts__image-attribution {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+	font-size: var(--typography-size-10);
+	padding: var(--spacing-8);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.blog-posts__image-container:hover .blog-posts__image-attribution {
+	opacity: 1;
+}
+
+.blog-posts__image-attribution a {
+	color: white;
+	text-decoration: underline;
+}
+
+.blog-posts__image-attribution a:hover {
+	color: var(--colour-brand-light);
 }

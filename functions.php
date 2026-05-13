@@ -70,6 +70,7 @@ function observata_admin_bar_styles()
 require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/block-renderer.php';
 require get_template_directory() . '/inc/blocks.php';
+require get_template_directory() . '/inc/unsplash-handler.php';
 
 // Init Timber with views/ directory only.
 // Block templates are loaded via Twig paths added in the timber/loader/loader filter.
@@ -277,6 +278,22 @@ function observata_image_insert_override($sizes)
 	unset($sizes['1536x1536']);
 	unset($sizes['2048x2048']);
 	return $sizes;
+}
+
+// Add WebP MIME type support for uploads.
+add_filter('upload_mimes', 'observata_add_webp_mime_type');
+function observata_add_webp_mime_type($mimes) {
+	$mimes['webp'] = 'image/webp';
+	return $mimes;
+}
+
+// Ensure WordPress recognizes WebP images as displayable.
+add_filter('file_is_displayable_image', 'observata_webp_is_displayable', 10, 2);
+function observata_webp_is_displayable($result, $path) {
+	if ($result === false && pathinfo($path, PATHINFO_EXTENSION) === 'webp') {
+		return true;
+	}
+	return $result;
 }
 
 // Register the primary sidebar widget area.

@@ -12,9 +12,11 @@
 
 				<article id="post-{{ post.ID }}" class="blog-posts__card" style="view-transition-name: {{ view_name }};">
 					{% if post.thumbnail %}
-						<a href="{{ post.link }}" class="blog-posts__image-link">
-							<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="blog-posts__image" loading="lazy"/>
-						</a>
+						<div class="blog-posts__image-container">
+							<a href="{{ post.link }}" class="blog-posts__image-link">
+								<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="blog-posts__image" loading="lazy"/>
+							</a>
+						</div>
 					{% endif %}
 
 					<div class="content">

@@ -9,6 +9,7 @@ module.exports = {
         return {
             ...defaultEntries,
             client: './client/ts/index.ts',
+            'unsplash-sidebar': './src/unsplash-sidebar/index.tsx',
         };
     },
 };

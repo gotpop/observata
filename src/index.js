@@ -1,5 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import blogPaginationMetadata from '../blocks/blog-pagination/block.json';
+import bodyMdMetadata from '../blocks/cards/body-md/block.json';
 import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoShaderMetadata from '../blocks/cards/card-geo-shader/block.json';
 import cardGeoTechMetadata from '../blocks/cards/card-geo-tech/block.json';
@@ -10,7 +12,6 @@ import CardRichTextMetadata from '../blocks/cards/card-rich-text/block.json';
 import cardSimpleMetadata from '../blocks/cards/card-simple/block.json';
 import cardTeamMemberMetadata from '../blocks/cards/card-team-member/block.json';
 import cardTextSimpleMetadata from '../blocks/cards/card-text-simple/block.json';
-import bodyMdMetadata from '../blocks/cards/body-md/block.json';
 import planFeaturesRowMetadata from '../blocks/cards/plan-features-row/block.json';
 import contactDetailsMetadata from '../blocks/contact-details/block.json';
 import contactFormMetadata from '../blocks/contact-form/block.json';
@@ -20,7 +21,6 @@ import heroMetadata from '../blocks/hero-home/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
-import blogPaginationMetadata from '../blocks/blog-pagination/block.json';
 import logoBarMetadata from '../blocks/logo-bar/block.json';
 import observabilityMetadata from '../blocks/observability/block.json';
 import partnershipMetadata from '../blocks/partnership/block.json';
@@ -34,19 +34,25 @@ import gridCardsRichTextMetadata from '../blocks/repeatable/grid-cards-rich-text
 import gridCardsShaderMetadata from '../blocks/repeatable/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/repeatable/grid-cards-simple/block.json';
 import gridCardsTextMetadata from '../blocks/repeatable/grid-cards-text/block.json';
+import panelGraphicCardSimpleTextMetadata from '../blocks/repeatable/panel-graphic-card-simple-text/block.json';
 import planFeaturesTableMetadata from '../blocks/repeatable/plan-features-table/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import pricingTabsMetadata from '../blocks/repeatable/pricing-tabs/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
 import teamMembersMetadata from '../blocks/repeatable/team-members/block.json';
-import panelGraphicCardSimpleTextMetadata from '../blocks/repeatable/panel-graphic-card-simple-text/block.json';
 import richTextMetadata from '../blocks/rich-text/block.json';
+import breadcrumbsMetadata from '../blocks/template/breadcrumbs/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import headerMetadata from '../blocks/template/header/block.json';
 import sectionIntroMetadata from '../blocks/template/section-intro/block.json';
-import breadcrumbsMetadata from '../blocks/template/breadcrumbs/block.json';
+import BlogPaginationEdit from './blog-pagination/edit';
+import BlogPaginationSave from './blog-pagination/save';
 import BlogPostsEdit from './blog-posts/edit';
 import BlogPostsSave from './blog-posts/save';
+import BodyMdEdit from './body-md/edit';
+import BodyMdSave from './body-md/save';
+import BreadcrumbsEdit from './breadcrumbs/edit';
+import BreadcrumbsSave from './breadcrumbs/save';
 import CalloutEdit from './callout/edit';
 import CalloutSave from './callout/save';
 import CardGeoListEdit from './card-geo-list/edit';
@@ -69,8 +75,6 @@ import CardTeamMemberEdit from './card-team-member/edit';
 import CardTeamMemberSave from './card-team-member/save';
 import CardTextSimpleEdit from './card-text-simple/edit';
 import CardTextSimpleSave from './card-text-simple/save';
-import BodyMdEdit from './body-md/edit';
-import BodyMdSave from './body-md/save';
 import ContactDetailsEdit from './contact-details/edit';
 import ContactDetailsSave from './contact-details/save';
 import ContactFormEdit from './contact-form/edit';
@@ -95,20 +99,20 @@ import GridCardsTextEdit from './grid-cards-text/edit';
 import GridCardsTextSave from './grid-cards-text/save';
 import HeroBlogEdit from './hero-blog/edit';
 import HeroBlogSave from './hero-blog/save';
-import HeroPageEdit from './hero-page/edit';
-import HeroPageSave from './hero-page/save';
 import HeroEdit from './hero-home/edit';
 import HeroSave from './hero-home/save';
-import IntroPageEdit from './intro-page/edit';
-import IntroPageSave from './intro-page/save';
+import HeroPageEdit from './hero-page/edit';
+import HeroPageSave from './hero-page/save';
 import IntroEdit from './intro-home/edit';
 import IntroSave from './intro-home/save';
-import BlogPaginationEdit from './blog-pagination/edit';
-import BlogPaginationSave from './blog-pagination/save';
+import IntroPageEdit from './intro-page/edit';
+import IntroPageSave from './intro-page/save';
 import LogoBarEdit from './logo-bar/edit';
 import LogoBarSave from './logo-bar/save';
 import ObservabilityEdit from './observability/edit';
 import ObservabilitySave from './observability/save';
+import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
+import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
 import PartnershipEdit from './partnership/edit';
 import PartnershipSave from './partnership/save';
 import PlanFeaturesRowEdit from './plan-features-row/edit';
@@ -125,11 +129,7 @@ import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
-import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
-import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
 import TeamMembersEdit from './team-members/edit';
-import BreadcrumbsEdit from './breadcrumbs/edit';
-import BreadcrumbsSave from './breadcrumbs/save';
 import TeamMembersSave from './team-members/save';
 
 function createDynamicEdit(label) {
@@ -350,8 +350,8 @@ registerBlockType(cardTextSimpleMetadata.name, {
 
 
 registerBlockType(bodyMdMetadata.name, {
-	edit: BodyMdEdit,
-	save: BodyMdSave,
+    edit: BodyMdEdit,
+    save: BodyMdSave,
 });
 registerBlockType(gridCardsTextMetadata.name, {
     edit: GridCardsTextEdit,
