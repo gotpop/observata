@@ -18,20 +18,4 @@
     <!-- Show progress and colors -->
     <arg value="p"/>
     <arg name="colors"/>
-    
-    <!-- Set severity levels -->
-    <arg name="severity" value="5"/>
-    
-    <!-- Configure specific rules -->
-    <rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
-        <properties>
-            <property name="blank_line_check" value="true"/>
-        </properties>
-    </rule>
-    
-    <!-- Additional WordPress specific rules -->
-    <rule ref="WordPress.WP.I18n"/>
-    <rule ref="WordPress.Security.EscapeOutput"/>
-    <rule ref="WordPress.DB.PreparedSQL"/>
-    <rule ref="WordPress.Security.NonceVerification"/>
 </ruleset>

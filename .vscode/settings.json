@@ -6,14 +6,13 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
-		"source.fixAll.stylelint": "explicit",
-		"source.fixAll.phpcs": "explicit"
+		"source.fixAll.stylelint": "explicit"
 	},
 	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 	"stylelint.validate": ["css"],
 	"prettier.requireConfig": true,
 	"[php]": {
-		"editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+		"editor.defaultFormatter": "wongjn.php-sniffer"
 	},
 	"[twig]": {
 		"editor.defaultFormatter": "junstyle.twig-language"
@@ -25,15 +24,12 @@
 	"cssCustomProperties.languages": ["css"],
 	"php.validate.executablePath": "/usr/bin/php",
 	"phpcs.enable": true,
-	"phpcs.standard": "phpcs.xml",
+	"phpcs.standard": "WordPress",
 	"phpcs.executablePath": "./vendor/bin/phpcs",
 	"phpcs.autoConfigSearch": true,
-	"phpcs.showWarnings": true,
-	"phpcs.showSources": true,
-	"phpcs.ignorePatterns": ["vendor/", "node_modules/", "build/"],
 	"intelephense.environment.phpVersion": "8.2",
 	"intelephense.files.maxSize": 5000000,
-	"intelephense.environment.includePaths": ["./vendor/php-stubs/wordpress-stubs"],
+	"intelephense.environment.php": "/Users/minivan/Local Sites/observata/app/public/wp-content/themes/observata/wp-constants.php",
 	"intelephense.stubs": ["wordpress"],
 	"intelephense.diagnostics.undefinedFunctions": false
 }
