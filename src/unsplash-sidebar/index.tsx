@@ -1,6 +1,7 @@
 import './style.css';
 
 import * as React from 'react';
+
 import { Button, Notice, Spinner, TextControl } from '@wordpress/components';
 import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/editor';
 import { useCallback, useState } from '@wordpress/element';
