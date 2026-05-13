@@ -30,5 +30,12 @@
     ],
     "style": [
         "file:contact-details.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "phone": "+44 (0) 20 1234 5678",
+            "email": "info@observata.com",
+            "address": "London, United Kingdom"
+        }
+    }
 }

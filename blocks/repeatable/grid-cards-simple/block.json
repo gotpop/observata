@@ -23,5 +23,10 @@
     "style": [
         "file:../cards/card-simple/card-simple.css",
         "file:grid-cards-simple.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Services"
+        }
+    }
 }

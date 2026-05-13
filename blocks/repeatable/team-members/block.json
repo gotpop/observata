@@ -30,5 +30,11 @@
         "file:team-members.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Meet the team",
+            "introText": "Get to know the experts behind our solutions."
+        }
+    }
 }

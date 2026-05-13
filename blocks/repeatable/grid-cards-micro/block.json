@@ -60,5 +60,25 @@
         "file:../cards/card-micro/card-micro.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Services",
+            "introText": "Comprehensive solutions for your business needs.",
+            "cards": [
+                {
+                    "cardTitle": "Log analytics",
+                    "cardDescription": "Real-time log ingestion, parsing, and correlation across your entire infrastructure."
+                },
+                {
+                    "cardTitle": "Infrastructure monitoring",
+                    "cardDescription": "Track host, container, and orchestration metrics with intelligent alerting and dashboards."
+                },
+                {
+                    "cardTitle": "APM & tracing",
+                    "cardDescription": "Distributed tracing and application performance monitoring with OpenTelemetry native support."
+                }
+            ]
+        }
+    }
 }

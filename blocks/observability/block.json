@@ -31,5 +31,11 @@
         "file:../cards/card-micro/card-micro.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Being observed is not the same as being observable",
+            "introText": "Most observability stacks were built for dashboards and not decisions."
+        }
+    }
 }

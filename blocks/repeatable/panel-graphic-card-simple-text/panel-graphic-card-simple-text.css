@@ -25,6 +25,7 @@
 	}
 
 	.block-content {
+		padding-inline: var(--spacing-32);
 		display: grid;
 		grid-column: content;
 		grid-template-columns: 1fr;

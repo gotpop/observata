@@ -23,5 +23,11 @@
         }
     },
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-rich-text.css"
+    "style": "file:card-rich-text.css",
+    "example": {
+        "attributes": {
+            "cardTitle": "Card Title",
+            "cardContent": "Rich text content with <strong>formatted</strong> text and other styling."
+        }
+    }
 }

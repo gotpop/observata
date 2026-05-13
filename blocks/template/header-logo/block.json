@@ -9,5 +9,8 @@
         "html": false,
         "multiple": false
     },
-    "style": "file:header-logo.css"
+    "style": "file:header-logo.css",
+    "example": {
+        "attributes": {}
+    }
 }

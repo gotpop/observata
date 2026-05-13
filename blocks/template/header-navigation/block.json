@@ -12,5 +12,8 @@
     "style": [
         "file:header-navigation.css",
         "file:header-navigation-desktop.css"
-    ]
+    ],
+    "example": {
+        "attributes": {}
+    }
 }

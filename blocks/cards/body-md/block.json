@@ -16,5 +16,10 @@
     },
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:body-md.editor.css"
+    "editorStyle": "file:body-md.editor.css",
+    "example": {
+        "attributes": {
+            "content": "Body content with formatted text and paragraph breaks."
+        }
+    }
 }

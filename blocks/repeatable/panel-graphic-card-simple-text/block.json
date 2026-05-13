@@ -24,5 +24,10 @@
     "editorStyle": [
         "file:panel-graphic-card-simple-text.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "backgroundGraphic": ""
+        }
+    }
 }

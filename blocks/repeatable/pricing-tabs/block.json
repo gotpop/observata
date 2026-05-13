@@ -36,5 +36,13 @@
   ],
   "editorStyle": [
     "file:../../build/index.css"
-  ]
+  ],
+  "example": {
+    "attributes": {
+      "activeTab": "observability",
+      "mdrInnerBlocks": [],
+      "observabilityInnerBlocks": [],
+      "searchInnerBlocks": []
+    }
+  }
 }

@@ -38,5 +38,15 @@
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:hero-home.css"
+    "style": "file:hero-home.css",
+    "example": {
+        "attributes": {
+            "heading": "observability & security",
+            "subheading": "unify your AI powered",
+            "ctaText": "Review Your Observability Structure",
+            "ctaUrl": "#",
+            "readMoreText": "Discover",
+            "readMoreUrl": "#"
+        }
+    }
 }

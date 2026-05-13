@@ -33,5 +33,13 @@
     "editorStyle": [
         "file:footer.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "locations": "Denmark | Sweden | Finland | Norway",
+            "copyright": "© Observata AB 2026",
+            "contactEmail": "sales@observata.com",
+            "contactAddress": "Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden"
+        }
+    }
 }

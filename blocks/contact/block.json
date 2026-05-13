@@ -23,5 +23,8 @@
         "file:../contact-details/contact-details.css",
         "file:../contact-form/contact-form.css",
         "file:../template/section-intro/section-intro.css"
-    ]
+    ],
+    "example": {
+        "attributes": {}
+    }
 }

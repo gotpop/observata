@@ -64,5 +64,20 @@
     "editorStyle": [
         "file:plan-features-table.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Compare plans & features",
+            "sectionSubtitle": "Find the right plan for your team.",
+            "plan1Name": "Assisted",
+            "plan1Price": "0kr",
+            "plan1Description": "Lorem ipsum dolor sit amet.",
+            "plan2Name": "Operated",
+            "plan2Price": "50kr",
+            "plan2Description": "Lorem ipsum dolor sit amet.",
+            "plan3Name": "Serviced",
+            "plan3Price": "100kr",
+            "plan3Description": "Lorem ipsum dolor sit amet."
+        }
+    }
 }

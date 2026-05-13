@@ -30,5 +30,11 @@
         "file:../cards/card-geo-shader/card-geo-shader.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Key Benefits",
+            "introText": "Why choose our solution for your business."
+        }
+    }
 }

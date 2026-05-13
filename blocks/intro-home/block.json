@@ -27,5 +27,10 @@
     "editorStyle": [
         "file:intro-home.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Expertise"
+        }
+    }
 }

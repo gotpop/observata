@@ -30,5 +30,11 @@
         "file:pricing-plans.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Simple, transparent pricing",
+            "introText": "Choose the plan that fits your needs. Scale up anytime."
+        }
+    }
 }

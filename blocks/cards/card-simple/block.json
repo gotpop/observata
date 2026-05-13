@@ -23,5 +23,12 @@
         "html": false
     },
     "textdomain": "observata",
-    "style": "file:card-simple.css"
+    "style": "file:card-simple.css",
+    "example": {
+        "attributes": {
+            "title": "Card Title",
+            "description": "Description of the card content.",
+            "iconGeo": "24"
+        }
+    }
 }

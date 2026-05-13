@@ -36,5 +36,13 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-geo-list.css"
+    "style": "file:card-geo-list.css",
+    "example": {
+        "attributes": {
+            "cardTitle": "Feature Title",
+            "listItem1": "First feature benefit",
+            "listItem2": "Second feature benefit",
+            "iconGeo": "24"
+        }
+    }
 }

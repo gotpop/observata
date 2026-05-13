@@ -24,5 +24,10 @@
     ],
     "style": [
         "file:rich-text.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "content": "This is example rich text content that demonstrates how the block will appear on your site. You can format text with <strong>bold</strong>, <em>italic</em>, and other styling options."
+        }
+    }
 }

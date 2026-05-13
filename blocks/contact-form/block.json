@@ -22,5 +22,10 @@
     ],
     "style": [
         "file:contact-form.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "formUrl": "https://forms.zohopublic.eu/Observata/form/Contactusforwebsite/formperma/WZY4ixkroGhjj-TNFSI45yFNmi5QFNBVWTdBcPxWMTE"
+        }
+    }
 }

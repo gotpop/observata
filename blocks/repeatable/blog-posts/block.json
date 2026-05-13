@@ -22,5 +22,10 @@
     ],
     "style": [
         "file:blog-posts.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "postsPerPage": 10
+        }
+    }
 }

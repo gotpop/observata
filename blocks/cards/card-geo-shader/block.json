@@ -32,5 +32,13 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-geo-shader.css"
+    "style": "file:card-geo-shader.css",
+    "example": {
+        "attributes": {
+            "cardTitle": "Benefit Title",
+            "cardText": "Description of the benefit and what it offers.",
+            "iconGeo": "01",
+            "shaderColour": "blue"
+        }
+    }
 }

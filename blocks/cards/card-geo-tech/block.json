@@ -33,5 +33,13 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-geo-tech.css"
+    "style": "file:card-geo-tech.css",
+    "example": {
+        "attributes": {
+            "cardTitle": "Feature Title",
+            "cardText": "Description of the feature and its benefits.",
+            "iconGeo": "24",
+            "backgroundGraphic": ""
+        }
+    }
 }

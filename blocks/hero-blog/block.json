@@ -21,5 +21,11 @@
     },
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:hero-blog.css"
+    "style": "file:hero-blog.css",
+    "example": {
+        "attributes": {
+            "heading": "Building Modern Observability Stacks",
+            "subheading": "Discover how to create scalable, reliable monitoring systems for your applications"
+        }
+    }
 }

@@ -33,5 +33,12 @@
     "editorStyle": [
         "file:grid-cards-graphic.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Features",
+            "introText": "Discover what makes our solution unique.",
+            "backgroundGraphic": ""
+        }
+    }
 }

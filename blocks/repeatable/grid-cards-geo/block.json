@@ -28,5 +28,11 @@
     "editorStyle": [
         "file:grid-cards-geo.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Expertise",
+            "introText": "Explore our comprehensive range of services and solutions."
+        }
+    }
 }

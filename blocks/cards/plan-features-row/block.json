@@ -32,5 +32,13 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:plan-features-row.css"
+    "style": "file:plan-features-row.css",
+    "example": {
+        "attributes": {
+            "featureName": "Feature",
+            "plan1Value": "check",
+            "plan2Value": "check",
+            "plan3Value": "dash"
+        }
+    }
 }

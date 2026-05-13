@@ -24,5 +24,10 @@
     "style": [
         "file:intro-page.css",
         "file:../cards/card-geo-list/card-geo-list.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "graphic": "connected-dots"
+        }
+    }
 }

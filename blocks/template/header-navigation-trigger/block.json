@@ -9,5 +9,8 @@
         "html": false,
         "multiple": false
     },
-    "style": "file:header-navigation-trigger.css"
+    "style": "file:header-navigation-trigger.css",
+    "example": {
+        "attributes": {}
+    }
 }

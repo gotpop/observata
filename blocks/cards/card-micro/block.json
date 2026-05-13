@@ -25,5 +25,11 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-micro.css"
+    "style": "file:card-micro.css",
+    "example": {
+        "attributes": {
+            "cardTitle": "Feature Title",
+            "cardDescription": "A brief description of this feature that highlights its benefits."
+        }
+    }
 }

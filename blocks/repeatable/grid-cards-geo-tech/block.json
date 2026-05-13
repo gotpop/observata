@@ -31,5 +31,11 @@
         "file:../../cards/card-geo-tech/card-geo-tech.css",
         "file:../../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Technology Stack",
+            "introText": "Built on modern, scalable technologies."
+        }
+    }
 }

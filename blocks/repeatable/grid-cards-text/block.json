@@ -23,5 +23,10 @@
     "style": [
         "file:../cards/card-text-simple/card-text-simple.css",
         "file:grid-cards-text.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Content"
+        }
+    }
 }

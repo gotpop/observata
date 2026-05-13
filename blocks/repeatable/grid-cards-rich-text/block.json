@@ -29,5 +29,11 @@
         "file:grid-cards-rich-text.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Our Articles",
+            "introText": "Explore our latest insights and updates."
+        }
+    }
 }

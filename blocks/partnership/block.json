@@ -81,5 +81,24 @@
         "file:partnership.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
-    ]
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "The journey to partnership",
+            "introText": "We don't just do projects. We enter long-term alliances where your success is directly tied to ours.",
+            "ctaText": "Discover how partnership works",
+            "ctaUrl": "#partnership-phase",
+            "phase1Number": "01",
+            "phase1Title": "The entry point",
+            "phase1ItemTitle1": "Migration path",
+            "phase1Text1": "Migrate from your current observability tool to Elastic at no extra cost.",
+            "phase1ItemTitle2": "Optimisation path",
+            "phase1Text2": "Our experts will audit your current set-up and optimise for success.",
+            "phase2Number": "02",
+            "phase2Title": "The partnership",
+            "phase2ItemTitle1": "Partnership phase",
+            "phase2Text1": "Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives.",
+            "phase2Text2": "Our experts will audit your current set-up and optimise for success."
+        }
+    }
 }

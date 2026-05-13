@@ -22,5 +22,11 @@
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:hero-page.css"
+    "style": "file:hero-page.css",
+    "example": {
+        "attributes": {
+            "heading": "About Our Solutions",
+            "subheading": "Enterprise-grade observability and security tools for modern businesses"
+        }
+    }
 }

@@ -35,5 +35,15 @@
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:logo-bar.css"
+    "style": "file:logo-bar.css",
+    "example": {
+        "attributes": {
+            "logos": [
+                {"src": "https://via.placeholder.com/150x50/cccccc/999999?text=Partner+1", "alt": "Partner Logo 1"},
+                {"src": "https://via.placeholder.com/150x50/cccccc/999999?text=Partner+2", "alt": "Partner Logo 2"},
+                {"src": "https://via.placeholder.com/150x50/cccccc/999999?text=Partner+3", "alt": "Partner Logo 3"},
+                {"src": "https://via.placeholder.com/150x50/cccccc/999999?text=Partner+4", "alt": "Partner Logo 4"}
+            ]
+        }
+    }
 }
