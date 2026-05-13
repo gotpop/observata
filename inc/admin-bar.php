@@ -1,14 +1,13 @@
 <?php
 
 // Hide the admin toolbar on the front end.
-add_filter('show_admin_bar', '__return_false');
+add_filter( 'show_admin_bar', '__return_false' );
 
 // Customise the wp-admin bar: brand colour and custom logo.
-add_action('admin_head', 'observata_admin_bar_styles');
-function observata_admin_bar_styles()
-{
-	$logo_id = get_theme_mod('custom_logo');
-	$logo_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'full') : null;
+add_action( 'admin_head', 'observata_admin_bar_styles' );
+function observata_admin_bar_styles() {
+	$logo_id  = get_theme_mod( 'custom_logo' );
+	$logo_url = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : null;
 	?>
 	<style>
 		#wpadminbar,
@@ -48,9 +47,9 @@ function observata_admin_bar_styles()
 			background: #040e18;
 		}
 
-		<?php if ($logo_url): ?>
+		<?php if ( $logo_url ) : ?>
 			#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon {
-				background-image: url('<?php echo esc_url($logo_url); ?>');
+				background-image: url('<?php echo esc_url( $logo_url ); ?>');
 				background-size: contain;
 				background-repeat: no-repeat;
 				background-position: center;

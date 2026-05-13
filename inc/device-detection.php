@@ -1,9 +1,8 @@
 <?php
 
 // Inject device/browser classes on <html> for CSS targeting.
-add_action('wp_footer', 'observata_footer');
-function observata_footer()
-{
+add_action( 'wp_footer', 'observata_footer' );
+function observata_footer() {
 	?>
 	<script>
 		(function () {
