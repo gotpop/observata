@@ -22,19 +22,33 @@
 		}
 	}
 
-	.blog-posts__card {
-		display: flex;
-		flex-direction: column;
+	.card {
 		background: var(--colour-surface-white);
-		border-bottom: 1px solid var(--colour-border-border-gray);
-		padding: var(--spacing-32);
-	}
+		border: 1px solid var(--colour-border-border-gray);
+		/* padding: var(--spacing-32); */
+		border-radius: var(--radius-card);
+		overflow: clip;
 
-	.content {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-16);
-		flex: 1;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+
+		.image-container {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.post-content {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-16);
+			flex: 1;
+			grid-column: 1;
+			grid-row: 1;
+			/* background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400)); */
+			background-image: radial-gradient(circle, rbga(255, 255, 255, 0.9), rbga(255, 255, 255, 0.2));
+			padding: var(--spacing-32);
+		}
 	}
 }
 
@@ -44,7 +58,7 @@
 	gap: var(--spacing-32);
 }
 
-.blog-posts__image-link {
+.image-link {
 	display: block;
 	aspect-ratio: 16 / 9;
 	overflow: hidden;
@@ -55,72 +69,37 @@
 	}
 }
 
-.blog-posts__date {
+.date {
 	font-size: var(--typography-size-12);
 	color: var(--colour-neutral-500);
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 }
 
-.blog-posts__title a {
+.title a {
 	color: var(--colour-text-heading-default);
 	text-decoration: none;
+
+	&:hover {
+		color: var(--colour-brand-light);
+	}
 }
 
-.blog-posts__title a:hover {
-	color: var(--colour-brand-light);
-}
-
-.blog-posts__excerpt {
+.excerpt {
 	font-size: var(--typography-size-14);
 	color: var(--colour-text-body-default);
 	line-height: var(--typography-line-height-relaxed);
 	margin: 0;
 }
 
-.blog-posts__read-more {
+.read-more {
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-semi);
 	color: var(--colour-brand-light);
 	text-decoration: none;
 	margin-top: auto;
-}
 
-.blog-posts__read-more:hover {
-	text-decoration: underline;
-}
-
-.blog-posts__empty {
-	color: var(--colour-neutral-500);
-	font-size: var(--typography-size-16);
-}
-
-.blog-posts__image-container {
-	position: relative;
-}
-
-.blog-posts__image-attribution {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.7);
-	color: white;
-	font-size: var(--typography-size-10);
-	padding: var(--spacing-8);
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
-.blog-posts__image-container:hover .blog-posts__image-attribution {
-	opacity: 1;
-}
-
-.blog-posts__image-attribution a {
-	color: white;
-	text-decoration: underline;
-}
-
-.blog-posts__image-attribution a:hover {
-	color: var(--colour-brand-light);
+	&:hover {
+		text-decoration: underline;
+	}
 }
