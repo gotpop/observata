@@ -16,27 +16,22 @@
 		{% for post in posts %}
 			<article id="post-{{ post.ID }}" class="{{ post.class }}">
 				<header>
-					<h2 class="entry-title">
-						<a href="{{ post.link }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
-					</h2>
+					<h2 class="entry-title"><a href="{{ post.link }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h2>
 					<div class="entry-meta">
 						<span class="author vcard"><span>{{ post.author.name }}</span></span>
-						<span class="meta-sep"> | </span>
+						<span class="meta-sep">|</span>
 						<time class="entry-date" datetime="{{ post.date|date('c') }}" title="{{ post.date|date(function('get_option', 'date_format')) }}">{{ post.date|date(function('get_option', 'date_format')) }}</time>
 					</div>
 				</header>
 				<div class="entry-summary">
 					{% if post.thumbnail %}
-						<a href="{{ post.link }}" title="{{ post.title }}"><img src="{{ post.thumbnail.src }}" alt="{{ post.title }}"></a>
+						<a href="{{ post.link }}" title="{{ post.title }}"><img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" /></a>
 					{% endif %}
 					<div itemprop="description">{{ post.excerpt|raw }}</div>
 				</div>
 			</article>
 		{% endfor %}
-		{{ function('the_posts_navigation', {
-			prev_text: function('sprintf', function('esc_html__', '%s older', 'observata'), '<span class="meta-nav">&larr;</span>'),
-			next_text: function('sprintf', function('esc_html__', 'newer %s', 'observata'), '<span class="meta-nav">&rarr;</span>')
-		}) }}
+		{{ function('the_posts_navigation', { prev_text: function('sprintf', function('esc_html__', '%s older', 'observata'), '<span class="meta-nav">&larr;</span>'), next_text: function('sprintf', function('esc_html__', 'newer %s', 'observata'), '<span class="meta-nav">&rarr;</span>') }) }}
 	{% endif %}
 {% endblock %}
 
