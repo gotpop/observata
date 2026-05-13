@@ -8,9 +8,13 @@
 	display: grid;
 	padding-block: 5rem;
 
+	.card-text-simple {
+		max-width: 600px;
+	}
+
 	.background-graphic {
 		position: absolute;
-		top: 0;
+		top: 420px;
 		right: 0;
 		width: 400px;
 		height: auto;
