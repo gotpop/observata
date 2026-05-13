@@ -12,7 +12,7 @@ export default function CardRichTextEdit({ attributes, setAttributes }) {
     return (
         <article {...blockProps}>
             <BlockLabel name="Card Rich Text" />
-            <div className="card-rich-text__body">
+            <div className="card-body">
                 <RichText
                     tagName="h3"
                     className="heading-md"
