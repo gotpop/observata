@@ -2,8 +2,8 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 export default function CardRichTextEdit({ attributes, setAttributes }) {
     const { cardTitle, cardContent } = attributes;
@@ -15,7 +15,7 @@ export default function CardRichTextEdit({ attributes, setAttributes }) {
             <div className="card-rich-text__body">
                 <RichText
                     tagName="h3"
-                    className="card-rich-text__title"
+                    className="heading-md"
                     value={cardTitle}
                     onChange={(val) => setAttributes({ cardTitle: val })}
                     placeholder={__('Card title…', 'observata')}
@@ -24,7 +24,7 @@ export default function CardRichTextEdit({ attributes, setAttributes }) {
                 />
                 <RichText
                     tagName="div"
-                    className="card-rich-text__content"
+                    className="body-md"
                     value={cardContent}
                     onChange={(val) => setAttributes({ cardContent: val })}
                     placeholder={__('Card content…', 'observata')}
