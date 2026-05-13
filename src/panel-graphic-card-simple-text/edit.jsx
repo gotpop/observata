@@ -8,6 +8,7 @@ import BlockLabel from '../components/block-label';
 const SCIENCE_GRAPHICS = [
     { label: 'None', value: '' },
     { label: 'Connected Dots', value: 'connected-dots-graphic' },
+    { label: 'Europe', value: 'europe-dots-graphic' },
     { label: 'Donut Plane', value: 'donut-plane-graphic' },
     { label: 'Globe Dots', value: 'globe-dots-graphic' },
     { label: 'Globe Lines', value: 'globe-lines-graphic' },
