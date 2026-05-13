@@ -1,4 +1,4 @@
-/* Collection name: Base */
+/* Collection: Base */
 :root {
 	/* Spacing */
 	--spacing-1: 1px;
@@ -130,9 +130,9 @@
 	--typography-family-gantari: Gantari;
 
 	/* Line height */
-	--typography-line-height-default: 1.5;
-	--typography-line-height-tight: 1.100000023841858;
-	--typography-line-height-relaxed: 1.7000000476837158;
+	--typography-line-height-default: 1.6;
+	--typography-line-height-tight: 1.1;
+	--typography-line-height-relaxed: 1.7;
 
 	/* Weight */
 	--typography-weight-regular: 400;
@@ -163,7 +163,7 @@
 	--icon-line-stroke: 0.9;
 }
 
-/* Collection name: Typography */
+/* Collection: Typography */
 :root {
 	/* Font scale */
 	--size-hero-default: var(--typography-size-56);
@@ -177,15 +177,15 @@
 	--size-body-xs: var(--typography-size-12);
 
 	/* Line height */
-	--line-height-hero-default: var(--typography-size-56);
-	--line-height-heading-xl: 56px;
-	--line-height-heading-lg: 40px;
-	--line-height-heading-md: 32px;
-	--line-height-heading-sm: 24px;
-	--line-height-body-xs: 18px;
-	--line-height-body-sm: 20px;
-	--line-height-body-md: 24px;
-	--line-height-body-lg: 30px;
+	--line-height-hero-default: var(--typography-line-height-tight);
+	--line-height-heading-xl: var(--typography-line-height-tight);
+	--line-height-heading-lg: var(--typography-line-height-tight);
+	--line-height-heading-md: var(--typography-line-height-tight);
+	--line-height-heading-sm: var(--typography-line-height-tight);
+	--line-height-body-xs: var(--typography-line-height-default);
+	--line-height-body-sm: var(--typography-line-height-default);
+	--line-height-body-md: var(--typography-line-height-default);
+	--line-height-body-lg: var(--typography-line-height-default);
 
 	/* Font stack */
 	--font-stack: system-ui, -apple-system, sans-serif;
@@ -193,11 +193,12 @@
 	--font-stack-body: var(--typography-family-inter) var(--font-stack);
 }
 
-/* Collection name: Alias */
+/* Collection: Alias */
 :root {
 	/* Hero */
 	--colour-text-hero: var(--colour-text-heading-default);
 	--colour-text-hero-subheading: var(--colour-text-body-default);
+
 	/* Text */
 	--colour-text-heading-default: var(--colour-neutral-800);
 	--colour-text-body-default: var(--colour-neutral-600);
@@ -209,6 +210,8 @@
 	--colour-surface-light-gray: #f0f0f0;
 	--colour-surface-white: var(--colour-neutral-white);
 	--colour-surface-white-transparent: rgba(255, 255, 255, 0.8);
+
+	/* Borders */
 	--colour-border-border-gray: #e5e7ea;
 	--colour-border-border-light: #f2f3f5;
 }

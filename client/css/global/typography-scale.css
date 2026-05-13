@@ -40,7 +40,6 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0px;
 	line-height: var(--line, var(--line-height-heading-md));
-	line-height: 1.2;
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-md);
@@ -66,7 +65,7 @@
 	color: var(--colour-text-hero-subheading);
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-regular);
-	line-height: 1.5;
+	line-height: var(--line-height-body-lg);
 
 	@media (width >=40rem) {
 		--size: var(--typography-size-20);
@@ -77,14 +76,14 @@
 	color: var(--colour-text-body-default);
 	font-size: var(--typography-size-20);
 	font-weight: var(--typography-weight-regular);
-	line-height: 1.5;
+	line-height: var(--line-height-body-lg);
 }
 
 .body-md {
 	color: var(--colour-text-body-default);
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
-	line-height: 1.5;
+	line-height: var(--line-height-body-md);
 }
 
 .body-sm {
@@ -92,4 +91,5 @@
 	font-size: var(--typography-size-14);
 	line-height: 1.5;
 	font-weight: var(--typography-weight-regular);
+	line-height: var(--line-height-body-sm);
 }
