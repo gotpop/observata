@@ -5,7 +5,7 @@
 
 <section class="section-block blog-posts">
 	<block-content class="block-content">
-		<div class="blog-posts__grid">
+		<blog-posts-grid class="blog-posts-grid">
 			{% for post in posts %}
 				{# Use post slug for view-transition-name #}
 				{% set view_name = post.post_name|default('post-' ~ post.ID) %}
@@ -13,28 +13,21 @@
 				<article id="post-{{ post.ID }}" class="blog-posts__card" style="view-transition-name: {{ view_name }};">
 					{% if post.thumbnail %}
 						<div class="blog-posts__image-container">
-							<a href="{{ post.link }}" class="blog-posts__image-link">
-								<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="blog-posts__image" loading="lazy"/>
-							</a>
+							<a href="{{ post.link }}" class="blog-posts__image-link"><img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="blog-posts__image" loading="lazy" /></a>
 						</div>
 					{% endif %}
 
-					<div class="content">
-						<time class="blog-posts__date" datetime="{{ post.date|date('c') }}">
-							{{ post.date|date('F j, Y') }}
-						</time>
+					<post-content class="post-content">
+						<time class="blog-posts__date" datetime="{{ post.date|date('c') }}">{{ post.date|date('F j, Y') }}</time>
 
-						<h3 class="heading-md" style="view-transition-name: heading-{{ view_name }};">
-							<a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a>
-						</h3>
+						<h3 class="heading-md" style="view-transition-name: heading-{{ view_name }};"><a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a></h3>
 
-						<a href="{{ post.link }}" class="blog-posts__read-more">
-							Read more
-						</a>
-					</div>
+						<a href="{{ post.link }}" class="blog-posts__read-more">Read more</a>
+					</post-content>
 				</article>
 			{% else %}
 				<p class="blog-posts__empty">No posts found.</p>
 			{% endfor %}
-		</block-content>
-	</section>
+		</blog-posts-grid>
+	</block-content>
+</section>
