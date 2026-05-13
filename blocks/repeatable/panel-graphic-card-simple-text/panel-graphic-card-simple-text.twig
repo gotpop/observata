@@ -1,13 +1,10 @@
 {% set background_graphic = attributes.backgroundGraphic|default('') %}
 
-<section class="block-panel-graphic-card-simple-text">
+<section class="section-block block-panel-graphic-card-simple-text" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
 	<block-content class="block-content">
 		{% if background_graphic %}
-			<div class="background-graphic">
-				{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
-			</div>
+			{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
 		{% endif %}
 		{{ content|raw }}
-
 	</block-content>
 </section>

@@ -40,6 +40,7 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0px;
 	line-height: var(--line, var(--line-height-heading-md));
+	line-height: 1.2;
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-md);
