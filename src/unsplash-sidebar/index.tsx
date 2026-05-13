@@ -1,5 +1,6 @@
 import './style.css';
 
+import * as React from 'react';
 import { Button, Notice, Spinner, TextControl } from '@wordpress/components';
 import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/editor';
 import { useCallback, useState } from '@wordpress/element';
@@ -34,6 +35,8 @@ interface SearchResponse {
 	images: UnsplashImage[];
 	total: number;
 	total_pages: number;
+	code?: string;
+	message?: string;
 }
 
 const UnsplashSidebar: React.FC = () => {
@@ -59,7 +62,7 @@ const UnsplashSidebar: React.FC = () => {
 		try {
 			const response = await fetch(`/wp-json/wp/v2/unsplash/search?query=${encodeURIComponent(query)}&page=${page}&per_page=12`, {
 				headers: {
-					'X-WP-Nonce': (window as any).wpApiSettings?.nonce || '',
+					'X-WP-Nonce': (window as typeof window & { wpApiSettings?: { nonce?: string } }).wpApiSettings?.nonce || '',
 				},
 			});
 			const data: SearchResponse = await response.json();
@@ -77,7 +80,7 @@ const UnsplashSidebar: React.FC = () => {
 			setSearchResults(data.images);
 			setTotalPages(data.total_pages);
 			setCurrentPage(page);
-		} catch (err) {
+		} catch {
 			setError('Network error. Please check your connection and try again.');
 			setSearchResults([]);
 		} finally {
@@ -111,7 +114,7 @@ const UnsplashSidebar: React.FC = () => {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					'X-WP-Nonce': (window as any).wpApiSettings?.nonce || '',
+					'X-WP-Nonce': (window as typeof window & { wpApiSettings?: { nonce?: string } }).wpApiSettings?.nonce || '',
 				},
 				body: JSON.stringify({
 					image_url: image.urls.regular,
@@ -130,7 +133,7 @@ const UnsplashSidebar: React.FC = () => {
 			if (data.success && data.attachment_id) {
 				editPost({ featured_media: data.attachment_id });
 			}
-		} catch (err) {
+		} catch {
 			setError('Network error while downloading image. Please try again.');
 		} finally {
 			setIsDownloading(null);
@@ -151,7 +154,7 @@ const UnsplashSidebar: React.FC = () => {
 					<form onSubmit={handleSearch} className="unsplash-sidebar__search-form">
 						<TextControl
 							value={searchQuery}
-							onChange={(value) => setSearchQuery(value)}
+							onChange={(value: string) => setSearchQuery(value)}
 							placeholder="Search for images..."
 							className="unsplash-sidebar__search-input"
 						/>
@@ -181,7 +184,7 @@ const UnsplashSidebar: React.FC = () => {
 					{!isLoading && searchResults.length > 0 && (
 						<>
 							<div className="unsplash-sidebar__grid">
-								{searchResults.map((image) => (
+								{searchResults.map((image: UnsplashImage) => (
 									<div
 										key={image.id}
 										className="unsplash-sidebar__image-card"
