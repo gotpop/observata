@@ -6,20 +6,34 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
-		"source.fixAll.stylelint": "explicit"
+		"source.fixAll.stylelint": "explicit",
+		"source.fixAll.phpcs": "explicit"
 	},
 	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 	"stylelint.validate": ["css"],
 	"prettier.requireConfig": true,
 	"[php]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "DEVSENSE.phptools-vscode"
 	},
 	"[twig]": {
-		"editor.defaultFormatter": "serhatkaya.twig-formatter"
+		"editor.defaultFormatter": "junstyle.twig-language"
 	},
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"cssCustomProperties.files": ["**/*.css"],
-	"cssCustomProperties.languages": ["css"]
+	"cssCustomProperties.languages": ["css"],
+	"php.validate.executablePath": "/usr/bin/php",
+	"phpcs.enable": true,
+	"phpcs.standard": "phpcs.xml",
+	"phpcs.executablePath": "./vendor/bin/phpcs",
+	"phpcs.autoConfigSearch": true,
+	"phpcs.showWarnings": true,
+	"phpcs.showSources": true,
+	"phpcs.ignorePatterns": ["vendor/", "node_modules/", "build/"],
+	"intelephense.environment.phpVersion": "8.2",
+	"intelephense.files.maxSize": 5000000,
+	"intelephense.environment.includePaths": ["./vendor/php-stubs/wordpress-stubs"],
+	"intelephense.stubs": ["wordpress"],
+	"intelephense.diagnostics.undefinedFunctions": false
 }

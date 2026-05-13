@@ -20,7 +20,3 @@ require get_template_directory() . '/inc/comments.php';
 require get_template_directory() . '/inc/block-renderer.php';
 require get_template_directory() . '/inc/blocks.php';
 require get_template_directory() . '/inc/unsplash-handler.php';
-
-
-
-

@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Compatibility shim for wp_body_open().
 if (!function_exists('observata_wp_body_open')) {
 	function observata_wp_body_open()
