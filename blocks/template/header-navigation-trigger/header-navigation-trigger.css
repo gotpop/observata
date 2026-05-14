@@ -1,67 +1,49 @@
-/* .trigger-navigation {
+button-toggle {
+	--background-color: transparent;
+	--button-toggle-color: var(--colour-primary-100);
+	--padding-right: 1rem;
+
+	align-items: center;
+	anchor-name: --buttonToggle;
+	border: none;
+	color: var(--button-toggle-color);
+	cursor: pointer;
 	display: flex;
+	font-size: var(--typography-size-16);
 	grid-area: trigger;
+	height: 4rem;
+	justify-content: center;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
 
-	@media (width >= 40rem) {
-		display: none;
-	}
-} */
-
-@scope (button-toggle) {
-	:scope {
-		--background-color: transparent;
-		--button-toggle-color: var(--colour-primary-100);
-		/* --padding-right: calc(var(--spacing-md) + var(--scrollbar-width)); */
-		--padding-right: 1rem;
-
-		align-items: center;
-		anchor-name: --buttonToggle;
+	button {
+		background: none;
 		border: none;
-		color: var(--button-toggle-color);
+		color: var(--colour-neutral-100);
 		cursor: pointer;
 		display: flex;
-		font-size: var(--typography-size-16);
-		grid-area: trigger;
-		height: 4rem;
 		justify-content: center;
-		transition:
-			background-color 0.2s ease,
-			color 0.2s ease;
+		outline: none;
+		width: 100%;
+		padding: 0;
 
-		button {
-			background: none;
-			border: none;
-			color: var(--colour-neutral-100);
-			cursor: pointer;
-			display: flex;
-			justify-content: center;
-			outline: none;
-			width: 100%;
-			padding: 0;
-
-			.sr-only {
-				display: none;
-			}
-		}
-
-		&:is(:hover, :active) {
-			--background-color: var(--colour-secondary-600);
-			--button-toggle-color: var(--colour-secondary-300);
-		}
-
-		@media (width >= 48rem) {
+		.sr-only {
 			display: none;
 		}
+	}
+
+	&:is(:hover, :active) {
+		--background-color: var(--colour-secondary-600);
+		--button-toggle-color: var(--colour-secondary-300);
+	}
+
+	@media (width >= 48rem) {
+		display: none;
 	}
 }
 
 icon-hamburger {
-	--bg: linear-gradient(
-		to bottom,
-		transparent 0 calc(50% - var(--line)),
-		currentColor calc(50% - var(--line)) calc(50% + var(--line)),
-		transparent calc(50% + var(--line)) 100%
-	);
 	--after-bottom: 0;
 	--after-rotate: 0deg;
 	--after-y: 0;
@@ -73,7 +55,6 @@ icon-hamburger {
 	--transition: translate 0.2s ease, rotate 0.2s ease, bottom 0.2s ease;
 
 	aspect-ratio: 1;
-	background: var(--hamburger-bg);
 	display: block;
 	position: relative;
 	transition: background 0.2s ease;

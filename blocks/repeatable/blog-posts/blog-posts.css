@@ -10,14 +10,6 @@
 		display: grid;
 		gap: var(--spacing-32);
 		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-
-		/* &:has(:is(.read-more:hover, .heading-post a:hover)) .card-blog-post {
-			opacity: 0.5;
-		}
-
-		&:has(.card-blog-post:hover) .card-blog-post:hover {
-			opacity: 1;
-		} */
 	}
 
 	.card-blog-post {
@@ -34,6 +26,10 @@
 		transition: all 0.3s ease-in-out;
 
 		&:has(a:hover) {
+			--img-inset: 50% -8% 0 auto;
+			--img-rad: 200% 34% 0 42%;
+			--img-height: 140%;
+
 			border-color: var(--colour-secondary-base);
 			transition: border-color 0.3s ease-in-out;
 		}
@@ -68,13 +64,14 @@
 
 		.wrappper-img {
 			width: 200px;
-			height: 120%;
-			inset: 50% -5% 0 auto;
-			border-radius: 600% 0 0 0;
+			height: var(--img-height, 120%);
+			inset: var(--img-inset, 50% -5% 0 auto);
+			border-radius: var(--img-rad, 600% 0 0 0);
 			translate: 0 -50%;
 			position: absolute;
 			overflow: clip;
 			z-index: -1;
+			transition: all 0.3s 0.3s ease-in-out;
 
 			&::after {
 				content: '';
@@ -138,6 +135,7 @@
 		align-self: end;
 		text-underline-offset: 0.1em;
 		transition: all 0.3s ease-in-out;
+		display: inline-flex;
 
 		&:hover {
 			text-decoration-color: var(--colour-accent-1-400);
