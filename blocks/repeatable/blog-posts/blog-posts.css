@@ -9,20 +9,29 @@
 	.blog-posts-grid {
 		display: grid;
 		gap: var(--spacing-32);
-		grid-template-columns: subgrid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+		/* &:has(:is(.read-more:hover, .heading-post a:hover)) .card-blog-post {
+			opacity: 0.5;
+		}
+
+		&:has(.card-blog-post:hover) .card-blog-post:hover {
+			opacity: 1;
+		} */
 	}
 
 	.card-blog-post {
 		background: var(--colour-surface-white);
-		border: 1px solid var(--colour-border-border-gray);
 		border-radius: var(--radius-card);
-		overflow: clip;
+		border: 1px solid var(--colour-border-border-gray);
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: min-content 1fr min-content min-content;
+		overflow: clip;
+		padding-block: var(--spacing-32);
+		padding-inline: var(--spacing-32) 180px;
 		position: relative;
+		row-gap: var(--spacing-24);
+		transition: all 0.3s ease-in-out;
 
 		&:has(a:hover) {
 			border-color: var(--colour-secondary-base);
@@ -49,16 +58,6 @@
 			}
 		}
 
-		.post-content {
-			display: grid;
-			gap: var(--spacing-24);
-			grid-column: 1;
-			grid-row: 1 / -1;
-			grid-template-columns: 1fr;
-			grid-template-rows: subgrid;
-			padding: var(--spacing-32);
-		}
-
 		.post-main {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -73,10 +72,9 @@
 			inset: 50% -5% 0 auto;
 			border-radius: 600% 0 0 0;
 			translate: 0 -50%;
-			grid-row: 1;
-			grid-column: 1;
 			position: absolute;
 			overflow: clip;
+			z-index: -1;
 
 			&::after {
 				content: '';
@@ -89,7 +87,6 @@
 		}
 
 		.post-img {
-			inset: 0;
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
@@ -126,7 +123,8 @@
 	}
 
 	.post-excerpt {
-		max-width: 37ch;
+		max-width: 60ch;
+		text-wrap: pretty;
 	}
 
 	.read-more {
@@ -136,14 +134,15 @@
 		text-decoration: none;
 		margin-top: auto;
 		margin-top: 1rem;
+		height: min-content;
+		align-self: end;
+		text-underline-offset: 0.1em;
+		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			text-decoration: underline;
-			color: var(--colour-accent-1-400);
-			transition: color 0.3s ease-in-out;
-			text-decoration-color: var(--colour-primary-400);
+			text-decoration-color: var(--colour-accent-1-400);
 			text-decoration-thickness: 1.5px;
-			text-decoration: underline;
+			text-decoration-line: underline;
 			text-underline-offset: 0.3em;
 		}
 	}
