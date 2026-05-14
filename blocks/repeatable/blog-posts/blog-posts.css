@@ -1,5 +1,3 @@
-/* Blog Posts - responsive card grid */
-
 .block-content {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -9,15 +7,19 @@
 .blog-posts {
 	grid-column: content;
 
-	.heading-md {
+	.heading-post {
+		max-width: 20ch;
+		text-wrap: balance;
+		color: var(--colour-text-heading-default);
+
 		a {
 			text-decoration: none;
-			color: var(--colour-text-heading-default);
 			transition: color 0.3s ease;
+			color: inherit;
 
 			&:hover {
 				text-decoration: underline;
-				color: var(--colour-secondary-500);
+				color: var(--colour-secondary-base);
 			}
 		}
 	}
@@ -29,39 +31,19 @@
 		overflow: clip;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
+		grid-template-rows: min-content 1fr min-content min-content;
 		position: relative;
 
-		.post-img {
-			width: 200px;
-			height: 100%;
-			object-fit: cover;
-			inset: 0 0 0 auto;
-			position: absolute;
-			border-radius: 100% 0 0 0;
-			grid-column: 1;
-			grid-row: 1;
-		}
-
-		.image-container {
-			grid-column: 1;
-			grid-row: 1;
-			position: relative;
-
-			.post-img {
-				width: 200px;
-				height: 100%;
-				object-fit: cover;
-				inset: 0 0 0 auto;
-				position: absolute;
-				border-radius: 100% 0 0 0;
-			}
+		&:hover {
+			border-color: var(--colour-secondary-base);
+			transition: border-color 0.3s ease-in-out;
 		}
 
 		.post-content {
-			display: flex;
-			flex-direction: column;
-			gap: var(--spacing-16);
+			display: grid;
+			grid-template-rows: subgrid;
+			grid-template-columns: 1fr;
+			gap: var(--spacing-24);
 			flex: 1;
 			grid-column: 1;
 			grid-row: 1;
@@ -75,6 +57,34 @@
 			);
 
 			padding: var(--spacing-32);
+			grid-row: 1 / -1;
+		}
+
+		.post-main {
+			display: grid;
+			grid-template-columns: 1fr;
+			row-gap: var(--spacing-24);
+			grid-template-rows: subgrid;
+			grid-row: 2 / 4;
+		}
+
+		.post-img {
+			width: 200px;
+			height: 100%;
+			object-fit: cover;
+			inset: 0 0 0 auto;
+			position: absolute;
+			border-radius: 100% 0 0 0;
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.date {
+			font-size: var(--typography-size-12);
+			color: var(--colour-neutral-500);
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			grid-row: 1;
 		}
 	}
 }
@@ -96,13 +106,6 @@
 	}
 }
 
-.date {
-	font-size: var(--typography-size-12);
-	color: var(--colour-neutral-500);
-	letter-spacing: 0.02em;
-	text-transform: uppercase;
-}
-
 .title a {
 	color: var(--colour-text-heading-default);
 	text-decoration: none;
@@ -117,7 +120,7 @@
 }
 
 .read-more {
-	font-size: var(--typography-size-14);
+	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-semi);
 	color: var(--colour-brand-light);
 	text-decoration: none;
