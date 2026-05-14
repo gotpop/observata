@@ -32,9 +32,9 @@
 			height: var(--size);
 			mask-image: url(#mask-europe);
 			position: absolute;
-			width: var(--size);
+			width: calc(var(--size) + 100px);
 			z-index: 1;
-			inset: 50% 0 0 auto;
+			inset: 50% -100px 0 auto;
 			translate: 0 -50%;
 		}
 
@@ -66,13 +66,14 @@
 		padding-inline: var(--spacing-32);
 		display: grid;
 		grid-column: content;
-		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		column-gap: var(--spacing-60);
+		row-gap: var(--spacing-80);
 		position: relative;
 		z-index: 1;
 
 		.graphic-tech {
-			height: calc(100% - 4rem);
+			height: calc(500px - 4rem);
 			position: relative;
 		}
 	}
