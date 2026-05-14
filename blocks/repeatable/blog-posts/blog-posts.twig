@@ -7,7 +7,7 @@
 	<block-content class="block-content">
 		<blog-posts-grid class="blog-posts-grid">
 			{% for post in posts %}
-				{% include 'partials/card-blog-post.twig' with post=post only %}
+				{% include 'partials/card-blog-post.twig' with { post: post } only %}
 			{% else %}
 				<p class="blog-posts__empty">No posts found.</p>
 			{% endfor %}

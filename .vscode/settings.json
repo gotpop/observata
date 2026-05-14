@@ -17,6 +17,13 @@
 	"[twig]": {
 		"editor.defaultFormatter": "junstyle.twig-language"
 	},
+	"twig-language.diagnostics": {
+		"deprecatedInclude": "ignore"
+	},
+	"twig-language.syntax": {
+		"allowDeprecatedInclude": true
+	},
+	"twig-language.enable": true,
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
