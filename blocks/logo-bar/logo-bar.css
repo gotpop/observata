@@ -5,7 +5,7 @@
 	grid-column: full;
 	grid-template-columns: subgrid;
 	padding: var(--spacing-24);
-	view-transition-name: trust-bar;
+	/* view-transition-name: trust-bar; */
 
 	@media (width >=40rem) {
 		padding: var(--spacing-32) var(--spacing-64);
