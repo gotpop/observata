@@ -55,11 +55,24 @@ icon-hamburger {
 	--transition: translate 0.2s ease, rotate 0.2s ease, bottom 0.2s ease;
 
 	aspect-ratio: 1;
-	display: block;
+	display: flex;
 	position: relative;
 	transition: background 0.2s ease;
 	width: var(--spacing-32);
 	color: var(--colour-primary-600);
+
+	.centre {
+		background-color: currentColor;
+		width: 100%;
+		height: 6px;
+		display: inline flex;
+		align-self: center;
+		border-radius: 3px;
+
+		.is-active & {
+			background-color: transparent;
+		}
+	}
 
 	&::before,
 	&::after {
@@ -74,7 +87,8 @@ icon-hamburger {
 		transform-origin: center;
 		transition: var(--transition);
 		translate: 0 var(--y, 0);
-		width: stretch;
+		width: 100%;
+		border-radius: 3px;
 	}
 
 	&::before {
