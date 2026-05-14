@@ -9,7 +9,7 @@
 	.blog-posts-grid {
 		display: grid;
 		gap: var(--spacing-32);
-		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	}
 
 	.card-blog-post {

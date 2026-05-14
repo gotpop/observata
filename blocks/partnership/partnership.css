@@ -1,6 +1,6 @@
 .block-partnership {
 	overflow: clip;
-	/* view-transition-name: partnership; */
+	view-transition-name: partnership;
 
 	.graphic-tech {
 		grid-column: breakout;
