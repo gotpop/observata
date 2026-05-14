@@ -1,30 +1,20 @@
-.block-content {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	grid-column: content;
-}
-
 .blog-posts {
 	grid-column: content;
 
-	.heading-post {
-		max-width: 20ch;
-		text-wrap: balance;
-		color: var(--colour-text-heading-default);
-
-		a {
-			text-decoration: none;
-			transition: color 0.3s ease;
-			color: inherit;
-
-			&:hover {
-				text-decoration: underline;
-				color: var(--colour-secondary-base);
-			}
-		}
+	.block-content {
+		display: grid;
+		grid-column: content;
 	}
 
-	.card {
+	.blog-posts-grid {
+		display: grid;
+		gap: var(--spacing-32);
+		grid-template-columns: subgrid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		display: grid;
+	}
+
+	.card-blog-post {
 		background: var(--colour-surface-white);
 		border: 1px solid var(--colour-border-border-gray);
 		border-radius: var(--radius-card);
@@ -34,30 +24,39 @@
 		grid-template-rows: min-content 1fr min-content min-content;
 		position: relative;
 
-		&:hover {
+		&:has(a:hover) {
 			border-color: var(--colour-secondary-base);
 			transition: border-color 0.3s ease-in-out;
 		}
 
+		.heading-post {
+			max-width: 20ch;
+			text-wrap: balance;
+			color: var(--colour-text-heading-default);
+			line-height: 1.2;
+
+			a {
+				text-decoration: none;
+				transition: color 0.3s ease;
+				color: inherit;
+
+				&:hover {
+					color: var(--colour-secondary-base);
+					text-decoration-color: var(--colour-accent-1-400);
+					text-decoration-thickness: 1.5px;
+					text-decoration-line: underline;
+				}
+			}
+		}
+
 		.post-content {
 			display: grid;
-			grid-template-rows: subgrid;
-			grid-template-columns: 1fr;
 			gap: var(--spacing-24);
-			flex: 1;
 			grid-column: 1;
-			grid-row: 1;
-			backdrop-filter: grayscale(1);
-			/* background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400)); */
-			background-image:
-				/* radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2)), */ linear-gradient(
-				to bottom,
-				rgba(255, 255, 255, 0.9),
-				rgba(255, 255, 255, 0.6)
-			);
-
-			padding: var(--spacing-32);
 			grid-row: 1 / -1;
+			grid-template-columns: 1fr;
+			grid-template-rows: subgrid;
+			padding: var(--spacing-32);
 		}
 
 		.post-main {
@@ -68,15 +67,33 @@
 			grid-row: 2 / 4;
 		}
 
-		.post-img {
+		.wrappper-img {
 			width: 200px;
-			height: 100%;
-			object-fit: cover;
-			inset: 0 0 0 auto;
-			position: absolute;
-			border-radius: 100% 0 0 0;
-			grid-column: 1;
+			height: 120%;
+			inset: 50% -5% 0 auto;
+			border-radius: 600% 0 0 0;
+			translate: 0 -50%;
 			grid-row: 1;
+			grid-column: 1;
+			position: absolute;
+			overflow: clip;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				height: 100%;
+				width: 100%;
+				background-image: linear-gradient(to bottom, var(--colour-primary-600), rgba(255, 255, 255, 0.6));
+			}
+		}
+
+		.post-img {
+			inset: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
 		}
 
 		.date {
@@ -87,46 +104,47 @@
 			grid-row: 1;
 		}
 	}
-}
 
-.blog-posts-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: var(--spacing-32);
-}
-
-.image-link {
-	display: block;
-	aspect-ratio: 16 / 9;
-	overflow: hidden;
-
-	img {
+	.image-link {
 		display: block;
-		max-width: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
 	}
-}
 
-.title a {
-	color: var(--colour-text-heading-default);
-	text-decoration: none;
+	.title a {
+		color: var(--colour-text-heading-default);
+		text-decoration: none;
 
-	&:hover {
+		&:hover {
+			color: var(--colour-brand-light);
+		}
+	}
+
+	.post-excerpt {
+		max-width: 37ch;
+	}
+
+	.read-more {
+		font-size: var(--typography-size-16);
+		font-weight: var(--typography-weight-semi);
 		color: var(--colour-brand-light);
-	}
-}
+		text-decoration: none;
+		margin-top: auto;
+		margin-top: 1rem;
 
-.post-excerpt {
-	max-width: 30ch;
-}
-
-.read-more {
-	font-size: var(--typography-size-16);
-	font-weight: var(--typography-weight-semi);
-	color: var(--colour-brand-light);
-	text-decoration: none;
-	margin-top: auto;
-
-	&:hover {
-		text-decoration: underline;
+		&:hover {
+			text-decoration: underline;
+			color: var(--colour-accent-1-400);
+			transition: color 0.3s ease-in-out;
+			text-decoration-color: var(--colour-primary-400);
+			text-decoration-thickness: 1.5px;
+			text-decoration: underline;
+			text-underline-offset: 0.3em;
+		}
 	}
 }

@@ -6,9 +6,11 @@
 {# Use post slug for view-transition-name #}
 {% set view_name = post.post_name|default('post-' ~ post.ID) %}
 
-<article class="card" id="post-{{ post.ID }}" style="view-transition-name: {{ view_name }};">
+<article class="card-blog-post" id="post-{{ post.ID }}" style="view-transition-name: {{ view_name }};">
 	{% if post.thumbnail %}
-		<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="image post-img" loading="lazy" />
+		<wrappper-img class="wrappper-img">
+			<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.title }}" class="image post-img" loading="lazy" />
+		</wrappper-img>
 	{% endif %}
 
 	<post-content class="post-content">
