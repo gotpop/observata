@@ -7,7 +7,7 @@
 }
 
 .blog-posts {
-	width: 100%;
+	grid-column: content;
 
 	.heading-md {
 		a {
