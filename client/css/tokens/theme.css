@@ -25,4 +25,18 @@
 	--icon-line-colour: var(--colour-brand-light);
 	--icon-circle-colour: var(--colour-brand-dark);
 	--icon-line-stroke: 0.9;
+
+	/* Radius */
+	--radius-minimal: 4px;
+	--radius-standard: 8px;
+	--radius-comfortable: 13px;
+	--radius-generous: 16px;
+	--radius-large: 20px;
+	--radius-card: 24px;
+	--radius-pill: 9999px;
+	--radius-circle: 50%;
+
+	/* Sizing */
+	--sizing-width-site: 1440px;
+	--sizing-width-content: 1200px;
 }

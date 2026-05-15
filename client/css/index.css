@@ -1,7 +1,7 @@
 /* Base */
-@import './tokens/variables.css';
-@import './tokens/base-typography.css';
 @import './tokens/base-spacing.css';
+@import './tokens/base-swatch.css';
+@import './tokens/base-typography.css';
 
 /* Theme */
 @import './tokens/theme-typography.css';

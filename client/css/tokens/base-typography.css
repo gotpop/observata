@@ -1,19 +1,5 @@
 /* Collection: Base */
 :root {
-	/* Radius */
-	--radius-minimal: 4px;
-	--radius-standard: 8px;
-	--radius-comfortable: 13px;
-	--radius-generous: 16px;
-	--radius-large: 20px;
-	--radius-card: 24px;
-	--radius-pill: 9999px;
-	--radius-circle: 50%;
-
-	/* Sizing */
-	--sizing-width-site: 1440px;
-	--sizing-width-content: 1200px;
-
 	/* Family */
 	--typography-family-inter: Inter;
 	--typography-family-gantari: Gantari;
