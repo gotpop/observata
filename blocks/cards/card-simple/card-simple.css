@@ -28,4 +28,25 @@
 		letter-spacing: -0.08px;
 		text-wrap: pretty;
 	}
+
+	.read-more {
+		font-size: var(--typography-size-16);
+		font-weight: var(--typography-weight-semi);
+		color: var(--colour-brand-light);
+		text-decoration: none;
+		margin-top: auto;
+		margin-top: 1rem;
+		height: min-content;
+		align-self: end;
+		text-underline-offset: 0.1em;
+		transition: all 0.3s ease-in-out;
+		display: inline-flex;
+
+		&:hover {
+			text-decoration-color: var(--colour-accent-1-400);
+			text-decoration-thickness: 1.5px;
+			text-decoration-line: underline;
+			text-underline-offset: 0.3em;
+		}
+	}
 }

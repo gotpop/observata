@@ -37,7 +37,7 @@ main {
 }
 
 .section-block {
-	background-color: var(--colour-surface-white);
+	background-color: var(--section-bg-colour, var(--colour-surface-white));
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	display: grid;
 	grid-column: full;

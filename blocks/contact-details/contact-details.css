@@ -1,11 +1,12 @@
 .contact-details {
+	align-self: start;
+	background-color: var(--colour-neutral-white);
+	border-radius: var(--radius-card);
+	border: 1px solid var(--colour-border-border-gray);
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-24);
-	border: 1px solid var(--colour-border-border-gray);
 	padding: var(--spacing-32);
-	border-radius: var(--radius-card);
-	align-self: start;
 
 	@media (width >=64rem) {
 		grid-area: details;

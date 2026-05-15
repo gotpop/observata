@@ -19,5 +19,14 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
 		row-gap: var(--spacing-32);
+
+		.section-intro-title {
+			text-wrap: balance;
+		}
+
+		.section-intro-text {
+			max-width: 70ch;
+			text-wrap: pretty;
+		}
 	}
 }

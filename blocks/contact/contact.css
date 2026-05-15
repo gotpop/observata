@@ -1,10 +1,12 @@
 .block-contact {
+	--section-bg-colour: var(--colour-neutral-100);
+
 	.block-content {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: var(--spacing-40);
+		row-gap: var(--spacing-48);
+		column-gap: var(--spacing-40);
 		grid-column: content;
-		/* grid-template-areas: 'intro details form'; */
 		grid-template-columns: 1fr;
 
 		@media (width >=64rem) {

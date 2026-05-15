@@ -1,18 +1,19 @@
 .contact-form {
 	width: 100%;
-}
+	background-color: var(--colour-neutral-white);
 
-.contact-form__wrapper {
-	width: 100%;
-	overflow: hidden;
-	border-radius: var(--radius-standard);
-	display: flex;
-}
+	.wrapper-contact-form {
+		width: 100%;
+		overflow: hidden;
+		border-radius: var(--radius-standard);
+		display: flex;
+	}
 
-.contact-form__iframe {
-	height: 699px;
+	.iframe-contact-form {
+		height: 699px;
 
-	@media (width >=64rem) {
-		height: 600px;
+		@media (width >=64rem) {
+			height: 600px;
+		}
 	}
 }
