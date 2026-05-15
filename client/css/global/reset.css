@@ -1,3 +1,16 @@
+* {
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	text-box: trim-both cap alphabetic;
+
+	&:before,
+	&:after {
+		box-sizing: inherit;
+		text-box-edge: inherit;
+		text-box-trim: inherit;
+	}
+}
+
 html,
 body,
 div,
@@ -85,14 +98,6 @@ video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	line-height: 1;
 }
 
 a {
@@ -229,118 +234,6 @@ section {
 	display: block;
 }
 
-* {
-	box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent;
-}
-
-.sticky {
-}
-
-.bypostauthor {
-}
-
-.wp-caption {
-}
-
-.wp-caption-text {
-}
-
-.gallery-caption {
-}
-
-.alignright {
-}
-
-.alignleft {
-}
-
-.aligncenter {
-}
-
-.screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
-	word-break: normal;
-}
-
-.screen-reader-text:focus {
-	background-color: #f7f7f7;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #007acc;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	right: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-}
-
-.skip-link {
-	left: -9999rem;
-	top: 2.5rem;
-	z-index: 999999999;
-	text-decoration: underline;
-}
-
-.skip-link:focus {
-	display: block;
-	left: 6px;
-	top: 7px;
-	font-size: 14px;
-	font-weight: 600;
-	text-decoration: none;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	z-index: 100000;
-	right: auto;
-}
-
-.visually-hidden:not(:focus):not(:active),
-.form-allowed-tags:not(:focus):not(:active) {
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px, 1px, 1px, 1px);
-	white-space: nowrap;
-}
-
-body {
-	margin: 0;
-}
-
-* {
-	box-sizing: border-box;
-	text-box-edge: cap alphabetic;
-	text-box-trim: trim-both;
-
-	&:before,
-	&:after {
-		box-sizing: inherit;
-		text-box-edge: inherit;
-		text-box-trim: inherit;
-	}
-}
-
 ul:not([class]) {
 	list-style: none;
 	padding: unset;
@@ -355,21 +248,4 @@ li:not([class]) {
 select,
 ::picker(select) {
 	appearance: base-select;
-}
-
-:root {
-	/* Firefox */
-	@supports (width: -moz-available) {
-		--stretch: -moz-available;
-	}
-
-	/* Safari */
-	@supports (width: -webkit-fill-available) {
-		--stretch: -webkit-fill-available;
-	}
-
-	/* Chromium */
-	@supports (width: stretch) {
-		--stretch: stretch;
-	}
 }

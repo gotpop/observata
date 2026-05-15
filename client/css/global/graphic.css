@@ -3,10 +3,10 @@
 	height: var(--height, var(--size));
 	inset: 50% 0 0 auto;
 	pointer-events: none;
+	position: relative;
 	translate: 0 -50%;
 	width: var(--width, var(--size));
 	z-index: 0;
-	position: relative;
 
 	&:after {
 		background-image: var(--gradient);
@@ -22,10 +22,10 @@
 	}
 
 	.mask-source {
-		position: absolute;
-		width: 0;
 		height: 0;
 		overflow: hidden;
+		position: absolute;
+		width: 0;
 	}
 }
 

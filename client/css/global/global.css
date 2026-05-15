@@ -45,6 +45,7 @@ html {
 	scroll-timeline: --main-timeline;
 	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 	scrollbar-width: thin;
+	scroll-behavior: smooth;
 }
 
 :where(html) {
@@ -89,6 +90,7 @@ html {
 	min-height: 100dvh;
 	overflow: hidden auto;
 	position: relative;
+	line-height: 1;
 }
 
 html {

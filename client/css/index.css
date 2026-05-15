@@ -1,5 +1,8 @@
+/* Variables */
+@import './tokens/variables.css';
+
+/* Global */
 @import './global/fonts.css';
-@import './global/variables.css';
 @import './global/reset.css';
 @import './global/global.css';
 @import './global/layout.css';
@@ -9,3 +12,5 @@
 @import './global/typography-scale.css';
 @import './global/animations.css';
 @import './global/graphic.css';
+@import './global/accessibility.css';
+@import './global/stretch.css';
