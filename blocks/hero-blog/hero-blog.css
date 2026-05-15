@@ -11,76 +11,72 @@
 }
 
 .block-hero-blog {
-	background: var(--colour-background-bg-white);
-	display: grid;
 	align-items: center;
-	/* background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #FFF 70.8%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #D4DBE0 0%, #E9EDEF 100%); */
 	background-image: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	grid-column: full;
-	grid-template-rows: 6rem 1fr;
-	display: grid;
-	grid-template-columns: subgrid;
+	background: var(--colour-background-bg-white);
 	border-bottom: 1px solid var(--colour-border-border-gray);
+	display: grid;
+	display: grid;
+	grid-column: full;
+	grid-template-columns: subgrid;
+	grid-template-rows: 6rem 1fr;
 	overflow: clip;
 	position: relative;
 
 	&::after {
-		content: '';
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		inset: 0;
-		background-color: transparent;
-		animation: background-animation linear;
-		/* animation-timeline: scroll(nearest); */
-		animation-timeline: --main-timeline;
-		/* display: none; */
-		z-index: 9;
 		animation-range-end: 500px;
+		animation-timeline: --main-timeline;
+		animation: background-animation linear;
+		background-color: transparent;
+		content: '';
+		height: 100%;
+		inset: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 9;
 	}
 
 	.hero-blog-content {
-		width: 100%;
-		z-index: 3;
 		display: grid;
+		grid-column: content;
+		grid-row: 2;
 		grid-template-columns: 1fr;
 		padding: 5rem 2rem;
 		padding: 5rem 2rem;
-		grid-row: 2;
-		grid-column: content;
-		text-align: left;
-		row-gap: var(--spacing-40);
 		position: relative;
+		row-gap: var(--spacing-40);
+		text-align: left;
+		width: 100%;
+		z-index: 3;
 
 		&::before {
-			content: '';
-			width: 125vw;
-			position: absolute;
-			height: 100%;
 			background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%);
+			content: '';
+			height: 100%;
 			left: 50%;
+			position: absolute;
 			transform: translateX(-50%);
+			width: 125vw;
 		}
 	}
 
 	.heading-hero-blog {
+		color: var(--colour-text-hero);
 		font-size: 56px;
 		font-weight: var(--typography-weight-bold);
-		color: var(--colour-text-hero);
-		line-height: 60px;
 		letter-spacing: -1px;
+		line-height: 60px;
 		margin: 0;
 		text-box: trim-both cap alphabetic;
 		z-index: 1;
-
-		i {
-			color: var(--colour-secondary-500);
-		}
+		max-width: 20ch;
+		text-wrap: balance;
 	}
 
 	.body-hero-blog {
-		z-index: 1;
-		max-width: 60ch;
 		margin: 0;
+		max-width: 60ch;
+		z-index: 1;
+		text-wrap: pretty;
 	}
 }
