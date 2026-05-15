@@ -1,10 +1,10 @@
 import './editor.css';
 
-import { Button, ButtonGroup } from '@wordpress/components';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { Button, ButtonGroup } from '@wordpress/components';
 
-import BlockLabel from '../components/block-label';
 import { useState } from '@wordpress/element';
+import BlockLabel from '../components/block-label';
 
 // Default template for each tab
 const TAB_TEMPLATE = [
@@ -75,7 +75,7 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
                 </ButtonGroup>
             </div>
 
-            <div className="pricing-tabs-editor__content">
+            <div className="editor-content">
                 <InnerBlocks
                     template={TAB_TEMPLATE}
                     templateLock={false}
