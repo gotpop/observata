@@ -1,0 +1,40 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/plans",
+    "title": "Pricing Plans",
+    "category": "theme",
+    "description": "A pricing plans section with draggable plan cards. Each card contains a dynamic feature list.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": "Simple, transparent pricing"
+        },
+        "introText": {
+            "type": "string",
+            "default": "Choose the plan that fits your needs. Scale up anytime."
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": [
+        "file:pricing-plans.css",
+        "file:../cards/card-pricing-plan/card-pricing-plan.css",
+        "file:../template/section-intro/section-intro.css"
+    ],
+    "editorStyle": [
+        "file:pricing-plans.css",
+        "file:../template/section-intro/section-intro.css",
+        "file:../../build/index.css"
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Simple, transparent pricing",
+            "introText": "Choose the plan that fits your needs. Scale up anytime."
+        }
+    }
+}
