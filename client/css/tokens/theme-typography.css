@@ -1,0 +1,29 @@
+/* Collection: Typography */
+:root {
+	/* Font scale */
+	--size-hero-default: var(--typography-size-56);
+	--size-heading-xl: var(--typography-size-56);
+	--size-heading-lg: var(--spacing-40);
+	--size-heading-md: var(--typography-size-32);
+	--size-heading-sm: var(--typography-size-24);
+	--size-body-lg: var(--typography-size-20);
+	--size-body-md: var(--typography-size-16);
+	--size-body-sm: var(--typography-size-14);
+	--size-body-xs: var(--typography-size-12);
+
+	/* Line height */
+	--line-height-hero-default: var(--typography-line-height-tight);
+	--line-height-heading-xl: var(--typography-line-height-tight);
+	--line-height-heading-lg: var(--typography-line-height-tight);
+	--line-height-heading-md: var(--typography-line-height-tight);
+	--line-height-heading-sm: var(--typography-line-height-tight);
+	--line-height-body-xs: var(--typography-line-height-default);
+	--line-height-body-sm: var(--typography-line-height-default);
+	--line-height-body-md: var(--typography-line-height-default);
+	--line-height-body-lg: var(--typography-line-height-default);
+
+	/* Font stack */
+	--font-stack: system-ui, -apple-system, sans-serif;
+	--font-stack-heading: var(--typography-family-gantari), var(--typography-family-inter) var(--font-stack);
+	--font-stack-body: var(--typography-family-inter) var(--font-stack);
+}

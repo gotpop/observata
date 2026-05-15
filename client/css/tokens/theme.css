@@ -1,0 +1,28 @@
+/* Collection: Alias */
+:root {
+	/* Hero */
+	--colour-text-hero: var(--colour-text-heading-default);
+	--colour-text-hero-subheading: var(--colour-text-body-default);
+
+	/* Text */
+	--colour-text-heading-default: var(--colour-neutral-800);
+	--colour-text-body-default: var(--colour-neutral-600);
+
+	/* Surface */
+	--colour-surface-success: #e8ffea;
+	--colour-surface-surface: var(--colour-neutral-white);
+	--colour-surface-dark: #181e25;
+	--colour-surface-light-gray: #f0f0f0;
+	--colour-surface-white: var(--colour-neutral-white);
+	--colour-surface-white-transparent: rgba(255, 255, 255, 0.8);
+
+	/* Borders */
+	--colour-border-border-gray: #e5e7ea;
+	--colour-border-border-light: #f2f3f5;
+
+	/* Lines */
+	--icon-line-bg-colour: #ff0000;
+	--icon-line-colour: var(--colour-brand-light);
+	--icon-circle-colour: var(--colour-brand-dark);
+	--icon-line-stroke: 0.9;
+}

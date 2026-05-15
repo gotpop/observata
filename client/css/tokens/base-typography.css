@@ -1,0 +1,47 @@
+/* Collection: Base */
+:root {
+	/* Radius */
+	--radius-minimal: 4px;
+	--radius-standard: 8px;
+	--radius-comfortable: 13px;
+	--radius-generous: 16px;
+	--radius-large: 20px;
+	--radius-card: 24px;
+	--radius-pill: 9999px;
+	--radius-circle: 50%;
+
+	/* Sizing */
+	--sizing-width-site: 1440px;
+	--sizing-width-content: 1200px;
+
+	/* Family */
+	--typography-family-inter: Inter;
+	--typography-family-gantari: Gantari;
+
+	/* Line height */
+	--typography-line-height-tight: 1;
+	--typography-line-height-default: 1.6;
+	--typography-line-height-relaxed: 1.7;
+
+	/* Weight */
+	--typography-weight-regular: 400;
+	--typography-weight-medium: 500;
+	--typography-weight-semi: 600;
+	--typography-weight-bold: 700;
+
+	/* Size */
+	--typography-size-10: 10px;
+	--typography-size-12: 12px;
+	--typography-size-14: 14px;
+	--typography-size-16: 16px;
+	--typography-size-18: 18px;
+	--typography-size-20: 20px;
+	--typography-size-24: 24px;
+	--typography-size-28: 28px;
+	--typography-size-32: 32px;
+	--typography-size-40: 40px;
+	--typography-size-48: 48px;
+	--typography-size-56: 56px;
+	--typography-size-60: 60px;
+	--typography-size-80: 80px;
+}
