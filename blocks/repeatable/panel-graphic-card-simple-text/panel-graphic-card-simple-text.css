@@ -8,6 +8,17 @@
 	display: grid;
 	padding-block: 5rem;
 
+	.block-content {
+		padding-inline: var(--spacing-32);
+		display: grid;
+		grid-column: content;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		column-gap: var(--spacing-60);
+		row-gap: var(--spacing-80);
+		position: relative;
+		z-index: 1;
+	}
+
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
 		--mask: url(#mask-europe);
@@ -26,17 +37,8 @@
 		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
 		--opacity: 0.7;
 		--width: 540px;
-	}
 
-	.block-content {
-		padding-inline: var(--spacing-32);
-		display: grid;
-		grid-column: content;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		column-gap: var(--spacing-60);
-		row-gap: var(--spacing-80);
-		position: relative;
-		z-index: 1;
+		height: calc(100% - 2rem);
 	}
 
 	.card-container {

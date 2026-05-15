@@ -3,12 +3,10 @@
 
 <section class="section-block block-section-card-and-graphic graphic-{{ graphic }} position-{{ graphic_position }}" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
 	<block-content class="block-content">
+		{{ content|raw }}
 		{% if graphic %}
 			{# {% include 'views/graphics/tech/' ~ graphic ~ '-graphic.twig' %} #}
 			{% include 'views/graphics/tech/ribbon-star-graphic-mono.twig' %}
 		{% endif %}
-		<div class="content">
-			{{ content|raw }}
-		</div>
 	</block-content>
 </section>

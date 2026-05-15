@@ -12,7 +12,7 @@
 		&:after {
 			background-image: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-200));
 			content: '';
-			top: 60px;
+			top: 350px;
 			mask-image: url(#mask);
 			mask-position: center;
 			mask-repeat: no-repeat;
@@ -26,19 +26,12 @@
 			transition: all 0.3s ease;
 
 			@media (width >=40rem) {
-				top: 100px;
+				top: 370px;
 			}
 
 			@media (width >=80rem) {
-				top: -30px;
+				top: 230px;
 			}
-		}
-
-		.mask-source {
-			position: absolute;
-			width: 0;
-			height: 0;
-			overflow: hidden;
 		}
 	}
 
