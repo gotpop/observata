@@ -12,8 +12,8 @@
 
 .block-hero-blog {
 	align-items: center;
+	background-color: var(--colour-background-bg-white);
 	background-image: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	background: var(--colour-background-bg-white);
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	display: grid;
 	display: grid;
