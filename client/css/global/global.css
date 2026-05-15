@@ -26,10 +26,25 @@
 }
 
 :focus-visible {
-	outline-color: var(--colour-accent-1-400);
+	outline-color: var(--accent);
 	outline-style: dashed;
 	outline-width: 2px;
 	outline-offset: 0.5em;
+}
+
+::-webkit-calendar-picker-indicator,
+::-webkit-clear-button,
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	color: var(--accent);
+}
+
+:target {
+	box-sizing: content-box;
+}
+
+::marker {
+	color: inherit;
 }
 
 /* Firefox scrollbar hover */
@@ -39,61 +54,7 @@
 	}
 }
 
-html {
-	background-color: var(--colour-surface-white);
-	min-height: 100dvh;
-	scroll-timeline: --main-timeline;
-	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-	scrollbar-width: thin;
-	scroll-behavior: smooth;
-}
-
 :where(html) {
-	accent-color: var(--accent);
-	background-color: var(--colour-bg-site);
-	scroll-behavior: smooth;
-	scroll-padding-top: var(--spacing-xl);
-	scrollbar-gutter: var(--scrollbar-gutter);
-	scrollbar-width: var(--scrollbar-width);
-
-	:focus-visible {
-		outline-color: var(--accent);
-	}
-
-	:target {
-		box-sizing: content-box;
-	}
-
-	::selection {
-		background-color: var(--accent);
-		color: var(--theme-accent-text);
-	}
-
-	::marker {
-		color: inherit;
-	}
-
-	::-webkit-calendar-picker-indicator,
-	::-webkit-clear-button,
-	::-webkit-inner-spin-button,
-	::-webkit-outer-spin-button {
-		color: var(--accent);
-	}
-}
-
-:where(body) {
-	-webkit-font-smoothing: antialiased;
-	display: grid;
-	font-family: var(--font-stack-body);
-	grid-template-columns: 1fr;
-	margin: unset;
-	min-height: 100dvh;
-	overflow: hidden auto;
-	position: relative;
-	line-height: 1;
-}
-
-html {
 	/* Improve font smoothing on macOS/Safari */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -103,9 +64,17 @@ html {
 
 	/* Prevent font size inflation on mobile Safari */
 	-webkit-text-size-adjust: 100%;
+	accent-color: var(--accent);
+	background-color: var(--colour-surface-white);
+	min-height: 100dvh;
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--spacing-32);
+	scroll-timeline: --main-timeline;
+	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+	scrollbar-width: thin;
 }
 
-body {
+:where(body) {
 	font-kerning: normal;
 	font-synthesis: none;
 	font-variant-ligatures: common-ligatures;
@@ -113,4 +82,13 @@ body {
 		'kern' 1,
 		'liga' 1,
 		'calt' 1;
+	-webkit-font-smoothing: antialiased;
+	display: grid;
+	font-family: var(--font-stack-body);
+	grid-template-columns: 1fr;
+	margin: unset;
+	min-height: 100dvh;
+	overflow: hidden auto;
+	position: relative;
+	line-height: 1;
 }

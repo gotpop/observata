@@ -39,4 +39,7 @@
 	/* Sizing */
 	--sizing-width-site: 1440px;
 	--sizing-width-content: 1200px;
+
+	/* Theme html */
+	--accent: var(--colour-accent-1-400);
 }
