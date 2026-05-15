@@ -327,3 +327,49 @@ section {
 body {
 	margin: 0;
 }
+
+* {
+	box-sizing: border-box;
+	text-box-edge: cap alphabetic;
+	text-box-trim: trim-both;
+
+	&:before,
+	&:after {
+		box-sizing: inherit;
+		text-box-edge: inherit;
+		text-box-trim: inherit;
+	}
+}
+
+ul:not([class]) {
+	list-style: none;
+	padding: unset;
+	margin: unset;
+}
+
+li:not([class]) {
+	margin: unset;
+	padding: unset;
+}
+
+select,
+::picker(select) {
+	appearance: base-select;
+}
+
+:root {
+	/* Firefox */
+	@supports (width: -moz-available) {
+		--stretch: -moz-available;
+	}
+
+	/* Safari */
+	@supports (width: -webkit-fill-available) {
+		--stretch: -webkit-fill-available;
+	}
+
+	/* Chromium */
+	@supports (width: stretch) {
+		--stretch: stretch;
+	}
+}

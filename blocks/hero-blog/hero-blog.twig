@@ -4,7 +4,8 @@
 {# Use post slug for view-transition-name #}
 {% set view_name = post.post_name|default('blog-page') %}
 
-<section class="block-hero-blog" style="view-transition-name: {{ view_name }};" aria-labeled-by="heading-hero-blog">
+{# style="view-transition-name: {{ view_name }};" #}
+<section class="block-hero-blog" aria-labeled-by="heading-hero-blog">
 	<block-content class="block-content hero-blog-content">
 		{% if heading %}
 			<h1 id="heading-hero-blog" class="heading-hero-blog" style="view-transition-name: heading-{{ view_name }};">{{ heading|wp_kses_post }}</h1>

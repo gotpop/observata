@@ -8,7 +8,9 @@
 	display: grid;
 	padding-block: 5rem;
 
-	.graphic-tech {
+	.graphic-tech-europe {
+		--height: calc(500px - 4rem);
+		--mask: url(#mask-europe);
 		--size: 500px;
 		--gradient: conic-gradient(
 			var(--colour-accent-2-400),
@@ -16,50 +18,14 @@
 			var(--colour-primary-600),
 			var(--colour-accent-1-500)
 		);
-
-		color: var(--colour-neutral-white);
-		height: var(--size);
-		pointer-events: none;
-		position: absolute;
-		inset: 50% 0 0 auto;
-		translate: 0 -50%;
-		width: var(--size);
-		z-index: 0;
-
-		&:after {
-			background-image: var(--gradient);
-			content: '';
-			height: var(--size);
-			mask-image: url(#mask-europe);
-			position: absolute;
-			width: calc(var(--size) + 100px);
-			z-index: 1;
-			inset: 50% -100px 0 auto;
-			translate: 0 -50%;
-		}
-
-		.mask-source {
-			position: absolute;
-			width: 0;
-			height: 0;
-			overflow: hidden;
-		}
 	}
 
 	.graphic-tech-infinity-twist {
-		&:after {
-			background-image: var(--gradient);
-			background-image: conic-gradient(
-				var(--colour-accent-1-400),
-				var(--colour-secondary-400),
-				var(--colour-accent-1-400),
-				var(--colour-secondary-400)
-			);
-			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-			mask-image: url(#mask-infinity-twist);
-			width: 540px;
-			opacity: 0.7;
-		}
+		--size: 500px;
+		--mask: url(#mask-infinity-twist);
+		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+		--opacity: 0.7;
+		--width: 540px;
 	}
 
 	.block-content {
@@ -71,39 +37,10 @@
 		row-gap: var(--spacing-80);
 		position: relative;
 		z-index: 1;
-
-		.graphic-tech {
-			height: calc(500px - 4rem);
-			position: relative;
-		}
 	}
 
 	.card-container {
 		display: grid;
 		grid-template-columns: 1fr;
-	}
-}
-
-#europe {
-	circle {
-		opacity: var(--opacity, 0.3);
-		transition: all 0.2s ease-in-out;
-		transition-delay: calc(0.0002s * sibling-index());
-
-		.in-view & {
-			--opacity: 1;
-		}
-	}
-}
-
-#infinity-twist {
-	path {
-		opacity: var(--opacity, 0.1);
-		transition: all 0.3s ease-in-out;
-		transition-delay: calc(0.02s * sibling-index());
-
-		.in-view & {
-			--opacity: 1;
-		}
 	}
 }

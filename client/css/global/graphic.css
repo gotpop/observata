@@ -1,0 +1,54 @@
+.graphic-tech {
+	color: var(--colour-neutral-white);
+	height: var(--height, var(--size));
+	inset: 50% 0 0 auto;
+	pointer-events: none;
+	translate: 0 -50%;
+	width: var(--width, var(--size));
+	z-index: 0;
+	position: relative;
+
+	&:after {
+		background-image: var(--gradient);
+		content: '';
+		height: var(--size);
+		inset: 50% -100px 0 auto;
+		mask-image: var(--mask);
+		opacity: var(--opacity, 1);
+		position: absolute;
+		translate: 0 -50%;
+		width: calc(var(--size) + 100px);
+		z-index: 1;
+	}
+
+	.mask-source {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+#europe {
+	circle {
+		opacity: var(--opacity, 0.3);
+		transition: all 0.2s ease-in-out;
+		transition-delay: calc(0.0002s * sibling-index());
+
+		.in-view & {
+			--opacity: 1;
+		}
+	}
+}
+
+#infinity-twist {
+	path {
+		opacity: var(--opacity-path, 0.1);
+		transition: all 0.3s ease-in-out;
+		transition-delay: calc(0.02s * sibling-index());
+
+		.in-view & {
+			--opacity-path: 1;
+		}
+	}
+}
