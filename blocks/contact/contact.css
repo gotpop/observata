@@ -10,7 +10,7 @@
 		grid-template-columns: 1fr;
 
 		@media (width >=64rem) {
-			grid-template-columns: 1fr 660px;
+			grid-template-columns: 1fr 2fr;
 			grid-template-areas: 'intro intro' 'details form';
 		}
 	}
@@ -24,8 +24,14 @@
 			grid-area: intro;
 		}
 
+		.section-intro-title {
+			max-width: 70ch;
+			text-wrap: balance;
+		}
+
 		.section-intro-text {
 			max-width: 70ch;
+			text-wrap: pretty;
 		}
 	}
 
@@ -60,15 +66,5 @@
 		iframe::-webkit-scrollbar {
 			display: none;
 		}
-	}
-}
-
-@media (min-width: 768px) {
-	.block-content .block-content {
-		grid-template-columns: 1fr 2fr;
-	}
-
-	.block-content .block-content > .section-intro {
-		grid-column: 1 / -1;
 	}
 }
