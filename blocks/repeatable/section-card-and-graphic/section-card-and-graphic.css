@@ -1,32 +1,26 @@
 .block-section-card-and-graphic {
-	position: relative;
-	overflow: clip;
 	background-color: var(--colour-surface-white);
 	border-bottom: 1px solid var(--colour-border-border-gray);
+	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	display: grid;
+	overflow: clip;
 	padding-block: 5rem;
 	position: relative;
 
 	.block-content {
+		align-items: center;
+		column-gap: var(--spacing-60);
 		display: grid;
 		grid-column: content;
-		/* grid-template-columns: 1fr; */
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		position: relative;
-		column-gap: var(--spacing-60);
 		row-gap: var(--spacing-80);
-		align-items: center;
 
 		.card-geo-list {
 			height: min-content;
 			z-index: 999;
 		}
-
-		/* @media (width >=64rem) {
-			grid-template-columns: 1fr 1fr;
-		} */
 	}
 
 	.graphic-tech-ribbon-star {
@@ -47,9 +41,14 @@
 		margin: 0 auto;
 		height: 100%;
 		min-height: calc(500px - 12rem);
+		scale: 0.7;
 
 		&::after {
 			inset: 50% 0 0 auto;
+		}
+
+		@media (width >=64rem) {
+			scale: 1;
 		}
 	}
 }
