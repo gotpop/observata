@@ -1,4 +1,8 @@
 /* Typography */
+* {
+	text-box: trim-both cap alphabetic;
+}
+
 h1,
 h2,
 h3,
@@ -6,10 +10,10 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-stack-heading);
+	font-optical-sizing: auto;
 	font-weight: var(--typography-weight-bold);
 	margin: 0;
-	line-height: 1.2;
-	text-box: trim-both cap alphabetic;
+	text-wrap: balance;
 }
 
 p,
@@ -20,59 +24,20 @@ a,
 button,
 input,
 textarea,
+time,
 select {
 	font-family: var(--font-stack-body);
 	text-box: trim-both cap alphabetic;
 }
 
 .anchor {
-	color: white;
-	line-height: 1.5;
+	color: var(--colour-neutral-white);
 	text-decoration-color: var(--colour-primary-400);
-	text-decoration-thickness: 1px;
+	text-decoration-thickness: 0.3em;
 	text-decoration: underline;
 	text-underline-offset: 0.3em;
 }
 
-html {
-	/* Improve font smoothing on macOS/Safari */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	/* Better text rendering */
-	text-rendering: optimizeLegibility;
-
-	/* Prevent font size inflation on mobile Safari */
-	-webkit-text-size-adjust: 100%;
-}
-
-body {
-	font-kerning: normal;
-	font-synthesis: none;
-	font-variant-ligatures: common-ligatures;
-	font-feature-settings:
-		'kern' 1,
-		'liga' 1,
-		'calt' 1;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-optical-sizing: auto;
-	text-wrap: balance;
-}
-
 blockquote {
 	hanging-punctuation: first last;
-}
-
-:where(button, a) {
-	&:focus-visible {
-		outline: 2px dashed var(--accent);
-		outline-offset: var(--outline-offset);
-	}
 }

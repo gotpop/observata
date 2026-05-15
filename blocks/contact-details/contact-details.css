@@ -7,15 +7,27 @@
 	flex-direction: column;
 	gap: var(--spacing-24);
 	padding: var(--spacing-32);
+	position: sticky;
+	top: 6rem;
 
 	@media (width >=64rem) {
 		grid-area: details;
 	}
 
 	.item {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-8);
+		display: grid;
+		column-gap: var(--spacing-16);
+		row-gap: var(--spacing-8);
+		grid-template-areas: 'icon label' 'icon value';
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content;
+	}
+
+	.icon {
+		--size: 32px;
+
+		grid-area: icon;
+		color: var(--colour-neutral-300);
 	}
 
 	.label {
@@ -25,6 +37,7 @@
 		color: var(--colour-primary-700);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
+		grid-area: label;
 	}
 
 	.value {
@@ -32,14 +45,15 @@
 		font-size: var(--size-body-md);
 		color: var(--colour-text-body-default);
 		line-height: var(--line-height-body-md);
-	}
-
-	a.value {
 		text-decoration: none;
-		transition: color 0.2s ease;
-	}
+		grid-area: value;
 
-	a.value:hover {
-		color: var(--colour-secondary-500);
+		*[href] {
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--colour-secondary-500);
+			}
+		}
 	}
 }

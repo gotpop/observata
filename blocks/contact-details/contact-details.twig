@@ -5,13 +5,15 @@
 <contact-details class="contact-details">
 	{% if phone %}
 		<div class="item">
+			{% include 'icons/lucide/phone.twig' %}
 			<span class="label">Phone</span>
-			<a href="tel:{{ phone|replace({' ': '', '(': '', ') ': ''}) }}" class="value">{{ phone|esc_html }}</a>
+			<a href="tel:{{ phone|replace({ ' ': '', '(': '', ') ': '' }) }}" class="value">{{ phone|esc_html }}</a>
 		</div>
 	{% endif %}
 
 	{% if email %}
 		<div class="item">
+			{% include 'icons/lucide/address.twig' %}
 			<span class="label">Email</span>
 			<a href="mailto:{{ email|esc_html }}" class="value">{{ email|esc_html }}</a>
 		</div>
@@ -19,6 +21,7 @@
 
 	{% if address %}
 		<div class="item">
+			{% include 'icons/lucide/email.twig' %}
 			<span class="label">Address</span>
 			<span class="value">{{ address|esc_html }}</span>
 		</div>

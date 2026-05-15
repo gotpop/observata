@@ -113,6 +113,10 @@
 		&:hover {
 			color: var(--colour-secondary-500);
 		}
+
+		.icon {
+			--size: 12px;
+		}
 	}
 
 	.submenu-item {

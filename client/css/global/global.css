@@ -90,3 +90,25 @@ html {
 	overflow: hidden auto;
 	position: relative;
 }
+
+html {
+	/* Improve font smoothing on macOS/Safari */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Better text rendering */
+	text-rendering: optimizeLegibility;
+
+	/* Prevent font size inflation on mobile Safari */
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-kerning: normal;
+	font-synthesis: none;
+	font-variant-ligatures: common-ligatures;
+	font-feature-settings:
+		'kern' 1,
+		'liga' 1,
+		'calt' 1;
+}
