@@ -1,7 +1,8 @@
 import './editor.css';
 
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
 
@@ -12,7 +13,8 @@ const CARD_TEMPLATE = [
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-    const blockProps = useBlockProps({ className: 'observata-observability-editor' });
+    const { sectionTitle, introText, cardTitle, cardBody } = attributes;
+    const blockProps = useBlockProps({ className: 'observability-observability-editor' });
 
     return (
         <div {...blockProps}>
@@ -20,6 +22,28 @@ export default function Edit({ attributes, setAttributes }) {
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <article className="card-large">
+                <div className="card-large-editor">
+                    <label className="label">{__('Card Title', 'observata')}</label>
+                    <label className="label">{__('Card Body', 'observata')}</label>
+                    <RichText
+                        tagName="h4"
+                        className="heading-md"
+                        value={cardTitle}
+                        onChange={(val) => setAttributes({ cardTitle: val })}
+                        placeholder={__('Card title…', 'observata')}
+                        disableLineBreaks
+                        allowedFormats={[]}
+                    />
+                    <RichText
+                        tagName="p"
+                        className="body-md"
+                        value={cardBody}
+                        onChange={(val) => setAttributes({ cardBody: val })}
+                        placeholder={__('Card body…', 'observata')}
+                        disableLineBreaks
+                        allowedFormats={[]}
+                    />
+                </div>
                 <div className="cards-micro">
                     <InnerBlocks
                         template={CARD_TEMPLATE}

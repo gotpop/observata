@@ -17,6 +17,14 @@
         "introText": {
             "type": "string",
             "default": "Most observability stacks were built for dashboards and not decisions."
+        },
+        "cardTitle": {
+            "type": "string",
+            "default": "Tools aren't the answer — ownership is"
+        },
+        "cardBody": {
+            "type": "string",
+            "default": "When observability is split across teams, costs skyrocket and visibility suffers. Consolidating your tech stack isn't enough; you need to solve the root cause. We provide the structural ownership required to turn disjointed data into a high-performing, unified operation."
         }
     },
     "render": "file:render.php",
