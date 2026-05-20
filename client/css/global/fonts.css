@@ -7,22 +7,24 @@
 
 /* Inter Variable Font */
 @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url('../../../assets/fonts/inter/inter.woff2') format('woff2-variations'),
-         url('../../../assets/fonts/inter/inter.woff2') format('woff2');
-    font-named-instance: normal;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: fallback;
+	src:
+		url('../../../assets/fonts/inter/inter.woff2') format('woff2-variations'),
+		url('../../../assets/fonts/inter/inter.woff2') format('woff2');
+	font-named-instance: normal;
 }
 
 /* Gantari Variable Font */
 @font-face {
-    font-family: 'Gantari';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url('../../../assets/fonts/gantari/gantari.woff2') format('woff2-variations'),
-         url('../../../assets/fonts/gantari/gantari.woff2') format('woff2');
-    font-named-instance: normal;
+	font-family: 'Gantari';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: fallback;
+	src:
+		url('../../../assets/fonts/gantari/gantari.woff2') format('woff2-variations'),
+		url('../../../assets/fonts/gantari/gantari.woff2') format('woff2');
+	font-named-instance: normal;
 }

@@ -14,6 +14,16 @@ function observata_enqueue() {
 	}
 }
 
+// Preload fonts for faster loading and reduce FOUT
+add_action( 'wp_head', 'observata_preload_fonts', 1 );
+function observata_preload_fonts() {
+	$font_url = get_template_directory_uri() . '/assets/fonts';
+	?>
+	<link rel="preload" href="<?php echo esc_url( $font_url ); ?>/inter/inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="<?php echo esc_url( $font_url ); ?>/gantari/gantari.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<?php
+}
+
 // Enqueue comment-reply script only when threaded comments are enabled.
 add_action( 'comment_form_before', 'observata_enqueue_comment_reply_script' );
 function observata_enqueue_comment_reply_script() {
