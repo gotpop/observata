@@ -67,7 +67,7 @@ function observata_speculation_rules() {
 
 	// Build speculation rules configuration
 	$rules = array(
-		'prefetch' => array(
+		'prerender' => array(
 			array(
 				'source'    => 'list',
 				'urls'      => $urls,
