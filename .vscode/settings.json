@@ -15,7 +15,8 @@
 		"editor.defaultFormatter": "wongjn.php-sniffer"
 	},
 	"[twig]": {
-		"editor.defaultFormatter": "junstyle.twig-language"
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "mblode.twig-language-2"
 	},
 	"twig-language.diagnostics": {
 		"deprecatedInclude": "ignore"
