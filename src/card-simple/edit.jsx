@@ -3,6 +3,7 @@ import './editor.css';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import { SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import GeoIcon from '../components/geo-icon';
@@ -13,7 +14,22 @@ const iconOptions = Array.from({ length: 30 }, (_, i) => {
 });
 
 export default function Edit({ attributes, setAttributes }) {
-    const { title, description, iconGeo } = attributes;
+    const { title, description, iconGeo, readMoreText, readMoreUrl } = attributes;
+
+    // Fetch internal pages for dropdown
+    const pages = useSelect(select => {
+        const { getEntityRecords } = select('core');
+        return getEntityRecords('postType', 'page', { per_page: 100, _fields: 'id,title,link' });
+    }, []);
+
+    const pageOptions = [
+        { label: __('Select a page...', 'observata'), value: '' },
+        ...(pages || []).map(page => ({
+            label: page.title?.rendered || `Page ${page.id}`,
+            value: page.link
+        }))
+    ];
+
     const blockProps = useBlockProps({ className: 'card-simple' });
 
     return (
@@ -47,6 +63,20 @@ export default function Edit({ attributes, setAttributes }) {
                     value={iconGeo}
                     options={iconOptions}
                     onChange={(val) => setAttributes({ iconGeo: val })}
+                />
+                <SelectControl
+                    label={__('Read More URL', 'observata')}
+                    value={readMoreUrl}
+                    options={pageOptions}
+                    onChange={(val) => setAttributes({ readMoreUrl: val })}
+                />
+                <RichText
+                    tagName="span"
+                    value={readMoreText}
+                    onChange={(val) => setAttributes({ readMoreText: val })}
+                    placeholder={__('Read more text…', 'observata')}
+                    disableLineBreaks
+                    allowedFormats={[]}
                 />
             </div>
         </article>

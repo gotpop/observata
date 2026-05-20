@@ -1,11 +1,15 @@
 {% set title = attributes.title|default('') %}
 {% set description = attributes.description|default('') %}
 {% set icon_geo = attributes.iconGeo|default('24') %}
+{% set read_more_text = attributes.readMoreText|default('Read more') %}
+{% set read_more_url = attributes.readMoreUrl|default('#') %}
 
 <article class="card-simple icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	<h3 class="title">{{ title|wp_kses_post }}</h3>
 	<p class="body">{{ description|wp_kses_post }}</p>
 
-	<a href="#" class="read-more">Read more</a>
+	{% if read_more_url %}
+		<a href="{{ read_more_url }}" class="read-more">{{ read_more_text|wp_kses_post }}</a>
+	{% endif %}
 </article>

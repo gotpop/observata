@@ -17,6 +17,14 @@
         "iconGeo": {
             "type": "string",
             "default": ""
+        },
+        "readMoreText": {
+            "type": "string",
+            "default": ""
+        },
+        "readMoreUrl": {
+            "type": "string",
+            "default": ""
         }
     },
     "supports": {
