@@ -1,14 +1,12 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
 
-<section class="section-block block-observability" data-observe="true" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
+<section class="section-block block-observability">
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
 		<article class="card-large">
 			{% include 'graphics/tech/connected-dots-graphic-mono.twig' %}
-
-
 			<layout-micro class="layout-micro">
 				{{ content|raw }}
 			</layout-micro>

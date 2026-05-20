@@ -64,8 +64,8 @@
 		color: white;
 		width: 400px;
 		height: 400px;
-		right: -5rem;
-		top: -5rem;
+		right: 5rem;
+		top: 5rem;
 		left: auto;
 
 		&:after {

@@ -1,7 +1,7 @@
 {% set card_title = attributes.cardTitle|default('') %}
 {% set card_description = attributes.cardDescription|default('') %}
 
-<article class="card-micro">
+<article class="card-micro" data-observe="true" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
 	<h3 class="card-micro-heading fade-in-up">{{ card_title|esc_html }}</h3>
 	<p class="card-micro-body fade-in-up">{{ card_description|wp_kses_post }}</p>
 </article>

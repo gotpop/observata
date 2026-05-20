@@ -20,11 +20,13 @@ const observers = new Map<string, IntersectionObserver>();
 
 function getObserver(threshold: number, marginTop: string, marginBottom: string): IntersectionObserver {
 	const key = `${threshold}-${marginTop}-${marginBottom}`;
+
 	if (!observers.has(key)) {
 		const observer = new IntersectionObserver(observerCallback, {
 			threshold,
 			rootMargin: `${marginTop} ${defaultOptions.marginRight} ${marginBottom} ${defaultOptions.marginLeft}`,
 		});
+
 		observers.set(key, observer);
 	}
 	return observers.get(key)!;
@@ -43,6 +45,7 @@ export function initSectionObserver() {
 		const marginBottom = marginBottomAttr || defaultOptions.marginBottom;
 
 		const observer = getObserver(threshold, marginTop, marginBottom);
+
 		observer.observe(section);
 	}
 }
