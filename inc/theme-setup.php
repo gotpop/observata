@@ -68,3 +68,9 @@ function observata_setup() {
 		)
 	);
 }
+
+// Add favicon to wp_head.
+add_action( 'wp_head', 'observata_add_favicon' );
+function observata_add_favicon() {
+	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
+}
