@@ -142,6 +142,10 @@
 		grid-template-columns: 1fr;
 		justify-items: center;
 		gap: var(--spacing-24);
+
+		.icon-lucide {
+			--size: 16px;
+		}
 	}
 
 	.hero-read-more {
