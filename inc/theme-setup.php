@@ -39,6 +39,25 @@ function observata_setup() {
 	add_editor_style( 'client/css/global/fonts.css' );
 	add_editor_style( 'client/css/global/variables.css' );
 	add_editor_style( 'client/css/global/layout.css' );
+	add_editor_style( 'client/css/tokens/base-spacing.css' );
+	add_editor_style( 'client/css/tokens/base-colours.css' );
+	add_editor_style( 'client/css/tokens/base-radius.css' );
+	add_editor_style( 'client/css/tokens/base-typography.css' );
+	add_editor_style( 'client/css/tokens/base-swatch.css' );
+	add_editor_style( 'client/css/tokens/theme-typography.css' );
+	add_editor_style( 'client/css/tokens/theme.css' );
+	add_editor_style( 'client/css/global/reset.css' );
+	add_editor_style( 'client/css/global/global.css' );
+	add_editor_style( 'client/css/global/layout.css' );
+	add_editor_style( 'client/css/global/icons.css' );
+	add_editor_style( 'client/css/global/buttons.css' );
+	add_editor_style( 'client/css/global/typography.css' );
+	add_editor_style( 'client/css/global/typography-scale.css' );
+	add_editor_style( 'client/css/global/animations.css' );
+	add_editor_style( 'client/css/global/graphic.css' );
+	add_editor_style( 'client/css/global/accessibility.css' );
+	add_editor_style( 'client/css/global/stretch.css' );
+	add_editor_style( 'client/css/global/anchors.css' );
 
 	// Auto-discover all block CSS files and register as editor styles.
 	$blocks_dir = get_template_directory() . '/blocks';
