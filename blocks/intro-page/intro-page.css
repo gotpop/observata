@@ -1,4 +1,4 @@
-@keyframes fade-in {
+@keyframes shader-fade-in {
 	to {
 		opacity: 1;
 	}
@@ -33,18 +33,37 @@
 		grid-column: breakout;
 		top: 50%;
 		transform: translateY(-50%);
-		animation: 1.5s fade-in forwards ease-in;
+		animation: 1.5s shader-fade-in forwards ease-in;
 		opacity: 0;
 	}
 
 	.card-geo-list {
 		&:first-child {
+			view-transition-name: geo-first;
 		}
 
 		&:last-child {
+			view-transition-name: geo-last;
+
 			@media (width >=80rem) {
 				grid-area: b;
 			}
 		}
 	}
+}
+
+::view-transition-new(geo-first) {
+	animation: entry-from-left 0.3s ease forwards;
+}
+
+::view-transition-old(geo-first) {
+	animation: exit-to-left 0.3s ease forwards;
+}
+
+::view-transition-new(geo-last) {
+	animation: entry-from-right 0.3s ease forwards;
+}
+
+::view-transition-old(geo-last) {
+	animation: exit-to-right 0.3s ease forwards;
 }

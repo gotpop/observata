@@ -17,6 +17,7 @@
 @import './global/typography.css';
 @import './global/typography-scale.css';
 @import './global/animations.css';
+@import './global/keyframes.css';
 @import './global/graphic.css';
 @import './global/accessibility.css';
 @import './global/stretch.css';
