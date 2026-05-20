@@ -23,8 +23,8 @@ site-layout {
 	overflow: clip;
 	grid-template-rows: 1fr max-content;
 	grid-template-columns:
-		[full-start] minmax(1rem, 1fr) [breakout-start] var(--b) [content-start] minmax(420px, 1200px)
-		[content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
+		[full-start] minmax(1rem, 1fr) [breakout-start] var(--b) [content-start] 2rem [inner-start] minmax(300px, 1136px)
+		[inner-end] 2rem [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
 }
 
 site-container {

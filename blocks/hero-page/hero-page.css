@@ -37,18 +37,16 @@
 	}
 
 	.hero-page-content {
-		width: 100%;
-		z-index: 3;
 		display: grid;
-		grid-template-columns: 1fr;
-		padding: 5rem 2rem;
-		padding: 5rem 2rem;
+		grid-column: inner;
 		grid-row: 2;
-		grid-column: content;
-		text-align: left;
-		row-gap: var(--spacing-40);
+		grid-template-columns: 1fr;
+		padding-block: 5rem;
 		position: relative;
+		row-gap: var(--spacing-40);
+		text-align: left;
 		view-transition-name: hero-content;
+		z-index: 3;
 
 		&::before {
 			content: '';

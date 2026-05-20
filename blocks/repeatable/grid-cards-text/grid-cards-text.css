@@ -4,7 +4,6 @@
 		flex-wrap: wrap;
 		row-gap: var(--spacing-60);
 		column-gap: var(--spacing-60);
-		grid-column: content;
-		padding-inline: var(--spacing-32);
+		grid-column: inner;
 	}
 }

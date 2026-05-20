@@ -9,9 +9,8 @@
 	padding-block: 5rem;
 
 	.block-content {
-		padding-inline: var(--spacing-32);
 		display: grid;
-		grid-column: content;
+		grid-column: inner;
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		column-gap: var(--spacing-60);
 		row-gap: var(--spacing-80);
