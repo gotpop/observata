@@ -31,7 +31,7 @@ function getObserver(threshold: number, marginTop: string, marginBottom: string)
 }
 
 export function initSectionObserver() {
-	const sections = document.querySelectorAll<HTMLElement>('.section-block');
+	const sections = document.querySelectorAll<HTMLElement>('[data-observe="true"]');
 
 	for (const section of sections) {
 		const thresholdAttr = section.dataset.threshold;

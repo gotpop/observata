@@ -1,7 +1,7 @@
 {% set graphic = attributes.graphic|default('ribbon-star') %}
 {% set graphic_position = attributes.graphicPosition|default('left') %}
 
-<section class="section-block block-section-card-and-graphic graphic-{{ graphic }} position-{{ graphic_position }}" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
+<section class="section-block block-section-card-and-graphic graphic-{{ graphic }} position-{{ graphic_position }}" data-observe="true" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
 	<block-content class="block-content">
 		{{ content|raw }}
 		{% if graphic %}
