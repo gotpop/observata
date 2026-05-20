@@ -1,6 +1,6 @@
 import './editor.css';
 
-import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
