@@ -9,6 +9,10 @@
         "html": false
     },
     "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
         "text": {
             "type": "string",
             "default": ""
@@ -31,16 +35,16 @@
             "default": ""
         }
     },
-    "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "style": "file:callout.css",
     "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
+            "title": "Important Information",
             "text": "This is an important callout message that highlights key information.",
             "variant": "info",
             "ctaText": "Learn more",
-            "ctaUrl": "#"
+            "ctaUrl": ""
         }
     }
 }
