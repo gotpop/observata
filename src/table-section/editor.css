@@ -1,1 +1,11 @@
-/* Table Section Editor Styles */
+.wp-block-observata-table-section {
+	.block-editor-block-list__layout {
+		flex-direction: column;
+	}
+
+	.table-simple-editor__columns,
+	.table-simple-row-editor__controls {
+		display: flex;
+		gap: var(--spacing-24);
+	}
+}

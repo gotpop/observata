@@ -15,4 +15,8 @@
 		flex-direction: column;
 		gap: 1rem;
 	}
+
+	&::after {
+		display: none;
+	}
 }

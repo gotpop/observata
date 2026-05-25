@@ -26,7 +26,6 @@ export default function TableSectionEdit({ attributes, setAttributes }) {
             />
 
             <div className="table-section-editor__inner-blocks">
-                <strong>{__('Content (subtitle body-md blocks + table-simple block)', 'observata')}</strong>
                 <InnerBlocks
                     allowedBlocks={ALLOWED_BLOCKS}
                     templateLock={false}
