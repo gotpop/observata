@@ -1,4 +1,6 @@
 .section-cta {
+	--section-bg-colour: var(--colour-neutral-white);
+
 	.block-content {
 		display: grid;
 		grid-column: inner;
@@ -6,10 +8,25 @@
 		justify-content: center;
 		row-gap: var(--spacing-80);
 		text-align: center;
+		justify-items: center;
+	}
+
+	.heading-lg {
+		width: max-content;
+		max-width: 40ch;
+		text-wrap: balance;
 	}
 
 	.body-lg {
 		text-wrap: pretty;
 		max-width: 60ch;
+	}
+
+	.cta-section {
+		width: max-content;
+
+		.icon {
+			--size: 1rem;
+		}
 	}
 }

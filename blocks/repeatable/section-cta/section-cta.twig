@@ -14,7 +14,10 @@
 		{% endif %}
 
 		{% if cta_text and cta_url %}
-			<a href="{{ cta_url|esc_url }}" class="cta-primary cta-section">{{ cta_text|esc_html }}</a>
+			<a href="{{ cta_url|esc_url }}" class="cta-primary cta-section">
+				<span>{{ cta_text|esc_html }}</span>
+				{% include 'icons/lucide/arrow-right.twig' %}
+			</a>
 		{% endif %}
 	</block-content>
 </section>

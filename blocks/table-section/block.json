@@ -17,5 +17,9 @@
     },
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:table-section.editor.css"
+    "editorStyle": [
+        "file:table-section.css",
+        "file:../../build/index.css"
+    ],
+    "style": "file:table-section.css"
 }

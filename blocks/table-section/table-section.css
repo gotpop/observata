@@ -1,0 +1,11 @@
+.table-section {
+	.block-content {
+		display: grid;
+		grid-column: content;
+		gap: var(--spacing-50);
+
+		@media (width >= 50rem) {
+			gap: var(--spacing-64);
+		}
+	}
+}
