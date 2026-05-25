@@ -1,20 +1,15 @@
-.wp-block-observata-callout {
-}
+.section-cta {
+	.block-content {
+		display: grid;
+		grid-column: inner;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		row-gap: var(--spacing-80);
+		text-align: center;
+	}
 
-.wp-block-observata-callout.is-info {
-}
-
-.wp-block-observata-callout.is-warning {
-}
-
-.wp-block-observata-callout.is-success {
-}
-
-.wp-block-observata-callout .callout-inner {
-}
-
-.wp-block-observata-callout .callout-text {
-}
-
-.wp-block-observata-callout .callout-cta {
+	.body-lg {
+		text-wrap: pretty;
+		max-width: 60ch;
+	}
 }
