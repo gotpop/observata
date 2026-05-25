@@ -94,6 +94,7 @@ function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
 				'observata/header-logo',
 				'observata/header-navigation',
 				'observata/header-navigation-trigger',
+				'observata/section-intro',
 			)
 		) ) {
 			continue;
