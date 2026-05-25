@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/image-optimization.php';
 require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/speculation-rules.php';
 require get_template_directory() . '/inc/comments.php';
+require get_template_directory() . '/inc/twig-filters.php';
 
 // Load existing functionality
 require get_template_directory() . '/inc/block-renderer.php';
