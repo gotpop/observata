@@ -4,6 +4,6 @@
 
 <article class="card-geo icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<h3 class="heading-md title">{{ card_title|esc_html }}</h3>
-	<p class="body-md text">{{ card_text|wp_kses_post }}</p>
+	<h3 class="heading-md title">{{ card_title|strip_html }}</h3>
+	<p class="body-md text">{{ card_text|strip_html }}</p>
 </article>

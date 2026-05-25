@@ -15,7 +15,7 @@
 
 	<div class="card-photo__content">
 		{% if card_title %}
-			<h3 class="card-photo__title">{{ card_title|wp_kses_post }}</h3>
+			<h3 class="card-photo__title">{{ card_title|strip_html }}</h3>
 		{% endif %}
 
 		<div class="card-photo__body">
@@ -27,10 +27,10 @@
 				Photo by
 				{% if unsplash_source_url %}
 					<a href="{{ unsplash_source_url }}" target="_blank" rel="noopener noreferrer">
-						{{ unsplash_photographer|wp_kses_post }}
+						{{ unsplash_photographer|strip_html }}
 					</a>
 				{% else %}
-					{{ unsplash_photographer|wp_kses_post }}
+					{{ unsplash_photographer|strip_html }}
 				{% endif %}
 				on Unsplash
 			</div>

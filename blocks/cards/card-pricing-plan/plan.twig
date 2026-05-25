@@ -16,11 +16,11 @@
 	</div>
 
 	<div class="plan-card-pricing">
-		<span class="plan-card-price">{{ plan_price|esc_html }}</span>
-		<span class="plan-card-period">{{ plan_price_period|esc_html }}</span>
+		<span class="plan-card-price">{{ plan_price|strip_html }}</span>
+		<span class="plan-card-period">{{ plan_price_period|strip_html }}</span>
 	</div>
 
-	<p class="plan-card-description">{{ plan_description|wp_kses_post }}</p>
+	<p class="plan-card-description">{{ plan_description|strip_html }}</p>
 
 	{% if plan_features is not empty %}
 		<ul class="plan-card-features">

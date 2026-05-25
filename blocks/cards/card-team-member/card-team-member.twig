@@ -25,10 +25,10 @@
 	</div>
 
 	<div class="card-team-member__info">
-		<h3 class="card-team-member__name">{{ member_name|wp_kses_post }}</h3>
-		<span class="card-team-member__role">{{ member_role|wp_kses_post }}</span>
+		<h3 class="card-team-member__name">{{ member_name|strip_html }}</h3>
+		<span class="card-team-member__role">{{ member_role|strip_html }}</span>
 		{% if member_bio %}
-			<p class="card-team-member__bio">{{ member_bio|wp_kses_post }}</p>
+			<p class="card-team-member__bio">{{ member_bio|strip_html }}</p>
 		{% endif %}
 	</div>
 

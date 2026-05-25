@@ -6,10 +6,10 @@
 
 <article class="card-simple icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<h3 class="title">{{ title|wp_kses_post }}</h3>
-	<p class="body">{{ description|wp_kses_post }}</p>
+	<h3 class="title">{{ title|strip_html }}</h3>
+	<p class="body">{{ description|strip_html }}</p>
 
 	{% if read_more_url %}
-		<a href="{{ read_more_url }}" class="read-more">{{ read_more_text|wp_kses_post }}</a>
+		<a href="{{ read_more_url }}" class="read-more">{{ read_more_text|strip_html }}</a>
 	{% endif %}
 </article>

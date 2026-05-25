@@ -9,11 +9,11 @@
 	<block-content class="block-content">
 		<div class="intro">
 			{% if grid_title %}
-				<h2 class="heading-lg">{{grid_title|wp_kses_post}}</h2>
+				<h2 class="heading-lg">{{grid_title|strip_html}}</h2>
 			{% endif %}
 
 			{% if grid_subtitle %}
-				<p class="body-lg subtitle">{{ grid_subtitle|wp_kses_post }}</p>
+				<p class="body-lg subtitle">{{ grid_subtitle|strip_html }}</p>
 			{% endif %}
 		</div>
 

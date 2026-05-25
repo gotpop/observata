@@ -8,10 +8,10 @@
 <section class="block-hero-blog" aria-labeled-by="heading-hero-blog">
 	<block-content class="block-content hero-blog-content">
 		{% if heading %}
-			<h1 id="heading-hero-blog" class="heading-hero-blog" style="view-transition-name: heading-{{ view_name }};">{{ heading|wp_kses_post }}</h1>
+			<h1 id="heading-hero-blog" class="heading-hero-blog" style="view-transition-name: heading-{{ view_name }};">{{ heading|strip_html }}</h1>
 		{% endif %}
 		{% if subheading %}
-			<p class="body-hero body-hero-blog" style="view-transition-name: subheading-{{ view_name }};">{{ subheading|wp_kses_post }}</p>
+			<p class="body-hero body-hero-blog" style="view-transition-name: subheading-{{ view_name }};">{{ subheading|strip_html }}</p>
 		{% endif %}
 	</block-content>
 </section>
