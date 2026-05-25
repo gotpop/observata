@@ -1,3 +1,5 @@
+import './editor.css';
+
 import { InnerBlocks, MediaUpload, MediaUploadCheck, RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
@@ -54,6 +56,8 @@ export default function CardPhotoEdit({ attributes, setAttributes }) {
                     allowedBlocks={CONTENT_ALLOWED_BLOCKS}
                     template={[['observata/body-md', {}]]}
                     templateLock={false}
+                    orientation="vertical"
+                    renderAppender={InnerBlocks.ButtonBlockAppender}
                 />
             </div>
         </article>
