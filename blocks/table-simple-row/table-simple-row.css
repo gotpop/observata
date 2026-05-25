@@ -1,0 +1,9 @@
+/* Table Simple Row - 3-cell table row */
+
+.table-simple__row {
+	/* Row styles are handled in table-simple.css */
+}
+
+.table-simple__cell {
+	/* Cell styles are handled in table-simple.css */
+}

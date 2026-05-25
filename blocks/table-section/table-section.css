@@ -1,7 +1,7 @@
 .table-section {
 	.block-content {
 		display: grid;
-		grid-column: content;
+		grid-column: inner;
 		gap: var(--spacing-50);
 
 		@media (width >= 50rem) {

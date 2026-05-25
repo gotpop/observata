@@ -28,5 +28,6 @@
     },
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:table-simple.editor.css"
+    "editorStyle": "file:table-simple.editor.css",
+    "style": "file:table-simple.css"
 }

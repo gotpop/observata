@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 const ROW_TEMPLATE = [
     ['observata/table-simple-row', { rowLabel: '', column2Value: '', column3Value: '' }],
@@ -42,6 +42,7 @@ export default function TableSimpleEdit({ attributes, setAttributes }) {
                     template={ROW_TEMPLATE}
                     allowedBlocks={['observata/table-simple-row']}
                     templateLock={false}
+                    renderAppender={InnerBlocks.ButtonBlockAppender}
                 />
             </div>
         </div>
