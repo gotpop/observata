@@ -1,0 +1,15 @@
+{#
+  Table Section - wrapper with title and InnerBlocks for subtitle (body-md) and table.
+#}
+
+{% set section_title = attributes.sectionTitle|default('') %}
+
+<section class="section-block table-section">
+	<block-content class="block-content">
+		{% if section_title %}
+			<h2 class="heading-lg">{{ section_title|wp_kses_post }}</h2>
+		{% endif %}
+
+		{{ content|raw }}
+	</block-content>
+</section>

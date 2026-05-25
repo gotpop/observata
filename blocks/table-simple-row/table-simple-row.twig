@@ -1,0 +1,13 @@
+{#
+  Table Simple Row - renders as a single table row with 3 cells.
+#}
+
+{% set row_label = attributes.rowLabel|default('') %}
+{% set col2_value = attributes.column2Value|default('') %}
+{% set col3_value = attributes.column3Value|default('') %}
+
+<tr class="table-simple__row">
+	<td class="table-simple__cell">{{ row_label|wp_kses_post }}</td>
+	<td class="table-simple__cell">{{ col2_value|wp_kses_post }}</td>
+	<td class="table-simple__cell">{{ col3_value|wp_kses_post }}</td>
+</tr>

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/table-section",
+    "title": "Table Section",
+    "category": "theme",
+    "description": "A section wrapper with title and InnerBlocks for subtitle (body-md) and table blocks.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "textdomain": "observata",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:table-section.editor.css"
+}

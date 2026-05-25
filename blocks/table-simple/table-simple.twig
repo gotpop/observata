@@ -1,0 +1,23 @@
+{#
+  Table Simple - 3-column table with editable headers and rows.
+  Inner blocks (observata/table-simple-row) render as table rows.
+#}
+
+{% set col1_label = attributes.column1Label|default('Feature') %}
+{% set col2_label = attributes.column2Label|default('Capability') %}
+{% set col3_label = attributes.column3Label|default('Impact') %}
+
+<div class="table-simple">
+	<div class="table-simple__table-wrapper">
+		<table class="table-simple__table">
+			<thead>
+				<tr class="table-simple__head-row">
+					<th class="table-simple__head-cell">{{ col1_label }}</th>
+					<th class="table-simple__head-cell">{{ col2_label }}</th>
+					<th class="table-simple__head-cell">{{ col3_label }}</th>
+				</tr>
+			</thead>
+			<tbody>{{ content }}</tbody>
+		</table>
+	</div>
+</div>

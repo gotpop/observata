@@ -87,6 +87,12 @@ import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
+import TableSectionEdit from './table-section/edit';
+import TableSectionSave from './table-section/save';
+import TableSimpleEdit from './table-simple/edit';
+import TableSimpleRowEdit from './table-simple-row/edit';
+import TableSimpleRowSave from './table-simple-row/save';
+import TableSimpleSave from './table-simple/save';
 import TeamMembersEdit from './team-members/edit';
 import TeamMembersSave from './team-members/save';
 import blogPaginationMetadata from '../blocks/blog-pagination/block.json';
@@ -135,6 +141,9 @@ import { registerBlockType } from '@wordpress/blocks';
 import richTextMetadata from '../blocks/rich-text/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
 import sectionIntroMetadata from '../blocks/template/section-intro/block.json';
+import tableSectionMetadata from '../blocks/table-section/block.json';
+import tableSimpleMetadata from '../blocks/table-simple/block.json';
+import tableSimpleRowMetadata from '../blocks/table-simple-row/block.json';
 import teamMembersMetadata from '../blocks/repeatable/team-members/block.json';
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -322,6 +331,21 @@ registerBlockType(CardRichTextMetadata.name, {
 registerBlockType(teamMembersMetadata.name, {
     edit: TeamMembersEdit,
     save: TeamMembersSave,
+});
+
+registerBlockType(tableSectionMetadata.name, {
+    edit: TableSectionEdit,
+    save: TableSectionSave,
+});
+
+registerBlockType(tableSimpleMetadata.name, {
+    edit: TableSimpleEdit,
+    save: TableSimpleSave,
+});
+
+registerBlockType(tableSimpleRowMetadata.name, {
+    edit: TableSimpleRowEdit,
+    save: TableSimpleRowSave,
 });
 
 registerBlockType(cardTeamMemberMetadata.name, {
