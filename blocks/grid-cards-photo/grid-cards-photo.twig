@@ -1,0 +1,22 @@
+{#
+  Grid Cards Photo - displays a container for photo cards with title and subtitle.
+#}
+
+{% set grid_title = attributes.title|default('') %}
+{% set grid_subtitle = attributes.subtitle|default('') %}
+
+<seection class="section-block grid-cards-photo">
+	<block-content class="block-content">
+		{% if grid_title %}
+			<h2 class="grid-cards-photo__title">{{ grid_title|wp_kses_post }}</h2>
+		{% endif %}
+
+		{% if grid_subtitle %}
+			<p class="grid-cards-photo__subtitle">{{ grid_subtitle|wp_kses_post }}</p>
+		{% endif %}
+
+		<div class="grid-cards-photo__cards">
+			{{ content|raw }}
+		</div>
+	</block-content>
+</section>

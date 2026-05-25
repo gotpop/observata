@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/grid-cards-photo",
+    "title": "Grid Cards Photo",
+    "category": "theme",
+    "description": "A container for photo cards with title and subtitle.",
+    "supports": {
+        "html": false,
+        "reusable": false
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:grid-cards-photo.twig",
+    "editorScript": "file:../../../build/index.js",
+    "example": {
+        "attributes": {
+            "title": "Photo Cards",
+            "subtitle": "Beautiful photography with descriptions"
+        }
+    }
+}

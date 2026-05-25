@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card-photo",
+    "title": "Card Photo",
+    "category": "theme",
+    "description": "A content card with image, title, and paragraph components.",
+    "parent": [
+        "observata/grid-cards-photo"
+    ],
+    "supports": {
+        "html": false,
+        "reusable": false
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "unsplashPhotographer": {
+            "type": "string",
+            "default": ""
+        },
+        "unsplashSourceUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "render": "file:card-photo.twig",
+    "editorScript": "file:../../../build/index.js",
+    "example": {
+        "attributes": {
+            "title": "Card Title"
+        }
+    }
+}

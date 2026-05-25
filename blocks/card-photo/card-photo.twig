@@ -1,0 +1,39 @@
+{#
+  Card Photo - displays a content card with image, title, and paragraph components.
+#}
+
+{% set card_title = attributes.title|default('') %}
+{% set image_url = attributes.imageUrl|default('') %}
+{% set image_alt = attributes.imageAlt|default(card_title) %}
+{% set unsplash_photographer = attributes.unsplashPhotographer|default('') %}
+{% set unsplash_source_url = attributes.unsplashSourceUrl|default('') %}
+
+<div class="card-photo">
+	{% if image_url %}
+		<img class="card-photo__image" src="{{ image_url }}" alt="{{ image_alt }}" style="object-fit: cover;"/>
+	{% endif %}
+
+	<div class="card-photo__content">
+		{% if card_title %}
+			<h3 class="card-photo__title">{{ card_title|wp_kses_post }}</h3>
+		{% endif %}
+
+		<div class="card-photo__body">
+			{{ content|raw }}
+		</div>
+
+		{% if unsplash_photographer %}
+			<div class="card-photo__attribution">
+				Photo by
+				{% if unsplash_source_url %}
+					<a href="{{ unsplash_source_url }}" target="_blank" rel="noopener noreferrer">
+						{{ unsplash_photographer|wp_kses_post }}
+					</a>
+				{% else %}
+					{{ unsplash_photographer|wp_kses_post }}
+				{% endif %}
+				on Unsplash
+			</div>
+		{% endif %}
+	</div>
+</div>
