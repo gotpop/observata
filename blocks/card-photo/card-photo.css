@@ -1,0 +1,42 @@
+.card-photo {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-24);
+}
+
+.card-photo__image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	display: block;
+}
+
+.card-photo__content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-16);
+}
+
+.card-photo__title {
+	text-wrap: balance;
+}
+
+.card-photo__body {
+	gap: var(--spacing-16);
+	display: flex;
+	flex-direction: column;
+}
+
+.card-photo__attribution {
+	font-size: 0.875rem;
+	line-height: 1.5;
+	color: inherit;
+	opacity: 0.75;
+
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

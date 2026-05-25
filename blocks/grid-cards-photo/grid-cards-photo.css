@@ -1,0 +1,30 @@
+.grid-cards-photo {
+	display: grid;
+	grid-column: content;
+	grid-template-columns: subgrid;
+	grid-template-rows: min-content;
+
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: subgrid;
+		grid-template-rows: min-content;
+		row-gap: var(--spacing-50);
+	}
+
+	.intro {
+		grid-column: content;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+		row-gap: var(--spacing-24);
+	}
+
+	.grid-cards-photos {
+		display: grid;
+		grid-column: content;
+		grid-template-rows: min-content;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: var(--spacing-50);
+	}
+}
