@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/callout",
-    "title": "Callout",
+    "name": "observata/section-cta",
+    "title": "Section CTA",
     "category": "theme",
-    "description": "A highlighted callout box with an optional CTA.",
+    "description": "A section with title, text, and call-to-action link.",
     "supports": {
         "html": false
     },
@@ -17,15 +17,6 @@
             "type": "string",
             "default": ""
         },
-        "variant": {
-            "type": "string",
-            "default": "info",
-            "enum": [
-                "info",
-                "warning",
-                "success"
-            ]
-        },
         "ctaText": {
             "type": "string",
             "default": ""
@@ -36,13 +27,12 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "style": "file:callout.css",
+    "style": "file:section-cta.css",
     "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
             "title": "Important Information",
-            "text": "This is an important callout message that highlights key information.",
-            "variant": "info",
+            "text": "This is an important section message with a call-to-action.",
             "ctaText": "Learn more",
             "ctaUrl": ""
         }

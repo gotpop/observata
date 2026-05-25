@@ -1,0 +1,20 @@
+{% set title = attributes.title|default('') %}
+{% set text = attributes.text|default('') %}
+{% set cta_text = attributes.ctaText|default('') %}
+{% set cta_url = attributes.ctaUrl|default('') %}
+
+<section class="wp-block-observata-section-cta">
+	<div class="section-cta-inner">
+		{% if title %}
+			<h3 class="section-cta-title">{{ title|esc_html }}</h3>
+		{% endif %}
+
+		{% if text %}
+			<p class="section-cta-text">{{ text|wp_kses_post }}</p>
+		{% endif %}
+
+		{% if cta_text and cta_url %}
+			<a href="{{ cta_url|esc_url }}" class="section-cta-link">{{ cta_text|esc_html }}</a>
+		{% endif %}
+	</div>
+</section>
