@@ -27,7 +27,10 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "style": "file:section-cta.css",
+    "style": [
+        "file:section-cta-graphic.css",
+        "file:section-cta.css"
+    ],
     "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {

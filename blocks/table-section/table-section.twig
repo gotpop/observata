@@ -1,6 +1,6 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 
-<section class="section-block table-section">
+<section class="section-block table-section" data-observe="true" data-threshold="1">
 	<block-content class="block-content">
 		{% if section_title %}
 			<h2 class="heading-lg">{{ section_title|strip_html }}</h2>

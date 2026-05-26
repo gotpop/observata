@@ -3,7 +3,8 @@
 {% set cta_text = attributes.ctaText|default('') %}
 {% set cta_url = attributes.ctaUrl|default('') %}
 
-<section class="section-block section-cta">
+<section class="section-block section-cta" data-threshold="1" data-observe="true" data-margin-top="200px">
+	{% include 'graphics/tech/swooping-lines.twig' %}
 	<block-content class="block-content">
 		{% if title %}
 			<h3 class="heading-lg">{{ title|strip_html }}</h3>

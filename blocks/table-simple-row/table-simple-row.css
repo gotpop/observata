@@ -2,15 +2,26 @@
 
 .body-row {
 	border-block-end: 1px solid var(--colour-border-border-gray);
+	transition: background 0.3s ease-in-out;
 
 	&:nth-child(odd) {
 		background-color: var(--colour-neutral-100);
+	}
+
+	&:hover {
+		background-color: var(--colour-neutral-200);
 	}
 
 	.body-cell {
 		text-align: start;
 		padding-block: var(--spacing-24);
 		padding-inline: var(--spacing-16);
-		font-size: var(--size-body-md);
+		font-size: var(--size-body-sm);
+		text-wrap: pretty;
+
+		&:first-child {
+			padding-inline: var(--spacing-24);
+			font-weight: var(--typography-weight-medium);
+		}
 	}
 }

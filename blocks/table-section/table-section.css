@@ -1,7 +1,17 @@
 .table-section {
 	.block-content {
 		display: grid;
-		grid-column: inner;
+		grid-column: content;
 		gap: var(--spacing-24);
+	}
+
+	.heading-lg {
+		margin-block-end: 1rem;
+	}
+
+	.body-md {
+		max-width: 100ch;
+		text-wrap: pretty;
+		/* columns: 2; */
 	}
 }

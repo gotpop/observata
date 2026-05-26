@@ -76,6 +76,7 @@
 		z-index: 1;
 		max-width: 60ch;
 		margin: 0;
+		text-wrap: pretty;
 	}
 }
 

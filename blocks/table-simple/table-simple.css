@@ -6,15 +6,25 @@
 	min-height: max-content;
 	padding-block-start: var(--spacing-32);
 
+	.table-wrapper {
+		border-radius: var(--radius-card);
+		overflow: clip;
+		border: var(--border-site-highlight-secondary);
+	}
+
 	.head-row {
 		border-block-end: 1px solid var(--colour-border-border-gray);
 
 		.head-cell {
-			font-size: var(--size-body-lg);
+			font-size: var(--size-body-md);
 			font-weight: 500;
 			padding-block: var(--spacing-24);
 			padding-inline: var(--spacing-16);
 			text-align: start;
+
+			&:first-child {
+				padding-inline: var(--spacing-24);
+			}
 		}
 	}
 }
