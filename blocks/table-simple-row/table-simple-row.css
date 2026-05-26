@@ -1,9 +1,16 @@
 /* Table Simple Row - 3-cell table row */
 
-.table-simple__row {
-	/* Row styles are handled in table-simple.css */
-}
+.body-row {
+	border-block-end: 1px solid var(--colour-border-border-gray);
 
-.table-simple__cell {
-	/* Cell styles are handled in table-simple.css */
+	&:nth-child(odd) {
+		background-color: var(--colour-neutral-100);
+	}
+
+	.body-cell {
+		text-align: start;
+		padding-block: var(--spacing-24);
+		padding-inline: var(--spacing-16);
+		font-size: var(--size-body-md);
+	}
 }

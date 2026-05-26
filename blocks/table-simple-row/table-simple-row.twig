@@ -6,8 +6,8 @@
 {% set col2_value = attributes.column2Value|default('') %}
 {% set col3_value = attributes.column3Value|default('') %}
 
-<tr class="table-simple__row">
-	<td class="table-simple__cell">{{ row_label|strip_html }}</td>
-	<td class="table-simple__cell">{{ col2_value|strip_html }}</td>
-	<td class="table-simple__cell">{{ col3_value|strip_html }}</td>
+<tr class="body-row">
+	<td class="body-cell">{{ row_label|strip_html }}</td>
+	<td class="body-cell">{{ col2_value|strip_html }}</td>
+	<td class="body-cell">{{ col3_value|strip_html }}</td>
 </tr>

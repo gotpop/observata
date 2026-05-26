@@ -8,13 +8,13 @@
 {% set col3_label = attributes.column3Label|default('Impact') %}
 
 <div class="table-simple">
-	<div class="table-simple__table-wrapper">
-		<table class="table-simple__table">
+	<div class="table-wrapper">
+		<table class="table">
 			<thead>
-				<tr class="table-simple__head-row">
-					<th class="table-simple__head-cell">{{ col1_label }}</th>
-					<th class="table-simple__head-cell">{{ col2_label }}</th>
-					<th class="table-simple__head-cell">{{ col3_label }}</th>
+				<tr class="head-row">
+					<th class="head-cell">{{ col1_label }}</th>
+					<th class="head-cell">{{ col2_label }}</th>
+					<th class="head-cell">{{ col3_label }}</th>
 				</tr>
 			</thead>
 			<tbody>{{ content|raw }}</tbody>

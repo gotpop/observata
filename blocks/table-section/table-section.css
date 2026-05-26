@@ -2,10 +2,6 @@
 	.block-content {
 		display: grid;
 		grid-column: inner;
-		gap: var(--spacing-50);
-
-		@media (width >= 50rem) {
-			gap: var(--spacing-64);
-		}
+		gap: var(--spacing-24);
 	}
 }
