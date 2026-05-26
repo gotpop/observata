@@ -1,8 +1,9 @@
 import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
-import { SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import GeoIcon from '../components/geo-icon';
@@ -13,8 +14,20 @@ const iconOptions = Array.from({ length: 30 }, (_, i) => {
 });
 
 export default function CardGeoListEdit({ attributes, setAttributes }) {
-    const { cardTitle, listItem1, listItem2, iconGeo } = attributes;
+    const { cardTitle, listItem1, listItem2, iconGeo, showReadMore, readMoreText, readMoreUrl } = attributes;
     const blockProps = useBlockProps({ className: 'card-geo-list' });
+
+    const pages = useSelect((select) => {
+        return select('core').getEntityRecords('postType', 'page', { per_page: -1, _fields: ['id', 'title', 'link'] }) || [];
+    }, []);
+
+    const pageOptions = [
+        { label: __('Select a page...', 'observata'), value: '' },
+        ...pages.map((page) => ({
+            label: page.title.rendered,
+            value: page.link,
+        })),
+    ];
 
     return (
         <article {...blockProps}>
@@ -61,6 +74,26 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
                     options={iconOptions}
                     onChange={(val) => setAttributes({ iconGeo: val })}
                 />
+                <ToggleControl
+                    label={__('Show Read More Link', 'observata')}
+                    checked={showReadMore}
+                    onChange={(val) => setAttributes({ showReadMore: val })}
+                />
+                {showReadMore && (
+                    <>
+                        <TextControl
+                            label={__('Read More Text', 'observata')}
+                            value={readMoreText}
+                            onChange={(val) => setAttributes({ readMoreText: val })}
+                        />
+                        <SelectControl
+                            label={__('Read More Link', 'observata')}
+                            value={readMoreUrl}
+                            options={pageOptions}
+                            onChange={(val) => setAttributes({ readMoreUrl: val })}
+                        />
+                    </>
+                )}
             </div>
         </article>
     );

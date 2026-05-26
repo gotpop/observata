@@ -32,9 +32,20 @@
         "iconGeo": {
             "type": "string",
             "default": "24"
+        },
+        "showReadMore": {
+            "type": "boolean",
+            "default": false
+        },
+        "readMoreText": {
+            "type": "string",
+            "default": ""
+        },
+        "readMoreUrl": {
+            "type": "string",
+            "default": ""
         }
     },
-    "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
     "style": "file:card-geo-list.css",
     "example": {

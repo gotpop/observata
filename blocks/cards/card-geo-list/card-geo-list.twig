@@ -2,6 +2,9 @@
 {% set list_item_1 = attributes.listItem1|default('') %}
 {% set list_item_2 = attributes.listItem2|default('') %}
 {% set icon_geo = attributes.iconGeo|default('24') %}
+{% set show_read_more = attributes.showReadMore|default(false) %}
+{% set read_more_text = attributes.readMoreText|default('') %}
+{% set read_more_url = attributes.readMoreUrl|default('') %}
 
 <article class="card-geo-list icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
@@ -16,4 +19,10 @@
 			<p class="body-md">{{ list_item_2|strip_html }}</p>
 		</li>
 	</ul>
+	{% if show_read_more and read_more_text and read_more_url %}
+		<a href="{{ read_more_url|esc_url }}" class="card-read-more">
+			<span>{{ read_more_text|strip_html }}</span>
+			{% include 'icons/lucide/arrow-right.twig' %}
+		</a>
+	{% endif %}
 </article>

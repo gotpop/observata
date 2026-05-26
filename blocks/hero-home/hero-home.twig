@@ -35,10 +35,10 @@
 			{% endif %}
 
 			{% if read_more_text and read_more_url %}
-				<div class="hero-read-more">
+				<a href="{{ read_more_url|esc_url }}" class="hero-read-more">
 					<span>{{ read_more_text|strip_html }}</span>
 					{% include 'icons/lucide/arrow-right.twig' %}
-				</div>
+				</a>
 			{% endif %}
 		</div>
 	</div>
