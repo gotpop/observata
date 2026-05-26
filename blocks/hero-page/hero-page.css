@@ -23,6 +23,13 @@
 	overflow: clip;
 	position: relative;
 
+	.cta-hero-page {
+		--size: 1rem;
+
+		z-index: 1;
+		width: max-content;
+	}
+
 	&::after {
 		content: '';
 		width: 100%;

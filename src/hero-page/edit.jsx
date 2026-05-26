@@ -1,15 +1,29 @@
 import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 
 import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
 
 export default function HeroPageEdit({ attributes, setAttributes }) {
-    const { heading, subheading } = attributes;
+    const { heading, subheading, showCta, ctaText, ctaUrl } = attributes;
     const blockProps = useBlockProps({
         className: 'block-hero-page',
     });
+
+    const pages = useSelect((select) => {
+        return select('core').getEntityRecords('postType', 'page', { per_page: -1, _fields: ['id', 'title', 'link'] }) || [];
+    }, []);
+
+    const pageOptions = [
+        { label: __('Select a page...', 'observata'), value: '' },
+        ...pages.map((page) => ({
+            label: page.title.rendered,
+            value: page.link,
+        })),
+    ];
 
     return (
         <section {...blockProps}>
@@ -35,6 +49,26 @@ export default function HeroPageEdit({ attributes, setAttributes }) {
                         placeholder={__('Subheading text…', 'observata')}
                         allowedFormats={[]}
                     />
+                    <ToggleControl
+                        label={__('Show CTA Button', 'observata')}
+                        checked={showCta}
+                        onChange={(val) => setAttributes({ showCta: val })}
+                    />
+                    {showCta && (
+                        <>
+                            <TextControl
+                                label={__('CTA Text', 'observata')}
+                                value={ctaText}
+                                onChange={(val) => setAttributes({ ctaText: val })}
+                            />
+                            <SelectControl
+                                label={__('CTA Link', 'observata')}
+                                value={ctaUrl}
+                                options={pageOptions}
+                                onChange={(val) => setAttributes({ ctaUrl: val })}
+                            />
+                        </>
+                    )}
                 </div>
             </div>
         </section>

@@ -17,6 +17,18 @@
         "subheading": {
             "type": "string",
             "default": ""
+        },
+        "showCta": {
+            "type": "boolean",
+            "default": false
+        },
+        "ctaText": {
+            "type": "string",
+            "default": ""
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": ""
         }
     },
     "render": "file:render.php",
