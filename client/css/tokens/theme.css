@@ -18,6 +18,7 @@
 
 	/* Borders */
 	--colour-border-border-gray: #e5e7ea;
+	--border-site: 1px solid var(--colour-border-border-gray);
 	--colour-border-border-light: #f2f3f5;
 
 	/* Lines */

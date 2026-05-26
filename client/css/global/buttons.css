@@ -17,3 +17,24 @@
 		color: white;
 	}
 }
+
+.link-anchor {
+	--size: 1rem;
+
+	align-items: center;
+	color: var(--link-anchor-colour, var(--colour-primary-500));
+	cursor: pointer;
+	display: flex;
+	font-size: var(--size-body-md);
+	gap: var(--spacing-8);
+	text-decoration-color: var(--colour-primary-400);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.3em;
+	transition: color 0.3s ease;
+	width: max-content;
+	text-decoration-line: underline;
+
+	&:hover {
+		--link-anchor-colour: var(--colour-secondary-500);
+	}
+}
