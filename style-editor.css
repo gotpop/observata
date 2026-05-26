@@ -184,6 +184,10 @@ input,
 	color: var(--colour-text-body-default);
 }
 
+.body-sm {
+	color: var(--colour-text-body-default);
+}
+
 .intro-card-icon {
 	--size: 3.25rem;
 

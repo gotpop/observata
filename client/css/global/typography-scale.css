@@ -89,7 +89,6 @@
 .body-sm {
 	color: var(--colour-text-body-default);
 	font-size: var(--typography-size-14);
-	line-height: 1.5;
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
 }

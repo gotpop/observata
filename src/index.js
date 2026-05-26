@@ -3,6 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import blogPaginationMetadata from '../blocks/blog-pagination/block.json';
 import cardPhotoMetadata from '../blocks/card-photo/block.json';
 import bodyMdMetadata from '../blocks/cards/body-md/block.json';
+import bodySmMetadata from '../blocks/cards/body-sm/block.json';
 import cardGeoListMetadata from '../blocks/cards/card-geo-list/block.json';
 import cardGeoShaderMetadata from '../blocks/cards/card-geo-shader/block.json';
 import cardGeoTechMetadata from '../blocks/cards/card-geo-tech/block.json';
@@ -56,6 +57,8 @@ import BlogPostsEdit from './blog-posts/edit';
 import BlogPostsSave from './blog-posts/save';
 import BodyMdEdit from './body-md/edit';
 import BodyMdSave from './body-md/save';
+import BodySmEdit from './body-sm/edit';
+import BodySmSave from './body-sm/save';
 import BreadcrumbsEdit from './breadcrumbs/edit';
 import BreadcrumbsSave from './breadcrumbs/save';
 import CardGeoListEdit from './card-geo-list/edit';
@@ -393,6 +396,12 @@ registerBlockType(bodyMdMetadata.name, {
     edit: BodyMdEdit,
     save: BodyMdSave,
 });
+
+registerBlockType(bodySmMetadata.name, {
+    edit: BodySmEdit,
+    save: BodySmSave,
+});
+
 registerBlockType(gridCardsTextMetadata.name, {
     edit: GridCardsTextEdit,
     save: GridCardsTextSave,
