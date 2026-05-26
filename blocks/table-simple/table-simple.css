@@ -10,6 +10,11 @@
 		border-radius: var(--radius-card);
 		overflow: clip;
 		border: var(--border-site-highlight-secondary);
+		width: var(--stretch);
+	}
+
+	.table {
+		width: var(--stretch);
 	}
 
 	.head-row {
