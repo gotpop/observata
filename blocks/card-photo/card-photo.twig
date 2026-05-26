@@ -8,7 +8,7 @@
 {% set unsplash_photographer = attributes.unsplashPhotographer|default('') %}
 {% set unsplash_source_url = attributes.unsplashSourceUrl|default('') %}
 
-<card-photo class="card-photo" role="article">
+<card-photo class="card-photo fade-in-up" role="article">
 	{% if image_url %}
 		<wrappper-img class="wrappper-img">
 			<img class="image" src="{{ image_url }}" alt="{{ image_alt }}"/>

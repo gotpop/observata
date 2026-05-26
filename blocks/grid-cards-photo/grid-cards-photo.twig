@@ -5,7 +5,7 @@
 {% set grid_title = attributes.title|default('') %}
 {% set grid_subtitle = attributes.subtitle|default('') %}
 
-<section class="section-block grid-cards-photo">
+<section class="section-block grid-cards-photo" data-observe="true" data-threshold="0.6">
 	<block-content class="block-content">
 		<div class="intro">
 			{% if grid_title %}
