@@ -31,12 +31,12 @@
 	/* Neutral */
 	--colour-neutral-white: #ffffff;
 	--colour-neutral-100: #fafafa;
-	--colour-neutral-500: #7f7f7f;
-	--colour-neutral-600: #626262;
+	--colour-neutral-200: #dbdbdb;
 	--colour-neutral-300: #b1b1b1;
 	--colour-neutral-400: #939393;
+	--colour-neutral-500: #7f7f7f;
+	--colour-neutral-600: #626262;
 	--colour-neutral-700: #484848;
-	--colour-neutral-200: #dbdbdb;
 	--colour-neutral-800: #2e2e2e;
 	--colour-neutral-900: #1e1e1e;
 	--colour-neutral-black: #000000;

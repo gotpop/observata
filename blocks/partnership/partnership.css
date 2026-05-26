@@ -1,3 +1,27 @@
+@property --gradient-color-1 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --gradient-color-2 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --gradient-stop-1 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --gradient-stop-2 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 100%;
+}
+
 .block-partnership {
 	overflow: clip;
 	view-transition-name: partnership;
@@ -10,10 +34,19 @@
 		pointer-events: none;
 
 		&:after {
-			background-image: radial-gradient(circle, var(--colour-accent-1-300), var(--colour-secondary-200));
+			/* --gradient-color-1: #efaedc;
+			--gradient-color-2: #5bc1e6; */
+			/* --gradient-stop-1: 0%;
+			--gradient-stop-2: 100%; */
+
+			background-image: radial-gradient(
+				circle,
+				var(--gradient-color-1) var(--gradient-stop-1),
+				var(--gradient-color-2) var(--gradient-stop-2)
+			);
 			content: '';
 			top: 350px;
-			mask-image: url(#mask);
+			mask-image: url(#mask-swooping-lines);
 			mask-position: center;
 			mask-repeat: no-repeat;
 			mask-size: contain;
@@ -24,6 +57,11 @@
 			left: 50%;
 			transform: translateX(-50%);
 			transition: all 0.3s ease;
+			transition:
+				--gradient-color-1 0.6s ease,
+				--gradient-color-2 0.6s ease,
+				--gradient-stop-1 0.6s ease,
+				--gradient-stop-2 0.6s ease;
 
 			@media (width >=40rem) {
 				top: 370px;
@@ -31,6 +69,15 @@
 
 			@media (width >=80rem) {
 				top: 230px;
+			}
+		}
+
+		.in-view & {
+			&::after {
+				--gradient-color-1: #efaedc;
+				--gradient-color-2: #5bc1e6;
+				--gradient-stop-1: 30%;
+				--gradient-stop-2: 70%;
 			}
 		}
 	}
@@ -112,7 +159,7 @@
 }
 
 #swooping-lines path {
-	opacity: 0;
+	opacity: 0.2;
 	transition: all 0.3s ease-in-out;
 	transition-delay: calc(0.03s * sibling-index());
 
@@ -122,7 +169,7 @@
 }
 
 #swooping-lines-bottom path {
-	opacity: 0;
+	opacity: 0.2;
 	transition: all 0.3s ease-in-out;
 	transition-delay: calc(0.03s * sibling-index());
 
