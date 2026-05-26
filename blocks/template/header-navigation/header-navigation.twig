@@ -15,7 +15,7 @@
 					{% else %}
 						<li class="menu-item menu-item-{{ item.slug|esc_attr }}">
 							<a class="menu-anchor" href="{{ item.link }}">
-								<span>{{ item.title|esc_html }}</span>
+								<span>{{ item.title|strip_html }}</span>
 							</a>
 						</li>
 					{% endif %}

@@ -5,10 +5,10 @@
 
 <section-intro class="section-intro{{ align_class }}">
 	{% if section_title %}
-		<h2 class="heading-lg section-intro-title">{{ section_title|esc_html }}</h2>
+		<h2 class="heading-lg section-intro-title">{{ section_title|strip_html }}</h2>
 	{% endif %}
 
 	{% if intro_text %}
-		<p class="body-md section-intro-text">{{ intro_text|esc_html }}</p>
+		<p class="body-md section-intro-text">{{ intro_text|strip_html }}</p>
 	{% endif %}
 </section-intro>

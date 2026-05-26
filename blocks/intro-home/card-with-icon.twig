@@ -3,7 +3,7 @@
 		{% include 'icons/geo/' ~ card.icon_geo ~ '.twig' %}
 	</div>
 	<div class="intro-card-body">
-		<h3 class="intro-card-title">{{ card.title|esc_html }}</h3>
-		<p class="intro-card-text">{{ card.text|esc_html }}</p>
+		<h3 class="intro-card-title">{{ card.title|strip_html }}</h3>
+		<p class="intro-card-text">{{ card.text|strip_html }}</p>
 	</div>
 </article>

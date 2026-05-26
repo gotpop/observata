@@ -9,7 +9,7 @@
 
 <article class="plan-card{{ is_highlighted ? ' plan-card--highlighted' : '' }}">
 	<div class="plan-card-header">
-		<h3 class="plan-card-name">{{ plan_name|esc_html }}</h3>
+		<h3 class="plan-card-name">{{ plan_name|strip_html }}</h3>
 		{% if is_highlighted %}
 			<span class="plan-card-badge">Popular</span>
 		{% endif %}
@@ -31,13 +31,13 @@
 							<path d="M3 8.5L6.5 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 					</span>
-					<span>{{ feature|esc_html }}</span>
+					<span>{{ feature|strip_html }}</span>
 				</li>
 			{% endfor %}
 		</ul>
 	{% endif %}
 
 	<a href="{{ cta_url|esc_url }}" class="plan-card-cta{{ is_highlighted ? ' plan-card-cta--primary' : '' }}">
-		{{ cta_text|esc_html }}
+		{{ cta_text|strip_html }}
 	</a>
 </article>

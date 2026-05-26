@@ -8,7 +8,7 @@
 {% set unsplash_photographer = attributes.unsplashPhotographer|default('') %}
 {% set unsplash_source_url = attributes.unsplashSourceUrl|default('') %}
 
-<div class="card-photo">
+<card-photo class="card-photo" role="article">
 	{% if image_url %}
 		<img class="card-photo__image" src="{{ image_url }}" alt="{{ image_alt }}" style="object-fit: cover;"/>
 	{% endif %}
@@ -36,4 +36,4 @@
 			</div>
 		{% endif %}
 	</div>
-</div>
+</card-photo>

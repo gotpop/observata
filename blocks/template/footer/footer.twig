@@ -16,12 +16,12 @@
 						<li class="list-item">
 							<strong>Email:</strong>
 							<span>
-								<a class="anchor" href="mailto:{{ contact_email|esc_html }}">{{ contact_email|esc_html }}</a>
+								<a class="anchor" href="mailto:{{ contact_email|strip_html }}">{{ contact_email|strip_html }}</a>
 							</span>
 						</li>
 						<li class="list-item">
 							<strong>Address:</strong>
-							<span>{{ contact_address|esc_html }}</span>
+							<span>{{ contact_address|strip_html }}</span>
 						</li>
 					</ul>
 				</article>
@@ -82,7 +82,7 @@
 				<p>{{ locations|esc_html|replace({'|': '<span>|</span>'})|raw }}</p>
 			</div>
 			<div class="footer-copyright">
-				<p>{{ copyright|esc_html }}</p>
+				<p>{{ copyright|strip_html }}</p>
 			</div>
 		</footer-bottom>
 	</block-content>
