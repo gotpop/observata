@@ -19,7 +19,8 @@
 	/* Borders */
 	--colour-border-border-gray: #e5e7ea;
 	--border-site: 1px solid var(--colour-border-border-gray);
-	--colour-border-border-light: #f2f3f5;
+	--border-site-highlight-primary: 1px solid var(--colour-accent-1-400);
+	--border-site-highlight-secondary: 1px solid var(--colour-secondary-400);
 
 	/* Lines */
 	--icon-line-bg-colour: #ff0000;

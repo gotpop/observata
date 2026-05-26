@@ -6,7 +6,7 @@ icon-geo {
 	border-radius: 50%;
 	width: var(--size-outer);
 	height: var(--size-outer);
-	border: 1px solid var(--border-colour);
+	border: var(--icon-geo-border-colour, var(--border-site));
 	display: flex;
 	justify-content: center;
 	align-items: center;
