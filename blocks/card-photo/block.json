@@ -38,7 +38,6 @@
             "default": ""
         }
     },
-    "render": "file:card-photo.twig",
     "editorScript": "file:../../../build/index.js",
     "style": "file:card-photo.css",
     "example": {
