@@ -4,7 +4,7 @@
 
 {% set card_title = attributes.title|default('') %}
 {% set image_url = attributes.imageUrl|default('') %}
-{% set image_alt = attributes.imageAlt|default(card_title) %}
+{% set image_alt = attributes.imageAlt|default(card_title)|strip_html %}
 {% set unsplash_photographer = attributes.unsplashPhotographer|default('') %}
 {% set unsplash_source_url = attributes.unsplashSourceUrl|default('') %}
 
