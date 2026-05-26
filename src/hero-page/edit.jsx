@@ -2,10 +2,10 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
 
-import BlockLabel from '../components/block-label';
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 export default function HeroPageEdit({ attributes, setAttributes }) {
     const { heading, subheading, showCta, ctaText, ctaUrl } = attributes;
