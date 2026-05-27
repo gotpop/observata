@@ -6,8 +6,10 @@
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text } } %}
 
-		<article class="card-large">
-			{% include 'graphics/tech/connected-dots-graphic-mono.twig' %}
+		<article
+			class="card-large">
+			{# {% include 'graphics/tech/connected-dots-graphic-mono.twig' %} #}
+			{% include 'graphics/spheres/sphere-13.twig' %}
 			<layout-micro class="layout-micro">
 				{{ content|raw }}
 			</layout-micro>

@@ -1,3 +1,9 @@
+@keyframes drawPath {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
 .block-observability {
 	.block-content {
 		display: grid;
@@ -63,6 +69,29 @@
 		right: 5rem;
 		top: 5rem;
 		left: auto;
+
+		svg {
+			position: absolute;
+			width: 590px;
+			height: auto;
+			top: -160px;
+			right: -320px;
+
+			.circles path {
+				stroke-width: 1.3px;
+				stroke: red;
+				fill: red;
+			}
+
+			path {
+				/* stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				animation: drawPath 5s ease-in-out forwards; */
+				/* stroke: aquamarine; */
+				stroke-width: 0.3px;
+				/* animation-delay: 0.5s; */
+			}
+		}
 
 		&:after {
 			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
