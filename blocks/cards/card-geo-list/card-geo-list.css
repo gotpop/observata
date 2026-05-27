@@ -90,6 +90,7 @@
 		position: absolute;
 		translate: -50% 50%;
 		transition: border 0.3s ease;
+		text-decoration-line: none;
 
 		&:hover {
 			--link-card-geo: var(--border-site-highlight-primary);
