@@ -9,7 +9,7 @@
 	.table-wrapper {
 		border-radius: var(--radius-card);
 		overflow: clip;
-		border: var(--border-site-highlight-secondary);
+		border: var(--border-secondary);
 		width: var(--stretch);
 	}
 

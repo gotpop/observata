@@ -7,7 +7,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: var(--spacing-40);
 		border-radius: var(--radius-card);
-		border: var(--border-site-highlight-main);
+		border: var(--border-primary);
 		padding: var(--spacing-40);
 
 		@media (width >=40rem) {

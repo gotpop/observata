@@ -18,10 +18,11 @@
 
 	/* Borders */
 	--colour-border-border-gray: #e5e7ea;
-	--border-site: 1px solid var(--colour-border-border-gray);
-	--border-site-highlight-primary: 1px solid var(--colour-accent-1-400);
-	--border-site-highlight-secondary: 1px solid var(--colour-secondary-400);
-	--border-site-highlight-main: 1px solid var(--colour-primary-400);
+
+	--border-primary: 1px solid var(--colour-primary-400);
+	--border-secondary: 1px solid var(--colour-secondary-400);
+	--border-accent: 1px solid var(--colour-accent-1-400);
+	--border-grey: 1px solid var(--colour-border-border-gray);
 
 	/* Lines */
 	--icon-line-bg-colour: #ff0000;

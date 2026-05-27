@@ -2,7 +2,7 @@
 	backdrop-filter: blur(3px);
 	background-color: var(--colour-surface-white-transparent);
 	border-radius: var(--radius-card);
-	border: var(--card-geo-list-border, var(--border-site));
+	border: var(--card-geo-list-border, var(--border-grey));
 	display: grid;
 	gap: var(--spacing-32);
 	grid-template-columns: 1fr;
@@ -13,8 +13,8 @@
 	transition: border 0.3s ease;
 
 	&:has(.link-anchor-card-geo:hover) {
-		--card-geo-list-border: var(--border-site-highlight-secondary);
-		--icon-geo-border-colour: var(--border-site-highlight-secondary);
+		--card-geo-list-border: var(--border-secondary);
+		--icon-geo-border-colour: var(--border-secondary);
 	}
 
 	.icon-geo {
@@ -83,7 +83,7 @@
 	.link-anchor-card-geo {
 		background-color: var(--colour-surface-white);
 		border-radius: var(--radius-pill);
-		border: var(--link-card-geo, var(--border-site));
+		border: var(--link-card-geo, var(--border-grey));
 		inset: auto auto 0 50%;
 		margin: 0 auto;
 		padding: var(--spacing-16) var(--spacing-24);
@@ -93,7 +93,7 @@
 		text-decoration-line: none;
 
 		&:hover {
-			--link-card-geo: var(--border-site-highlight-primary);
+			--link-card-geo: var(--border-accent);
 		}
 	}
 }
