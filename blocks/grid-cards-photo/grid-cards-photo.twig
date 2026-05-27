@@ -4,8 +4,9 @@
 
 {% set grid_title = attributes.title|default('') %}
 {% set grid_subtitle = attributes.subtitle|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 
-<section class="section-block grid-cards-photo" data-observe="true" data-threshold="0.6">
+<section class="section-block grid-cards-photo" data-observe="true" data-threshold="0.6" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
 		<div class="intro">
 			{% if grid_title %}

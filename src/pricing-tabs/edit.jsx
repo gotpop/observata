@@ -1,9 +1,10 @@
 import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { Button, ButtonGroup } from '@wordpress/components';
+import { Button, ButtonGroup, SelectControl } from '@wordpress/components';
 
 import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 // Default template for each tab
@@ -20,6 +21,7 @@ const TABS = [
 
 export default function PricingTabsEdit({ attributes, setAttributes }) {
     const [localActiveTab, setLocalActiveTab] = useState(attributes.activeTab || 'observability');
+    const { sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'observata-pricing-tabs-editor' });
 
     const handleTabClick = (tabId) => {
@@ -59,6 +61,15 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
     return (
         <div {...blockProps}>
             <BlockLabel name="Pricing tabs" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(value) => setAttributes({ sectionBgColour: value })}
+            />
 
             <div className="pricing-tabs-editor__tabs">
                 <ButtonGroup>

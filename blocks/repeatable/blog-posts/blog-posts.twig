@@ -3,7 +3,9 @@
   Posts are queried in the PHP render callback and passed via context.
 #}
 
-<section class="section-block blog-posts">
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+
+<section class="section-block blog-posts" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
 		<blog-posts-grid class="blog-posts-grid">
 			{% for post in posts %}

@@ -2,6 +2,7 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
+import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
@@ -13,12 +14,21 @@ const CARD_TEMPLATE = [
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-    const { sectionTitle, introText, cardTitle, cardBody } = attributes;
+    const { sectionBgColour, sectionTitle, introText, cardTitle, cardBody } = attributes;
     const blockProps = useBlockProps({ className: 'observability-observability-editor' });
 
     return (
         <div {...blockProps}>
             <BlockLabel name="Observability" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <article className="card-large">

@@ -3,6 +3,8 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_SIMPLE_TEMPLATE = [
     ['observata/card-simple', { title: 'Search as a Service', description: 'Enable your employees to securely and fast locate information across all internal systems.', iconGeo: '01' }],
@@ -11,11 +13,21 @@ const CARD_SIMPLE_TEMPLATE = [
 ];
 
 export default function GridCardsSimpleEdit({ attributes, setAttributes }) {
+    const { sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'observata-grid-cards-simple-editor' });
 
     return (
         <div {...blockProps}>
             <BlockLabel name="Grid Cards Simple" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
 
             <div className="cards-container">
                 <InnerBlocks

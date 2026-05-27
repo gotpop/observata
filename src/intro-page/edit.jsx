@@ -3,6 +3,8 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_TEMPLATE = [
     [
@@ -26,12 +28,21 @@ const CARD_TEMPLATE = [
 ];
 
 export default function IntroPageEdit({ attributes, setAttributes }) {
-    const { graphic } = attributes;
+    const { graphic, sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'block-intro-page' });
 
     return (
         <section {...blockProps}>
             <BlockLabel name="Intro Page" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
             <div className="intro-page-cards">
                 <InnerBlocks
                     template={CARD_TEMPLATE}

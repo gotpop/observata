@@ -13,6 +13,11 @@
         "postsPerPage": {
             "type": "number",
             "default": 10
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
         }
     },
     "editorScript": "file:../../build/index.js",

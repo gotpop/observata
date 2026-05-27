@@ -13,8 +13,9 @@
 {% set phase2_item_title1 = attributes.phase2ItemTitle1|default('Partnership phase') %}
 {% set phase2_text1 = attributes.phase2Text1|default("Once your environment is implemented and optimised, you'll move into Observata's continuous elevation of your observability. This is where the real value lives.") %}
 {% set phase2_text2 = attributes.phase2Text2|default('Our experts will audit your current set-up and optimise for success.') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 
-<section class="section-block block-partnership" data-threshold="1" data-observe="true" data-margin-top="200px">
+<section class="section-block block-partnership" data-threshold="1" data-observe="true" data-margin-top="200px" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	{% include 'graphics/tech/swooping-lines.twig' %}
 	<block-content class="block-content">
 		{% include 'template/section-intro/section-intro.twig' with { 'attributes': { 'sectionTitle': section_title, 'introText': intro_text, 'textAlign': 'center' } } %}

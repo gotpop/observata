@@ -17,6 +17,11 @@
         "subtitle": {
             "type": "string",
             "default": ""
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
         }
     },
     "render": "file:grid-cards-photo.twig",

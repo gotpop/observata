@@ -3,6 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 const SCIENCE_GRAPHICS = [
@@ -31,11 +32,21 @@ const CARD_TEXT_SIMPLE_TEMPLATE = [
 ];
 
 export default function PanelGraphicCardSimpleTextEdit({ attributes, setAttributes }) {
+    const { sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'observata-panel-graphic-card-simple-text-editor' });
 
     return (
         <div {...blockProps}>
             <BlockLabel name="Panel Graphic Card Simple Text">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                    ]}
+                    onChange={(value) => setAttributes({ sectionBgColour: value })}
+                />
                 <SelectControl
                     label="Background Graphic"
                     value={attributes.backgroundGraphic}

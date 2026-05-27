@@ -1,6 +1,7 @@
 {% set active_tab = attributes.activeTab|default('observability') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 
-<section class="section-block pricing-tabs" data-active-tab="{{ active_tab }}">
+<section class="section-block pricing-tabs" data-active-tab="{{ active_tab }}" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
 		<div class="pricing-tabs__header">
 			<nav class="pricing-tabs__nav" role="tablist" aria-label="Pricing options">

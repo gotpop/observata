@@ -3,12 +3,13 @@ import './editor.css';
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 const CONTENT_ALLOWED_BLOCKS = ['observata/card-photo'];
 
 export default function GridCardsPhotoEdit({ attributes, setAttributes }) {
-    const { title, subtitle } = attributes;
+    const { title, subtitle, sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'grid-cards-photo' });
 
     return (
@@ -16,6 +17,15 @@ export default function GridCardsPhotoEdit({ attributes, setAttributes }) {
             <BlockLabel name="Grid Cards Photo" />
 
             <div className="grid-cards-photo-editor__controls">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
                 <RichText
                     tagName="h2"
                     className="grid-cards-photo-editor__title"

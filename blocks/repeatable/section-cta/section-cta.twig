@@ -2,8 +2,9 @@
 {% set text = attributes.text|default('') %}
 {% set cta_text = attributes.ctaText|default('') %}
 {% set cta_url = attributes.ctaUrl|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 
-<section class="section-block section-cta" data-threshold="1" data-observe="true" data-margin-top="200px">
+<section class="section-block section-cta" data-threshold="1" data-observe="true" data-margin-top="200px" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	{% include 'graphics/tech/swooping-lines-cta.twig' %}
 	<block-content class="block-content">
 		{% if title %}

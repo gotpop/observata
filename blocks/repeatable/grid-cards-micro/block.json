@@ -18,6 +18,11 @@
             "type": "string",
             "default": ""
         },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
+        },
         "cards": {
             "type": "array",
             "default": [

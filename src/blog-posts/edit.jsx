@@ -1,16 +1,25 @@
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, RangeControl } from '@wordpress/components';
+import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 
 import { __ } from '@wordpress/i18n';
 
 export default function BlogPostsEdit({ attributes, setAttributes }) {
-    const { postsPerPage } = attributes;
+    const { postsPerPage, sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'blog-posts-editor' });
 
     return (
         <>
             <InspectorControls>
                 <PanelBody title={__('Blog Posts Settings', 'observata')}>
+                    <SelectControl
+                        label={__('Section Background', 'observata')}
+                        value={sectionBgColour}
+                        options={[
+                            { label: __('White', 'observata'), value: 'white' },
+                            { label: __('Grey', 'observata'), value: 'grey' },
+                        ]}
+                        onChange={(value) => setAttributes({ sectionBgColour: value })}
+                    />
                     <RangeControl
                         label={__('Posts per page', 'observata')}
                         value={postsPerPage}

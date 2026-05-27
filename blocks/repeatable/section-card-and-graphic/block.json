@@ -16,6 +16,11 @@
         "graphicPosition": {
             "type": "string",
             "default": "left"
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
         }
     },
     "render": "file:render.php",

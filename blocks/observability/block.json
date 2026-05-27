@@ -25,6 +25,11 @@
         "cardBody": {
             "type": "string",
             "default": "When observability is split across teams, costs skyrocket and visibility suffers. Consolidating your tech stack isn't enough; you need to solve the root cause. We provide the structural ownership required to turn disjointed data into a high-performing, unified operation."
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
         }
     },
     "render": "file:render.php",

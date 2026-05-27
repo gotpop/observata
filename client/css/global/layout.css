@@ -48,9 +48,9 @@ main {
 	padding-block: var(--padding-section-block, var(--spacing-48));
 	position: relative;
 
-	&:nth-child(even) {
+	/* &:nth-child(even) {
 		--section-bg-colour: rgb(252 252 252);
-	}
+	} */
 
 	@media (width >=40rem) {
 		--padding-section-block: var(--spacing-80);

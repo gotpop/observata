@@ -6,7 +6,7 @@ import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 export default function SectionCtaEdit({ attributes, setAttributes }) {
-    const { title, text, ctaText, ctaUrl } = attributes;
+    const { title, text, ctaText, ctaUrl, sectionBgColour } = attributes;
     const blockProps = useBlockProps();
 
     const pages = useSelect((select) => {
@@ -24,6 +24,15 @@ export default function SectionCtaEdit({ attributes, setAttributes }) {
     return (
         <section {...blockProps}>
             <BlockLabel name="Section CTA" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
 
             <div className="section-cta-inner">
                 <RichText

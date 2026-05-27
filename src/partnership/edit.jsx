@@ -10,6 +10,7 @@ import SectionIntro from '../components/section-intro';
 
 export default function Edit({ attributes, setAttributes }) {
     const {
+        sectionBgColour,
         ctaText,
         ctaUrl,
         phase1Title,
@@ -41,6 +42,15 @@ export default function Edit({ attributes, setAttributes }) {
     return (
         <section {...blockProps}>
             <BlockLabel name="Partnership" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="block-content">

@@ -1,6 +1,8 @@
 {% include 'intro-home/logo-strip.twig' %}
 
-<section class="section-block block-intro">
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+
+<section class="section-block block-intro" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
 		{{ content|raw }}
 	</block-content>

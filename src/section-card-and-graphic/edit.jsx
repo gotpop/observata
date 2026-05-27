@@ -30,7 +30,7 @@ const CARD_TEMPLATE = [
 ];
 
 export default function SectionCardAndGraphicEdit({ attributes, setAttributes }) {
-    const { graphic, graphicPosition } = attributes;
+    const { graphic, graphicPosition, sectionBgColour } = attributes;
     const blockProps = useBlockProps({
         className: `block-section-card-and-graphic graphic-${graphicPosition}`,
     });
@@ -38,6 +38,15 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
     return (
         <section {...blockProps}>
             <BlockLabel name="Section Card & Graphic">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
                 <SelectControl
                     label={__('Graphic', 'observata')}
                     value={graphic}

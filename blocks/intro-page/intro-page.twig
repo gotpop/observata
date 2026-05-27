@@ -1,6 +1,7 @@
 {% set graphic = attributes.graphic|default('connected-dots') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 
-<section class="section-block block-intro-page">
+<section class="section-block block-intro-page" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<canvas id="subpage-shader" class="subpage-shader"></canvas>
 	<block-content class="block-content">
 		{{ content|raw }}

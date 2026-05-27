@@ -69,6 +69,11 @@
         "phase2Text2": {
             "type": "string",
             "default": "Our experts will audit your current set-up and optimise for success."
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
         }
     },
     "render": "file:render.php",

@@ -13,6 +13,11 @@
         "sectionTitle": {
             "type": "string",
             "default": ""
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": ["white", "grey"]
         }
     },
     "editorScript": "file:../../build/index.js",

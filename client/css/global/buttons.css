@@ -1,7 +1,8 @@
 .cta-primary {
+	--size: 1rem;
+
 	align-items: center;
 	background-color: var(--colour-accent-1-base);
-	/* background-color: white; */
 	border-radius: var(--radius-pill);
 	border: 2px solid var(--colour-accent-1-400);
 	color: var(--colour-neutral-white);
@@ -13,11 +14,9 @@
 	text-decoration: none;
 	transition: all 0.3s ease;
 
-	--size: 1rem;
-
 	&:hover {
 		background-color: var(--colour-accent-1-500);
-		color: white;
+		color: var(--colour-neutral-white);
 	}
 }
 

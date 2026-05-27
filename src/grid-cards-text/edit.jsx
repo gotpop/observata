@@ -3,6 +3,8 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_TEXT_SIMPLE_TEMPLATE = [
     ['observata/card-text-simple', { heading: 'Lorem Ipsum', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }],
@@ -12,11 +14,21 @@ const CARD_TEXT_SIMPLE_TEMPLATE = [
 ];
 
 export default function GridCardsTextEdit({ attributes, setAttributes }) {
+    const { sectionBgColour } = attributes;
     const blockProps = useBlockProps({ className: 'observata-grid-cards-text-editor' });
 
     return (
         <div {...blockProps}>
             <BlockLabel name="Grid Cards Text" />
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
 
             <div className="cards-container">
                 <InnerBlocks

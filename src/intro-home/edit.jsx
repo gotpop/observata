@@ -3,6 +3,8 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_GEO_TEMPLATE = [
     ['observata/card-geo', { cardTitle: 'Embedded experts', cardText: 'We embed directly into your environment to tune pipelines and triage alerts. Eliminate skill gaps and lower overhead with 24/7 lifecycle coverage and executive-level reporting.', iconGeo: '24' }],
@@ -11,6 +13,7 @@ const CARD_GEO_TEMPLATE = [
 ];
 
 export default function IntroEdit({ attributes, setAttributes }) {
+    const { sectionBgColour } = attributes;
     const blockProps = useBlockProps({
         className: 'block-intro',
     });
@@ -18,6 +21,16 @@ export default function IntroEdit({ attributes, setAttributes }) {
     return (
         <section {...blockProps}>
             <BlockLabel name="Intro" />
+
+            <SelectControl
+                label={__('Section Background', 'observata')}
+                value={sectionBgColour}
+                options={[
+                    { label: __('White', 'observata'), value: 'white' },
+                    { label: __('Grey', 'observata'), value: 'grey' },
+                ]}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
 
             <div className="logo-strip is-placeholder">
                 <div className="logo-item"><span>AF</span></div>
