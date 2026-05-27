@@ -6,7 +6,8 @@
     "category": "theme",
     "description": "A section with title, text, and call-to-action link.",
     "supports": {
-        "html": false
+        "html": false,
+        "multiple": false
     },
     "attributes": {
         "title": {
