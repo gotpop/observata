@@ -43,7 +43,7 @@
 			);
 			content: '';
 			inset: 350px auto auto 50%;
-			mask-image: url(#mask-swooping-lines);
+			mask-image: url(#mask-swooping-lines-cta);
 			min-height: 520px;
 			position: absolute;
 			translate: -50% -50%;
@@ -74,20 +74,20 @@
 	}
 }
 
-#swooping-lines path {
+#swooping-lines-cta path {
 	opacity: 0.2;
 	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.03s * sibling-index());
+	transition-delay: calc(0.05s * sibling-index());
 
 	.in-view & {
 		opacity: 1;
 	}
 }
 
-#swooping-lines-bottom path {
+#swooping-lines-bottom-cta path {
 	opacity: 0.2;
 	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.03s * sibling-index());
+	transition-delay: calc(0.05s * sibling-index());
 
 	.in-view & {
 		opacity: 1;
