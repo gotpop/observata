@@ -2,10 +2,10 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import SectionIntro from '../components/section-intro';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
+import SectionIntro from '../components/section-intro';
 
 const CARD_TEMPLATE = [
     ['observata/card-geo-shader', { cardTitle: 'Unify every data source', cardText: 'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.', iconGeo: '01' }],

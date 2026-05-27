@@ -73,7 +73,10 @@
         "sectionBgColour": {
             "type": "string",
             "default": "white",
-            "enum": ["white", "grey"]
+            "enum": [
+                "white",
+                "grey"
+            ]
         }
     },
     "render": "file:render.php",

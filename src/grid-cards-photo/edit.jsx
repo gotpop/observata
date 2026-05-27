@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 const CONTENT_ALLOWED_BLOCKS = ['observata/card-photo'];
 
