@@ -45,7 +45,7 @@ main {
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	padding-block: var(--spacing-48);
+	padding-block: var(--padding-section-block, var(--spacing-48));
 	position: relative;
 
 	&:nth-child(even) {
@@ -53,7 +53,7 @@ main {
 	}
 
 	@media (width >=40rem) {
-		padding-block: var(--spacing-80);
+		--padding-section-block: var(--spacing-80);
 	}
 }
 
