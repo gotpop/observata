@@ -38,7 +38,7 @@
 	.card-large {
 		background-color: var(--colour-surface-white);
 		border-radius: var(--radius-large);
-		border: 1px solid var(--colour-accent-1-200);
+		border: 1px solid var(--colour-primary-400);
 		flex-direction: column;
 		gap: var(--spacing-64);
 		padding: var(--spacing-32);

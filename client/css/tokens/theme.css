@@ -21,6 +21,7 @@
 	--border-site: 1px solid var(--colour-border-border-gray);
 	--border-site-highlight-primary: 1px solid var(--colour-accent-1-400);
 	--border-site-highlight-secondary: 1px solid var(--colour-secondary-400);
+	--border-site-highlight-main: 1px solid var(--colour-primary-400);
 
 	/* Lines */
 	--icon-line-bg-colour: #ff0000;
