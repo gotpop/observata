@@ -38,20 +38,16 @@
 	.card-large {
 		background-color: var(--colour-surface-white);
 		border-radius: var(--radius-large);
-		border: 1px solid var(--colour-primary-400);
-		flex-direction: column;
-		gap: var(--spacing-64);
-		padding: var(--spacing-32);
-		background-repeat: no-repeat;
-		background-position: top -200px right -200px;
-		background-size: 500px;
+		border: var(--border-primary);
 		display: grid;
+		gap: var(--spacing-64);
 		grid-template-columns: 1fr;
 		overflow: clip;
+		padding: var(--padding-card-large, var(--spacing-32));
 		position: relative;
 
 		@media (width >=40rem) {
-			padding: var(--spacing-80);
+			--padding-card-large: var(--spacing-80);
 		}
 	}
 

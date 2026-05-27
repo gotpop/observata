@@ -31,7 +31,7 @@
 	.phase {
 		background-color: var(--colour-surface-white);
 		border-radius: var(--radius-card);
-		border: 1px solid var(--colour-border-border-gray);
+		border: var(--border-primary);
 		display: grid;
 		gap: var(--spacing-24);
 		grid-template-columns: 1fr;

@@ -1,9 +1,10 @@
 .cta-primary {
 	align-items: center;
-	background-color: var(--colour-accent-1-base);
+	/* background-color: var(--colour-accent-1-base); */
+	background-color: white;
 	border-radius: var(--radius-pill);
-	border: 1px solid var(--colour-accent-1-400);
-	color: var(--colour-accent-1-100);
+	border: 2px solid var(--colour-accent-1-400);
+	color: var(--colour-accent-1-600);
 	display: inline-flex;
 	font-size: var(--size-body-md);
 	font-weight: var(--typography-weight-medium);
@@ -15,7 +16,7 @@
 	--size: 1rem;
 
 	&:hover {
-		background-color: var(--colour-accent-1-600);
+		background-color: var(--colour-accent-1-500);
 		color: white;
 	}
 }

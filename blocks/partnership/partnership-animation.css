@@ -54,7 +54,7 @@
 
 		.in-view & {
 			&::after {
-				--gradient-color-1: #c374ad;
+				--gradient-color-1: #416a9d;
 				--gradient-color-2: #9bdbf2;
 				--gradient-stop-1: 30%;
 				--gradient-stop-2: 70%;
