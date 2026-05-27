@@ -10,14 +10,6 @@
 site-layout {
 	--b: 0px;
 
-	@media (width >=40rem) {
-		--b: 10px;
-	}
-
-	@media (width >=48rem) {
-		--b: 100px;
-	}
-
 	min-height: 100vh;
 	display: grid;
 	overflow: clip;
@@ -25,6 +17,14 @@ site-layout {
 	grid-template-columns:
 		[full-start] minmax(1rem, 1fr) [breakout-start] var(--b) [content-start] 2rem [inner-start] minmax(300px, 1136px)
 		[inner-end] 2rem [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
+
+	@media (width >=40rem) {
+		--b: 10px;
+	}
+
+	@media (width >=48rem) {
+		--b: 100px;
+	}
 }
 
 site-container {
