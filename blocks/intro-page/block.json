@@ -21,6 +21,15 @@
                 "white",
                 "grey"
             ]
+        },
+        "shaderColour": {
+            "type": "string",
+            "default": "blue",
+            "enum": [
+                "blue",
+                "pink",
+                "blueLight"
+            ]
         }
     },
     "render": "file:render.php",

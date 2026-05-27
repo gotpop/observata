@@ -1,20 +1,6 @@
-import { createShader } from 'shaders/js';
+import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK } from './colours';
 
-// Pink colours
-const COLOUR_PINK = {
-	colorA: '#EA5EC1',
-	colorB: '#fc9b00',
-} as const;
-// Blue colours
-const COLOUR_BLUE = {
-	colorA: '#0598ce',
-	colorB: '#133868',
-} as const;
-// Blue colours light
-const COLOUR_BLUE_LIGHT = {
-	colorA: '#396aa3',
-	colorB: '#0598ce',
-} as const;
+import { createShader } from 'shaders/js';
 
 function getCardGeoShaderConfig(colours: { colorA: string; colorB: string }) {
 	return {

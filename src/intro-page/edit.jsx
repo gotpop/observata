@@ -28,7 +28,8 @@ const CARD_TEMPLATE = [
 ];
 
 export default function IntroPageEdit({ attributes, setAttributes }) {
-    const { graphic, sectionBgColour } = attributes;
+    const { sectionBgColour, shaderColour = 'blue' } = attributes;
+
     const blockProps = useBlockProps({ className: 'block-intro-page' });
 
     return (
@@ -42,6 +43,16 @@ export default function IntroPageEdit({ attributes, setAttributes }) {
                     { label: __('Grey', 'observata'), value: 'grey' },
                 ]}
                 onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
+            <SelectControl
+                label={__('Shader colour', 'observata')}
+                value={shaderColour}
+                options={[
+                    { label: __('Blue', 'observata'), value: 'blue' },
+                    { label: __('Pink', 'observata'), value: 'pink' },
+                    { label: __('Blue Light', 'observata'), value: 'blueLight' },
+                ]}
+                onChange={(val) => setAttributes({ shaderColour: val })}
             />
             <div className="intro-page-cards">
                 <InnerBlocks
