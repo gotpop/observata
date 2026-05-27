@@ -1,101 +1,111 @@
-import { createShader } from "shaders/js"
+import { createShader } from 'shaders/js';
 
 // Pink colours
-const colourPink = {
-  colorA: "#EA5EC1",
-  colorB: "#fc9b00",
-}
+const COLOUR_PINK = {
+	colorA: '#EA5EC1',
+	colorB: '#fc9b00',
+} as const;
 // Blue colours
-const colourBlue = {
-  colorA: "#0598ce",
-  colorB: "#133868",
-}
+const COLOUR_BLUE = {
+	colorA: '#0598ce',
+	colorB: '#133868',
+} as const;
+// Blue colours light
+const COLOUR_BLUE_LIGHT = {
+	colorA: '#396aa3',
+	colorB: '#0598ce',
+} as const;
 
 function getCardGeoShaderConfig(colours: { colorA: string; colorB: string }) {
-  return {
-    components: [
-      {
-        type: "Form3D",
-        id: "idmmr8zyxrodm90feqn",
-        props: {
-          // center: {
-          //   x: -1.8,
-          //   y: 0.23,
-          // },
-          glossiness: 200,
-          lighting: 197,
-          shape3d: {
-            type: "ribbon",
-            angle: 0,
-            twist: 24,
-            width: 73,
-            thickness: 20,
-            seed: 25,
-          },
-          shape3dType: "ribbon",
-          speed: 0,
-          transform: {
-            offsetX: -0.1,
-            rotation: 73,
-            scale: 1.09,
-            anchorX: 0.65,
-            anchorY: 0.15,
-          },
-          zoom: 85,
-        },
-        children: [
-          {
-            type: "Swirl",
-            id: "idmmr8zwtuhz62buy44",
-            props: {
-              colorA: colours.colorA,
-              colorB: colours.colorB,
-              colorSpace: "oklab",
-              detail: 1.9,
-              visible: true,
-            },
-          },
-          {
-            type: "FallingLines",
-            id: "idmmr93vzo731cyb4y3",
-            props: {
-              angle: 0,
-              blendMode: "linearDodge",
-              colorB: "#000000",
-              opacity: 0.47,
-              speed: 0.1,
-              strokeWidth: 0.16,
-              trailLength: 0.72,
-              transform: {
-                scale: 0.79,
-                offsetX: 0.21,
-              },
-            },
-          },
-        ],
-      },
-      {
-        type: "FilmGrain",
-        id: "idmmr97z6pijyaz1v1u",
-        props: {
-          opacity: 0.32,
-          strength: 0.32,
-          visible: true,
-        },
-      },
-    ],
-  }
+	return {
+		components: [
+			{
+				type: 'Form3D',
+				id: 'idmmr8zyxrodm90feqn',
+				props: {
+					glossiness: 200,
+					lighting: 197,
+					shape3d: {
+						type: 'ribbon',
+						angle: 0,
+						twist: 24,
+						width: 73,
+						thickness: 20,
+						seed: 25,
+					},
+					shape3dType: 'ribbon',
+					speed: 0,
+					transform: {
+						offsetX: -0.1,
+						rotation: 73,
+						scale: 1.09,
+						anchorX: 0.65,
+						anchorY: 0.15,
+					},
+					zoom: 85,
+				},
+				children: [
+					{
+						type: 'Swirl',
+						id: 'idmmr8zwtuhz62buy44',
+						props: {
+							colorA: colours.colorA,
+							colorB: colours.colorB,
+							colorSpace: 'oklab',
+							detail: 1.9,
+							visible: true,
+						},
+					},
+					{
+						type: 'FallingLines',
+						id: 'idmmr93vzo731cyb4y3',
+						props: {
+							angle: 0,
+							blendMode: 'linearDodge',
+							colorB: '#000000',
+							opacity: 0.47,
+							speed: 0.1,
+							strokeWidth: 0.16,
+							trailLength: 0.72,
+							transform: {
+								scale: 0.79,
+								offsetX: 0.21,
+							},
+						},
+					},
+				],
+			},
+			{
+				type: 'FilmGrain',
+				id: 'idmmr97z6pijyaz1v1u',
+				props: {
+					opacity: 0.32,
+					strength: 0.32,
+					visible: true,
+				},
+			},
+		],
+	};
 }
 
 export async function initCardGeoShader(canvas: HTMLCanvasElement) {
-  canvas.style.width = "214px"
-  canvas.style.height = "214px"
+	canvas.style.width = '214px';
+	canvas.style.height = '214px';
 
-  // Pick color values based on canvas id
-  const colours = canvas.id === "shader-pink" ? colourPink : colourBlue
+	let colours;
 
-  // Get config with injected colours
-  const config = getCardGeoShaderConfig(colours)
+	switch (canvas.id) {
+		case 'shader-pink':
+			colours = COLOUR_PINK;
+			break;
+		case 'shader-blueLight':
+			colours = COLOUR_BLUE_LIGHT;
+			break;
+		default:
+			colours = COLOUR_BLUE;
+	}
 
-  return createShader(canvas, config)
+	const config = getCardGeoShaderConfig(colours);
+
+	return createShader(canvas, config);
 }
