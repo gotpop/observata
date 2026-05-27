@@ -137,7 +137,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </div>
                     </article>
 
-                    <div className="cta-primary cta-partnership">
+                    <div className="cta-secondary cta-partnership">
                         <RichText
                             tagName="span"
                             value={ctaText}

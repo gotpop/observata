@@ -9,12 +9,9 @@
 	--colour-text-body-default: var(--colour-neutral-600);
 
 	/* Surface */
-	--colour-surface-success: #e8ffea;
-	--colour-surface-surface: var(--colour-neutral-white);
-	--colour-surface-dark: #181e25;
-	--colour-surface-light-gray: #f0f0f0;
-	--colour-surface-white: var(--colour-neutral-white);
-	--colour-surface-white-transparent: rgba(255, 255, 255, 0.7);
+	--surface-grey: rgb(252 252 252);
+	--surface-white: var(--colour-neutral-white);
+	--surface-white-transparent: rgba(255, 255, 255, 0.7);
 
 	/* Borders */
 	--colour-border-border-gray: #e5e7ea;

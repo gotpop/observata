@@ -65,7 +65,7 @@
 	/* Prevent font size inflation on mobile Safari */
 	-webkit-text-size-adjust: 100%;
 	accent-color: var(--accent);
-	background-color: var(--colour-surface-white);
+	background-color: var(--surface-white);
 	min-height: 100dvh;
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--spacing-32);

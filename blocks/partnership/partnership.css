@@ -29,7 +29,7 @@
 	}
 
 	.phase {
-		background-color: var(--colour-surface-white);
+		background-color: var(--surface-white);
 		border-radius: var(--radius-card);
 		border: var(--border-primary);
 		display: grid;

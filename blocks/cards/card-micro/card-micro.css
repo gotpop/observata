@@ -1,7 +1,7 @@
 .card-micro {
 	align-items: flex-start;
 	backdrop-filter: blur(3px);
-	background-color: var(--colour-surface-white-transparent);
+	background-color: var(--surface-white-transparent);
 	border-radius: var(--radius-comfortable);
 	border: 1px solid var(--colour-brand-light);
 	display: flex;

@@ -15,7 +15,7 @@
 	}
 
 	.card-large-editor {
-		background: var(--colour-surface-white);
+		background: var(--surface-white);
 		border: 1px solid var(--colour-accent-1-200);
 		border-radius: var(--radius-medium);
 		padding: var(--spacing-16);
@@ -43,7 +43,7 @@
 	}
 
 	.card-large {
-		background-color: var(--colour-surface-white);
+		background-color: var(--surface-white);
 		border-radius: var(--radius-large);
 		border: 1px solid var(--colour-accent-1-200);
 		padding: var(--spacing-16);

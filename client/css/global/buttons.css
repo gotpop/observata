@@ -1,5 +1,28 @@
 .cta-primary {
 	align-items: center;
+	background-color: var(--colour-accent-1-base);
+	/* background-color: white; */
+	border-radius: var(--radius-pill);
+	border: 2px solid var(--colour-accent-1-400);
+	color: var(--colour-neutral-white);
+	display: inline-flex;
+	font-size: var(--size-body-md);
+	font-weight: var(--typography-weight-medium);
+	gap: var(--spacing-16);
+	padding: var(--spacing-16) var(--spacing-24);
+	text-decoration: none;
+	transition: all 0.3s ease;
+
+	--size: 1rem;
+
+	&:hover {
+		background-color: var(--colour-accent-1-500);
+		color: white;
+	}
+}
+
+.cta-secondary {
+	align-items: center;
 	/* background-color: var(--colour-accent-1-base); */
 	background-color: white;
 	border-radius: var(--radius-pill);

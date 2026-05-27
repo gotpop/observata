@@ -1,5 +1,5 @@
 .logo-bar {
-	background: var(--colour-surface-surface);
+	background: var(--surface-white);
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	display: grid;
 	grid-column: full;

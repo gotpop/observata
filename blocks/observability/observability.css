@@ -36,7 +36,7 @@
 	}
 
 	.card-large {
-		background-color: var(--colour-surface-white);
+		background-color: var(--surface-white);
 		border-radius: var(--radius-large);
 		border: var(--border-primary);
 		display: grid;

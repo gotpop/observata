@@ -40,13 +40,17 @@ main {
 }
 
 .section-block {
-	background-color: var(--section-bg-colour, var(--colour-surface-white));
+	background-color: var(--section-bg-colour, var(--surface-white));
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
 	padding-block: var(--spacing-48);
 	position: relative;
+
+	&:nth-child(even) {
+		--section-bg-colour: rgb(252 252 252);
+	}
 
 	@media (width >=40rem) {
 		padding-block: var(--spacing-80);

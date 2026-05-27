@@ -1,6 +1,6 @@
 .card-geo-list {
 	backdrop-filter: blur(3px);
-	background-color: var(--colour-surface-white-transparent);
+	background-color: var(--surface-white-transparent);
 	border-radius: var(--radius-card);
 	border: var(--card-geo-list-border, var(--border-grey));
 	display: grid;
@@ -81,7 +81,7 @@
 	}
 
 	.link-anchor-card-geo {
-		background-color: var(--colour-surface-white);
+		background-color: var(--surface-white);
 		border-radius: var(--radius-pill);
 		border: var(--link-card-geo, var(--border-grey));
 		inset: auto auto 0 50%;

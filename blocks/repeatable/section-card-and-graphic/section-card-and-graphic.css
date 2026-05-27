@@ -1,5 +1,5 @@
 .block-section-card-and-graphic {
-	background-color: var(--colour-surface-white);
+	background-color: var(--surface-white);
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	display: grid;
 	grid-column: full;

@@ -13,7 +13,7 @@
 	}
 
 	.card-blog-post {
-		background: var(--colour-surface-white);
+		background: var(--surface-white);
 		border-radius: var(--radius-card);
 		border: 1px solid var(--colour-border-border-gray);
 		display: grid;

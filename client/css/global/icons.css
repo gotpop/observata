@@ -10,7 +10,7 @@ icon-geo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--colour-surface-white);
+	background-color: var(--surface-white);
 
 	svg {
 		width: var(--size-inner);

@@ -5,7 +5,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-24, 1.5rem);
-	background-color: var(--colour-surface-white, #fff);
+	background-color: var(--surface-white, #fff);
 	position: relative;
 
 	&.plan-card--highlighted {
@@ -19,7 +19,7 @@
 	padding: 0.25rem 0.75rem;
 	border-radius: 100px;
 	background-color: var(--colour-accent, #4f46e5);
-	color: var(--colour-surface-white, #fff);
+	color: var(--surface-white, #fff);
 	font-size: var(--typography-size-12, 0.75rem);
 	font-weight: var(--typography-weight-semibold, 600);
 	text-transform: uppercase;
@@ -119,7 +119,7 @@
 	&.plan-card-cta--primary {
 		background-color: var(--colour-accent, #4f46e5);
 		border-color: var(--colour-accent, #4f46e5);
-		color: var(--colour-surface-white, #fff);
+		color: var(--surface-white, #fff);
 
 		&:hover {
 			opacity: 0.9;

@@ -4,7 +4,7 @@
 	flex-direction: column;
 	gap: var(--spacing-30, 1rem);
 	padding: var(--spacing-40, 1.5rem);
-	background: var(--colour-surface-white, #fff);
+	background: var(--surface-white, #fff);
 	border: 1px solid var(--colour-border-border-gray, #e2e2e2);
 	border-radius: var(--radius-md, 0.5rem);
 	transition: box-shadow 0.2s ease;

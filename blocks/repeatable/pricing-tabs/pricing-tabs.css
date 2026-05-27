@@ -7,7 +7,7 @@
 
 .pricing-tabs {
 	position: relative;
-	background-color: var(--colour-surface-white);
+	background-color: var(--surface-white);
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	grid-column: full;
 	grid-template-columns: subgrid;

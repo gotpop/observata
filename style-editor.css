@@ -116,7 +116,7 @@ input,
 
 	.block-editor-block-list__block {
 		flex: 1 1 40%;
-		background-color: var(--colour-surface-white);
+		background-color: var(--surface-white);
 		padding: var(--spacing-16);
 		border: dashed 1px var(--colour-neutral-200);
 		margin: 0;
@@ -203,7 +203,7 @@ input,
 	align-items: center;
 	inset: var(--spacing-16) var(--spacing-16) auto auto;
 	position: absolute;
-	background-color: var(--colour-surface-white);
+	background-color: var(--surface-white);
 
 	img {
 		max-width: var(--spacing-24);
