@@ -28,7 +28,7 @@
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"cssCustomProperties.files": ["**/*.css"],
+	"cssCustomProperties.files": ["client/css/**/*.css", "blocks/**/*.css", "client/ts/**/*.css", "src/**/*.css"],
 	"cssCustomProperties.languages": ["css"],
 	"php.validate.executablePath": "/usr/bin/php",
 	"phpcs.enable": true,
