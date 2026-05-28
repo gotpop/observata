@@ -61,6 +61,22 @@
 		}
 	}
 
+	.graphic-tech-sphere-spiral {
+		--size: 430px;
+		--mask: url(#mask-sphere-spiral);
+		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+		--opacity: 0.7;
+		--width: 430px;
+
+		height: calc(100% - 2rem);
+		scale: 0.7;
+		margin: 0 auto;
+
+		@media (width >=64rem) {
+			scale: 1;
+		}
+	}
+
 	.card-container {
 		display: grid;
 		grid-template-columns: 1fr;

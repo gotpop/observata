@@ -20,6 +20,7 @@ const SCIENCE_GRAPHICS = [
     { label: 'Ribbon Wave', value: 'ribbon-wave-graphic' },
     { label: 'Sine Flute', value: 'sine-flute-graphic' },
     { label: 'Sine Wave', value: 'sine-wave-graphic' },
+    { label: 'Sphere Spiral', value: 'sphere-spiral-mask' },
     { label: 'Squares Rotating', value: 'squares-rotating-graphic' },
     { label: 'Swooping Lines', value: 'swooping-lines' },
     { label: 'Target', value: 'target-graphic' },
