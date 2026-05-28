@@ -17,6 +17,10 @@
 		--icon-geo-border-colour: var(--border-secondary);
 	}
 
+	&:has(.link-anchor-card-geo) {
+		padding-block-end: var(--spacing-60);
+	}
+
 	.icon-geo {
 		--icon-size-outer: 3.25rem;
 		--icon-size-inner: 2rem;

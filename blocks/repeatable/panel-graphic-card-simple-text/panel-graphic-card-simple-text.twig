@@ -4,9 +4,10 @@
 <section class="section-block block-panel-graphic-card-simple-text" data-observe="true" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
 		{{ content|raw }}
-		{% if background_graphic %}
+		{% if background_graphic == 'europe-dots-graphic' %}
 			{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
+		{% else %}
+			<graphic-tech class="graphic-tech-sphere-spiral" aria-hidden="true"></graphic-tech>
 		{% endif %}
-		<graphic-tech class="graphic-tech graphic-tech" aria-hidden="true"></graphic-tech>
 	</block-content>
 </section>

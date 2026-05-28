@@ -11,29 +11,11 @@
 	.block-content {
 		display: grid;
 		grid-column: inner;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: 1fr 460px;
 		column-gap: var(--spacing-60);
 		row-gap: var(--spacing-80);
 		position: relative;
 		z-index: 1;
-
-		.graphic-tech {
-			&::after {
-				content: '';
-				width: 700px;
-				height: 700px;
-				--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-				background-image: var(--gradient);
-				mask-image: url('/wp-content/themes/observata/blocks/repeatable/panel-graphic-card-simple-text/../../../assets/svg/spheres/sphere-18.svg');
-				mask-size: contain;
-				mask-position: center;
-				mask-repeat: no-repeat;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-36%, 0%);
-			}
-		}
 
 		&:has(.graphic-tech-europe) {
 			row-gap: var(--spacing-32);
@@ -44,16 +26,31 @@
 		}
 	}
 
+	.graphic-tech-sphere-spiral {
+		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+
+		position: relative;
+
+		&::after {
+			content: '';
+			width: 100%;
+			height: 600px;
+			background-image: var(--gradient);
+			mask-image: url('../../../assets/svg/spheres/sphere-18.svg');
+			mask-size: contain;
+			mask-position: center;
+			mask-repeat: no-repeat;
+			position: absolute;
+			bottom: 50%;
+			transform: translateY(50%);
+		}
+	}
+
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
 		--mask: url(#mask-europe);
 		--size: 500px;
-		--gradient: conic-gradient(
-			var(--colour-accent-2-400),
-			var(--colour-secondary-500),
-			var(--colour-primary-600),
-			var(--colour-accent-1-500)
-		);
+		--gradient: conic-gradient(var(--colour-secondary-500), var(--colour-primary-200), var(--colour-accent-1-500));
 
 		scale: 0.7;
 		margin: 0 auto;
@@ -66,5 +63,9 @@
 	.card-container {
 		display: grid;
 		grid-template-columns: 1fr;
+	}
+
+	.body-md {
+		text-wrap: pretty;
 	}
 }

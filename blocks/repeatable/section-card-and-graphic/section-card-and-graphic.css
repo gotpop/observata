@@ -7,6 +7,13 @@
 	overflow: clip;
 	padding-block: 5rem;
 	position: relative;
+	background-image:
+		radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%),
+		linear-gradient(-90deg, #ffffff 0%, #e9edef 100%);
+
+	&.graphic-9 {
+		--mask-image: url('../../../assets/svg/spheres/sphere-9.svg');
+	}
 
 	.block-content {
 		align-items: center;
@@ -20,35 +27,28 @@
 		.card-geo-list {
 			height: min-content;
 			z-index: 999;
+			background: white;
 		}
 	}
 
-	.graphic-tech-ribbon-star {
-		--opacity: 0.6;
-		--width: 485px;
-		--width-after: 485px;
-		--size: 500px;
-		--height: calc(500px - 12rem);
-		--mask: url(#mask-ribbon-star);
-		--gradient: conic-gradient(
-			var(--colour-accent-1-400),
-			var(--colour-secondary-400),
-			var(--colour-accent-1-400),
-			var(--colour-secondary-400)
-		);
+	.graphic-tech-sphere-spiral {
+		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+		--size: 700px;
 
-		margin: auto 0 auto auto;
-		margin: 0 auto;
-		height: 100%;
-		min-height: calc(500px - 12rem);
-		scale: 0.7;
+		position: relative;
 
 		&::after {
-			inset: 50% 0 0 auto;
-		}
-
-		@media (width >=64rem) {
-			scale: 1;
+			content: '';
+			width: var(--size);
+			height: var(--size);
+			background-image: var(--gradient);
+			mask-image: var(--mask-image);
+			mask-size: contain;
+			mask-position: center;
+			mask-repeat: no-repeat;
+			position: absolute;
+			bottom: 50%;
+			transform: translateY(50%);
 		}
 	}
 }
