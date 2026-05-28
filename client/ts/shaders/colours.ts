@@ -9,6 +9,6 @@ export const COLOUR_BLUE = {
 } as const;
 
 export const COLOUR_BLUE_LIGHT = {
-	colorA: '#396aa3',
+	colorA: '#5bc1e6',
 	colorB: '#0598ce',
 } as const;
