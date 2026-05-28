@@ -77,9 +77,9 @@
 			top: -160px;
 			right: -320px;
 
-			.circles path {
-				stroke-width: 1.3px;
-				/* stroke: red; */
+			.circles circle {
+				stroke-width: 5.3px;
+				stroke: white;
 				/* fill: red; */
 			}
 
@@ -98,7 +98,7 @@
 		&:after {
 			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
 			content: '';
-			mask-image: url(#mask-sphere-13);
+			mask-image: url(#mask-sphere-14);
 			min-height: 520px;
 			position: absolute;
 			z-index: 1;
