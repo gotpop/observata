@@ -17,6 +17,24 @@
 		position: relative;
 		z-index: 1;
 
+		.graphic-tech {
+			&::after {
+				content: '';
+				width: 700px;
+				height: 700px;
+				--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+				background-image: var(--gradient);
+				mask-image: url('/wp-content/themes/observata/blocks/repeatable/panel-graphic-card-simple-text/../../../assets/svg/spheres/sphere-18.svg');
+				mask-size: contain;
+				mask-position: center;
+				mask-repeat: no-repeat;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-36%, 0%);
+			}
+		}
+
 		&:has(.graphic-tech-europe) {
 			row-gap: var(--spacing-32);
 
@@ -37,38 +55,6 @@
 			var(--colour-accent-1-500)
 		);
 
-		scale: 0.7;
-		margin: 0 auto;
-
-		@media (width >=64rem) {
-			scale: 1;
-		}
-	}
-
-	.graphic-tech-infinity-twist {
-		--size: 500px;
-		--mask: url(#mask-infinity-twist);
-		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-		--opacity: 0.7;
-		--width: 540px;
-
-		height: calc(100% - 2rem);
-		scale: 0.7;
-		margin: 0 auto;
-
-		@media (width >=64rem) {
-			scale: 1;
-		}
-	}
-
-	.graphic-tech-sphere-spiral {
-		--size: 430px;
-		--mask: url(#mask-sphere-spiral);
-		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-		--opacity: 0.7;
-		--width: 430px;
-
-		height: calc(100% - 2rem);
 		scale: 0.7;
 		margin: 0 auto;
 
