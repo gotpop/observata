@@ -4,18 +4,5 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5",
-    "printWidth": 120,
-    "plugins": [
-        "prettier-plugin-twig-melody"
-    ],
-    "overrides": [
-        {
-            "files": [
-                "*.twig"
-            ],
-            "options": {
-                "parser": "melody"
-            }
-        }
-    ]
+    "printWidth": 120
 }
