@@ -14,17 +14,6 @@
 	"[php]": {
 		"editor.defaultFormatter": "wongjn.php-sniffer"
 	},
-	"[twig]": {
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "mblode.twig-language-2"
-	},
-	"twig-language.diagnostics": {
-		"deprecatedInclude": "ignore"
-	},
-	"twig-language.syntax": {
-		"allowDeprecatedInclude": true
-	},
-	"twig-language.enable": true,
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
