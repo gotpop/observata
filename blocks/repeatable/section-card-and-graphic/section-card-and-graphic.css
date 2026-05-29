@@ -1,8 +1,8 @@
 .block-section-card-and-graphic {
 	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
 	--grad-rad: radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 60%);
-	--gradient-graphic: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-	--size-graphic: 700px;
+	--gradient-graphic: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-200));
+	--size-graphic: 630px;
 
 	background-image: var(--grad-rad), var(--grad-lin);
 	overflow: clip;
@@ -23,6 +23,7 @@
 
 	.graphic-sphere {
 		position: relative;
+		height: var(--stretch);
 
 		&::after {
 			background-image: var(--gradient-graphic);
@@ -31,7 +32,7 @@
 			inset: auto auto 50% auto;
 			mask: var(--mask-image) center / contain no-repeat;
 			position: absolute;
-			translate: 0 50%;
+			translate: -5% 50%;
 			width: var(--size-graphic);
 		}
 	}
