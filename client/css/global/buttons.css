@@ -16,7 +16,7 @@
 	width: max-content;
 
 	&:hover {
-		background-color: var(--colour-accent-1-400);
+		background-color: var(--colour-accent-1-500);
 		color: var(--colour-neutral-white);
 	}
 }
@@ -39,7 +39,7 @@
 	width: max-content;
 
 	&:hover {
-		background-color: var(--colour-accent-1-400);
+		background-color: var(--colour-accent-1-500);
 		color: var(--colour-neutral-white);
 	}
 }
