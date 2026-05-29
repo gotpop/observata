@@ -6,23 +6,22 @@
 		grid-column: inner;
 		grid-template-columns: 1fr;
 		justify-content: center;
+		justify-items: center;
 		row-gap: var(--spacing-40);
 		text-align: center;
-		justify-items: center;
 		z-index: 1;
 
 		.content {
-			border: var(--border-grey);
 			background-color: var(--surface-white-transparent);
-			padding: var(--spacing-40);
 			border-radius: var(--radius-card);
-			display: flex;
-			/* justify-content: center; */
-			gap: var(--spacing-32);
-			align-items: center;
-			flex-direction: column;
+			border: var(--border-grey);
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: min-content;
+			justify-items: center;
+			padding: var(--spacing-40);
+			row-gap: var(--spacing-32);
 			width: max-content;
-			max-width: 600px;
 		}
 	}
 
