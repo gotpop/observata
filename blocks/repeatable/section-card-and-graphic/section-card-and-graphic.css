@@ -1,15 +1,11 @@
 .block-section-card-and-graphic {
-	background-color: var(--surface-white);
-	border-bottom: 1px solid var(--colour-border-border-gray);
-	display: grid;
-	grid-column: full;
-	grid-template-columns: subgrid;
+	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
+	--grad-rad: radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 60%);
+	--gradient-graphic: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+	--size-graphic: 700px;
+
+	background-image: var(--grad-rad), var(--grad-lin);
 	overflow: clip;
-	padding-block: 5rem;
-	position: relative;
-	background-image:
-		radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 60%),
-		linear-gradient(-45deg, #ffffff 0%, #c5ccce 100%);
 
 	.block-content {
 		align-items: center;
@@ -19,42 +15,24 @@
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		position: relative;
 		row-gap: var(--spacing-80);
+	}
 
-		.card-geo-list {
-			height: min-content;
-			z-index: 999;
-			background: white;
-		}
+	.card-geo-list {
+		--card-geo-list-bg: var(--surface-white);
 	}
 
 	.graphic-sphere {
-		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-		--size: 700px;
-
 		position: relative;
 
 		&::after {
+			background-image: var(--gradient-graphic);
 			content: '';
-			width: var(--size);
-			height: var(--size);
-			background-image: var(--gradient);
-			mask-image: var(--mask-image);
-			mask-size: contain;
-			mask-position: center;
-			mask-repeat: no-repeat;
+			height: var(--size-graphic);
+			inset: auto auto 50% auto;
+			mask: var(--mask-image) center / contain no-repeat;
 			position: absolute;
-			bottom: 50%;
-			transform: translateY(50%);
+			translate: 0 50%;
+			width: var(--size-graphic);
 		}
-	}
-}
-
-#ribbon-star path {
-	opacity: 0;
-	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.04s * sibling-index());
-
-	.in-view & {
-		opacity: 1;
 	}
 }

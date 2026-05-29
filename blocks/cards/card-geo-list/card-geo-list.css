@@ -1,6 +1,6 @@
 .card-geo-list {
 	backdrop-filter: blur(3px);
-	background-color: var(--surface-white-transparent);
+	background-color: var(--card-geo-list-bg, var(--surface-white-transparent));
 	border-radius: var(--radius-card);
 	border: var(--card-geo-list-border, var(--border-grey));
 	display: grid;
