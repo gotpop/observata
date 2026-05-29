@@ -16,12 +16,14 @@
 	width: max-content;
 
 	&:hover {
-		background-color: var(--colour-accent-1-500);
+		background-color: var(--colour-accent-1-400);
 		color: var(--colour-neutral-white);
 	}
 }
 
 .cta-secondary {
+	--size: 1rem;
+
 	align-items: center;
 	background-color: var(--colour-accent-1-base);
 	border-radius: var(--radius-pill);
@@ -36,11 +38,9 @@
 	transition: all 0.3s ease;
 	width: max-content;
 
-	--size: 1rem;
-
 	&:hover {
-		background-color: var(--colour-accent-1-500);
-		color: white;
+		background-color: var(--colour-accent-1-400);
+		color: var(--colour-neutral-white);
 	}
 }
 
