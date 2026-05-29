@@ -25,11 +25,9 @@
 .block-partnership {
 	.graphic-tech {
 		&:after {
-			background-image: radial-gradient(
-				circle,
-				var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
-				var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%)
-			);
+			background-image: radial-gradient(circle,
+					var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
+					var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%));
 			content: '';
 			inset: 350px auto auto 50%;
 			mask-image: url(#mask-swooping-lines);
@@ -54,7 +52,7 @@
 
 		.in-view & {
 			&::after {
-				--gradient-color-1: #416a9d;
+				--gradient-color-1: #e08ac7;
 				--gradient-color-2: #9bdbf2;
 				--gradient-stop-1: 30%;
 				--gradient-stop-2: 70%;
