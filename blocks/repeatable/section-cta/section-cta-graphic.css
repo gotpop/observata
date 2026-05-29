@@ -74,18 +74,18 @@
 			}
 
 			@media (width >=80rem) {
-				top: 110px;
+				top: 188px;
 			}
 		}
 
 		.in-view & {
 			&::after {
 				--gradient-color-inner: #ffffff;
-				--gradient-color-mid: #90b2dc;
+				--gradient-color-mid: #e08ac7;
 				--gradient-color-outer: #9bdbf2;
-				--grad-stop-inner: 35%;
-				--grad-stop-mid: 60%;
-				--grad-stop-outer: 80%;
+				--grad-stop-inner: 25%;
+				--grad-stop-mid: 40%;
+				--grad-stop-outer: 60%;
 			}
 		}
 	}

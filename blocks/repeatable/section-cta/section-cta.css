@@ -10,6 +10,20 @@
 		text-align: center;
 		justify-items: center;
 		z-index: 1;
+
+		.content {
+			border: var(--border-grey);
+			background-color: var(--surface-white-transparent);
+			padding: var(--spacing-40);
+			border-radius: var(--radius-card);
+			display: flex;
+			/* justify-content: center; */
+			gap: var(--spacing-32);
+			align-items: center;
+			flex-direction: column;
+			width: max-content;
+			max-width: 600px;
+		}
 	}
 
 	.heading-lg {
