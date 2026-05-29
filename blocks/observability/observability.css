@@ -56,12 +56,11 @@
 		z-index: 0;
 		pointer-events: none;
 		inset: 0;
-		color: black;
 		color: white;
-		width: 400px;
+		width: 410px;
 		height: 400px;
-		right: 5rem;
-		top: 5rem;
+		right: 4rem;
+		top: 10rem;
 		left: auto;
 
 		svg {
