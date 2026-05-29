@@ -1,6 +1,8 @@
 {% set graphic = attributes.graphic|default('ribbon-star') %}
 {% set graphic_position = attributes.graphicPosition|default('left') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set mask_image_url = "#{theme.link}/assets/svg/spheres/sphere-#{graphic}.svg"
+%}
 
 <section
 	class="section-block block-section-card-and-graphic"
@@ -11,12 +13,9 @@
 	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content position-{{ graphic_position }}">
 		{{ content|raw }}
-
 		<graphic-tech
 			class="graphic-sphere graphic-{{ graphic }}"
 			aria-hidden="true"
-			style="--mask-image: url('{{ theme.link }}/assets/svg/spheres/sphere-{{
-			graphic
-			}}.svg');"></graphic-tech>
+			style="--mask-image: url('{{ mask_image_url }}');"></graphic-tech>
 	</block-content>
 </section>
