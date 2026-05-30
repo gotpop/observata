@@ -27,12 +27,11 @@
 
 	.heading-lg {
 		width: max-content;
-		max-width: 30ch;
+		max-width: 24ch;
 		text-wrap: balance;
 	}
 
 	.body-md {
-		text-wrap: pretty;
 		max-width: 60ch;
 	}
 }
