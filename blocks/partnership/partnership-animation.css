@@ -63,23 +63,20 @@
 		}
 	}
 
-	.swooping-lines-top .line {
+	.line {
 		opacity: 0.2;
-		transition: all 0.3s ease-in-out;
-		transition-delay: calc(0.03s * sibling-index());
+		transition: opacity 0.3s ease-in-out;
 
 		.in-view & {
 			opacity: 1;
 		}
 	}
 
-	.swooping-lines-bottom .line {
-		opacity: 0.2;
-		transition: all 0.3s ease-in-out;
-		transition-delay: calc(0.03s * sibling-index());
+	.swooping-lines-top .line {
+		transition-delay: calc(0.5s * sibling-index());
+	}
 
-		.in-view & {
-			opacity: 1;
-		}
+	.swooping-lines-bottom .line {
+		transition-delay: calc(0.5s * sibling-index());
 	}
 }
