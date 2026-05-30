@@ -1,6 +1,6 @@
 import { createMatchMedia } from './utils/breakpoints';
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initHeaderNavigation(): void {
 	const trigger = document.getElementById('trigger-navigation');
 	const headerContent = document.getElementById('header-content');
 	const parentMenuItems = document.querySelectorAll('.menu-item-has-children');
@@ -70,4 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	attachListeners();
 	mq.addEventListener('change', attachListeners);
-});
+}

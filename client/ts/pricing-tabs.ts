@@ -53,10 +53,10 @@ class PricingTabs {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initPricingTabs(): void {
 	document.querySelectorAll('.pricing-tabs').forEach((container) => {
 		if (container instanceof HTMLElement && container.querySelectorAll('.pricing-tabs__tab').length > 0) {
 			new PricingTabs(container);
 		}
 	});
-});
+}
