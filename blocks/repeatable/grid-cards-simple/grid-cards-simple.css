@@ -5,7 +5,7 @@
 		display: grid;
 		grid-column: content;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: var(--spacing-40);
+		gap: var(--spacing-48);
 		border-radius: var(--radius-card);
 		border: var(--border-primary);
 		padding: var(--spacing-40);

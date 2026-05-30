@@ -27,11 +27,16 @@
 
 .block-hero-home {
 	--height-hero-home: 900px;
-	--grad-radial-white: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%);
+	--grad-radial-white: radial-gradient(
+		59.27% 62.89% at 49.97% 64.49%,
+		#fff 70.8%,
+		rgba(255, 255, 255, 0) 100%
+	);
 	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 
 	background-color: var(--colour-background-bg-white);
-	background-image: url('../../assets/img/shader-ribbon-mobile.png'), var(--grad-radial-white), var(--grad-linear);
+	background-image:
+		url('../../assets/img/shader-ribbon-mobile.png'), var(--grad-radial-white), var(--grad-linear);
 	background-size: 150%, auto, auto;
 	background-position:
 		center bottom 38%,
@@ -74,12 +79,23 @@
 
 	.hero-content {
 		display: grid;
-		gap: var(--spacing-32);
+		gap: var(--spacing-40);
 		grid-row: hero;
 		grid-column: content;
 		grid-template-columns: 1fr;
 		text-align: center;
 		z-index: 2;
+	}
+
+	.hero-text {
+		display: grid;
+		gap: var(--spacing-24);
+		grid-template-columns: 1fr;
+		justify-items: center;
+
+		@media (width >=40rem) {
+			gap: var(--spacing-32);
+		}
 	}
 
 	.hero-shader {
@@ -97,17 +113,6 @@
 
 		@media (width >=64rem) {
 			inset: auto auto -280px 50%;
-		}
-	}
-
-	.hero-text {
-		display: grid;
-		gap: var(--spacing-24);
-		grid-template-columns: 1fr;
-		justify-items: center;
-
-		@media (width >=40rem) {
-			gap: var(--spacing-32);
 		}
 	}
 
