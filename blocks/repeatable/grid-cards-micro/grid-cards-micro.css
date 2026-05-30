@@ -29,4 +29,8 @@
 			text-wrap: pretty;
 		}
 	}
+
+	.card-micro {
+		--card-micro-bg: var(--surface-white);
+	}
 }
