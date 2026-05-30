@@ -8,26 +8,25 @@
 	class="section-block block-observability"
 	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
-		{% include 'template/section-intro/section-intro.twig' with {
-			attributes: {
-				sectionTitle: section_title,
-				introText: intro_text
-			}
-		} %}
-
 		<article class="card-large">
+			{% include 'template/section-intro/section-intro.twig' with {
+				attributes: {
+					sectionTitle: section_title,
+					introText: intro_text
+				}
+			} %}
 			{% include 'graphics/spheres/sphere-14-mask.twig' %}
 			<layout-micro class="layout-micro">
 				{{ content|raw }}
 			</layout-micro>
 			<card-large-content class="card-large-content">
 				{% if card_title %}
-					<h4 class="title">
+					<h4 class="heading-sm">
 						{{ card_title|strip_html }}
 					</h4>
 				{% endif %}
 				{% if card_body %}
-					<p class="body">
+					<p class="body-md">
 						{{ card_body|strip_html }}
 					</p>
 				{% endif %}
