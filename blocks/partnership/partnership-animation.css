@@ -66,17 +66,13 @@
 	.line {
 		opacity: 0.2;
 		transition: opacity 0.3s ease-in-out;
+		/* Exit  */
+		transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.05s);
 
 		.in-view & {
+			/* Enter */
+			transition-delay: calc(0.05s * sibling-index());
 			opacity: 1;
 		}
-	}
-
-	.swooping-lines-top .line {
-		transition-delay: calc(0.5s * sibling-index());
-	}
-
-	.swooping-lines-bottom .line {
-		transition-delay: calc(0.5s * sibling-index());
 	}
 }
