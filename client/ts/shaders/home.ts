@@ -1,3 +1,4 @@
+import { COLOUR_BLUE } from './colours';
 import { createShader } from 'shaders/js';
 
 const heroShaderConfig = {
@@ -29,8 +30,8 @@ const heroShaderConfig = {
 					type: 'Swirl',
 					id: 'idmmr8zwtuhz62buy44',
 					props: {
-						colorA: '#0598ce',
-						colorB: '#133868',
+						colorA: COLOUR_BLUE.colorA,
+						colorB: COLOUR_BLUE.colorB,
 						colorSpace: 'oklab',
 						detail: 1.9,
 					},
