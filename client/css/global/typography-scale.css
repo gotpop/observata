@@ -80,6 +80,7 @@
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
+	text-wrap: pretty;
 
 	@media (width >=40rem) {
 		--size: var(--typography-size-20);
@@ -91,6 +92,7 @@
 	font-size: var(--typography-size-20);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
+	text-wrap: pretty;
 }
 
 .body-md {
@@ -98,6 +100,7 @@
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-md);
+	text-wrap: pretty;
 }
 
 .body-sm {
@@ -105,4 +108,5 @@
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
+	text-wrap: pretty;
 }
