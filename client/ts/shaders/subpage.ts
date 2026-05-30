@@ -6,13 +6,6 @@ function getSubpageShaderConfig(colours: { colorA: string; colorB: string }) {
 	return {
 		components: [
 			{
-				type: 'SolidColor',
-				id: 'idmo2wzvwvsm3qaus9m',
-				props: {
-					color: '#ffffff',
-				},
-			},
-			{
 				type: 'Form3D',
 				id: 'idmmr8zyxrodm90feqn',
 				props: {
@@ -82,6 +75,7 @@ const initSubpageShaders = async () => {
 
 	if (!canvas) {
 		console.warn('Subpage shader: Canvas element not found');
+
 		return;
 	}
 
@@ -90,11 +84,13 @@ const initSubpageShaders = async () => {
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn('Subpage shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
+
 		return;
 	}
 
 	if (canvas.dataset.shaderInitialized === 'true') {
 		console.info('Subpage shader: Already initialized, skipping');
+
 		return;
 	}
 
