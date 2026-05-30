@@ -10,6 +10,10 @@
 
 	&:hover {
 		background-color: var(--colour-neutral-200);
+
+		.in-view & {
+			transition-delay: 0s;
+		}
 	}
 
 	.body-cell {
