@@ -15,13 +15,8 @@ const TAB_TEMPLATE = [
 
 export default function PricingTabsEdit({ attributes, setAttributes }) {
     const [localActiveTab, setLocalActiveTab] = useState(attributes.activeTab || 'observability');
-    const { sectionBgColour, mdrTabName, observabilityTabName, searchTabName } = attributes;
+    const { sectionBgColour, mdrTabName, observabilityTabName, searchTabName, activeTab } = attributes;
     const blockProps = useBlockProps({ className: 'observata-pricing-tabs-editor' });
-
-    const handleTabClick = (tabId) => {
-        setLocalActiveTab(tabId);
-        setAttributes({ activeTab: tabId });
-    };
 
     // Dynamic tabs based on attribute values
     const TABS = [
@@ -29,6 +24,11 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
         { id: 'observability', label: observabilityTabName || 'Observability' },
         { id: 'search', label: searchTabName || 'Search' }
     ];
+
+    const handleTabClick = (tabId) => {
+        setLocalActiveTab(tabId);
+        setAttributes({ activeTab: tabId });
+    };
 
     // Get the inner blocks attribute for current tab
     const getCurrentInnerBlocks = () => {
@@ -70,6 +70,17 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
                     { label: __('Grey', 'observata'), value: 'grey' },
                 ]}
                 onChange={(value) => setAttributes({ sectionBgColour: value })}
+            />
+
+            <SelectControl
+                label={__('Active Tab on Page Load', 'observata')}
+                value={activeTab || 'observability'}
+                options={[
+                    { label: mdrTabName || 'MDR', value: 'mdr' },
+                    { label: observabilityTabName || 'Observability', value: 'observability' },
+                    { label: searchTabName || 'Search', value: 'search' },
+                ]}
+                onChange={(value) => setAttributes({ activeTab: value })}
             />
 
             <TextControl
