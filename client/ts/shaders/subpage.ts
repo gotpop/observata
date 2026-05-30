@@ -2,7 +2,7 @@ import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK } from './colours';
 
 import { createShader } from 'shaders/js';
 
-type ShaderColors = {
+export type ShaderColors = {
 	colorA: string;
 	colorB: string;
 };
@@ -101,19 +101,13 @@ const initSubpageShaders = async () => {
 
 	canvas.dataset.shaderInitialized = 'true';
 
-	let colours;
+	const colourMap: Record<string, ShaderColors> = {
+		'shader-pink': COLOUR_PINK,
+		'shader-blueLight': COLOUR_BLUE_LIGHT,
+		'shader-blue': COLOUR_BLUE,
+	};
 
-	switch (canvas.id) {
-		case 'shader-pink':
-			colours = COLOUR_PINK;
-			break;
-		case 'shader-blueLight':
-			colours = COLOUR_BLUE_LIGHT;
-			break;
-		case 'shader-blue':
-		default:
-			colours = COLOUR_BLUE;
-	}
+	const colours = colourMap[canvas.id] ?? COLOUR_BLUE;
 
 	const config = getSubpageShaderConfig(colours);
 
