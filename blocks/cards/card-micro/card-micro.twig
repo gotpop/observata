@@ -1,7 +1,16 @@
 {% set card_title = attributes.cardTitle|default('') %}
 {% set card_description = attributes.cardDescription|default('') %}
 
-<article class="card-micro" data-observe="true" data-threshold="1" data-margin-top="400px" data-margin-bottom="0px">
-	<h3 class="heading-xs fade-in-up">{{ card_title|strip_html }}</h3>
-	<p class="body-sm fade-in-up">{{ card_description|strip_html }}</p>
+<article
+	class="card-micro"
+	data-observe="true"
+	data-threshold="1"
+	data-margin-top="400px"
+	data-margin-bottom="0px">
+	<h3 class="heading-xs fade-in-up">
+		{{ card_title|strip_html }}
+	</h3>
+	<p class="body-sm fade-in-up">
+		{{ card_description|strip_html }}
+	</p>
 </article>

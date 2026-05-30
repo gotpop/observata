@@ -11,7 +11,7 @@
 		border-radius: var(--radius-large);
 		border: var(--border-primary);
 		display: grid;
-		gap: var(--spacing-64);
+		gap: var(--spacing-40);
 		grid-template-columns: 1fr;
 		overflow: clip;
 		padding: var(--padding-card-large, var(--spacing-32));
@@ -33,32 +33,26 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 288px));
 		gap: var(--spacing-24);
+		margin-block-end: var(--spacing-16);
 	}
 
 	.graphic-sphere {
 		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
 
-		color: white;
-		height: 400px;
-		inset: 0;
-		left: auto;
+		color: var(--colour-neutral-white);
+		height: 420px;
+		inset: -2rem -9rem auto auto;
 		pointer-events: none;
 		position: absolute;
-		right: 4rem;
-		top: 10rem;
-		width: 410px;
+		width: 422px;
 		z-index: 0;
 
 		&:after {
 			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
 			content: '';
+			inset: 0;
 			mask-image: url(#mask-sphere-14);
-			min-height: 520px;
 			position: absolute;
-			top: 219px;
-			transition: all 0.3s ease;
-			width: 100%;
-			z-index: 1;
 		}
 
 		.mask-source {
@@ -66,9 +60,16 @@
 			overflow: hidden;
 			position: absolute;
 
-			.circles circle {
+			.circle {
 				stroke-width: 5.3px;
 				stroke: var(--colour-neutral-white);
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+				transition-delay: calc(0.01s * sibling-index());
+
+				.in-view & {
+					opacity: 1;
+				}
 			}
 
 			.mesh {
