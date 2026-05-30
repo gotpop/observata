@@ -1,4 +1,10 @@
-import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from './colours';
+import {
+	COLOUR_BLUE,
+	COLOUR_BLUE_LIGHT,
+	COLOUR_BLUE_LIGHTEST,
+	COLOUR_PINK,
+	type ShaderColors,
+} from './colours';
 
 import { createShader } from 'shaders/js';
 
@@ -9,7 +15,7 @@ function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 				type: 'Form3D',
 				id: 'idmmr8zyxrodm90feqn',
 				props: {
-					glossiness: 200,
+					glossiness: 0,
 					lighting: 197,
 					shape3d: {
 						type: 'ribbon',
@@ -83,6 +89,7 @@ export async function initCardGeoShader(canvas: HTMLCanvasElement) {
 	const colourMap: Record<string, ShaderColors> = {
 		'shader-pink': COLOUR_PINK,
 		'shader-blueLight': COLOUR_BLUE_LIGHT,
+		'shader-blueLightest': COLOUR_BLUE_LIGHTEST,
 		'shader-blue': COLOUR_BLUE,
 	};
 

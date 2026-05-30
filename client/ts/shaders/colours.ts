@@ -17,3 +17,8 @@ export const COLOUR_BLUE_LIGHT: ShaderColors = {
 	colorA: '#5bc1e6',
 	colorB: '#0598ce',
 };
+
+export const COLOUR_BLUE_LIGHTEST: ShaderColors = {
+	colorA: '#5bc1e6',
+	colorB: '#5bc1e6',
+};
