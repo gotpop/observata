@@ -1,4 +1,4 @@
-import { createMatchMedia } from '../utils/breakpoints';
+import { createMatchMedia } from '../utils';
 import { initCardGeoShader } from './card-geo-shader';
 import { initHeroShaders } from './home';
 import { initSubpageShaders } from './subpage';

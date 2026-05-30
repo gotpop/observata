@@ -1,4 +1,4 @@
-import { createMatchMedia } from './utils/breakpoints';
+import { createMatchMedia } from '../utils';
 
 export function initHeaderNavigation(): void {
 	const trigger = document.getElementById('trigger-navigation');
