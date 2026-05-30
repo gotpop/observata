@@ -25,21 +25,24 @@
 .block-partnership {
 	.graphic-tech {
 		&:after {
-			background-image: radial-gradient(circle,
-					var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
-					var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%));
+			--gradient-after: radial-gradient(
+				circle,
+				var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
+				var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%)
+			);
+			--transition-after:
+				--gradient-color-1 0.6s ease, --gradient-color-2 0.6s ease, --gradient-stop-1 0.6s ease,
+				--gradient-stop-2 0.6s ease;
+
+			background-image: var(--gradient-after);
 			content: '';
 			inset: 350px auto auto 50%;
 			mask-image: url(#mask-swooping-lines);
 			min-height: 520px;
 			position: absolute;
+			transition: var(--transition-after);
 			translate: -50% -50%;
 			width: 1440px;
-			transition:
-				--gradient-color-1 0.6s ease,
-				--gradient-color-2 0.6s ease,
-				--gradient-stop-1 0.6s ease,
-				--gradient-stop-2 0.6s ease;
 
 			@media (width >=40rem) {
 				top: 370px;
@@ -59,24 +62,24 @@
 			}
 		}
 	}
-}
 
-#swooping-lines path {
-	opacity: 0.2;
-	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.03s * sibling-index());
+	.swooping-lines-top .line {
+		opacity: 0.2;
+		transition: all 0.3s ease-in-out;
+		transition-delay: calc(0.03s * sibling-index());
 
-	.in-view & {
-		opacity: 1;
+		.in-view & {
+			opacity: 1;
+		}
 	}
-}
 
-#swooping-lines-bottom path {
-	opacity: 0.2;
-	transition: all 0.3s ease-in-out;
-	transition-delay: calc(0.03s * sibling-index());
+	.swooping-lines-bottom .line {
+		opacity: 0.2;
+		transition: all 0.3s ease-in-out;
+		transition-delay: calc(0.03s * sibling-index());
 
-	.in-view & {
-		opacity: 1;
+		.in-view & {
+			opacity: 1;
+		}
 	}
 }
