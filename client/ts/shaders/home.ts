@@ -68,23 +68,29 @@ const heroShaderConfig = {
 const initHeroShaders = async () => {
 	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
 
-	if (!canvas) return;
+	if (!canvas) {
+		console.warn('Hero shader: Canvas element not found');
+		return;
+	}
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
-		console.warn('Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
+		console.warn('Hero shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
 		return;
 	}
 
 	if (canvas.dataset.shaderInitialized === 'true') {
+		console.info('Hero shader: Already initialized, skipping');
 		return;
 	}
 
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {
+		console.info('Hero shader: Initializing...');
 		await createShader(canvas, heroShaderConfig);
+		console.info('Hero shader: Successfully loaded');
 	} catch (error) {
-		console.error('Hero shader failed to initialize.', error);
+		console.error('Hero shader: Failed to initialize', error);
 		delete canvas.dataset.shaderInitialized;
 	}
 };

@@ -6,14 +6,23 @@ import { initSubpageShaders } from './subpage';
 export function initShaders(): void {
 	const mq = createMatchMedia('md');
 
-	if (mq.matches) {
+	if (!mq.matches) {
+		return;
+	}
+
+	const heroCanvas = document.getElementById('hero-shader');
+	if (heroCanvas) {
 		void initHeroShaders();
+	}
+
+	const subpageCanvas = document.querySelector('.subpage-shader');
+	if (subpageCanvas) {
 		void initSubpageShaders();
+	}
 
-		const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
+	const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
 
-		for (const canvas of canvases) {
-			void initCardGeoShader(canvas);
-		}
+	for (const canvas of canvases) {
+		void initCardGeoShader(canvas);
 	}
 }

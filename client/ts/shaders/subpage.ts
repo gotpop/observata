@@ -80,23 +80,26 @@ function getSubpageShaderConfig(colours: { colorA: string; colorB: string }) {
 const initSubpageShaders = async () => {
 	const canvas = document.querySelector('.subpage-shader') as HTMLCanvasElement | null;
 
-	if (!canvas) return;
+	if (!canvas) {
+		console.warn('Subpage shader: Canvas element not found');
+		return;
+	}
 
 	canvas.style.width = '100%';
 	canvas.style.height = '100%';
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
-		console.warn('Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
+		console.warn('Subpage shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
 		return;
 	}
 
 	if (canvas.dataset.shaderInitialized === 'true') {
+		console.info('Subpage shader: Already initialized, skipping');
 		return;
 	}
 
 	canvas.dataset.shaderInitialized = 'true';
 
-	// Pick color values based on canvas id
 	let colours;
 
 	switch (canvas.id) {
@@ -114,9 +117,11 @@ const initSubpageShaders = async () => {
 	const config = getSubpageShaderConfig(colours);
 
 	try {
+		console.info('Subpage shader: Initializing...');
 		await createShader(canvas, config);
+		console.info('Subpage shader: Successfully loaded');
 	} catch (error) {
-		console.error('Subpage shader failed to initialize.', error);
+		console.error('Subpage shader: Failed to initialize', error);
 		delete canvas.dataset.shaderInitialized;
 	}
 };
