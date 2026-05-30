@@ -14,6 +14,18 @@
       "type": "string",
       "default": "observability"
     },
+    "mdrTabName": {
+      "type": "string",
+      "default": "MDR"
+    },
+    "observabilityTabName": {
+      "type": "string",
+      "default": "Observability"
+    },
+    "searchTabName": {
+      "type": "string",
+      "default": "Search"
+    },
     "mdrInnerBlocks": {
       "type": "array",
       "default": []

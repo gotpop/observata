@@ -1,11 +1,11 @@
 import './editor.css';
 
+import { Button, ButtonGroup, SelectControl, TextControl } from '@wordpress/components';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { Button, ButtonGroup, SelectControl } from '@wordpress/components';
 
-import { useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
 
 // Default template for each tab
 const TAB_TEMPLATE = [
@@ -13,21 +13,22 @@ const TAB_TEMPLATE = [
     ['observata/plan-features-table', {}]
 ];
 
-const TABS = [
-    { id: 'mdr', label: 'MDR' },
-    { id: 'observability', label: 'Observability' },
-    { id: 'search', label: 'Search' }
-];
-
 export default function PricingTabsEdit({ attributes, setAttributes }) {
     const [localActiveTab, setLocalActiveTab] = useState(attributes.activeTab || 'observability');
-    const { sectionBgColour } = attributes;
+    const { sectionBgColour, mdrTabName, observabilityTabName, searchTabName } = attributes;
     const blockProps = useBlockProps({ className: 'observata-pricing-tabs-editor' });
 
     const handleTabClick = (tabId) => {
         setLocalActiveTab(tabId);
         setAttributes({ activeTab: tabId });
     };
+
+    // Dynamic tabs based on attribute values
+    const TABS = [
+        { id: 'mdr', label: mdrTabName || 'MDR' },
+        { id: 'observability', label: observabilityTabName || 'Observability' },
+        { id: 'search', label: searchTabName || 'Search' }
+    ];
 
     // Get the inner blocks attribute for current tab
     const getCurrentInnerBlocks = () => {
@@ -69,6 +70,22 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
                     { label: __('Grey', 'observata'), value: 'grey' },
                 ]}
                 onChange={(value) => setAttributes({ sectionBgColour: value })}
+            />
+
+            <TextControl
+                label={__('Tab 1 Name', 'observata')}
+                value={mdrTabName || 'MDR'}
+                onChange={(value) => setAttributes({ mdrTabName: value })}
+            />
+            <TextControl
+                label={__('Tab 2 Name', 'observata')}
+                value={observabilityTabName || 'Observability'}
+                onChange={(value) => setAttributes({ observabilityTabName: value })}
+            />
+            <TextControl
+                label={__('Tab 3 Name', 'observata')}
+                value={searchTabName || 'Search'}
+                onChange={(value) => setAttributes({ searchTabName: value })}
             />
 
             <div className="pricing-tabs-editor__tabs">
