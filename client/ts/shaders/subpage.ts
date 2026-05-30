@@ -1,11 +1,6 @@
-import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK } from './colours';
+import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from './colours';
 
 import { createShader } from 'shaders/js';
-
-export type ShaderColors = {
-	colorA: string;
-	colorB: string;
-};
 
 function getSubpageShaderConfig(colours: ShaderColors) {
 	return {
