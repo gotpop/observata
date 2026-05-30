@@ -2,7 +2,7 @@ import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from '
 
 import { createShader } from 'shaders/js';
 
-function getSubpageShaderConfig(colours: ShaderColors) {
+function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 	return {
 		components: [
 			{
@@ -32,8 +32,8 @@ function getSubpageShaderConfig(colours: ShaderColors) {
 						type: 'Swirl',
 						id: 'idmmr8zwtuhz62buy44',
 						props: {
-							colorA: colours.colorA,
-							colorB: colours.colorB,
+							colorA,
+							colorB,
 							colorSpace: 'oklab',
 							detail: 1.9,
 						},

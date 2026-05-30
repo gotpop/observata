@@ -2,7 +2,7 @@ import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from '
 
 import { createShader } from 'shaders/js';
 
-function getCardGeoShaderConfig(colours: ShaderColors) {
+function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 	return {
 		components: [
 			{
@@ -35,8 +35,8 @@ function getCardGeoShaderConfig(colours: ShaderColors) {
 						type: 'Swirl',
 						id: 'idmmr8zwtuhz62buy44',
 						props: {
-							colorA: colours.colorA,
-							colorB: colours.colorB,
+							colorA,
+							colorB,
 							colorSpace: 'oklab',
 							detail: 1.9,
 							visible: true,
