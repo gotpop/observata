@@ -35,8 +35,8 @@ export default function GridCardsTextEdit({ attributes, setAttributes }) {
                 label={__('Layout', 'observata')}
                 value={layout}
                 options={[
-                    { label: __('Flexible', 'observata'), value: 'flexible' },
-                    { label: __('Columns Two', 'observata'), value: 'columns-two' },
+                    { label: __('2 Columns', 'observata'), value: 'columns-1' },
+                    { label: __('3 Columns', 'observata'), value: 'columns-2' },
                 ]}
                 onChange={(val) => setAttributes({ layout: val })}
             />

@@ -24,10 +24,10 @@
         },
         "layout": {
             "type": "string",
-            "default": "flexible",
+            "default": "columns-2",
             "enum": [
-                "flexible",
-                "columns-two"
+                "columns-2",
+                "columns-3"
             ]
         }
     },

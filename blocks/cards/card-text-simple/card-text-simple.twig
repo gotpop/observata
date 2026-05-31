@@ -1,7 +1,9 @@
 {% set heading = attributes.heading|default('') %}
 
 <article class="card-text-simple">
-	<h2 class="heading-md">{{ heading|strip_html }}</h2>
+	<h2 class="heading-md">
+		{{ heading|strip_html }}
+	</h2>
 	<body-article class="body-article">
 		{{ content|raw }}
 	</body-article>
