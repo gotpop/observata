@@ -3,30 +3,27 @@
 
 	.block-content {
 		display: grid;
-		grid-column: inner;
-		grid-template-columns: 1fr;
+		grid-column: content;
+		grid-template-columns: subgrid;
 		justify-content: center;
 		justify-items: center;
 		row-gap: var(--spacing-40);
 		text-align: center;
 		z-index: 1;
+	}
 
-		.content {
-			background-color: var(--surface-white-transparent);
-			border-radius: var(--radius-card);
-			border: var(--border-grey);
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: min-content;
-			justify-items: center;
-			padding: var(--spacing-40);
-			row-gap: var(--spacing-32);
-			width: max-content;
-		}
+	.content-cta {
+		background-color: var(--surface-white-transparent);
+		border-radius: var(--radius-card);
+		border: var(--border-grey);
+		display: grid;
+		grid-column: inner;
+		justify-items: center;
+		padding: var(--spacing-40);
+		row-gap: var(--spacing-32);
 	}
 
 	.heading-lg {
-		width: max-content;
 		max-width: 24ch;
 		text-wrap: balance;
 	}
