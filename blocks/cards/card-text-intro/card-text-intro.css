@@ -3,6 +3,7 @@
 	grid-template-columns: 1fr;
 	gap: var(--spacing-32);
 	grid-template-rows: min-content;
+	grid-column: 1 / -1;
 
 	&.card-text-intro--center {
 		justify-items: center;

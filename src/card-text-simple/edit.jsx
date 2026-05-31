@@ -22,7 +22,7 @@ export default function CardTextSimpleEdit({ attributes, setAttributes }) {
                 label={__('Span Columns', 'observata')}
                 value={spanColumns}
                 options={[
-                    { label: __('Span 2', 'observata'), value: '1' },
+                    { label: __('Span 1', 'observata'), value: '1' },
                     { label: __('Span 2', 'observata'), value: '2' },
                     { label: __('Span 3', 'observata'), value: '3' },
                 ]}

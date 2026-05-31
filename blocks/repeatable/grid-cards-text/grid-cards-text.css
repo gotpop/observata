@@ -4,13 +4,14 @@
 		row-gap: var(--spacing-60);
 		column-gap: var(--spacing-60);
 		grid-column: inner;
+		grid-template-columns: repeat(var(--cols, 3), 1fr);
 
-		.block-grid-cards-text[data-layout='flexible'] & {
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		[data-layout='2'] & {
+			--cols: 2;
 		}
 
-		.block-grid-cards-text[data-layout='columns-two'] & {
-			grid-template-columns: repeat(2, 1fr);
+		[data-layout='3'] & {
+			--cols: 3;
 		}
 	}
 }

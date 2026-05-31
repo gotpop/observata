@@ -16,9 +16,11 @@ observata-block-label {
 	text-box: trim-both cap alphabetic;
 
 	&::before {
-		content: '■';
+		content: '';
+		width: 10px;
+		height: 10px;
 		font-size: var(--typography-size-24);
-		color: var(--colour-secondary-500);
+		background-color: var(--colour-secondary-500);
 		text-box: trim-both cap alphabetic;
 		position: relative;
 		bottom: 1px;

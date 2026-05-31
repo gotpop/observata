@@ -2,9 +2,9 @@
 {% set span_columns = attributes.spanColumns|default('1') %}
 
 <article class="card-text-simple" data-span-columns="{{ span_columns }}">
-	<h2 class="heading-md">
+	<h3 class="heading-md">
 		{{ heading|strip_html }}
-	</h2>
+	</h3>
 	<body-article class="body-article">
 		{{ content|raw }}
 	</body-article>
