@@ -36,47 +36,57 @@
 		margin-block-end: var(--spacing-16);
 	}
 
-	.graphic-sphere {
-		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+	.section-intro {
+		z-index: 1;
+	}
 
+	.graphic-sphere {
+		--g: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+		--s: 420px;
+
+		background-image: var(--g);
 		color: var(--colour-neutral-white);
-		height: 420px;
-		inset: -2rem -9rem auto auto;
+		height: var(--s);
+		inset: var(--i, 50% -15rem auto auto);
+		translate: 0 -58%;
+		mask-image: url(#mask-sphere-14);
 		pointer-events: none;
 		position: absolute;
-		width: 422px;
+		width: var(--s);
 		z-index: 0;
+		scale: 1;
 
-		&:after {
-			background-image: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-			content: '';
-			inset: 0;
-			mask-image: url(#mask-sphere-14);
-			position: absolute;
+		@media (width >=40rem) {
+			--i: -2rem -9rem auto auto;
+			--s: 420px;
+			scale: 0.9;
 		}
+	}
 
-		.mask-source {
-			height: 0;
-			overflow: hidden;
-			position: absolute;
+	.mask-source {
+		height: 0;
+		overflow: hidden;
+		position: absolute;
 
-			.circle {
-				stroke-width: 5.3px;
-				stroke: var(--colour-neutral-white);
+		.circle {
+			stroke-width: 5.3px;
+			stroke: var(--colour-neutral-white);
+
+			@media (width >=40rem) {
 				opacity: 0;
 				transition: all 0.3s ease-in-out;
 				transition-delay: calc(0.01s * sibling-index());
-
-				.in-view & {
-					opacity: 1;
-				}
 			}
 
-			.mesh {
-				fill: var(--colour-neutral-white);
-				stroke-width: 0.3px;
-				stroke: var(--colour-neutral-white);
+			.in-view & {
+				opacity: 1;
 			}
+		}
+
+		.mesh {
+			fill: var(--colour-neutral-white);
+			stroke-width: 0.3px;
+			stroke: var(--colour-neutral-white);
 		}
 	}
 }

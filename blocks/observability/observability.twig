@@ -11,13 +11,13 @@
 	data-threshold="0.7">
 	<block-content class="block-content">
 		<article class="card-large">
+			{% include 'graphics/spheres/sphere-14-mask.twig' %}
 			{% include 'template/section-intro/section-intro.twig' with {
 				attributes: {
 					sectionTitle: section_title,
 					introText: intro_text
 				}
 			} %}
-			{% include 'graphics/spheres/sphere-14-mask.twig' %}
 			<layout-micro class="layout-micro">
 				{{ content|raw }}
 			</layout-micro>
