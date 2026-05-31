@@ -11,7 +11,7 @@
 }
 
 .block-hero-page {
-	background: var(--colour-background-bg-white);
+	background: var(--surface-white);
 	display: grid;
 	align-items: center;
 	background-image: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);

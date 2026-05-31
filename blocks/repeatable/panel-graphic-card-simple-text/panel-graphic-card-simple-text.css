@@ -52,7 +52,7 @@
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
 		--mask: url(#mask-europe);
-		--size: 500px;
+		--size: 360px;
 		--gradient: conic-gradient(
 			var(--colour-secondary-500),
 			var(--colour-primary-200),
@@ -64,6 +64,7 @@
 
 		@media (width >=64rem) {
 			--s: 1;
+			--size: 500px;
 		}
 	}
 }

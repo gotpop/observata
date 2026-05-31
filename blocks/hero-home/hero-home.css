@@ -26,38 +26,37 @@
 }
 
 .block-hero-home {
-	--height-hero-home: 900px;
+	--height-hero-home: 620px;
+	--bg-mobile: url('../../assets/img/shader-ribbon-mobile.png');
+	--bg-position: center bottom 8%, center, center;
+	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 	--grad-radial-white: radial-gradient(
-		59.27% 62.89% at 49.97% 64.49%,
-		#fff 70.8%,
+		59.27% 62.89% at 50% 65%,
+		#fff 70%,
 		rgba(255, 255, 255, 0) 100%
 	);
-	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 
-	background-color: var(--colour-background-bg-white);
-	background-image:
-		url('../../assets/img/shader-ribbon-mobile.png'), var(--grad-radial-white), var(--grad-linear);
-	background-size: 150%, auto, auto;
-	background-position:
-		center bottom 38%,
-		center,
-		center;
+	background-color: var(--surface-white);
+	background-image: var(--bg-mobile), var(--grad-radial-white), var(--grad-linear);
+	background-position: var(--bg-position);
 	background-repeat: no-repeat;
+	background-size: 150%, auto, auto;
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
+	grid-template-rows: 8rem [hero-start] min-content [hero-end] 1fr;
+	inset: 0 auto auto auto;
 	justify-content: center;
 	min-height: var(--height-hero-home);
 	overflow: clip;
 	position: sticky;
-	top: 0;
 
 	@media (width >=40rem) {
 		background-image: var(--grad-radial-white), var(--grad-linear);
 		background-size: auto, auto;
 		background-position: center, center;
 		grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
+		--height-hero-home: 900px;
 	}
 
 	@media (width >=80rem) {
