@@ -10,11 +10,19 @@
 	}
 
 	&[data-span-columns='2'] {
-		--col-span: 2;
+		--col-span: 1 / -1;
+
+		@media (width >=40rem) {
+			--col-span: 2;
+		}
 	}
 
 	&[data-span-columns='3'] {
-		--col-span: 3;
+		--col-span: 1 / -1;
+
+		@media (width >=40rem) {
+			--col-span: 3;
+		}
 	}
 
 	.heading-md {
@@ -23,7 +31,6 @@
 
 	.body-md {
 		max-width: 100ch;
-		text-wrap: pretty;
 	}
 
 	.body-article {
