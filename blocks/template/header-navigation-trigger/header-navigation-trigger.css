@@ -11,7 +11,7 @@ button-toggle {
 	display: flex;
 	font-size: var(--typography-size-16);
 	grid-area: trigger;
-	height: 4rem;
+	height: var(--spacing-40);
 	justify-content: center;
 	transition:
 		background-color 0.2s ease,

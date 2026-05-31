@@ -20,11 +20,11 @@ icon-geo {
 
 icon-lucide {
 	display: flex;
-	width: var(--size, 24px);
-	height: var(--size, 24px);
+	width: var(--size, 1rem);
+	height: var(--size, 1rem);
 
 	svg {
-		width: var(--size, 24px);
-		height: var(--size, 24px);
+		width: var(--size, 1rem);
+		height: var(--size, 1rem);
 	}
 }

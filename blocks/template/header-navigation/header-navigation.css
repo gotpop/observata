@@ -59,6 +59,15 @@
 		gap: var(--spacing-8);
 		padding-block: 1rem;
 		padding-inline: 0rem;
+
+		.icon {
+			rotate: var(--rotate-icon, -90deg);
+			transition: rotate 0.2s ease-in-out;
+		}
+
+		&[aria-expanded='true'] .icon {
+			--rotate-icon: 0deg;
+		}
 	}
 
 	.menu-anchor {

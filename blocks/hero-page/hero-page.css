@@ -23,6 +23,12 @@
 	overflow: clip;
 	position: relative;
 
+	@media (width >=40rem) {
+	}
+
+	@media (width >=80rem) {
+	}
+
 	.cta-hero-page {
 		--size: 1rem;
 
@@ -48,19 +54,28 @@
 		grid-column: inner;
 		grid-row: 2;
 		grid-template-columns: 1fr;
-		padding-block: 5rem;
+		padding-block: var(--spacing-40);
 		position: relative;
-		row-gap: var(--spacing-40);
+		row-gap: var(--spacing-32);
 		text-align: left;
 		view-transition-name: hero-content;
 		z-index: 3;
+
+		@media (width >=40rem) {
+			row-gap: var(--spacing-40);
+			padding-block: var(--spacing-80);
+		}
 
 		&::before {
 			content: '';
 			width: 125vw;
 			position: absolute;
 			height: 100%;
-			background-image: radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%);
+			background-image: radial-gradient(
+				59.27% 62.89% at 49.97% 64.49%,
+				#fff 70.8%,
+				rgba(255, 255, 255, 0) 100%
+			);
 			left: 50%;
 			transform: translateX(-50%);
 		}
