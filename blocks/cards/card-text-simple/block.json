@@ -9,6 +9,15 @@
         "heading": {
             "type": "string",
             "default": ""
+        },
+        "spanColumns": {
+            "type": "string",
+            "default": "1",
+            "enum": [
+                "1",
+                "2",
+                "3"
+            ]
         }
     },
     "supports": {

@@ -1,19 +1,33 @@
 import './editor.css';
 
-import { RichText, useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CONTENT_ALLOWED_BLOCKS = ['observata/body-md'];
 
 export default function CardTextSimpleEdit({ attributes, setAttributes }) {
-    const { heading } = attributes;
-    const blockProps = useBlockProps({ className: 'card-text-simple' });
+    const { heading, spanColumns } = attributes;
+    const blockProps = useBlockProps({
+        className: 'card-text-simple',
+        'data-span-columns': spanColumns,
+    });
 
     return (
         <article {...blockProps}>
             <BlockLabel name="Card Text Simple" />
+            <SelectControl
+                label={__('Span Columns', 'observata')}
+                value={spanColumns}
+                options={[
+                    { label: __('Span 2', 'observata'), value: '1' },
+                    { label: __('Span 2', 'observata'), value: '2' },
+                    { label: __('Span 3', 'observata'), value: '3' },
+                ]}
+                onChange={(val) => setAttributes({ spanColumns: val })}
+            />
             <div className="card-body">
                 <RichText
                     tagName="h2"

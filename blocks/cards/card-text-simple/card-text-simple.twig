@@ -1,6 +1,7 @@
 {% set heading = attributes.heading|default('') %}
+{% set span_columns = attributes.spanColumns|default('1') %}
 
-<article class="card-text-simple">
+<article class="card-text-simple" data-span-columns="{{ span_columns }}">
 	<h2 class="heading-md">
 		{{ heading|strip_html }}
 	</h2>
