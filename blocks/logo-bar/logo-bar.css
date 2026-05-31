@@ -31,7 +31,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex: 1 1 120px;
+		flex: 1 1 80px;
 
 		@media (width >=40rem) {
 			flex: 0 0;
