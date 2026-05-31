@@ -1,7 +1,11 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set layout = attributes.layout|default('flexible') %}
 
-<section class="section-block block-grid-cards-text" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+<section
+	class="section-block block-grid-cards-text"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }})"
+	data-layout="{{ layout }}">
 	<block-content class="block-content">
 		{{ content|raw }}
 	</block-content>

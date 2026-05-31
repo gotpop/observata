@@ -14,8 +14,10 @@ const CARD_TEXT_SIMPLE_TEMPLATE = [
 ];
 
 export default function GridCardsTextEdit({ attributes, setAttributes }) {
-    const { sectionBgColour } = attributes;
-    const blockProps = useBlockProps({ className: 'observata-grid-cards-text-editor' });
+    const { sectionBgColour, layout } = attributes;
+    const blockProps = useBlockProps({
+        className: 'observata-grid-cards-text-editor',
+    });
 
     return (
         <div {...blockProps}>
@@ -28,6 +30,15 @@ export default function GridCardsTextEdit({ attributes, setAttributes }) {
                     { label: __('Grey', 'observata'), value: 'grey' },
                 ]}
                 onChange={(val) => setAttributes({ sectionBgColour: val })}
+            />
+            <SelectControl
+                label={__('Layout', 'observata')}
+                value={layout}
+                options={[
+                    { label: __('Flexible', 'observata'), value: 'flexible' },
+                    { label: __('Columns Two', 'observata'), value: 'columns-two' },
+                ]}
+                onChange={(val) => setAttributes({ layout: val })}
             />
 
             <div className="cards-container">

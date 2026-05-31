@@ -1,9 +1,16 @@
 .block-grid-cards-text {
 	.block-content {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
 		row-gap: var(--spacing-60);
 		column-gap: var(--spacing-60);
 		grid-column: inner;
+
+		.block-grid-cards-text[data-layout='flexible'] & {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+		.block-grid-cards-text[data-layout='columns-two'] & {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 }

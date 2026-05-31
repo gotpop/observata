@@ -21,6 +21,14 @@
                 "white",
                 "grey"
             ]
+        },
+        "layout": {
+            "type": "string",
+            "default": "flexible",
+            "enum": [
+                "flexible",
+                "columns-two"
+            ]
         }
     },
     "editorScript": "file:../../build/index.js",
