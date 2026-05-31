@@ -21,6 +21,30 @@
 	}
 }
 
+/* .cta-primary {
+	--size: 1rem;
+
+	align-items: center;
+	background-color: var(--colour-secondary-600);
+	border-radius: var(--radius-pill);
+	border: 2px solid var(--colour-secondary-700);
+	color: var(--colour-neutral-white);
+	display: inline flex;
+	font-size: var(--size-body-md);
+	font-weight: var(--typography-weight-medium);
+	gap: var(--spacing-16);
+	padding: var(--spacing-16) var(--spacing-24);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	width: max-content;
+
+	&:hover {
+		background-color: var(--colour-accent-1-500);
+		color: var(--colour-neutral-white);
+		border: 2px solid var(--colour-accent-1-700);
+	}
+} */
+
 .cta-secondary {
 	--size: 1rem;
 
