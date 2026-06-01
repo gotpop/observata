@@ -3,14 +3,14 @@ import { useBlockProps } from '@wordpress/block-editor';
 import BlockLabel from '../components/block-label';
 
 export default function BlogPaginationEdit() {
-    const blockProps = useBlockProps({ className: 'blog-pagination' });
+    const blockProps = useBlockProps({ className: 'section-blog-pagination' });
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Blog Pagination" />
+            <BlockLabel name="Section Blog Pagination" />
             <div className="block-content">
                 <p>This block displays previous/next post navigation on single blog posts.</p>
-                <div className="blog-pagination__container" style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', padding: '1rem' }}>
+                <div className="section-blog-pagination__container" style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', padding: '1rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <span>&larr;</span>
                         <div>

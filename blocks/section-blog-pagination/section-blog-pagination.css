@@ -1,4 +1,4 @@
-.blog-pagination {
+.section-blog-pagination {
 	padding: 1.5rem 0;
 	border-bottom: 1px solid #e0e0e0;
 	display: grid;
@@ -6,7 +6,7 @@
 	grid-template-columns: subgrid;
 	grid-template-rows: min-content;
 
-	.blog-pagination__container {
+	.section-blog-pagination__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -14,7 +14,7 @@
 		grid-column: content;
 	}
 
-	.blog-pagination__link {
+	.section-blog-pagination__link {
 		flex: 1;
 		display: flex;
 		align-items: center;
@@ -26,21 +26,21 @@
 		transition: background-color 0.2s ease;
 	}
 
-	.blog-pagination__link--prev {
+	.section-blog-pagination__link--prev {
 		justify-content: flex-start;
 	}
 
-	.blog-pagination__link--next {
+	.section-blog-pagination__link--next {
 		justify-content: flex-end;
 		text-align: right;
 	}
 
-	.blog-pagination__arrow {
+	.section-blog-pagination__arrow {
 		font-size: 1.25rem;
 		color: #666;
 	}
 
-	.blog-pagination__label {
+	.section-blog-pagination__label {
 		font-size: 0.875rem;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -48,13 +48,13 @@
 		color: #999;
 	}
 
-	.blog-pagination__title {
+	.section-blog-pagination__title {
 		font-size: 1rem;
 		font-weight: 500;
 		color: #333;
 	}
 
-	.blog-pagination__link:hover .blog-pagination__title {
+	.section-blog-pagination__link:hover .section-blog-pagination__title {
 		color: #0066cc;
 	}
 }

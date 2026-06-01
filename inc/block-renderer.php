@@ -161,8 +161,8 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		);
 	}
 
-	// Special handling for blog-pagination to create cycling array of posts.
-	if ( $template_name === 'blog-pagination' ) {
+	// Special handling for section-blog-pagination to create cycling array of posts.
+	if ( $template_name === 'section-blog-pagination' ) {
 		$all_posts = \Timber\Timber::get_posts(
 			array(
 				'post_type'      => 'post',

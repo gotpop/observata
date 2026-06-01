@@ -1,5 +1,5 @@
-import BlogPaginationEdit from './blog-pagination/edit';
-import BlogPaginationSave from './blog-pagination/save';
+import BlogPaginationEdit from './section-blog-pagination/edit';
+import BlogPaginationSave from './section-blog-pagination/save';
 import BlogPostsEdit from './section-blog-posts/edit';
 import BlogPostsSave from './section-blog-posts/save';
 import BodyMdEdit from './element-body-md/edit';
@@ -88,7 +88,7 @@ import TableSimpleEdit from './table-simple/edit';
 import TableSimpleRowEdit from './table-simple-row/edit';
 import TableSimpleRowSave from './table-simple-row/save';
 import TableSimpleSave from './table-simple/save';
-import blogPaginationMetadata from '../blocks/blog-pagination/block.json';
+import blogPaginationMetadata from '../blocks/section-blog-pagination/block.json';
 import blogPostsMetadata from '../blocks/section-blog-posts/block.json';
 import bodyMdMetadata from '../blocks/element-body-md/block.json';
 import bodySmMetadata from '../blocks/element-body-sm/block.json';
