@@ -315,11 +315,6 @@ registerBlockType(planFeaturesRowMetadata.name, {
     save: PlanFeaturesRowSave,
 });
 
-registerBlockType(gridCardsRichTextMetadata.name, {
-    edit: GridCardsRichTextEdit,
-    save: GridCardsRichTextSave,
-});
-
 registerBlockType(teamMembersMetadata.name, {
     edit: TeamMembersEdit,
     save: TeamMembersSave,
