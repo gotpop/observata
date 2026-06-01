@@ -1,0 +1,5 @@
+.body-md {
+	strong {
+		font-weight: var(--typography-weight-bold);
+	}
+}

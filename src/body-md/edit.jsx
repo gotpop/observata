@@ -9,7 +9,7 @@ export default function BodyMdEdit({ attributes, setAttributes }) {
                 value={attributes.content}
                 onChange={(val) => setAttributes({ content: val })}
                 placeholder={'Add content…'}
-                allowedFormats={[]}
+                allowedFormats={['core/bold']}
                 className='body-md__content'
             />
         </div>

@@ -1,2 +1,4 @@
 {% set content = attributes.content|default('') %}
-<p class="body-md">{{ content|strip_html }}</p>
+<p class="body-md">
+	{{ content|raw }}
+</p>
