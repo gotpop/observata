@@ -25,7 +25,6 @@ import gridCardsMicroMetadata from '../blocks/grid-cards-micro/block.json';
 import gridCardsPhotoMetadata from '../blocks/grid-cards-photo/block.json';
 import gridCardsShaderMetadata from '../blocks/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/grid-cards-simple/block.json';
-import gridCardsTextMetadata from '../blocks/grid-cards-text/block.json';
 import gridFlexibleContentMetadata from '../blocks/grid-flexible-content/block.json';
 import heroBlogMetadata from '../blocks/hero-blog/block.json';
 import heroMetadata from '../blocks/hero-home/block.json';
@@ -102,8 +101,6 @@ import GridCardsShaderEdit from './grid-cards-shader/edit';
 import GridCardsShaderSave from './grid-cards-shader/save';
 import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
-import GridCardsTextEdit from './grid-cards-text/edit';
-import GridCardsTextSave from './grid-cards-text/save';
 import GridFlexibleContentEdit from './grid-flexible-content/edit';
 import GridFlexibleContentSave from './grid-flexible-content/save';
 import HeroBlogEdit from './hero-blog/edit';
@@ -387,11 +384,6 @@ registerBlockType(bodyMdMetadata.name, {
 registerBlockType(bodySmMetadata.name, {
     edit: BodySmEdit,
     save: BodySmSave,
-});
-
-registerBlockType(gridCardsTextMetadata.name, {
-    edit: GridCardsTextEdit,
-    save: GridCardsTextSave,
 });
 
 registerBlockType(gridFlexibleContentMetadata.name, {
