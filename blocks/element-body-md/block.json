@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/body-md",
+    "name": "observata/element-body-md",
     "title": "Body MD",
     "category": "theme",
     "description": "A wrapper for core content blocks with body-md styling.",
@@ -16,8 +16,8 @@
     },
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:body-md.editor.css",
-    "style": "file:body-md.css",
+    "editorStyle": "file:element-body-md.editor.css",
+    "style": "file:element-body-md.css",
     "example": {
         "attributes": {
             "content": "Body content with formatted text and paragraph breaks."

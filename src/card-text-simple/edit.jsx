@@ -6,7 +6,7 @@ import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-const CONTENT_ALLOWED_BLOCKS = ['observata/body-md'];
+const CONTENT_ALLOWED_BLOCKS = ['observata/element-body-md'];
 
 export default function CardTextSimpleEdit({ attributes, setAttributes }) {
     const { heading, spanColumns } = attributes;
@@ -40,7 +40,7 @@ export default function CardTextSimpleEdit({ attributes, setAttributes }) {
                 />
                 <InnerBlocks
                     allowedBlocks={CONTENT_ALLOWED_BLOCKS}
-                    template={[['observata/body-md', {}]]}
+                    template={[['observata/element-body-md', {}]]}
                     templateLock={false}
                 />
             </div>

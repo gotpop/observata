@@ -2,11 +2,11 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
-const ALLOWED_BLOCKS = ['observata/body-md', 'observata/table-simple'];
+const ALLOWED_BLOCKS = ['observata/element-body-md', 'observata/table-simple'];
 
 export default function TableSectionEdit({ attributes, setAttributes }) {
     const { sectionBgColour } = attributes;
