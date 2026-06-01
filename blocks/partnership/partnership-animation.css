@@ -44,12 +44,12 @@
 		);
 		--t:
 			--partnership-color-inner 0.6s ease, --partnership-color-mid 0.6s ease,
-			--partnership-color-outer 0.6s ease, --partnership-stop-inner 0.6s ease,
-			--partnership-stop-mid 0.6s ease, --partnership-stop-outer 0.6s ease;
+			--partnership-stop-mid 0.6s ease, --partnership-stop-outer 0.6s ease,
+			--partnership-color-outer 0.6s ease, --partnership-stop-inner 0.6s ease;
 
 		background-image: var(--g);
 		content: '';
-		inset: 350px auto auto 50%;
+		inset: auto auto 350px 50%;
 		mask-image: url(#mask-swooping-lines);
 		min-height: 520px;
 		position: absolute;
