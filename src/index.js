@@ -32,7 +32,6 @@ import introPageMetadata from '../blocks/intro-page/block.json';
 import panelGraphicCardSimpleTextMetadata from '../blocks/panel-graphic-card-simple-text/block.json';
 import planFeaturesRowMetadata from '../blocks/plan-features-row/block.json';
 import planFeaturesTableMetadata from '../blocks/plan-features-table/block.json';
-import plansMetadata from '../blocks/pricing-plans/block.json';
 import pricingTabsMetadata from '../blocks/pricing-tabs/block.json';
 import blogPaginationMetadata from '../blocks/section-blog-pagination/block.json';
 import blogPostsMetadata from '../blocks/section-blog-posts/block.json';
@@ -121,8 +120,6 @@ import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
 import PlanFeaturesTableSave from './plan-features-table/save';
-import PlansEdit from './pricing-plans/edit';
-import PlansSave from './pricing-plans/save';
 import PricingTabsEdit from './pricing-tabs/edit';
 import PricingTabsSave from './pricing-tabs/save';
 import BlogPaginationEdit from './section-blog-pagination/edit';
@@ -297,11 +294,6 @@ registerBlockType(gridCardsGeoTechMetadata.name, {
 registerBlockType(planMetadata.name, {
     edit: PlanEdit,
     save: PlanSave,
-});
-
-registerBlockType(plansMetadata.name, {
-    edit: PlansEdit,
-    save: PlansSave,
 });
 
 registerBlockType(pricingTabsMetadata.name, {
