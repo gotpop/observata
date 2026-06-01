@@ -8,7 +8,11 @@
 	border-radius: var(--radius-card);
 	border: 1px solid var(--colour-border-border-gray);
 	padding-block: var(--spacing-32);
-	padding-inline: var(--spacing-32) 180px;
+	padding-inline: var(--spacing-32) var(--p, 100px);
+
+	@media (width >=40rem) {
+		--p: 180px;
+	}
 
 	&:has(a:hover) {
 		--img-inset: 50% -8% 0 auto;
@@ -20,27 +24,31 @@
 	}
 
 	.wrappper-img {
+		--g: linear-gradient(
+			to bottom,
+			color-mix(in oklab, var(--colour-secondary-300) 80%, transparent) 20%,
+			color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
+		);
+
 		width: 200px;
 		height: var(--img-height, 120%);
-		inset: var(--img-inset, 58% -5% 0 auto);
+		inset: var(--img-inset, 58% -25% 0 auto);
 		border-radius: var(--img-rad, 600% 0 0 0);
 		translate: 0 -50%;
 		position: absolute;
 		overflow: clip;
 		transition: all 0.3s 0.3s ease-in-out;
 
+		@media (width >=40rem) {
+			--img-inset: 58% -5% 0 auto;
+		}
+
 		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			height: 100%;
-			width: 100%;
-			background-image: linear-gradient(
-				to bottom,
-				color-mix(in oklab, var(--colour-secondary-300) 80%, transparent) 20%,
-				color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
-			);
 			backdrop-filter: grayscale(1);
+			background-image: var(--g);
+			content: '';
+			inset: 0;
+			position: absolute;
 		}
 	}
 
@@ -68,9 +76,5 @@
 		gap: var(--spacing-24);
 		display: flex;
 		flex-direction: column;
-	}
-
-	.body-sm {
-		text-wrap: pretty;
 	}
 }
