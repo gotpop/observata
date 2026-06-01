@@ -44,8 +44,6 @@ import GridCardsMicroEdit from './grid-cards-micro/edit';
 import GridCardsMicroSave from './grid-cards-micro/save';
 import GridCardsPhotoEdit from './grid-cards-photo/edit';
 import GridCardsPhotoSave from './grid-cards-photo/save';
-import GridCardsRichTextEdit from './grid-flexible-content/edit';
-import GridCardsRichTextSave from './grid-flexible-content/save';
 import GridCardsShaderEdit from './grid-cards-shader/edit';
 import GridCardsShaderSave from './grid-cards-shader/save';
 import GridCardsSimpleEdit from './grid-cards-simple/edit';
@@ -80,8 +78,6 @@ import PlansEdit from './pricing-plans/edit';
 import PlansSave from './pricing-plans/save';
 import PricingTabsEdit from './pricing-tabs/edit';
 import PricingTabsSave from './pricing-tabs/save';
-import RichTextEdit from './rich-text/edit';
-import RichTextSave from './rich-text/save';
 import SectionCardAndGraphicEdit from './section-card-and-graphic/edit';
 import SectionCardAndGraphicSave from './section-card-and-graphic/save';
 import SectionCtaEdit from './section-cta/edit';
@@ -120,7 +116,6 @@ import gridCardsGeoTechMetadata from '../blocks/repeatable/grid-cards-geo-tech/b
 import gridCardsGraphicMetadata from '../blocks/repeatable/grid-cards-graphic/block.json';
 import gridCardsMicroMetadata from '../blocks/repeatable/grid-cards-micro/block.json';
 import gridCardsPhotoMetadata from '../blocks/grid-cards-photo/block.json';
-import gridCardsRichTextMetadata from '../blocks/repeatable/grid-cards-rich-text/block.json';
 import gridCardsShaderMetadata from '../blocks/repeatable/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/repeatable/grid-cards-simple/block.json';
 import gridCardsTextMetadata from '../blocks/repeatable/grid-cards-text/block.json';
@@ -140,7 +135,6 @@ import planMetadata from '../blocks/cards/card-pricing-plan/block.json';
 import plansMetadata from '../blocks/repeatable/pricing-plans/block.json';
 import pricingTabsMetadata from '../blocks/repeatable/pricing-tabs/block.json';
 import { registerBlockType } from '@wordpress/blocks';
-import richTextMetadata from '../blocks/rich-text/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/repeatable/section-card-and-graphic/block.json';
 import sectionCtaMetadata from '../blocks/repeatable/section-cta/block.json';
 import sectionIntroMetadata from '../blocks/template/section-intro/block.json';
@@ -374,11 +368,6 @@ registerBlockType(contactFormMetadata.name, {
 registerBlockType(blogPostsMetadata.name, {
     edit: BlogPostsEdit,
     save: BlogPostsSave,
-});
-
-registerBlockType(richTextMetadata.name, {
-    edit: RichTextEdit,
-    save: RichTextSave,
 });
 
 registerBlockType(cardTextSimpleMetadata.name, {
