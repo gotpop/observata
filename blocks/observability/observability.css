@@ -54,16 +54,15 @@
 		position: absolute;
 		width: var(--s);
 		z-index: 0;
-		scale: 1;
 
 		@media (width >=40rem) {
 			--i: 50% -15rem auto auto;
 		}
 
-		@media (width >=80rem) {
+		@media (width >=86rem) {
 			--i: 10rem -8rem auto auto;
 			--s: 420px;
-			scale: 0.9;
+			scale: 1.15;
 		}
 	}
 
