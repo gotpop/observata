@@ -1,0 +1,38 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set card_title = attributes.cardTitle|default('') %}
+{% set card_body = attributes.cardBody|default('') %}
+
+<section
+	class="section-block block-observability"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});"
+	data-observe="true"
+	data-threshold="0.7">
+	<block-content class="block-content">
+		<article class="card-large">
+			{% include 'graphics/spheres/sphere-14-mask.twig' %}
+			{% include 'template/section-intro/section-intro.twig' with {
+				attributes: {
+					sectionTitle: section_title,
+					introText: intro_text
+				}
+			} %}
+			<layout-micro class="layout-micro">
+				{{ content|raw }}
+			</layout-micro>
+			<card-large-content class="card-large-content">
+				{% if card_title %}
+					<h4 class="heading-sm">
+						{{ card_title|strip_html }}
+					</h4>
+				{% endif %}
+				{% if card_body %}
+					<p class="body-md">
+						{{ card_body|strip_html }}
+					</p>
+				{% endif %}
+			</card-large-content>
+		</article>
+	</block-content>
+</section>
