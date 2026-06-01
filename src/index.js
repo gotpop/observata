@@ -15,6 +15,7 @@ import contactDetailsMetadata from '../blocks/contact-details/block.json';
 import contactFormMetadata from '../blocks/contact-form/block.json';
 import bodyMdMetadata from '../blocks/element-body-md/block.json';
 import bodySmMetadata from '../blocks/element-body-sm/block.json';
+import elementTableSimpleRowMetadata from '../blocks/element-table-simple-row/block.json';
 import gridCardsGeoTechMetadata from '../blocks/grid-cards-geo-tech/block.json';
 import gridCardsGeoMetadata from '../blocks/grid-cards-geo/block.json';
 import gridCardsGraphicMetadata from '../blocks/grid-cards-graphic/block.json';
@@ -111,6 +112,8 @@ import SectionTrustBarSave from './section-trust-bar/save';
 
 import CardTableSimpleEdit from './card-table-simple/edit';
 import CardTableSimpleSave from './card-table-simple/save';
+import ElementTableSimpleRowEdit from './element-table-simple-row/edit';
+import ElementTableSimpleRowSave from './element-table-simple-row/save';
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -331,6 +334,11 @@ registerBlockType(cardTableSimpleMetadata.name, {
 registerBlockType(tableSimpleRowMetadata.name, {
     edit: TableSimpleRowEdit,
     save: TableSimpleRowSave,
+});
+
+registerBlockType(elementTableSimpleRowMetadata.name, {
+    edit: ElementTableSimpleRowEdit,
+    save: ElementTableSimpleRowSave,
 });
 
 registerBlockType(sectionIntroMetadata.name, {

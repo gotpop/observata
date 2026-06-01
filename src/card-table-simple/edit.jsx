@@ -40,7 +40,7 @@ export default function CardTableSimpleEdit({ attributes, setAttributes }) {
                 <strong>{__('Table Rows (drag to reorder)', 'observata')}</strong>
                 <InnerBlocks
                     template={ROW_TEMPLATE}
-                    allowedBlocks={['observata/table-simple-row']}
+                    allowedBlocks={['observata/table-simple-row', 'observata/element-table-simple-row']}
                     templateLock={false}
                     renderAppender={InnerBlocks.ButtonBlockAppender}
                 />
