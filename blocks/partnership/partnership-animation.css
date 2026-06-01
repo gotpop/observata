@@ -44,8 +44,8 @@
 		);
 		--t:
 			--partnership-color-inner 0.6s ease, --partnership-color-mid 0.6s ease,
-			--partnership-stop-mid 0.6s ease, --partnership-stop-outer 0.6s ease,
-			--partnership-color-outer 0.6s ease, --partnership-stop-inner 0.6s ease;
+			--partnership-color-outer 0.6s ease, --partnership-stop-inner 0.6s ease,
+			--partnership-stop-mid 0.6s ease, --partnership-stop-outer 0.6s ease;
 
 		background-image: var(--g);
 		content: '';
@@ -72,6 +72,12 @@
 			--partnership-stop-inner: 30%;
 			--partnership-stop-mid: 50%;
 			--partnership-stop-outer: 70%;
+		}
+
+		:has(.cta-partnership:hover) & {
+			--partnership-stop-inner: 0%;
+			--partnership-stop-mid: 20%;
+			--partnership-stop-outer: 30%;
 		}
 	}
 
