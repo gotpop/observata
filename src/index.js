@@ -29,7 +29,6 @@ import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
 import logoBarMetadata from '../blocks/logo-bar/block.json';
 import panelGraphicCardSimpleTextMetadata from '../blocks/panel-graphic-card-simple-text/block.json';
-import partnershipMetadata from '../blocks/partnership/block.json';
 import planFeaturesRowMetadata from '../blocks/plan-features-row/block.json';
 import planFeaturesTableMetadata from '../blocks/plan-features-table/block.json';
 import plansMetadata from '../blocks/pricing-plans/block.json';
@@ -108,8 +107,7 @@ import LogoBarEdit from './logo-bar/edit';
 import LogoBarSave from './logo-bar/save';
 import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
 import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
-import PartnershipEdit from './partnership/edit';
-import PartnershipSave from './partnership/save';
+
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -210,11 +208,6 @@ registerBlockType(gridCardsSimpleMetadata.name, {
 registerBlockType(cardGeoShaderMetadata.name, {
     edit: CardGeoShaderEdit,
     save: CardGeoShaderSave,
-});
-
-registerBlockType(partnershipMetadata.name, {
-    edit: PartnershipEdit,
-    save: PartnershipSave,
 });
 
 registerBlockType(sectionPartnershipMetadata.name, {
