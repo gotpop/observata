@@ -24,8 +24,4 @@
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		gap: var(--spacing-50);
 	}
-
-	.body-lg {
-		text-wrap: pretty;
-	}
 }
