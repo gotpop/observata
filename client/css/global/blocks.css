@@ -29,7 +29,6 @@
 @import '../../blocks/card-micro/card-micro.css';
 @import '../../blocks/card-pricing-plan/card-pricing-plan.css';
 @import '../../blocks/card-simple/card-simple.css';
-@import '../../blocks/card-team-member/card-team-member.css';
 @import '../../blocks/card-text-intro/card-text-intro.css';
 @import '../../blocks/card-text-simple/card-text-simple.css';
 @import '../../blocks/plan-features-row/plan-features-row.css';
@@ -49,7 +48,6 @@
 @import '../../blocks/pricing-tabs/pricing-tabs.css';
 @import '../../blocks/section-card-and-graphic/section-card-and-graphic.css';
 @import '../../blocks/section-cta/section-cta.css';
-@import '../../blocks/team-members/team-members.css';
 
 /* --- Other blocks --- */
 @import '../../blocks/logo-bar/logo-bar.css';
