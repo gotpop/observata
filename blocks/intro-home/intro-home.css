@@ -36,7 +36,7 @@
 	border: 1px solid var(--colour-border-border-gray);
 	border-bottom: none;
 
-	@media (width >=64rem) {
+	@media (width >=40rem) {
 		flex-wrap: wrap;
 		gap: 55px;
 		padding: 2rem 4rem;
@@ -57,7 +57,7 @@
 			max-width: 100px;
 			max-height: var(--spacing-16);
 
-			@media (width >=64rem) {
+			@media (width >=40rem) {
 				max-width: 200px;
 				max-height: 30px;
 			}
