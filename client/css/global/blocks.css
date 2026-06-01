@@ -18,28 +18,36 @@
 @import '../../blocks/intro-page/intro-page.css';
 
 /* --- Card blocks --- */
-@import '../../blocks/cards/card-geo/card-geo.css';
-@import '../../blocks/cards/card-geo-list/card-geo-list.css';
-@import '../../blocks/cards/card-geo-shader/card-geo-shader.css';
-@import '../../blocks/cards/card-geo-tech/card-geo-tech.css';
-@import '../../blocks/cards/card-micro/card-micro.css';
-@import '../../blocks/cards/card-pricing-plan/card-pricing-plan.css';
-@import '../../blocks/cards/card-simple/card-simple.css';
-@import '../../blocks/cards/card-team-member/card-team-member.css';
-@import '../../blocks/cards/plan-features-row/plan-features-row.css';
+@import '../../blocks/body-md/body-md.css';
+@import '../../blocks/body-sm/body-sm.css';
+@import '../../blocks/card-geo/card-geo.css';
+@import '../../blocks/card-geo-list/card-geo-list.css';
+@import '../../blocks/card-geo-shader/card-geo-shader.css';
+@import '../../blocks/card-geo-tech/card-geo-tech.css';
+@import '../../blocks/card-micro/card-micro.css';
+@import '../../blocks/card-pricing-plan/card-pricing-plan.css';
+@import '../../blocks/card-simple/card-simple.css';
+@import '../../blocks/card-team-member/card-team-member.css';
+@import '../../blocks/card-text-intro/card-text-intro.css';
+@import '../../blocks/card-text-simple/card-text-simple.css';
+@import '../../blocks/plan-features-row/plan-features-row.css';
 
-/* --- Repeatable / Grid blocks --- */
-@import '../../blocks/repeatable/callout/callout.css';
-@import '../../blocks/repeatable/grid-cards/grid-cards.css';
-@import '../../blocks/repeatable/grid-cards-geo/grid-cards-geo.css';
-@import '../../blocks/repeatable/grid-cards-geo-tech/grid-cards-geo-tech.css';
-@import '../../blocks/repeatable/grid-cards-graphic/grid-cards-graphic.css';
-@import '../../blocks/repeatable/grid-cards-micro/grid-cards-micro.css';
-@import '../../blocks/repeatable/grid-cards-simple/grid-cards-simple.css';
-@import '../../blocks/repeatable/plan-features-table/plan-features-table.css';
-@import '../../blocks/repeatable/pricing-plans/pricing-plans.css';
-@import '../../blocks/repeatable/section-card-and-graphic/section-card-and-graphic.css';
-@import '../../blocks/repeatable/team-members/team-members.css';
+/* --- Grid blocks --- */
+@import '../../blocks/blog-posts/blog-posts.css';
+@import '../../blocks/grid-cards-geo/grid-cards-geo.css';
+@import '../../blocks/grid-cards-geo-tech/grid-cards-geo-tech.css';
+@import '../../blocks/grid-cards-graphic/grid-cards-graphic.css';
+@import '../../blocks/grid-cards-micro/grid-cards-micro.css';
+@import '../../blocks/grid-cards-shader/grid-cards-shader.css';
+@import '../../blocks/grid-cards-simple/grid-cards-simple.css';
+@import '../../blocks/grid-cards-text/grid-cards-text.css';
+@import '../../blocks/panel-graphic-card-simple-text/panel-graphic-card-simple-text.css';
+@import '../../blocks/plan-features-table/plan-features-table.css';
+@import '../../blocks/pricing-plans/pricing-plans.css';
+@import '../../blocks/pricing-tabs/pricing-tabs.css';
+@import '../../blocks/section-card-and-graphic/section-card-and-graphic.css';
+@import '../../blocks/section-cta/section-cta.css';
+@import '../../blocks/team-members/team-members.css';
 
 /* --- Other blocks --- */
 @import '../../blocks/logo-bar/logo-bar.css';
