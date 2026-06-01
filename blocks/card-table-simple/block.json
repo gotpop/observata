@@ -6,7 +6,8 @@
     "category": "theme",
     "description": "A 3-column table with editable headers and draggable rows.",
     "parent": [
-        "observata/table-section"
+        "observata/table-section",
+        "observata/grid-flexible-content"
     ],
     "supports": {
         "html": false,

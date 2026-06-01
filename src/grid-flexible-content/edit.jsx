@@ -46,7 +46,7 @@ export default function GridFlexibleContentEdit({ attributes, setAttributes }) {
                 <InnerBlocks
                     template={CARD_TEXT_SIMPLE_TEMPLATE}
                     templateLock={false}
-                    allowedBlocks={['observata/card-text-simple', 'observata/card-text-intro']}
+                    allowedBlocks={['observata/card-text-simple', 'observata/card-text-intro', 'observata/card-table-simple']}
                     orientation="horizontal"
                 />
             </div>
