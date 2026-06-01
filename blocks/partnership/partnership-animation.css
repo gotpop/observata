@@ -1,37 +1,51 @@
-@property --gradient-color-1 {
+@property --partnership-color-inner {
 	syntax: '<color>';
 	inherits: false;
 	initial-value: #dbdbdb;
 }
 
-@property --gradient-color-2 {
-	syntax: '<color>';
-	inherits: false;
-	initial-value: #dbdbdb;
-}
-
-@property --gradient-stop-1 {
+@property --partnership-stop-inner {
 	syntax: '<percentage>';
 	inherits: false;
 	initial-value: 0%;
 }
 
-@property --gradient-stop-2 {
+@property --partnership-color-mid {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --partnership-stop-mid {
 	syntax: '<percentage>';
 	inherits: false;
 	initial-value: 100%;
+}
+
+@property --partnership-color-outer {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --partnership-stop-outer {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
 }
 
 .block-partnership {
 	.graphic-tech {
 		--g: radial-gradient(
 			circle,
-			var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
-			var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%)
+			var(--partnership-color-inner) var(--partnership-stop-inner, 0%),
+			var(--partnership-color-mid) var(--partnership-stop-mid, 50%),
+			var(--partnership-color-outer) var(--partnership-stop-outer, 100%)
 		);
 		--t:
-			--gradient-color-1 0.6s ease, --gradient-color-2 0.6s ease, --gradient-stop-1 0.6s ease,
-			--gradient-stop-2 0.6s ease;
+			--partnership-color-inner 0.6s ease, --partnership-color-mid 0.6s ease,
+			--partnership-color-outer 0.6s ease, --partnership-stop-inner 0.6s ease,
+			--partnership-stop-mid 0.6s ease, --partnership-stop-outer 0.6s ease;
 
 		background-image: var(--g);
 		content: '';
@@ -52,10 +66,12 @@
 		}
 
 		.in-view & {
-			--gradient-color-1: #90b2dc;
-			--gradient-color-2: #9bdbf2;
-			--gradient-stop-1: 30%;
-			--gradient-stop-2: 70%;
+			--partnership-color-inner: #90b2dc;
+			--partnership-color-mid: #90b2dc;
+			--partnership-color-outer: #9bdbf2;
+			--partnership-stop-inner: 30%;
+			--partnership-stop-mid: 50%;
+			--partnership-stop-outer: 70%;
 		}
 	}
 
