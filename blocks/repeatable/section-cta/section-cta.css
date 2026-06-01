@@ -4,8 +4,8 @@
 	.block-content {
 		display: grid;
 		grid-column: content;
+		grid-row: 1;
 		grid-template-columns: subgrid;
-		justify-content: center;
 		justify-items: center;
 		row-gap: var(--spacing-40);
 		text-align: center;
