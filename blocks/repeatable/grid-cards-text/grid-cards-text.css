@@ -6,6 +6,10 @@
 		grid-column: inner;
 		grid-template-columns: repeat(var(--cols, 2), 1fr);
 
+		[data-layout='1'] & {
+			--cols: 1;
+		}
+
 		[data-layout='2'] & {
 			--cols: 1;
 

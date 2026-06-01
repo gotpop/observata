@@ -25,20 +25,21 @@ export default function GridCardsTextEdit({ attributes, setAttributes }) {
             <SelectControl
                 label={__('Section Background', 'observata')}
                 value={sectionBgColour}
+                onChange={(val) => setAttributes({ sectionBgColour: val })}
                 options={[
                     { label: __('White', 'observata'), value: 'white' },
                     { label: __('Grey', 'observata'), value: 'grey' },
                 ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
             />
             <SelectControl
                 label={__('Layout', 'observata')}
                 value={layout}
-                options={[
-                    { label: __('2 Columns', 'observata'), value: 'columns-1' },
-                    { label: __('3 Columns', 'observata'), value: 'columns-2' },
-                ]}
                 onChange={(val) => setAttributes({ layout: val })}
+                options={[
+                    { label: __('1 Column', 'observata'), value: '1' },
+                    { label: __('2 Columns', 'observata'), value: '2' },
+                    { label: __('3 Columns', 'observata'), value: '3' },
+                ]}
             />
 
             <div className="cards-container">
