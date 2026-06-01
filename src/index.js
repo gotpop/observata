@@ -40,6 +40,7 @@ import contactMetadata from '../blocks/section-contact/block.json';
 import sectionCtaMetadata from '../blocks/section-cta/block.json';
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
+import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
 import tableSectionMetadata from '../blocks/table-section/block.json';
 import tableSimpleRowMetadata from '../blocks/table-simple-row/block.json';
 import tableSimpleMetadata from '../blocks/table-simple/block.json';
@@ -107,6 +108,8 @@ import LogoBarEdit from './logo-bar/edit';
 import LogoBarSave from './logo-bar/save';
 import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
 import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
+import SectionTrustBarEdit from './section-trust-bar/edit';
+import SectionTrustBarSave from './section-trust-bar/save';
 
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
@@ -233,6 +236,11 @@ registerBlockType(blogPaginationMetadata.name, {
 registerBlockType(logoBarMetadata.name, {
     edit: LogoBarEdit,
     save: LogoBarSave,
+});
+
+registerBlockType(sectionTrustBarMetadata.name, {
+    edit: SectionTrustBarEdit,
+    save: SectionTrustBarSave,
 });
 
 registerBlockType(sectionCardAndGraphicMetadata.name, {
