@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/blog-posts",
+    "name": "observata/section-blog-posts",
     "title": "Blog Posts",
     "category": "theme",
     "description": "Displays the latest blog posts in a responsive card grid.",
@@ -25,11 +25,11 @@
     },
     "editorScript": "file:../../build/index.js",
     "editorStyle": [
-        "file:blog-posts.css",
+        "file:section-blog-posts.css",
         "file:../../build/index.css"
     ],
     "style": [
-        "file:blog-posts.css"
+        "file:section-blog-posts.css"
     ],
     "example": {
         "attributes": {

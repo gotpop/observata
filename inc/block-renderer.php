@@ -148,7 +148,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 	}
 
 	// Special handling for blog-posts to query latest posts via Timber.
-	if ( $template_name === 'blog-posts' ) {
+	if ( $template_name === 'section-blog-posts' ) {
 		$posts_per_page   = $attributes['postsPerPage'] ?? 10;
 		$context['posts'] = \Timber\Timber::get_posts(
 			array(

@@ -34,7 +34,7 @@
 @import '../../blocks/plan-features-row/plan-features-row.css';
 
 /* --- Grid blocks --- */
-@import '../../blocks/blog-posts/blog-posts.css';
+@import '../../blocks/section-blog-posts/section-blog-posts.css';
 @import '../../blocks/grid-cards-geo/grid-cards-geo.css';
 @import '../../blocks/grid-cards-geo-tech/grid-cards-geo-tech.css';
 @import '../../blocks/grid-cards-graphic/grid-cards-graphic.css';
