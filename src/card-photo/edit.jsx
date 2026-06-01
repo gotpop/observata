@@ -2,13 +2,13 @@ import './editor.css';
 
 import { InnerBlocks, MediaUpload, MediaUploadCheck, RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { Button } from '@wordpress/components';
-import { useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { Button } from '@wordpress/components';
 import UnsplashImagePicker from '../components/unsplash-image-picker';
+import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
 
-const CONTENT_ALLOWED_BLOCKS = ['observata/body-sm'];
+const CONTENT_ALLOWED_BLOCKS = ['observata/element-body-sm'];
 
 export default function CardPhotoEdit({ attributes, setAttributes }) {
     const { title, imageUrl, imageAlt } = attributes;
@@ -82,7 +82,7 @@ export default function CardPhotoEdit({ attributes, setAttributes }) {
                 />
                 <InnerBlocks
                     allowedBlocks={CONTENT_ALLOWED_BLOCKS}
-                    template={[['observata/body-sm', {}]]}
+                    template={[['observata/element-body-sm', {}]]}
                     templateLock={false}
                     orientation="vertical"
                     renderAppender={InnerBlocks.ButtonBlockAppender}

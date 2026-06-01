@@ -17,9 +17,11 @@
 @import '../../blocks/intro-home/intro-home.css';
 @import '../../blocks/intro-page/intro-page.css';
 
+/* --- Element blocks --- */
+@import '../../blocks/element-body-md/element-body-md.css';
+@import '../../blocks/element-body-sm/element-body-sm.css';
+
 /* --- Card blocks --- */
-@import '../../blocks/body-md/body-md.css';
-@import '../../blocks/body-sm/body-sm.css';
 @import '../../blocks/card-geo/card-geo.css';
 @import '../../blocks/card-geo-list/card-geo-list.css';
 @import '../../blocks/card-geo-shader/card-geo-shader.css';
