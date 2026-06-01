@@ -24,42 +24,38 @@
 
 .block-partnership {
 	.graphic-tech {
-		&:after {
-			--gradient-after: radial-gradient(
-				circle,
-				var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
-				var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%)
-			);
-			--transition-after:
-				--gradient-color-1 0.6s ease, --gradient-color-2 0.6s ease, --gradient-stop-1 0.6s ease,
-				--gradient-stop-2 0.6s ease;
+		--g: radial-gradient(
+			circle,
+			var(--gradient-color-1, #dbdbdb) var(--gradient-stop-1, 0%),
+			var(--gradient-color-2, #dbdbdb) var(--gradient-stop-2, 100%)
+		);
+		--t:
+			--gradient-color-1 0.6s ease, --gradient-color-2 0.6s ease, --gradient-stop-1 0.6s ease,
+			--gradient-stop-2 0.6s ease;
 
-			background-image: var(--gradient-after);
-			content: '';
-			inset: 350px auto auto 50%;
-			mask-image: url(#mask-swooping-lines);
-			min-height: 520px;
-			position: absolute;
-			transition: var(--transition-after);
-			translate: -50% -50%;
-			width: 1440px;
+		background-image: var(--g);
+		content: '';
+		inset: 350px auto auto 50%;
+		mask-image: url(#mask-swooping-lines);
+		min-height: 520px;
+		position: absolute;
+		transition: var(--t);
+		translate: -50% -50%;
+		width: 1440px;
 
-			@media (width >=40rem) {
-				top: 370px;
-			}
+		@media (width >=40rem) {
+			top: 370px;
+		}
 
-			@media (width >=80rem) {
-				top: 256px;
-			}
+		@media (width >=80rem) {
+			top: 256px;
 		}
 
 		.in-view & {
-			&::after {
-				--gradient-color-1: #e08ac7;
-				--gradient-color-2: #76bdd7;
-				--gradient-stop-1: 30%;
-				--gradient-stop-2: 70%;
-			}
+			--gradient-color-1: #90b2dc;
+			--gradient-color-2: #9bdbf2;
+			--gradient-stop-1: 30%;
+			--gradient-stop-2: 70%;
 		}
 	}
 
