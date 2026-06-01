@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const CONTACT_TEMPLATE = [
     ['observata/section-intro', {}],
@@ -20,11 +20,11 @@ const ALLOWED_BLOCKS = [
 
 export default function ContactEdit({ attributes, setAttributes }) {
     const { sectionBgColour } = attributes;
-    const blockProps = useBlockProps({ className: 'block-contact-editor' });
+    const blockProps = useBlockProps({ className: 'block-section-contact-editor' });
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Contact" />
+            <BlockLabel name="Section Contact" />
             <SelectControl
                 label={__('Section Background', 'observata')}
                 value={sectionBgColour}
