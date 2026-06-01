@@ -20,9 +20,6 @@ import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
 import CardPhotoEdit from './card-photo/edit';
 import CardPhotoSave from './card-photo/save';
-import CardRichTextEdit from './card-rich-text/edit';
-import CardRichTextMetadata from '../blocks/cards/card-rich-text/block.json';
-import CardRichTextSave from './card-rich-text/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTeamMemberEdit from './card-team-member/edit';
@@ -327,11 +324,6 @@ registerBlockType(planFeaturesRowMetadata.name, {
 registerBlockType(gridCardsRichTextMetadata.name, {
     edit: GridCardsRichTextEdit,
     save: GridCardsRichTextSave,
-});
-
-registerBlockType(CardRichTextMetadata.name, {
-    edit: CardRichTextEdit,
-    save: CardRichTextSave,
 });
 
 registerBlockType(teamMembersMetadata.name, {
