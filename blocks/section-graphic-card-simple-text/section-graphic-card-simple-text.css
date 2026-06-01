@@ -1,0 +1,51 @@
+.block-section-graphic-card-simple-text {
+	overflow: clip;
+	border-block-end: var(--border-grey);
+
+	.block-content {
+		display: grid;
+		gap: var(--g, var(--spacing-24) 0);
+		grid-column: inner;
+		grid-template-areas: var(--a, 'content' 'graphic');
+		grid-template-columns: var(--c, 1fr);
+		grid-template-rows: var(--r, 1fr 150px);
+
+		@media (width >=64rem) {
+			--a: 'content graphic';
+			--c: 1fr 1fr;
+			--g: 0 var(--spacing-60);
+			--r: max-content;
+		}
+
+		&:has(.graphic-tech-europe) {
+			row-gap: var(--spacing-32);
+
+			@media (width >=64rem) {
+				row-gap: var(--spacing-80);
+			}
+		}
+	}
+
+	.graphic-sphere-spiral {
+		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+		--mask-image: url('../../assets/svg/spheres/sphere-18.svg');
+
+		background-image: var(--gradient);
+		grid-area: graphic;
+		height: var(--h, 155%);
+		inset: var(--i, 0 auto auto 50%);
+		mask: var(--mask-image) var(--p, 0px 0px) / var(--s, cover) no-repeat;
+		position: relative;
+		translate: var(--t, -50% 0);
+		width: var(--w, 140%);
+
+		@media (width >=64rem) {
+			--h: 150%;
+			--i: 50% auto auto 0;
+			--p: center;
+			--s: contain;
+			--t: 0% -50%;
+			--w: 100%;
+		}
+	}
+}

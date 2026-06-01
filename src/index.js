@@ -39,6 +39,7 @@ import blogPostsMetadata from '../blocks/section-blog-posts/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/section-card-and-graphic/block.json';
 import contactMetadata from '../blocks/section-contact/block.json';
 import sectionCtaMetadata from '../blocks/section-cta/block.json';
+import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card-simple-text/block.json';
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
 import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
@@ -107,6 +108,8 @@ import IntroPageEdit from './intro-page/edit';
 import IntroPageSave from './intro-page/save';
 import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
 import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
+import SectionGraphicCardSimpleTextEdit from './section-graphic-card-simple-text/edit';
+import SectionGraphicCardSimpleTextSave from './section-graphic-card-simple-text/save';
 import SectionTrustBarEdit from './section-trust-bar/edit';
 import SectionTrustBarSave from './section-trust-bar/save';
 
@@ -400,4 +403,9 @@ registerBlockType(breadcrumbsMetadata.name, {
 registerBlockType(panelGraphicCardSimpleTextMetadata.name, {
     edit: PanelGraphicCardSimpleTextEdit,
     save: PanelGraphicCardSimpleTextSave,
+});
+
+registerBlockType(sectionGraphicCardSimpleTextMetadata.name, {
+    edit: SectionGraphicCardSimpleTextEdit,
+    save: SectionGraphicCardSimpleTextSave,
 });

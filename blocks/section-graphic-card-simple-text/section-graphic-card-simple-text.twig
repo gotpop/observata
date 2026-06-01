@@ -1,0 +1,19 @@
+{% set background_graphic = attributes.backgroundGraphic|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+
+<section
+	class="section-block block-section-graphic-card-simple-text"
+	data-observe="true"
+	data-threshold="1"
+	data-margin-top="400px"
+	data-margin-bottom="0px"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+	<block-content class="block-content">
+		{{ content|raw }}
+		{% if background_graphic == 'europe-dots-graphic' %}
+			{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
+		{% else %}
+			<graphic-tech class="graphic-sphere-spiral" aria-hidden="true" />
+		{% endif %}
+	</block-content>
+</section>
