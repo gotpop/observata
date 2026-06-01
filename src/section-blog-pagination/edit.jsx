@@ -1,6 +1,5 @@
-import { useBlockProps } from '@wordpress/block-editor';
-
 import BlockLabel from '../components/block-label';
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function BlogPaginationEdit() {
     const blockProps = useBlockProps({ className: 'section-blog-pagination' });
