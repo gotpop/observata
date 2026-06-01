@@ -1,8 +1,8 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "observata/observability",
-    "title": "Observability",
+    "name": "observata/section-observability",
+    "title": "Section Observability",
     "category": "theme",
     "description": "Observability section.",
     "supports": {
