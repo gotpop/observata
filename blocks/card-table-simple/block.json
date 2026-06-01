@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card-table-simple",
+    "title": "Card Table Simple",
+    "category": "theme",
+    "description": "A 3-column table with editable headers and draggable rows.",
+    "parent": [
+        "observata/table-section"
+    ],
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "column1Label": {
+            "type": "string",
+            "default": "Feature"
+        },
+        "column2Label": {
+            "type": "string",
+            "default": "Capability"
+        },
+        "column3Label": {
+            "type": "string",
+            "default": "Impact"
+        }
+    },
+    "textdomain": "observata",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:card-table-simple.editor.css",
+    "style": "file:card-table-simple.css"
+}

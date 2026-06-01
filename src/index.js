@@ -8,6 +8,7 @@ import cardMicroMetadata from '../blocks/card-micro/block.json';
 import cardPhotoMetadata from '../blocks/card-photo/block.json';
 import planMetadata from '../blocks/card-pricing-plan/block.json';
 import cardSimpleMetadata from '../blocks/card-simple/block.json';
+import cardTableSimpleMetadata from '../blocks/card-table-simple/block.json';
 import cardTextIntroMetadata from '../blocks/card-text-intro/block.json';
 import cardTextSimpleMetadata from '../blocks/card-text-simple/block.json';
 import contactDetailsMetadata from '../blocks/contact-details/block.json';
@@ -108,6 +109,8 @@ import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/sav
 import SectionTrustBarEdit from './section-trust-bar/edit';
 import SectionTrustBarSave from './section-trust-bar/save';
 
+import CardTableSimpleEdit from './card-table-simple/edit';
+import CardTableSimpleSave from './card-table-simple/save';
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -318,6 +321,11 @@ registerBlockType(tableSectionMetadata.name, {
 registerBlockType(tableSimpleMetadata.name, {
     edit: TableSimpleEdit,
     save: TableSimpleSave,
+});
+
+registerBlockType(cardTableSimpleMetadata.name, {
+    edit: CardTableSimpleEdit,
+    save: CardTableSimpleSave,
 });
 
 registerBlockType(tableSimpleRowMetadata.name, {
