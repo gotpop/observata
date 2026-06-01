@@ -27,7 +27,6 @@ import heroMetadata from '../blocks/hero-home/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
-import logoBarMetadata from '../blocks/logo-bar/block.json';
 import panelGraphicCardSimpleTextMetadata from '../blocks/panel-graphic-card-simple-text/block.json';
 import planFeaturesRowMetadata from '../blocks/plan-features-row/block.json';
 import planFeaturesTableMetadata from '../blocks/plan-features-table/block.json';
@@ -104,8 +103,6 @@ import IntroEdit from './intro-home/edit';
 import IntroSave from './intro-home/save';
 import IntroPageEdit from './intro-page/edit';
 import IntroPageSave from './intro-page/save';
-import LogoBarEdit from './logo-bar/edit';
-import LogoBarSave from './logo-bar/save';
 import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
 import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
 import SectionTrustBarEdit from './section-trust-bar/edit';
@@ -231,11 +228,6 @@ registerBlockType(observabilityMetadata.name, {
 registerBlockType(blogPaginationMetadata.name, {
     edit: BlogPaginationEdit,
     save: BlogPaginationSave,
-});
-
-registerBlockType(logoBarMetadata.name, {
-    edit: LogoBarEdit,
-    save: LogoBarSave,
 });
 
 registerBlockType(sectionTrustBarMetadata.name, {
