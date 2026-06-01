@@ -57,7 +57,11 @@
 		scale: 1;
 
 		@media (width >=40rem) {
-			--i: -2rem -9rem auto auto;
+			--i: 50% -15rem auto auto;
+		}
+
+		@media (width >=80rem) {
+			--i: 10rem -8rem auto auto;
 			--s: 420px;
 			scale: 0.9;
 		}
