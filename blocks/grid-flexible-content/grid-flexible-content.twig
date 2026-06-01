@@ -1,0 +1,12 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set layout = attributes.layout|default('columns-2') %}
+
+<section
+	class="section-block block-grid-flexible-content"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }})"
+	data-layout="{{ layout }}">
+	<block-content class="block-content">
+		{{ content|raw }}
+	</block-content>
+</section>
