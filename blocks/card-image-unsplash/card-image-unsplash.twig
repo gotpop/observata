@@ -1,0 +1,17 @@
+{% set image_url = attributes.imageUrl|default('') %}
+{% set image_alt = attributes.imageAlt|default('') %}
+{% set photographer = attributes.unsplashPhotographer|default('') %}
+{% set source_url = attributes.unsplashSourceUrl|default('') %}
+
+<figure class="card-image-unsplash">
+	{% if image_url %}
+		<img
+			src="{{ image_url }}"
+			alt="{{ image_alt }}"
+			class="card-image-unsplash__img" />
+	{% else %}
+		<div class="card-image-unsplash__placeholder">
+			<span>Select an image</span>
+		</div>
+	{% endif %}
+</figure>

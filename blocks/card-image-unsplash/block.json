@@ -1,0 +1,40 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card-image-unsplash",
+    "title": "Card Image Unsplash",
+    "category": "theme",
+    "description": "An image card with Unsplash image selection.",
+    "parent": [
+        "observata/grid-flexible-content"
+    ],
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "unsplashPhotographer": {
+            "type": "string",
+            "default": ""
+        },
+        "unsplashSourceUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "style": "file:card-image-unsplash.css",
+    "example": {
+        "attributes": {
+            "imageUrl": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800"
+        }
+    }
+}
