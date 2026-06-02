@@ -1,0 +1,53 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/section-hero-page",
+    "title": "Section Hero Page",
+    "category": "theme",
+    "description": "Sub-page hero section with heading, subheading, optional CTA, and background options.",
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "attributes": {
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "subheading": {
+            "type": "string",
+            "default": ""
+        },
+        "showCta": {
+            "type": "boolean",
+            "default": false
+        },
+        "ctaText": {
+            "type": "string",
+            "default": ""
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": [
+                "white",
+                "grey",
+                "gradient"
+            ]
+        }
+    },
+    "render": "file:section-hero-page.twig",
+    "editorScript": "file:../../build/index.js",
+    "editorStyle": "file:../../build/index.css",
+    "style": "file:section-hero-page.css",
+    "example": {
+        "attributes": {
+            "heading": "About Our Solutions",
+            "subheading": "Enterprise-grade observability and security tools for modern businesses"
+        }
+    }
+}
