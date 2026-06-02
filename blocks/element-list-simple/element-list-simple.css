@@ -1,6 +1,7 @@
 .element-list-simple {
 	margin: var(--spacing-16) 0;
 	padding-left: var(--spacing-24);
+	list-style-type: square;
 }
 
 .element-list-simple__list {

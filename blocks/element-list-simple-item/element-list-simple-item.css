@@ -1,5 +1,5 @@
 .element-list-simple-item {
-	margin-bottom: var(--spacing-8);
+	margin-bottom: var(--spacing-16);
 	line-height: var(--line-height-body-md);
 }
 
