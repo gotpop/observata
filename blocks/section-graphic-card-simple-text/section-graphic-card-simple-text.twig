@@ -1,5 +1,9 @@
 {% set background_graphic = attributes.backgroundGraphic|default('') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set sphere_mask_image = theme_url ~ '/assets/svg/spheres/sphere-'
+	~ background_graphic
+	~ '.svg'
+%}
 
 <section
 	class="section-block block-section-graphic-card-simple-text"
@@ -17,8 +21,8 @@
 				class="graphic-sphere-spiral"
 				aria-hidden="true"
 				{% if background_graphic %}
-					style="--mask-image: url('../../assets/svg/spheres/sphere-{{ background_graphic }}.svg');"
 					data-sphere="{{ background_graphic }}"
+					style="--mask-image: url('{{ sphere_mask_image }}');"
 				{% endif %} />
 		{% endif %}
 	</block-content>

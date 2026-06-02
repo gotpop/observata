@@ -98,6 +98,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 			'attributes' => $attributes,
 			'content'    => $rendered_content,
 			'block'      => $block,
+			'theme_url'  => get_template_directory_uri(),
 		)
 	);
 

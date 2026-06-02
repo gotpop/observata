@@ -28,7 +28,7 @@
 
 	.graphic-sphere-spiral {
 		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-		--mask-image: url('../../assets/svg/spheres/sphere-18.svg');
+		/* --mask-image: url('../../assets/svg/spheres/sphere-18.svg'); */
 
 		background-image: var(--gradient);
 		grid-area: graphic;
