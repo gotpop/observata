@@ -1,0 +1,9 @@
+.element-list-simple {
+	margin: var(--spacing-16) 0;
+	padding-left: var(--spacing-24);
+}
+
+.element-list-simple__list {
+	list-style: disc;
+	list-style-position: inside;
+}
