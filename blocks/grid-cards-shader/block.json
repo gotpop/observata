@@ -23,7 +23,8 @@
             "default": "white",
             "enum": [
                 "white",
-                "grey"
+                "grey",
+                "gradient"
             ]
         }
     },
