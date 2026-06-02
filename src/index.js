@@ -43,6 +43,7 @@ import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card
 import sectionHeroBlogMetadata from '../blocks/section-hero-blog/block.json';
 import sectionHeroHomeMetadata from '../blocks/section-hero-home/block.json';
 import sectionHeroPageMetadata from '../blocks/section-hero-page/block.json';
+import sectionIntroHomeMetadata from '../blocks/section-intro-home/block.json';
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
 import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
@@ -138,6 +139,8 @@ import SectionHeroHomeEdit from './section-hero-home/edit';
 import SectionHeroHomeSave from './section-hero-home/save';
 import SectionHeroPageEdit from './section-hero-page/edit';
 import SectionHeroPageSave from './section-hero-page/save';
+import SectionIntroHomeEdit from './section-intro-home/edit';
+import SectionIntroHomeSave from './section-intro-home/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
 import ObservabilityEdit from './section-observability/edit';
@@ -176,6 +179,11 @@ registerBlockType(sectionCtaMetadata.name, {
 registerBlockType(introMetadata.name, {
     edit: IntroEdit,
     save: IntroSave,
+});
+
+registerBlockType(sectionIntroHomeMetadata.name, {
+    edit: SectionIntroHomeEdit,
+    save: SectionIntroHomeSave,
 });
 
 registerBlockType(cardGeoMetadata.name, {

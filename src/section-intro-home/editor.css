@@ -1,0 +1,28 @@
+/* Editor-specific overrides for the Section Intro Home block */
+.wp-block-observata-section-intro-home {
+	&.block-section-intro-home {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		.block-editor-block-list__layout {
+			display: flex !important;
+			justify-content: space-between;
+		}
+
+		.block-content {
+			display: flex !important;
+		}
+
+		.card-geo h3 {
+			max-width: max-content;
+		}
+	}
+
+	.logo-strip {
+		position: relative;
+		position-anchor: auto;
+		position-area: auto;
+		margin-bottom: 2rem;
+	}
+}

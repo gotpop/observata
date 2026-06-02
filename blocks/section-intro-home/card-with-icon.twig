@@ -1,0 +1,9 @@
+<article class="card-geo {{ card.icon_class|esc_attr }}">
+	<div class="intro-card-icon" aria-hidden="true">
+		{% include 'icons/geo/' ~ card.icon_geo ~ '.twig' %}
+	</div>
+	<div class="intro-card-body">
+		<h3 class="intro-card-title">{{ card.title|strip_html }}</h3>
+		<p class="intro-card-text">{{ card.text|strip_html }}</p>
+	</div>
+</article>
