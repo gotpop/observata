@@ -14,8 +14,6 @@ const CONTACT_TEMPLATE = [
 
 const ALLOWED_BLOCKS = [
     'observata/section-intro',
-    'observata/contact-details',
-    'observata/contact-form',
     'observata/card-contact-details',
     'observata/card-contact-form',
 ];

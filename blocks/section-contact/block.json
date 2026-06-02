@@ -22,15 +22,11 @@
     "editorScript": "file:../../build/index.js",
     "editorStyle": [
         "file:section-contact.css",
-        "file:../contact-details/contact-details.css",
-        "file:../contact-form/contact-form.css",
         "file:../template/section-intro/section-intro.css",
         "file:../../build/index.css"
     ],
     "style": [
         "file:section-contact.css",
-        "file:../contact-details/contact-details.css",
-        "file:../contact-form/contact-form.css",
         "file:../template/section-intro/section-intro.css"
     ],
     "example": {

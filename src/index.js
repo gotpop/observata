@@ -14,8 +14,6 @@ import cardSimpleMetadata from '../blocks/card-simple/block.json';
 import cardTableSimpleMetadata from '../blocks/card-table-simple/block.json';
 import cardTextIntroMetadata from '../blocks/card-text-intro/block.json';
 import cardTextSimpleMetadata from '../blocks/card-text-simple/block.json';
-import contactDetailsMetadata from '../blocks/contact-details/block.json';
-import contactFormMetadata from '../blocks/contact-form/block.json';
 import bodyMdMetadata from '../blocks/element-body-md/block.json';
 import bodySmMetadata from '../blocks/element-body-sm/block.json';
 import elementListSimpleItemMetadata from '../blocks/element-list-simple-item/block.json';
@@ -80,10 +78,6 @@ import CardTextIntroEdit from './card-text-intro/edit';
 import CardTextIntroSave from './card-text-intro/save';
 import CardTextSimpleEdit from './card-text-simple/edit';
 import CardTextSimpleSave from './card-text-simple/save';
-import ContactDetailsEdit from './contact-details/edit';
-import ContactDetailsSave from './contact-details/save';
-import ContactFormEdit from './contact-form/edit';
-import ContactFormSave from './contact-form/save';
 import BodyMdEdit from './element-body-md/edit';
 import BodyMdSave from './element-body-md/save';
 import BodySmEdit from './element-body-sm/edit';
@@ -354,11 +348,6 @@ registerBlockType(contactMetadata.name, {
     save: ContactSave,
 });
 
-registerBlockType(contactDetailsMetadata.name, {
-    edit: ContactDetailsEdit,
-    save: ContactDetailsSave,
-});
-
 registerBlockType(cardContactDetailsMetadata.name, {
     edit: CardContactDetailsEdit,
     save: CardContactDetailsSave,
@@ -367,11 +356,6 @@ registerBlockType(cardContactDetailsMetadata.name, {
 registerBlockType(cardContactFormMetadata.name, {
     edit: CardContactFormEdit,
     save: CardContactFormSave,
-});
-
-registerBlockType(contactFormMetadata.name, {
-    edit: ContactFormEdit,
-    save: ContactFormSave,
 });
 
 registerBlockType(blogPostsMetadata.name, {
