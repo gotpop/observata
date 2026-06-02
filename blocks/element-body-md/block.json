@@ -12,7 +12,8 @@
         }
     },
     "supports": {
-        "html": false
+        "html": false,
+        "anchor": true
     },
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",

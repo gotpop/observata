@@ -7,6 +7,7 @@
 
 <section
 	class="section-block block-section-graphic-card-simple-text"
+	{% if attributes.anchor %}id="{{ attributes.anchor }}"{% endif %}
 	data-observe="true"
 	data-threshold="1"
 	data-margin-top="400px"
