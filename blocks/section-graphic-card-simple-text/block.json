@@ -12,7 +12,7 @@
     "attributes": {
         "backgroundGraphic": {
             "type": "string",
-            "default": ""
+            "default": "1"
         },
         "sectionBgColour": {
             "type": "string",
