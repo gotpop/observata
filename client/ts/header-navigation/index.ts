@@ -1,6 +1,11 @@
-import { handleSubmenuClick, handleSubmenuEnter, handleSubmenuLeave, handleTriggerClick } from './handlers';
+import {
+	handleSubmenuClick,
+	handleSubmenuEnter,
+	handleSubmenuLeave,
+	handleTriggerClick,
+} from './handlers';
 
-import { createMatchMedia } from '../utils';
+import { createMatchMedia, setupClickOutsideClose } from '../utils';
 
 export function initHeaderNavigation(): void {
 	const trigger = document.getElementById('trigger-navigation');
@@ -10,7 +15,17 @@ export function initHeaderNavigation(): void {
 	const mq = createMatchMedia('sm');
 
 	if (trigger && headerContent) {
-		trigger.addEventListener('click', () => handleTriggerClick(trigger, headerContent));
+		trigger.addEventListener('click', () => {
+			const isOpen = handleTriggerClick(trigger, headerContent);
+			if (isOpen) {
+				setupClickOutsideClose(trigger, headerContent, () => {
+					const iconHamburger = document.getElementById('icon-hamburger');
+					if (iconHamburger) {
+						iconHamburger.classList.remove('is-active');
+					}
+				});
+			}
+		});
 	}
 
 	function attachListeners() {

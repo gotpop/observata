@@ -1,8 +1,8 @@
 export function handleTriggerClick(
 	trigger: HTMLElement | null,
 	headerContent: HTMLElement | null
-): void {
-	if (!trigger || !headerContent) return;
+): boolean {
+	if (!trigger || !headerContent) return false;
 
 	const isOpen = headerContent.classList.toggle('is-open');
 
@@ -20,6 +20,8 @@ export function handleTriggerClick(
 	if (iconHamburger) {
 		iconHamburger.classList.toggle('is-active', hasOpenClass);
 	}
+
+	return isOpen;
 }
 
 export function handleSubmenuEnter(e: Event): void {
