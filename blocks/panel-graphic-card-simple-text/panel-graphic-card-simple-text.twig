@@ -11,7 +11,7 @@
 	<block-content class="block-content">
 		{{ content|raw }}
 		{% if background_graphic == 'europe-dots-graphic' %}
-			{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
+			{% include 'graphics/tech/' ~ background_graphic ~ '.twig' %}
 		{% else %}
 			<graphic-tech class="graphic-sphere-spiral" aria-hidden="true" />
 		{% endif %}
