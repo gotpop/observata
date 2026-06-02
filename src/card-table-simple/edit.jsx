@@ -7,7 +7,7 @@ import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 const ROW_TEMPLATE = [
-    ['observata/table-simple-row', { rowLabel: '', column2Value: '', column3Value: '' }],
+    ['observata/element-table-simple-row', { rowLabel: '', column2Value: '', column3Value: '' }],
 ];
 
 export default function CardTableSimpleEdit({ attributes, setAttributes }) {

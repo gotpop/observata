@@ -7,17 +7,25 @@
 {% set col2_label = attributes.column2Label|default('Capability') %}
 {% set col3_label = attributes.column3Label|default('Impact') %}
 
-<div class="card-table-simple">
+<div class="card-table-simple" data-observe="true" data-threshold="0.8">
 	<div class="table-wrapper">
 		<table class="table">
 			<thead>
 				<tr class="head-row">
-					<th class="head-cell">{{ col1_label }}</th>
-					<th class="head-cell">{{ col2_label }}</th>
-					<th class="head-cell">{{ col3_label }}</th>
+					<th class="head-cell">
+						{{ col1_label }}
+					</th>
+					<th class="head-cell">
+						{{ col2_label }}
+					</th>
+					<th class="head-cell">
+						{{ col3_label }}
+					</th>
 				</tr>
 			</thead>
-			<tbody>{{ content|raw }}</tbody>
+			<tbody>
+				{{ content|raw }}
+			</tbody>
 		</table>
 	</div>
 </div>

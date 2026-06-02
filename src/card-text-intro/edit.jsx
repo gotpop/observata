@@ -1,13 +1,17 @@
 import './editor.css';
 
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
+const INTRO_TEMPLATE = [
+    ['observata/element-body-md', { content: 'Intro text description here.' }],
+];
+
 export default function CardTextIntroEdit({ attributes, setAttributes }) {
-    const { sectionTitle, introText, textAlign } = attributes;
+    const { sectionTitle, textAlign } = attributes;
     const blockProps = useBlockProps({ className: 'card-text-intro-editor' });
 
     return (
@@ -32,14 +36,11 @@ export default function CardTextIntroEdit({ attributes, setAttributes }) {
                     disableLineBreaks
                     allowedFormats={[]}
                 />
-                <RichText
-                    tagName="p"
-                    className="card-text-intro-text"
-                    value={introText}
-                    onChange={(value) => setAttributes({ introText: value })}
-                    placeholder={__('Intro text…', 'observata')}
-                    disableLineBreaks
-                    allowedFormats={[]}
+                <InnerBlocks
+                    template={INTRO_TEMPLATE}
+                    templateLock={false}
+                    allowedBlocks={['observata/element-body-md']}
+                    renderAppender={InnerBlocks.ButtonBlockAppender}
                 />
             </div>
         </article>

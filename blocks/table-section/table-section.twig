@@ -1,10 +1,16 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 
-<section class="section-block table-section" data-observe="true" data-threshold="0.8" style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+<section
+	class="section-block table-section"
+	data-observe="true"
+	data-threshold="0.8"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
 		{% if section_title %}
-			<h2 class="heading-lg">{{ section_title|strip_html }}</h2>
+			<h2 class="heading-lg">
+				{{ section_title|strip_html }}
+			</h2>
 		{% endif %}
 
 		{{ content|raw }}
