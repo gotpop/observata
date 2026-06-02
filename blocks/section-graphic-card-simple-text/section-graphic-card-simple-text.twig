@@ -13,7 +13,13 @@
 		{% if background_graphic == 'europe-dots-graphic' %}
 			{% include 'graphics/tech/' ~ background_graphic ~ '.twig' %}
 		{% else %}
-			<graphic-tech class="graphic-sphere-spiral" aria-hidden="true" />
+			<graphic-tech
+				class="graphic-sphere-spiral"
+				aria-hidden="true"
+				{% if background_graphic %}
+					style="--mask-image: url('../../assets/svg/spheres/sphere-{{ background_graphic }}.svg');"
+					data-sphere="{{ background_graphic }}"
+				{% endif %} />
 		{% endif %}
 	</block-content>
 </section>
