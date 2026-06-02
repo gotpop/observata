@@ -7,6 +7,16 @@
 	2xl	96rem (1536px)	@media (width >= 96rem) { ... } 
 */
 
+.site:has(.header-content.is-open) {
+	&::after {
+		content: '';
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.7);
+		inset: 0;
+		z-index: 5;
+	}
+}
+
 site-layout {
 	--b: 0px;
 
@@ -15,7 +25,8 @@ site-layout {
 	overflow: clip;
 	grid-template-rows: 1fr max-content;
 	grid-template-columns:
-		[full-start] minmax(1rem, 1fr) [breakout-start] var(--b) [content-start] 2rem [inner-start] minmax(300px, 1136px)
+		[full-start] minmax(1rem, 1fr) [breakout-start] var(--b)
+		[content-start] 2rem [inner-start] minmax(300px, 1136px)
 		[inner-end] 2rem [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
 
 	@media (width >=40rem) {
