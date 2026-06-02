@@ -44,6 +44,7 @@ import sectionHeroBlogMetadata from '../blocks/section-hero-blog/block.json';
 import sectionHeroHomeMetadata from '../blocks/section-hero-home/block.json';
 import sectionHeroPageMetadata from '../blocks/section-hero-page/block.json';
 import sectionIntroHomeMetadata from '../blocks/section-intro-home/block.json';
+import sectionIntroPageMetadata from '../blocks/section-intro-page/block.json';
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
 import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
@@ -141,6 +142,8 @@ import SectionHeroPageEdit from './section-hero-page/edit';
 import SectionHeroPageSave from './section-hero-page/save';
 import SectionIntroHomeEdit from './section-intro-home/edit';
 import SectionIntroHomeSave from './section-intro-home/save';
+import SectionIntroPageEdit from './section-intro-page/edit';
+import SectionIntroPageSave from './section-intro-page/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
 import ObservabilityEdit from './section-observability/edit';
@@ -284,6 +287,11 @@ registerBlockType(heroPageMetadata.name, {
 registerBlockType(introPageMetadata.name, {
     edit: IntroPageEdit,
     save: IntroPageSave,
+});
+
+registerBlockType(sectionIntroPageMetadata.name, {
+    edit: SectionIntroPageEdit,
+    save: SectionIntroPageSave,
 });
 
 registerBlockType(gridCardsGeoMetadata.name, {
