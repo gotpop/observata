@@ -32,7 +32,6 @@ import heroMetadata from '../blocks/hero-home/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
-import panelGraphicCardSimpleTextMetadata from '../blocks/panel-graphic-card-simple-text/block.json';
 import planFeaturesRowMetadata from '../blocks/plan-features-row/block.json';
 import planFeaturesTableMetadata from '../blocks/plan-features-table/block.json';
 import pricingTabsMetadata from '../blocks/pricing-tabs/block.json';
@@ -115,8 +114,7 @@ import IntroEdit from './intro-home/edit';
 import IntroSave from './intro-home/save';
 import IntroPageEdit from './intro-page/edit';
 import IntroPageSave from './intro-page/save';
-import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
-import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
+
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -395,11 +393,6 @@ registerBlockType(gridFlexibleContentMetadata.name, {
 registerBlockType(breadcrumbsMetadata.name, {
     edit: BreadcrumbsEdit,
     save: BreadcrumbsSave,
-});
-
-registerBlockType(panelGraphicCardSimpleTextMetadata.name, {
-    edit: PanelGraphicCardSimpleTextEdit,
-    save: PanelGraphicCardSimpleTextSave,
 });
 
 registerBlockType(sectionGraphicCardSimpleTextMetadata.name, {
