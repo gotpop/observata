@@ -27,6 +27,7 @@
     "editorScript": "file:../../build/index.js",
     "style": [
         "file:section-graphic-card-simple-text.css",
+        "file:section-graphic-card-simple-text-graphic.css",
         "file:../card-text-simple/card-text-simple.css"
     ],
     "editorStyle": [

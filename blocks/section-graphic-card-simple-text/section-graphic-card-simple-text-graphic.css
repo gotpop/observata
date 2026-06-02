@@ -1,0 +1,23 @@
+.block-section-graphic-card-simple-text {
+	.graphic-sphere-spiral {
+		--gradient: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
+
+		background-image: var(--gradient);
+		grid-area: graphic;
+		height: var(--h, 155%);
+		inset: var(--i, 0 auto auto 50%);
+		mask: var(--mask-image) var(--p, 0px 0px) / var(--s, cover) no-repeat;
+		position: relative;
+		translate: var(--t, -50% 0);
+		width: var(--w, 140%);
+
+		@media (width >=64rem) {
+			--h: 150%;
+			--i: 50% auto auto 0;
+			--p: center;
+			--s: contain;
+			--t: 0% -50%;
+			--w: 100%;
+		}
+	}
+}
