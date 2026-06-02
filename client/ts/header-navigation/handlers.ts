@@ -1,9 +1,13 @@
-export function handleTriggerClick(trigger: HTMLElement | null, headerContent: HTMLElement | null): void {
+export function handleTriggerClick(
+	trigger: HTMLElement | null,
+	headerContent: HTMLElement | null
+): void {
 	if (!trigger || !headerContent) return;
 
 	const isOpen = headerContent.classList.toggle('is-open');
 
 	trigger.setAttribute('aria-expanded', String(isOpen));
+	headerContent.setAttribute('aria-expanded', String(isOpen));
 	const label = trigger.querySelector('.sr-only');
 
 	if (label) {

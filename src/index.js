@@ -41,6 +41,7 @@ import sectionCardAndGraphicMetadata from '../blocks/section-card-and-graphic/bl
 import contactMetadata from '../blocks/section-contact/block.json';
 import sectionCtaMetadata from '../blocks/section-cta/block.json';
 import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card-simple-text/block.json';
+import sectionHeroHomeMetadata from '../blocks/section-hero-home/block.json';
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
 import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
@@ -132,6 +133,8 @@ import SectionCtaEdit from './section-cta/edit';
 import SectionCtaSave from './section-cta/save';
 import SectionGraphicCardSimpleTextEdit from './section-graphic-card-simple-text/edit';
 import SectionGraphicCardSimpleTextSave from './section-graphic-card-simple-text/save';
+import SectionHeroHomeEdit from './section-hero-home/edit';
+import SectionHeroHomeSave from './section-hero-home/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
 import ObservabilityEdit from './section-observability/edit';
@@ -155,6 +158,11 @@ function DynamicSave() {
 registerBlockType(heroMetadata.name, {
     edit: HeroEdit,
     save: HeroSave,
+});
+
+registerBlockType(sectionHeroHomeMetadata.name, {
+    edit: SectionHeroHomeEdit,
+    save: SectionHeroHomeSave,
 });
 
 registerBlockType(sectionCtaMetadata.name, {
