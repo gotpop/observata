@@ -46,6 +46,7 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
                     options={[
                         { label: __('White', 'observata'), value: 'white' },
                         { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
                     ]}
                     onChange={(val) => setAttributes({ sectionBgColour: val })}
                 />

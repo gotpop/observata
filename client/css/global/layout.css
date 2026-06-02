@@ -51,6 +51,13 @@ main {
 }
 
 .section-block {
+	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
+	--grad-rad: radial-gradient(
+		circle at 40% 50%,
+		rgba(255, 255, 255, 0.9) 20%,
+		rgba(255, 255, 255, 0) 60%
+	);
+
 	background-color: var(--section-bg-colour, var(--surface-white));
 	border-block-end: var(--border-grey);
 	display: grid;
@@ -58,6 +65,11 @@ main {
 	grid-template-columns: subgrid;
 	padding-block: var(--padding-section-block, var(--spacing-48));
 	position: relative;
+	background-image: var(--grad, none);
+
+	&[data-bg='gradient'] {
+		--grad: var(--grad-rad), var(--grad-lin);
+	}
 
 	@media (width >=40rem) {
 		--padding-section-block: var(--spacing-80);

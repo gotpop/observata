@@ -29,6 +29,7 @@ export default function SectionGraphicCardSimpleTextEdit({ attributes, setAttrib
                     options={[
                         { label: __('White', 'observata'), value: 'white' },
                         { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
                     ]}
                     onChange={(value) => setAttributes({ sectionBgColour: value })}
                 />

@@ -1,11 +1,11 @@
 import './editor.css';
 
-import { Button, ButtonGroup, SelectControl, TextControl } from '@wordpress/components';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { Button, ButtonGroup, SelectControl, TextControl } from '@wordpress/components';
 
-import BlockLabel from '../components/block-label';
-import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 // Default template for each tab
 const TAB_TEMPLATE = [
@@ -68,6 +68,7 @@ export default function PricingTabsEdit({ attributes, setAttributes }) {
                 options={[
                     { label: __('White', 'observata'), value: 'white' },
                     { label: __('Grey', 'observata'), value: 'grey' },
+                    { label: __('Gradient', 'observata'), value: 'gradient' },
                 ]}
                 onChange={(value) => setAttributes({ sectionBgColour: value })}
             />

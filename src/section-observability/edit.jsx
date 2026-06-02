@@ -2,10 +2,10 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import SectionIntro from '../components/section-intro';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
+import SectionIntro from '../components/section-intro';
 
 const CARD_TEMPLATE = [
     ['observata/card-micro', { cardTitle: 'Alert fatigue', cardDescription: 'Too many noisy alerts hide the incidents that matter most.' }],
@@ -26,6 +26,7 @@ export default function Edit({ attributes, setAttributes }) {
                 options={[
                     { label: __('White', 'observata'), value: 'white' },
                     { label: __('Grey', 'observata'), value: 'grey' },
+                    { label: __('Gradient', 'observata'), value: 'gradient' },
                 ]}
                 onChange={(val) => setAttributes({ sectionBgColour: val })}
             />
