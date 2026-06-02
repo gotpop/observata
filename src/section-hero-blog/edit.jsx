@@ -1,0 +1,54 @@
+import './editor.css';
+
+import { RichText, useBlockProps } from '@wordpress/block-editor';
+
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
+
+export default function SectionHeroBlogEdit({ attributes, setAttributes }) {
+    const { heading, subheading, sectionBgColour } = attributes;
+    const blockProps = useBlockProps({
+        className: 'block-section-hero-blog',
+    });
+
+    return (
+        <section {...blockProps}>
+            <BlockLabel name="Section Hero Blog">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
+
+            <div className="hero-blog-content">
+                <div className="hero-blog-text">
+                    <RichText
+                        tagName="h1"
+                        className="heading-hero-blog"
+                        value={heading}
+                        disableLineBreaks
+                        onChange={(val) => setAttributes({ heading: val })}
+                        placeholder={__('Page heading…', 'observata')}
+                        allowedFormats={[]}
+                    />
+                    <RichText
+                        disableLineBreaks
+                        tagName="p"
+                        className="body-hero body-hero-blog"
+                        value={subheading}
+                        onChange={(val) => setAttributes({ subheading: val })}
+                        placeholder={__('Subheading text…', 'observata')}
+                        allowedFormats={[]}
+                    />
+                </div>
+            </div>
+        </section>
+    );
+}
