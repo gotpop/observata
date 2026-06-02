@@ -18,8 +18,8 @@
 			{% include 'graphics/tech/' ~ background_graphic ~ '.twig' %}
 		{% else %}
 			<graphic-tech
-				class="graphic-sphere-spiral"
 				aria-hidden="true"
+				class="graphic-sphere"
 				{% if background_graphic %}
 					data-sphere="{{ background_graphic }}"
 					style="--mask-image: url('{{ sphere_mask_image }}');"
