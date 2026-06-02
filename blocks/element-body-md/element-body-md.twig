@@ -1,5 +1,5 @@
 {% set content = attributes.content|default('') %}
 <p class="body-md"
-	{% if attributes.anchor %}id="{{ attributes.anchor }}"{% endif %}>
+{% if attributes.anchor %}id="{{ attributes.anchor }}"{% endif %}>
 	{{ content|raw }}
 </p>
