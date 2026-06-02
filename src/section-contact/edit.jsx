@@ -2,20 +2,22 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
 
 const CONTACT_TEMPLATE = [
     ['observata/section-intro', {}],
-    ['observata/contact-details', {}],
-    ['observata/contact-form', {}],
+    ['observata/card-contact-details', {}],
+    ['observata/card-contact-form', {}],
 ];
 
 const ALLOWED_BLOCKS = [
     'observata/section-intro',
     'observata/contact-details',
     'observata/contact-form',
+    'observata/card-contact-details',
+    'observata/card-contact-form',
 ];
 
 export default function ContactEdit({ attributes, setAttributes }) {
@@ -37,7 +39,6 @@ export default function ContactEdit({ attributes, setAttributes }) {
             <div className="block-content">
                 <InnerBlocks
                     template={CONTACT_TEMPLATE}
-                    templateLock="all"
                     allowedBlocks={ALLOWED_BLOCKS}
                 />
             </div>
