@@ -42,9 +42,6 @@ import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
 import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
-import tableSectionMetadata from '../blocks/table-section/block.json';
-import tableSimpleRowMetadata from '../blocks/table-simple-row/block.json';
-import tableSimpleMetadata from '../blocks/table-simple/block.json';
 import breadcrumbsMetadata from '../blocks/template/breadcrumbs/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import headerMetadata from '../blocks/template/header/block.json';
@@ -67,6 +64,8 @@ import PlanEdit from './card-pricing-plan/edit';
 import PlanSave from './card-pricing-plan/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
+import CardTableSimpleEdit from './card-table-simple/edit';
+import CardTableSimpleSave from './card-table-simple/save';
 import CardTextIntroEdit from './card-text-intro/edit';
 import CardTextIntroSave from './card-text-intro/save';
 import CardTextSimpleEdit from './card-text-simple/edit';
@@ -79,6 +78,8 @@ import BodyMdEdit from './element-body-md/edit';
 import BodyMdSave from './element-body-md/save';
 import BodySmEdit from './element-body-sm/edit';
 import BodySmSave from './element-body-sm/save';
+import ElementTableSimpleRowEdit from './element-table-simple-row/edit';
+import ElementTableSimpleRowSave from './element-table-simple-row/save';
 import GridCardsGeoTechEdit from './grid-cards-geo-tech/edit';
 import GridCardsGeoTechSave from './grid-cards-geo-tech/save';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
@@ -107,15 +108,6 @@ import IntroPageEdit from './intro-page/edit';
 import IntroPageSave from './intro-page/save';
 import PanelGraphicCardSimpleTextEdit from './panel-graphic-card-simple-text/edit';
 import PanelGraphicCardSimpleTextSave from './panel-graphic-card-simple-text/save';
-import SectionGraphicCardSimpleTextEdit from './section-graphic-card-simple-text/edit';
-import SectionGraphicCardSimpleTextSave from './section-graphic-card-simple-text/save';
-import SectionTrustBarEdit from './section-trust-bar/edit';
-import SectionTrustBarSave from './section-trust-bar/save';
-
-import CardTableSimpleEdit from './card-table-simple/edit';
-import CardTableSimpleSave from './card-table-simple/save';
-import ElementTableSimpleRowEdit from './element-table-simple-row/edit';
-import ElementTableSimpleRowSave from './element-table-simple-row/save';
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -132,18 +124,16 @@ import ContactEdit from './section-contact/edit';
 import ContactSave from './section-contact/save';
 import SectionCtaEdit from './section-cta/edit';
 import SectionCtaSave from './section-cta/save';
+import SectionGraphicCardSimpleTextEdit from './section-graphic-card-simple-text/edit';
+import SectionGraphicCardSimpleTextSave from './section-graphic-card-simple-text/save';
 import SectionIntroEdit from './section-intro/edit';
 import SectionIntroSave from './section-intro/save';
 import ObservabilityEdit from './section-observability/edit';
 import ObservabilitySave from './section-observability/save';
 import SectionPartnershipEdit from './section-partnership/edit';
 import SectionPartnershipSave from './section-partnership/save';
-import TableSectionEdit from './table-section/edit';
-import TableSectionSave from './table-section/save';
-import TableSimpleRowEdit from './table-simple-row/edit';
-import TableSimpleRowSave from './table-simple-row/save';
-import TableSimpleEdit from './table-simple/edit';
-import TableSimpleSave from './table-simple/save';
+import SectionTrustBarEdit from './section-trust-bar/edit';
+import SectionTrustBarSave from './section-trust-bar/save';
 
 function createDynamicEdit(label) {
     return function DynamicEdit() {
@@ -311,25 +301,16 @@ registerBlockType(planFeaturesRowMetadata.name, {
     save: PlanFeaturesRowSave,
 });
 
-registerBlockType(tableSectionMetadata.name, {
-    edit: TableSectionEdit,
-    save: TableSectionSave,
-});
 
-registerBlockType(tableSimpleMetadata.name, {
-    edit: TableSimpleEdit,
-    save: TableSimpleSave,
-});
+
+
 
 registerBlockType(cardTableSimpleMetadata.name, {
     edit: CardTableSimpleEdit,
     save: CardTableSimpleSave,
 });
 
-registerBlockType(tableSimpleRowMetadata.name, {
-    edit: TableSimpleRowEdit,
-    save: TableSimpleRowSave,
-});
+
 
 registerBlockType(elementTableSimpleRowMetadata.name, {
     edit: ElementTableSimpleRowEdit,
