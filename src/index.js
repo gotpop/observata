@@ -1,5 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import cardContactDetailsMetadata from '../blocks/card-contact-details/block.json';
+import cardContactFormMetadata from '../blocks/card-contact-form/block.json';
 import cardGeoListMetadata from '../blocks/card-geo-list/block.json';
 import cardGeoShaderMetadata from '../blocks/card-geo-shader/block.json';
 import cardGeoTechMetadata from '../blocks/card-geo-tech/block.json';
@@ -50,6 +52,10 @@ import headerMetadata from '../blocks/template/header/block.json';
 import sectionIntroMetadata from '../blocks/template/section-intro/block.json';
 import BreadcrumbsEdit from './breadcrumbs/edit';
 import BreadcrumbsSave from './breadcrumbs/save';
+import CardContactDetailsEdit from './card-contact-details/edit';
+import CardContactDetailsSave from './card-contact-details/save';
+import CardContactFormEdit from './card-contact-form/edit';
+import CardContactFormSave from './card-contact-form/save';
 import CardGeoListEdit from './card-geo-list/edit';
 import CardGeoListSave from './card-geo-list/save';
 import CardGeoShaderEdit from './card-geo-shader/edit';
@@ -114,7 +120,6 @@ import IntroEdit from './intro-home/edit';
 import IntroSave from './intro-home/save';
 import IntroPageEdit from './intro-page/edit';
 import IntroPageSave from './intro-page/save';
-
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -352,6 +357,16 @@ registerBlockType(contactMetadata.name, {
 registerBlockType(contactDetailsMetadata.name, {
     edit: ContactDetailsEdit,
     save: ContactDetailsSave,
+});
+
+registerBlockType(cardContactDetailsMetadata.name, {
+    edit: CardContactDetailsEdit,
+    save: CardContactDetailsSave,
+});
+
+registerBlockType(cardContactFormMetadata.name, {
+    edit: CardContactFormEdit,
+    save: CardContactFormSave,
 });
 
 registerBlockType(contactFormMetadata.name, {

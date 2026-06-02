@@ -22,6 +22,8 @@
 @import '../../blocks/element-body-sm/element-body-sm.css';
 
 /* --- Card blocks --- */
+@import '../../blocks/card-contact-details/card-contact-details.css';
+@import '../../blocks/card-contact-form/card-contact-form.css';
 @import '../../blocks/card-geo/card-geo.css';
 @import '../../blocks/card-geo-list/card-geo-list.css';
 @import '../../blocks/card-geo-shader/card-geo-shader.css';
