@@ -14,7 +14,7 @@ const CARD_TEXT_SIMPLE_TEMPLATE = [
 ];
 
 export default function GridFlexibleContentEdit({ attributes, setAttributes }) {
-    const { sectionBgColour, layout } = attributes;
+    const { sectionBgColour, layout, contentLayout } = attributes;
     const blockProps = useBlockProps({
         className: 'observata-grid-flexible-content-editor',
     });
@@ -40,6 +40,15 @@ export default function GridFlexibleContentEdit({ attributes, setAttributes }) {
                     { label: __('1 Column', 'observata'), value: '1' },
                     { label: __('2 Columns', 'observata'), value: '2' },
                     { label: __('3 Columns', 'observata'), value: '3' },
+                ]}
+            />
+            <SelectControl
+                label={__('Content Layout', 'observata')}
+                value={contentLayout}
+                onChange={(val) => setAttributes({ contentLayout: val })}
+                options={[
+                    { label: __('Content', 'observata'), value: 'content' },
+                    { label: __('Inner', 'observata'), value: 'inner' },
                 ]}
             />
 
