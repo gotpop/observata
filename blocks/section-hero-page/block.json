@@ -29,15 +29,6 @@
         "ctaUrl": {
             "type": "string",
             "default": ""
-        },
-        "sectionBgColour": {
-            "type": "string",
-            "default": "white",
-            "enum": [
-                "white",
-                "grey",
-                "gradient"
-            ]
         }
     },
     "render": "file:section-hero-page.twig",
