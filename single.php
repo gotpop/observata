@@ -9,7 +9,7 @@ $hero_content    = '';
 $body_content    = '';
 
 foreach ( $blocks as $block ) {
-	if ( $block['blockName'] === 'observata/hero-blog' ) {
+	if ( $block['blockName'] === 'observata/section-hero-blog' ) {
 		$hero_content .= render_block( $block );
 	} else {
 		$body_content .= render_block( $block );

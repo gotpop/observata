@@ -27,7 +27,6 @@ import gridCardsPhotoMetadata from '../blocks/grid-cards-photo/block.json';
 import gridCardsShaderMetadata from '../blocks/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/grid-cards-simple/block.json';
 import gridFlexibleContentMetadata from '../blocks/grid-flexible-content/block.json';
-import heroBlogMetadata from '../blocks/hero-blog/block.json';
 import heroPageMetadata from '../blocks/hero-page/block.json';
 import introMetadata from '../blocks/intro-home/block.json';
 import introPageMetadata from '../blocks/intro-page/block.json';
@@ -108,8 +107,6 @@ import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
 import GridFlexibleContentEdit from './grid-flexible-content/edit';
 import GridFlexibleContentSave from './grid-flexible-content/save';
-import HeroBlogEdit from './hero-blog/edit';
-import HeroBlogSave from './hero-blog/save';
 import HeroPageEdit from './hero-page/edit';
 import HeroPageSave from './hero-page/save';
 import IntroEdit from './intro-home/edit';
@@ -267,11 +264,6 @@ registerBlockType(sectionTrustBarMetadata.name, {
 registerBlockType(sectionCardAndGraphicMetadata.name, {
     edit: SectionCardAndGraphicEdit,
     save: SectionCardAndGraphicSave,
-});
-
-registerBlockType(heroBlogMetadata.name, {
-    edit: HeroBlogEdit,
-    save: HeroBlogSave,
 });
 
 registerBlockType(sectionHeroBlogMetadata.name, {
