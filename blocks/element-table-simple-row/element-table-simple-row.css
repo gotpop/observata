@@ -1,15 +1,20 @@
 /* Element Table Simple Row - 3-cell table row */
 
 .body-row {
-	border-block-end: 1px solid var(--colour-border-border-gray);
+	border-block-end: var(--border-row, var(--border-grey));
 	transition: background 0.3s ease-in-out;
+	background-color: var(--bg-row, transparent);
+
+	&:last-child {
+		--border-row: transparent;
+	}
 
 	&:nth-child(odd) {
-		background-color: var(--colour-neutral-100);
+		--bg-row: var(--colour-neutral-100);
 	}
 
 	&:hover {
-		background-color: var(--colour-neutral-200);
+		--bg-row: var(--colour-neutral-200);
 
 		.in-view & {
 			transition-delay: 0s;
