@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const SCIENCE_GRAPHICS = [
     { label: 'None', value: '' },
@@ -17,7 +17,7 @@ const CARD_TEXT_SIMPLE_TEMPLATE = [
 ];
 
 export default function SectionGraphicCardSimpleTextEdit({ attributes, setAttributes }) {
-    const { sectionBgColour } = attributes;
+    const { sectionBgColour, layout } = attributes;
     const blockProps = useBlockProps({ className: 'observata-section-graphic-card-simple-text-editor' });
 
     return (
@@ -38,6 +38,15 @@ export default function SectionGraphicCardSimpleTextEdit({ attributes, setAttrib
                     value={attributes.backgroundGraphic}
                     options={SCIENCE_GRAPHICS}
                     onChange={(value) => setAttributes({ backgroundGraphic: value })}
+                />
+                <SelectControl
+                    label={__('Layout', 'observata')}
+                    value={layout}
+                    options={[
+                        { label: __('Content', 'observata'), value: 'content' },
+                        { label: __('Inner', 'observata'), value: 'inner' },
+                    ]}
+                    onChange={(value) => setAttributes({ layout: value })}
                 />
             </BlockLabel>
 

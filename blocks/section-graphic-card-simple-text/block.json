@@ -22,6 +22,14 @@
                 "grey",
                 "gradient"
             ]
+        },
+        "layout": {
+            "type": "string",
+            "default": "content",
+            "enum": [
+                "content",
+                "inner"
+            ]
         }
     },
     "render": "file:render.php",

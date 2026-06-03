@@ -5,7 +5,7 @@
 	.block-content {
 		display: grid;
 		gap: var(--g, var(--spacing-24) 0);
-		grid-column: inner;
+		grid-column: var(--layout);
 		grid-template-areas: var(--a, 'content' 'graphic');
 		grid-template-columns: var(--c, 1fr);
 		grid-template-rows: var(--r, 1fr 150px);
@@ -28,9 +28,10 @@
 
 	.card-text-simple {
 		background-color: var(--colour-neutral-white);
-		padding: var(--spacing-32);
+		padding: var(--spacing-40);
 		border-radius: var(--radius-card);
 		border: var(--border-grey);
+		z-index: 1;
 	}
 
 	.graphic-tech-europe {
