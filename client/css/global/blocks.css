@@ -13,8 +13,8 @@
 @import '../../blocks/hero-home/hero-home.css';
 
 /* --- Intro blocks --- */
-@import '../../blocks/intro-home/intro-home.css';
-@import '../../blocks/intro-page/intro-page.css';
+@import '../../blocks/section-intro-home/section-intro-home.css';
+@import '../../blocks/section-intro-page/intro-page.css';
 
 /* --- Element blocks --- */
 @import '../../blocks/element-body-md/element-body-md.css';

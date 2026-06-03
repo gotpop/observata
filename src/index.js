@@ -27,8 +27,6 @@ import gridCardsPhotoMetadata from '../blocks/grid-cards-photo/block.json';
 import gridCardsShaderMetadata from '../blocks/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/grid-cards-simple/block.json';
 import gridFlexibleContentMetadata from '../blocks/grid-flexible-content/block.json';
-import introMetadata from '../blocks/intro-home/block.json';
-import introPageMetadata from '../blocks/intro-page/block.json';
 import planFeaturesRowMetadata from '../blocks/plan-features-row/block.json';
 import planFeaturesTableMetadata from '../blocks/plan-features-table/block.json';
 import pricingTabsMetadata from '../blocks/pricing-tabs/block.json';
@@ -41,7 +39,7 @@ import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card
 import sectionHeroBlogMetadata from '../blocks/section-hero-blog/block.json';
 import sectionHeroHomeMetadata from '../blocks/section-hero-home/block.json';
 import sectionHeroPageMetadata from '../blocks/section-hero-page/block.json';
-import sectionIntroHomeMetadata from '../blocks/section-intro-home/block.json';
+import { default as sectionIntroHomeMetadata } from '../blocks/section-intro-home/block.json';
 import sectionIntroPageMetadata from '../blocks/section-intro-page/block.json';
 import observabilityMetadata from '../blocks/section-observability/block.json';
 import sectionPartnershipMetadata from '../blocks/section-partnership/block.json';
@@ -106,10 +104,6 @@ import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
 import GridFlexibleContentEdit from './grid-flexible-content/edit';
 import GridFlexibleContentSave from './grid-flexible-content/save';
-import IntroEdit from './intro-home/edit';
-import IntroSave from './intro-home/save';
-import IntroPageEdit from './intro-page/edit';
-import IntroPageSave from './intro-page/save';
 import PlanFeaturesRowEdit from './plan-features-row/edit';
 import PlanFeaturesRowSave from './plan-features-row/save';
 import PlanFeaturesTableEdit from './plan-features-table/edit';
@@ -171,11 +165,6 @@ registerBlockType(sectionHeroPageMetadata.name, {
 registerBlockType(sectionCtaMetadata.name, {
     edit: SectionCtaEdit,
     save: SectionCtaSave,
-});
-
-registerBlockType(introMetadata.name, {
-    edit: IntroEdit,
-    save: IntroSave,
 });
 
 registerBlockType(sectionIntroHomeMetadata.name, {
@@ -268,11 +257,6 @@ registerBlockType(sectionHeroBlogMetadata.name, {
     save: SectionHeroBlogSave,
 });
 
-registerBlockType(introPageMetadata.name, {
-    edit: IntroPageEdit,
-    save: IntroPageSave,
-});
-
 registerBlockType(sectionIntroPageMetadata.name, {
     edit: SectionIntroPageEdit,
     save: SectionIntroPageSave,
@@ -328,16 +312,10 @@ registerBlockType(planFeaturesRowMetadata.name, {
     save: PlanFeaturesRowSave,
 });
 
-
-
-
-
 registerBlockType(cardTableSimpleMetadata.name, {
     edit: CardTableSimpleEdit,
     save: CardTableSimpleSave,
 });
-
-
 
 registerBlockType(elementTableSimpleRowMetadata.name, {
     edit: ElementTableSimpleRowEdit,

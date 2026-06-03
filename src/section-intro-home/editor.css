@@ -1,5 +1,5 @@
 /* Editor-specific overrides for the Intro block */
-.wp-block-observata-intro-home {
+.wp-block-observata-section-intro-home {
 	&.block-intro {
 		position: relative;
 		display: flex;
