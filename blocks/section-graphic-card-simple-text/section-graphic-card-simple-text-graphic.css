@@ -32,18 +32,6 @@
 			}
 		}
 
-		&[data-sphere='18'] {
-			--w: 100%;
-			--h: 160%;
-			--i: 2rem auto auto 50%;
-
-			@media (width >=64rem) {
-				--w: 110%;
-				--h: 110%;
-				--i: 50% auto auto -4rem;
-			}
-		}
-
 		&[data-sphere='4'] {
 			--size: 160%;
 
@@ -55,6 +43,18 @@
 				--w: 120%;
 				--h: 160%;
 				--i: 50% auto auto 0rem;
+			}
+		}
+
+		&[data-sphere='18'] {
+			--w: 100%;
+			--h: 160%;
+			--i: 2rem auto auto 50%;
+
+			@media (width >=64rem) {
+				--w: 110%;
+				--h: 110%;
+				--i: 50% auto auto -4rem;
 			}
 		}
 	}
