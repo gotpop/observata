@@ -2,30 +2,19 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 export default function SectionHeroBlogEdit({ attributes, setAttributes }) {
-    const { heading, subheading, sectionBgColour } = attributes;
+    const { heading, subheading } = attributes;
     const blockProps = useBlockProps({
         className: 'block-section-hero-blog',
     });
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Section Hero Blog">
-                <SelectControl
-                    label={__('Section Background', 'observata')}
-                    value={sectionBgColour}
-                    options={[
-                        { label: __('White', 'observata'), value: 'white' },
-                        { label: __('Grey', 'observata'), value: 'grey' },
-                        { label: __('Gradient', 'observata'), value: 'gradient' },
-                    ]}
-                    onChange={(val) => setAttributes({ sectionBgColour: val })}
-                />
-            </BlockLabel>
+            <BlockLabel name="Section Hero Blog" />
+
 
             <div className="hero-blog-content">
                 <div className="hero-blog-text">

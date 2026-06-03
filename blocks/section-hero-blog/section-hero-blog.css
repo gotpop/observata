@@ -16,6 +16,8 @@
 	background-image: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 	border-bottom: 1px solid var(--colour-border-border-gray);
 	display: grid;
+	display: grid;
+	grid-column: full;
 	grid-template-columns: subgrid;
 	grid-template-rows: 6rem 1fr;
 	overflow: clip;

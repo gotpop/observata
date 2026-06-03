@@ -5,11 +5,8 @@
 {# Use post slug for view-transition-name #}
 {% set view_name = post.post_name|default('blog-page') %}
 
-<section
-	class="section-block block-section-hero-blog"
-	data-bg="{{ section_bg_colour }}"
-	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});"
-	aria-labeled-by="heading-section-hero-blog">
+<section class="block-section-hero-blog"
+aria-labeled-by="heading-section-hero-blog">
 	<block-content class="block-content hero-blog-content">
 		{% if heading %}
 			<h1
