@@ -8,7 +8,6 @@
     "parent": [
         "observata/section-intro-home",
         "observata/section-intro-page",
-        "observata/intro-page",
         "observata/grid-cards-geo",
         "observata/grid-cards-graphic",
         "observata/section-card-and-graphic"

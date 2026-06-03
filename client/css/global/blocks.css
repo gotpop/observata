@@ -14,7 +14,7 @@
 
 /* --- Intro blocks --- */
 @import '../../blocks/section-intro-home/section-intro-home.css';
-@import '../../blocks/section-intro-page/intro-page.css';
+@import '../../blocks/section-intro-page/section-intro-page.css';
 
 /* --- Element blocks --- */
 @import '../../blocks/element-body-md/element-body-md.css';
