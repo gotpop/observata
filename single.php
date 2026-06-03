@@ -8,6 +8,7 @@ $blocks          = parse_blocks( get_the_content() );
 $hero_content    = '';
 $body_content    = '';
 
+// Special case for header wrapper in blog
 foreach ( $blocks as $block ) {
 	if ( $block['blockName'] === 'observata/section-hero-blog' ) {
 		$hero_content .= render_block( $block );
