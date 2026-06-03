@@ -53,6 +53,10 @@
         "plan3Description": {
             "type": "string",
             "default": "Lorem ipsum dolor sit amet."
+        },
+        "showPlanCards": {
+            "type": "boolean",
+            "default": true
         }
     },
     "render": "file:render.php",
