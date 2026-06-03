@@ -63,10 +63,10 @@
 
 		.in-view & {
 			--gradient-color-inner: #ffffff;
-			--gradient-color-mid: #e08ac7;
+			--gradient-color-mid: #7399c6;
 			--gradient-color-outer: #9bdbf2;
-			--grad-stop-inner: 25%;
-			--grad-stop-mid: 40%;
+			--grad-stop-inner: 35%;
+			--grad-stop-mid: 50%;
 			--grad-stop-outer: 60%;
 		}
 	}
