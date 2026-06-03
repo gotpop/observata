@@ -33,6 +33,10 @@
 			}
 		}
 
+		&[data-sphere='2'] {
+			opacity: 0.8;
+		}
+
 		&[data-sphere='4'] {
 			--size: 160%;
 
@@ -44,6 +48,38 @@
 				--w: 120%;
 				--h: 160%;
 				--i: 50% auto auto 0rem;
+			}
+		}
+
+		&[data-sphere='10'] {
+			--size: 160%;
+
+			--w: var(--size);
+			--h: var(--size);
+			--i: 2rem auto auto 50%;
+
+			@media (width >=64rem) {
+				--w: 110%;
+				--h: 130%;
+				--i: 50% auto auto -2rem;
+				/* rotate: 45deg; */
+				opacity: 0.8;
+			}
+		}
+
+		&[data-sphere='13'] {
+			--size: 160%;
+
+			--w: var(--size);
+			--h: var(--size);
+			--i: 2rem auto auto 50%;
+
+			@media (width >=64rem) {
+				--w: 110%;
+				--h: 160%;
+				--i: 50% auto auto -2rem;
+				rotate: 45deg;
+				opacity: 0.8;
 			}
 		}
 

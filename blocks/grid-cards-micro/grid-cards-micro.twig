@@ -1,6 +1,7 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set child_count = block.inner_blocks|length %}
 
 <section
 	class="section-block block-grid-cards-micro"
@@ -18,7 +19,7 @@
 			}
 		} %}
 
-		<div class="cards-container">
+		<div class="cards-container" data-children="{{ child_count }}">
 			{{ content|raw }}
 		</div>
 	</block-content>

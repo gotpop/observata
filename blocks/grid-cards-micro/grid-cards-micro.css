@@ -12,6 +12,10 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 		gap: var(--spacing-24);
+
+		&[data-children='4'] {
+			max-width: 49.5rem;
+		}
 	}
 
 	.section-intro {
