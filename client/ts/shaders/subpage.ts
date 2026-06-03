@@ -10,8 +10,8 @@ function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 				id: 'idmmr8zyxrodm90feqn',
 				props: {
 					center: {
-						x: 0.3085,
-						y: 0.77,
+						x: 0.325,
+						y: 0.75,
 					},
 					glossiness: 200,
 					lighting: 197,
@@ -83,7 +83,10 @@ const initSubpageShaders = async () => {
 	canvas.style.height = '100%';
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
-		console.warn('Subpage shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
+		console.warn(
+			'Subpage shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:',
+			window.location.origin
+		);
 
 		return;
 	}
