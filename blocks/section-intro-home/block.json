@@ -2,7 +2,7 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "observata/section-intro-home",
-    "title": "Intro Home",
+    "title": "Section Intro Home",
     "category": "theme",
     "description": "Intro section with logo strip and feature cards. Add Card with Geo Icon blocks inside.",
     "supports": {
