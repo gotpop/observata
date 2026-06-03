@@ -26,6 +26,13 @@
 		}
 	}
 
+	.card-text-simple {
+		background-color: var(--colour-neutral-white);
+		padding: var(--spacing-32);
+		border-radius: var(--radius-card);
+		border: var(--border-grey);
+	}
+
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
 		--mask: url(#mask-europe);

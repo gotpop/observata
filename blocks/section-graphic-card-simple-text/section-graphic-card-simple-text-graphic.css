@@ -21,18 +21,14 @@
 		}
 
 		&[data-sphere='1'] {
-			--size: 160%;
-
-			--w: var(--size);
-			--h: var(--size);
+			--w: 100%;
+			--h: 160%;
 			--i: 2rem auto auto 50%;
 
 			@media (width >=64rem) {
-				--size: 160%;
-
-				--w: var(--size);
-				--h: var(--size);
-				--i: 50% auto auto -8rem;
+				--w: 100%;
+				--h: 220%;
+				--i: 50% auto auto 0rem;
 			}
 		}
 
