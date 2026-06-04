@@ -6,6 +6,7 @@
 	grid-template-columns: subgrid;
 	padding: var(--spacing-24);
 	view-transition-name: trust-bar;
+	z-index: 99;
 
 	@media (width >=40rem) {
 		padding: var(--spacing-32) var(--spacing-64);

@@ -10,7 +10,7 @@ function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 				id: 'idmmr8zyxrodm90feqn',
 				props: {
 					center: {
-						x: 0.325,
+						x: 0.332,
 						y: 0.75,
 					},
 					glossiness: 200,
@@ -79,8 +79,8 @@ const initSubpageShaders = async () => {
 		return;
 	}
 
-	canvas.style.width = '100%';
-	canvas.style.height = '100%';
+	canvas.style.width = '1540px';
+	canvas.style.height = '1000px';
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn(
