@@ -62,6 +62,15 @@
 		table-layout: fixed;
 	}
 
+	/* Force horizontal scroll on mobile */
+	@media (width < 40rem) {
+		-webkit-overflow-scrolling: touch;
+
+		.plan-features-table__table {
+			min-width: 40rem;
+		}
+	}
+
 	.plan-features-table__head-row {
 		border-bottom: 1px solid var(--colour-neutral-600);
 	}

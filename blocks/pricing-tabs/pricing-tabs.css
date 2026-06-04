@@ -29,7 +29,8 @@
 	}
 
 	.pricing-tabs__nav {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		gap: var(--spacing-20);
 		justify-content: center;
 		position: relative;
@@ -41,7 +42,11 @@
 		&::after {
 			content: '';
 			height: 1px;
-			background-image: radial-gradient(circle at center, var(--colour-border-border-gray), transparent);
+			background-image: radial-gradient(
+				circle at center,
+				var(--colour-border-border-gray),
+				transparent
+			);
 			inset: auto 0 0 0;
 			display: block;
 			width: 100%;
@@ -51,7 +56,7 @@
 	}
 
 	.pricing-tabs__tab {
-		padding: var(--spacing-20, 1rem) var(--spacing-40, 2rem);
+		padding: var(--p, var(--spacing-20)) 0;
 		background: transparent;
 		font-size: var(--typography-size-16);
 		font-weight: var(--font-weight-semibold);
@@ -60,6 +65,10 @@
 		transition: all 0.3s ease;
 		position: relative;
 		border: none;
+
+		@media (width >=60rem) {
+			--p: var(--spacing-20) var(--spacing-40);
+		}
 
 		&:hover {
 			color: var(--colour-primary-700, #1d4ed8);
