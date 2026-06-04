@@ -3,6 +3,16 @@
 // Output speculation rules for improved navigation performance.
 add_action( 'wp_head', 'observata_speculation_rules', 2 );
 function observata_speculation_rules() {
+	// Allow disabling via query param: ?no_speculation=1
+	if ( isset( $_GET['no_speculation'] ) ) {
+		return;
+	}
+
+	// Allow disabling via constant in wp-config.php: define( 'OBSERVATA_NO_SPECULATION', true );
+	if ( defined( 'OBSERVATA_NO_SPECULATION' ) && OBSERVATA_NO_SPECULATION ) {
+		return;
+	}
+
 	// Only output on front end, not admin or preview
 	if ( is_admin() || is_preview() ) {
 		return;
@@ -75,19 +85,21 @@ function observata_speculation_rules() {
 			),
 		),
 	);
+
 	$json  = wp_json_encode( $rules, JSON_UNESCAPED_SLASHES );
 	if ( $json === false ) {
 		return;
 	}
 	?>
 	<script type="speculationrules">
-	<?php echo $json; ?>
+		<?php echo $json; ?>
 	</script>
 	<?php
 }
 
 // Output pingback link tag for singular posts that allow pings.
 add_action( 'wp_head', 'observata_pingback_header' );
+
 function observata_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
