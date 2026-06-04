@@ -13,6 +13,11 @@ function observata_speculation_rules() {
 		return;
 	}
 
+	// Allow disabling via Settings > General
+	if ( get_option( 'observata_disable_speculation', false ) ) {
+		return;
+	}
+
 	// Only output on front end, not admin or preview
 	if ( is_admin() || is_preview() ) {
 		return;
@@ -63,7 +68,7 @@ function observata_speculation_rules() {
 
 		foreach ( $common_pages as $page_slug ) {
 			$page = get_page_by_path( $page_slug );
-			
+
 			if ( $page ) {
 				$url = get_permalink( $page->ID );
 				if ( $url && ! in_array( $url, $urls ) ) {
@@ -107,4 +112,52 @@ function observata_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
+}
+
+// Add speculation rules toggle to Settings > General.
+add_action( 'admin_init', 'observata_speculation_settings' );
+function observata_speculation_settings() {
+	add_settings_section(
+		'observata_performance_section',
+		'Performance',
+		'observata_performance_section_callback',
+		'general'
+	);
+
+	add_settings_field(
+		'observata_disable_speculation',
+		'Speculation Rules',
+		'observata_disable_speculation_render',
+		'general',
+		'observata_performance_section'
+	);
+
+	register_setting(
+		'general',
+		'observata_disable_speculation',
+		array(
+			'type'              => 'boolean',
+			'sanitize_callback' => 'rest_sanitize_boolean',
+			'default'           => false,
+		)
+	);
+}
+
+function observata_performance_section_callback() {
+	echo '<p>Performance-related settings for the Observata theme.</p>';
+}
+
+function observata_disable_speculation_render() {
+	$checked = (bool) get_option( 'observata_disable_speculation', false );
+	?>
+	<label>
+		<input type="checkbox"
+				id="observata_disable_speculation"
+				name="observata_disable_speculation"
+				value="1"
+				<?php checked( $checked ); ?>>
+		Disable speculation rules (prerendering)
+	</label>
+	<p class="description">When checked, pages from the main menu will not be speculatively prerendered. Useful for debugging navigation or scripting issues.</p>
+	<?php
 }
