@@ -9,10 +9,60 @@
 	display: grid;
 	grid-template-rows: min-content;
 	grid-template-columns: 1fr;
+	min-height: max-content;
+
+	/* TODO: Find alternate solution */
+	&:nth-child(1) {
+		order: 1;
+
+		@media (width >=1363px) {
+			order: unset;
+		}
+	}
+
+	&:nth-child(2) {
+		order: 2;
+
+		@media (width >=1363px) {
+			order: unset;
+		}
+	}
+
+	&:nth-child(3) {
+		order: 4;
+
+		@media (width >=1363px) {
+			order: unset;
+		}
+	}
+
+	&:nth-child(4) {
+		order: 3;
+
+		@media (width >=1363px) {
+			order: unset;
+		}
+	}
+
+	&:nth-child(5) {
+		order: 5;
+
+		@media (width >=1363px) {
+			order: unset;
+		}
+	}
+
+	&:nth-child(6) {
+		order: 6;
+
+		@media (width >=1363px) {
+			order: unset;
+		}
+	}
 
 	@media (width >=40rem) {
 		padding-block: var(--spacing-40);
-		padding-inline: var(--spacing-40) var(--spacing-80);
+		padding-inline: var(--spacing-40) 100px;
 	}
 
 	.icon-geo {
@@ -27,7 +77,6 @@
 	.shader {
 		position: absolute;
 		inset: 0 0 auto auto;
-		max-width: 100%;
 		z-index: 0;
 		display: none;
 
@@ -42,8 +91,6 @@
 	}
 
 	.text {
-		line-height: 1.8;
-		max-width: 55ch;
-		text-wrap: pretty;
+		max-width: 100ch;
 	}
 }

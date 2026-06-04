@@ -15,11 +15,15 @@ function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 				type: 'Form3D',
 				id: 'idmmr8zyxrodm90feqn',
 				props: {
-					glossiness: 0,
+					center: {
+						x: 1,
+						y: 0.45,
+					},
+					glossiness: 200,
 					lighting: 197,
 					shape3d: {
 						type: 'ribbon',
-						angle: 0,
+						angle: -70,
 						twist: 24,
 						width: 73,
 						thickness: 20,
@@ -28,13 +32,9 @@ function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 					shape3dType: 'ribbon',
 					speed: 0,
 					transform: {
-						offsetX: -0.1,
-						rotation: 73,
-						scale: 1.09,
-						anchorX: 0.65,
-						anchorY: 0.15,
+						anchorX: 0.7,
 					},
-					zoom: 85,
+					zoom: 95,
 				},
 				children: [
 					{
@@ -67,15 +67,6 @@ function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 					},
 				],
 			},
-			{
-				type: 'FilmGrain',
-				id: 'idmmr97z6pijyaz1v1u',
-				props: {
-					opacity: 0.32,
-					strength: 0.32,
-					visible: true,
-				},
-			},
 		],
 	};
 }
@@ -83,8 +74,8 @@ function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 export async function initCardGeoShader(canvas: HTMLCanvasElement) {
 	console.info(`Card geo shader: Initializing on canvas #${canvas.id}`);
 
-	canvas.style.width = '214px';
-	canvas.style.height = '214px';
+	canvas.style.width = '82px';
+	canvas.style.height = '220px';
 
 	const colourMap: Record<string, ShaderColors> = {
 		'shader-pink': COLOUR_PINK,
