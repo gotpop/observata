@@ -52,15 +52,16 @@
 	position: sticky;
 
 	@media (width >=40rem) {
+		--height-hero-home: 858px;
+
 		background-image: var(--grad-radial-white), var(--grad-linear);
 		background-size: auto, auto;
 		background-position: center, center;
 		grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
-		--height-hero-home: 900px;
 	}
 
 	@media (width >=80rem) {
-		grid-template-rows: 13rem [hero-start] min-content [hero-end] 1fr;
+		grid-template-rows: 11.5rem [hero-start] min-content [hero-end] 1fr;
 	}
 
 	&::after {

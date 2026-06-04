@@ -63,7 +63,7 @@
 
 		@media (width >=40rem) {
 			row-gap: var(--spacing-40);
-			padding-block: var(--spacing-80);
+			padding-block: 4.375rem var(--spacing-60);
 		}
 
 		&::before {
