@@ -29,11 +29,11 @@ site-layout {
 		[content-start] 2rem [inner-start] minmax(300px, 1136px)
 		[inner-end] 2rem [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
 
-	@media (width >=40rem) {
+	@media (width >=48rem) {
 		--b: 10px;
 	}
 
-	@media (width >=48rem) {
+	@media (width >=60rem) {
 		--b: 100px;
 	}
 }
@@ -63,7 +63,7 @@ main {
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	padding-block: var(--padding-section-block, var(--spacing-48));
+	padding-block: var(--padding-section-block, var(--spacing-32));
 	position: relative;
 	background-image: var(--grad, none);
 
@@ -71,7 +71,7 @@ main {
 		--grad: var(--grad-rad), var(--grad-lin);
 	}
 
-	@media (width >=40rem) {
+	@media (width >=60rem) {
 		--padding-section-block: var(--spacing-80);
 	}
 }

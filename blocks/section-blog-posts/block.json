@@ -30,7 +30,8 @@
         "file:../../build/index.css"
     ],
     "style": [
-        "file:section-blog-posts.css"
+        "file:section-blog-posts.css",
+        "file:section-blog-card.css"
     ],
     "example": {
         "attributes": {
