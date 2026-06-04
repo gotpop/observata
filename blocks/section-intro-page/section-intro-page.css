@@ -21,7 +21,7 @@
 
 	.block-content {
 		display: grid;
-		gap: var(--spacing-50);
+		gap: var(--spacing-24);
 		grid-column: content;
 		grid-template-columns: 1fr;
 		z-index: 1;

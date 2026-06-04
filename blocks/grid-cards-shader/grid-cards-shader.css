@@ -9,7 +9,11 @@
 	.block-cards {
 		display: grid;
 		gap: 32px;
-		grid-template-columns: repeat(auto-fit, minmax(454px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(var(--m, 1fr), 1fr));
+
+		@media (width >=40rem) {
+			--m: 454px;
+		}
 	}
 
 	.section-intro-text {
