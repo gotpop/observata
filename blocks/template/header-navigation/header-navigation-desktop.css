@@ -37,7 +37,8 @@
 		width: max-content;
 		z-index: 999;
 		transform: translateX(-50%);
-		filter: drop-shadow(0 0 1px var(--colour-border-border-gray)) drop-shadow(0 0 1px var(--colour-border-border-gray));
+		filter: drop-shadow(0 0 1px var(--colour-border-border-gray))
+			drop-shadow(0 0 1px var(--colour-border-border-gray));
 		transition:
 			opacity 0.3s ease-in-out,
 			translate 0.3s ease-in-out,
@@ -136,6 +137,16 @@
 		font-size: var(--size-body-md);
 		gap: var(--spacing-8);
 		padding: 0;
+
+		.icon {
+			transition: rotate 0.3s var(--d, 0.3s) ease-in-out;
+			rotate: var(--r, 0deg);
+
+			[aria-expanded='true'] & {
+				--r: -180deg;
+				--d: 0s;
+			}
+		}
 	}
 
 	.menu-anchor {
