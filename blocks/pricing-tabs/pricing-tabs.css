@@ -56,7 +56,7 @@
 	}
 
 	.pricing-tabs__tab {
-		padding: var(--p, var(--spacing-20)) 0;
+		padding: var(--p, var(--spacing-20) 0);
 		background: transparent;
 		font-size: var(--typography-size-16);
 		font-weight: var(--font-weight-semibold);
@@ -67,7 +67,7 @@
 		border: none;
 
 		@media (width >=60rem) {
-			--p: var(--spacing-20) var(--spacing-40);
+			--p: var(--spacing-20) var(--spacing-40) var(--spacing-20) var(--spacing-40);
 		}
 
 		&:hover {
