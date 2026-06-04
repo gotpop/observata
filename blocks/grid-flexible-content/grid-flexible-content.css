@@ -1,6 +1,6 @@
 .block-grid-flexible-content {
 	.block-content {
-		column-gap: var(--spacing-60);
+		column-gap: var(--spacing-80);
 		display: grid;
 		grid-column: var(--layout);
 		grid-template-columns: repeat(var(--cols, 2), 1fr);
@@ -12,6 +12,10 @@
 
 		[data-layout='2'] & {
 			--cols: 1;
+
+			.body-md {
+				max-width: 120ch;
+			}
 
 			@media (width >=40rem) {
 				--cols: 2;
