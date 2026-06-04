@@ -1,19 +1,34 @@
+::view-transition-new(geo-first) {
+	animation: entry-from-left 0.3s ease forwards;
+}
+
+::view-transition-old(geo-first) {
+	animation: exit-to-left 0.3s ease forwards;
+}
+
+::view-transition-new(geo-last) {
+	animation: entry-from-right 0.3s ease forwards;
+}
+
+::view-transition-old(geo-last) {
+	animation: exit-to-right 0.3s ease forwards;
+}
+
 .block-section-intro-page {
 	overflow: clip;
+	view-transition-group: intro-page-group;
 	view-transition-name: intro-page;
 
 	.block-content {
 		display: grid;
+		gap: var(--spacing-50);
 		grid-column: content;
 		grid-template-columns: 1fr;
-		gap: var(--spacing-50);
 		z-index: 1;
 
 		@media (width >=80rem) {
-			grid-template-areas:
-				'a .'
-				'. b';
 			gap: var(--spacing-50);
+			grid-template-areas: 'a .' '. b';
 			grid-template-columns: 1fr 1fr;
 		}
 	}
@@ -40,20 +55,4 @@
 			}
 		}
 	}
-}
-
-::view-transition-new(geo-first) {
-	animation: entry-from-left 0.3s ease forwards;
-}
-
-::view-transition-old(geo-first) {
-	animation: exit-to-left 0.3s ease forwards;
-}
-
-::view-transition-new(geo-last) {
-	animation: entry-from-right 0.3s ease forwards;
-}
-
-::view-transition-old(geo-last) {
-	animation: exit-to-right 0.3s ease forwards;
 }
