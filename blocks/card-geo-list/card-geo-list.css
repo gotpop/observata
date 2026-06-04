@@ -43,7 +43,11 @@
 	}
 
 	.heading {
-		max-width: 22ch;
+		max-width: var(--w-heading, 16ch);
+
+		@media (width >=48rem) {
+			--w-heading: 22ch;
+		}
 	}
 
 	.list-items {

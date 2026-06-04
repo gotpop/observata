@@ -20,9 +20,13 @@
 		column-gap: var(--spacing-60);
 		display: grid;
 		grid-column: content;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(var(--c-card, 1fr), 1fr));
 		position: relative;
 		row-gap: var(--spacing-80);
+
+		@media (width >=48rem) {
+			--c-card: 400px;
+		}
 	}
 
 	.card-geo-list {
