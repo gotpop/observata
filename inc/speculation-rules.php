@@ -28,6 +28,7 @@ function observata_speculation_rules() {
 	// If no menu found by location, try to get it by name/slug
 	if ( ! $menu_id ) {
 		$menu = get_term_by( 'slug', 'main-menu', 'nav_menu' );
+
 		if ( $menu ) {
 			$menu_id = $menu->term_id;
 		}
@@ -36,6 +37,7 @@ function observata_speculation_rules() {
 	// Get menu items if we have a menu
 	if ( $menu_id ) {
 		$menu_items = wp_get_nav_menu_items( $menu_id );
+
 		if ( $menu_items ) {
 			foreach ( $menu_items as $item ) {
 				// Include all internal navigation links
@@ -61,6 +63,7 @@ function observata_speculation_rules() {
 
 		foreach ( $common_pages as $page_slug ) {
 			$page = get_page_by_path( $page_slug );
+			
 			if ( $page ) {
 				$url = get_permalink( $page->ID );
 				if ( $url && ! in_array( $url, $urls ) ) {
