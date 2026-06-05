@@ -1,0 +1,89 @@
+.plan-features-table {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content;
+	row-gap: var(--spacing-64);
+	width: min(1000px, 100%);
+	margin: 0 auto;
+}
+
+.plan-features-table__cards {
+	display: flex;
+	gap: var(--spacing-24);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.plan-card {
+	border: 1px solid var(--colour-secondary-500);
+	border-radius: var(--radius-generous);
+	padding: var(--spacing-16) var(--spacing-16);
+	text-align: center;
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: 33%;
+	max-width: max-content;
+	gap: var(--spacing-16);
+	display: flex;
+	flex-direction: column;
+
+	&.plan-card-highlighted {
+		border-color: var(--colour-accent-1-400);
+	}
+
+	.plan-title {
+		font-size: var(--font-size-base, 1rem);
+		font-weight: 600;
+		color: var(--colour-text-heading-default);
+		font-size: var(--typography-size-24);
+	}
+
+	.plan-price {
+		display: block;
+		font-size: var(--typography-size-32);
+		font-weight: 700;
+		color: var(--colour-secondary-500);
+	}
+
+	.plan-description {
+		font-size: var(--font-size-sm, 0.875rem);
+		color: var(--color-text-muted, #999);
+		margin: 0;
+	}
+}
+
+/* Table */
+.plan-features-table__table-wrapper {
+	overflow-x: auto;
+
+	.plan-features-table__table {
+		width: 100%;
+		border-collapse: collapse;
+		table-layout: fixed;
+	}
+
+	/* Force horizontal scroll on mobile */
+	@media (width < 40rem) {
+		-webkit-overflow-scrolling: touch;
+
+		.plan-features-table__table {
+			min-width: 40rem;
+		}
+	}
+
+	.plan-features-table__head-row {
+		border-bottom: 1px solid var(--colour-neutral-600);
+	}
+
+	.plan-features-table__head-cell {
+		padding: var(--spacing-16) var(--spacing-16);
+		font-size: var(--typography-size-14);
+		font-weight: 600;
+		color: var(--colour-neutral-800);
+		text-align: center;
+
+		&:first-child {
+			text-align: left;
+		}
+	}
+}

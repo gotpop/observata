@@ -28,6 +28,8 @@ import CardPhotoEdit from './card-photo/edit';
 import CardPhotoSave from './card-photo/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
+import CardTableFeaturesEdit from './card-table-features/edit';
+import CardTableFeaturesSave from './card-table-features/save';
 import CardTableSimpleEdit from './card-table-simple/edit';
 import CardTableSimpleSave from './card-table-simple/save';
 import CardTextIntroEdit from './card-text-intro/edit';
@@ -107,6 +109,7 @@ import cardImageUnsplashMetadata from '../blocks/card-image-unsplash/block.json'
 import cardMicroMetadata from '../blocks/card-micro/block.json';
 import cardPhotoMetadata from '../blocks/card-photo/block.json';
 import cardSimpleMetadata from '../blocks/card-simple/block.json';
+import cardTableFeaturesMetadata from '../blocks/card-table-features/block.json';
 import cardTableSimpleMetadata from '../blocks/card-table-simple/block.json';
 import cardTextIntroMetadata from '../blocks/card-text-intro/block.json';
 import cardTextSimpleMetadata from '../blocks/card-text-simple/block.json';
@@ -399,4 +402,9 @@ registerBlockType(sectionGraphicCardSimpleTextMetadata.name, {
 registerBlockType(sectionTabsMetadata.name, {
     edit: SectionTabsEdit,
     save: SectionTabsSave,
+});
+
+registerBlockType(cardTableFeaturesMetadata.name, {
+    edit: CardTableFeaturesEdit,
+    save: CardTableFeaturesSave,
 });

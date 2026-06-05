@@ -19,6 +19,7 @@ const ALLOWED_BLOCKS = [
     'observata/plan-features-row',
     'observata/card-simple',
     'observata/card-text-simple',
+    'observata/card-table-features',
     'observata/card-text-intro',
 ];
 

@@ -1,0 +1,87 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/card-table-features",
+    "title": "Card table features",
+    "category": "theme",
+    "description": "A features comparison table with title, subtitle, plan cards, and draggable feature rows.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "sectionTitle": {
+            "type": "string",
+            "default": "Compare plans & features"
+        },
+        "sectionSubtitle": {
+            "type": "string",
+            "default": "Find the right plan for your team."
+        },
+        "plan1Name": {
+            "type": "string",
+            "default": "Assisted"
+        },
+        "plan1Price": {
+            "type": "string",
+            "default": "0kr"
+        },
+        "plan1Description": {
+            "type": "string",
+            "default": "Lorem ipsum dolor sit amet."
+        },
+        "plan2Name": {
+            "type": "string",
+            "default": "Operated"
+        },
+        "plan2Price": {
+            "type": "string",
+            "default": "50kr"
+        },
+        "plan2Description": {
+            "type": "string",
+            "default": "Lorem ipsum dolor sit amet."
+        },
+        "plan3Name": {
+            "type": "string",
+            "default": "Serviced"
+        },
+        "plan3Price": {
+            "type": "string",
+            "default": "100kr"
+        },
+        "plan3Description": {
+            "type": "string",
+            "default": "Lorem ipsum dolor sit amet."
+        },
+        "showPlanCards": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "render": "file:render.php",
+    "editorScript": "file:../../build/index.js",
+    "style": [
+        "file:card-table-features.css",
+        "file:../cards/plan-features-row/plan-features-row.css"
+    ],
+    "editorStyle": [
+        "file:card-table-features.css",
+        "file:../../build/index.css"
+    ],
+    "example": {
+        "attributes": {
+            "sectionTitle": "Compare plans & features",
+            "sectionSubtitle": "Find the right plan for your team.",
+            "plan1Name": "Assisted",
+            "plan1Price": "0kr",
+            "plan1Description": "Lorem ipsum dolor sit amet.",
+            "plan2Name": "Operated",
+            "plan2Price": "50kr",
+            "plan2Description": "Lorem ipsum dolor sit amet.",
+            "plan3Name": "Serviced",
+            "plan3Price": "100kr",
+            "plan3Description": "Lorem ipsum dolor sit amet."
+        }
+    }
+}
