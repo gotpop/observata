@@ -8,7 +8,7 @@
 	gap: var(--spacing-24);
 	padding: var(--spacing-32);
 	top: 6rem;
-	
+
 	@media (width >=64rem) {
 		position: sticky;
 		grid-area: details;
@@ -57,4 +57,3 @@
 		}
 	}
 }
-	}
