@@ -1,16 +1,16 @@
 .observata-section-tabs-editor {
-	.section-tabs-editor__tab-names {
+	.tabs-editor-names {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: var(--spacing-20, 1rem);
 		margin-block: var(--spacing-20, 1rem);
 	}
 
-	.section-tabs-editor__tabs {
+	.tabs-editor-nav {
 		margin-block: var(--spacing-20, 1rem);
 	}
 
-	.section-tabs-editor__content {
+	.tabs-editor-content {
 		.block-editor-block-list__layout {
 			flex-direction: column !important;
 		}

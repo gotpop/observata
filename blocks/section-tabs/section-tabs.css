@@ -5,14 +5,14 @@
 	gap: var(--spacing-50, 2rem);
 }
 
-.section-tabs__tablist {
+.tabs-nav {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	gap: 0;
 	border-bottom: 1px solid var(--colour-border-border-gray, #e5e7eb);
 }
 
-.section-tabs__tab {
+.tab {
 	padding: var(--spacing-20) var(--spacing-30);
 	background: transparent;
 	border: none;
@@ -42,11 +42,11 @@
 	}
 }
 
-.section-tabs__panels {
+.tabs-content {
 	position: relative;
 }
 
-.section-tabs__panel {
+.tab-content {
 	display: none;
 
 	&.is-active {
@@ -55,7 +55,7 @@
 }
 
 @media screen and (width < 40em) {
-	.section-tabs__tab {
+	.tab {
 		padding: var(--spacing-15) var(--spacing-15);
 		font-size: var(--typography-size-14, 0.875rem);
 	}

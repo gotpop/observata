@@ -131,7 +131,7 @@ export default function SectionTabsEdit({ attributes, setAttributes, clientId })
                 />
             </BlockLabel>
 
-            <div className="section-tabs-editor__tab-names">
+            <div className="tabs-editor-names">
                 {visibleTabs.map((tab) => (
                     <TextControl
                         key={tab.n}
@@ -145,7 +145,7 @@ export default function SectionTabsEdit({ attributes, setAttributes, clientId })
                 ))}
             </div>
 
-            <div className="section-tabs-editor__tabs">
+            <div className="tabs-editor-nav">
                 <ButtonGroup>
                     {visibleTabs.map((tab) => (
                         <Button
@@ -163,7 +163,7 @@ export default function SectionTabsEdit({ attributes, setAttributes, clientId })
                 </ButtonGroup>
             </div>
 
-            <div className="section-tabs-editor__content">
+            <div className="tabs-editor-content">
                 <InnerBlocks
                     template={TAB_TEMPLATE}
                     templateLock={false}

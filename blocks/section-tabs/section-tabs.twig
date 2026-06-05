@@ -9,13 +9,13 @@
 	data-bg="{{ section_bg_colour }}"
 	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
 	<block-content class="block-content">
-		<div class="section-tabs__tablist" role="tablist" aria-label="Section tabs">
+		<div class="tabs-nav" role="tablist" aria-label="Section tabs">
 			{% for i in 1..tab_count %}
 				{% set tab_name = attributes['tab' ~ i ~ 'Name']|default('Tab ' ~ i) %}
 				{% set is_active = active_tab == i %}
 				<button
 					type="button"
-					class="section-tabs__tab {% if is_active %}is-active{% endif %}"
+					class="tab {% if is_active %}is-active{% endif %}"
 					role="tab"
 					id="{{ group_name }}-tab-{{ i }}"
 					aria-controls="{{ group_name }}-panel-{{ i }}"
@@ -27,11 +27,11 @@
 			{% endfor %}
 		</div>
 
-		<div class="section-tabs__panels">
+		<div class="tabs-content">
 			{% for i in 1..tab_count %}
 				{% set is_active = active_tab == i %}
 				<div
-					class="section-tabs__panel {% if is_active %}is-active{% endif %}"
+					class="tab-content {% if is_active %}is-active{% endif %}"
 					role="tabpanel"
 					id="{{ group_name }}-panel-{{ i }}"
 					aria-labelledby="{{ group_name }}-tab-{{ i }}"

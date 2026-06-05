@@ -3,8 +3,8 @@ class SectionTabs {
 	private panels: HTMLElement[];
 
 	constructor(container: HTMLElement) {
-		this.tabs = Array.from(container.querySelectorAll('.section-tabs__tab')) as HTMLButtonElement[];
-		this.panels = Array.from(container.querySelectorAll('.section-tabs__panel'));
+		this.tabs = Array.from(container.querySelectorAll('.tab')) as HTMLButtonElement[];
+		this.panels = Array.from(container.querySelectorAll('.tab-content'));
 	}
 
 	public init(): void {
