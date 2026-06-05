@@ -5,56 +5,58 @@
 	gap: var(--spacing-50, 2rem);
 }
 
-@media screen and (width < 40em) {
-	.grid {
-		grid-template-columns: repeat(var(--tab-count, 3), minmax(100px, 1fr));
-		column-gap: 0.5rem;
+.section-tabs__tablist {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 0;
+	border-bottom: 1px solid var(--colour-border-border-gray, #e5e7eb);
+}
+
+.section-tabs__tab {
+	padding: var(--spacing-20) var(--spacing-30);
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid transparent;
+	font-size: var(--typography-size-16, 1rem);
+	font-weight: var(--font-weight-semibold, 600);
+	color: var(--colour-text-secondary, #6b7280);
+	cursor: pointer;
+	transition:
+		color 0.2s ease,
+		border-color 0.2s ease;
+	text-align: center;
+	white-space: nowrap;
+
+	&:hover {
+		color: var(--colour-primary-700, #1d4ed8);
 	}
 
-	summary,
-	details::details-content {
-		padding: 0.5rem;
+	&:focus-visible {
+		outline: 2px solid var(--colour-primary-700, #1d4ed8);
+		outline-offset: -2px;
+	}
+
+	&.is-active {
+		color: var(--colour-primary-700, #1d4ed8);
+		border-bottom-color: var(--colour-primary-700, #1d4ed8);
 	}
 }
 
-.section-tabs {
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(var(--tab-count, 3), minmax(200px, 1fr));
-		grid-template-rows: auto 1fr;
-		column-gap: 1rem;
-	}
+.section-tabs__panels {
+	position: relative;
+}
 
-	details {
-		display: grid;
-		grid-column: 1 / -1;
-		grid-row: 1 / span 2;
-		grid-template-columns: subgrid;
-		grid-template-rows: subgrid;
-	}
+.section-tabs__panel {
+	display: none;
 
-	summary {
-		grid-column: var(--n) / span 1;
-		grid-row: 1;
-		display: grid;
-		padding: 1rem;
-		border-bottom: 2px solid dodgerblue;
-		cursor: pointer;
-		z-index: 1;
+	&.is-active {
+		display: block;
 	}
+}
 
-	details[open] :is(summary, .summary) {
-		font-weight: bold;
-	}
-
-	details::details-content {
-		grid-row: 2;
-		grid-column: 1 / -1;
-		padding: 1rem;
-		border-bottom: 2px solid dodgerblue;
-	}
-
-	details:not([open])::details-content {
-		display: none;
+@media screen and (width < 40em) {
+	.section-tabs__tab {
+		padding: var(--spacing-15) var(--spacing-15);
+		font-size: var(--typography-size-14, 0.875rem);
 	}
 }
