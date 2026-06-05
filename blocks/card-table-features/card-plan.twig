@@ -1,0 +1,13 @@
+{#
+  Card Plan partial — renders a single plan card.
+  Variables: plan_name, plan_price, plan_description, highlighted (bool)
+#}
+<div class="plan-card{% if highlighted %} plan-card-highlighted{% endif %}">
+	<h3 class="plan-title">
+		{{ plan_name }}
+	</h3>
+	<span class="plan-price">{{ plan_price }}</span>
+	<p class="plan-description">
+		{{ plan_description }}
+	</p>
+</div>

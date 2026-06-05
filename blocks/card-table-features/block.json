@@ -60,14 +60,20 @@
         "showPlanCards": {
             "type": "boolean",
             "default": true
+        },
+        "featuredPlan": {
+            "type": "number",
+            "default": 2
         }
     },
     "editorScript": "file:../../build/index.js",
     "style": [
-        "file:card-table-features.css"
+        "file:card-table-features.css",
+        "file:card-plan.css"
     ],
     "editorStyle": [
         "file:card-table-features.css",
+        "file:card-plan.css",
         "file:../../build/index.css"
     ],
     "example": {

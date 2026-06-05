@@ -1,7 +1,7 @@
 import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { TextControl, ToggleControl } from '@wordpress/components';
+import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
 import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
@@ -21,7 +21,7 @@ const ROW_TEMPLATE = [
 ];
 
 export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
-    const { showPlanCards } = attributes;
+    const { showPlanCards, featuredPlan } = attributes;
     const blockProps = useBlockProps({ className: 'card-table-features-editor' });
 
     return (
@@ -35,62 +35,44 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
             </BlockLabel>
 
             {showPlanCards && (
-                <div className="card-table-features-editor__cards">
-                    <div className="card-table-features-editor__card">
-                        <TextControl
-                            label={__('Plan 1 Name', 'observata')}
-                            value={attributes.plan1Name}
-                            onChange={(value) => setAttributes({ plan1Name: value })}
-                        />
-                        <TextControl
-                            label={__('Plan 1 Price', 'observata')}
-                            value={attributes.plan1Price}
-                            onChange={(value) => setAttributes({ plan1Price: value })}
-                        />
-                        <TextControl
-                            label={__('Plan 1 Description', 'observata')}
-                            value={attributes.plan1Description}
-                            onChange={(value) => setAttributes({ plan1Description: value })}
-                        />
-                    </div>
-                    <div className="card-table-features-editor__card card-table-features-editor__card--highlighted">
-                        <TextControl
-                            label={__('Plan 2 Name', 'observata')}
-                            value={attributes.plan2Name}
-                            onChange={(value) => setAttributes({ plan2Name: value })}
-                        />
-                        <TextControl
-                            label={__('Plan 2 Price', 'observata')}
-                            value={attributes.plan2Price}
-                            onChange={(value) => setAttributes({ plan2Price: value })}
-                        />
-                        <TextControl
-                            label={__('Plan 2 Description', 'observata')}
-                            value={attributes.plan2Description}
-                            onChange={(value) => setAttributes({ plan2Description: value })}
-                        />
-                    </div>
-                    <div className="card-table-features-editor__card">
-                        <TextControl
-                            label={__('Plan 3 Name', 'observata')}
-                            value={attributes.plan3Name}
-                            onChange={(value) => setAttributes({ plan3Name: value })}
-                        />
-                        <TextControl
-                            label={__('Plan 3 Price', 'observata')}
-                            value={attributes.plan3Price}
-                            onChange={(value) => setAttributes({ plan3Price: value })}
-                        />
-                        <TextControl
-                            label={__('Plan 3 Description', 'observata')}
-                            value={attributes.plan3Description}
-                            onChange={(value) => setAttributes({ plan3Description: value })}
-                        />
-                    </div>
+                <div className="editor-cards">
+                    <SelectControl
+                        label={__('Featured Plan', 'observata')}
+                        value={featuredPlan}
+                        options={[
+                            { label: attributes.plan1Name || __('Plan 1'), value: 1 },
+                            { label: attributes.plan2Name || __('Plan 2'), value: 2 },
+                            { label: attributes.plan3Name || __('Plan 3'), value: 3 },
+                        ]}
+                        onChange={(value) => setAttributes({ featuredPlan: parseInt(value) })}
+                    />
+                    {[1, 2, 3].map((i) => (
+                        <div
+                            key={i}
+                            className={`editor-card${i === featuredPlan ? ' editor-card-highlighted' : ''`
+                                }`}
+                        >
+                            <TextControl
+                                label={__(`Plan ${i} Name`, 'observata')}
+                                value={attributes[`plan${ i }Name`]}
+                                onChange={(value) => setAttributes({ [`plan${ i }Name`]: value })}
+                            />
+                            <TextControl
+                                label={__(`Plan ${ i } Price`, 'observata')}
+                                value={attributes[`plan${ i }Price`]}
+                                onChange={(value) => setAttributes({ [`plan${ i }Price`]: value })}
+                            />
+                            <TextControl
+                                label={__(`Plan ${ i } Description`, 'observata')}
+                                value={attributes[`plan${ i }Description`]}
+                                onChange={(value) => setAttributes({ [`plan${ i }Description`]: value })}
+                            />
+                        </div>
+                    ))}
                 </div>
             )}
 
-            <div className="card-table-features-editor__rows">
+            <div className="editor-rows">
                 <strong>{__('Feature Rows (drag to reorder)', 'observata')}</strong>
                 <InnerBlocks
                     // template={ROW_TEMPLATE}
