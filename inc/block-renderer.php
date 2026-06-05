@@ -197,20 +197,23 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		}
 	}
 
-	// Special handling for pricing-tabs to pre-render inner blocks for each tab.
-	// Uses recursive serialization to preserve nested inner blocks (e.g. plan-features-row
-	// inside plan-features-table) so the full block tree is processed by do_blocks().
-	if ( $template_name === 'pricing-tabs' ) {
-		$rendered_tabs = array();
-		$tab_names     = array( 'mdr', 'observability', 'search' );
-
-		foreach ( $tab_names as $tab_name ) {
-			$inner_blocks               = $attributes[ $tab_name . 'InnerBlocks' ] ?? array();
-			$serialized                 = observata_serialize_blocks_recursive( $inner_blocks );
-			$rendered_tabs[ $tab_name ] = do_blocks( $serialized );
+	// TODO: Delete this once new tabs are used 
+	// Generic handling: auto-render any attribute ending in 'InnerBlocks'.
+	// Scans all attributes for keys like 'tab1InnerBlocks' or 'mdrInnerBlocks',
+	// serializes the block array, runs do_blocks(), and exposes the result in
+	// $context['renderedInnerBlocks'] keyed by the attribute name (minus the suffix).
+	// e.g. 'tab1InnerBlocks' becomes available as renderedInnerBlocks['tab1'].
+	$rendered_inner = array();
+	foreach ( $attributes as $key => $value ) {
+		if ( ! is_array( $value ) || ! str_ends_with( $key, 'InnerBlocks' ) ) {
+			continue;
 		}
-
-		$context['renderedTabs'] = $rendered_tabs;
+		$short_key = substr( $key, 0, -11 ); // strip 'InnerBlocks'
+		$serialized = observata_serialize_blocks_recursive( $value );
+		$rendered_inner[ $short_key ] = do_blocks( $serialized );
+	}
+	if ( ! empty( $rendered_inner ) ) {
+		$context['renderedInnerBlocks'] = $rendered_inner;
 	}
 
 	try {

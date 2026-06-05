@@ -1,0 +1,60 @@
+.block-content {
+	display: grid;
+	grid-column: content;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-50, 2rem);
+}
+
+@media screen and (width < 40em) {
+	.grid {
+		grid-template-columns: repeat(var(--tab-count, 3), minmax(100px, 1fr));
+		column-gap: 0.5rem;
+	}
+
+	summary,
+	details::details-content {
+		padding: 0.5rem;
+	}
+}
+
+.section-tabs {
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(var(--tab-count, 3), minmax(200px, 1fr));
+		grid-template-rows: auto 1fr;
+		column-gap: 1rem;
+	}
+
+	details {
+		display: grid;
+		grid-column: 1 / -1;
+		grid-row: 1 / span 2;
+		grid-template-columns: subgrid;
+		grid-template-rows: subgrid;
+	}
+
+	summary {
+		grid-column: var(--n) / span 1;
+		grid-row: 1;
+		display: grid;
+		padding: 1rem;
+		border-bottom: 2px solid dodgerblue;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	details[open] :is(summary, .summary) {
+		font-weight: bold;
+	}
+
+	details::details-content {
+		grid-row: 2;
+		grid-column: 1 / -1;
+		padding: 1rem;
+		border-bottom: 2px solid dodgerblue;
+	}
+
+	details:not([open])::details-content {
+		display: none;
+	}
+}

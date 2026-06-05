@@ -50,8 +50,8 @@
 				role="tabpanel"
 				aria-labelledby="pricing-tabs-tab-mdr"
 				data-panel="mdr">
-				{% if renderedTabs.mdr is defined %}
-					{{ renderedTabs.mdr|raw }}
+				{% if renderedInnerBlocks.mdr is defined %}
+					{{ renderedInnerBlocks.mdr|raw }}
 				{% endif %}
 			</div>
 
@@ -62,8 +62,8 @@
 				role="tabpanel"
 				aria-labelledby="pricing-tabs-tab-observability"
 				data-panel="observability">
-				{% if renderedTabs.observability is defined %}
-					{{ renderedTabs.observability|raw }}
+				{% if renderedInnerBlocks.observability is defined %}
+					{{ renderedInnerBlocks.observability|raw }}
 				{% endif %}
 			</div>
 
@@ -74,8 +74,8 @@
 				role="tabpanel"
 				aria-labelledby="pricing-tabs-tab-search"
 				data-panel="search">
-				{% if renderedTabs.search is defined %}
-					{{ renderedTabs.search|raw }}
+				{% if renderedInnerBlocks.search is defined %}
+					{{ renderedInnerBlocks.search|raw }}
 				{% endif %}
 			</div>
 		</div>

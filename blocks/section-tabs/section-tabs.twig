@@ -1,0 +1,33 @@
+{% set tab_count = attributes.tabCount|default(3) %}
+{% set active_tab = attributes.activeTab|default('1') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set group_name = 'section-tabs-' ~ (attributes.id|default('default')) %}
+
+<section
+	class="section-block section-tabs"
+	data-active-tab="{{ active_tab }}"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{
+	section_bg_colour
+	}}); --tab-count: {{ tab_count }};">
+	<block-content class="block-content">
+		<div class="grid">
+			{% for i in 1..tab_count %}
+				{% set tab_name = attributes['tab' ~ i ~ 'Name']|default('Tab ' ~ i) %}
+				<details
+					name="{{ group_name }}"
+					style="--n: {{ i }}"
+					{% if active_tab == i %}open{% endif %}>
+					<summary>
+						{{ tab_name }}
+					</summary>
+					<div data-panel="{{ i }}">
+						{% if renderedInnerBlocks['tab' ~ i] is defined %}
+							{{ renderedInnerBlocks['tab' ~ i]|raw }}
+						{% endif %}
+					</div>
+				</details>
+			{% endfor %}
+		</div>
+	</block-content>
+</section>
