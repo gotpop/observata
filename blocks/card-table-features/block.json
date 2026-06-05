@@ -2,9 +2,12 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "observata/card-table-features",
-    "title": "Card table features",
+    "title": "Card Table Features",
     "category": "theme",
     "description": "A features comparison table with title, subtitle, plan cards, and draggable feature rows.",
+    "parent": [
+        "observata/section-tabs"
+    ],
     "supports": {
         "html": false,
         "multiple": true
@@ -59,11 +62,9 @@
             "default": true
         }
     },
-    "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "style": [
-        "file:card-table-features.css",
-        "file:../cards/plan-features-row/plan-features-row.css"
+        "file:card-table-features.css"
     ],
     "editorStyle": [
         "file:card-table-features.css",

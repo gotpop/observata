@@ -1,4 +1,4 @@
-.plan-features-table {
+.card-table-features {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: min-content;
@@ -7,7 +7,7 @@
 	margin: 0 auto;
 }
 
-.plan-features-table__cards {
+.card-table-features__cards {
 	display: flex;
 	gap: var(--spacing-24);
 	justify-content: center;
@@ -53,10 +53,10 @@
 }
 
 /* Table */
-.plan-features-table__table-wrapper {
+.card-table-features__table-wrapper {
 	overflow-x: auto;
 
-	.plan-features-table__table {
+	.card-table-features__table {
 		width: 100%;
 		border-collapse: collapse;
 		table-layout: fixed;
@@ -66,16 +66,16 @@
 	@media (width < 40rem) {
 		-webkit-overflow-scrolling: touch;
 
-		.plan-features-table__table {
+		.card-table-features__table {
 			min-width: 40rem;
 		}
 	}
 
-	.plan-features-table__head-row {
+	.card-table-features__head-row {
 		border-bottom: 1px solid var(--colour-neutral-600);
 	}
 
-	.plan-features-table__head-cell {
+	.card-table-features__head-cell {
 		padding: var(--spacing-16) var(--spacing-16);
 		font-size: var(--typography-size-14);
 		font-weight: 600;

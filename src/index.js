@@ -44,6 +44,8 @@ import ElementListSimpleItemSave from './element-list-simple-item/save';
 import ElementListSimpleSave from './element-list-simple/save';
 import ElementTableSimpleRowEdit from './element-table-simple-row/edit';
 import ElementTableSimpleRowSave from './element-table-simple-row/save';
+import ElementTableFeaturesRowEdit from './element-table-features-row/edit';
+import ElementTableFeaturesRowSave from './element-table-features-row/save';
 import GridCardsGeoEdit from './grid-cards-geo/edit';
 import GridCardsGeoSave from './grid-cards-geo/save';
 import GridCardsGeoTechEdit from './grid-cards-geo-tech/edit';
@@ -117,6 +119,7 @@ import contactMetadata from '../blocks/section-contact/block.json';
 import elementListSimpleItemMetadata from '../blocks/element-list-simple-item/block.json';
 import elementListSimpleMetadata from '../blocks/element-list-simple/block.json';
 import elementTableSimpleRowMetadata from '../blocks/element-table-simple-row/block.json';
+import elementTableFeaturesRowMetadata from '../blocks/element-table-features-row/block.json';
 import footerMetadata from '../blocks/template/footer/block.json';
 import gridCardsGeoMetadata from '../blocks/grid-cards-geo/block.json';
 import gridCardsGeoTechMetadata from '../blocks/grid-cards-geo-tech/block.json';
@@ -326,6 +329,11 @@ registerBlockType(cardTableSimpleMetadata.name, {
 registerBlockType(elementTableSimpleRowMetadata.name, {
     edit: ElementTableSimpleRowEdit,
     save: ElementTableSimpleRowSave,
+});
+
+registerBlockType(elementTableFeaturesRowMetadata.name, {
+    edit: ElementTableFeaturesRowEdit,
+    save: ElementTableFeaturesRowSave,
 });
 
 registerBlockType(elementListSimpleMetadata.name, {

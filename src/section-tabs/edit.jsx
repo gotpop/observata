@@ -14,17 +14,11 @@ import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
 const ALLOWED_BLOCKS = [
-    'observata/section-intro',
-    'observata/plan-features-table',
-    'observata/plan-features-row',
-    'observata/card-simple',
-    'observata/card-text-simple',
     'observata/card-table-features',
-    'observata/card-text-intro',
 ];
 
 const TAB_TEMPLATE = [
-    ['observata/section-intro', { textAlign: 'center' }],
+    ['observata/card-table-features', {}],
 ];
 
 export default function SectionTabsEdit({ attributes, setAttributes, clientId }) {

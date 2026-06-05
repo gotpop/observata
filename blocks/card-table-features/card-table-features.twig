@@ -1,15 +1,15 @@
 {#
-  Plan Features Table - comparison table with title, subtitle, plan cards, and feature rows.
-  Inner blocks (observata/plan-features-row) render as table rows.
+  Card Table Features - comparison table with title, subtitle, plan cards, and feature rows.
+  Inner blocks (observata/element-table-features-row) render as table rows.
 #}
 
 {% set show_plan_cards = attributes.showPlanCards is not defined
 	or attributes.showPlanCards == true
 %}
 
-<section class="plan-features-table">
+<section class="card-table-features">
 	{% if show_plan_cards %}
-		<plan-cards class="plan-features-table__cards">
+		<plan-cards class="card-table-features__cards">
 			<div class="plan-card">
 				<h3 class="plan-title">
 					{{ attributes.plan1Name }}
@@ -40,20 +40,20 @@
 		</plan-cards>
 	{% endif %}
 
-	<div class="plan-features-table__table-wrapper">
-		<table class="plan-features-table__table">
+	<div class="card-table-features__table-wrapper">
+		<table class="card-table-features__table">
 			<thead>
-				<tr class="plan-features-table__head-row">
-					<th class="plan-features-table__head-cell">
+				<tr class="card-table-features__head-row">
+					<th class="card-table-features__head-cell">
 						Features
 					</th>
-					<th class="plan-features-table__head-cell">
+					<th class="card-table-features__head-cell">
 						{{ attributes.plan1Name }}
 					</th>
-					<th class="plan-features-table__head-cell">
+					<th class="card-table-features__head-cell">
 						{{ attributes.plan2Name }}
 					</th>
-					<th class="plan-features-table__head-cell">
+					<th class="card-table-features__head-cell">
 						{{ attributes.plan3Name }}
 					</th>
 				</tr>
