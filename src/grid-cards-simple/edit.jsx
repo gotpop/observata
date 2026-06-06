@@ -18,17 +18,18 @@ export default function GridCardsSimpleEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Simple" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Grid Cards Simple">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
 
             <div className="cards-container">
                 <InnerBlocks

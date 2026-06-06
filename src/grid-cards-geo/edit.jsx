@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const CARD_GEO_LIST_TEMPLATE = [
     ['observata/card-geo-list', { cardTitle: 'Simplified licensing & billing', listItem1: 'Centralise all your observability data into one platform', listItem2: 'Unify logs, metrics, and traces across your entire stack', iconGeo: '01' }],
@@ -17,17 +17,18 @@ export default function GridCardsGeoEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Geo" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Grid Cards Geo">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
 
             <div className="cards-container">
                 <InnerBlocks

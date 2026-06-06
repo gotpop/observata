@@ -2,11 +2,11 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 
 export default function Edit({ attributes, setAttributes }) {
     const {
@@ -41,17 +41,18 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Section Partnership" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Section Partnership">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="block-content">

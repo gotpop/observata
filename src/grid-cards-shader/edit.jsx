@@ -2,10 +2,10 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_TEMPLATE = [
     ['observata/card-geo-shader', { cardTitle: 'Unify every data source', cardText: 'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.', iconGeo: '01' }],
@@ -22,17 +22,18 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Shader" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Grid Cards Shader">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="cards-container">

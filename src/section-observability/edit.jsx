@@ -2,10 +2,10 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_TEMPLATE = [
     ['observata/card-micro', { cardTitle: 'Alert fatigue', cardDescription: 'Too many noisy alerts hide the incidents that matter most.' }],
@@ -19,17 +19,18 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Observability" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Observability">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <article className="card-large">

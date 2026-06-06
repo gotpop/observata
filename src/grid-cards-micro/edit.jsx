@@ -2,10 +2,10 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import SectionIntro from '../components/section-intro';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const CARD_TEMPLATE = [
     ['observata/card-micro', { cardTitle: 'Log analytics', cardDescription: 'Real-time log ingestion, parsing, and correlation across your entire infrastructure.' }],
@@ -22,16 +22,17 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Cards Micro" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Grid Cards Micro">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <div className="cards-container">

@@ -1,9 +1,9 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl } from '@wordpress/components';
 
-import { useSelect } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 
 export default function SectionCtaEdit({ attributes, setAttributes }) {
     const { title, text, ctaText, ctaUrl, sectionBgColour } = attributes;
@@ -23,17 +23,18 @@ export default function SectionCtaEdit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Section CTA" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
+            <BlockLabel name="Section CTA">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+            </BlockLabel>
 
             <div className="section-cta-inner">
                 <RichText

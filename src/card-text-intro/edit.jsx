@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const INTRO_TEMPLATE = [
     ['observata/element-body-md', { content: 'Intro text description here.' }],
@@ -16,16 +16,17 @@ export default function CardTextIntroEdit({ attributes, setAttributes }) {
 
     return (
         <article {...blockProps}>
-            <BlockLabel name="Card Text Intro" />
-            <SelectControl
-                label={__('Text Alignment', 'observata')}
-                value={textAlign}
-                options={[
-                    { label: __('Left', 'observata'), value: 'left' },
-                    { label: __('Center', 'observata'), value: 'center' },
-                ]}
-                onChange={(val) => setAttributes({ textAlign: val })}
-            />
+            <BlockLabel name="Card Text Intro">
+                <SelectControl
+                    label={__('Text Alignment', 'observata')}
+                    value={textAlign}
+                    options={[
+                        { label: __('Left', 'observata'), value: 'left' },
+                        { label: __('Center', 'observata'), value: 'center' },
+                    ]}
+                    onChange={(val) => setAttributes({ textAlign: val })}
+                />
+            </BlockLabel>
             <div className="card-text-intro-content">
                 <RichText
                     tagName="h2"

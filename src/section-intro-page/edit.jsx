@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const CARD_TEMPLATE = [
     [
@@ -34,27 +34,28 @@ export default function SectionIntroPageEdit({ attributes, setAttributes }) {
 
     return (
         <section {...blockProps}>
-            <BlockLabel name="Section Intro Page" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-            />
-            <SelectControl
-                label={__('Shader colour', 'observata')}
-                value={shaderColour}
-                options={[
-                    { label: __('Blue', 'observata'), value: 'blue' },
-                    { label: __('Pink', 'observata'), value: 'pink' },
-                    { label: __('Blue Light', 'observata'), value: 'blueLight' },
-                ]}
-                onChange={(val) => setAttributes({ shaderColour: val })}
-            />
+            <BlockLabel name="Section Intro Page">
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                />
+                <SelectControl
+                    label={__('Shader colour', 'observata')}
+                    value={shaderColour}
+                    options={[
+                        { label: __('Blue', 'observata'), value: 'blue' },
+                        { label: __('Pink', 'observata'), value: 'pink' },
+                        { label: __('Blue Light', 'observata'), value: 'blueLight' },
+                    ]}
+                    onChange={(val) => setAttributes({ shaderColour: val })}
+                />
+            </BlockLabel>
             <div className="intro-page-cards">
                 <InnerBlocks
                     template={CARD_TEMPLATE}
