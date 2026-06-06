@@ -35,6 +35,10 @@ export default function GridCardsGeoEdit({ attributes, setAttributes }) {
                     template={CARD_GEO_LIST_TEMPLATE}
                     templateLock={false}
                     allowedBlocks={['observata/card-geo-list']}
+                    __experimentalLayout={{
+                        type: 'grid',
+                        columnCount: 2,
+                    }}
                 />
             </div>
         </div>

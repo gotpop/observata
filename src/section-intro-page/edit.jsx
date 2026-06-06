@@ -61,6 +61,10 @@ export default function SectionIntroPageEdit({ attributes, setAttributes }) {
                     template={CARD_TEMPLATE}
                     allowedBlocks={['observata/card-geo-list']}
                     templateLock={false}
+                    __experimentalLayout={{
+                        type: 'grid',
+                        columnCount: 2,
+                    }}
                 />
             </div>
         </section>
