@@ -30,14 +30,11 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "style": [
+    "viewStyle": [
         "file:grid-cards-geo.css",
         "file:../cards/card-geo-list/card-geo-list.css"
     ],
-    "editorStyle": [
-        "file:grid-cards-geo.css",
-        "file:../../build/index.css"
-    ],
+    "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
             "sectionTitle": "Our Expertise",

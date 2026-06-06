@@ -31,7 +31,7 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "style": "file:card-image-unsplash.css",
+    "viewStyle": "file:card-image-unsplash.css",
     "example": {
         "attributes": {
             "imageUrl": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800"

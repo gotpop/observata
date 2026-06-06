@@ -29,5 +29,5 @@
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:element-table-simple-row.editor.css",
-    "style": "file:element-table-simple-row.css"
+    "viewStyle": "file:element-table-simple-row.css"
 }

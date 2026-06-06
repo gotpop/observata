@@ -34,11 +34,8 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:section-intro-page.css",
-        "file:../../build/index.css"
-    ],
-    "style": [
+    "editorStyle": "file:../../build/index.css",
+    "viewStyle": [
         "file:section-intro-page.css",
         "file:../cards/card-geo-list/card-geo-list.css"
     ],

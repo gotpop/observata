@@ -16,7 +16,7 @@
         },
         "copyright": {
             "type": "string",
-            "default": "© Observata AB 2026"
+            "default": "\u00a9 Observata AB 2026"
         },
         "contactEmail": {
             "type": "string",
@@ -28,16 +28,13 @@
         }
     },
     "render": "file:render.php",
-    "style": "file:footer.css",
+    "viewStyle": "file:footer.css",
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:footer.css",
-        "file:../../build/index.css"
-    ],
+    "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
             "locations": "Denmark | Sweden | Finland | Norway",
-            "copyright": "© Observata AB 2026",
+            "copyright": "\u00a9 Observata AB 2026",
             "contactEmail": "sales@observata.com",
             "contactAddress": "Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden"
         }

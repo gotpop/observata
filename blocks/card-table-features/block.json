@@ -67,15 +67,11 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "style": [
+    "viewStyle": [
         "file:card-table-features.css",
         "file:card-plan.css"
     ],
-    "editorStyle": [
-        "file:card-table-features.css",
-        "file:card-plan.css",
-        "file:../../build/index.css"
-    ],
+    "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
             "sectionTitle": "Compare plans & features",

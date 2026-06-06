@@ -9,7 +9,7 @@
         "html": false,
         "multiple": false
     },
-    "style": "file:header-navigation-trigger.css",
+    "viewStyle": "file:header-navigation-trigger.css",
     "example": {
         "attributes": {}
     }

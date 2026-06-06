@@ -32,9 +32,7 @@
         }
     },
     "render": "file:section-hero-page.twig",
-    "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css",
-    "style": "file:section-hero-page.css",
+    "viewStyle": "file:section-hero-page.css",
     "example": {
         "attributes": {
             "heading": "About Our Solutions",

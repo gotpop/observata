@@ -24,7 +24,7 @@
     }
   },
   "editorScript": "file:../../build/index.js",
-  "style": "file:section-intro.css",
+  "viewStyle": "file:section-intro.css",
   "editorStyle": [
     "file:../../build/index.css"
   ],

@@ -25,11 +25,8 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:section-blog-posts.css",
-        "file:../../build/index.css"
-    ],
-    "style": [
+    "editorStyle": "file:../../build/index.css",
+    "viewStyle": [
         "file:section-blog-posts.css",
         "file:section-blog-card.css"
     ],

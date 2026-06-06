@@ -30,7 +30,7 @@
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:section-card-and-graphic.css",
+    "viewStyle": "file:section-card-and-graphic.css",
     "example": {
         "attributes": {
             "graphic": "ribbon-star",

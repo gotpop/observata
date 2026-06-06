@@ -23,7 +23,7 @@
         "html": false
     },
     "textdomain": "observata",
-    "style": "file:card-text-intro.css",
+    "viewStyle": "file:card-text-intro.css",
     "example": {
         "attributes": {
             "sectionTitle": "Section Title",

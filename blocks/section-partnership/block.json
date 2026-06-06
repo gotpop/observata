@@ -16,7 +16,7 @@
         },
         "introText": {
             "type": "string",
-            "default": "We enter long-term alliances where your success is directly tied to ours. This means acting as a permanent extension of your team — proactively evolving your platform as your business grows."
+            "default": "We enter long-term alliances where your success is directly tied to ours. This means acting as a permanent extension of your team \u2014 proactively evolving your platform as your business grows."
         },
         "ctaText": {
             "type": "string",
@@ -82,20 +82,16 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "style": [
+    "viewStyle": [
         "file:section-partnership-animation.css",
         "file:section-partnership.css",
         "file:../template/section-intro/section-intro.css"
     ],
-    "editorStyle": [
-        "file:section-partnership.css",
-        "file:../template/section-intro/section-intro.css",
-        "file:../../build/index.css"
-    ],
+    "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
             "sectionTitle": "The journey to partnership",
-            "introText": "We enter long-term alliances where your success is directly tied to ours. This means acting as a permanent extension of your team — proactively evolving your platform as your business grows.",
+            "introText": "We enter long-term alliances where your success is directly tied to ours. This means acting as a permanent extension of your team \u2014 proactively evolving your platform as your business grows.",
             "ctaText": "Discover how partnership works",
             "ctaUrl": "#partnership-phase",
             "phase1Number": "01",

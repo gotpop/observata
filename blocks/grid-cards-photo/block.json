@@ -30,7 +30,7 @@
     },
     "render": "file:grid-cards-photo.twig",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:grid-cards-photo.css",
+    "viewStyle": "file:grid-cards-photo.css",
     "example": {
         "attributes": {
             "title": "Photo Cards",

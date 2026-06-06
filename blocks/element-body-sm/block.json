@@ -17,7 +17,7 @@
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:element-body-sm.editor.css",
-    "style": "file:element-body-sm.css",
+    "viewStyle": "file:element-body-sm.css",
     "example": {
         "attributes": {
             "content": "Body content with formatted text and paragraph breaks."

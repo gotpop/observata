@@ -61,13 +61,10 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
-    "style": [
+    "viewStyle": [
         "file:plan-features-table.css"
     ],
-    "editorStyle": [
-        "file:plan-features-table.css",
-        "file:../../build/index.css"
-    ],
+    "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
             "sectionTitle": "Compare plans & features",

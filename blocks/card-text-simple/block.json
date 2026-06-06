@@ -24,7 +24,7 @@
         "html": false
     },
     "textdomain": "observata",
-    "style": "file:card-text-simple.css",
+    "viewStyle": "file:card-text-simple.css",
     "example": {
         "attributes": {
             "heading": "Card Heading"

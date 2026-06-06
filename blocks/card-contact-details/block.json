@@ -24,11 +24,8 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:card-contact-details.css",
-        "file:../../build/index.css"
-    ],
-    "style": [
+    "editorStyle": "file:../../build/index.css",
+    "viewStyle": [
         "file:card-contact-details.css"
     ],
     "example": {

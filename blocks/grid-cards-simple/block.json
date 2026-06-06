@@ -25,11 +25,8 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:../cards/card-simple/card-simple.css",
-        "file:../../build/index.css"
-    ],
-    "style": [
+    "editorStyle": "file:../../build/index.css",
+    "viewStyle": [
         "file:../cards/card-simple/card-simple.css",
         "file:grid-cards-simple.css"
     ],

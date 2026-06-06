@@ -30,5 +30,5 @@
     "textdomain": "observata",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:card-table-simple.editor.css",
-    "style": "file:card-table-simple.css"
+    "viewStyle": "file:card-table-simple.css"
 }

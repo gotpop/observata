@@ -31,7 +31,7 @@
     "render": "file:section-hero-blog.twig",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:section-hero-blog.css",
+    "viewStyle": "file:section-hero-blog.css",
     "example": {
         "attributes": {
             "heading": "Building Modern Observability Stacks",

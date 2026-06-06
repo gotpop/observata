@@ -53,7 +53,7 @@
     },
     "render": "file:render.php",
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-pricing-plan.css",
+    "viewStyle": "file:card-pricing-plan.css",
     "example": {
         "attributes": {
             "planName": "Starter",

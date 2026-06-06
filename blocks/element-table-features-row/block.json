@@ -31,7 +31,7 @@
         }
     },
     "editorScript": "file:../../../build/index.js",
-    "style": "file:element-table-features-row.css",
+    "viewStyle": "file:element-table-features-row.css",
     "example": {
         "attributes": {
             "featureName": "Feature",

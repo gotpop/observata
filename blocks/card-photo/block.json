@@ -39,7 +39,7 @@
         }
     },
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-photo.css",
+    "viewStyle": "file:card-photo.css",
     "example": {
         "attributes": {
             "title": "Card Title"

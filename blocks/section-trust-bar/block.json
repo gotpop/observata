@@ -35,7 +35,7 @@
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "style": "file:section-trust-bar.css",
+    "viewStyle": "file:section-trust-bar.css",
     "example": {
         "attributes": {
             "logos": [

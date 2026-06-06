@@ -42,11 +42,8 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:../card-text-simple/card-text-simple.css",
-        "file:../../build/index.css"
-    ],
-    "style": [
+    "editorStyle": "file:../../build/index.css",
+    "viewStyle": [
         "file:../card-text-simple/card-text-simple.css",
         "file:grid-flexible-content.css"
     ],

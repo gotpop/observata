@@ -47,7 +47,7 @@
         }
     },
     "editorScript": "file:../../../build/index.js",
-    "style": "file:card-geo-list.css",
+    "viewStyle": "file:card-geo-list.css",
     "example": {
         "attributes": {
             "cardTitle": "Feature Title",

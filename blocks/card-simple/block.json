@@ -31,7 +31,7 @@
         "html": false
     },
     "textdomain": "observata",
-    "style": "file:card-simple.css",
+    "viewStyle": "file:card-simple.css",
     "example": {
         "attributes": {
             "title": "Card Title",

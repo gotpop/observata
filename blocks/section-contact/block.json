@@ -21,12 +21,8 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "editorStyle": [
-        "file:section-contact.css",
-        "file:../template/section-intro/section-intro.css",
-        "file:../../build/index.css"
-    ],
-    "style": [
+    "editorStyle": "file:../../build/index.css",
+    "viewStyle": [
         "file:section-contact.css",
         "file:../template/section-intro/section-intro.css"
     ],

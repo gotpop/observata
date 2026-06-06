@@ -37,7 +37,7 @@
         }
     },
     "editorScript": "file:../../build/index.js",
-    "style": [
+    "viewStyle": [
         "file:section-cta-graphic.css",
         "file:section-cta.css"
     ],
