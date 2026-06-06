@@ -1,6 +1,7 @@
 import './editor.css';
 
 import BlockLabel from '../components/block-label';
+import EditorColumns from '../components/editor-columns';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
@@ -13,7 +14,8 @@ export default function ElementTableSimpleRowEdit({ attributes, setAttributes })
         <div {...blockProps}>
             <BlockLabel name="Element Table Row" />
 
-            <div className="element-table-simple-row-editor-controls">
+            <EditorColumns columns={3}>
+
                 <TextControl
                     label={__('Column 1 (Label)', 'observata')}
                     value={rowLabel}
@@ -34,7 +36,7 @@ export default function ElementTableSimpleRowEdit({ attributes, setAttributes })
                     onChange={(val) => setAttributes({ column3Value: val })}
                     placeholder={__('e.g. Value', 'observata')}
                 />
-            </div>
+            </EditorColumns>
         </div>
     );
 }
