@@ -13,3 +13,8 @@ observata-block-label {
 		border-radius: 2px;
 	}
 }
+
+.observata-controls {
+	display: flex;
+	gap: 1rem;
+}

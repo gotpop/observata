@@ -35,41 +35,6 @@ function observata_setup() {
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'style-editor.css' );
-	add_editor_style( 'client/css/global/fonts.css' );
-	add_editor_style( 'client/css/global/variables.css' );
-	add_editor_style( 'client/css/global/layout.css' );
-	add_editor_style( 'client/css/tokens/base-spacing.css' );
-	add_editor_style( 'client/css/tokens/base-colours.css' );
-	add_editor_style( 'client/css/tokens/base-radius.css' );
-	add_editor_style( 'client/css/tokens/base-typography.css' );
-	add_editor_style( 'client/css/tokens/base-swatch.css' );
-	add_editor_style( 'client/css/tokens/theme-typography.css' );
-	add_editor_style( 'client/css/tokens/theme.css' );
-	add_editor_style( 'client/css/global/reset.css' );
-	add_editor_style( 'client/css/global/global.css' );
-	add_editor_style( 'client/css/global/layout.css' );
-	add_editor_style( 'client/css/global/icons.css' );
-	add_editor_style( 'client/css/global/buttons.css' );
-	add_editor_style( 'client/css/global/typography.css' );
-	add_editor_style( 'client/css/global/typography-scale.css' );
-	add_editor_style( 'client/css/global/animations.css' );
-	add_editor_style( 'client/css/global/graphic.css' );
-	add_editor_style( 'client/css/global/accessibility.css' );
-	add_editor_style( 'client/css/global/stretch.css' );
-	add_editor_style( 'client/css/global/anchors.css' );
-
-	// Auto-discover all block CSS files and register as editor styles.
-	$blocks_dir = get_template_directory() . '/blocks';
-	$iterator   = new RecursiveIteratorIterator(
-		new RecursiveDirectoryIterator( $blocks_dir, RecursiveDirectoryIterator::SKIP_DOTS )
-	);
-	foreach ( $iterator as $file ) {
-		if ( $file->isFile() && $file->getExtension() === 'css' ) {
-			$relative = str_replace( get_template_directory() . '/', '', $file->getPathname() );
-			add_editor_style( $relative );
-		}
-	}
 
 	add_theme_support( 'appearance-tools' );
 	add_theme_support( 'woocommerce' );
@@ -92,4 +57,15 @@ function observata_setup() {
 add_action( 'wp_head', 'observata_add_favicon' );
 function observata_add_favicon() {
 	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
+}
+
+// Enqueue editor-only stylesheet directly.
+add_action( 'enqueue_block_editor_assets', 'observata_editor_styles' );
+function observata_editor_styles() {
+	wp_enqueue_style(
+		'observata-editor',
+		get_template_directory_uri() . '/style-editor.css',
+		array(),
+		filemtime( get_template_directory() . '/style-editor.css' )
+	);
 }

@@ -7,7 +7,13 @@
     "description": "Grid section with simple card blocks. Add Card Simple blocks inside.",
     "supports": {
         "html": false,
-        "multiple": true
+        "multiple": true,
+        "layout": {
+            "default": {
+                "type": "grid",
+                "columnCount": 3
+            }
+        }
     },
     "attributes": {
         "sectionTitle": {

@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const CARD_SIMPLE_TEMPLATE = [
     ['observata/card-simple', { title: 'Search as a Service', description: 'Enable your employees to securely and fast locate information across all internal systems.', iconGeo: '01' }],
@@ -35,6 +35,10 @@ export default function GridCardsSimpleEdit({ attributes, setAttributes }) {
                     template={CARD_SIMPLE_TEMPLATE}
                     templateLock={false}
                     allowedBlocks={['observata/card-simple']}
+                    __experimentalLayout={{
+                        type: 'grid',
+                        columnCount: 3,
+                    }}
                 />
             </div>
         </div>

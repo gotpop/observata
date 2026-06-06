@@ -21,36 +21,38 @@ export default function GridFlexibleContentEdit({ attributes, setAttributes }) {
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Grid Flexible Content" />
-            <SelectControl
-                label={__('Section Background', 'observata')}
-                value={sectionBgColour}
-                onChange={(val) => setAttributes({ sectionBgColour: val })}
-                options={[
-                    { label: __('White', 'observata'), value: 'white' },
-                    { label: __('Grey', 'observata'), value: 'grey' },
-                    { label: __('Gradient', 'observata'), value: 'gradient' },
-                ]}
-            />
-            <SelectControl
-                label={__('Layout', 'observata')}
-                value={layout}
-                onChange={(val) => setAttributes({ layout: val })}
-                options={[
-                    { label: __('1 Column', 'observata'), value: '1' },
-                    { label: __('2 Columns', 'observata'), value: '2' },
-                    { label: __('3 Columns', 'observata'), value: '3' },
-                ]}
-            />
-            <SelectControl
-                label={__('Content Layout', 'observata')}
-                value={contentLayout}
-                onChange={(val) => setAttributes({ contentLayout: val })}
-                options={[
-                    { label: __('Content', 'observata'), value: 'content' },
-                    { label: __('Inner', 'observata'), value: 'inner' },
-                ]}
-            />
+            <BlockLabel name="Grid Flexible Content" >
+
+                <SelectControl
+                    label={__('Section Background', 'observata')}
+                    value={sectionBgColour}
+                    onChange={(val) => setAttributes({ sectionBgColour: val })}
+                    options={[
+                        { label: __('White', 'observata'), value: 'white' },
+                        { label: __('Grey', 'observata'), value: 'grey' },
+                        { label: __('Gradient', 'observata'), value: 'gradient' },
+                    ]}
+                />
+                <SelectControl
+                    label={__('Layout', 'observata')}
+                    value={layout}
+                    onChange={(val) => setAttributes({ layout: val })}
+                    options={[
+                        { label: __('1 Column', 'observata'), value: '1' },
+                        { label: __('2 Columns', 'observata'), value: '2' },
+                        { label: __('3 Columns', 'observata'), value: '3' },
+                    ]}
+                />
+                <SelectControl
+                    label={__('Content Layout', 'observata')}
+                    value={contentLayout}
+                    onChange={(val) => setAttributes({ contentLayout: val })}
+                    options={[
+                        { label: __('Content', 'observata'), value: 'content' },
+                        { label: __('Inner', 'observata'), value: 'inner' },
+                    ]}
+                />
+            </BlockLabel >
 
             <div className="cards-container">
                 <InnerBlocks
