@@ -1,21 +1,31 @@
 observata-block-label {
 	display: flex;
 	align-items: center;
-	gap: 8px;
-	margin-block-end: 1rem;
+	gap: var(--spacing-xs);
+	margin-block-end: var(--spacing-md);
+
+	.block-editor-inner-blocks & {
+		--label-colour-bg: var(--wp--preset--color--pale-cyan-blue);
+	}
 
 	&::before {
 		content: '';
 		width: 16px;
 		height: 16px;
 		background-color: rgb(26, 255, 0);
+		background-color: var(--label-colour-bg, var(--wp-admin-theme-color));
 		position: relative;
 		border-radius: 2px;
 	}
 }
 
 .observata-controls {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	gap: 1rem;
-	margin-block-end: 1rem;
+	margin-block-end: 2rem;
+
+	> * {
+		max-width: 400px;
+	}
 }

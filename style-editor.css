@@ -5,9 +5,33 @@
  * are registered dynamically via functions.php using add_editor_style().
  */
 
-.wp-block {
-	/* background-color: #f5f5f6; */
-	padding: 1rem;
-	border-radius: 0.375rem;
-	border: 1px solid #e5e7ea;
+:root {
+	--colour-grey-100: #e5e7ea;
+	--colour-grey-200: #6e6e6e;
+	--colour-grey-300: #252525;
+	--spacing-xs: 0.35rem;
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-sm: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-box: trim-both cap alphabetic;
+	margin-block: 0 1rem;
+	color: var(--colour-grey-300);
+	text-wrap: balance;
+}
+
+p,
+[role='textbox']:not(h1, h2, h3, h4) {
+	text-box: trim-both cap alphabetic;
+	color: var(--colour-grey-200);
+}
+
+.wp-block:not(.wp-block-post-title) {
+	padding: var(--spacing-md);
+	border: 1px solid var(--colour-grey-100);
 }
