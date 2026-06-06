@@ -1,9 +1,9 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import GeoIcon from '../components/geo-icon';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const iconOptions = Array.from({ length: 30 }, (_, i) => {
     const num = String(i + 1).padStart(2, '0');
@@ -18,7 +18,7 @@ export default function CardGeoEdit({ attributes, setAttributes }) {
         <article {...blockProps}>
             <BlockLabel name="Card Geo" />
 
-            <div className="intro-card-icon">
+            <div className="icon-geo">
                 <GeoIcon number={iconGeo} />
             </div>
             <div className="card-body">

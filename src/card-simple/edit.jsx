@@ -2,11 +2,11 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import GeoIcon from '../components/geo-icon';
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 
 const iconOptions = Array.from({ length: 30 }, (_, i) => {
     const num = String(i + 1).padStart(2, '0');
@@ -36,7 +36,7 @@ export default function Edit({ attributes, setAttributes }) {
         <article {...blockProps}>
             <BlockLabel name="Card Simple" />
 
-            <div className="intro-card-icon">
+            <div className="icon-geo">
                 <GeoIcon number={iconGeo} />
             </div>
             <div className="intro-card-body">

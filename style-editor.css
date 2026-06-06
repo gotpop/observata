@@ -45,3 +45,7 @@ p,
 .block-list-appender {
 	background-color: var(--colour-light);
 }
+
+.icon-geo {
+	float: right;
+}

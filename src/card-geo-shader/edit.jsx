@@ -20,7 +20,7 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
     return (
         <article {...blockProps}>
             <BlockLabel name="Card Geo Shader" />
-            <div className="intro-card-icon">
+            <div className="icon-geo">
                 <GeoIcon number={iconGeo} />
             </div>
             <div className="card-body">

@@ -34,7 +34,7 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
         <article {...blockProps}>
             <BlockLabel name="Card Geo List" />
 
-            <div className="intro-card-icon">
+            <div className="icon-geo">
                 <GeoIcon number={iconGeo} />
             </div>
             <div className="intro-card-body">
