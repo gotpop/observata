@@ -1,15 +1,1 @@
-.block-section-hero-blog {
-	min-height: 10rem;
 
-	.hero-blog-content {
-		.hero-blog-text {
-			z-index: 999;
-
-			padding: var(--spacing-48) var(--spacing-24);
-
-			.heading-hero-blog {
-				margin-bottom: var(--spacing-16);
-			}
-		}
-	}
-}

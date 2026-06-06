@@ -1,9 +1,1 @@
-.card-text-intro-editor {
-	padding: var(--spacing-16);
-}
 
-.card-text-intro-content {
-	display: grid;
-	gap: var(--spacing-24);
-	grid-template-rows: min-content;
-}

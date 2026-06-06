@@ -1,11 +1,1 @@
-.observata-grid-cards-geo-tech-editor {
-    border: 1px dashed #ccc;
-    padding: 1.5rem;
-    border-radius: 4px;
 
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 24px;
-    }
-}

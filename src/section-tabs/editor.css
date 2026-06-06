@@ -1,18 +1,1 @@
-.observata-section-tabs-editor {
-	.tabs-editor-names {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: var(--spacing-20, 1rem);
-		margin-block: var(--spacing-20, 1rem);
-	}
 
-	.tabs-editor-nav {
-		margin-block: var(--spacing-20, 1rem);
-	}
-
-	.tabs-editor-content {
-		.block-editor-block-list__layout {
-			flex-direction: column !important;
-		}
-	}
-}
