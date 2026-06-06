@@ -14,7 +14,8 @@ import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
 const ALLOWED_BLOCKS = [
-    'observata/card-table-features',
+    'observata/card-text-intro',
+    'observata/card-table-features'
 ];
 
 const TAB_TEMPLATE = [

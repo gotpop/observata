@@ -49,23 +49,22 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
                     {[1, 2, 3].map((i) => (
                         <div
                             key={i}
-                            className={`editor-card${i === featuredPlan ? ' editor-card-highlighted' : ''`
-                                }`}
+                            className={'editor-card' + (i === featuredPlan ? ' editor-card-highlighted' : '')}
                         >
                             <TextControl
-                                label={__(`Plan ${i} Name`, 'observata')}
-                                value={attributes[`plan${ i }Name`]}
-                                onChange={(value) => setAttributes({ [`plan${ i }Name`]: value })}
+                                label={__('Plan ' + i + ' Name', 'observata')}
+                                value={attributes['plan' + i + 'Name']}
+                                onChange={(value) => setAttributes({ ['plan' + i + 'Name']: value })}
                             />
                             <TextControl
-                                label={__(`Plan ${ i } Price`, 'observata')}
-                                value={attributes[`plan${ i }Price`]}
-                                onChange={(value) => setAttributes({ [`plan${ i }Price`]: value })}
+                                label={__('Plan ' + i + ' Price', 'observata')}
+                                value={attributes['plan' + i + 'Price']}
+                                onChange={(value) => setAttributes({ ['plan' + i + 'Price']: value })}
                             />
                             <TextControl
-                                label={__(`Plan ${ i } Description`, 'observata')}
-                                value={attributes[`plan${ i }Description`]}
-                                onChange={(value) => setAttributes({ [`plan${ i }Description`]: value })}
+                                label={__('Plan ' + i + ' Description', 'observata')}
+                                value={attributes['plan' + i + 'Description']}
+                                onChange={(value) => setAttributes({ ['plan' + i + 'Description']: value })}
                             />
                         </div>
                     ))}
