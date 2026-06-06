@@ -34,12 +34,15 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
                 />
             </BlockLabel>
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
-
             <div className="cards-container">
                 <InnerBlocks
                     template={CARD_TEMPLATE}
                     allowedBlocks={['observata/card-micro']}
                     templateLock={false}
+                    __experimentalLayout={{
+                        type: 'grid',
+                        columnCount: 3,
+                    }}
                 />
             </div>
         </div>

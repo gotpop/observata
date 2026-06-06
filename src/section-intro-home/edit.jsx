@@ -32,19 +32,15 @@ export default function IntroEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ sectionBgColour: val })}
                 />
             </BlockLabel>
-
-            <div className="logo-strip is-placeholder">
-                <div className="logo-item"><span>AF</span></div>
-                <div className="logo-item"><span>Tele2</span></div>
-                <div className="logo-item"><span>Elastic</span></div>
-                <div className="logo-item"><span>CrowdStrike</span></div>
-            </div>
-
             <div className="block-content">
                 <InnerBlocks
                     allowedBlocks={['observata/card-geo']}
                     template={CARD_GEO_TEMPLATE}
                     templateLock="insert"
+                    __experimentalLayout={{
+                        type: 'grid',
+                        columnCount: 3,
+                    }}
                 />
             </div>
         </section>

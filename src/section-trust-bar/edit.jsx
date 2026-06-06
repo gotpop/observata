@@ -1,133 +1,49 @@
 import './editor.css';
 
-import { MediaUpload, useBlockProps } from '@wordpress/block-editor';
-
-import { Button } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { useBlockProps } from '@wordpress/block-editor';
 
 const LOGO_COUNT = 4;
 
 const DEFAULT_LOGOS = [
-    { src: '', alt: 'AF', file: 'af-logo.svg' },
-    { src: '', alt: 'Tele Dark', file: 'tele-dark-logo.svg' },
-    { src: '', alt: 'Elastic', file: 'elastic-logo.svg' },
-    { src: '', alt: 'Crowdstrike', file: 'crowdstrike-logo.svg' },
+    { alt: 'AF', file: 'af-logo.svg' },
+    { alt: 'Tele Dark', file: 'tele-dark-logo.svg' },
+    { alt: 'Elastic', file: 'elastic-logo.svg' },
+    { alt: 'Crowdstrike', file: 'crowdstrike-logo.svg' },
 ];
 
 function getTemplateUrl() {
     return window.observata?.templateUrl || '';
 }
 
-export default function SectionTrustBarEdit({ attributes, setAttributes }) {
-    const { logos } = attributes;
-    const blockProps = useBlockProps({ className: 'section-trust-bar' });
-
-    const logosArray = Array.isArray(logos) ? logos : [];
-    const paddedLogos = [...logosArray];
-    while (paddedLogos.length < LOGO_COUNT) {
-        paddedLogos.push({ src: '', alt: '' });
-    }
-
-    const updateLogo = (index, value) => {
-        const updated = [...paddedLogos];
-        updated[index] = { ...updated[index], ...value };
-        setAttributes({ logos: updated });
-    };
-
-    const removeLogo = (index) => {
-        const updated = [...paddedLogos];
-        updated[index] = { src: '', alt: '' };
-        setAttributes({ logos: updated });
-    };
-
-    const getLogoSrc = (logo, index) => {
-        if (logo.src) {
-            return logo.src;
-        }
-        const fallback = DEFAULT_LOGOS[index];
-        if (fallback) {
-            return `${getTemplateUrl()}/assets/svg/logos/bar/${fallback.file}`;
-        }
-        return '';
-    };
-
-    const getLogoAlt = (logo, index) => {
-        if (logo.alt) {
-            return logo.alt;
-        }
-        const fallback = DEFAULT_LOGOS[index];
-        return fallback ? fallback.alt : '';
-    };
+export default function SectionTrustBarEdit() {
+    const blockProps = useBlockProps({
+        className: 'section-trust-bar',
+        style: {
+            display: 'grid',
+            gridTemplateColumns: `repeat(${LOGO_COUNT}, minmax(0, 1fr))`,
+            gap: '2rem',
+            alignItems: 'center',
+        },
+    });
 
     return (
         <div {...blockProps}>
-            <BlockLabel name="Section Trust Bar" />
-            <div className="block-content">
-                {paddedLogos.map((logo, index) => {
-                    const src = getLogoSrc(logo, index);
-                    const alt = getLogoAlt(logo, index);
-                    const isCustom = !!logo.src;
-
-                    return (
-                        <div key={index} className="section-trust-bar__item">
-                            {src && (
-                                <div className="section-trust-bar__preview">
-                                    <img
-                                        src={src}
-                                        alt={alt}
-                                        className={isCustom ? 'is-custom' : 'is-default'}
-                                    />
-                                    <div className="section-trust-bar__actions">
-                                        <MediaUpload
-                                            onSelect={(media) =>
-                                                updateLogo(index, {
-                                                    src: media.url,
-                                                    alt: media.alt || media.title || '',
-                                                })
-                                            }
-                                            allowedTypes={['image']}
-                                            render={({ open }) => (
-                                                <Button variant="link" onClick={open}>
-                                                    {__('Replace', 'observata')}
-                                                </Button>
-                                            )}
-                                        />
-                                        {isCustom && (
-                                            <Button
-                                                variant="link"
-                                                isDestructive
-                                                onClick={() => removeLogo(index)}
-                                            >
-                                                {__('Remove', 'observata')}
-                                            </Button>
-                                        )}
-                                    </div>
-                                </div>
-                            )}
-                            {!src && (
-                                <div className="section-trust-bar__placeholder">
-                                    <span>{__('Logo', 'observata')} {index + 1}</span>
-                                    <MediaUpload
-                                        onSelect={(media) =>
-                                            updateLogo(index, {
-                                                src: media.url,
-                                                alt: media.alt || media.title || '',
-                                            })
-                                        }
-                                        allowedTypes={['image']}
-                                        render={({ open }) => (
-                                            <Button variant="primary" onClick={open}>
-                                                {__('Add Logo', 'observata')}
-                                            </Button>
-                                        )}
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    );
-                })}
+            <div style={{ gridColumn: `1 / -1` }}>
+                <BlockLabel name="Section Trust Bar" />
             </div>
+            {DEFAULT_LOGOS.slice(0, LOGO_COUNT).map((logo, index) => {
+                const src = `${getTemplateUrl()}/assets/svg/logos/bar/${logo.file}`;
+
+                return (
+                    <div key={index} className="section-trust-bar-item">
+                        <img src={src} alt={logo.alt} style={{
+                            maxWidth: '120px',
+                            maxHeight: '30px'
+                        }} />
+                    </div>
+                );
+            })}
         </div>
     );
 }

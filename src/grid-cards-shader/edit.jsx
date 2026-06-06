@@ -41,6 +41,10 @@ export default function Edit({ attributes, setAttributes }) {
                     template={CARD_TEMPLATE}
                     templateLock={false}
                     allowedBlocks={['observata/card-geo-shader']}
+                    __experimentalLayout={{
+                        type: 'grid',
+                        columnCount: 2,
+                    }}
                 />
             </div>
         </div>

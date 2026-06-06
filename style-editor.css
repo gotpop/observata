@@ -34,4 +34,9 @@ p,
 .wp-block:not(.wp-block-post-title) {
 	padding: var(--spacing-md);
 	border: 1px solid var(--colour-grey-100);
+	margin-block: 0 var(--spacing-md);
+}
+
+.block-editor-inner-blocks {
+	margin-block: 0 var(--spacing-md);
 }

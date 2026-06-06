@@ -3,6 +3,9 @@ observata-block-label {
 	align-items: center;
 	gap: var(--spacing-xs);
 	margin-block-end: var(--spacing-md);
+	text-transform: uppercase;
+	color: var(--colour-grey-300);
+	font-size: 14px;
 
 	.block-editor-inner-blocks & {
 		--label-colour-bg: var(--wp--preset--color--pale-cyan-blue);
@@ -10,8 +13,8 @@ observata-block-label {
 
 	&::before {
 		content: '';
-		width: 16px;
-		height: 16px;
+		width: 14px;
+		height: 14px;
 		background-color: rgb(26, 255, 0);
 		background-color: var(--label-colour-bg, var(--wp-admin-theme-color));
 		position: relative;

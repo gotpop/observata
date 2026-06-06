@@ -7,7 +7,13 @@
     "description": "Intro section with logo strip and feature cards. Add Card with Geo Icon blocks inside.",
     "supports": {
         "html": false,
-        "multiple": false
+        "multiple": false,
+        "layout": {
+            "default": {
+                "type": "grid",
+                "columnCount": 3
+            }
+        }
     },
     "attributes": {
         "sectionTitle": {

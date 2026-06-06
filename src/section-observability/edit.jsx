@@ -34,9 +34,18 @@ export default function Edit({ attributes, setAttributes }) {
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
             <article className="card-large">
+                <div className="cards-micro">
+                    <InnerBlocks
+                        template={CARD_TEMPLATE}
+                        templateLock="all"
+                        allowedBlocks={['observata/card-micro']}
+                        __experimentalLayout={{
+                            type: 'grid',
+                            columnCount: 3,
+                        }}
+                    />
+                </div>
                 <div className="card-large-editor">
-                    <label className="label">{__('Card Title', 'observata')}</label>
-                    <label className="label">{__('Card Body', 'observata')}</label>
                     <RichText
                         tagName="h4"
                         className="heading-md"
@@ -54,13 +63,6 @@ export default function Edit({ attributes, setAttributes }) {
                         placeholder={__('Card body…', 'observata')}
                         disableLineBreaks
                         allowedFormats={[]}
-                    />
-                </div>
-                <div className="cards-micro">
-                    <InnerBlocks
-                        template={CARD_TEMPLATE}
-                        templateLock="all"
-                        allowedBlocks={['observata/card-micro']}
                     />
                 </div>
             </article>

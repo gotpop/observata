@@ -7,7 +7,13 @@
     "description": "Multi-card shader grid section.",
     "supports": {
         "html": false,
-        "multiple": false
+        "multiple": false,
+        "layout": {
+            "default": {
+                "type": "grid",
+                "columnCount": 2
+            }
+        }
     },
     "attributes": {
         "sectionTitle": {
