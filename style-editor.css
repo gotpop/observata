@@ -6,6 +6,7 @@
  */
 
 :root {
+	--colour-light: white;
 	--colour-grey-100: #e5e7ea;
 	--colour-grey-200: #6e6e6e;
 	--colour-grey-300: #252525;
@@ -39,4 +40,8 @@ p,
 
 .block-editor-inner-blocks {
 	margin-block: 0 var(--spacing-md);
+}
+
+.block-list-appender {
+	background-color: var(--colour-light);
 }
