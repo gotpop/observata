@@ -26,17 +26,16 @@
 				</button>
 			{% endfor %}
 		</div>
-
 		<div class="tabs-content">
 			{% for i in 1..tab_count %}
 				{% set is_active = active_tab == i %}
 				<div
-					class="tab-content {% if is_active %}is-active{% endif %}"
-					role="tabpanel"
-					id="{{ group_name }}-panel-{{ i }}"
 					aria-labelledby="{{ group_name }}-tab-{{ i }}"
-					{% if not is_active %}hidden{% endif %}
-					data-panel="{{ i }}">
+					class="tab-content {% if is_active %}is-active{% endif %}"
+					data-panel="{{ i }}"
+					id="{{ group_name }}-panel-{{ i }}"
+					role="tabpanel"
+					{% if not is_active %}hidden{% endif %}>
 					{% if renderedInnerBlocks['tab' ~ i] is defined %}
 						{{ renderedInnerBlocks['tab' ~ i]|raw }}
 					{% endif %}
