@@ -2,6 +2,7 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl } from '@wordpress/components';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
 
@@ -55,17 +56,19 @@ export default function SectionCtaEdit({ attributes, setAttributes }) {
                     disableLineBreaks
                     allowedFormats={[]}
                 />
-                <TextControl
-                    label={__('CTA Text (optional)', 'observata')}
-                    value={ctaText}
-                    onChange={(val) => setAttributes({ ctaText: val })}
-                />
-                <SelectControl
-                    label={__('CTA Link (optional)', 'observata')}
-                    value={ctaUrl}
-                    options={pageOptions}
-                    onChange={(val) => setAttributes({ ctaUrl: val })}
-                />
+                <ControlsLayout layout="horizontal" gap="1rem">
+                    <TextControl
+                        label={__('CTA Text (optional)', 'observata')}
+                        value={ctaText}
+                        onChange={(val) => setAttributes({ ctaText: val })}
+                    />
+                    <SelectControl
+                        label={__('CTA Link (optional)', 'observata')}
+                        value={ctaUrl}
+                        options={pageOptions}
+                        onChange={(val) => setAttributes({ ctaUrl: val })}
+                    />
+                </ControlsLayout>
             </div>
         </section>
     );

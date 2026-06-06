@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const ROW_TEMPLATE = [
     ['observata/element-table-simple-row', { rowLabel: '', column2Value: '', column3Value: '' }],
@@ -16,9 +16,6 @@ export default function CardTableSimpleEdit({ attributes, setAttributes }) {
     return (
         <div {...blockProps}>
             <BlockLabel name="Card Table Simple">
-            </BlockLabel>
-
-            <div className="card-table-simple-editor__columns">
                 <TextControl
                     label={__('Column 1 Label', 'observata')}
                     value={attributes.column1Label}
@@ -34,7 +31,8 @@ export default function CardTableSimpleEdit({ attributes, setAttributes }) {
                     value={attributes.column3Label}
                     onChange={(value) => setAttributes({ column3Label: value })}
                 />
-            </div>
+            </BlockLabel>
+
 
             <div className="card-table-simple-editor__rows">
                 <strong>{__('Table Rows (drag to reorder)', 'observata')}</strong>
