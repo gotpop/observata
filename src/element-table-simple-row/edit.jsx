@@ -15,7 +15,6 @@ export default function ElementTableSimpleRowEdit({ attributes, setAttributes })
             <BlockLabel name="Element Table Row" />
 
             <EditorColumns columns={3}>
-
                 <TextControl
                     label={__('Column 1 (Label)', 'observata')}
                     value={rowLabel}

@@ -2,9 +2,9 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import BlockLabel from '../components/block-label';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import BlockLabel from '../components/block-label';
 
 const GRAPHIC_OPTIONS = [
     { label: '1', value: '1' },
@@ -69,12 +69,6 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
 
             <div className="block-content">
                 <div className="section-card-and-graphic__inner">
-                    <div className="section-card-and-graphic__visual">
-                        <img
-                            src={`${window.observata?.templateUrl || ''}/assets/svg/graphics/${graphic}-graphic.svg`}
-                            alt={`${graphic} graphic`}
-                        />
-                    </div>
                     <div className="section-card-and-graphic__body">
                         <InnerBlocks
                             template={CARD_TEMPLATE}
