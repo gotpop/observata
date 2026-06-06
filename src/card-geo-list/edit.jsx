@@ -3,10 +3,11 @@ import './editor.css';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
-import { useSelect } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import GeoIcon from '../components/geo-icon';
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 
 const iconOptions = Array.from({ length: 30 }, (_, i) => {
     const num = String(i + 1).padStart(2, '0');
@@ -68,32 +69,34 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
                         />
                     </li>
                 </ul>
-                <SelectControl
-                    label={__('Icon', 'observata')}
-                    value={iconGeo}
-                    options={iconOptions}
-                    onChange={(val) => setAttributes({ iconGeo: val })}
-                />
-                <ToggleControl
-                    label={__('Show Read More Link', 'observata')}
-                    checked={showReadMore}
-                    onChange={(val) => setAttributes({ showReadMore: val })}
-                />
-                {showReadMore && (
-                    <>
-                        <TextControl
-                            label={__('Read More Text', 'observata')}
-                            value={readMoreText}
-                            onChange={(val) => setAttributes({ readMoreText: val })}
-                        />
-                        <SelectControl
-                            label={__('Read More Link', 'observata')}
-                            value={readMoreUrl}
-                            options={pageOptions}
-                            onChange={(val) => setAttributes({ readMoreUrl: val })}
-                        />
-                    </>
-                )}
+                <ControlsLayout layout="vertical" gap="1rem">
+                    <SelectControl
+                        label={__('Icon', 'observata')}
+                        value={iconGeo}
+                        options={iconOptions}
+                        onChange={(val) => setAttributes({ iconGeo: val })}
+                    />
+                    <ToggleControl
+                        label={__('Show Read More Link', 'observata')}
+                        checked={showReadMore}
+                        onChange={(val) => setAttributes({ showReadMore: val })}
+                    />
+                    {showReadMore && (
+                        <>
+                            <TextControl
+                                label={__('Read More Text', 'observata')}
+                                value={readMoreText}
+                                onChange={(val) => setAttributes({ readMoreText: val })}
+                            />
+                            <SelectControl
+                                label={__('Read More Link', 'observata')}
+                                value={readMoreUrl}
+                                options={pageOptions}
+                                onChange={(val) => setAttributes({ readMoreUrl: val })}
+                            />
+                        </>
+                    )}
+                </ControlsLayout>
             </div>
         </article>
     );
