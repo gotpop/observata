@@ -92,6 +92,8 @@
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
+	max-width: var(--max-width-body-md, initial);
+	text-align: var(--align-body-md, left);
 	text-wrap: pretty;
 
 	@media (width >=40rem) {
@@ -104,6 +106,8 @@
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-md);
+	max-width: var(--max-width-body-md, initial);
+	text-align: var(--align-body-md, left);
 	text-wrap: pretty;
 }
 
@@ -112,5 +116,7 @@
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
+	max-width: var(--max-width-body-md, initial);
+	text-align: var(--align-body-md, left);
 	text-wrap: pretty;
 }

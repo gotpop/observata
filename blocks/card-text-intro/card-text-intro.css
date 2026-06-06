@@ -5,17 +5,12 @@
 	grid-template-rows: min-content;
 	grid-column: 1 / -1;
 
-	&.card-text-intro--center {
+	&.card-text-intro-center {
 		justify-items: center;
 
-		.card-text-intro-title,
-		.card-text-intro-text {
-			text-align: center;
-		}
-
-		.card-text-intro-text {
-			max-width: 60ch;
-			text-wrap: pretty;
+		.body-md {
+			--align-body-md: center;
+			--max-width-body-md: 60ch;
 		}
 	}
 }
