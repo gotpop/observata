@@ -1,24 +1,10 @@
 import './editor.css';
 
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 import { TextControl, ToggleControl } from '@wordpress/components';
 
-import BlockLabel from '../components/block-label';
 import { __ } from '@wordpress/i18n';
-
-const ROW_TEMPLATE = [
-    ['observata/plan-features-row', { featureName: 'Elastic licensing', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Real-time monitoring', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Log aggregation', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Custom dashboards', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Alerting & notifications', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'API access', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: '30-day retention', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Advanced analytics', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Custom integrations', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'Dedicated support', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
-    ['observata/plan-features-row', { featureName: 'SLA guarantee', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' }],
-];
+import BlockLabel from '../components/block-label';
 
 export default function PlanFeaturesTableEdit({ attributes, setAttributes }) {
     const { showPlanCards } = attributes;
@@ -90,14 +76,6 @@ export default function PlanFeaturesTableEdit({ attributes, setAttributes }) {
                 </div>
             )}
 
-            <div className="plan-features-table-editor__rows">
-                <strong>{__('Feature Rows (drag to reorder)', 'observata')}</strong>
-                <InnerBlocks
-                    template={ROW_TEMPLATE}
-                    allowedBlocks={['observata/plan-features-row']}
-                    templateLock={false}
-                />
-            </div>
         </div>
     );
 }

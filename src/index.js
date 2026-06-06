@@ -29,8 +29,6 @@ import gridCardsPhotoMetadata from '../blocks/grid-cards-photo/block.json';
 import gridCardsShaderMetadata from '../blocks/grid-cards-shader/block.json';
 import gridCardsSimpleMetadata from '../blocks/grid-cards-simple/block.json';
 import gridFlexibleContentMetadata from '../blocks/grid-flexible-content/block.json';
-import planFeaturesRowMetadata from '../blocks/plan-features-row/block.json';
-import planFeaturesTableMetadata from '../blocks/plan-features-table/block.json';
 import blogPaginationMetadata from '../blocks/section-blog-pagination/block.json';
 import blogPostsMetadata from '../blocks/section-blog-posts/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/section-card-and-graphic/block.json';
@@ -110,10 +108,6 @@ import GridCardsSimpleEdit from './grid-cards-simple/edit';
 import GridCardsSimpleSave from './grid-cards-simple/save';
 import GridFlexibleContentEdit from './grid-flexible-content/edit';
 import GridFlexibleContentSave from './grid-flexible-content/save';
-import PlanFeaturesRowEdit from './plan-features-row/edit';
-import PlanFeaturesRowSave from './plan-features-row/save';
-import PlanFeaturesTableEdit from './plan-features-table/edit';
-import PlanFeaturesTableSave from './plan-features-table/save';
 import BlogPaginationEdit from './section-blog-pagination/edit';
 import BlogPaginationSave from './section-blog-pagination/save';
 import BlogPostsEdit from './section-blog-posts/edit';
@@ -301,16 +295,6 @@ registerBlockType(gridCardsGeoTechMetadata.name, {
 registerBlockType(planMetadata.name, {
     edit: PlanEdit,
     save: PlanSave,
-});
-
-registerBlockType(planFeaturesTableMetadata.name, {
-    edit: PlanFeaturesTableEdit,
-    save: PlanFeaturesTableSave,
-});
-
-registerBlockType(planFeaturesRowMetadata.name, {
-    edit: PlanFeaturesRowEdit,
-    save: PlanFeaturesRowSave,
 });
 
 registerBlockType(cardTableSimpleMetadata.name, {
