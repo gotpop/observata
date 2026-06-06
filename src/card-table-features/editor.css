@@ -30,3 +30,7 @@
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
+
+.observata-section-tabs-editor .block-editor-block-list__layout {
+	flex-direction: column !important;
+}
