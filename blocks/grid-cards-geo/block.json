@@ -7,13 +7,7 @@
     "description": "Grid section with geo card blocks. Add Card with Geo Icon blocks inside.",
     "supports": {
         "html": false,
-        "multiple": true,
-        "layout": {
-            "default": {
-                "type": "grid",
-                "columnCount": 2
-            }
-        }
+        "multiple": true
     },
     "attributes": {
         "sectionTitle": {

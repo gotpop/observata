@@ -7,13 +7,7 @@
     "description": "Sub-page intro section with feature cards containing lists, icons, and a graphic element.",
     "supports": {
         "html": false,
-        "multiple": false,
-        "layout": {
-            "default": {
-                "type": "grid",
-                "columnCount": 2
-            }
-        }
+        "multiple": false
     },
     "attributes": {
         "graphic": {

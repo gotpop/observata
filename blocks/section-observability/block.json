@@ -7,13 +7,7 @@
     "description": "Observability section.",
     "supports": {
         "html": false,
-        "multiple": false,
-        "layout": {
-            "default": {
-                "type": "grid",
-                "columnCount": 3
-            }
-        }
+        "multiple": false
     },
     "attributes": {
         "sectionTitle": {
