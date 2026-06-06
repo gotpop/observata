@@ -4,6 +4,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { __ } from '@wordpress/i18n';
 
 const ROW_TEMPLATE = [
@@ -35,7 +36,7 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
             </BlockLabel>
 
             {showPlanCards && (
-                <div className="editor-cards">
+                <ControlsLayout layout="vertical" gap="1rem">
                     <SelectControl
                         label={__('Featured Plan', 'observata')}
                         value={featuredPlan}
@@ -46,33 +47,34 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
                         ]}
                         onChange={(value) => setAttributes({ featuredPlan: parseInt(value) })}
                     />
-                    {[1, 2, 3].map((i) => (
-                        <div
-                            key={i}
-                            className={'editor-card' + (i === featuredPlan ? ' editor-card-highlighted' : '')}
-                        >
-                            <TextControl
-                                label={__('Plan ' + i + ' Name', 'observata')}
-                                value={attributes['plan' + i + 'Name']}
-                                onChange={(value) => setAttributes({ ['plan' + i + 'Name']: value })}
-                            />
-                            <TextControl
-                                label={__('Plan ' + i + ' Price', 'observata')}
-                                value={attributes['plan' + i + 'Price']}
-                                onChange={(value) => setAttributes({ ['plan' + i + 'Price']: value })}
-                            />
-                            <TextControl
-                                label={__('Plan ' + i + ' Description', 'observata')}
-                                value={attributes['plan' + i + 'Description']}
-                                onChange={(value) => setAttributes({ ['plan' + i + 'Description']: value })}
-                            />
-                        </div>
-                    ))}
-                </div>
+                    <ControlsLayout columns={3} gap="1rem">
+                        {[1, 2, 3].map((i) => (
+                            <div
+                                key={i}
+                                className={'editor-card' + (i === featuredPlan ? ' editor-card-highlighted' : '')}
+                            >
+                                <TextControl
+                                    label={__('Plan ' + i + ' Name', 'observata')}
+                                    value={attributes['plan' + i + 'Name']}
+                                    onChange={(value) => setAttributes({ ['plan' + i + 'Name']: value })}
+                                />
+                                <TextControl
+                                    label={__('Plan ' + i + ' Price', 'observata')}
+                                    value={attributes['plan' + i + 'Price']}
+                                    onChange={(value) => setAttributes({ ['plan' + i + 'Price']: value })}
+                                />
+                                <TextControl
+                                    label={__('Plan ' + i + ' Description', 'observata')}
+                                    value={attributes['plan' + i + 'Description']}
+                                    onChange={(value) => setAttributes({ ['plan' + i + 'Description']: value })}
+                                />
+                            </div>
+                        ))}
+                    </ControlsLayout>
+                </ControlsLayout>
             )}
 
             <div className="editor-rows">
-                <strong>{__('Feature Rows (drag to reorder)', 'observata')}</strong>
                 <InnerBlocks
                     // template={ROW_TEMPLATE}
                     allowedBlocks={['observata/element-table-features-row']}

@@ -3,6 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import SectionIntro from '../components/section-intro';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
@@ -34,17 +35,13 @@ export default function GridCardsMicroEdit({ attributes, setAttributes }) {
                 />
             </BlockLabel>
             <SectionIntro attributes={attributes} setAttributes={setAttributes} />
-            <div className="cards-container">
+            <ControlsLayout columns={3} gap="1rem">
                 <InnerBlocks
                     template={CARD_TEMPLATE}
                     allowedBlocks={['observata/card-micro']}
                     templateLock={false}
-                    __experimentalLayout={{
-                        type: 'grid',
-                        columnCount: 3,
-                    }}
                 />
-            </div>
+            </ControlsLayout>
         </div>
     );
 }

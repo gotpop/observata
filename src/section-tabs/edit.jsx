@@ -10,6 +10,7 @@ import {
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
@@ -131,8 +132,7 @@ export default function SectionTabsEdit({ attributes, setAttributes, clientId })
                     onChange={(val) => setAttributes({ activeTab: val })}
                 />
             </BlockLabel>
-
-            <div className="tabs-editor-names">
+            <ControlsLayout layout='horizontal'>
                 {visibleTabs.map((tab) => (
                     <TextControl
                         key={tab.n}
@@ -144,8 +144,7 @@ export default function SectionTabsEdit({ attributes, setAttributes, clientId })
                         }
                     />
                 ))}
-            </div>
-
+            </ControlsLayout>
             <div className="tabs-editor-nav">
                 <ButtonGroup>
                     {visibleTabs.map((tab) => (

@@ -3,6 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -32,17 +33,13 @@ export default function IntroEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ sectionBgColour: val })}
                 />
             </BlockLabel>
-            <div className="block-content">
+            <ControlsLayout columns={3} gap="1rem">
                 <InnerBlocks
                     allowedBlocks={['observata/card-geo']}
                     template={CARD_GEO_TEMPLATE}
                     templateLock="insert"
-                    __experimentalLayout={{
-                        type: 'grid',
-                        columnCount: 3,
-                    }}
                 />
-            </div>
+            </ControlsLayout>
         </section>
     );
 }

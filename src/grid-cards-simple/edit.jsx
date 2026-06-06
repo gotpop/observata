@@ -3,6 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -31,17 +32,13 @@ export default function GridCardsSimpleEdit({ attributes, setAttributes }) {
                 />
             </BlockLabel>
 
-            <div className="cards-container">
+            <ControlsLayout columns={3} gap="1rem">
                 <InnerBlocks
                     template={CARD_SIMPLE_TEMPLATE}
                     templateLock={false}
                     allowedBlocks={['observata/card-simple']}
-                    __experimentalLayout={{
-                        type: 'grid',
-                        columnCount: 3,
-                    }}
                 />
-            </div>
+            </ControlsLayout>
         </div>
     );
 }

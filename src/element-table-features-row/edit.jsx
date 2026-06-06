@@ -1,6 +1,7 @@
 import { SelectControl, TextControl } from '@wordpress/components';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -16,36 +17,31 @@ export default function ElementTableFeaturesRowEdit({ attributes, setAttributes 
     return (
         <div {...blockProps}>
             <BlockLabel name="Feature Row" />
-
-            <div className="element-table-features-row-editor__controls">
+            <ControlsLayout columns={4} gap="1rem">
                 <TextControl
                     label={__('Feature Name', 'observata')}
                     value={featureName}
                     onChange={(val) => setAttributes({ featureName: val })}
                     placeholder={__('e.g. Log retention', 'observata')}
                 />
-
-                <div className="element-table-features-row-editor__selects">
-                    <SelectControl
-                        label={__('Plan 1', 'observata')}
-                        value={plan1Value}
-                        options={VALUE_OPTIONS}
-                        onChange={(val) => setAttributes({ plan1Value: val })}
-                    />
-                    <SelectControl
-                        label={__('Plan 2', 'observata')}
-                        value={plan2Value}
-                        options={VALUE_OPTIONS}
-                        onChange={(val) => setAttributes({ plan2Value: val })}
-                    />
-                    <SelectControl
-                        label={__('Plan 3', 'observata')}
-                        value={plan3Value}
-                        options={VALUE_OPTIONS}
-                        onChange={(val) => setAttributes({ plan3Value: val })}
-                    />
-                </div>
-            </div>
+                <SelectControl
+                    label={__('Plan 1', 'observata')}
+                    value={plan1Value}
+                    options={VALUE_OPTIONS}
+                    onChange={(val) => setAttributes({ plan1Value: val })}
+                />
+                <SelectControl
+                    label={__('Plan 2', 'observata')}
+                    value={plan2Value}
+                    options={VALUE_OPTIONS}
+                    onChange={(val) => setAttributes({ plan2Value: val })}
+                />
+                <SelectControl
+                    label={__('Plan 3', 'observata')}
+                    value={plan3Value}
+                    options={VALUE_OPTIONS}
+                    onChange={(val) => setAttributes({ plan3Value: val })} />
+            </ControlsLayout>
         </div>
     );
 }

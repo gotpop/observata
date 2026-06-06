@@ -3,6 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -30,17 +31,13 @@ export default function GridCardsGeoEdit({ attributes, setAttributes }) {
                 />
             </BlockLabel>
 
-            <div className="cards-container">
+            <ControlsLayout columns={2} gap="1rem">
                 <InnerBlocks
                     template={CARD_GEO_LIST_TEMPLATE}
                     templateLock={false}
                     allowedBlocks={['observata/card-geo-list']}
-                    __experimentalLayout={{
-                        type: 'grid',
-                        columnCount: 2,
-                    }}
                 />
-            </div>
+            </ControlsLayout>
         </div>
     );
 }

@@ -3,6 +3,7 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import ControlsLayout from '../components/controls-layout';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -56,17 +57,13 @@ export default function SectionIntroPageEdit({ attributes, setAttributes }) {
                     onChange={(val) => setAttributes({ shaderColour: val })}
                 />
             </BlockLabel>
-            <div className="intro-page-cards">
+            <ControlsLayout columns={2} gap="1rem">
                 <InnerBlocks
                     template={CARD_TEMPLATE}
                     allowedBlocks={['observata/card-geo-list']}
                     templateLock={false}
-                    __experimentalLayout={{
-                        type: 'grid',
-                        columnCount: 2,
-                    }}
                 />
-            </div>
+            </ControlsLayout>
         </section>
     );
 }
