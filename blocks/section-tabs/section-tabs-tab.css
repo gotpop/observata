@@ -29,10 +29,3 @@
 		}
 	}
 }
-
-@media screen and (width < 40em) {
-	.tab {
-		padding: var(--spacing-15) var(--spacing-15);
-		font-size: var(--typography-size-14);
-	}
-}
