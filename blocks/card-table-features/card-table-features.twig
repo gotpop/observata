@@ -16,7 +16,11 @@
 					plan_name: attribute(attributes, 'plan' ~ i ~ 'Name'),
 					plan_price: attribute(attributes, 'plan' ~ i ~ 'Price'),
 					plan_description: attribute(attributes, 'plan' ~ i ~ 'Description'),
-					highlighted: i == featured_plan
+					highlighted: i == featured_plan,
+					plan_icon: attribute(attributes, 'plan' ~ i ~ 'Icon'),
+					show_read_more: attribute(attributes, 'plan' ~ i ~ 'ShowReadMore'),
+					read_more_text: attribute(attributes, 'plan' ~ i ~ 'ReadMoreText'),
+					read_more_url: attribute(attributes, 'plan' ~ i ~ 'ReadMoreUrl')
 				} %}
 			{% endfor %}
 		</card-plans>

@@ -64,6 +64,54 @@
         "featuredPlan": {
             "type": "number",
             "default": 2
+        },
+        "plan1Icon": {
+            "type": "string",
+            "default": "01"
+        },
+        "plan1ShowReadMore": {
+            "type": "boolean",
+            "default": false
+        },
+        "plan1ReadMoreText": {
+            "type": "string",
+            "default": ""
+        },
+        "plan1ReadMoreUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "plan2Icon": {
+            "type": "string",
+            "default": "02"
+        },
+        "plan2ShowReadMore": {
+            "type": "boolean",
+            "default": false
+        },
+        "plan2ReadMoreText": {
+            "type": "string",
+            "default": ""
+        },
+        "plan2ReadMoreUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "plan3Icon": {
+            "type": "string",
+            "default": "03"
+        },
+        "plan3ShowReadMore": {
+            "type": "boolean",
+            "default": false
+        },
+        "plan3ReadMoreText": {
+            "type": "string",
+            "default": ""
+        },
+        "plan3ReadMoreUrl": {
+            "type": "string",
+            "default": ""
         }
     },
     "editorScript": "file:../../build/index.js",

@@ -6,6 +6,12 @@ import { SelectControl, TextControl, ToggleControl } from '@wordpress/components
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
 import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
+
+const ICON_OPTIONS = Array.from({ length: 30 }, (_, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return { label: num, value: num };
+});
 
 const ROW_TEMPLATE = [
     ['observata/element-table-features-row', { featureName: 'Elastic licensing', plan1Value: 'check', plan2Value: 'check', plan3Value: 'check' }],
@@ -24,6 +30,18 @@ const ROW_TEMPLATE = [
 export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
     const { showPlanCards, featuredPlan } = attributes;
     const blockProps = useBlockProps({ className: 'card-table-features-editor' });
+
+    const pages = useSelect((select) => {
+        return select('core').getEntityRecords('postType', 'page', { per_page: -1, _fields: ['id', 'title', 'link'] }) || [];
+    }, []);
+
+    const pageOptions = [
+        { label: __('Select a page...', 'observata'), value: '' },
+        ...pages.map((page) => ({
+            label: page.title.rendered,
+            value: page.link,
+        })),
+    ];
 
     return (
         <div {...blockProps}>
@@ -68,6 +86,32 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
                                     value={attributes['plan' + i + 'Description']}
                                     onChange={(value) => setAttributes({ ['plan' + i + 'Description']: value })}
                                 />
+                                <SelectControl
+                                    label={__('Plan ' + i + ' Icon', 'observata')}
+                                    value={attributes['plan' + i + 'Icon']}
+                                    options={ICON_OPTIONS}
+                                    onChange={(val) => setAttributes({ ['plan' + i + 'Icon']: val })}
+                                />
+                                <ToggleControl
+                                    label={__('Show Read More Link', 'observata')}
+                                    checked={attributes['plan' + i + 'ShowReadMore']}
+                                    onChange={(val) => setAttributes({ ['plan' + i + 'ShowReadMore']: val })}
+                                />
+                                {attributes['plan' + i + 'ShowReadMore'] && (
+                                    <>
+                                        <TextControl
+                                            label={__('Read More Text', 'observata')}
+                                            value={attributes['plan' + i + 'ReadMoreText']}
+                                            onChange={(val) => setAttributes({ ['plan' + i + 'ReadMoreText']: val })}
+                                        />
+                                        <SelectControl
+                                            label={__('Read More Link', 'observata')}
+                                            value={attributes['plan' + i + 'ReadMoreUrl']}
+                                            options={pageOptions}
+                                            onChange={(val) => setAttributes({ ['plan' + i + 'ReadMoreUrl']: val })}
+                                        />
+                                    </>
+                                )}
                             </div>
                         ))}
                     </ControlsLayout>
