@@ -7,9 +7,7 @@
 {% set icon_geo = plan_icon|default('01') %}
 
 <article class="{{ classes }} icon-{{ icon_geo }}">
-	<div class="icon-geo">
-		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	</div>
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	<h3 class="plan-title">
 		{{ plan_name }}
 	</h3>
