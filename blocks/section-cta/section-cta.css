@@ -24,6 +24,8 @@
 	}
 
 	.heading-lg {
+		--align-heading-lg: center;
+
 		max-width: 24ch;
 		text-wrap: balance;
 	}
