@@ -24,12 +24,20 @@ class SectionTabs {
 			t.tabIndex = active ? 0 : -1;
 		});
 
-		this.panels.forEach((p) => {
-			const active = p.dataset.panel === target;
-			p.classList.toggle('is-active', active);
-			if (active) p.removeAttribute('hidden');
-			else p.setAttribute('hidden', '');
-		});
+		const update = () => {
+			this.panels.forEach((p) => {
+				const active = p.dataset.panel === target;
+				p.classList.toggle('is-active', active);
+				if (active) p.removeAttribute('hidden');
+				else p.setAttribute('hidden', '');
+			});
+		};
+
+		if (document.startViewTransition) {
+			document.startViewTransition(update);
+		} else {
+			update();
+		}
 	}
 
 	private onKeydown(e: KeyboardEvent, tab: HTMLButtonElement): void {
