@@ -22,7 +22,7 @@
 		@media (width < 40rem) {
 			-webkit-overflow-scrolling: touch;
 
-			.table-features {
+			.table-inner {
 				min-width: 40rem;
 			}
 		}
