@@ -1,42 +1,44 @@
 .table-features-row {
 	display: table-row;
-	border-bottom: var(--border-grey);
+	border-block-end: var(--border-row, var(--border-grey));
+	transition: background 0.3s ease-in-out;
+	background-color: var(--bg-row, transparent);
 
 	&:nth-child(odd) {
-		background: var(--colour-neutral-100);
+		--bg-row: var(--colour-neutral-100);
 	}
 
 	&:last-child {
-		border-bottom: none;
+		border-block-end: none;
+	}
+
+	&:hover {
+		--bg-row: var(--colour-neutral-200);
+
+		.in-view & {
+			transition-delay: 0s;
+		}
 	}
 
 	.name {
 		--align-table-cell: left;
-
-		padding-inline: var(--spacing-24) var(--spacing-16);
+		--padding-inline: var(--spacing-32) var(--spacing-16);
 	}
 
-	.value-check {
-		color: var(--colour-secondary-600);
+	.icon {
+		--size: 1.8rem;
 
-		svg {
-			margin: 0 auto;
-			width: 40px;
-			height: 40px;
-			display: flex;
-			align-self: center;
-		}
-	}
+		color: var(--colour-icon);
+		position: absolute;
+		inset: 50% auto auto 50%;
+		translate: -50% -50%;
 
-	.value-dash {
-		.dash {
-			font-size: var(--typography-size-32);
-			color: var(--colour-neutral-500);
+		.value-check & {
+			--colour-icon: var(--colour-secondary-600);
 		}
 
-		svg {
-			width: 40px;
-			height: 40px;
+		.value-dash & {
+			--colour-icon: var(--colour-neutral-500);
 		}
 	}
 }

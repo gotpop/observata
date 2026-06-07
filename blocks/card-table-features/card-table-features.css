@@ -18,7 +18,7 @@
 		@media (width < 40rem) {
 			-webkit-overflow-scrolling: touch;
 
-			.features-table {
+			.table-features {
 				min-width: 40rem;
 			}
 		}
@@ -28,9 +28,10 @@
 		overflow: clip;
 		border: var(--border-grey);
 		border-radius: var(--radius-card);
+		display: flex;
 	}
 
-	.features-table {
+	.table-features {
 		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
@@ -41,10 +42,11 @@
 		font-size: var(--typography-size-16);
 		color: var(--colour-neutral-600);
 		font-weight: var(--typography-weight-regular);
-		padding-block: var(--spacing-16) var(--spacing-16);
-		padding-inline: var(--spacing-16) var(--spacing-16);
+		padding-block: var(--spacing-24);
+		padding-inline: var(--padding-inline, var(--spacing-16));
 		text-align: var(--align-table-cell, center);
 		vertical-align: middle;
+		position: relative;
 	}
 
 	.row-head {
@@ -52,10 +54,11 @@
 	}
 
 	.cell-head {
-		font-weight: var(--typography-weight-regular);
+		font-weight: var(--typography-weight-semi);
 
 		&:first-child {
-			text-align: left;
+			--align-table-cell: left;
+			--padding-inline: var(--spacing-32) var(--spacing-16);
 		}
 	}
 }
