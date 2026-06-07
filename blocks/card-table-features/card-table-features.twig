@@ -10,7 +10,7 @@
 
 <section class="card-table-features">
 	{% if show_plan_cards %}
-		<plan-cards class="plan-cards">
+		<card-plans class="card-plans">
 			{% for i in 1..3 %}
 				{% include 'card-table-features/card-plan.twig' with {
 					plan_name: attribute(attributes, 'plan' ~ i ~ 'Name'),
@@ -19,7 +19,7 @@
 					highlighted: i == featured_plan
 				} %}
 			{% endfor %}
-		</plan-cards>
+		</card-plans>
 	{% endif %}
 	<table-outer class="table-outer">
 		<table-inner class="table-inner">
