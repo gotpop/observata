@@ -22,37 +22,4 @@
 		justify-items: center;
 		grid-template-columns: repeat(3, 1fr);
 	}
-
-	.tab {
-		--transition-tab: color 0.2s ease, border-color 0.2s ease;
-
-		background: transparent;
-		border-bottom: 3px solid transparent;
-		color: var(--colour-text-body-default);
-		font-size: var(--size-body-md);
-		padding: var(--spacing-20) var(--spacing-32);
-		text-align: center;
-		transition: var(--transition-tab);
-		transition: all 0.2s ease-in-out;
-		width: var(--stretch);
-
-		&:hover {
-			color: var(--colour-primary-700);
-		}
-
-		&:focus-visible {
-			outline-offset: -2px;
-		}
-
-		&.is-active {
-			border-color: var(--colour-secondary-500);
-		}
-	}
-}
-
-@media screen and (width < 40em) {
-	.tab {
-		padding: var(--spacing-15) var(--spacing-15);
-		font-size: var(--typography-size-14);
-	}
 }
