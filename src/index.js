@@ -9,7 +9,6 @@ import cardGeoMetadata from '../blocks/card-geo/block.json';
 import cardImageUnsplashMetadata from '../blocks/card-image-unsplash/block.json';
 import cardMicroMetadata from '../blocks/card-micro/block.json';
 import cardPhotoMetadata from '../blocks/card-photo/block.json';
-import planMetadata from '../blocks/card-pricing-plan/block.json';
 import cardSimpleMetadata from '../blocks/card-simple/block.json';
 import cardTableFeaturesMetadata from '../blocks/card-table-features/block.json';
 import cardTableSimpleMetadata from '../blocks/card-table-simple/block.json';
@@ -68,8 +67,6 @@ import CardMicroEdit from './card-micro/edit';
 import CardMicroSave from './card-micro/save';
 import CardPhotoEdit from './card-photo/edit';
 import CardPhotoSave from './card-photo/save';
-import PlanEdit from './card-pricing-plan/edit';
-import PlanSave from './card-pricing-plan/save';
 import CardSimpleEdit from './card-simple/edit';
 import CardSimpleSave from './card-simple/save';
 import CardTableFeaturesEdit from './card-table-features/edit';
@@ -290,11 +287,6 @@ registerBlockType(cardGeoTechMetadata.name, {
 registerBlockType(gridCardsGeoTechMetadata.name, {
     edit: GridCardsGeoTechEdit,
     save: GridCardsGeoTechSave,
-});
-
-registerBlockType(planMetadata.name, {
-    edit: PlanEdit,
-    save: PlanSave,
 });
 
 registerBlockType(cardTableSimpleMetadata.name, {
