@@ -13,6 +13,7 @@
 
 	&.card-plan-highlighted {
 		border-color: var(--colour-accent-1-400);
+		border: var(--border-grey);
 	}
 
 	.plan-title {
