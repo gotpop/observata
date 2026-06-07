@@ -5,11 +5,16 @@
 		background: transparent;
 		border-bottom: 3px solid transparent;
 		color: var(--colour-text-body-default);
-		font-size: var(--size-body-md);
-		padding: var(--spacing-20) var(--spacing-32);
+		font-size: var(--size-body-sm);
+		padding: var(--spacing-20) var(--spacing-8);
 		text-align: center;
 		transition: var(--transition-tab);
 		width: var(--stretch);
+
+		@media (width >=48rem) {
+			font-size: var(--size-body-md);
+			padding: var(--spacing-20) var(--spacing-32);
+		}
 
 		&:hover {
 			color: var(--colour-primary-700);

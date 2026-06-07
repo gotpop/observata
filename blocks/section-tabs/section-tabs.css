@@ -1,13 +1,21 @@
 .section-tabs {
-	@media (width >=60rem) {
-		--padding-section-block: 0 var(--spacing-80) !important;
+	--padding-section-block: 0 var(--spacing-32);
+
+	&.section-block {
+		@media (width >=60rem) {
+			--padding-section-block: 0 var(--spacing-80);
+		}
 	}
 
 	.block-content {
 		display: grid;
 		gap: var(--spacing-50);
-		grid-column: inner;
+		grid-column: content;
 		grid-template-columns: 1fr;
+
+		@media (width >=60rem) {
+			grid-column: inner;
+		}
 	}
 
 	.wrapper-tabs {
@@ -18,7 +26,6 @@
 
 	.tabs-nav {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 		justify-items: center;
 		grid-template-columns: repeat(3, 1fr);
 	}

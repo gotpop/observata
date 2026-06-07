@@ -7,8 +7,12 @@
 	.card-plans {
 		gap: var(--spacing-32);
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+		grid-template-columns: repeat(auto-fit, var(--card-plans-layout, minmax(220px, 1fr)));
 		justify-content: center;
+
+		@media (width >=80rem) {
+			--card-plans-layout: minmax(120px, 240px);
+		}
 	}
 
 	.table-outer {
