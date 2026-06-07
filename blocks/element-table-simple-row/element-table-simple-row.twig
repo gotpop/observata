@@ -7,7 +7,13 @@
 {% set col3_value = attributes.column3Value|default('') %}
 
 <tr class="body-row fade-in-up">
-	<td class="body-cell">{{ row_label|strip_html }}</td>
-	<td class="body-cell">{{ col2_value|strip_html }}</td>
-	<td class="body-cell">{{ col3_value|strip_html }}</td>
+	<td class="body-cell">
+		{{ row_label|strip_html }}
+	</td>
+	<td class="body-cell">
+		{{ col2_value|strip_html }}
+	</td>
+	<td class="body-cell">
+		{{ col3_value|strip_html }}
+	</td>
 </tr>

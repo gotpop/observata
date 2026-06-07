@@ -8,7 +8,7 @@
 %}
 {% set featured_plan = attributes.featuredPlan|default(2) %}
 
-<section class="card-table-features">
+<section class="card-table-features" data-observe="true" data-threshold="0.2">
 	{% if show_plan_cards %}
 		<card-plans class="card-plans">
 			{% for i in 1..3 %}
