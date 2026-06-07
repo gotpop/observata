@@ -24,18 +24,34 @@
 	}
 }
 
-::view-transition-new(tab-intro) {
-	animation: entry-from-right 0.3s ease forwards;
+/* Forward: tab 1 → tab 2 → tab 3 (slide left) */
+html:active-view-transition-type(forward) {
+	&::view-transition-old(tab-intro) {
+		animation: exit-to-left 0.3s ease forwards;
+	}
+	&::view-transition-new(tab-intro) {
+		animation: entry-from-right 0.3s ease forwards;
+	}
+	&::view-transition-old(tab-table-features) {
+		animation: exit-to-left 0.3s ease forwards;
+	}
+	&::view-transition-new(tab-table-features) {
+		animation: entry-from-right 0.3s ease forwards;
+	}
 }
 
-::view-transition-old(tab-intro) {
-	animation: exit-to-right 0.3s ease forwards;
-}
-
-::view-transition-new(tab-table-features) {
-	animation: entry-from-right 0.3s ease forwards;
-}
-
-::view-transition-old(tab-table-features) {
-	animation: exit-to-right 0.3s ease forwards;
+/* Backward: tab 3 → tab 2 → tab 1 (slide right) */
+html:active-view-transition-type(backward) {
+	&::view-transition-old(tab-intro) {
+		animation: exit-to-right 0.3s ease forwards;
+	}
+	&::view-transition-new(tab-intro) {
+		animation: entry-from-left 0.3s ease forwards;
+	}
+	&::view-transition-old(tab-table-features) {
+		animation: exit-to-right 0.3s ease forwards;
+	}
+	&::view-transition-new(tab-table-features) {
+		animation: entry-from-left 0.3s ease forwards;
+	}
 }

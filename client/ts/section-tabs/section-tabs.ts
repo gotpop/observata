@@ -16,15 +16,18 @@ class SectionTabs {
 
 	private activate(tab: HTMLButtonElement): void {
 		const target = tab.dataset.tab;
-
-		this.tabs.forEach((t) => {
-			const active = t === tab;
-			t.classList.toggle('is-active', active);
-			t.setAttribute('aria-selected', String(active));
-			t.tabIndex = active ? 0 : -1;
-		});
+		const newIndex = this.tabs.indexOf(tab);
+		const oldIndex = this.tabs.findIndex((t) => t.classList.contains('is-active'));
+		const direction = newIndex > oldIndex ? 'forward' : 'backward';
 
 		const update = () => {
+			this.tabs.forEach((t) => {
+				const active = t === tab;
+				t.classList.toggle('is-active', active);
+				t.setAttribute('aria-selected', String(active));
+				t.tabIndex = active ? 0 : -1;
+			});
+
 			this.panels.forEach((p) => {
 				const active = p.dataset.panel === target;
 				p.classList.toggle('is-active', active);
@@ -34,7 +37,15 @@ class SectionTabs {
 		};
 
 		if (document.startViewTransition) {
-			document.startViewTransition(update);
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			const VT = (window as any).ViewTransition;
+			const supportsTypes = !!VT && 'types' in VT.prototype;
+
+			if (supportsTypes) {
+				document.startViewTransition({ update, types: [direction] });
+			} else {
+				document.startViewTransition(update);
+			}
 		} else {
 			update();
 		}
