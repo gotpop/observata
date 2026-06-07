@@ -46,8 +46,7 @@
 		}
 
 		&.is-active {
-			/* font-weight: var(--typography-weight-semi); */
-			border-bottom: 3px solid var(--colour-primary-700);
+			border-color: var(--colour-secondary-500);
 		}
 	}
 
