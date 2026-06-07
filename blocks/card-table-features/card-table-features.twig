@@ -21,28 +21,29 @@
 			{% endfor %}
 		</plan-cards>
 	{% endif %}
-
-	<div class="table-wrapper">
-		<table class="features-table">
-			<thead>
-				<tr class="head-row">
-					<th class="head-cell">
-						Features
-					</th>
-					<th class="head-cell">
-						{{ attributes.plan1Name }}
-					</th>
-					<th class="head-cell">
-						{{ attributes.plan2Name }}
-					</th>
-					<th class="head-cell">
-						{{ attributes.plan3Name }}
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				{{ content }}
-			</tbody>
-		</table>
-	</div>
+	<table-outer class="table-outer">
+		<table-inner class="table-inner">
+			<table class="features-table">
+				<thead>
+					<tr class="row row-head">
+						<th class="cell cell-head">
+							Features
+						</th>
+						<th class="cell cell-head">
+							{{ attributes.plan1Name }}
+						</th>
+						<th class="cell cell-head">
+							{{ attributes.plan2Name }}
+						</th>
+						<th class="cell cell-head">
+							{{ attributes.plan3Name }}
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{ content }}
+				</tbody>
+			</table>
+		</table-inner>
+	</table-outer>
 </section>

@@ -1,6 +1,6 @@
 .table-features-row {
 	display: table-row;
-	border-bottom: 1px solid var(--colour-neutral-300);
+	border-bottom: var(--border-grey);
 
 	&:nth-child(odd) {
 		background: var(--colour-neutral-100);
@@ -11,20 +11,12 @@
 	}
 
 	.name {
-		padding: var(--spacing-6) var(--spacing-16);
-		font-size: var(--typography-size-16);
-		color: var(--colour-neutral-600);
-		font-weight: 400;
-		vertical-align: middle;
+		--align-table-cell: left;
+
+		padding-inline: var(--spacing-24) var(--spacing-16);
 	}
 
-	.value {
-		padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
-		text-align: center;
-		vertical-align: middle;
-	}
-
-	.value--check {
+	.value-check {
 		color: var(--colour-secondary-600);
 
 		svg {
@@ -36,10 +28,10 @@
 		}
 	}
 
-	.value--dash {
+	.value-dash {
 		.dash {
 			font-size: var(--typography-size-32);
-			color: var(--colour-neutral-600);
+			color: var(--colour-neutral-500);
 		}
 
 		svg {

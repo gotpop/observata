@@ -4,11 +4,11 @@
   Values: "check" or "dash"
 #}
 
-<tr class="table-features-row">
-	<td class="name">
+<tr class="row row-body table-features-row">
+	<td class="cell name">
 		{{ attributes.featureName }}
 	</td>
-	<td class="value value--{{ attributes.plan1Value }}">
+	<td class="cell value value-{{ attributes.plan1Value }}">
 		{% if attributes.plan1Value == 'check' %}
 			<svg
 				width="20"
@@ -27,7 +27,7 @@
 			<span class="dash">&mdash;</span>
 		{% endif %}
 	</td>
-	<td class="value value--{{ attributes.plan2Value }}">
+	<td class="cell value value-{{ attributes.plan2Value }}">
 		{% if attributes.plan2Value == 'check' %}
 			<svg
 				width="20"
@@ -46,7 +46,7 @@
 			<span class="dash">&mdash;</span>
 		{% endif %}
 	</td>
-	<td class="value value--{{ attributes.plan3Value }}">
+	<td class="cell value value-{{ attributes.plan3Value }}">
 		{% if attributes.plan3Value == 'check' %}
 			<svg
 				width="20"
