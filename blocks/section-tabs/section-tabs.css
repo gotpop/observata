@@ -29,14 +29,12 @@
 
 		background: transparent;
 		border-bottom: 3px solid transparent;
-		border: none;
-		color: var(--colour-text-secondary);
-		cursor: pointer;
+		color: var(--colour-text-body-default);
 		font-size: var(--size-body-md);
-		font-weight: var(--typography-weight-semi);
 		padding: var(--spacing-20) var(--spacing-32);
 		text-align: center;
 		transition: var(--transition-tab);
+		transition: all 0.2s ease-in-out;
 		width: var(--stretch);
 
 		&:hover {
@@ -48,7 +46,7 @@
 		}
 
 		&.is-active {
-			color: var(--colour-primary-700);
+			/* font-weight: var(--typography-weight-semi); */
 			border-bottom: 3px solid var(--colour-primary-700);
 		}
 	}
@@ -65,7 +63,7 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: min-content;
 			position: relative;
-			gap: var(--spacing-50);
+			gap: var(--spacing-60);
 		}
 	}
 }

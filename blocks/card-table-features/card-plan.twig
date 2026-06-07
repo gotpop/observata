@@ -11,10 +11,12 @@
 	<h3 class="plan-title">
 		{{ plan_name }}
 	</h3>
-	<span class="plan-price">{{ plan_price }}</span>
-	<p class="plan-description">
-		{{ plan_description }}
-	</p>
+	<body-card class="body-card">
+		<span class="plan-price">{{ plan_price }}</span>
+		<p class="plan-description">
+			{{ plan_description }}
+		</p>
+	</body-card>
 	{% if show_read_more and read_more_text and read_more_url %}
 		<a
 			class="link-anchor link-anchor-card-plan"

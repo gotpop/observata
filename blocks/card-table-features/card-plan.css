@@ -1,38 +1,40 @@
 .card-plan {
-	border: var(--border-grey);
+	border: var(--card-plan-border, var(--border-grey));
 	border-radius: var(--radius-card);
-	padding: var(--spacing-50) var(--spacing-40);
+	padding-block: var(--spacing-40) var(--spacing-60);
+	padding-inline: var(--spacing-40);
 	text-align: center;
-	flex-grow: 0;
-	flex-shrink: 1;
-	flex-basis: 33%;
-	max-width: max-content;
 	gap: var(--spacing-32);
 	display: flex;
 	flex-direction: column;
 	position: relative;
 
-	&.card-plan-highlighted {
-		border-color: var(--colour-accent-1-400);
-		border: var(--border-grey);
+	&:has(.link-anchor-card-plan:hover) {
+		--card-plan-border: var(--border-secondary);
+		--icon-border-colour: var(--border-secondary);
 	}
 
 	.plan-title {
 		color: var(--colour-text-heading-default);
-		font-size: var(--size-heading-md);
+		font-size: var(--size-heading-sm);
 		font-weight: var(--typography-weight-bold);
 	}
 
+	.body-card {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-16);
+	}
+
 	.plan-price {
-		display: block;
+		color: var(--colour-text-body-default);
 		font-size: var(--size-heading-md);
-		font-weight: var(--typography-weight-medium);
-		color: var(--colour-secondary-500);
+		font-weight: 200;
 	}
 
 	.plan-description {
-		font-size: var(--font-size-sm);
-		color: var(--color-text-muted);
+		font-size: var(--size-body-sm);
+		color: var(--colour-text-body-default);
 	}
 
 	.icon-geo {
@@ -42,12 +44,17 @@
 		position: absolute;
 		inset: 1rem 1rem auto auto;
 		transition: all 0.3s ease-in-out;
+		display: none;
+
+		.card-plan-highlighted & {
+			display: flex;
+		}
 
 		@media (width >=40rem) {
 			--icon-size-outer: 4.25rem;
-			--icon-size-inner: 2.5rem;
+			--icon-size-inner: 2.4rem;
 
-			translate: -50% -50%;
+			translate: -70% -35%;
 			inset: 0% auto auto 100%;
 		}
 	}

@@ -15,7 +15,7 @@
 
 	&:has(.link-anchor-card-geo:hover) {
 		--card-geo-list-border: var(--border-secondary);
-		--icon-geo-border-colour: var(--border-secondary);
+		--icon-border-colour: var(--border-secondary);
 	}
 
 	&:has(.link-anchor-card-geo) {

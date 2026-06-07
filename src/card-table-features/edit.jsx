@@ -5,6 +5,7 @@ import { SelectControl, TextControl, ToggleControl } from '@wordpress/components
 
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
+import GeoIcon from '../components/geo-icon';
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
 
@@ -86,12 +87,17 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
                                     value={attributes['plan' + i + 'Description']}
                                     onChange={(value) => setAttributes({ ['plan' + i + 'Description']: value })}
                                 />
-                                <SelectControl
-                                    label={__('Plan ' + i + ' Icon', 'observata')}
-                                    value={attributes['plan' + i + 'Icon']}
-                                    options={ICON_OPTIONS}
-                                    onChange={(val) => setAttributes({ ['plan' + i + 'Icon']: val })}
-                                />
+                                <ControlsLayout layout="horizontal" gap="1rem">
+                                    <div className="icon-geo">
+                                        <GeoIcon number={attributes['plan' + i + 'Icon'] || String(i).padStart(2, '0')} />
+                                    </div>
+                                    <SelectControl
+                                        label={__('Plan ' + i + ' Icon', 'observata')}
+                                        value={attributes['plan' + i + 'Icon']}
+                                        options={ICON_OPTIONS}
+                                        onChange={(val) => setAttributes({ ['plan' + i + 'Icon']: val })}
+                                    />
+                                </ControlsLayout>
                                 <ToggleControl
                                     label={__('Show Read More Link', 'observata')}
                                     checked={attributes['plan' + i + 'ShowReadMore']}
