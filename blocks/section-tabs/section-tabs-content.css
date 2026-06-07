@@ -1,0 +1,17 @@
+.section-tabs {
+	.tabs-content {
+		position: relative;
+	}
+
+	.tab-content {
+		display: none;
+
+		&.is-active {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: min-content;
+			position: relative;
+			gap: var(--spacing-60);
+		}
+	}
+}

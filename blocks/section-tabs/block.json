@@ -54,7 +54,9 @@
   },
   "editorScript": "file:../../build/index.js",
   "viewStyle": [
-    "file:section-tabs.css"
+    "file:section-tabs.css",
+    "file:section-tabs-content.css",
+    "file:section-tabs-tab.css"
   ],
   "editorStyle": [
     "file:../../build/index.css"
