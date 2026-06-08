@@ -43,8 +43,8 @@ export function initHeaderNavigation(): void {
 				menuTrigger.addEventListener('keydown', handleSubmenuKeydown);
 			}
 
-			// Submenu link keyboard navigation
 			const submenuLinks = parentItem.querySelectorAll<HTMLElement>('.submenu a');
+
 			submenuLinks.forEach((link) => {
 				link.removeEventListener('keydown', handleSubmenuLinkKeydown);
 				link.addEventListener('keydown', handleSubmenuLinkKeydown);
