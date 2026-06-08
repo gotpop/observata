@@ -25,7 +25,6 @@ class SectionTabs {
 				const active = t === tab;
 				t.classList.toggle('is-active', active);
 				t.setAttribute('aria-selected', String(active));
-				t.tabIndex = active ? 0 : -1;
 			});
 
 			this.panels.forEach((p) => {
