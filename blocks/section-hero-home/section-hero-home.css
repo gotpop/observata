@@ -1,40 +1,9 @@
-@keyframes background-animation {
-	0% {
-		height: 0px;
-	}
-
-	30% {
-		height: 900px;
-		background-color: transparent;
-		backdrop-filter: blur(0px);
-	}
-
-	100% {
-		backdrop-filter: blur(3px);
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-}
-
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
 .block-section-hero-home {
 	--height-hero-home: 620px;
 	--bg-mobile: url('../../assets/img/shader-ribbon-mobile.png');
 	--bg-position: center bottom 8%, center, center;
 	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	--grad-radial-white: radial-gradient(
-		59.27% 62.89% at 50% 65%,
-		#fff 70%,
-		rgba(255, 255, 255, 0) 100%
-	);
+	--grad-radial-white: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
 
 	background-color: var(--surface-white);
 	background-image: var(--bg-mobile), var(--grad-radial-white), var(--grad-linear);
@@ -65,16 +34,14 @@
 	}
 
 	&::after {
-		animation: background-animation linear;
-		animation-range-end: var(--height-hero-home);
+		animation-name: overlay-animation;
+		animation-range-end: 50rem;
 		animation-timeline: --main-timeline;
-		background-color: transparent;
+		animation-timing-function: linear;
 		content: '';
-		height: 100%;
-		inset: auto 0 0 0;
+		inset: 0;
+		pointer-events: none;
 		position: absolute;
-		width: 100%;
-		z-index: 999;
 	}
 
 	.hero-content {
@@ -84,7 +51,6 @@
 		grid-column: content;
 		grid-template-columns: 1fr;
 		text-align: center;
-		z-index: 2;
 	}
 
 	.hero-text {
@@ -105,7 +71,7 @@
 		position: absolute;
 		transform: translateX(-50%);
 		width: 2422px;
-		z-index: 2;
+		pointer-events: none;
 
 		@media (width >=40rem) {
 			inset: auto auto -220px 50%;
