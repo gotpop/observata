@@ -44,3 +44,16 @@
 	/* Theme html */
 	--accent: var(--colour-accent-1-400);
 }
+
+:root {
+	/* Unified header height */
+	--size-height-heading: 5.625rem;
+
+	@media (width >= 40rem) {
+		--size-height-heading: 4rem;
+	}
+
+	@media (width >= 96rem) {
+		--size-height-heading: 7rem;
+	}
+}
