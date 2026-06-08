@@ -11,25 +11,26 @@
 }
 
 .block-section-hero-page {
-	background: var(--surface-white);
-	display: grid;
+	background-color: var(--surface-white);
+	background-image:
+		radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
+	background-size:
+		125vw 100%,
+		100% 100%;
+	background-position:
+		center calc(50% + 60px),
+		center;
 	align-items: center;
-	background-image: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	grid-column: full;
-	grid-template-rows: var(--size-height-heading) 1fr;
+	background-repeat: no-repeat;
+	border-block-end: var(--border-grey);
 	display: grid;
+	display: grid;
+	grid-column: full;
 	grid-template-columns: subgrid;
-	border-bottom: 1px solid var(--colour-border-border-gray);
+	grid-template-rows: var(--size-height-heading) 1fr;
 	overflow: clip;
 	position: relative;
-
-	@media (width >=48rem) {
-		grid-template-rows: 4rem 1fr;
-	}
-
-	@media (width >=80rem) {
-		grid-template-rows: 7rem 1fr;
-	}
 
 	.cta-hero-page {
 		--size: 1rem;
@@ -65,20 +66,6 @@
 		@media (width >=80rem) {
 			row-gap: var(--spacing-40);
 			padding-block: var(--spacing-50);
-		}
-
-		&::before {
-			content: '';
-			width: 125vw;
-			position: absolute;
-			height: 100%;
-			background-image: radial-gradient(
-				59.27% 62.89% at 49.97% 64.49%,
-				#fff 70.8%,
-				rgba(255, 255, 255, 0) 100%
-			);
-			left: 50%;
-			transform: translateX(-50%);
 		}
 	}
 
