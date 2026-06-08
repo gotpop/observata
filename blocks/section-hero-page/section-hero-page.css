@@ -11,20 +11,19 @@
 }
 
 .block-section-hero-page {
-	background-color: var(--surface-white);
-	background-image:
-		radial-gradient(59.27% 62.89% at 49.97% 64.49%, #fff 70.8%, rgba(255, 255, 255, 0) 100%),
-		linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	background-size:
-		125vw 100%,
-		100% 100%;
-	background-position:
-		center calc(50% + 60px),
-		center;
+	--grad-bg: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
+	--grad-glow: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
+	--position-glow: center calc(50% + 60px);
+	--size-glow: 125vw 100%;
+	--size-bg: 100% 100%;
+
 	align-items: center;
+	background-color: var(--surface-white);
+	background-image: var(--grad-glow), var(--grad-bg);
+	background-position: var(--position-glow), center;
 	background-repeat: no-repeat;
+	background-size: var(--size-glow), var(--size-bg);
 	border-block-end: var(--border-grey);
-	display: grid;
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
