@@ -38,16 +38,20 @@
 
 	.hero-blog-content {
 		display: grid;
-		grid-column: content;
+		grid-column: inner;
 		grid-row: 2;
 		grid-template-columns: 1fr;
-		padding: 5rem 2rem;
-		padding: 5rem 2rem;
+		padding-block: var(--spacing-40);
 		position: relative;
-		row-gap: var(--spacing-40);
+		row-gap: var(--spacing-32);
 		text-align: left;
 		width: 100%;
 		z-index: 3;
+
+		@media (width >=80rem) {
+			row-gap: var(--spacing-40);
+			padding-block: var(--spacing-50);
+		}
 
 		&::before {
 			background-image: radial-gradient(
