@@ -1,0 +1,22 @@
+.block-section-hero-home {
+	.heading-section-hero-home {
+		position: relative;
+		right: 9px;
+
+		i {
+			color: var(--colour-secondary-500);
+		}
+
+		span {
+			position: relative;
+		}
+
+		.line-two {
+			left: -3px;
+		}
+
+		.line-three {
+			left: 18px;
+		}
+	}
+}

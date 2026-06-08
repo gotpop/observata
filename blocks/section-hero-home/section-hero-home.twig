@@ -11,26 +11,13 @@
 	<canvas id="hero-shader" class="hero-shader"></canvas>
 	<div class="hero-content">
 		<div class="hero-text">
-			<h1 class="heading-hero heading-section-hero-home">
-				<span class="line-one">We enable, operate and</span>
-				<br />
-				<span class="line-two">
-					<i>unify</i>
-					your
-					<i>AI</i>
-					powered
-				</span>
-				<br />
-				<span class="line-three">observability & security</span>
-			</h1>
-
+			{% include 'blocks/section-hero-home/hero-heading.twig' %}
 			{% if subheading %}
 				<p class="body-hero body-section-hero-home">
 					{{ subheading|strip_html }}
 				</p>
 			{% endif %}
 		</div>
-
 		<div class="hero-buttons">
 			{% if cta_text and cta_url %}
 				<a href="{{ cta_url|esc_url }}" class="cta-primary">

@@ -38,7 +38,10 @@
     "render": "file:render.php",
     "editorScript": "file:../../build/index.js",
     "editorStyle": "file:../../build/index.css",
-    "viewStyle": "file:section-hero-home.css",
+    "viewStyle": [
+        "file:section-hero-home.css",
+        "file:hero-heading.css"
+    ],
     "example": {
         "attributes": {
             "heading": "observability & security",
