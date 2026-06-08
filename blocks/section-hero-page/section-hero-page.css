@@ -13,17 +13,16 @@
 .block-section-hero-page {
 	--grad-bg: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 	--grad-glow: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
-	--grad-overlay: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 	--position-glow: center calc(50% + 60px);
 	--size-glow: 125vw 100%;
 	--size-bg: 100% 100%;
 
 	align-items: center;
 	background-color: var(--surface-white);
-	background-image: var(--grad-overlay), var(--grad-glow), var(--grad-bg);
-	background-position: center, var(--position-glow), center;
+	background-image: var(--grad-glow), var(--grad-bg);
+	background-position: var(--position-glow), center;
 	background-repeat: no-repeat;
-	background-size: var(--size-bg), var(--size-glow), var(--size-bg);
+	background-size: var(--size-glow), var(--size-bg);
 	border-block-end: var(--border-grey);
 	display: grid;
 	grid-column: full;
@@ -39,16 +38,18 @@
 	}
 
 	&::after {
-		content: '';
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		inset: 0;
-		background-color: transparent;
-		animation: background-animation linear;
-		animation-timeline: --main-timeline;
-		z-index: 9;
+		animation-name: background-animation;
 		animation-range-end: 500px;
+		animation-timeline: --main-timeline;
+		animation-timing-function: linear;
+		background-color: transparent;
+		content: '';
+		height: 100%;
+		inset: 0;
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		z-index: 9;
 	}
 
 	.hero-page-content {
