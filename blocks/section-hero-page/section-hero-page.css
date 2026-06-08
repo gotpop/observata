@@ -1,4 +1,4 @@
-@keyframes background-animation {
+@keyframes overlay-animation {
 	from {
 		background-color: transparent;
 		backdrop-filter: blur(0px);
@@ -6,7 +6,7 @@
 
 	to {
 		backdrop-filter: blur(3px);
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.6);
 	}
 }
 
@@ -27,60 +27,43 @@
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	grid-template-rows: var(--size-height-heading) 1fr;
+	grid-template-rows: var(--size-height-heading) [hero-content] 1fr;
 	overflow: clip;
 	position: relative;
 
-	.cta-hero-page {
-		--size: 1rem;
-
-		z-index: 1;
-	}
-
 	&::after {
-		animation-name: background-animation;
-		animation-range-end: 500px;
+		animation-name: overlay-animation;
+		animation-range-end: 30rem;
 		animation-timeline: --main-timeline;
 		animation-timing-function: linear;
-		background-color: transparent;
 		content: '';
-		height: 100%;
 		inset: 0;
 		pointer-events: none;
 		position: absolute;
-		width: 100%;
-		z-index: 9;
 	}
 
 	.hero-page-content {
 		display: grid;
 		grid-column: inner;
-		grid-row: 2;
+		grid-row: hero-content;
 		grid-template-columns: 1fr;
-		padding-block: var(--spacing-40);
-		position: relative;
-		row-gap: var(--spacing-32);
-		text-align: left;
+		padding-block: var(--page-content-padding, var(--spacing-40));
+		row-gap: var(--page-content-gap, var(--spacing-32));
 		view-transition-name: hero-content;
-		z-index: 3;
 
 		@media (width >=80rem) {
-			row-gap: var(--spacing-40);
-			padding-block: var(--spacing-50);
+			--page-content-gap: var(--spacing-40);
+			--page-content-padding: var(--spacing-50);
 		}
 	}
 
-	.heading-hero-page {
-		z-index: 1;
-		text-wrap: balance;
-		max-width: 28ch;
+	.heading-hero {
+		--text-wrap-heading-hero: balance;
+		--max-width-heading-hero: 28ch;
 	}
 
-	.body-hero-page {
-		z-index: 1;
-		max-width: 60ch;
-		margin: 0;
-		text-wrap: pretty;
+	.body-hero {
+		--max-width-body-hero: 60ch;
 	}
 }
 

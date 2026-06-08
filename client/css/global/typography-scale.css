@@ -7,6 +7,8 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
 	line-height: var(--line, var(--line-height-heading-lg));
+	max-width: var(--max-width-heading-hero, initial);
+	text-wrap: var(--text-wrap-heading-hero, initial);
 
 	@media (width >=40rem) {
 		--line: var(--line-height-heading-xl);
@@ -81,6 +83,7 @@
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
+	max-width: var(--max-width-body-hero, initial);
 	text-wrap: pretty;
 
 	@media (width >=40rem) {
