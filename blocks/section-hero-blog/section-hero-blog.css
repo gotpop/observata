@@ -1,90 +1,64 @@
-@keyframes background-animation {
-	from {
-		background-color: transparent;
-		backdrop-filter: blur(0px);
-	}
-
-	to {
-		backdrop-filter: blur(3px);
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-}
-
 .block-section-hero-blog {
+	--grad-bg: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
+	--grad-glow: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
+	--position-glow: center calc(50% + 60px);
+	--size-glow: 125vw 100%;
+	--size-bg: 100% 100%;
+
 	align-items: center;
 	background-color: var(--surface-white);
-	background-image: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	border-bottom: 1px solid var(--colour-border-border-gray);
-	display: grid;
+	background-image: var(--grad-glow), var(--grad-bg);
+	background-position: var(--position-glow), center;
+	background-repeat: no-repeat;
+	background-size: var(--size-glow), var(--size-bg);
+	border-block-end: var(--border-grey);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	grid-template-rows: var(--size-height-heading) 1fr;
+	grid-template-rows: var(--size-height-heading) [hero-content] 1fr;
 	overflow: clip;
 	position: relative;
 
 	&::after {
-		animation-range-end: 500px;
+		animation-name: overlay-animation;
+		animation-range-end: 30rem;
 		animation-timeline: --main-timeline;
-		animation: background-animation linear;
-		background-color: transparent;
+		animation-timing-function: linear;
 		content: '';
-		height: 100%;
 		inset: 0;
+		pointer-events: none;
 		position: absolute;
-		width: 100%;
-		z-index: 9;
 	}
 
 	.hero-blog-content {
 		display: grid;
 		grid-column: inner;
-		grid-row: 2;
+		grid-row: hero-content;
 		grid-template-columns: 1fr;
-		padding-block: var(--spacing-40);
-		position: relative;
-		row-gap: var(--spacing-32);
-		text-align: left;
-		width: 100%;
-		z-index: 3;
+		padding-block: var(--page-content-padding, var(--spacing-40));
+		row-gap: var(--page-content-gap, var(--spacing-32));
+		view-transition-name: hero-content-blog;
 
 		@media (width >=80rem) {
-			row-gap: var(--spacing-40);
-			padding-block: var(--spacing-50);
-		}
-
-		&::before {
-			background-image: radial-gradient(
-				59.27% 62.89% at 49.97% 64.49%,
-				#fff 70.8%,
-				rgba(255, 255, 255, 0) 100%
-			);
-			content: '';
-			height: 100%;
-			left: 50%;
-			position: absolute;
-			transform: translateX(-50%);
-			width: 125vw;
+			--page-content-gap: var(--spacing-40);
+			--page-content-padding: var(--spacing-50);
 		}
 	}
 
-	.heading-hero-blog {
-		color: var(--colour-text-hero);
-		font-size: 56px;
-		font-weight: var(--typography-weight-bold);
-		letter-spacing: -1px;
-		line-height: 60px;
-		margin: 0;
-		text-box: trim-both cap alphabetic;
-		z-index: 1;
-		max-width: 20ch;
-		text-wrap: balance;
+	.heading-hero {
+		--text-wrap-heading-hero: balance;
+		--max-width-heading-hero: 28ch;
 	}
 
-	.body-hero-blog {
-		margin: 0;
-		max-width: 60ch;
-		z-index: 1;
-		text-wrap: pretty;
+	.body-hero {
+		--max-width-body-hero: 60ch;
 	}
+}
+
+::view-transition-new(hero-content-blog) {
+	animation: entry-from-right 0.3s ease forwards;
+}
+
+::view-transition-old(hero-content-blog) {
+	animation: exit-to-left 0.3s ease forwards;
 }

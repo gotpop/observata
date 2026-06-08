@@ -1,15 +1,3 @@
-@keyframes overlay-animation {
-	from {
-		background-color: transparent;
-		backdrop-filter: blur(0px);
-	}
-
-	to {
-		backdrop-filter: blur(3px);
-		background-color: rgba(0, 0, 0, 0.6);
-	}
-}
-
 .block-section-hero-page {
 	--grad-bg: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 	--grad-glow: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
@@ -49,7 +37,7 @@
 		grid-template-columns: 1fr;
 		padding-block: var(--page-content-padding, var(--spacing-40));
 		row-gap: var(--page-content-gap, var(--spacing-32));
-		view-transition-name: hero-content;
+		view-transition-name: hero-content-page;
 
 		@media (width >=80rem) {
 			--page-content-gap: var(--spacing-40);
@@ -67,10 +55,10 @@
 	}
 }
 
-::view-transition-new(hero-content) {
+::view-transition-new(hero-content-page) {
 	animation: entry-from-right 0.3s ease forwards;
 }
 
-::view-transition-old(hero-content) {
+::view-transition-old(hero-content-page) {
 	animation: exit-to-left 0.3s ease forwards;
 }
