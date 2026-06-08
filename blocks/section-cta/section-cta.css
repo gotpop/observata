@@ -31,6 +31,7 @@
 	}
 
 	.body-md {
-		max-width: 60ch;
+		--align-body-md: center;
+		--max-width-body-md: 60ch;
 	}
 }
