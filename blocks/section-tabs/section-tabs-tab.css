@@ -17,7 +17,7 @@
 		}
 
 		&:hover {
-			color: var(--colour-primary-700);
+			color: var(--colour-secondary-400);
 		}
 
 		&:focus-visible {
