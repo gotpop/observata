@@ -1,11 +1,12 @@
+import { createMatchMedia, setupClickOutsideClose } from '../utils';
 import {
 	handleSubmenuClick,
 	handleSubmenuEnter,
+	handleSubmenuKeydown,
 	handleSubmenuLeave,
+	handleSubmenuLinkKeydown,
 	handleTriggerClick,
 } from './handlers';
-
-import { createMatchMedia, setupClickOutsideClose } from '../utils';
 
 export function initHeaderNavigation(): void {
 	const trigger = document.getElementById('trigger-navigation');
@@ -30,18 +31,32 @@ export function initHeaderNavigation(): void {
 
 	function attachListeners() {
 		parentMenuItems.forEach((parentItem) => {
-			const button = parentItem.querySelector('.menu-button') as HTMLElement;
+			const menuTrigger = parentItem.querySelector(
+				'.menu-button, .menu-anchor[aria-haspopup]'
+			) as HTMLElement;
 
+			// Click + keyboard always attached (both mobile & desktop)
+			if (menuTrigger) {
+				menuTrigger.removeEventListener('click', handleSubmenuClick);
+				menuTrigger.removeEventListener('keydown', handleSubmenuKeydown);
+				menuTrigger.addEventListener('click', handleSubmenuClick);
+				menuTrigger.addEventListener('keydown', handleSubmenuKeydown);
+			}
+
+			// Submenu link keyboard navigation
+			const submenuLinks = parentItem.querySelectorAll<HTMLElement>('.submenu a');
+			submenuLinks.forEach((link) => {
+				link.removeEventListener('keydown', handleSubmenuLinkKeydown);
+				link.addEventListener('keydown', handleSubmenuLinkKeydown);
+			});
+
+			// Desktop-only hover behaviour
 			if (mq.matches) {
 				parentItem.addEventListener('mouseenter', handleSubmenuEnter);
 				parentItem.addEventListener('mouseleave', handleSubmenuLeave);
-
-				if (button) button.removeEventListener('click', handleSubmenuClick);
 			} else {
 				parentItem.removeEventListener('mouseenter', handleSubmenuEnter);
 				parentItem.removeEventListener('mouseleave', handleSubmenuLeave);
-
-				if (button) button.addEventListener('click', handleSubmenuClick);
 			}
 		});
 	}
