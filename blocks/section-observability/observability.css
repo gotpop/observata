@@ -62,7 +62,9 @@
 		@media (width >=86rem) {
 			--i: 10rem -8rem auto auto;
 			--s: 420px;
+
 			scale: 1.15;
+			rotate: 40deg;
 		}
 	}
 
