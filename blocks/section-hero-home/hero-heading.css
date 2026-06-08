@@ -2,6 +2,7 @@
 	.heading-section-hero-home {
 		position: relative;
 		right: 9px;
+		text-align: center;
 
 		i {
 			color: var(--colour-secondary-500);

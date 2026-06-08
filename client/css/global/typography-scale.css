@@ -84,6 +84,7 @@
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
 	max-width: var(--max-width-body-hero, initial);
+	text-align: var(--align-body-hero, left);
 	text-wrap: pretty;
 
 	@media (width >=40rem) {
