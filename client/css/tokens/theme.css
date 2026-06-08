@@ -53,7 +53,7 @@
 		--size-height-heading: 4rem;
 	}
 
-	@media (width >= 96rem) {
+	@media (width >= 80rem) {
 		--size-height-heading: 7rem;
 	}
 }

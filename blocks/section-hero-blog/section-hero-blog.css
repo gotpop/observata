@@ -19,7 +19,7 @@
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	grid-template-rows: 6rem 1fr;
+	grid-template-rows: var(--size-height-heading) 1fr;
 	overflow: clip;
 	position: relative;
 

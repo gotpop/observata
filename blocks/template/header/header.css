@@ -65,6 +65,7 @@
 			margin-block: 3rem 0;
 			margin-inline: 1rem;
 			border-radius: 4.5rem;
+			min-height: initial;
 		}
 	}
 }
