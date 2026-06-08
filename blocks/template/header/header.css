@@ -39,6 +39,7 @@
 		grid-template-rows: min-content 1fr;
 		justify-content: space-between;
 		max-width: var(--sizing-width-content);
+		min-height: var(--size-height-heading);
 		padding-block: var(--spacing-24);
 		padding-inline: var(--spacing-32);
 		row-gap: 0;

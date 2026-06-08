@@ -49,7 +49,7 @@
 	/* Unified header height */
 	--size-height-heading: 5.625rem;
 
-	@media (width >= 40rem) {
+	@media (width >= 64rem) {
 		--size-height-heading: 4rem;
 	}
 
