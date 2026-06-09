@@ -5,6 +5,7 @@
 		background-color: var(--surface-white-transparent);
 		border-radius: var(--radius-card);
 		border: var(--border-grey);
+		box-shadow: inset 0 0 0 1px var(--colour-neutral-white);
 		display: grid;
 		justify-items: center;
 		padding: var(--padding-cta, var(--spacing-24));
