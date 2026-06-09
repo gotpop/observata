@@ -1,3 +1,5 @@
+import { createShader } from 'shaders/js';
+
 import {
 	COLOUR_BLUE,
 	COLOUR_BLUE_LIGHT,
@@ -5,8 +7,6 @@ import {
 	COLOUR_PINK,
 	type ShaderColors,
 } from './colours';
-
-import { createShader } from 'shaders/js';
 
 function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 	return {
