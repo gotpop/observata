@@ -89,7 +89,12 @@ export async function initCardGeoShader(canvas: HTMLCanvasElement) {
 	const config = getCardGeoShaderConfig(colours);
 
 	try {
-		await createShader(canvas, config);
+		await createShader(canvas, config, {
+			observeElement: false,
+			onReady: () => {
+				canvas.classList.add('loaded');
+			},
+		});
 		console.info(`Card geo shader: Successfully loaded on canvas #${canvas.id}`);
 	} catch (error) {
 		console.error(`Card geo shader: Failed to initialize on canvas #${canvas.id}`, error);

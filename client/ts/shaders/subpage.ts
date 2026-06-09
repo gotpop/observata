@@ -111,7 +111,12 @@ const initSubpageShaders = async () => {
 
 	try {
 		console.info('Subpage shader: Initializing...');
-		await createShader(canvas, config);
+		await createShader(canvas, config, {
+			observeElement: false,
+			onReady: () => {
+				canvas.classList.add('loaded');
+			},
+		});
 		console.info('Subpage shader: Successfully loaded');
 	} catch (error) {
 		console.error('Subpage shader: Failed to initialize', error);

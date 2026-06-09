@@ -55,19 +55,14 @@ const heroShaderConfig = {
 				},
 			],
 		},
-		{
-			type: 'FilmGrain',
-			id: 'idmmr97z6pijyaz1v1u',
-			props: {
-				strength: 0.32,
-				visible: true,
-			},
-		},
 	],
 };
 
 const initHeroShaders = async () => {
-	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
+	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement;
+
+	canvas.style.width = '2422px';
+	canvas.style.height = '1037px';
 
 	if (!canvas) {
 		console.warn('Hero shader: Canvas element not found');
@@ -75,7 +70,10 @@ const initHeroShaders = async () => {
 	}
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
-		console.warn('Hero shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:', window.location.origin);
+		console.warn(
+			'Hero shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:',
+			window.location.origin
+		);
 		return;
 	}
 
@@ -88,7 +86,12 @@ const initHeroShaders = async () => {
 
 	try {
 		console.info('Hero shader: Initializing...');
-		await createShader(canvas, heroShaderConfig);
+		await createShader(canvas, heroShaderConfig, {
+			observeElement: false,
+			onReady: () => {
+				canvas.classList.add('loaded');
+			},
+		});
 		console.info('Hero shader: Successfully loaded');
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
