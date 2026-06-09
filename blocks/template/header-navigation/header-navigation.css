@@ -61,8 +61,14 @@
 		padding-inline: 0rem;
 
 		.icon {
+			--size: 12px;
+
 			rotate: var(--rotate-icon, -90deg);
 			transition: rotate 0.2s ease-in-out;
+
+			@media (width >=40rem) {
+				--size: 12px;
+			}
 		}
 
 		&[aria-expanded='true'] .icon {
