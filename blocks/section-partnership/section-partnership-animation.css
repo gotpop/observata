@@ -62,7 +62,7 @@
 		}
 
 		@media (width >=80rem) {
-			top: 256px;
+			top: 246px;
 		}
 
 		.in-view & {

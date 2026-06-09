@@ -7,16 +7,6 @@
 		grid-row: 1;
 	}
 
-	.block-content {
-		display: grid;
-		grid-column: content;
-		grid-template-columns: 1fr;
-		grid-template-rows: min-content;
-		gap: var(--spacing-60);
-		grid-row: 1;
-		z-index: 1;
-	}
-
 	.block-body {
 		display: grid;
 		gap: var(--spacing-60);
