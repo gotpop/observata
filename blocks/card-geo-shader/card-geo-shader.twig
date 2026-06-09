@@ -5,11 +5,28 @@
 
 <article class="card-geo-shader fade-in-up">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<canvas class="shader" id="shader-{{ shader_colour }}" width="320" height="320" aria-hidden="true"></canvas>
+	<canvas
+		class="shader"
+		id="shader-{{ shader_colour }}"
+		width="320"
+		height="320"
+		aria-hidden="true"></canvas>
+	<img
+		class="img-fallback"
+		src="{{ site.theme.uri }}/assets/img/shader-fallback.webp"
+		alt=""
+		width="320"
+		height="320"
+		loading="lazy" />
+
 	{% if card_title %}
-		<h3 class="heading-sm title">{{ card_title|strip_html }}</h3>
+		<h3 class="heading-sm title">
+			{{ card_title|strip_html }}
+		</h3>
 	{% endif %}
 	{% if card_text %}
-		<p class="body-sm text">{{ card_text|strip_html }}</p>
+		<p class="body-sm text">
+			{{ card_text|strip_html }}
+		</p>
 	{% endif %}
 </article>

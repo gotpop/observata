@@ -85,6 +85,17 @@
 		}
 	}
 
+	.img-fallback {
+		display: block;
+		position: absolute;
+		inset: 0 -8rem auto auto;
+		rotate: -23deg;
+
+		:has(.shader.loaded) & {
+			display: none;
+		}
+	}
+
 	.title {
 		max-width: 22ch;
 		text-wrap: balance;
