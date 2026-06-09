@@ -13,7 +13,7 @@
 	display: grid;
 	grid-column: 1 / -1;
 	grid-template-columns: subgrid;
-	grid-template-rows: var(--size-height-heading) 4rem [hero-start] min-content [hero-end] 1fr;
+	grid-template-rows: var(--size-height-heading) 2rem [hero-start] min-content [hero-end] 1fr;
 	inset: 0 auto auto auto;
 	justify-content: center;
 	min-height: var(--height-hero-home);
