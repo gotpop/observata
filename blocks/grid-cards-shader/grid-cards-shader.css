@@ -1,11 +1,4 @@
 .block-grid-cards-shader {
-	.block-content {
-		display: grid;
-		grid-column: content;
-		grid-template-columns: 1fr;
-		gap: var(--spacing-50);
-	}
-
 	.block-cards {
 		display: grid;
 		gap: 32px;

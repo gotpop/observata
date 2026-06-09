@@ -65,9 +65,15 @@
 			--gradient-color-inner: #ffffff;
 			--gradient-color-mid: #7399c6;
 			--gradient-color-outer: #9bdbf2;
-			--grad-stop-inner: 35%;
-			--grad-stop-mid: 50%;
+			--grad-stop-inner: 20%;
+			--grad-stop-mid: 30%;
 			--grad-stop-outer: 60%;
+
+			@media (width >=60rem) {
+				--grad-stop-inner: 30%;
+				--grad-stop-mid: 50%;
+				--grad-stop-outer: 60%;
+			}
 		}
 	}
 

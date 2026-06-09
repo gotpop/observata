@@ -1,33 +1,25 @@
 .section-cta {
 	--section-bg-colour: var(--colour-neutral-white);
 
-	.block-content {
-		display: grid;
-		grid-column: content;
-		grid-row: 1;
-		grid-template-columns: subgrid;
-		justify-items: center;
-		row-gap: var(--spacing-40);
-		text-align: center;
-		z-index: 1;
-	}
-
 	.content-cta {
 		background-color: var(--surface-white-transparent);
 		border-radius: var(--radius-card);
 		border: var(--border-grey);
 		display: grid;
-		grid-column: inner;
 		justify-items: center;
-		padding: var(--spacing-40);
+		padding: var(--padding-cta, var(--spacing-24));
 		row-gap: var(--spacing-32);
+
+		@media (width >=60rem) {
+			justify-self: center;
+			--padding-cta: var(--spacing-40);
+		}
 	}
 
 	.heading-lg {
 		--align-heading-lg: center;
-
-		max-width: 24ch;
-		text-wrap: balance;
+		--max-width-heading-lg: 24ch;
+		--text-wrap-heading-lg: balance;
 	}
 
 	.body-md {

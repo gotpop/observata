@@ -28,7 +28,9 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -0.8px;
 	line-height: var(--line, var(--line-height-heading-lg));
+	max-width: var(--max-width-heading-lg, initial);
 	text-align: var(--align-heading-lg, left);
+	text-wrap: var(--text-wrap-heading-lg, initial);
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-lg);
