@@ -69,11 +69,9 @@
 @keyframes overlay-animation {
 	from {
 		background-color: transparent;
-		backdrop-filter: blur(0px);
 	}
 
 	to {
-		backdrop-filter: blur(3px);
-		background-color: rgba(0, 0, 0, 0.6);
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 }
