@@ -8,8 +8,8 @@ const heroShaderConfig = {
 			id: 'idmmr8zyxrodm90feqn',
 			props: {
 				center: {
-					x: 0.81,
-					y: 0.53,
+					x: 0.97,
+					y: 0.7,
 				},
 				glossiness: 200,
 				lighting: 197,
@@ -61,8 +61,8 @@ const heroShaderConfig = {
 const initHeroShaders = async () => {
 	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement;
 
-	canvas.style.width = '2422px';
-	canvas.style.height = '1037px';
+	canvas.style.width = '1600px';
+	canvas.style.height = '120%';
 
 	if (!canvas) {
 		console.warn('Hero shader: Canvas element not found');
@@ -87,7 +87,7 @@ const initHeroShaders = async () => {
 	try {
 		console.info('Hero shader: Initializing...');
 		await createShader(canvas, heroShaderConfig, {
-			observeElement: false,
+			// observeElement: false,
 			onReady: () => {
 				canvas.classList.add('loaded');
 			},

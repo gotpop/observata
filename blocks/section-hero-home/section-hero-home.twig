@@ -8,7 +8,9 @@
 {% set read_more_url = attributes.readMoreUrl|default('#') %}
 
 <section class="block-section-hero-home">
-	<canvas id="hero-shader" class="hero-shader"></canvas>
+	<div class="wrap-canvas">
+		<canvas id="hero-shader" class="hero-shader"></canvas>
+	</div>
 	<div class="hero-content">
 		<div class="hero-text">
 			{% include 'blocks/section-hero-home/hero-heading.twig' %}
