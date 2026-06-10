@@ -10,6 +10,7 @@ require get_template_directory() . '/inc/enqueue-assets.php';
 require get_template_directory() . '/inc/device-detection.php';
 require get_template_directory() . '/inc/content-filters.php';
 require get_template_directory() . '/inc/schema-markup.php';
+require get_template_directory() . '/inc/seo.php';
 require get_template_directory() . '/inc/accessibility.php';
 require get_template_directory() . '/inc/image-optimization.php';
 require get_template_directory() . '/inc/widgets.php';
