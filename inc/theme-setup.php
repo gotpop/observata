@@ -125,3 +125,14 @@ function observata_disable_comments() {
 		return $endpoints;
 	} );
 }
+
+/**
+ * Strip verbose WordPress body classes.
+ * Keeps only custom classes passed via Layout::bodyClass() or get_body_class( '...' ).
+ */
+add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
+function observata_clean_body_class( $classes, $class ) {
+	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.
+	// $classes contains everything WP auto-generates. Return only the explicit ones.
+	return is_array( $class ) ? $class : array();
+}
