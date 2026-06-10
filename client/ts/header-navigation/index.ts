@@ -10,7 +10,7 @@ import {
 
 export function initHeaderNavigation(): void {
 	const trigger = document.getElementById('trigger-navigation');
-	const headerContent = document.getElementById('header-content');
+	const headerContent = document.getElementById('content-header');
 	const parentMenuItems = document.querySelectorAll('.menu-item-has-children');
 
 	const mq = createMatchMedia('sm');

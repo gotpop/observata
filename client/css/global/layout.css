@@ -7,7 +7,7 @@
 	2xl	96rem (1536px)	@media (width >= 96rem) { ... } 
 */
 
-.site:has(.header-content.is-open) {
+.site:has(.content-header.is-open) {
 	&::after {
 		content: '';
 		position: absolute;

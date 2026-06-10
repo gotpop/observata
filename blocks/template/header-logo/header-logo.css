@@ -5,8 +5,10 @@
 
 	svg {
 		max-width: 160px;
-		height: auto;
+		height: 100px;
 		display: flex;
+		width: max-content;
+		height: auto;
 
 		@media (width >= 40rem) {
 			max-width: 130px;

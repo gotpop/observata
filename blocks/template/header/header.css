@@ -21,7 +21,7 @@
 	justify-content: center;
 	view-transition-name: header;
 
-	.header-content {
+	.content-header {
 		align-items: center;
 		animation-fill-mode: forwards;
 		animation-name: header-scroll;
@@ -57,7 +57,7 @@
 		@media (width >= 48rem) {
 			grid-template-areas: 'logo nav';
 			grid-template-rows: min-content;
-			grid-template-columns: 200px 1fr;
+			grid-template-columns: max-content 1fr;
 			padding: 18px 28px;
 		}
 

@@ -1,5 +1,7 @@
-<div class="header-logo">
-	<a href="{{ function('home_url', '/') }}" title="{{ function('get_bloginfo', 'name')|esc_attr }}">
-		{% include 'logos/logo-observata-blue.twig' %}
+<logo-site class="header-logo">
+	<a
+		href="{{ function('home_url', '/') }}"
+		title="{{ function('get_bloginfo', 'name')|esc_attr }}">
+		{% include 'logos/logo-observata-blue-light.twig' %}
 	</a>
-</div>
+</logo-site>
