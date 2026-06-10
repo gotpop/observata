@@ -3,7 +3,7 @@
 {% set icon_geo = attributes.iconGeo|default('01') %}
 {% set shader_colour = attributes.shaderColour|default('blue') %}
 
-<article class="card-geo-shader fade-in-up">
+<article class="card card-geo-shader fade-in-up">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	<canvas
 		class="shader"
@@ -20,12 +20,12 @@
 		loading="lazy" />
 
 	{% if card_title %}
-		<h3 class="heading-sm title">
+		<h3 class="heading-sm">
 			{{ card_title|strip_html }}
 		</h3>
 	{% endif %}
 	{% if card_text %}
-		<p class="body-sm text">
+		<p class="body-sm">
 			{{ card_text|strip_html }}
 		</p>
 	{% endif %}

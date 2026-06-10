@@ -1,12 +1,5 @@
 .card-geo {
-	border-radius: var(--radius-card);
-	border: 1px solid var(--colour-border-border-gray);
-	display: grid;
-	gap: var(--spacing-32);
-	grid-template-columns: 1fr;
-	grid-template-rows: min-content;
-	padding: var(--spacing-40);
-	position: relative;
+	--overflow-card: visible;
 
 	.icon-geo {
 		--icon-size-outer: 3.25rem;
@@ -23,8 +16,7 @@
 		}
 	}
 
-	.title {
-		max-width: 12ch;
-		text-wrap: balance;
+	.heading-md {
+		--max-width-heading-md: 12ch;
 	}
 }

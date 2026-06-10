@@ -2,8 +2,12 @@
 {% set card_text = attributes.cardText|default('') %}
 {% set icon_geo = attributes.iconGeo|default('24') %}
 
-<article class="card-geo icon-{{ icon_geo }}">
+<article class="card card-geo icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<h3 class="heading-md title">{{ card_title|strip_html }}</h3>
-	<p class="body-md text">{{ card_text|strip_html }}</p>
+	<h3 class="heading-md title">
+		{{ card_title|strip_html }}
+	</h3>
+	<p class="body-md">
+		{{ card_text|strip_html }}
+	</p>
 </article>

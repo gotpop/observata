@@ -26,6 +26,10 @@
 		grid-template-columns: 1fr;
 		z-index: 1;
 
+		@media (width >=48rem) {
+			gap: var(--spacing-40);
+		}
+
 		@media (width >=80rem) {
 			gap: var(--spacing-50);
 			grid-template-areas: 'a .' '. b';

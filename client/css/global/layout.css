@@ -91,6 +91,21 @@ block-content {
 	}
 }
 
+.card {
+	background-color: var(--surface-card, var(--surface-white));
+	border-radius: var(--radius-card);
+	border: var(--border-card, var(--border-grey));
+	box-shadow: var(--box-shadow-card, initial);
+	display: grid;
+	gap: var(--gap-card, var(--spacing-32));
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content;
+	overflow: var(--overflow-card, clip);
+	padding-block: var(--padding-block-card, var(--spacing-40));
+	padding-inline: var(--padding-inline-card, var(--spacing-40));
+	position: relative;
+}
+
 .content-blog {
 	display: grid;
 	grid-template-columns: subgrid;

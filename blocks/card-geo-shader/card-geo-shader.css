@@ -1,15 +1,14 @@
 .card-geo-shader {
-	border-radius: var(--radius-card);
-	border: 1px solid var(--colour-border-border-gray);
-	overflow: clip;
-	padding-block: var(--spacing-24);
-	padding-inline: var(--spacing-24) 5rem;
-	position: relative;
-	gap: var(--spacing-24);
-	display: grid;
-	grid-template-rows: min-content;
-	grid-template-columns: 1fr;
+	--padding-block-card: var(--spacing-24);
+	--padding-inline-card: var(--spacing-24) 5rem;
+	--gap-card: var(--spacing-24);
+
 	min-height: max-content;
+
+	@media (width >=40rem) {
+		--padding-block-card: var(--spacing-40);
+		--padding-inline-card: var(--spacing-40) 100px;
+	}
 
 	/* TODO: Find alternate solution */
 	&:nth-child(1) {
@@ -60,11 +59,6 @@
 		}
 	}
 
-	@media (width >=40rem) {
-		padding-block: var(--spacing-40);
-		padding-inline: var(--spacing-40) 100px;
-	}
-
 	.icon-geo {
 		--icon-size-outer: 3.25rem;
 		--icon-size-inner: 2.3rem;
@@ -96,12 +90,11 @@
 		}
 	}
 
-	.title {
-		max-width: 22ch;
-		text-wrap: balance;
+	.heading-sm {
+		--align-heading-sm: 22ch;
 	}
 
-	.text {
-		max-width: 100ch;
+	.body-sm {
+		--max-width-body-sm: 100ch;
 	}
 }

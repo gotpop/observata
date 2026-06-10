@@ -108,8 +108,8 @@
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
-	max-width: var(--max-width-body-md, initial);
-	text-align: var(--align-body-md, left);
+	max-width: var(--max-width-body-lg, initial);
+	text-align: var(--align-body-lg, left);
 	text-wrap: pretty;
 
 	@media (width >=40rem) {
@@ -132,7 +132,7 @@
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
-	max-width: var(--max-width-body-md, initial);
+	max-width: var(--max-width-body-sm, initial);
 	text-align: var(--align-body-md, left);
 	text-wrap: pretty;
 }
