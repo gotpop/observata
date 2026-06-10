@@ -1,26 +1,27 @@
 .card-image-unsplash {
+	--w: min(768px, 100%);
+
+	border-radius: var(--radius-card);
 	display: grid;
 	grid-column: 1 / -1;
-	overflow: hidden;
+	justify-self: center;
+	overflow: clip;
 	place-items: center;
+	position: relative;
+	width: var(--w);
 
 	.card-image {
-		border-radius: var(--radius-card);
 		display: block;
 		height: auto;
 		object-fit: cover;
-		width: min(768px, 100%);
+		width: var(--w);
 	}
 
-	.placeholder {
-		align-items: center;
-		background-color: var(--colour-neutral-200);
-		border-radius: var(--radius-card);
-		border: 2px dashed var(--colour-border-border-gray);
-		color: var(--colour-text-body-muted);
-		display: flex;
-		font-size: var(--size-body-md);
-		justify-content: center;
-		min-height: 300px;
+	&::after {
+		backdrop-filter: grayscale(1);
+		background-image: var(--overlay);
+		content: '';
+		inset: 0;
+		position: absolute;
 	}
 }

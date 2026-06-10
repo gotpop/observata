@@ -17,12 +17,6 @@
 	}
 
 	.wrappper-img {
-		--g: linear-gradient(
-			to bottom,
-			color-mix(in oklab, var(--colour-secondary-300) 80%, transparent) 20%,
-			color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
-		);
-
 		width: 200px;
 		height: var(--img-height, 120%);
 		inset: var(--img-inset, 58% -25% 0 auto);
@@ -38,7 +32,7 @@
 
 		&::after {
 			backdrop-filter: grayscale(1);
-			background-image: var(--g);
+			background-image: var(--overlay);
 			content: '';
 			inset: 0;
 			position: absolute;

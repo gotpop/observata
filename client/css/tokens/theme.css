@@ -44,6 +44,13 @@
 	--sizing-width-site: 1440px;
 	--sizing-width-content: 1200px;
 
+	/* Gradients */
+	--overlay: linear-gradient(
+		to bottom,
+		color-mix(in oklab, var(--colour-secondary-300) 80%, transparent) 20%,
+		color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
+	);
+
 	/* Theme html */
 	--accent: var(--colour-accent-1-400);
 }
