@@ -1,29 +1,30 @@
 {% set image_id = attributes.imageId %}
 {% set image_url = attributes.imageUrl %}
 {% set image_alt = attributes.imageAlt %}
-{% set photographer = attributes.unsplashPhotographer %}
-{% set source_url = attributes.unsplashSourceUrl %}
+{% set image_opts = {
+	class: 'card-image',
+	alt: image_alt
+} %}
 {% set attachment_image =
 	function(
 		'wp_get_attachment_image',
 		image_id,
 		'medium_large',
 		false,
-		{
-			class: 'card-image',
-			alt: image_alt
-		}
+		image_opts
 	)
 %}
 
-<figure class="card-image-unsplash">
-	{% if image_id %}
+{% if image_id %}
+	<figure class="card-image-unsplash">
 		{{ attachment_image }}
-	{% elseif image_url %}
-		<img src="{{ image_url }}" alt="{{ image_alt }}" class="card-image" />
-	{% else %}
-		<div class="placeholder">
-			<span>Select an image</span>
-		</div>
-	{% endif %}
-</figure>
+	</figure>
+{% elseif image_url %}
+	<figure class="card-image-unsplash">
+		<img
+			src="{{ image_url }}"
+			alt="{{ image_alt }}"
+			class="card-image"
+			loading="lazy" />
+	</figure>
+{% endif %}
