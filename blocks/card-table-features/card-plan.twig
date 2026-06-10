@@ -3,7 +3,7 @@
   Variables: plan_name, plan_price, plan_description, highlighted, plan_icon,
              show_read_more, read_more_text, read_more_url
 #}
-{% set classes = 'card-plan' ~ (highlighted ? ' card-plan-highlighted') %}
+{% set classes = 'card card-plan' ~ (highlighted ? ' card-plan-highlighted') %}
 {% set icon_geo = plan_icon|default('01') %}
 
 <article class="{{ classes }} icon-{{ icon_geo }}">

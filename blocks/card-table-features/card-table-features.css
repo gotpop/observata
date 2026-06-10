@@ -30,7 +30,7 @@
 
 	.table-inner {
 		overflow: clip;
-		border: var(--border-grey);
+		border: var(--border-card);
 		border-radius: var(--radius-card);
 		display: flex;
 	}

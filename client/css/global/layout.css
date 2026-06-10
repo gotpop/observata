@@ -94,7 +94,7 @@ block-content {
 .card {
 	background-color: var(--surface-card, var(--surface-white));
 	border-radius: var(--radius-card);
-	border: var(--border-card, var(--border-grey));
+	border: var(--border-card);
 	box-shadow: var(--box-shadow-card, initial);
 	display: grid;
 	gap: var(--gap-card, var(--spacing-32));
