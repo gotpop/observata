@@ -13,6 +13,10 @@
         "multiple": true
     },
     "attributes": {
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
         "imageUrl": {
             "type": "string",
             "default": ""

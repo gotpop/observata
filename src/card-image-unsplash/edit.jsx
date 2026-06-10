@@ -1,11 +1,11 @@
 import './editor.css';
 
-import { useBlockProps } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
-import { useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { Button } from '@wordpress/components';
 import UnsplashImagePicker from '../components/unsplash-image-picker';
+import { __ } from '@wordpress/i18n';
+import { useBlockProps } from '@wordpress/block-editor';
+import { useState } from '@wordpress/element';
 
 export default function CardImageUnsplashEdit({ attributes, setAttributes }) {
     const { imageUrl, imageAlt } = attributes;
@@ -14,6 +14,7 @@ export default function CardImageUnsplashEdit({ attributes, setAttributes }) {
 
     const handleUnsplashSelect = (imageData) => {
         setAttributes({
+            imageId: imageData.id,
             imageUrl: imageData.url,
             imageAlt: imageData.alt || '',
             unsplashPhotographer: imageData.photographer || '',

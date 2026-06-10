@@ -1,10 +1,24 @@
+{% set image_id = attributes.imageId %}
 {% set image_url = attributes.imageUrl %}
 {% set image_alt = attributes.imageAlt %}
 {% set photographer = attributes.unsplashPhotographer %}
 {% set source_url = attributes.unsplashSourceUrl %}
 
 <figure class="card-image-unsplash">
-	{% if image_url %}
+	{% if image_id %}
+		{{
+			function(
+				'wp_get_attachment_image',
+				image_id,
+				'medium_large',
+				false,
+				{
+					class: 'card-image',
+					alt: image_alt
+				}
+			)
+		}}
+	{% elseif image_url %}
 		<img src="{{ image_url }}" alt="{{ image_alt }}" class="card-image" />
 	{% else %}
 		<div class="placeholder">
