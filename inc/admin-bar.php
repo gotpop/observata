@@ -3,6 +3,15 @@
 // Hide the admin toolbar on the front end.
 add_filter( 'show_admin_bar', '__return_false' );
 
+// Replace "Howdy," with a friendlier greeting in the admin bar.
+add_filter( 'gettext', 'observata_replace_howdy', 10, 3 );
+function observata_replace_howdy( $translated, $text, $domain ) {
+	if ( 'default' === $domain && false !== strpos( $text, 'Howdy' ) ) {
+		$translated = str_replace( 'Howdy', 'Hej', $text );
+	}
+	return $translated;
+}
+
 // Customise the wp-admin bar: brand colour and custom logo.
 add_action( 'admin_head', 'observata_admin_bar_styles' );
 function observata_admin_bar_styles() {
