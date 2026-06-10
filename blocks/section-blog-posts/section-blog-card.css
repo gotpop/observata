@@ -1,18 +1,12 @@
 .card-blog-post {
-	background: var(--surface-white);
-	border-radius: var(--radius-card);
-	border: 1px solid var(--colour-border-border-gray);
-	display: grid;
-	grid-template-columns: 1fr;
-	overflow: clip;
-	padding-block: var(--spacing-32);
-	padding-inline: var(--spacing-32);
-	position: relative;
+	--padding-block-card: var(--spacing-32);
+	--padding-inline-card: var(--spacing-32);
+
 	row-gap: var(--spacing-24);
 	transition: all 0.3s ease-in-out;
 
 	@media (width >=40rem) {
-		padding-inline: var(--spacing-32) 180px;
+		--padding-inline-card: var(--spacing-32) 180px;
 	}
 
 	&:has(a:hover) {

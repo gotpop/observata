@@ -20,9 +20,9 @@
 	--border-secondary: 1px solid var(--colour-secondary-400);
 	--border-accent: 1px solid var(--colour-accent-1-400);
 	--border-grey: 1px solid var(--colour-border-border-gray);
+	--border-card: 1px solid var(--colour-border-border-gray);
 
 	/* Lines */
-	--icon-line-bg-colour: #ff0000;
 	--icon-line-colour: var(--colour-brand-light);
 	--icon-circle-colour: var(--colour-brand-dark);
 	--icon-line-stroke: 0.9;

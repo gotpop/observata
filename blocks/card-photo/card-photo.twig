@@ -8,20 +8,22 @@
 {% set unsplash_photographer = attributes.unsplashPhotographer|default('') %}
 {% set unsplash_source_url = attributes.unsplashSourceUrl|default('') %}
 
-<card-photo class="card-photo fade-in-up" role="article">
+<article class="card card-photo fade-in-up">
 	{% if image_url %}
 		<wrappper-img class="wrappper-img">
-			<img class="image" src="{{ image_url }}" alt="{{ image_alt }}"/>
+			<img class="image" src="{{ image_url }}" alt="{{ image_alt }}" />
 		</wrappper-img>
 	{% endif %}
 
 	<div class="content">
 		{% if card_title %}
-			<h3 class="heading-sm">{{ card_title|strip_html }}</h3>
+			<h3 class="heading-sm">
+				{{ card_title|strip_html }}
+			</h3>
 		{% endif %}
 
 		<div class="body">
 			{{ content|raw }}
 		</div>
 	</div>
-</card-photo>
+</article>

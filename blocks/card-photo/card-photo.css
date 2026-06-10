@@ -1,14 +1,7 @@
 .card-photo {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-24);
-	position: relative;
-	overflow: clip;
-	background: var(--surface-white);
-	border-radius: var(--radius-card);
-	border: 1px solid var(--colour-border-border-gray);
-	padding-block: var(--spacing-32);
-	padding-inline: var(--spacing-32) var(--p, 100px);
+	--gap-card: var(--spacing-24);
+	--padding-block-card: var(--spacing-32);
+	--padding-inline-card: var(--spacing-32) var(--p, 100px);
 
 	@media (width >=40rem) {
 		--p: 180px;
@@ -68,8 +61,8 @@
 		z-index: 1;
 	}
 
-	.title {
-		text-wrap: balance;
+	.heading-sm {
+		--text-wrap-heading-sm: balance;
 	}
 
 	.body {
