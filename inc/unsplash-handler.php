@@ -407,7 +407,7 @@ function observata_unsplash_download_handler( $request ) {
 			array(
 				'success'       => true,
 				'attachment_id' => $attach_id,
-				'url'           => $upload['url'],
+				'url'           => set_url_scheme( $upload['url'], 'https' ),
 			)
 		);
 
