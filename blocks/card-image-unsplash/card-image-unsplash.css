@@ -1,27 +1,22 @@
 .card-image-unsplash {
-	--w: min(768px, 100%);
-
 	border-radius: var(--radius-card);
 	display: grid;
 	grid-column: 1 / -1;
 	justify-self: center;
 	overflow: clip;
-	place-items: center;
 	position: relative;
-	width: var(--w);
-
-	.card-image {
-		display: block;
-		height: auto;
-		object-fit: cover;
-		width: var(--w);
-	}
 
 	&::after {
-		backdrop-filter: grayscale(1);
 		background-image: var(--overlay);
 		content: '';
 		inset: 0;
 		position: absolute;
+	}
+
+	.card-image {
+		filter: var(--grayscale);
+		height: auto;
+		object-fit: cover;
+		width: min(768px, 100%);
 	}
 }
