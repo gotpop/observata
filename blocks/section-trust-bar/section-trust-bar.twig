@@ -1,42 +1,31 @@
-{% set logos = attributes.logos|default([]) %}
+{% set theme_uri = function('get_template_directory_uri') %}
+{% set logos = [
+	{
+		file: 'af-logo.svg',
+		alt: 'AF logo'
+	},
+	{
+		file: 'tele-dark-logo.svg',
+		alt: 'Tele Dark logo'
+	},
+	{
+		file: 'elastic-logo.svg',
+		alt: 'Elastic logo'
+	},
+	{
+		file: 'crowdstrike-red-logo.svg',
+		alt: 'Crowdstrike logo'
+	}
+] %}
 
 <section-trust class="section-trust-bar">
 	<block-content class="block-content">
-		<div class="logo-item">
-			<img
-				src="{{
-				function(
-					'get_template_directory_uri'
-				)
-				}}/assets/svg/logos/bar/af-logo.svg"
-				alt="AF" />
-		</div>
-		<div class="logo-item">
-			<img
-				src="{{
-				function(
-					'get_template_directory_uri'
-				)
-				}}/assets/svg/logos/bar/tele-dark-logo.svg"
-				alt="Tele Dark" />
-		</div>
-		<div class="logo-item">
-			<img
-				src="{{
-				function(
-					'get_template_directory_uri'
-				)
-				}}/assets/svg/logos/bar/elastic-logo.svg"
-				alt="Elastic" />
-		</div>
-		<div class="logo-item">
-			<img
-				src="{{
-				function(
-					'get_template_directory_uri'
-				)
-				}}/assets/svg/logos/bar/crowdstrike-red-logo.svg"
-				alt="Crowdstrike" />
-		</div>
+		{% for logo in logos %}
+			<trust-bar-item class="logo-item">
+				<img
+					src="{{ theme_uri }}/assets/svg/logos/bar/{{ logo.file }}"
+					alt="{{ logo.alt }}" />
+			</trust-bar-item>
+		{% endfor %}
 	</block-content>
 </section-trust>

@@ -2,28 +2,28 @@
 {% set logos = [
 	{
 		file: 'af-logo.svg',
-		alt: 'AF'
+		alt: 'AF logo'
 	},
 	{
 		file: 'tele-dark-logo.svg',
-		alt: 'Tele Dark'
+		alt: 'Tele Dark logo'
 	},
 	{
 		file: 'elastic-logo.svg',
-		alt: 'Elastic'
+		alt: 'Elastic logo'
 	},
 	{
 		file: 'crowdstrike-red-logo.svg',
-		alt: 'Crowdstrike'
+		alt: 'Crowdstrike logo'
 	}
 ] %}
 
 <trust-bar class="trust-bar-home">
 	{% for logo in logos %}
-		<div class="logo-item">
+		<trust-bar-item class="logo-item">
 			<img
 				src="{{ theme_uri }}/assets/svg/logos/bar/{{ logo.file }}"
 				alt="{{ logo.alt }}" />
-		</div>
+		</trust-bar-item>
 	{% endfor %}
 </trust-bar>
