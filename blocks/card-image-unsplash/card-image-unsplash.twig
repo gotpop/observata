@@ -1,5 +1,9 @@
 {% set image_id = attributes.imageId %}
-{% set image_url = attributes.imageUrl %}
+{% set image_url =
+	attributes.imageUrl|replace({
+		'http://': 'https://'
+	})
+%}
 {% set image_alt = attributes.imageAlt %}
 {% set image_opts = {
 	class: 'card-image',
