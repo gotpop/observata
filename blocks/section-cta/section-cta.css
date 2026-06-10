@@ -3,7 +3,7 @@
 
 	.card-cta {
 		--surface-card: var(--surface-white-transparent);
-		--box-shadow-card: inset 0 0 0 1px var(--colour-neutral-white);
+		--box-shadow-card: var(--shadow-inner-line-white);
 
 		justify-items: center;
 		padding: var(--padding-cta, var(--spacing-24));
