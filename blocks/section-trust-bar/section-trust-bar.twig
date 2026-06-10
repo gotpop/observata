@@ -23,6 +23,9 @@
 		{% for logo in logos %}
 			<trust-bar-item class="logo-item">
 				<img
+					class="logo-{{ logo.file|replace({
+						'.svg': ''
+					}) }}"
 					src="{{ theme_uri }}/assets/svg/logos/bar/{{ logo.file }}"
 					alt="{{ logo.alt }}" />
 			</trust-bar-item>
