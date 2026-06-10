@@ -30,7 +30,7 @@
 		background-color: var(--colour-neutral-white);
 		padding: var(--spacing-40);
 		border-radius: var(--radius-card);
-		border: var(--border-grey);
+		border: var(--border-card);
 		z-index: 1;
 	}
 
