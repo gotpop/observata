@@ -51,6 +51,9 @@
 		color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
 	);
 
+	/* Filters */
+	--grayscale: grayscale(1);
+
 	/* Theme html */
 	--accent: var(--colour-accent-1-400);
 }
