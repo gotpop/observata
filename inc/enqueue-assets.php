@@ -23,11 +23,3 @@ function observata_preload_fonts() {
 	<link rel="preload" href="<?php echo esc_url( $font_url ); ?>/gantari/gantari.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<?php
 }
-
-// Enqueue comment-reply script only when threaded comments are enabled.
-add_action( 'comment_form_before', 'observata_enqueue_comment_reply_script' );
-function observata_enqueue_comment_reply_script() {
-	if ( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}

@@ -38,6 +38,10 @@ function observata_setup() {
 
 	add_theme_support( 'appearance-tools' );
 	add_theme_support( 'woocommerce' );
+
+	// Disable comments across the site.
+	add_action( 'init', 'observata_disable_comments' );
+
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 1920;
@@ -68,4 +72,56 @@ function observata_editor_styles() {
 		array(),
 		filemtime( get_template_directory() . '/style-editor.css' )
 	);
+}
+
+/**
+ * Disable comments site-wide: removes support, hides from admin, and blocks the REST endpoint.
+ */
+function observata_disable_comments() {
+	// Remove comments/trackbacks support from all post types.
+	$post_types = get_post_types( array( 'public' => true ) );
+	foreach ( $post_types as $post_type ) {
+		if ( post_type_supports( $post_type, 'comments' ) ) {
+			remove_post_type_support( $post_type, 'comments' );
+			remove_post_type_support( $post_type, 'trackbacks' );
+		}
+	}
+
+	// Close comments on the front end.
+	add_filter( 'comments_open', '__return_false', 20, 2 );
+	add_filter( 'pings_open', '__return_false', 20, 2 );
+
+	// Hide existing comments.
+	add_filter( 'comments_array', '__return_empty_array', 10, 2 );
+
+	// Remove the comments admin page and menu item.
+	add_action( 'admin_menu', function () {
+		remove_menu_page( 'edit-comments.php' );
+	} );
+
+	// Redirect any direct access to comments admin pages.
+	add_action( 'admin_init', function () {
+		global $pagenow;
+		if ( 'edit-comments.php' === $pagenow || 'comment.php' === $pagenow || 'options-discussion.php' === $pagenow ) {
+			wp_safe_redirect( admin_url() );
+			exit;
+		}
+	} );
+
+	// Remove the comments metabox from the editor.
+	add_action( 'add_meta_boxes', function () {
+		remove_meta_box( 'commentsdiv', null, 'normal' );
+		remove_meta_box( 'commentstatusdiv', null, 'normal' );
+	}, 999 );
+
+	// Disable comments REST endpoint.
+	add_filter( 'rest_endpoints', function ( $endpoints ) {
+		if ( isset( $endpoints['/wp/v2/comments'] ) ) {
+			unset( $endpoints['/wp/v2/comments'] );
+		}
+		if ( isset( $endpoints['/wp/v2/comments/(?P<id>[\d]+)'] ) ) {
+			unset( $endpoints['/wp/v2/comments/(?P<id>[\d]+)'] );
+		}
+		return $endpoints;
+	} );
 }

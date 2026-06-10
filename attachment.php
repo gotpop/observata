@@ -23,6 +23,4 @@ if ( $context['is_image_attachment'] ) {
 	$context['attachment_image'] = wp_get_attachment_image_src( $post->ID, 'full' );
 }
 
-$context['show_comments'] = comments_open( $post->ID ) && ! post_password_required( $post->ID );
-
 \Timber\Timber::render( 'templates/blog-attachment.twig', $context );
