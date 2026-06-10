@@ -2,13 +2,12 @@
 	grid-template-rows: min-content;
 
 	.block-content {
-		display: grid;
-		grid-column: content;
+		--gap-block-content: var(--spacing-32) 0;
+
 		grid-template-columns: subgrid;
-		row-gap: var(--g-block, var(--spacing-32));
 
 		@media (width >=60rem) {
-			--g-block: var(--spacing-50);
+			--gap-block-content: var(--spacing-50) 0;
 		}
 	}
 
@@ -17,6 +16,10 @@
 		grid-column: content;
 		grid-template-columns: 1fr;
 		row-gap: var(--spacing-24);
+	}
+
+	.body-lg {
+		--max-width-body-lg: 120ch;
 	}
 
 	.grid-cards-photos {
