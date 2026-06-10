@@ -45,6 +45,9 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0px;
 	line-height: var(--line, var(--line-height-heading-md));
+	max-width: var(--max-width-heading-md, initial);
+	text-align: var(--align-heading-md, left);
+	text-wrap: var(--text-wrap-heading-md, initial);
 
 	@media (width >=40rem) {
 		--size: var(--size-heading-md);
@@ -59,6 +62,9 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0px;
 	line-height: var(--line, var(--line-height-heading-sm));
+	max-width: var(--max-width-heading-sm, initial);
+	text-align: var(--align-heading-sm, left);
+	text-wrap: var(--text-wrap-heading-sm, initial);
 
 	@media (width >=40rem) {
 		--line: var(--line-height-heading-sm);
@@ -73,6 +79,9 @@
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0px;
 	line-height: var(--line, var(--line-height-heading-sm));
+	max-width: var(--max-width-heading-xs, initial);
+	text-align: var(--align-heading-xs, left);
+	text-wrap: var(--text-wrap-heading-xs, initial);
 
 	@media (width >=40rem) {
 		--line: var(--line-height-heading-sm);
