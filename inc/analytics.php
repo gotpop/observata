@@ -34,6 +34,12 @@ function observata_analytics_register_settings() {
 		'default'           => '',
 	) );
 
+	register_setting( 'observata_settings', 'observata_cookiebot_id', array(
+		'type'              => 'string',
+		'sanitize_callback' => 'observata_sanitize_cookiebot_id',
+		'default'           => '',
+	) );
+
 	add_settings_section(
 		'observata_analytics_section',
 		__( 'Analytics', 'observata' ),
@@ -53,6 +59,14 @@ function observata_analytics_register_settings() {
 		'observata_leadfeeder_id',
 		__( 'Leadfeeder Tracker ID', 'observata' ),
 		'observata_leadfeeder_id_field',
+		'observata-settings',
+		'observata_analytics_section'
+	);
+
+	add_settings_field(
+		'observata_cookiebot_id',
+		__( 'CookieBot Domain Group ID', 'observata' ),
+		'observata_cookiebot_id_field',
 		'observata-settings',
 		'observata_analytics_section'
 	);
@@ -117,6 +131,37 @@ function observata_leadfeeder_id_field() {
 	printf(
 		'<p class="description">%s</p>',
 		esc_html__( 'Enter your Leadfeeder Tracker ID. Leave blank to disable.', 'observata' )
+	);
+}
+
+/**
+ * Sanitize the CookieBot Domain Group ID (UUID format).
+ */
+function observata_sanitize_cookiebot_id( $value ) {
+	$value = sanitize_text_field( $value );
+	if ( $value && ! preg_match( '/^[a-f0-9\-]+$/i', $value ) ) {
+		add_settings_error(
+			'observata_cookiebot_id',
+			'invalid-cookiebot-id',
+			__( 'Invalid CookieBot Domain Group ID. Expected a UUID format.', 'observata' )
+		);
+		return '';
+	}
+	return $value;
+}
+
+/**
+ * Render the CookieBot ID input field.
+ */
+function observata_cookiebot_id_field() {
+	$value = get_option( 'observata_cookiebot_id', '' );
+	printf(
+		'<input type="text" name="observata_cookiebot_id" value="%s" class="regular-text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">',
+		esc_attr( $value )
+	);
+	printf(
+		'<p class="description">%s</p>',
+		esc_html__( 'Enter your CookieBot Domain Group ID. Leave blank to disable.', 'observata' )
 	);
 }
 
@@ -196,5 +241,31 @@ function observata_output_leadfeeder_script() {
 <script>(function(){window.lftracker = "%1$s";var sf = document.createElement("script");sf.type = "text/javascript"; sf.async = true; sf.src = "https://cdn.leadfeeder.com/lftracker.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(sf, s);})();</script>
 ',
 		esc_js( $lf_id )
+	);
+}
+
+// ─── CookieBot Script Output ──────────────────────────────────────────────────
+
+/**
+ * Output the CookieBot consent banner script when a Domain Group ID is configured.
+ */
+add_action( 'wp_head', 'observata_output_cookiebot_script', 1 );
+function observata_output_cookiebot_script() {
+	$cb_id = get_option( 'observata_cookiebot_id', '' );
+
+	if ( empty( $cb_id ) ) {
+		return;
+	}
+
+	// Only output for non-admin pages.
+	if ( is_admin() || wp_doing_ajax() ) {
+		return;
+	}
+
+	printf(
+		'<!-- CookieBot -->
+<script id="CookieBot" src="https://consent.cookiebot.com/uc.js" data-cbid="%1$s" data-blockingmode="auto" type="text/javascript"></script>
+',
+		esc_attr( $cb_id )
 	);
 }
