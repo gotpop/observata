@@ -1,5 +1,5 @@
-import { COLOUR_BLUE } from './colours';
 import { createShader } from 'shaders/js';
+import { COLOUR_BLUE } from './colours';
 
 const heroShaderConfig = {
 	components: [
