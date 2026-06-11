@@ -7,7 +7,7 @@ let observedCanvas: HTMLCanvasElement | null = null;
 let intersectionObserver: IntersectionObserver | null = null;
 let visibilityListenerAttached = false;
 let isTabVisible = true;
-let performanceKilled = false;
+let performanceKilled = localStorage.getItem('hero-shader-performance-killed') === 'true';
 let perfMonitor: PerformanceMonitor | null = null;
 
 const destroyShader = () => {
@@ -186,10 +186,11 @@ const initHeroShaders = async () => {
 
 		perfMonitor = new PerformanceMonitor({
 			slowThreshold: 100,
-			consecutiveLimit: 5,
+			consecutiveLimit: 2,
 			onOverload: () => {
 				console.warn('Hero shader: Performance overload detected — killing shader permanently');
 				performanceKilled = true;
+				localStorage.setItem('hero-shader-performance-killed', 'true');
 				destroyShader();
 			},
 		});
