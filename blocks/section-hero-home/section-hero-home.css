@@ -18,7 +18,7 @@
 	justify-content: center;
 	min-height: var(--height-hero-home);
 	overflow: clip;
-	position: sticky;
+	/* position: sticky; */
 
 	@media (width >=40rem) {
 		--height-hero-home: 830px;

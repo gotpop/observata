@@ -172,8 +172,6 @@ const initHeroShaders = async () => {
 		activeShader = null;
 		activeCanvas = null;
 		delete canvas.dataset.shaderInitialized;
-		intersectionObserver?.disconnect();
-		intersectionObserver = null;
 	}
 };
 
