@@ -4,6 +4,7 @@ import { createShader } from 'shaders/js';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
+let observedCanvas: HTMLCanvasElement | null = null;
 let intersectionObserver: IntersectionObserver | null = null;
 let visibilityListenerAttached = false;
 let isTabVisible = true;
@@ -24,7 +25,8 @@ const handleIntersection = (entries: IntersectionObserverEntry[]) => {
 	const entry = entries[0];
 	if (!entry || !isTabVisible) return;
 
-	const rect = activeCanvas?.getBoundingClientRect();
+	const canvas = observedCanvas;
+	const rect = canvas?.getBoundingClientRect();
 	const isInView = entry.isIntersecting && !!rect && rect.width > 0 && rect.height > 0;
 
 	if (isInView && !activeShader) {
@@ -49,6 +51,8 @@ const handleVisibilityChange = () => {
 };
 
 const setupObservers = (canvas: HTMLCanvasElement) => {
+	observedCanvas = canvas;
+
 	if (intersectionObserver) return;
 
 	intersectionObserver = new IntersectionObserver(handleIntersection, { threshold: 0 });
