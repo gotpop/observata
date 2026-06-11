@@ -1,4 +1,5 @@
 import { createShader } from 'shaders/js';
+import { PerformanceMonitor } from '../utils';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
@@ -6,6 +7,8 @@ let observedCanvas: HTMLCanvasElement | null = null;
 let intersectionObserver: IntersectionObserver | null = null;
 let visibilityListenerAttached = false;
 let isTabVisible = true;
+let performanceKilled = false;
+let perfMonitor: PerformanceMonitor | null = null;
 
 const destroyShader = () => {
 	if (activeShader) {
@@ -17,6 +20,8 @@ const destroyShader = () => {
 		delete activeCanvas.dataset.shaderInitialized;
 	}
 	activeCanvas = null;
+	perfMonitor?.stop();
+	perfMonitor = null;
 };
 
 const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -27,7 +32,7 @@ const handleIntersection = (entries: IntersectionObserverEntry[]) => {
 	const rect = canvas?.getBoundingClientRect();
 	const isInView = entry.isIntersecting && !!rect && rect.width > 0 && rect.height > 0;
 
-	if (isInView && !activeShader) {
+	if (isInView && !activeShader && !performanceKilled) {
 		console.info('Hero shader: Canvas scrolled into view, initializing');
 		initHeroShaders();
 	} else if (!isInView && activeShader) {
@@ -43,8 +48,14 @@ const handleVisibilityChange = () => {
 		destroyShader();
 	} else {
 		isTabVisible = true;
-		console.info('Hero shader: Tab refocused, re-initializing shader');
-		initHeroShaders();
+		if (performanceKilled) {
+			console.info(
+				'Hero shader: Tab refocused, but shader was killed due to poor performance — skipping'
+			);
+		} else {
+			console.info('Hero shader: Tab refocused, re-initializing shader');
+			initHeroShaders();
+		}
 	}
 };
 
@@ -65,6 +76,12 @@ const setupObservers = (canvas: HTMLCanvasElement) => {
 };
 
 const initHeroShaders = async () => {
+	if (performanceKilled) {
+		console.info('Hero shader: Skipping init — shader was killed due to poor performance');
+
+		return;
+	}
+
 	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
 
 	if (!canvas) {
@@ -158,6 +175,7 @@ const initHeroShaders = async () => {
 				],
 			},
 			{
+				enablePerformanceTracking: true,
 				onReady: () => {
 					canvas.classList.add('loaded');
 				},
@@ -165,6 +183,17 @@ const initHeroShaders = async () => {
 		);
 
 		setupObservers(canvas);
+
+		perfMonitor = new PerformanceMonitor({
+			slowThreshold: 100,
+			consecutiveLimit: 5,
+			onOverload: () => {
+				console.warn('Hero shader: Performance overload detected — killing shader permanently');
+				performanceKilled = true;
+				destroyShader();
+			},
+		});
+		perfMonitor.start();
 
 		console.info('Hero shader: Successfully loaded');
 	} catch (error) {

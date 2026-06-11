@@ -10,3 +10,4 @@ export {
 	isSafari,
 } from './browser';
 export { removeClickOutsideClose, setupClickOutsideClose } from './click-outside-close';
+export { PerformanceMonitor } from './performance-monitor';
