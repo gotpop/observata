@@ -1,7 +1,10 @@
 import { createShader } from 'shaders/js';
 
 const initHeroShaders = async () => {
-	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
+	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement;
+
+	canvas.style.width = '1600px';
+	canvas.style.height = 'auto';
 
 	if (!canvas) {
 		console.warn('Hero shader: Canvas element not found');
@@ -37,7 +40,7 @@ const initHeroShaders = async () => {
 						id: 'idmmr8zyxrodm90feqn',
 						props: {
 							center: {
-								x: 0.83,
+								x: 0.775,
 								y: 0.76,
 							},
 							glossiness: 200,
