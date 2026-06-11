@@ -2,14 +2,61 @@ import { createShader } from 'shaders/js';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
+let intersectionObserver: IntersectionObserver | null = null;
+let visibilityListenerAttached = false;
+let isTabVisible = true;
 
-const handleVisibilityChange = () => {
-	if (!activeShader || !activeCanvas) return;
-
-	if (document.hidden) {
+const destroyShader = () => {
+	if (activeShader) {
+		console.info('Hero shader: Destroying shader');
 		activeShader.destroy();
 		activeShader = null;
+	}
+	if (activeCanvas) {
 		delete activeCanvas.dataset.shaderInitialized;
+	}
+	activeCanvas = null;
+};
+
+const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+	const entry = entries[0];
+	if (!entry || !isTabVisible) return;
+
+	const rect = activeCanvas?.getBoundingClientRect();
+	const isInView = entry.isIntersecting && !!rect && rect.width > 0 && rect.height > 0;
+
+	if (isInView && !activeShader) {
+		console.info('Hero shader: Canvas scrolled into view, initializing');
+		initHeroShaders();
+	} else if (!isInView && activeShader) {
+		console.info('Hero shader: Canvas scrolled out of view, destroying');
+		destroyShader();
+	}
+};
+
+const handleVisibilityChange = () => {
+	if (document.hidden) {
+		console.info('Hero shader: Tab hidden, destroying shader');
+		isTabVisible = false;
+		destroyShader();
+	} else {
+		isTabVisible = true;
+		console.info('Hero shader: Tab refocused, re-initializing shader');
+		initHeroShaders();
+	}
+};
+
+const setupObservers = (canvas: HTMLCanvasElement) => {
+	if (intersectionObserver) return;
+
+	intersectionObserver = new IntersectionObserver(handleIntersection, { threshold: 0 });
+	intersectionObserver.observe(canvas);
+	console.info('Hero shader: IntersectionObserver set up on canvas');
+
+	if (!visibilityListenerAttached) {
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+		visibilityListenerAttached = true;
+		console.info('Hero shader: visibilitychange listener attached');
 	}
 };
 
@@ -113,7 +160,7 @@ const initHeroShaders = async () => {
 			}
 		);
 
-		document.addEventListener('visibilitychange', handleVisibilityChange);
+		setupObservers(canvas);
 
 		console.info('Hero shader: Successfully loaded');
 	} catch (error) {
@@ -121,6 +168,8 @@ const initHeroShaders = async () => {
 		activeShader = null;
 		activeCanvas = null;
 		delete canvas.dataset.shaderInitialized;
+		intersectionObserver?.disconnect();
+		intersectionObserver = null;
 	}
 };
 
