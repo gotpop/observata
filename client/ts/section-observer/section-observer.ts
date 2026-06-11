@@ -18,7 +18,11 @@ const observerCallback = (entries: IntersectionObserverEntry[]) => {
 
 const observers = new Map<string, IntersectionObserver>();
 
-function getObserver(threshold: number, marginTop: string, marginBottom: string): IntersectionObserver {
+function getObserver(
+	threshold: number,
+	marginTop: string,
+	marginBottom: string
+): IntersectionObserver {
 	const key = `${threshold}-${marginTop}-${marginBottom}`;
 
 	if (!observers.has(key)) {
@@ -48,4 +52,28 @@ export function initSectionObserver() {
 
 		observer.observe(section);
 	}
+
+	// Clean up observers when all observed sections have been seen
+	// (one-shot: disconnect after elements enter viewport)
+	document.addEventListener('visibilitychange', () => {
+		if (document.hidden) return;
+
+		for (const [key, observer] of observers) {
+			const entries = observer.takeRecords();
+			const allInView = entries.every((entry) => entry.isIntersecting);
+
+			if (allInView && entries.length > 0) {
+				observer.disconnect();
+				observers.delete(key);
+			}
+		}
+	});
+}
+
+/** Disconnect all intersection observers. Call on SPA-style teardown if needed. */
+export function disconnectAllObservers(): void {
+	for (const observer of observers.values()) {
+		observer.disconnect();
+	}
+	observers.clear();
 }

@@ -1,16 +1,29 @@
 import { createShader } from 'shaders/js';
 
-const initHeroShaders = async () => {
-	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement;
+let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
+let activeCanvas: HTMLCanvasElement | null = null;
 
-	canvas.style.width = '1600px';
-	canvas.style.height = 'auto';
+const handleVisibilityChange = () => {
+	if (!activeShader || !activeCanvas) return;
+
+	if (document.hidden) {
+		activeShader.destroy();
+		activeShader = null;
+		delete activeCanvas.dataset.shaderInitialized;
+	}
+};
+
+const initHeroShaders = async () => {
+	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
 
 	if (!canvas) {
 		console.warn('Hero shader: Canvas element not found');
 
 		return;
 	}
+
+	canvas.style.width = '1600px';
+	canvas.style.height = 'auto';
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn(
@@ -31,7 +44,8 @@ const initHeroShaders = async () => {
 
 	try {
 		console.info('Hero shader: Initializing...');
-		await createShader(
+		activeCanvas = canvas;
+		activeShader = await createShader(
 			canvas,
 			{
 				components: [
@@ -98,9 +112,14 @@ const initHeroShaders = async () => {
 				},
 			}
 		);
+
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+
 		console.info('Hero shader: Successfully loaded');
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
+		activeShader = null;
+		activeCanvas = null;
 		delete canvas.dataset.shaderInitialized;
 	}
 };

@@ -2,6 +2,19 @@ import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from '
 
 import { createShader } from 'shaders/js';
 
+let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
+let activeCanvas: HTMLCanvasElement | null = null;
+
+const handleVisibilityChange = () => {
+	if (!activeShader || !activeCanvas) return;
+
+	if (document.hidden) {
+		activeShader.destroy();
+		activeShader = null;
+		delete activeCanvas.dataset.shaderInitialized;
+	}
+};
+
 function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 	return {
 		components: [
@@ -111,15 +124,20 @@ const initSubpageShaders = async () => {
 
 	try {
 		console.info('Subpage shader: Initializing...');
-		await createShader(canvas, config, {
-			observeElement: false,
+		activeCanvas = canvas;
+		activeShader = await createShader(canvas, config, {
 			onReady: () => {
 				canvas.classList.add('loaded');
 			},
 		});
+
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+
 		console.info('Subpage shader: Successfully loaded');
 	} catch (error) {
 		console.error('Subpage shader: Failed to initialize', error);
+		activeShader = null;
+		activeCanvas = null;
 		delete canvas.dataset.shaderInitialized;
 	}
 };
