@@ -37,7 +37,7 @@ const initHeroShaders = async () => {
 						id: 'idmmr8zyxrodm90feqn',
 						props: {
 							center: {
-								x: 1.185,
+								x: 1.183,
 								y: 0.76,
 							},
 							glossiness: 200,
@@ -74,9 +74,10 @@ const initHeroShaders = async () => {
 									angle: 0,
 									blendMode: 'linearDodge',
 									opacity: 0.43,
-									speed: 0.08,
+									speed: 0.04,
 									strokeWidth: 0.18,
-									trailLength: 0.46,
+									trailLength: 0.58,
+									density: 19,
 									transform: {
 										scale: 0.95,
 										anchorX: 1,
