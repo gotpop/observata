@@ -101,25 +101,6 @@ const initHeroShaders = async () => {
 			{
 				components: [
 					{
-						id: 'idmq9s057lzsskesdtt',
-						type: 'SolidColor',
-						props: {
-							color: '#f3edf7',
-							blendMode: 'normal',
-							maskType: 'alpha',
-							opacity: 1,
-							transform: {
-								offsetX: 0,
-								offsetY: 0,
-								rotation: 0,
-								scale: 1,
-								anchorX: 0.5,
-								anchorY: 0.5,
-								edges: 'transparent',
-							},
-						},
-					},
-					{
 						type: 'Form3D',
 						id: 'idmmr8zyxrodm90feqn',
 						props: {
