@@ -69,7 +69,6 @@
 		overflow: clip;
 		position: relative;
 		grid-column: 1 / -1;
-		/* inset: auto auto -225px auto; */
 
 		@media (width >=96rem) {
 			grid-column: 2 / -2;
