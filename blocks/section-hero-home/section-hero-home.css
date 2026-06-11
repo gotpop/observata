@@ -50,6 +50,7 @@
 		grid-row: hero;
 		grid-column: content;
 		grid-template-columns: 1fr;
+		z-index: 1;
 	}
 
 	.hero-text {
@@ -69,6 +70,7 @@
 		overflow: clip;
 		position: relative;
 		grid-column: 1 / -1;
+		z-index: 0;
 
 		@media (width >=96rem) {
 			grid-column: 2 / -2;
