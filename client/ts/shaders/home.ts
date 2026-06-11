@@ -124,7 +124,7 @@ const initHeroShaders = async () => {
 
 	canvas.dataset.shaderInitialized = 'true';
 
-	// Performance-killed path: init then immediately destroy to leave a frozen frame
+	// Performance-killed path: render a few frames then destroy to leave a frozen frame
 	if (performanceKilled) {
 		console.info('Hero shader: Performance-killed — rendering single frozen frame');
 
@@ -132,8 +132,22 @@ const initHeroShaders = async () => {
 			const shader = await createShader(canvas, shaderConfig, {
 				onReady: () => {
 					canvas.classList.add('loaded');
-					shader.destroy();
-					console.info('Hero shader: Frozen frame rendered');
+
+					// Wait a few frames for the GPU to actually paint before destroying
+					let framesRemaining = 3;
+
+					const waitFrame = () => {
+						framesRemaining--;
+
+						if (framesRemaining <= 0) {
+							shader.destroy();
+							console.info('Hero shader: Frozen frame rendered');
+						} else {
+							requestAnimationFrame(waitFrame);
+						}
+					};
+
+					requestAnimationFrame(waitFrame);
 				},
 			});
 		} catch {
