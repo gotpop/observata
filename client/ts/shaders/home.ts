@@ -40,7 +40,7 @@ const initHeroShaders = async () => {
 						id: 'idmmr8zyxrodm90feqn',
 						props: {
 							center: {
-								x: 0.775,
+								x: 0.63,
 								y: 0.76,
 							},
 							glossiness: 200,
@@ -51,7 +51,7 @@ const initHeroShaders = async () => {
 								twist: 24,
 								width: 73,
 								thickness: 20,
-								seed: 24.5,
+								seed: 2,
 							},
 							shape3dType: 'ribbon',
 							speed: 0,
