@@ -1,10 +1,18 @@
 .element-list-simple {
+	list-style-type: square;
 	margin: var(--spacing-16) 0;
 	padding-left: var(--spacing-24);
-	list-style-type: square;
-}
 
-.element-list-simple__list {
-	list-style: disc;
-	list-style-position: inside;
+	.element-list-simple-item {
+		color: var(--colour-text-body-default);
+		font-size: var(--typography-size-16);
+		font-weight: var(--typography-weight-regular);
+		line-height: var(--line-height-body-md);
+		text-wrap: pretty;
+
+		&::marker {
+			color: var(--colour-text-body-default);
+			font-size: var(--typography-size-20);
+		}
+	}
 }
