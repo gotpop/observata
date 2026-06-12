@@ -6,12 +6,12 @@
 	min-height: max-content;
 
 	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
 		border-radius: inherit;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+		content: '';
+		inset: 0;
 		pointer-events: none;
+		position: absolute;
 		z-index: 2;
 	}
 
@@ -73,30 +73,31 @@
 		--icon-size-outer: 3.25rem;
 		--icon-size-inner: 2.3rem;
 
-		position: absolute;
 		inset: 1.5rem 1.5rem auto auto;
+		position: absolute;
 		z-index: 1;
 	}
 
 	.shader {
-		position: absolute;
+		display: var(--display-shader, none);
 		inset: 0 0 auto auto;
+		position: absolute;
 		z-index: 0;
-		display: none;
 
 		@media (width >=40rem) {
-			display: block;
+			--display-shader: block;
 		}
 	}
 
 	.img-fallback {
-		display: block;
+		display: var(--display-img-fallback, block);
+		inset: 0 0 auto auto;
+		max-height: 220px;
 		position: absolute;
-		inset: 0 -8rem auto auto;
-		rotate: -23deg;
+		width: auto;
 
 		:has(.shader.loaded) & {
-			display: none;
+			--display-img-fallback: none;
 		}
 	}
 
