@@ -95,6 +95,9 @@ const shaderConfig = {
 	],
 };
 
+const SHADER_WIDTH = 1600;
+const SHADER_HEIGHT = 830;
+
 const initHeroShaders = async () => {
 	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
 
@@ -104,8 +107,8 @@ const initHeroShaders = async () => {
 		return;
 	}
 
-	canvas.style.width = '1600px';
-	canvas.style.height = '100%';
+	canvas.style.width = `${SHADER_WIDTH}px`;
+	canvas.style.height = `${SHADER_HEIGHT}px`;
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn(
@@ -130,8 +133,10 @@ const initHeroShaders = async () => {
 
 		try {
 			const shader = await createShader(canvas, shaderConfig, {
+				observeElement: false,
 				onReady: () => {
 					canvas.classList.add('loaded');
+					shader.resize(SHADER_WIDTH, SHADER_HEIGHT);
 
 					// Wait a few frames for the GPU to actually paint before destroying
 					let framesRemaining = 3;
@@ -162,9 +167,11 @@ const initHeroShaders = async () => {
 		console.info('Hero shader: Initializing...');
 		activeCanvas = canvas;
 		activeShader = await createShader(canvas, shaderConfig, {
+			observeElement: false,
 			enablePerformanceTracking: true,
 			onReady: () => {
 				canvas.classList.add('loaded');
+				activeShader!.resize(SHADER_WIDTH, SHADER_HEIGHT);
 			},
 		});
 

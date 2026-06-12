@@ -43,3 +43,6 @@ Desktop.ini
 # MCP configuration with sensitive tokens
 /mcp.json
 .air
+
+# Patches
+patches/
