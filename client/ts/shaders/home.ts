@@ -1,6 +1,7 @@
 import { MQ, MQ_MAX } from '../utils/breakpoints';
 
 import { createShader } from 'shaders/js';
+import { checkShaderSupport } from './utils-shader/warnings';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
@@ -122,14 +123,7 @@ const initHeroShaders = async () => {
 	canvas.style.width = profile.width;
 	canvas.style.height = profile.height;
 
-	if (!window.isSecureContext || !('gpu' in navigator)) {
-		console.warn(
-			'Hero shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:',
-			window.location.origin
-		);
-
-		return;
-	}
+	if (!checkShaderSupport()) return;
 
 	if (canvas.dataset.shaderInitialized === 'true') {
 		console.info('Hero shader: Already initialized, skipping');
