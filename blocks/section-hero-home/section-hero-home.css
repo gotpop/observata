@@ -1,15 +1,10 @@
 .block-section-hero-home {
 	--height-hero-home: 620px;
-	/* --bg-mobile: url('../../assets/img/shader-ribbon-mobile.png'); */
-	--bg-position: center bottom 8%, center, center;
 	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 	--grad-radial-white: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
 
 	background-color: var(--surface-white);
-	background-image: var(--bg-mobile), var(--grad-radial-white), var(--grad-linear);
-	background-position: var(--bg-position);
-	background-repeat: no-repeat;
-	background-size: 150%, auto, auto;
+	background-image: var(--grad-radial-white), var(--grad-linear);
 	display: grid;
 	grid-column: 1 / -1;
 	grid-template-columns: subgrid;
@@ -78,9 +73,12 @@
 		position: absolute;
 		bottom: 50px;
 
-		@media (width >=96rem) {
+		@media (width >=48rem) {
 			bottom: 20px;
 			min-height: 350px;
+		}
+
+		@media (width >=96rem) {
 			grid-column: 2 / -2;
 			border-inline: var(--border-grey);
 		}
