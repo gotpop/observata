@@ -12,7 +12,9 @@ type ShaderProfile = {
 	center: { x: number; y: number };
 };
 
-const PROFILES: Record<'mobile' | 'tablet' | 'desktop', ShaderProfile> = {
+type Profile = Record<'mobile' | 'tablet' | 'desktop', ShaderProfile>;
+
+const PROFILES: Profile = {
 	mobile: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
 	tablet: { width: '1024px', height: '350px', center: { x: 0.55, y: 0.5 } },
 	desktop: { width: '1536px', height: '350px', center: { x: 0.635, y: 0.5 } },
