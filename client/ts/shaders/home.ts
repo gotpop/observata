@@ -9,12 +9,15 @@ let perfMonitor: PerformanceMonitor | null = null;
 const destroyShader = () => {
 	if (activeShader) {
 		console.info('Hero shader: Destroying shader');
+
 		activeShader.destroy();
 		activeShader = null;
 	}
+
 	if (activeCanvas) {
 		delete activeCanvas.dataset.shaderInitialized;
 	}
+
 	activeCanvas = null;
 	perfMonitor?.stop();
 	perfMonitor = null;
