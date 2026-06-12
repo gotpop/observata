@@ -1,10 +1,8 @@
 import { createShader } from 'shaders/js';
-import { PerformanceMonitor } from '../utils';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
 let visibilityListenerAttached = false;
-let perfMonitor: PerformanceMonitor | null = null;
 
 const destroyShader = () => {
 	if (activeShader) {
@@ -19,8 +17,6 @@ const destroyShader = () => {
 	}
 
 	activeCanvas = null;
-	perfMonitor?.stop();
-	perfMonitor = null;
 };
 
 const handleVisibilityChange = () => {
@@ -142,18 +138,6 @@ const initHeroShaders = async () => {
 			visibilityListenerAttached = true;
 			console.info('Hero shader: visibilitychange listener attached');
 		}
-
-		perfMonitor = new PerformanceMonitor({
-			slowThreshold: 100,
-			slowLimit: 8,
-			onOverload: () => {
-				console.warn(
-					'Hero shader: Performance overload detected — destroying shader for this session'
-				);
-				destroyShader();
-			},
-		});
-		perfMonitor.start();
 
 		console.info('Hero shader: Successfully loaded');
 	} catch (error) {
