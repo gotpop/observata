@@ -4,7 +4,6 @@ import { PerformanceMonitor } from '../utils';
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
 let visibilityListenerAttached = false;
-let performanceKilled = localStorage.getItem('hero-shader-performance-killed') === 'true';
 let perfMonitor: PerformanceMonitor | null = null;
 
 const destroyShader = () => {
@@ -24,16 +23,12 @@ const destroyShader = () => {
 const handleVisibilityChange = () => {
 	if (document.hidden) {
 		console.info('Hero shader: Tab hidden, destroying shader');
+
 		destroyShader();
 	} else {
-		if (performanceKilled) {
-			console.info(
-				'Hero shader: Tab refocused, but shader was killed due to poor performance — skipping'
-			);
-		} else {
-			console.info('Hero shader: Tab refocused, re-initializing shader');
-			initHeroShaders();
-		}
+		console.info('Hero shader: Tab refocused, re-initializing shader');
+
+		initHeroShaders();
 	}
 };
 
@@ -127,42 +122,6 @@ const initHeroShaders = async () => {
 
 	canvas.dataset.shaderInitialized = 'true';
 
-	// Performance-killed path: render a few frames then destroy to leave a frozen frame
-	if (performanceKilled) {
-		console.info('Hero shader: Performance-killed — rendering single frozen frame');
-
-		try {
-			const shader = await createShader(canvas, shaderConfig, {
-				observeElement: false,
-				onReady: () => {
-					canvas.classList.add('loaded');
-					shader.resize(SHADER_WIDTH, SHADER_HEIGHT);
-
-					// Wait a few frames for the GPU to actually paint before destroying
-					let framesRemaining = 3;
-
-					const waitFrame = () => {
-						framesRemaining--;
-
-						if (framesRemaining <= 0) {
-							shader.destroy();
-							console.info('Hero shader: Frozen frame rendered');
-						} else {
-							requestAnimationFrame(waitFrame);
-						}
-					};
-
-					requestAnimationFrame(waitFrame);
-				},
-			});
-		} catch {
-			delete canvas.dataset.shaderInitialized;
-		}
-
-		return;
-	}
-
-	// Normal path: full shader with performance monitoring
 	try {
 		console.info('Hero shader: Initializing...');
 		activeCanvas = canvas;
@@ -182,12 +141,12 @@ const initHeroShaders = async () => {
 		}
 
 		perfMonitor = new PerformanceMonitor({
-			slowThreshold: 50,
-			slowLimit: 3,
+			slowThreshold: 100,
+			slowLimit: 8,
 			onOverload: () => {
-				console.warn('Hero shader: Performance overload detected — killing shader permanently');
-				performanceKilled = true;
-				localStorage.setItem('hero-shader-performance-killed', 'true');
+				console.warn(
+					'Hero shader: Performance overload detected — destroying shader for this session'
+				);
 				destroyShader();
 			},
 		});
