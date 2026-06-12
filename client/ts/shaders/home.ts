@@ -126,7 +126,7 @@ const initHeroShaders = async () => {
 		activeCanvas = canvas;
 		activeShader = await createShader(canvas, shaderConfig, {
 			observeElement: false,
-			enablePerformanceTracking: true,
+			enablePerformanceTracking: false,
 			onReady: () => {
 				canvas.classList.add('loaded');
 				activeShader!.resize(SHADER_WIDTH, SHADER_HEIGHT);
