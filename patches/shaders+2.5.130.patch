@@ -1,0 +1,258 @@
+diff --git a/node_modules/shaders/dist/core/Form3D-DOek31CJ.js b/node_modules/shaders/dist/core/Form3D-DOek31CJ.js
+index 0e83802..0d05c0a 100644
+--- a/node_modules/shaders/dist/core/Form3D-DOek31CJ.js
++++ b/node_modules/shaders/dist/core/Form3D-DOek31CJ.js
+@@ -1,6 +1,7 @@
++import { Break, Fn, If, Loop, abs, atan, clamp, convertToTexture, cos, dot, float, fract, max, min, mix, normalize, pow, screenUV, sin, uniform, vec2, vec3, vec4, viewportSize } from "three/tsl";
+ import { c as transformEdges, l as transformPosition } from "./transformations-CJcUeZIC.js";
++
+ import { t as createAnimatedTime } from "./time-DUqSFWvT.js";
+-import { Break, Fn, If, Loop, abs, atan, clamp, convertToTexture, cos, dot, float, fract, max, min, mix, normalize, pow, screenUV, sin, uniform, vec2, vec3, vec4, viewportSize } from "three/tsl";
+ function applyDistortion3D(childTexture, shape, uniforms, march = {}) {
+ 	const steps = march.steps ?? 96;
+ 	const stepCap = march.stepCap ?? .15;
+diff --git a/node_modules/shaders/dist/core/index.js b/node_modules/shaders/dist/core/index.js
+index acb251a..4d59ee3 100644
+--- a/node_modules/shaders/dist/core/index.js
++++ b/node_modules/shaders/dist/core/index.js
+@@ -1,18 +1,17 @@
+-import { t as applyEdgeHandling } from "./edges-CX_lJB9R.js";
+-import { a as transformColor, l as transformPosition, n as setColorSpaceMode, s as transformColorUpdate, u as transformPositionUpdate } from "./transformations-CJcUeZIC.js";
++import { WebGLRenderer } from "three";
++import { PI, abs, add, atan, clamp, convertToTexture, cos, div, dot, float, fract, max, min, mix, mul, pow, screenUV, sign, sin, smoothstep, sqrt, step, sub, time, uniform, uv, vec2, vec3, vec4 } from "three/tsl";
++import { ACESFilmicToneMapping, AgXToneMapping, CineonToneMapping, Material, Mesh, MeshBasicNodeMaterial, NeutralToneMapping, NoToneMapping, OrthographicCamera, PlaneGeometry, ReinhardToneMapping, SRGBColorSpace, Scene, Vector2, WebGPURenderer } from "three/webgpu";
+ import "./alpha-C4ptedXe.js";
+ import "./AngularBlur-C1oRJ8Y9.js";
+ import "./Ascii-BwSMmD6Z.js";
+-import "./colorMixing-BPpDnR5I.js";
+-import { t as createAnimatedTime } from "./time-DUqSFWvT.js";
+ import "./Aurora-D5Pjk4ve.js";
+ import "./BarShift-2XBhva1A.js";
+ import "./Beam-B3BX08lR.js";
+ import "./Blob-BT50tDXE.js";
+-import "./computeBlur-oxyhoztH.js";
+ import "./Blur-1GcG1L1y.js";
+ import "./BrickPattern-BfTsjp4I.js";
+ import "./BrightnessContrast-GppIqtkO.js";
++import "./browser-CDogs09U.js";
+ import "./Bulge-DMOATSEs.js";
+ import "./ChannelBlur-CxlVaYGM.js";
+ import "./Checkerboard-BVBGTvd-.js";
+@@ -20,11 +19,12 @@ import "./Chevron-BKZjAXR_.js";
+ import "./ChromaFlow-C0guw_LP.js";
+ import "./ChromaticAberration-DZOcs-bZ.js";
+ import "./Circle-BycqVCMt.js";
++import "./colorMixing-BPpDnR5I.js";
+ import "./ColorWheel-BQUKQPM-.js";
++import "./computeBlur-oxyhoztH.js";
+ import "./ConcentricSpin-CO3Kx1I1.js";
+ import "./ConicGradient-DRvVwiSj.js";
+ import "./ContourLines-s4waN3uU.js";
+-import "./sdf-D_EAGXhN.js";
+ import "./Crescent-ppz7W7eM.js";
+ import "./Cross-BfNOtQ6s.js";
+ import "./CRTScreen-corekL_R.js";
+@@ -38,6 +38,7 @@ import "./DOMTexture-Ec0k6AnK.js";
+ import "./DotGrid-BxAAGO4F.js";
+ import "./DropShadow-CR3cecIQ.js";
+ import "./Duotone-PwTfBBtM.js";
++import { t as applyEdgeHandling } from "./edges-CX_lJB9R.js";
+ import "./Ellipse-sWhNvW9-.js";
+ import "./Emboss-DGaubb9x.js";
+ import "./Exposure-CFn2J_t3.js";
+@@ -89,6 +90,8 @@ import "./Ring-V4sEHwwm.js";
+ import "./Ripples-DC1y3YuP.js";
+ import "./RoundedRect-JY2z6YEH.js";
+ import "./Saturation-ChJ9IWnl.js";
++import "./sdf-D_EAGXhN.js";
++import { t as getAllShaders } from "./shaderRegistry-BVFBmRN3.js";
+ import "./Sharpness-C1ufX8S-.js";
+ import "./Shatter-Du5THcwZ.js";
+ import "./SimplexNoise--vwIZVu0.js";
+@@ -108,7 +111,9 @@ import "./SunBurst-CskZwXc3.js";
+ import "./Swirl-CyGfVZ8n.js";
+ import "./ThinFilm-CUsi8eSg.js";
+ import "./TiltShift-vG90NlLr.js";
++import { t as createAnimatedTime } from "./time-DUqSFWvT.js";
+ import "./Tint-R7y5CJ4U.js";
++import { n as setColorSpaceMode, a as transformColor, s as transformColorUpdate, l as transformPosition, u as transformPositionUpdate } from "./transformations-CJcUeZIC.js";
+ import "./Trapezoid-BXzH--z9.js";
+ import "./Tritone-CF4Oj1sl.js";
+ import "./Truchet-BL4jzZDX.js";
+@@ -116,7 +121,6 @@ import "./Twirl-BVLPHKJD.js";
+ import "./Vesica-DzIEa3aJ.js";
+ import "./VHS-B2IBdQgX.js";
+ import "./Vibrance-jrvT49Du.js";
+-import "./browser-CDogs09U.js";
+ import "./VideoTexture-FmV1l91c.js";
+ import "./Vignette-ng_5gjXc.js";
+ import "./Voronoi-C8iIU7AT.js";
+@@ -125,10 +129,6 @@ import "./Weave-CFmLkEaq.js";
+ import "./WebcamTexture-DlS4MCDm.js";
+ import "./WorleyNoise-CEZiaVAN.js";
+ import "./ZoomBlur-DTVSwIvc.js";
+-import { t as getAllShaders } from "./shaderRegistry-BVFBmRN3.js";
+-import { ACESFilmicToneMapping, AgXToneMapping, CineonToneMapping, Material, Mesh, MeshBasicNodeMaterial, NeutralToneMapping, NoToneMapping, OrthographicCamera, PlaneGeometry, ReinhardToneMapping, SRGBColorSpace, Scene, Vector2, WebGPURenderer } from "three/webgpu";
+-import { WebGLRenderer } from "three";
+-import { PI, abs, add, atan, clamp, convertToTexture, cos, div, dot, float, fract, max, min, mix, mul, pow, screenUV, sign, sin, smoothstep, sqrt, step, sub, time, uniform, uv, vec2, vec3, vec4 } from "three/tsl";
+ function normal_default(base, overlay, opacity = 1) {
+ 	const overlayAlpha = mul(overlay.a, opacity);
+ 	const finalAlpha = add(overlayAlpha, mul(base.a, sub(1, overlayAlpha)));
+@@ -707,26 +707,28 @@ var globalEventManager = (() => {
+ 			}
+ 		});
+ 	};
+-	return { register(handlers) {
+-		callbacks.add(handlers);
+-		instanceCount++;
+-		if (instanceCount === 1) {
+-			window.addEventListener("mousemove", globalMouseMoveHandler);
+-			window.addEventListener("touchmove", globalTouchMoveHandler);
+-			window.addEventListener("mouseup", globalMouseUpHandler);
+-			window.addEventListener("touchend", globalTouchEndHandler);
+-		}
+-		return () => {
+-			callbacks.delete(handlers);
+-			instanceCount--;
+-			if (instanceCount === 0) {
+-				window.removeEventListener("mousemove", globalMouseMoveHandler);
+-				window.removeEventListener("touchmove", globalTouchMoveHandler);
+-				window.removeEventListener("mouseup", globalMouseUpHandler);
+-				window.removeEventListener("touchend", globalTouchEndHandler);
++	return {
++		register(handlers) {
++			callbacks.add(handlers);
++			instanceCount++;
++			if (instanceCount === 1) {
++				window.addEventListener("mousemove", globalMouseMoveHandler);
++				window.addEventListener("touchmove", globalTouchMoveHandler);
++				window.addEventListener("mouseup", globalMouseUpHandler);
++				window.addEventListener("touchend", globalTouchEndHandler);
+ 			}
+-		};
+-	} };
++			return () => {
++				callbacks.delete(handlers);
++				instanceCount--;
++				if (instanceCount === 0) {
++					window.removeEventListener("mousemove", globalMouseMoveHandler);
++					window.removeEventListener("touchmove", globalTouchMoveHandler);
++					window.removeEventListener("mouseup", globalMouseUpHandler);
++					window.removeEventListener("touchend", globalTouchEndHandler);
++				}
++			};
++		}
++	};
+ })();
+ var applySpring = (current, velocity, target, smoothing, momentum, dt) => {
+ 	if (smoothing === 0 && momentum === 0) return [target, 0];
+@@ -792,7 +794,7 @@ function shaderRenderer() {
+ 		deviceLostFired = true;
+ 		try {
+ 			stopAnimation();
+-		} catch {}
++		} catch { }
+ 		if (onDeviceLostCallback) queueMicrotask(() => {
+ 			try {
+ 				onDeviceLostCallback?.(reason);
+@@ -828,8 +830,8 @@ function shaderRenderer() {
+ 	const clampToTextureCap = (w, h) => {
+ 		const pr = renderer?.getPixelRatio?.() ?? 1;
+ 		const gpuCssCap = Math.max(1, Math.floor(cachedMaxTextureDim / pr) - 1);
+-		const capW = Math.min(w, window.innerWidth, gpuCssCap);
+-		const capH = Math.min(h, window.innerHeight, gpuCssCap);
++		const capW = Math.min(w, gpuCssCap);
++		const capH = Math.min(h, gpuCssCap);
+ 		const scale = Math.min(capW / w, capH / h, 1);
+ 		return {
+ 			width: Math.max(1, Math.round(w * scale)),
+@@ -950,7 +952,7 @@ function shaderRenderer() {
+ 		previousTextures.forEach((texture$1) => {
+ 			try {
+ 				if (texture$1?.renderTarget?.dispose) texture$1.renderTarget.dispose();
+-			} catch (e) {}
++			} catch (e) { }
+ 		});
+ 		previousTextures.clear();
+ 	};
+@@ -1017,7 +1019,7 @@ function shaderRenderer() {
+ 					try {
+ 						material.dispose();
+ 						if (renderer.renderTarget) renderer.renderTarget.dispose();
+-					} catch (e) {}
++					} catch (e) { }
+ 					const newMaterial = new MeshBasicNodeMaterial({ transparent: true });
+ 					newMaterial.fragmentNode = finalNode;
+ 					newMaterial.needsUpdate = true;
+@@ -2024,7 +2026,7 @@ function shaderRenderer() {
+ 							}
+ 						}
+ 					}
+-				} catch (e) {}
++				} catch (e) { }
+ 				try {
+ 					if (!recordedTrueGpuTime) {
+ 						performance.measure("shader-gpu-time", "shader-gpu-start", "shader-gpu-end");
+@@ -2034,7 +2036,7 @@ function shaderRenderer() {
+ 					}
+ 					performance.clearMarks("shader-gpu-start");
+ 					performance.clearMarks("shader-gpu-end");
+-				} catch (e) {}
++				} catch (e) { }
+ 			}
+ 			if (enablePerformanceTracking) {
+ 				performance.mark("shader-cpu-end");
+@@ -2045,7 +2047,7 @@ function shaderRenderer() {
+ 					performance.clearMarks("shader-cpu-start");
+ 					performance.clearMarks("shader-cpu-end");
+ 					performance.clearMeasures("shader-cpu-time");
+-				} catch (e) {}
++				} catch (e) { }
+ 				const frameTime = performance.now() - frameStartTime;
+ 				performanceTracker.recordFrame(frameTime);
+ 			}
+@@ -2248,7 +2250,7 @@ function shaderRenderer() {
+ 					if (device?.lost && typeof device.lost.then === "function") device.lost.then((info) => {
+ 						if (info?.reason === "destroyed") return;
+ 						fireDeviceLost(info?.message || info?.reason || "unknown");
+-					}).catch(() => {});
++					}).catch(() => { });
+ 				} catch (hookErr) {
+ 					console.warn("[Shaders] could not attach WebGPU device.lost handler", hookErr);
+ 				}
+@@ -2335,7 +2337,7 @@ function shaderRenderer() {
+ 						const lim = renderer.capabilities?.maxTextureSize;
+ 						if (typeof lim === "number" && lim > 0) cachedMaxTextureDim = lim;
+ 					}
+-				} catch {}
++				} catch { }
+ 				if (lastRequestedWidth > 0 && lastRequestedHeight > 0) {
+ 					const rawW = lastRequestedWidth;
+ 					const rawH = lastRequestedHeight;
+@@ -2389,7 +2391,7 @@ function shaderRenderer() {
+ 		currentTextures.forEach((texture$1) => {
+ 			try {
+ 				if (texture$1?.renderTarget?.dispose) texture$1.renderTarget.dispose();
+-			} catch (e) {}
++			} catch (e) { }
+ 		});
+ 		currentTextures.clear();
+ 		nodeRegistry.nodes.clear();
+@@ -2412,14 +2414,14 @@ function shaderRenderer() {
+ 			if (scene) scene.remove(mesh);
+ 			try {
+ 				if (mesh.geometry && typeof mesh.geometry.dispose === "function") mesh.geometry.dispose();
+-			} catch (e) {}
++			} catch (e) { }
+ 			try {
+ 				if (mesh.material instanceof Material && typeof mesh.material.dispose === "function") mesh.material.dispose();
+-			} catch (e) {}
++			} catch (e) { }
+ 		}
+ 		if (renderer && typeof renderer.dispose === "function") try {
+ 			renderer.dispose();
+-		} catch (e) {}
++		} catch (e) { }
+ 		canvasElement = null;
+ 		renderer = null;
+ 		camera = null;
