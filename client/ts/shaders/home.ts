@@ -45,7 +45,7 @@ const shaderConfig = {
 			props: {
 				center: {
 					x: 0.63,
-					y: 0.76,
+					y: 0.785,
 				},
 				glossiness: 200,
 				lighting: 197,
