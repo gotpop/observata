@@ -1,7 +1,7 @@
 import { MQ, MQ_MAX } from '../utils/breakpoints';
 
 import { createShader } from 'shaders/js';
-import { checkShaderSupport } from './utils-shader/warnings';
+import { prepareCanvas } from './utils-shader/warnings';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
@@ -110,31 +110,18 @@ const shaderConfig = {
 };
 
 const initHeroShaders = async () => {
-	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
+	const canvas = prepareCanvas('hero-shader');
 
-	if (!canvas) {
-		console.warn('Hero shader: Canvas element not found');
+	if (!canvas) return;
 
-		return;
-	}
+	const { width, height, center } = getProfile();
 
-	const profile = getProfile();
-
-	canvas.style.width = profile.width;
-	canvas.style.height = profile.height;
-
-	if (!checkShaderSupport()) return;
-
-	if (canvas.dataset.shaderInitialized === 'true') {
-		console.info('Hero shader: Already initialized, skipping');
-
-		return;
-	}
+	canvas.style.width = width;
+	canvas.style.height = height;
 
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {
-		console.info('Hero shader: Initializing...');
 		activeCanvas = canvas;
 		activeShader = await createShader(canvas, shaderConfig, {
 			observeElement: false,
@@ -144,17 +131,17 @@ const initHeroShaders = async () => {
 				const { width, height } = canvas.getBoundingClientRect();
 
 				activeShader!.resize(Math.round(width), Math.round(height));
-				activeShader!.update('idmmr8zyxrodm90feqn', { center: profile.center });
+				activeShader!.update('idmmr8zyxrodm90feqn', { center });
 			},
 		});
 
 		if (!visibilityListenerAttached) {
 			document.addEventListener('visibilitychange', handleVisibilityChange);
+
 			visibilityListenerAttached = true;
+
 			console.info('Hero shader: visibilitychange listener attached');
 		}
-
-		console.info('Hero shader: Successfully loaded');
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
 		activeShader = null;
