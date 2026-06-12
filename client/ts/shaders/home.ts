@@ -1,11 +1,12 @@
 import { MQ, MQ_MAX } from '../utils/breakpoints';
+import {
+	createVisibilityHandler,
+	getActiveShader,
+	setActiveShader,
+} from './utils-shader/lifecycle';
 
 import { createShader } from 'shaders/js';
 import { prepareCanvas } from './utils-shader/warnings';
-
-let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
-let activeCanvas: HTMLCanvasElement | null = null;
-let visibilityListenerAttached = false;
 
 type ShaderProfile = {
 	width: string;
@@ -24,34 +25,8 @@ const PROFILES: Profile = {
 const getProfile = (): ShaderProfile => {
 	if (window.matchMedia(MQ_MAX.md).matches) return PROFILES.mobile;
 	if (window.matchMedia(MQ.lg).matches) return PROFILES.desktop;
+
 	return PROFILES.tablet;
-};
-
-const destroyShader = () => {
-	if (activeShader) {
-		console.info('Hero shader: Destroying shader');
-
-		activeShader.destroy();
-		activeShader = null;
-	}
-
-	if (activeCanvas) {
-		delete activeCanvas.dataset.shaderInitialized;
-	}
-
-	activeCanvas = null;
-};
-
-const handleVisibilityChange = () => {
-	if (document.hidden) {
-		console.info('Hero shader: Tab hidden, destroying shader');
-
-		destroyShader();
-	} else {
-		console.info('Hero shader: Tab refocused, re-initializing shader');
-
-		initHeroShaders();
-	}
 };
 
 const shaderConfig = {
@@ -118,34 +93,33 @@ const initHeroShaders = async () => {
 
 	canvas.style.width = width;
 	canvas.style.height = height;
-
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {
-		activeCanvas = canvas;
-		activeShader = await createShader(canvas, shaderConfig, {
-			observeElement: false,
-			enablePerformanceTracking: false,
-			onReady: () => {
-				canvas.classList.add('loaded');
-				const { width, height } = canvas.getBoundingClientRect();
+		setActiveShader(
+			await createShader(canvas, shaderConfig, {
+				observeElement: false,
+				enablePerformanceTracking: false,
+				onReady: () => {
+					canvas.classList.add('loaded');
 
-				activeShader!.resize(Math.round(width), Math.round(height));
-				activeShader!.update('idmmr8zyxrodm90feqn', { center });
-			},
-		});
+					const { width, height } = canvas.getBoundingClientRect();
 
-		if (!visibilityListenerAttached) {
-			document.addEventListener('visibilitychange', handleVisibilityChange);
+					const shader = getActiveShader()!;
 
-			visibilityListenerAttached = true;
+					shader.resize(Math.round(width), Math.round(height));
+					shader.update('idmmr8zyxrodm90feqn', { center });
+				},
+			}),
+			canvas
+		);
 
-			console.info('Hero shader: visibilitychange listener attached');
-		}
+		createVisibilityHandler(initHeroShaders).attach();
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
-		activeShader = null;
-		activeCanvas = null;
+
+		setActiveShader(null, canvas);
+
 		delete canvas.dataset.shaderInitialized;
 	}
 };
