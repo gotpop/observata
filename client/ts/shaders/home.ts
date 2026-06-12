@@ -96,32 +96,30 @@ const initHeroShaders = async () => {
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {
-		setActiveShader(
-			await createShader(canvas, shaderConfig, {
-				observeElement: false,
-				enablePerformanceTracking: false,
-				onReady: () => {
-					canvas.classList.add('loaded');
+		const shader = await createShader(canvas, shaderConfig, {
+			// observeElement: false,
+			enablePerformanceTracking: false,
+			onReady: () => onShaderReady(canvas, center),
+		});
 
-					const { width, height } = canvas.getBoundingClientRect();
-
-					const shader = getActiveShader()!;
-
-					shader.resize(Math.round(width), Math.round(height));
-					shader.update('idmmr8zyxrodm90feqn', { center });
-				},
-			}),
-			canvas
-		);
-
+		setActiveShader(shader, canvas);
 		createVisibilityHandler(initHeroShaders).attach();
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
-
 		setActiveShader(null, canvas);
 
 		delete canvas.dataset.shaderInitialized;
 	}
+};
+
+const onShaderReady = (canvas: HTMLCanvasElement, center: { x: number; y: number }) => {
+	canvas.classList.add('loaded');
+
+	const { width, height } = canvas.getBoundingClientRect();
+	const shader = getActiveShader()!;
+
+	shader.resize(Math.round(width), Math.round(height));
+	shader.update('idmmr8zyxrodm90feqn', { center });
 };
 
 export { initHeroShaders };
