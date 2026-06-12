@@ -1,8 +1,47 @@
+import { MQ, MQ_MAX } from '../utils/breakpoints';
+
 import { createShader } from 'shaders/js';
 
 let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
 let activeCanvas: HTMLCanvasElement | null = null;
 let visibilityListenerAttached = false;
+
+type ShaderProfile = {
+	cssWidth: string;
+	cssHeight: string;
+	renderWidth?: number;
+	renderHeight: number;
+	center: { x: number; y: number };
+};
+
+const PROFILES: Record<'mobile' | 'tablet' | 'desktop', ShaderProfile> = {
+	mobile: {
+		cssWidth: '100%',
+		cssHeight: '200px',
+		renderHeight: 160,
+		center: { x: 0.67, y: 0.5 },
+	},
+	tablet: {
+		cssWidth: '1024px',
+		cssHeight: '350px',
+		renderWidth: 1024,
+		renderHeight: 350,
+		center: { x: 0.55, y: 0.5 },
+	},
+	desktop: {
+		cssWidth: '1536px',
+		cssHeight: '350px',
+		renderWidth: 1536,
+		renderHeight: 350,
+		center: { x: 0.635, y: 0.5 },
+	},
+};
+
+const getProfile = (): ShaderProfile => {
+	if (window.matchMedia(MQ_MAX.md).matches) return PROFILES.mobile;
+	if (window.matchMedia(MQ.lg).matches) return PROFILES.desktop;
+	return PROFILES.tablet;
+};
 
 const destroyShader = () => {
 	if (activeShader) {
@@ -37,10 +76,7 @@ const shaderConfig = {
 			type: 'Form3D',
 			id: 'idmmr8zyxrodm90feqn',
 			props: {
-				center: {
-					x: 0.635,
-					y: 0.5,
-				},
+				center: PROFILES.desktop.center,
 				glossiness: 200,
 				lighting: 197,
 				shape3d: {
@@ -89,9 +125,6 @@ const shaderConfig = {
 	],
 };
 
-const SHADER_WIDTH = 1536;
-const SHADER_HEIGHT = 350;
-
 const initHeroShaders = async () => {
 	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
 
@@ -101,8 +134,10 @@ const initHeroShaders = async () => {
 		return;
 	}
 
-	canvas.style.width = `${SHADER_WIDTH}px`;
-	canvas.style.height = `${SHADER_HEIGHT}px`;
+	const profile = getProfile();
+
+	canvas.style.width = profile.cssWidth;
+	canvas.style.height = profile.cssHeight;
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn(
@@ -129,7 +164,9 @@ const initHeroShaders = async () => {
 			enablePerformanceTracking: false,
 			onReady: () => {
 				canvas.classList.add('loaded');
-				activeShader!.resize(SHADER_WIDTH, SHADER_HEIGHT);
+				const rw = profile.renderWidth ?? Math.round(canvas.getBoundingClientRect().width);
+				activeShader!.resize(rw, profile.renderHeight);
+				activeShader!.update('idmmr8zyxrodm90feqn', { center: profile.center });
 			},
 		});
 
