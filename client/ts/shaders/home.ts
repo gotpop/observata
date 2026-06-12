@@ -7,34 +7,15 @@ let activeCanvas: HTMLCanvasElement | null = null;
 let visibilityListenerAttached = false;
 
 type ShaderProfile = {
-	cssWidth: string;
-	cssHeight: string;
-	renderWidth?: number;
-	renderHeight: number;
+	width: string;
+	height: string;
 	center: { x: number; y: number };
 };
 
 const PROFILES: Record<'mobile' | 'tablet' | 'desktop', ShaderProfile> = {
-	mobile: {
-		cssWidth: '100%',
-		cssHeight: '200px',
-		renderHeight: 160,
-		center: { x: 0.67, y: 0.5 },
-	},
-	tablet: {
-		cssWidth: '1024px',
-		cssHeight: '350px',
-		renderWidth: 1024,
-		renderHeight: 350,
-		center: { x: 0.55, y: 0.5 },
-	},
-	desktop: {
-		cssWidth: '1536px',
-		cssHeight: '350px',
-		renderWidth: 1536,
-		renderHeight: 350,
-		center: { x: 0.635, y: 0.5 },
-	},
+	mobile: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
+	tablet: { width: '1024px', height: '350px', center: { x: 0.55, y: 0.5 } },
+	desktop: { width: '1536px', height: '350px', center: { x: 0.635, y: 0.5 } },
 };
 
 const getProfile = (): ShaderProfile => {
@@ -136,8 +117,8 @@ const initHeroShaders = async () => {
 
 	const profile = getProfile();
 
-	canvas.style.width = profile.cssWidth;
-	canvas.style.height = profile.cssHeight;
+	canvas.style.width = profile.width;
+	canvas.style.height = profile.height;
 
 	if (!window.isSecureContext || !('gpu' in navigator)) {
 		console.warn(
@@ -164,8 +145,9 @@ const initHeroShaders = async () => {
 			enablePerformanceTracking: false,
 			onReady: () => {
 				canvas.classList.add('loaded');
-				const rw = profile.renderWidth ?? Math.round(canvas.getBoundingClientRect().width);
-				activeShader!.resize(rw, profile.renderHeight);
+				const { width, height } = canvas.getBoundingClientRect();
+
+				activeShader!.resize(Math.round(width), Math.round(height));
 				activeShader!.update('idmmr8zyxrodm90feqn', { center: profile.center });
 			},
 		});
