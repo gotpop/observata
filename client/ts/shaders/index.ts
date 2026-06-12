@@ -1,4 +1,5 @@
 import { createMatchMedia } from '../utils';
+import { initCardGeoShader } from './card-geo-shader';
 import { initHeroShaders } from './home';
 import { initSubpageShaders } from './subpage';
 
@@ -21,9 +22,9 @@ export function initShaders(): void {
 		void initSubpageShaders();
 	}
 
-	// const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
+	const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
 
-	// for (const canvas of canvases) {
-	// 	void initCardGeoShader(canvas);
-	// }
+	for (const canvas of canvases) {
+		void initCardGeoShader(canvas);
+	}
 }
