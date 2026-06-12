@@ -18,7 +18,8 @@
 	justify-content: center;
 	min-height: var(--height-hero-home);
 	overflow: clip;
-	/* position: sticky; */
+	position: sticky;
+	position: relative;
 
 	@media (width >=40rem) {
 		--height-hero-home: 830px;
@@ -72,6 +73,11 @@
 		grid-column: 1 / -1;
 		z-index: 0;
 		overflow: clip;
+		/* background-color: yellow; */
+		min-height: 350px;
+		min-width: 100%;
+		position: absolute;
+		bottom: 20px;
 
 		@media (width >=96rem) {
 			grid-column: 2 / -2;

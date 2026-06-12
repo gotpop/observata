@@ -38,8 +38,8 @@ const shaderConfig = {
 			id: 'idmmr8zyxrodm90feqn',
 			props: {
 				center: {
-					x: 0.63,
-					y: 0.785,
+					x: 0.635,
+					y: 0.5,
 				},
 				glossiness: 200,
 				lighting: 197,
@@ -54,7 +54,7 @@ const shaderConfig = {
 				shape3dType: 'ribbon',
 				speed: 0,
 				uvMode: 'mirror',
-				zoom: 73,
+				zoom: 107.8,
 			},
 			children: [
 				{
@@ -89,8 +89,8 @@ const shaderConfig = {
 	],
 };
 
-const SHADER_WIDTH = 1600;
-const SHADER_HEIGHT = 830;
+const SHADER_WIDTH = 1536;
+const SHADER_HEIGHT = 350;
 
 const initHeroShaders = async () => {
 	const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
