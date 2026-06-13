@@ -18,22 +18,23 @@ type Bp = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 type Profile = Record<Bp, ShaderProfile>;
 
 const PROFILES: Profile = {
-	xs: { width: '120%', height: '100%', center: { x: 0.65, y: 0.5 } },
-	sm: { width: '120%', height: '100%', center: { x: 0.68, y: 0.5 } },
-	md: { width: '120%', height: '100%', center: { x: 0.71, y: 0.5 } },
-	lg: { width: '120%', height: '100%', center: { x: 0.74, y: 0.5 } },
-	xl: { width: '110%', height: '100%', center: { x: 0.62, y: 0.5 } },
-	'2xl': { width: '110%', height: '100%', center: { x: 0.635, y: 0.5 } },
+	xs: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
+	sm: { width: '120%', height: '220px', center: { x: 0.68, y: 0.5 } },
+	md: { width: '120%', height: '350px', center: { x: 0.71, y: 0.5 } },
+	lg: { width: '120%', height: '350px', center: { x: 0.74, y: 0.5 } },
+	xl: { width: '110%', height: '350px', center: { x: 0.62, y: 0.5 } },
+	'2xl': { width: '110%', height: '350px', center: { x: 0.635, y: 0.5 } },
 };
 
-const getProfile = (): ShaderProfile & { bp: Bp } => {
-	if (window.matchMedia(MQ_MAX.sm).matches) return { ...PROFILES.xs, bp: 'xs' };
-	if (window.matchMedia(MQ_MAX.md).matches) return { ...PROFILES.sm, bp: 'sm' };
-	if (window.matchMedia(MQ_MAX.lg).matches) return { ...PROFILES.md, bp: 'md' };
-	if (window.matchMedia(MQ_MAX.xl).matches) return { ...PROFILES.lg, bp: 'lg' };
-	if (window.matchMedia(MQ_MAX['2xl']).matches) return { ...PROFILES.xl, bp: 'xl' };
+const getProfile = (): ShaderProfile & { bp: Bp; range: string } => {
+	if (window.matchMedia(MQ_MAX.sm).matches) return { ...PROFILES.xs, bp: 'xs', range: '<40rem' };
+	if (window.matchMedia(MQ_MAX.md).matches) return { ...PROFILES.sm, bp: 'sm', range: '40–48rem' };
+	if (window.matchMedia(MQ_MAX.lg).matches) return { ...PROFILES.md, bp: 'md', range: '48–64rem' };
+	if (window.matchMedia(MQ_MAX.xl).matches) return { ...PROFILES.lg, bp: 'lg', range: '64–80rem' };
+	if (window.matchMedia(MQ_MAX['2xl']).matches)
+		return { ...PROFILES.xl, bp: 'xl', range: '80–96rem' };
 
-	return { ...PROFILES['2xl'], bp: '2xl' };
+	return { ...PROFILES['2xl'], bp: '2xl', range: '≥96rem' };
 };
 
 const shaderConfig = {
@@ -96,9 +97,9 @@ const initHeroShaders = async () => {
 
 	if (!canvas) return;
 
-	const { width, height, center, bp } = getProfile();
+	const { width, height, center, bp, range } = getProfile();
 
-	console.info(`Hero shader: Active breakpoint → ${bp}`, { width, height, center });
+	console.info(`Hero shader: ${bp} (${range})`, { width, height, center });
 
 	canvas.style.width = width;
 	canvas.style.height = height;
