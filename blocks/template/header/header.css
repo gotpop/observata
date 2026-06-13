@@ -54,7 +54,7 @@
 			column-gap: var(--spacing-16);
 		}
 
-		@media (width >= 48rem) {
+		@media (width >= 64rem) {
 			grid-template-areas: 'logo nav';
 			grid-template-rows: min-content;
 			grid-template-columns: max-content 1fr;
