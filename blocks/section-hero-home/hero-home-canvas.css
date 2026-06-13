@@ -23,9 +23,33 @@
 		pointer-events: none;
 		translate: -50% 0;
 		bottom: 50px;
+		width: 120%;
+		height: 120px;
+
+		@media (width >=40rem) {
+			width: 120%;
+			height: 220px;
+		}
 
 		@media (width >=48rem) {
+			width: 120%;
+			height: 220px;
 			bottom: 20px;
+		}
+
+		@media (width >=64rem) {
+			width: 120%;
+			height: 350px;
+		}
+
+		@media (width >=80rem) {
+			width: 110%;
+			height: 350px;
+		}
+
+		@media (width >=96rem) {
+			width: 110%;
+			height: 350px;
 		}
 	}
 }

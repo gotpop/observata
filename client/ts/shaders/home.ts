@@ -19,11 +19,11 @@ type Profile = Record<Bp, ShaderProfile>;
 
 const PROFILES: Profile = {
 	xs: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
-	sm: { width: '120%', height: '220px', center: { x: 0.68, y: 0.5 } },
-	md: { width: '120%', height: '350px', center: { x: 0.71, y: 0.5 } },
-	lg: { width: '120%', height: '350px', center: { x: 0.74, y: 0.5 } },
-	xl: { width: '110%', height: '350px', center: { x: 0.62, y: 0.5 } },
-	'2xl': { width: '110%', height: '350px', center: { x: 0.635, y: 0.5 } },
+	sm: { width: '120%', height: '220px', center: { x: 0.65, y: 0.5 } },
+	md: { width: '120%', height: '350px', center: { x: 0.65, y: 0.5 } },
+	lg: { width: '120%', height: '350px', center: { x: 0.65, y: 0.5 } },
+	xl: { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
+	'2xl': { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
 };
 
 const getProfile = (): ShaderProfile & { bp: Bp; range: string } => {
@@ -101,8 +101,8 @@ const initHeroShaders = async () => {
 
 	console.info(`Hero shader: ${bp} (${range})`, { width, height, center });
 
-	canvas.style.width = width;
-	canvas.style.height = height;
+	// canvas.style.width = width;
+	// canvas.style.height = height;
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {

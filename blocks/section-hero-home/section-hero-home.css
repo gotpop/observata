@@ -17,6 +17,21 @@
 	position: relative;
 
 	@media (width >=40rem) {
+	}
+
+	@media (width >=48rem) {
+	}
+
+	@media (width >=64rem) {
+	}
+
+	@media (width >=80rem) {
+	}
+
+	@media (width >=96rem) {
+	}
+
+	@media (width >=40rem) {
 		--height-hero-home: 830px;
 
 		background-image: var(--grad-radial-white), var(--grad-linear);
