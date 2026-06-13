@@ -64,7 +64,7 @@
 		inset: auto 0 var(--bottom) 0;
 		pointer-events: none;
 		position: absolute;
-		width: 100%;
+		width: var(--stretch);
 		height: var(--shader);
 	}
 }
