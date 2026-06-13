@@ -25,7 +25,8 @@
 		align-items: center;
 		animation-fill-mode: forwards;
 		animation-name: header-scroll;
-		animation-range-end: 100px;
+		animation-range-start: 300px;
+		animation-range-end: 600px;
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
 		background: var(--surface-white);
