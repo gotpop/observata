@@ -1,48 +1,15 @@
 .block-section-hero-home {
-	--height-hero-home: 620px;
 	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
 	--grad-radial-white: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
 
 	background-color: var(--surface-white);
 	background-image: var(--grad-radial-white), var(--grad-linear);
 	display: grid;
-	grid-column: 1 / -1;
+	grid-column: full;
 	grid-template-columns: subgrid;
-	grid-template-rows: var(--size-height-heading) 2rem [hero-start] min-content [hero-end] 1fr;
-	inset: 0 auto auto auto;
 	justify-content: center;
-	min-height: var(--height-hero-home);
 	overflow: clip;
-	position: sticky;
 	position: relative;
-
-	@media (width >=40rem) {
-	}
-
-	@media (width >=48rem) {
-	}
-
-	@media (width >=64rem) {
-	}
-
-	@media (width >=80rem) {
-	}
-
-	@media (width >=96rem) {
-	}
-
-	@media (width >=40rem) {
-		--height-hero-home: 830px;
-
-		background-image: var(--grad-radial-white), var(--grad-linear);
-		background-size: auto, auto;
-		background-position: center, center;
-		grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
-	}
-
-	@media (width >=80rem) {
-		grid-template-rows: 11.5rem [hero-start] min-content [hero-end] 1fr;
-	}
 
 	&::after {
 		animation-name: overlay-animation;

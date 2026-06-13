@@ -1,4 +1,31 @@
 .block-section-hero-home {
+	min-height: var(--height-hero-home);
+	grid-template-rows: var(--size-height-heading) 2rem [hero-start] min-content [hero-end] 1fr;
+
+	--height-hero-home: 620px;
+
+	@media (width >=40rem) {
+		grid-template-rows: 10rem [hero-start] min-content [hero-end] 1fr;
+		--height-hero-home: 750px;
+	}
+
+	@media (width >=48rem) {
+		--height-hero-home: 750px;
+	}
+
+	@media (width >=64rem) {
+		--height-hero-home: 830px;
+	}
+
+	@media (width >=80rem) {
+		grid-template-rows: 11.5rem [hero-start] min-content [hero-end] 1fr;
+		--height-hero-home: 830px;
+	}
+
+	@media (width >=96rem) {
+		--height-hero-home: 830px;
+	}
+
 	.wrap-canvas {
 		grid-row: 1 / -1;
 		pointer-events: none;
