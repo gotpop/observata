@@ -56,7 +56,22 @@
 
 		@media (width >=96rem) {
 			grid-column: 2 / -2;
-			border-inline: var(--border-grey);
+
+			&::before,
+			&::after {
+				content: '';
+				height: var(--stretch);
+				width: 1px;
+				background-color: var(--colour-neutral-300);
+				opacity: 0.3;
+				mix-blend-mode: overlay;
+				z-index: 99;
+				position: absolute;
+			}
+
+			&::after {
+				inset: 0 0 0 auto;
+			}
 		}
 	}
 
