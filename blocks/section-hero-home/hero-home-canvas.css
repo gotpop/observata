@@ -49,7 +49,7 @@
 		min-height: var(--stretch);
 		overflow: clip;
 		pointer-events: none;
-		position: relative;
+		position: absolute;
 		width: 100%;
 		z-index: 0;
 		display: grid;
