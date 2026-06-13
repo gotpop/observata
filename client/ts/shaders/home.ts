@@ -18,7 +18,7 @@ type Bp = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 type Profile = Record<Bp, ShaderProfile>;
 
 const PROFILES: Profile = {
-	xs: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
+	xs: { width: '120%', height: '120px', center: { x: 0.61, y: 0.5 } },
 	sm: { width: '120%', height: '220px', center: { x: 0.65, y: 0.5 } },
 	md: { width: '120%', height: '350px', center: { x: 0.65, y: 0.5 } },
 	lg: { width: '120%', height: '350px', center: { x: 0.65, y: 0.5 } },
@@ -108,11 +108,18 @@ const initHeroShaders = async () => {
 	try {
 		const shader = await createShader(canvas, shaderConfig, {
 			enablePerformanceTracking: false,
+			// observeElement: true,
 			onReady: () => onShaderReady(canvas, center),
 		});
 
 		setActiveShader(shader, canvas);
-		createVisibilityHandler(initHeroShaders).attach();
+
+		if (!visibilityHandlerAttached) {
+			visibilityHandlerAttached = true;
+			createVisibilityHandler(initHeroShaders).attach();
+		}
+
+		attachBreakpointListeners();
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
 		setActiveShader(null, canvas);
@@ -129,6 +136,46 @@ const onShaderReady = (canvas: HTMLCanvasElement, center: { x: number; y: number
 
 	shader.resize(Math.round(width), Math.round(height));
 	shader.update('idmmr8zyxrodm90feqn', { center });
+};
+
+let breakpointListenersAttached = false;
+let visibilityHandlerAttached = false;
+let currentBp: Bp | null = null;
+
+const attachBreakpointListeners = () => {
+	if (breakpointListenersAttached) return;
+	breakpointListenersAttached = true;
+
+	currentBp = getProfile().bp;
+
+	const handler = () => {
+		const { bp, range } = getProfile();
+
+		if (bp === currentBp) return;
+
+		console.info(`Hero shader: breakpoint changed → ${bp} (${range})`);
+		currentBp = bp;
+
+		// Full teardown then reinit — matches a fresh page load
+		const shader = getActiveShader();
+		if (shader) {
+			shader.destroy();
+		}
+
+		const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
+		if (canvas) {
+			delete canvas.dataset.shaderInitialized;
+			canvas.classList.remove('loaded');
+			canvas.style.width = '';
+			canvas.style.height = '';
+		}
+
+		void initHeroShaders();
+	};
+
+	Object.values(MQ_MAX).forEach((mq) => {
+		window.matchMedia(mq).addEventListener('change', handler);
+	});
 };
 
 export { initHeroShaders };
