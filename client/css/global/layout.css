@@ -72,7 +72,7 @@ main {
 		--grad: var(--grad-rad), var(--grad-lin);
 	}
 
-	@media (width >=60rem) {
+	@media (width >=48rem) {
 		--padding-section-block: var(--spacing-80);
 	}
 }
