@@ -26,15 +26,22 @@ const PROFILES: Profile = {
 	'2xl': { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
 };
 
-const getProfile = (): ShaderProfile & { bp: Bp; range: string } => {
-	if (window.matchMedia(MQ_MAX.sm).matches) return { ...PROFILES.xs, bp: 'xs', range: '<40rem' };
-	if (window.matchMedia(MQ_MAX.md).matches) return { ...PROFILES.sm, bp: 'sm', range: '40–48rem' };
-	if (window.matchMedia(MQ_MAX.lg).matches) return { ...PROFILES.md, bp: 'md', range: '48–64rem' };
-	if (window.matchMedia(MQ_MAX.xl).matches) return { ...PROFILES.lg, bp: 'lg', range: '64–80rem' };
-	if (window.matchMedia(MQ_MAX['2xl']).matches)
-		return { ...PROFILES.xl, bp: 'xl', range: '80–96rem' };
+const BP_TIERS: { bp: Bp; mq: keyof typeof MQ_MAX; range: string }[] = [
+	{ bp: 'xs', mq: 'sm', range: '<40rem' },
+	{ bp: 'sm', mq: 'md', range: '40-48rem' },
+	{ bp: 'md', mq: 'lg', range: '48-64rem' },
+	{ bp: 'lg', mq: 'xl', range: '64-80rem' },
+	{ bp: 'xl', mq: '2xl', range: '80-96rem' },
+];
 
-	return { ...PROFILES['2xl'], bp: '2xl', range: '≥96rem' };
+const getProfile = (): ShaderProfile & { bp: Bp; range: string } => {
+	for (const { bp, mq, range } of BP_TIERS) {
+		if (window.matchMedia(MQ_MAX[mq]).matches) {
+			return { ...PROFILES[bp], bp, range };
+		}
+	}
+
+	return { ...PROFILES['2xl'], bp: '2xl', range: '>=96rem' };
 };
 
 const shaderConfig = {
