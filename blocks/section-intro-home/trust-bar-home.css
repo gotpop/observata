@@ -33,7 +33,7 @@
 			max-width: 100px;
 			max-height: var(--spacing-16);
 
-			@media (width >=40rem) {
+			@media (width >=64rem) {
 				max-width: 200px;
 				max-height: 30px;
 			}
