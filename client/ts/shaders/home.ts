@@ -1,4 +1,3 @@
-import { MQ, MQ_MAX } from '../utils/breakpoints';
 import {
 	createVisibilityHandler,
 	getActiveShader,
@@ -6,6 +5,7 @@ import {
 } from './utils-shader/lifecycle';
 
 import { createShader } from 'shaders/js';
+import { MQ_MAX } from '../utils/breakpoints';
 import { prepareCanvas } from './utils-shader/warnings';
 
 type ShaderProfile = {
@@ -18,15 +18,16 @@ type Profile = Record<'mobile' | 'tablet' | 'desktop', ShaderProfile>;
 
 const PROFILES: Profile = {
 	mobile: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
-	tablet: { width: '1024px', height: '350px', center: { x: 0.55, y: 0.5 } },
-	desktop: { width: '1536px', height: '350px', center: { x: 0.635, y: 0.5 } },
+	tablet: { width: '120%', height: '350px', center: { x: 0.74, y: 0.5 } },
+	// desktop: { width: '1536px', height: '350px', center: { x: 0.635, y: 0.5 } },
+	desktop: { width: '110%', height: '350px', center: { x: 0.635, y: 0.5 } },
 };
 
-const getProfile = (): ShaderProfile => {
-	if (window.matchMedia(MQ_MAX.md).matches) return PROFILES.mobile;
-	if (window.matchMedia(MQ.lg).matches) return PROFILES.desktop;
+const getProfile = (): ShaderProfile & { bp: string } => {
+	if (window.matchMedia(MQ_MAX.md).matches) return { ...PROFILES.mobile, bp: 'mobile' };
+	if (window.matchMedia(MQ_MAX.lg).matches) return { ...PROFILES.tablet, bp: 'tablet' };
 
-	return PROFILES.tablet;
+	return { ...PROFILES.desktop, bp: 'desktop' };
 };
 
 const shaderConfig = {
@@ -89,7 +90,9 @@ const initHeroShaders = async () => {
 
 	if (!canvas) return;
 
-	const { width, height, center } = getProfile();
+	const { width, height, center, bp } = getProfile();
+
+	console.info(`Hero shader: Active breakpoint → ${bp}`, { width, height, center });
 
 	canvas.style.width = width;
 	canvas.style.height = height;
@@ -97,7 +100,6 @@ const initHeroShaders = async () => {
 
 	try {
 		const shader = await createShader(canvas, shaderConfig, {
-			// observeElement: false,
 			enablePerformanceTracking: false,
 			onReady: () => onShaderReady(canvas, center),
 		});
