@@ -60,37 +60,6 @@
 		}
 	}
 
-	.wrap-canvas {
-		grid-row: 1 / -1;
-		pointer-events: none;
-		overflow: clip;
-		position: relative;
-		grid-column: 1 / -1;
-		z-index: 0;
-		overflow: clip;
-		height: 120px;
-		width: 100%;
-		position: absolute;
-		bottom: 50px;
-
-		@media (width >=48rem) {
-			bottom: 20px;
-			height: 350px;
-		}
-
-		@media (width >=96rem) {
-			grid-column: 2 / -2;
-			border-inline: var(--border-grey);
-		}
-	}
-
-	.hero-shader {
-		position: absolute;
-		inset: auto 0 0 50%;
-		pointer-events: none;
-		translate: -50% 0;
-	}
-
 	.body-hero {
 		--align-body-hero: center;
 		--max-width-body-hero: min(100%, 60ch);
