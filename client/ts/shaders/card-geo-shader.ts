@@ -72,8 +72,6 @@ function getCardGeoShaderConfig({ colorA, colorB }: ShaderColors) {
 }
 
 export async function initCardGeoShader(canvas: HTMLCanvasElement) {
-	console.info(`Card geo shader: Initializing on canvas #${canvas.id}`);
-
 	canvas.style.width = '82px';
 	canvas.style.height = '220px';
 
@@ -90,14 +88,13 @@ export async function initCardGeoShader(canvas: HTMLCanvasElement) {
 
 	try {
 		await createShader(canvas, config, {
-			observeElement: false,
 			onReady: () => {
 				canvas.classList.add('loaded');
 			},
 		});
-		console.info(`Card geo shader: Successfully loaded on canvas #${canvas.id}`);
 	} catch (error) {
 		console.error(`Card geo shader: Failed to initialize on canvas #${canvas.id}`, error);
+
 		throw error;
 	}
 }
