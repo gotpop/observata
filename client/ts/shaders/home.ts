@@ -14,20 +14,26 @@ type ShaderProfile = {
 	center: { x: number; y: number };
 };
 
-type Profile = Record<'mobile' | 'tablet' | 'desktop', ShaderProfile>;
+type Bp = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+type Profile = Record<Bp, ShaderProfile>;
 
 const PROFILES: Profile = {
-	mobile: { width: '120%', height: '100%', center: { x: 0.65, y: 0.5 } },
-	tablet: { width: '120%', height: '100%', center: { x: 0.74, y: 0.5 } },
-	// desktop: { width: '1536px', height: '350px', center: { x: 0.635, y: 0.5 } },
-	desktop: { width: '110%', height: '100%', center: { x: 0.635, y: 0.5 } },
+	xs: { width: '120%', height: '100%', center: { x: 0.65, y: 0.5 } },
+	sm: { width: '120%', height: '100%', center: { x: 0.68, y: 0.5 } },
+	md: { width: '120%', height: '100%', center: { x: 0.71, y: 0.5 } },
+	lg: { width: '120%', height: '100%', center: { x: 0.74, y: 0.5 } },
+	xl: { width: '110%', height: '100%', center: { x: 0.62, y: 0.5 } },
+	'2xl': { width: '110%', height: '100%', center: { x: 0.635, y: 0.5 } },
 };
 
-const getProfile = (): ShaderProfile & { bp: string } => {
-	if (window.matchMedia(MQ_MAX.md).matches) return { ...PROFILES.mobile, bp: 'mobile' };
-	if (window.matchMedia(MQ_MAX.lg).matches) return { ...PROFILES.tablet, bp: 'tablet' };
+const getProfile = (): ShaderProfile & { bp: Bp } => {
+	if (window.matchMedia(MQ_MAX.sm).matches) return { ...PROFILES.xs, bp: 'xs' };
+	if (window.matchMedia(MQ_MAX.md).matches) return { ...PROFILES.sm, bp: 'sm' };
+	if (window.matchMedia(MQ_MAX.lg).matches) return { ...PROFILES.md, bp: 'md' };
+	if (window.matchMedia(MQ_MAX.xl).matches) return { ...PROFILES.lg, bp: 'lg' };
+	if (window.matchMedia(MQ_MAX['2xl']).matches) return { ...PROFILES.xl, bp: 'xl' };
 
-	return { ...PROFILES.desktop, bp: 'desktop' };
+	return { ...PROFILES['2xl'], bp: '2xl' };
 };
 
 const shaderConfig = {
@@ -36,7 +42,7 @@ const shaderConfig = {
 			type: 'Form3D',
 			id: 'idmmr8zyxrodm90feqn',
 			props: {
-				center: PROFILES.desktop.center,
+				center: PROFILES['2xl'].center,
 				glossiness: 200,
 				lighting: 197,
 				shape3d: {
