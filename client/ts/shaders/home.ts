@@ -1,47 +1,38 @@
-import {
-	createVisibilityHandler,
-	getActiveShader,
-	setActiveShader,
-} from './utils-shader/lifecycle';
+import { getActiveShader, setActiveShader } from './utils-shader/lifecycle';
 
 import { createShader } from 'shaders/js';
-import { MQ_MAX } from '../utils/breakpoints';
+import { BREAKPOINTS } from '../utils/breakpoints';
 import { prepareCanvas } from './utils-shader/warnings';
 
-type ShaderProfile = {
-	width: string;
-	height: string;
-	center: { x: number; y: number };
-};
+type Center = { x: number; y: number };
 
 type Bp = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-type Profile = Record<Bp, ShaderProfile>;
 
-const PROFILES: Profile = {
-	xs: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
-	sm: { width: '120%', height: '220px', center: { x: 0.65, y: 0.5 } },
-	md: { width: '120%', height: '350px', center: { x: 0.67, y: 0.5 } },
-	lg: { width: '120%', height: '350px', center: { x: 0.66, y: 0.5 } },
-	xl: { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
-	'2xl': { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
+const CENTER_X: Record<Bp, number> = {
+	xs: 0.65,
+	sm: 0.65,
+	md: 0.67,
+	lg: 0.66,
+	xl: 0.65,
+	'2xl': 0.65,
 };
 
-const BP_TIERS: { bp: Bp; mq: keyof typeof MQ_MAX; range: string }[] = [
-	{ bp: 'xs', mq: 'sm', range: '<40rem' },
-	{ bp: 'sm', mq: 'md', range: '40-48rem' },
-	{ bp: 'md', mq: 'lg', range: '48-64rem' },
-	{ bp: 'lg', mq: 'xl', range: '64-80rem' },
-	{ bp: 'xl', mq: '2xl', range: '80-96rem' },
+const BP_TIERS: { bp: Bp; max: number; range: string }[] = [
+	{ bp: 'xs', max: BREAKPOINTS.sm, range: '<40rem' },
+	{ bp: 'sm', max: BREAKPOINTS.md, range: '40-48rem' },
+	{ bp: 'md', max: BREAKPOINTS.lg, range: '48-64rem' },
+	{ bp: 'lg', max: BREAKPOINTS.xl, range: '64-80rem' },
+	{ bp: 'xl', max: BREAKPOINTS['2xl'], range: '80-96rem' },
 ];
 
-const getProfile = (): ShaderProfile & { bp: Bp; range: string } => {
-	for (const { bp, mq, range } of BP_TIERS) {
-		if (window.matchMedia(MQ_MAX[mq]).matches) {
-			return { ...PROFILES[bp], bp, range };
-		}
+const getCenter = (): { center: Center; bp: Bp; range: string } => {
+	const w = window.innerWidth;
+
+	for (const { bp, max, range } of BP_TIERS) {
+		if (w < max) return { center: { x: CENTER_X[bp], y: 0.5 }, bp, range };
 	}
 
-	return { ...PROFILES['2xl'], bp: '2xl', range: '>=96rem' };
+	return { center: { x: CENTER_X['2xl'], y: 0.5 }, bp: '2xl', range: '>=96rem' };
 };
 
 const shaderConfig = {
@@ -50,7 +41,7 @@ const shaderConfig = {
 			type: 'Form3D',
 			id: 'idmmr8zyxrodm90feqn',
 			props: {
-				center: PROFILES['2xl'].center,
+				center: { x: CENTER_X['2xl'], y: 0.5 },
 				glossiness: 200,
 				lighting: 197,
 				shape3d: {
@@ -99,90 +90,42 @@ const shaderConfig = {
 	],
 };
 
+const SHADER_ID = 'idmmr8zyxrodm90feqn';
+
 const initHeroShaders = async () => {
 	const canvas = prepareCanvas('hero-shader');
 
 	if (!canvas) return;
 
-	const { width, height, center, bp, range } = getProfile();
+	const { center, bp, range } = getCenter();
 
-	console.info(`Hero shader: ${bp} (${range})`, { width, height, center });
-
-	canvas.style.width = width;
-	canvas.style.height = height;
+	console.info(`Hero shader: ${bp} (${range})`, center);
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {
 		const shader = await createShader(canvas, shaderConfig, {
 			enablePerformanceTracking: false,
-			// observeElement: true,
 			onReady: () => onShaderReady(canvas, center),
 		});
 
 		setActiveShader(shader, canvas);
-
-		if (!visibilityHandlerAttached) {
-			visibilityHandlerAttached = true;
-			createVisibilityHandler(initHeroShaders).attach();
-		}
-
-		attachBreakpointListeners();
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
+
 		setActiveShader(null, canvas);
 
 		delete canvas.dataset.shaderInitialized;
 	}
 };
 
-const onShaderReady = (canvas: HTMLCanvasElement, center: { x: number; y: number }) => {
+const onShaderReady = (canvas: HTMLCanvasElement, center: Center) => {
 	canvas.classList.add('loaded');
 
 	const { width, height } = canvas.getBoundingClientRect();
 	const shader = getActiveShader()!;
 
 	shader.resize(Math.round(width), Math.round(height));
-	shader.update('idmmr8zyxrodm90feqn', { center });
-};
-
-let breakpointListenersAttached = false;
-let visibilityHandlerAttached = false;
-let currentBp: Bp | null = null;
-
-const attachBreakpointListeners = () => {
-	if (breakpointListenersAttached) return;
-	breakpointListenersAttached = true;
-
-	currentBp = getProfile().bp;
-
-	const handler = () => {
-		const { bp, range } = getProfile();
-
-		if (bp === currentBp) return;
-
-		console.info(`Hero shader: breakpoint changed → ${bp} (${range})`);
-		currentBp = bp;
-
-		// Full teardown then reinit — matches a fresh page load
-		const shader = getActiveShader();
-		if (shader) {
-			shader.destroy();
-		}
-
-		const canvas = document.getElementById('hero-shader') as HTMLCanvasElement | null;
-		if (canvas) {
-			delete canvas.dataset.shaderInitialized;
-			canvas.classList.remove('loaded');
-			canvas.style.width = '';
-			canvas.style.height = '';
-		}
-
-		void initHeroShaders();
-	};
-
-	Object.values(MQ_MAX).forEach((mq) => {
-		window.matchMedia(mq).addEventListener('change', handler);
-	});
+	shader.update(SHADER_ID, { center });
 };
 
 export { initHeroShaders };
