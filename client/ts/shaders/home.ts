@@ -18,10 +18,10 @@ type Bp = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 type Profile = Record<Bp, ShaderProfile>;
 
 const PROFILES: Profile = {
-	xs: { width: '120%', height: '120px', center: { x: 0.61, y: 0.5 } },
+	xs: { width: '120%', height: '120px', center: { x: 0.65, y: 0.5 } },
 	sm: { width: '120%', height: '220px', center: { x: 0.65, y: 0.5 } },
-	md: { width: '120%', height: '350px', center: { x: 0.65, y: 0.5 } },
-	lg: { width: '120%', height: '350px', center: { x: 0.65, y: 0.5 } },
+	md: { width: '120%', height: '350px', center: { x: 0.67, y: 0.5 } },
+	lg: { width: '120%', height: '350px', center: { x: 0.66, y: 0.5 } },
 	xl: { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
 	'2xl': { width: '110%', height: '350px', center: { x: 0.65, y: 0.5 } },
 };
@@ -108,8 +108,8 @@ const initHeroShaders = async () => {
 
 	console.info(`Hero shader: ${bp} (${range})`, { width, height, center });
 
-	// canvas.style.width = width;
-	// canvas.style.height = height;
+	canvas.style.width = width;
+	canvas.style.height = height;
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {

@@ -11,11 +11,13 @@
 	border-radius: 2rem 2rem 0 0;
 	border: 1px solid var(--colour-border-border-gray);
 	border-bottom: none;
+	width: var(--stretch);
 
 	@media (width >=40rem) {
 		flex-wrap: wrap;
 		gap: 55px;
 		padding: 2rem 4rem;
+		width: auto;
 	}
 
 	@supports (corner-shape: squircle) {

@@ -38,7 +38,7 @@ button-toggle {
 		--button-toggle-color: var(--colour-secondary-300);
 	}
 
-	@media (width >= 64rem) {
+	@media (width >= 48rem) {
 		display: none;
 	}
 }
