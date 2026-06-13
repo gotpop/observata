@@ -8,7 +8,7 @@
 		position: absolute;
 		inset: 1rem 1rem auto auto;
 
-		@media (width >=40rem) {
+		@media (width >=60rem) {
 			--icon-size-outer: 5.25rem;
 			--icon-size-inner: 3.467rem;
 
