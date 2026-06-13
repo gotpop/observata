@@ -7,9 +7,10 @@
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
+	inset: 0 auto auto auto;
 	justify-content: center;
 	overflow: clip;
-	position: relative;
+	position: sticky;
 
 	&::after {
 		animation-name: overlay-animation;
