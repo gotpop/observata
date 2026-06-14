@@ -1,3 +1,4 @@
+import { createMatchMedia } from '../utils';
 import { initCardGeoShader } from './card-geo-shader';
 import { initHeroShaders } from './home';
 import { initSubpageShaders } from './subpage';
@@ -11,7 +12,7 @@ export function initShaders(): void {
 
 	const subpageCanvas = document.querySelector('.subpage-shader');
 
-	if (subpageCanvas) {
+	if (subpageCanvas && createMatchMedia('md').matches) {
 		void initSubpageShaders();
 	}
 
