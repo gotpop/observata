@@ -2,10 +2,9 @@
 	to {
 		backdrop-filter: blur(2px);
 		background-color: rgba(255, 255, 255, 0.95);
-		border-bottom: 1px solid var(--colour-border-border-gray);
-		border-left: 1px solid transparent;
+		border-block-end: var(--border-grey);
+		border-inline: 1px solid transparent;
 		border-radius: 0;
-		border-right: 1px solid transparent;
 		border-top: 1px solid transparent;
 		margin: 0;
 		max-width: 100%;
@@ -26,13 +25,13 @@
 		align-items: center;
 		animation-fill-mode: forwards;
 		animation-name: header-scroll;
-		animation-range-start: 300px;
 		animation-range-end: 600px;
+		animation-range-start: 300px;
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
 		background-color: var(--surface-white);
 		border-radius: 0 0 2rem 2rem;
-		border: 1px solid var(--colour-border-border-gray);
+		border: var(--border-grey);
 		column-gap: var(--spacing-16);
 		display: grid;
 		flex-basis: 100%;
@@ -54,6 +53,7 @@
 		&.is-open {
 			row-gap: var(--spacing-16);
 			column-gap: var(--spacing-16);
+			animation: none;
 		}
 
 		@media (width >= 48rem) {
