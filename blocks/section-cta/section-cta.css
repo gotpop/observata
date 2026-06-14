@@ -6,7 +6,7 @@
 		--box-shadow-card: var(--shadow-inner-line-white);
 
 		justify-items: center;
-		padding: var(--padding-cta, var(--spacing-24));
+		padding: var(--padding-cta, var(--spacing-40));
 
 		@media (width >=60rem) {
 			--padding-cta: var(--spacing-40);

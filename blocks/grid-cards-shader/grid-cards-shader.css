@@ -1,16 +1,20 @@
 .block-grid-cards-shader {
 	.block-cards {
 		display: grid;
-		gap: 32px;
+		gap: var(--gap-block-cards, var(--spacing-20));
 		grid-template-columns: repeat(auto-fit, minmax(var(--m, 1fr), 1fr));
 
-		@media (width >=40rem) {
+		@media (width >=48rem) {
+			--gap-block-cards: var(--spacing-32);
 			--m: 454px;
 		}
 	}
 
-	.section-intro-text {
-		text-wrap: pretty;
-		max-width: 100ch;
+	.heading-lg {
+		--text-wrap-heading-lg: balance;
+	}
+
+	.body-md {
+		--max-width-body-md: 100ch;
 	}
 }
