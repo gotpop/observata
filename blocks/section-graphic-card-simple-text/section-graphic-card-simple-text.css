@@ -58,10 +58,13 @@
 				.chrome & {
 					opacity: var(--opacity, 0.3);
 					transition: all 0.2s ease-in-out;
-					transition-delay: calc(0.0002s * sibling-index());
+					/* Exit */
+					transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.0003s);
 				}
 
 				.in-view & {
+					/* Enter */
+					transition-delay: calc(0.0002s * sibling-index());
 					--opacity: 1;
 				}
 			}
