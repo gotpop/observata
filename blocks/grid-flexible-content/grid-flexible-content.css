@@ -2,9 +2,13 @@
 	.block-content {
 		column-gap: var(--spacing-80);
 		display: grid;
-		grid-column: var(--layout);
+		grid-column: inner;
 		grid-template-columns: repeat(var(--cols, 2), 1fr);
 		row-gap: var(--spacing-60);
+
+		@media (width >=40rem) {
+			grid-column: var(--layout);
+		}
 
 		[data-layout='1'] & {
 			--cols: 1;
