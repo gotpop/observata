@@ -84,7 +84,7 @@
 		position: absolute;
 		z-index: 0;
 
-		@media (width >=40rem) {
+		&.loaded {
 			--display-shader: block;
 		}
 	}
