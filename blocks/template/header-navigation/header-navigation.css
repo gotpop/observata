@@ -3,12 +3,26 @@
 	.header-navigation {
 		display: grid;
 		grid-area: nav;
-		transition: grid-template-rows 0.3s ease-in-out;
+		transition:
+			grid-template-rows 0.3s ease-in-out,
+			padding-block-start 0.3s ease-in-out,
+			border-block-start-width 0.3s ease-in-out,
+			border-block-start-color 0s ease-in-out;
 		grid-template-rows: 0fr;
 		overflow: hidden;
+		border-block-start: 1px solid transparent;
+		border-block-start-width: 0;
+		padding-block-start: 0;
 
 		.is-open & {
+			border-block-start: var(--border-grey);
 			grid-template-rows: 1fr;
+			padding-block-start: var(--spacing-16);
+			transition:
+				grid-template-rows 0.3s ease-in-out,
+				padding-block-start 0.3s ease-in-out,
+				border-block-start-width 0.3s ease-in-out 0.3s,
+				border-block-start-color 0.3s ease-in-out 0.3s;
 		}
 
 		.navigation {
@@ -31,7 +45,7 @@
 			padding-bottom: var(--spacing-8);
 			padding-left: var(--spacing-8);
 			margin-bottom: var(--spacing-8);
-			border-bottom: 1px solid var(--colour-border-border-gray);
+			border-bottom: var(--border-grey);
 		}
 	}
 
@@ -39,7 +53,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		padding: var(--spacing-16);
+		padding: 0;
 	}
 
 	.submenu {

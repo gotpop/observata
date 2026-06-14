@@ -29,7 +29,7 @@
 		animation-range-end: 600px;
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
-		background: var(--surface-white);
+		background-color: var(--surface-white);
 		border-radius: 0 0 2rem 2rem;
 		border: 1px solid var(--colour-border-border-gray);
 		column-gap: var(--spacing-16);

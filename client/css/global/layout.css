@@ -7,14 +7,21 @@
 	2xl	96rem (1536px)	@media (width >= 96rem) { ... } 
 */
 
-.site:has(.content-header.is-open) {
+.site {
 	&::after {
+		background-color: var(--bg-overlay, rgba(0, 0, 0, 0.7));
 		content: '';
-		position: absolute;
-		background-color: rgba(0, 0, 0, 0.7);
 		inset: 0;
-		z-index: 5;
+		opacity: var(--opacity-overlay, 0);
+		pointer-events: none;
+		position: absolute;
+		transition: opacity 0.3s ease;
 		width: calc(100vw + 6px);
+		z-index: 5;
+	}
+
+	&:has(.content-header.is-open) {
+		--opacity-overlay: 1;
 	}
 }
 
