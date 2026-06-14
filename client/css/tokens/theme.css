@@ -51,6 +51,19 @@
 		color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
 	);
 
+	--gradient-graphic: radial-gradient(
+		circle,
+		var(--colour-accent-1-400),
+		var(--colour-secondary-200)
+	);
+
+	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
+	--grad-rad: radial-gradient(
+		circle at 40% 50%,
+		rgba(255, 255, 255, 0.9) 20%,
+		rgba(255, 255, 255, 0) 60%
+	);
+
 	/* Filters */
 	--grayscale: grayscale(1);
 
