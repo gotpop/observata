@@ -20,6 +20,7 @@
 	display: flex;
 	justify-content: center;
 	view-transition-name: header;
+	z-index: 999;
 
 	.content-header {
 		align-items: center;

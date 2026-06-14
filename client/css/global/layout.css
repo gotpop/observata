@@ -17,7 +17,7 @@
 		position: absolute;
 		transition: opacity 0.3s ease;
 		width: calc(100vw + 6px);
-		z-index: 5;
+		z-index: 1;
 	}
 
 	&:has(.content-header.is-open) {
