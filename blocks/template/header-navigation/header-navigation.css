@@ -100,6 +100,19 @@
 
 	.menu-item {
 		position: relative;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+
+		.is-open & {
+			opacity: 1;
+			transition-delay: calc(sibling-index() * 0.05s + 0.1s);
+		}
+
+		@starting-style {
+			.is-open & {
+				opacity: 0;
+			}
+		}
 	}
 
 	.menu-item,
