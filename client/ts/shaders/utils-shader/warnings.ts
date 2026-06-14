@@ -1,8 +1,8 @@
-export const prepareCanvas = (id: string): HTMLCanvasElement | null => {
-	const canvas = document.getElementById(id) as HTMLCanvasElement | null;
+export const prepareCanvas = (selector: string): HTMLCanvasElement | null => {
+	const canvas = document.querySelector(selector) as HTMLCanvasElement | null;
 
 	if (!canvas) {
-		console.warn(`Shader: Canvas #${id} not found`);
+		console.warn(`Shader: Canvas "${selector}" not found`);
 
 		return null;
 	}

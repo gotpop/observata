@@ -1,70 +1,6 @@
-import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from './colours';
-
 import { createShader } from 'shaders/js';
-
-let activeShader: Awaited<ReturnType<typeof createShader>> | null = null;
-let activeCanvas: HTMLCanvasElement | null = null;
-let observedCanvas: HTMLCanvasElement | null = null;
-let intersectionObserver: IntersectionObserver | null = null;
-let visibilityListenerAttached = false;
-let isTabVisible = true;
-
-const destroyShader = () => {
-	if (activeShader) {
-		console.info('Subpage shader: Destroying shader');
-		activeShader.destroy();
-		activeShader = null;
-	}
-	if (activeCanvas) {
-		delete activeCanvas.dataset.shaderInitialized;
-	}
-	activeCanvas = null;
-};
-
-const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-	const entry = entries[0];
-	if (!entry || !isTabVisible) return;
-
-	const canvas = observedCanvas;
-	const rect = canvas?.getBoundingClientRect();
-	const isInView = entry.isIntersecting && !!rect && rect.width > 0 && rect.height > 0;
-
-	if (isInView && !activeShader) {
-		console.info('Subpage shader: Canvas scrolled into view, initializing');
-		initSubpageShaders();
-	} else if (!isInView && activeShader) {
-		console.info('Subpage shader: Canvas scrolled out of view, destroying');
-		destroyShader();
-	}
-};
-
-const handleVisibilityChange = () => {
-	if (document.hidden) {
-		console.info('Subpage shader: Tab hidden, destroying shader');
-		isTabVisible = false;
-		destroyShader();
-	} else {
-		isTabVisible = true;
-		console.info('Subpage shader: Tab refocused, re-initializing shader');
-		initSubpageShaders();
-	}
-};
-
-const setupObservers = (canvas: HTMLCanvasElement) => {
-	observedCanvas = canvas;
-
-	if (intersectionObserver) return;
-
-	intersectionObserver = new IntersectionObserver(handleIntersection, { threshold: 0 });
-	intersectionObserver.observe(canvas);
-	console.info('Subpage shader: IntersectionObserver set up on canvas');
-
-	if (!visibilityListenerAttached) {
-		document.addEventListener('visibilitychange', handleVisibilityChange);
-		visibilityListenerAttached = true;
-		console.info('Subpage shader: visibilitychange listener attached');
-	}
-};
+import { COLOUR_BLUE, COLOUR_BLUE_LIGHT, COLOUR_PINK, type ShaderColors } from './colours';
+import { prepareCanvas } from './utils-shader/warnings';
 
 function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 	return {
@@ -135,31 +71,9 @@ function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 }
 
 const initSubpageShaders = async () => {
-	const canvas = document.querySelector('.subpage-shader') as HTMLCanvasElement | null;
+	const canvas = prepareCanvas('.subpage-shader');
 
-	if (!canvas) {
-		console.warn('Subpage shader: Canvas element not found');
-
-		return;
-	}
-
-	canvas.style.width = '1540px';
-	canvas.style.height = '1000px';
-
-	if (!window.isSecureContext || !('gpu' in navigator)) {
-		console.warn(
-			'Subpage shader: Shaders need HTTPS or localhost with WebGPU support. Current origin:',
-			window.location.origin
-		);
-
-		return;
-	}
-
-	if (canvas.dataset.shaderInitialized === 'true') {
-		console.info('Subpage shader: Already initialized, skipping');
-
-		return;
-	}
+	if (!canvas) return;
 
 	canvas.dataset.shaderInitialized = 'true';
 
@@ -174,24 +88,15 @@ const initSubpageShaders = async () => {
 	const config = getSubpageShaderConfig(colours);
 
 	try {
-		console.info('Subpage shader: Initializing...');
-		activeCanvas = canvas;
-		activeShader = await createShader(canvas, config, {
+		await createShader(canvas, config, {
 			onReady: () => {
 				canvas.classList.add('loaded');
 			},
 		});
-
-		setupObservers(canvas);
-
-		console.info('Subpage shader: Successfully loaded');
 	} catch (error) {
 		console.error('Subpage shader: Failed to initialize', error);
-		activeShader = null;
-		activeCanvas = null;
+
 		delete canvas.dataset.shaderInitialized;
-		intersectionObserver?.disconnect();
-		intersectionObserver = null;
 	}
 };
 

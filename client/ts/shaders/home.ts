@@ -61,7 +61,7 @@ const shaderConfig = {
 };
 
 const initHeroShaders = async () => {
-	const canvas = prepareCanvas('hero-shader');
+	const canvas = prepareCanvas('#hero-shader');
 
 	if (!canvas) return;
 
