@@ -17,6 +17,10 @@
 		padding: var(--padding-card-large, var(--spacing-32));
 		position: relative;
 
+		.section-intro {
+			padding: 0;
+		}
+
 		@media (width >=40rem) {
 			--padding-card-large: var(--spacing-80);
 		}

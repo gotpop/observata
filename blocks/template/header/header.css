@@ -12,13 +12,12 @@
 }
 
 .header {
-	inset: 0 auto auto auto;
-	z-index: 999;
-	position: fixed;
-	width: 100%;
 	display: flex;
+	inset: 0 auto auto auto;
 	justify-content: center;
+	position: fixed;
 	view-transition-name: header;
+	width: 100%;
 	z-index: 999;
 
 	.content-header {
