@@ -38,12 +38,18 @@
 	}
 
 	.subpage-shader {
-		grid-column: breakout;
-		inset: 50% auto auto 50%;
+		grid-column: full;
+		/* inset: 50% auto auto 50%; */
 		position: absolute;
-		translate: -50% -50%;
-		view-transition-name: shader;
+		/* translate: -50% -50%; */
+		/* view-transition-name: shader; */
 		z-index: 0;
+		width: 100%;
+		height: 100%;
+
+		@media (width >= 96rem) {
+			grid-column: breakout;
+		}
 	}
 
 	.card-geo-list {

@@ -1,4 +1,3 @@
-import { MQ } from '../utils/breakpoints';
 import { initCardGeoShader } from './card-geo-shader';
 import { initHeroShaders } from './home';
 import { initSubpageShaders } from './subpage';
@@ -10,12 +9,10 @@ export function initShaders(): void {
 		void initHeroShaders();
 	}
 
-	if (window.matchMedia(MQ.md).matches) {
-		const subpageCanvas = document.querySelector('.subpage-shader');
+	const subpageCanvas = document.querySelector('.subpage-shader');
 
-		if (subpageCanvas) {
-			void initSubpageShaders();
-		}
+	if (subpageCanvas) {
+		void initSubpageShaders();
 	}
 
 	const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');

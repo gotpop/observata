@@ -10,22 +10,23 @@ function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 				id: 'idmmr8zyxrodm90feqn',
 				props: {
 					center: {
-						x: 0.332,
-						y: 0.75,
+						x: 0.5,
+						y: 0.515,
 					},
 					glossiness: 200,
 					lighting: 197,
 					shape3d: {
 						type: 'ribbon',
 						angle: 138,
-						twist: 24,
-						width: 73,
-						thickness: 20,
-						seed: 21.2,
+						twist: 45,
+						width: 39,
+						thickness: 8,
+						seed: 33,
 					},
 					shape3dType: 'ribbon',
 					speed: 0,
-					zoom: 56,
+					uvMode: 'mirror',
+					zoom: 95,
 				},
 				children: [
 					{
@@ -36,35 +37,27 @@ function getSubpageShaderConfig({ colorA, colorB }: ShaderColors) {
 							colorB,
 							colorSpace: 'oklab',
 							detail: 1.9,
+							visible: true,
 						},
 					},
 					{
 						type: 'FallingLines',
-						id: 'idmmr93vzo731cyb4y3',
+						id: 'idmq9cbx8wqhsm96pxv',
 						props: {
-							angle: 0,
+							angle: 180,
 							blendMode: 'linearDodge',
-							colorB: '#000000',
-							density: 13,
-							opacity: 0.47,
-							speed: 0.1,
-							strokeWidth: 0.16,
-							trailLength: 0.72,
+							density: 19,
+							opacity: 0.43,
+							speed: 0.05,
+							strokeWidth: 0.18,
+							trailLength: 0.58,
 							transform: {
-								scale: 0.79,
-								offsetX: -0.16,
+								scale: 0.95,
+								anchorX: 1,
 							},
 						},
 					},
 				],
-			},
-			{
-				type: 'FilmGrain',
-				id: 'idmmr97z6pijyaz1v1u',
-				props: {
-					strength: 0.32,
-					visible: true,
-				},
 			},
 		],
 	};
@@ -90,6 +83,8 @@ const initSubpageShaders = async () => {
 	try {
 		await createShader(canvas, config, {
 			onReady: () => {
+				canvas.style.width = '';
+				canvas.style.height = '';
 				canvas.classList.add('loaded');
 			},
 		});
