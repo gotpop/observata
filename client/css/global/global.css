@@ -72,6 +72,10 @@
 	scroll-timeline: --main-timeline;
 	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 	scrollbar-width: thin;
+
+	@media (width >=64rem) {
+		overscroll-behavior: none;
+	}
 }
 
 :where(body) {
