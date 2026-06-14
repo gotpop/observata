@@ -31,7 +31,7 @@
 		inset: 1rem 1rem auto auto;
 		transition: all 0.3s ease-in-out;
 
-		@media (width >=40rem) {
+		@media (width >=64rem) {
 			--icon-size-outer: 5.25rem;
 			--icon-size-inner: 3.467rem;
 
