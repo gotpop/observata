@@ -28,27 +28,3 @@
 		width: 0;
 	}
 }
-
-#europe {
-	circle {
-		opacity: var(--opacity, 0.3);
-		transition: all 0.2s ease-in-out;
-		transition-delay: calc(0.0002s * sibling-index());
-
-		.in-view & {
-			--opacity: 1;
-		}
-	}
-}
-
-#infinity-twist {
-	path {
-		opacity: var(--opacity-path, 0.1);
-		transition: all 0.3s ease-in-out;
-		transition-delay: calc(0.02s * sibling-index());
-
-		.in-view & {
-			--opacity-path: 1;
-		}
-	}
-}
