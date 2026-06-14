@@ -54,9 +54,12 @@
 
 		.mask-source {
 			circle {
-				opacity: var(--opacity, 0.3);
-				transition: all 0.2s ease-in-out;
-				transition-delay: calc(0.0002s * sibling-index());
+				/* Special case for Chrome other browsers can't handle the number of circles */
+				.chrome & {
+					opacity: var(--opacity, 0.3);
+					transition: all 0.2s ease-in-out;
+					transition-delay: calc(0.0002s * sibling-index());
+				}
 
 				.in-view & {
 					--opacity: 1;
