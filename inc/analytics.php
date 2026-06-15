@@ -186,6 +186,18 @@ function observata_analytics_settings_render() {
 	<?php
 }
 
+// ─── Environment Helper ──────────────────────────────────────────────────────
+
+/**
+ * Check if the current environment is production.
+ *
+ * Reads the WP_ENVIRONMENT constant (e.g. define( 'WP_ENVIRONMENT', 'production' )
+ * in wp-config.php). Returns false for all other values or if undefined.
+ */
+function observata_is_production() {
+	return defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT;
+}
+
 // ─── GA4 Script Output ────────────────────────────────────────────────────────
 
 /**
@@ -193,6 +205,11 @@ function observata_analytics_settings_render() {
  */
 add_action( 'wp_head', 'observata_output_ga4_script', 99 );
 function observata_output_ga4_script() {
+	// Only output in production.
+	if ( ! observata_is_production() ) {
+		return;
+	}
+
 	$ga4_id = get_option( 'observata_ga4_id', '' );
 
 	if ( empty( $ga4_id ) ) {
@@ -226,6 +243,11 @@ function observata_output_ga4_script() {
  */
 add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
 function observata_output_leadfeeder_script() {
+	// Only output in production.
+	if ( ! observata_is_production() ) {
+		return;
+	}
+
 	$lf_id = get_option( 'observata_leadfeeder_id', '' );
 
 	if ( empty( $lf_id ) ) {
@@ -252,6 +274,11 @@ function observata_output_leadfeeder_script() {
  */
 add_action( 'wp_head', 'observata_output_cookiebot_script', 1 );
 function observata_output_cookiebot_script() {
+	// Only output in production.
+	if ( ! observata_is_production() ) {
+		return;
+	}
+
 	$cb_id = get_option( 'observata_cookiebot_id', '' );
 
 	if ( empty( $cb_id ) ) {
