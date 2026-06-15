@@ -1,22 +1,45 @@
-{% set locations = attributes.locations|default('Denmark | Sweden | Finland | Norway') %}
-{% set copyright = attributes.copyright|default('© Observata AB 2026') %}
-{% set contact_email = attributes.contactEmail|default('sales@observata.com') %}
-{% set contact_address = attributes.contactAddress|default('Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden') %}
+{% set contact_email =
+	function('get_option', 'observata_footer_email')
+		|default(attributes.contactEmail)
+		|default('sales@observata.com')
+%}
+{% set contact_address =
+	function('get_option', 'observata_footer_address')
+		|default(attributes.contactAddress)
+		|default('Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden')
+%}
+{% set locations =
+	function('get_option', 'observata_footer_locations')
+		|default(attributes.locations)
+		|default('Denmark | Sweden | Finland | Norway')
+%}
+{% set copyright =
+	function('get_option', 'observata_footer_copyright')
+		|default(attributes.copyright)
+		|default('© Observata AB 2026')
+%}
 
 <footer class="footer" role="contentinfo">
 	<block-content class="block-content">
 		<footer-top class="footer-top">
 			<div class="footer-contact">
-				<a class="footer-logo" href="{{ function('home_url', '/') }}" title="{{ function('get_bloginfo', 'name')|esc_attr }}">
+				<a
+					class="footer-logo"
+					href="{{ function('home_url', '/') }}"
+					title="{{ function('get_bloginfo', 'name')|esc_attr }}">
 					{% include 'logos/logo-observata-white-logo.twig' %}
 				</a>
 				<article class="contact">
-					<h4>Contact us</h4>
+					<h4>
+						Contact us
+					</h4>
 					<ul class="list-contact">
 						<li class="list-item">
 							<strong>Email:</strong>
 							<span>
-								<a class="anchor" href="mailto:{{ contact_email|strip_html }}">{{ contact_email|strip_html }}</a>
+								<a class="anchor" href="mailto:{{ contact_email|strip_html }}">
+									{{ contact_email|strip_html }}
+								</a>
 							</span>
 						</li>
 						<li class="list-item">
@@ -29,11 +52,15 @@
 			<div class="footer-menus">
 				{% if footer_1 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_1.name|default('Footer 1') }}</h4>
+						<h4>
+							{{ footer_1.name|default('Footer 1') }}
+						</h4>
 						<ul class="footer-menu-list">
 							{% for item in footer_1.items %}
 								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+									<a class="footer-menu-link" href="{{ item.url }}">
+										{{ item.title }}
+									</a>
 								</li>
 							{% endfor %}
 						</ul>
@@ -41,11 +68,15 @@
 				{% endif %}
 				{% if footer_2 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_2.name|default('Footer 2') }}</h4>
+						<h4>
+							{{ footer_2.name|default('Footer 2') }}
+						</h4>
 						<ul class="footer-menu-list">
 							{% for item in footer_2.items %}
 								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+									<a class="footer-menu-link" href="{{ item.url }}">
+										{{ item.title }}
+									</a>
 								</li>
 							{% endfor %}
 						</ul>
@@ -53,11 +84,15 @@
 				{% endif %}
 				{% if footer_3 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_3.name|default('Footer 3') }}</h4>
+						<h4>
+							{{ footer_3.name|default('Footer 3') }}
+						</h4>
 						<ul class="footer-menu-list">
 							{% for item in footer_3.items %}
 								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+									<a class="footer-menu-link" href="{{ item.url }}">
+										{{ item.title }}
+									</a>
 								</li>
 							{% endfor %}
 						</ul>
@@ -65,11 +100,15 @@
 				{% endif %}
 				{% if footer_4 %}
 					<div class="footer-menu-column">
-						<h4>{{ footer_4.name|default('Footer 4') }}</h4>
+						<h4>
+							{{ footer_4.name|default('Footer 4') }}
+						</h4>
 						<ul class="footer-menu-list">
 							{% for item in footer_4.items %}
 								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+									<a class="footer-menu-link" href="{{ item.url }}">
+										{{ item.title }}
+									</a>
 								</li>
 							{% endfor %}
 						</ul>
@@ -79,10 +118,21 @@
 		</footer-top>
 		<footer-bottom class="footer-bottom">
 			<div class="footer-locations">
-				<p>{{ locations|esc_html|replace({'|': '<span>|</span>'})|raw }}</p>
+				<p>
+					{{
+						locations
+							|esc_html
+							|replace({
+								'|': '<span>|</span>'
+							})
+							|raw
+					}}
+				</p>
 			</div>
 			<div class="footer-copyright">
-				<p>{{ copyright|strip_html }}</p>
+				<p>
+					{{ copyright|strip_html }}
+				</p>
 			</div>
 		</footer-bottom>
 	</block-content>
