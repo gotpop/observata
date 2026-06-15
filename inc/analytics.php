@@ -363,15 +363,14 @@ function observata_output_ga4_script() {
 
 	printf(
 		'<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=%1$s"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "%1$s");
-  console.info("Google Analytics (GA4) loaded. Measurement ID: %1$s");
-</script>
-',
+		<script async src="https://www.googletagmanager.com/gtag/js?id=%1$s"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag("js", new Date());
+			gtag("config", "%1$s");
+		</script>
+		',
 		esc_js( $ga4_id )
 	);
 }
