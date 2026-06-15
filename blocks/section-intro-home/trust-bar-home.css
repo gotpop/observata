@@ -13,6 +13,7 @@
 	border-bottom: none;
 	width: var(--stretch);
 	gap: var(--spacing-16);
+	justify-content: center;
 
 	@media (width >=40rem) {
 		flex-wrap: wrap;
@@ -32,9 +33,11 @@
 		max-width: 300px;
 		flex: 0 0 auto;
 
-		img {
+		svg {
 			max-width: 100px;
 			max-height: var(--spacing-16);
+			width: 100%;
+			height: auto;
 
 			@media (width >=48rem) {
 				max-width: 140px;

@@ -1,29 +1,14 @@
-{% set theme_uri = function('get_template_directory_uri') %}
 {% set logos = [
-	{
-		file: 'af-logo.svg',
-		alt: 'AF logo'
-	},
-	{
-		file: 'tele-dark-logo.svg',
-		alt: 'Tele Dark logo'
-	},
-	{
-		file: 'elastic-logo.svg',
-		alt: 'Elastic logo'
-	},
-	{
-		file: 'crowdstrike-red-logo.svg',
-		alt: 'Crowdstrike logo'
-	}
+	'af-logo',
+	'tele-dark-logo',
+	'elastic-logo',
+	'crowdstrike-red-logo'
 ] %}
 
 <trust-bar class="trust-bar-home">
 	{% for logo in logos %}
 		<trust-bar-item class="logo-item">
-			<img
-				src="{{ theme_uri }}/assets/svg/logos/bar/{{ logo.file }}"
-				alt="{{ logo.alt }}" />
+			{% include "logos/bar/#{logo}.twig" %}
 		</trust-bar-item>
 	{% endfor %}
 </trust-bar>
