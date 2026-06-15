@@ -60,6 +60,10 @@ const shaderConfig = {
 	],
 };
 
+const FALLING_LINES_ID = 'idmq9cbx8wqhsm96pxv';
+const FALLING_LINES_BASE_SPEED = 0.05;
+const FALLING_LINES_HOVER_SPEED = 0.15;
+
 const initHeroShaders = async () => {
 	const canvas = prepareCanvas('#hero-shader');
 
@@ -68,13 +72,23 @@ const initHeroShaders = async () => {
 	canvas.dataset.shaderInitialized = 'true';
 
 	try {
-		await createShader(canvas, shaderConfig, {
+		const shader = await createShader(canvas, shaderConfig, {
 			enablePerformanceTracking: false,
 			onReady: () => {
 				canvas.style.width = '';
 				canvas.style.height = '';
 			},
 		});
+
+		const cta = document.getElementById('cta-primary-hero');
+		if (cta) {
+			cta.addEventListener('mouseenter', () => {
+				shader.update(FALLING_LINES_ID, { speed: FALLING_LINES_HOVER_SPEED });
+			});
+			cta.addEventListener('mouseleave', () => {
+				shader.update(FALLING_LINES_ID, { speed: FALLING_LINES_BASE_SPEED });
+			});
+		}
 	} catch (error) {
 		console.error('Hero shader: Failed to initialize', error);
 
