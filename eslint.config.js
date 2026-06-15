@@ -48,4 +48,16 @@ export default [
     {
         ignores: ['node_modules/', 'build/', 'vendor/', '*.min.js'],
     },
+    {
+        files: ['webpack.config.js'],
+        languageOptions: {
+            sourceType: 'commonjs',
+            globals: {
+                ...globals.node,
+            },
+        },
+        rules: {
+            '@typescript-eslint/no-require-imports': 'off',
+        },
+    },
 ];

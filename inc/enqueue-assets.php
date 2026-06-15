@@ -1,50 +1,16 @@
 <?php
 
 /**
- * Compute a cache-busting version from style.css and all CSS files it imports.
+ * Cache-bust block viewStyle CSS via filemtime().
  *
- * style.css is just a stub containing @import './client/css/index.css', so
- * hashing style.css alone would never change when the actual styles change.
- * This hashes style.css plus every CSS file under client/css/ recursively.
- */
-function observata_get_style_version(): string {
-	$theme_dir = get_template_directory();
-	$hashes    = array();
-
-	// Hash style.css itself.
-	$style_path = $theme_dir . '/style.css';
-	if ( file_exists( $style_path ) ) {
-		$hashes[] = md5_file( $style_path );
-	}
-
-	// Recursively hash every CSS file under client/css/.
-	$css_dir = $theme_dir . '/client/css';
-	if ( is_dir( $css_dir ) ) {
-		$iterator = new RecursiveIteratorIterator(
-			new RecursiveDirectoryIterator( $css_dir, RecursiveDirectoryIterator::SKIP_DOTS )
-		);
-		foreach ( $iterator as $file ) {
-			if ( $file->getExtension() === 'css' ) {
-				$hashes[] = md5_file( $file->getPathname() );
-			}
-		}
-	}
-
-	return md5( implode( '', $hashes ) );
-}
-
-/**
- * Cache-bust every theme CSS file via filemtime().
- *
- * Block viewStyle CSS files (registered via block.json) get the static theme
- * version ('1.0.0') from WordPress core — this filter overrides that with the
- * file's modification time so changes are always reflected.
- *
- * Runs on both frontend and editor styles.
+ * The main stylesheet (observata-style) is bundled by webpack and gets a
+ * content-hash version automatically. Block viewStyle files are registered
+ * by WordPress core with the static theme version — this filter overrides
+ * that with the file's modification time.
  */
 add_filter( 'style_loader_src', 'observata_cache_bust_theme_styles', 10, 2 );
 function observata_cache_bust_theme_styles( $src, $handle ) {
-	// Skip the main stylesheet — it uses the comprehensive hash from observata_get_style_version().
+	// Skip the webpack-bundled stylesheet — it already has a content-hash version.
 	if ( $handle === 'observata-style' ) {
 		return $src;
 	}
@@ -75,26 +41,25 @@ function observata_cache_bust_theme_styles( $src, $handle ) {
 	return $src;
 }
 
-// Enqueue theme stylesheet and compiled client JS (with cache-busting).
+// Enqueue bundled stylesheet and compiled client JS (with cache-busting).
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 function observata_enqueue() {
-	// Version includes style.css + every @imported CSS file.
-	$version = observata_get_style_version();
-	wp_enqueue_style( 'observata-style', get_stylesheet_uri(), array(), $version );
+	// Webpack bundles all @imported CSS into build/style-global.css with a
+	// content-hash version. Falls back to style.css if the build doesn't exist.
+	$bundle_css  = get_template_directory() . '/build/style-global.css';
+	$asset_path  = get_template_directory() . '/build/style-global.asset.php';
+
+	if ( file_exists( $bundle_css ) && file_exists( $asset_path ) ) {
+		$asset = require $asset_path;
+		wp_enqueue_style( 'observata-style', get_template_directory_uri() . '/build/style-global.css', array(), $asset['version'] );
+	} else {
+		// Fallback for development before first build.
+		wp_enqueue_style( 'observata-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
+	}
 
 	$client_asset_path = get_template_directory() . '/build/client.asset.php';
 	if ( file_exists( $client_asset_path ) ) {
 		$client_asset = require $client_asset_path;
 		wp_enqueue_script( 'observata-client', get_template_directory_uri() . '/build/client.js', $client_asset['dependencies'], $client_asset['version'], true );
 	}
-}
-
-// Preload fonts for faster loading and reduce FOUT
-add_action( 'wp_head', 'observata_preload_fonts', 1 );
-function observata_preload_fonts() {
-	$font_url = get_template_directory_uri() . '/assets/fonts';
-	?>
-	<link rel="preload" href="<?php echo esc_url( $font_url ); ?>/inter/inter.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="<?php echo esc_url( $font_url ); ?>/gantari/gantari.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-	<?php
 }
