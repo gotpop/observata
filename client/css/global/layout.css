@@ -58,6 +58,13 @@ main {
 	grid-template-columns: subgrid;
 }
 
+.content-home,
+.content-page {
+	display: grid;
+	grid-column: full;
+	grid-template-columns: subgrid;
+}
+
 .section-block {
 	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
 	--grad-rad: radial-gradient(

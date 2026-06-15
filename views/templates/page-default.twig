@@ -1,13 +1,18 @@
 {% extends 'base.twig' %}
 
 {% block header %}
-	{{ header | raw }}
+	{{ header|raw }}
 {% endblock %}
 
 {% block content %}
-	{{ content | raw }}
+	{% if hero %}
+		{{ hero|raw }}
+	{% endif %}
+	<content-page id="content-page" class="content-page">
+		{{ content|raw }}
+	</content-page>
 {% endblock %}
 
 {% block footer %}
-	{{ footer | raw }}
+	{{ footer|raw }}
 {% endblock %}

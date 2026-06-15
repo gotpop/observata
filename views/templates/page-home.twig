@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block content %}
-	{{ content | raw }}
+	{% if hero %}
+		{{ hero | raw }}
+	{% endif %}
+	<content-home id="content-home" class="content-home">
+		{{ content | raw }}
+	</content-home>
 {% endblock %}
 
 {% block footer %}
