@@ -16,11 +16,11 @@
 	/* Borders */
 	--colour-border-border-gray: #e5e7ea;
 
-	--border-primary: 1px solid var(--colour-primary-400);
-	--border-secondary: 1px solid var(--colour-secondary-400);
-	--border-accent: 1px solid var(--colour-accent-1-400);
-	--border-grey: 1px solid var(--colour-border-border-gray);
-	--border-card: 1px solid oklch(from var(--colour-border-border-gray) calc(l - 0.04) c h);
+	--border-primary: thin solid var(--colour-primary-400);
+	--border-secondary: thin solid var(--colour-secondary-400);
+	--border-accent: thin solid var(--colour-accent-1-400);
+	--border-grey: thin solid var(--colour-border-border-gray);
+	--border-card: thin solid oklch(from var(--colour-border-border-gray) calc(l - 0.04) c h);
 
 	/* Shadows */
 	--shadow-inner-line-white: inset 0 0 0 1px var(--colour-neutral-white);

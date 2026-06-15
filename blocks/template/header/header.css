@@ -2,10 +2,11 @@
 	to {
 		backdrop-filter: blur(2px);
 		background-color: rgba(255, 255, 255, 0.95);
-		border-block-end: var(--border-grey);
-		border-inline: 1px solid transparent;
+		border-bottom: var(--border-grey);
+		border-left: thin solid transparent;
 		border-radius: 0;
-		border-top: 1px solid transparent;
+		border-right: thin solid transparent;
+		border-top: thin solid transparent;
 		margin: 0;
 		max-width: 100%;
 	}
@@ -29,8 +30,11 @@
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
 		background-color: var(--surface-white);
+		border-bottom: var(--border-grey);
+		border-left: thin solid transparent;
 		border-radius: 0 0 2rem 2rem;
-		border: var(--border-grey);
+		border-right: thin solid transparent;
+		border-top: thin solid transparent;
 		column-gap: var(--spacing-16);
 		display: grid;
 		flex-basis: 100%;
@@ -56,6 +60,7 @@
 		}
 
 		@media (width >= 48rem) {
+			border: var(--border-grey);
 			grid-template-areas: 'logo nav';
 			grid-template-rows: min-content;
 			grid-template-columns: max-content 1fr;

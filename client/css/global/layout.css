@@ -8,6 +8,8 @@
 */
 
 .site {
+	position: relative;
+
 	&::after {
 		background-color: var(--bg-overlay, rgba(0, 0, 0, 0.7));
 		content: '';
@@ -16,7 +18,7 @@
 		pointer-events: none;
 		position: absolute;
 		transition: opacity 0.3s ease;
-		width: calc(100vw + 6px);
+		width: 100vw;
 		z-index: 1;
 	}
 
