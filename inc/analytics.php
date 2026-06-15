@@ -125,12 +125,12 @@ function observata_sanitize_leadfeeder_id( $value ) {
 function observata_leadfeeder_id_field() {
 	$value = get_option( 'observata_leadfeeder_id', '' );
 	printf(
-		'<input type="text" name="observata_leadfeeder_id" value="%s" class="regular-text" placeholder="XXXXXXXXX-XXXXXX">',
+		'<input type="text" name="observata_leadfeeder_id" value="%s" class="regular-text" placeholder="XXXXXXXXXXXXXXXXXXXX">',
 		esc_attr( $value )
 	);
 	printf(
 		'<p class="description">%s</p>',
-		esc_html__( 'Enter your Leadfeeder Tracker ID. Leave blank to disable.', 'observata' )
+		esc_html__( 'Enter your Leadfeeder/Dealfront Web Visitors Tracker ID (found in Settings > Company > Website Tracker > Tracking Script). Leave blank to disable.', 'observata' )
 	);
 }
 
@@ -238,8 +238,8 @@ function observata_output_leadfeeder_script() {
 	}
 
 	printf(
-		'<!-- Leadfeeder -->
-<script>(function(){window.lftracker = "%1$s";var sf = document.createElement("script");sf.type = "text/javascript"; sf.async = true; sf.src = "https://cdn.leadfeeder.com/lftracker.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(sf, s);})();</script>
+		'<!-- Leadfeeder Web Visitors Tracker -->
+<script>(function(){window.ldfdr=window.ldfdr||function(){(window.ldfdr._q=window.ldfdr._q||[]).push(arguments)};var sf=document.createElement("script");sf.async=!0;sf.setAttribute("data-cookieconsent","ignore");sf.src="https://lftracker.leadfeeder.com/lftracker_v1_%1$s.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(sf,s);})();</script>
 ',
 		esc_js( $lf_id )
 	);
