@@ -32,17 +32,17 @@
 		align-items: center;
 		max-width: 300px;
 		flex: 0 0 auto;
+	}
 
-		svg {
-			max-width: 100px;
-			max-height: var(--spacing-16);
-			width: 100%;
-			height: auto;
+	.icon-logo {
+		max-width: 100px;
+		max-height: var(--spacing-16);
+		width: 100%;
+		height: auto;
 
-			@media (width >=48rem) {
-				max-width: 140px;
-				max-height: 30px;
-			}
+		@media (width >=48rem) {
+			max-width: 140px;
+			max-height: 30px;
 		}
 	}
 }
