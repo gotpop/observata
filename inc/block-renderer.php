@@ -106,25 +106,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 	if ( $template_name === 'header' ) {
 		$context['main_menu'] = \Timber\Timber::get_menu( 'main-menu' );
 
-		// Enqueue styles for header partial blocks (included via Twig, not as WP blocks)
-		$partials = array( 'header-logo', 'header-navigation', 'header-navigation-trigger' );
-		foreach ( $partials as $partial ) {
-			$partial_dir = get_template_directory() . "/blocks/template/{$partial}";
-			if ( ! is_dir( $partial_dir ) ) {
-				continue;
-			}
-			$css_files = glob( "{$partial_dir}/*.css" );
-			foreach ( $css_files as $css_file ) {
-				$css_basename = basename( $css_file, '.css' );
-				$css_relative = "blocks/template/{$partial}/{$css_basename}.css";
-				wp_enqueue_style(
-					"observata-{$css_basename}",
-					get_template_directory_uri() . "/{$css_relative}",
-					array(),
-					filemtime( $css_file )
-				);
-			}
-		}
+		// Header partial styles are bundled in style-global.css via webpack.
 	}
 
 	// Add footer menus to context for footer block
