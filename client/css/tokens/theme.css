@@ -9,7 +9,7 @@
 	--colour-text-body-default: var(--colour-neutral-600);
 
 	/* Surface */
-	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.003) c h);
+	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.00005) c h);
 	--surface-white: var(--colour-neutral-white);
 	--surface-white-transparent: oklch(from var(--colour-neutral-white) l c h / 0.7);
 
