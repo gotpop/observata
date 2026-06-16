@@ -9,18 +9,19 @@
 	--colour-text-body-default: var(--colour-neutral-600);
 
 	/* Surface */
-	--surface-grey: rgb(252 252 252);
+	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.003) c h);
 	--surface-white: var(--colour-neutral-white);
 	--surface-white-transparent: rgba(255, 255, 255, 0.7);
 
 	/* Borders */
-	--colour-border-border-gray: #e5e7ea;
+	/* --colour-border-border-gray: #e5e7ea; */
+	--colour-border-border-gray: oklch(from var(--colour-neutral-200) calc(l - 0.02) c h);
 
 	--border-primary: thin solid var(--colour-primary-400);
 	--border-secondary: thin solid var(--colour-secondary-400);
 	--border-accent: thin solid var(--colour-accent-1-400);
 	--border-grey: thin solid var(--colour-border-border-gray);
-	--border-card: thin solid oklch(from var(--colour-border-border-gray) calc(l - 0.04) c h);
+	--border-card: thin solid oklch(from var(--colour-neutral-200) calc(l - 0.06) c h);
 
 	/* Shadows */
 	--shadow-inner-line-white: inset 0 0 0 1px var(--colour-neutral-white);
