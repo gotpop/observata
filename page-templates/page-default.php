@@ -22,7 +22,7 @@ foreach ( $blocks as $block ) {
 
 $context['hero']       = $hero_content;
 $context['content']    = $body_content;
-$context['body_class'] = implode( ' ', get_body_class() );
+$context['body_class'] = implode( ' ', get_body_class('page') );
 $context['header']     = do_blocks( '<!-- wp:observata/header /-->' );
 $context['footer']     = do_blocks( '<!-- wp:observata/footer /-->' );
 

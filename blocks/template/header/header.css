@@ -25,8 +25,6 @@
 		align-items: center;
 		animation-fill-mode: forwards;
 		animation-name: header-scroll;
-		animation-range-end: 600px;
-		animation-range-start: 300px;
 		animation-timeline: scroll(nearest);
 		animation-timing-function: linear;
 		background-color: var(--surface-white);
@@ -47,6 +45,16 @@
 		padding-block: var(--spacing-24);
 		padding-inline: var(--spacing-32);
 		row-gap: 0;
+
+		.home & {
+			animation-range-end: 600px;
+			animation-range-start: 300px;
+		}
+
+		.page & {
+			animation-range-end: 400px;
+			animation-range-start: 100px;
+		}
 
 		@supports (corner-shape: squircle) {
 			border-radius: 0 0 4.5rem 4.5rem;
