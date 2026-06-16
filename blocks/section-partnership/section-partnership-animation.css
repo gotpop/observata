@@ -59,10 +59,20 @@
 
 		@media (width >=40rem) {
 			top: 370px;
+
+			/* Firefox */
+			@supports not (text-box: trim-both cap alphabetic) {
+				top: 410px;
+			}
 		}
 
 		@media (width >=80rem) {
 			top: 246px;
+
+			/* Firefox */
+			@supports not (text-box: trim-both cap alphabetic) {
+				top: 286px;
+			}
 		}
 
 		.in-view & {
