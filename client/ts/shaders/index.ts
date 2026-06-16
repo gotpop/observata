@@ -1,4 +1,5 @@
-import { createMatchMedia } from '../utils';
+import { createMatchMedia, deferUntilIdle } from '../utils';
+
 import { initCardGeoShader } from './card-geo-shader';
 import { initHeroShaders } from './home';
 import { initSubpageShaders } from './subpage';
@@ -9,16 +10,18 @@ export function initShaders(): void {
 	if (heroCanvas) {
 		void initHeroShaders();
 	}
-
 	const subpageCanvas = document.querySelector('.subpage-shader');
 
 	if (subpageCanvas && createMatchMedia('md').matches) {
 		void initSubpageShaders();
 	}
 
-	const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
+	// Defer non-hero shaders so the hero gets full GPU priority.
+	deferUntilIdle(() => {
+		const canvases = document.querySelectorAll<HTMLCanvasElement>('.card-geo-shader canvas');
 
-	for (const canvas of canvases) {
-		void initCardGeoShader(canvas);
-	}
+		for (const canvas of canvases) {
+			void initCardGeoShader(canvas);
+		}
+	});
 }

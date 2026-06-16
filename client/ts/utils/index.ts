@@ -1,3 +1,4 @@
+export { deferUntilIdle } from './defer-until-idle';
 export { createMatchMedia } from './breakpoints';
 export {
 	isBrave,
