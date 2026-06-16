@@ -39,4 +39,9 @@
 			max-height: initial;
 		}
 	}
+
+	.logo-crowdstrike {
+		position: relative;
+		inset: 4px auto auto auto;
+	}
 }
