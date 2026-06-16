@@ -14,6 +14,12 @@
 			--cols: 1;
 		}
 
+		[data-layout='1-centred'] & {
+			--cols: 1;
+			max-width: 768px;
+			justify-self: center;
+		}
+
 		[data-layout='2'] & {
 			--cols: 1;
 
