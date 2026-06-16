@@ -29,17 +29,17 @@
 	}
 
 	.logo-item {
-		display: flex;
 		align-items: center;
-		max-width: 300px;
+		display: flex;
 		flex: 0 0 auto;
+		max-width: 300px;
 	}
 
 	.icon-logo {
-		max-width: 100px;
-		max-height: var(--spacing-16);
-		width: 100%;
 		height: auto;
+		max-height: var(--spacing-16);
+		max-width: 100px;
+		width: 100%;
 
 		@media (width >=48rem) {
 			max-width: 140px;
@@ -48,7 +48,7 @@
 	}
 
 	.logo-crowdstrike {
-		position: relative;
 		inset: 4px auto auto auto;
+		position: relative;
 	}
 }
