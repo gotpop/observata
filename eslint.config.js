@@ -49,7 +49,7 @@ export default [
         ignores: ['node_modules/', 'build/', 'vendor/', '*.min.js'],
     },
     {
-        files: ['webpack.config.js'],
+        files: ['webpack.config.js', 'postcss.config.js'],
         languageOptions: {
             sourceType: 'commonjs',
             globals: {
