@@ -16,6 +16,7 @@
 		overflow: clip;
 		padding: var(--padding-card-large, var(--spacing-32));
 		position: relative;
+		transform: translate3d(0, 0, 0);
 
 		.section-intro {
 			padding: 0;

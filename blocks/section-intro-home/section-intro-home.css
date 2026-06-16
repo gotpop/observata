@@ -1,21 +1,28 @@
 .block-intro {
 	anchor-name: --intro-anchor;
-	border-top: 1px solid var(--colour-border-border-gray);
+	border-top: var(--border-grey);
+	z-index: 1;
 
 	.block-content {
 		display: grid;
 		grid-column: content;
-		grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+		grid-template-columns: 1fr;
 		gap: var(--spacing-16);
 
 		@media (width >=48rem) {
-			gap: var(--spacing-50);
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--spacing-32);
 		}
 
-		article:last-child {
+		@media (width >=80rem) {
+			gap: var(--spacing-50);
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.card:last-child {
 			grid-column: 1 / -1;
 
-			@media (width >=1212px) {
+			@media (width >=80rem) {
 				grid-column: span 1;
 			}
 		}

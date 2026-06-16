@@ -1,19 +1,20 @@
 .trust-bar-home {
-	display: flex;
 	align-items: center;
-	justify-content: center;
+	background-color: var(--surface-white);
+	border-bottom: none;
+	border-left: var(--border-grey);
+	border-radius: 2rem 2rem 0 0;
+	border-right: var(--border-grey);
+	border-top: var(--border-grey);
+	display: flex;
 	gap: var(--spacing-16);
+	justify-content: center;
 	padding: 2rem;
-	position: absolute;
 	position-anchor: --intro-anchor;
 	position-area: center top;
-	background-color: white;
-	border-radius: 2rem 2rem 0 0;
-	border: 1px solid var(--colour-border-border-gray);
-	border-bottom: none;
+	position: absolute;
 	width: var(--stretch);
-	gap: var(--spacing-16);
-	justify-content: center;
+	z-index: 0;
 
 	@media (width >=40rem) {
 		flex-wrap: wrap;
