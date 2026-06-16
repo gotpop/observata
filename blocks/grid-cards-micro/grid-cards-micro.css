@@ -14,7 +14,7 @@
 		gap: var(--spacing-24);
 
 		&[data-children='4'] {
-			max-width: 49.5rem;
+			max-width: min(49.5rem, 100%);
 		}
 	}
 

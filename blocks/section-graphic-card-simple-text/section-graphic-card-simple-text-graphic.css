@@ -11,7 +11,7 @@
 		translate: var(--t, -50% 0);
 		width: var(--w, 140%);
 
-		@media (width >=64rem) {
+		@media (width >=80rem) {
 			--h: 150%;
 			--i: 50% auto auto 0;
 			--p: center;
@@ -25,7 +25,7 @@
 			--h: 160%;
 			--i: 2rem auto auto 50%;
 
-			@media (width >=64rem) {
+			@media (width >=80rem) {
 				--w: 100%;
 				--h: 220%;
 				--i: 50% auto auto 0rem;
@@ -44,7 +44,7 @@
 			--h: var(--size);
 			--i: 2rem auto auto 50%;
 
-			@media (width >=64rem) {
+			@media (width >=80rem) {
 				--w: 120%;
 				--h: 160%;
 				--i: 50% auto auto 0rem;
@@ -58,7 +58,7 @@
 			--h: var(--size);
 			--i: 2rem auto auto 50%;
 
-			@media (width >=64rem) {
+			@media (width >=80rem) {
 				--w: 110%;
 				--h: 130%;
 				--i: 50% auto auto -2rem;
@@ -74,7 +74,7 @@
 			--h: var(--size);
 			--i: 2rem auto auto 50%;
 
-			@media (width >=64rem) {
+			@media (width >=80rem) {
 				--w: 110%;
 				--h: 160%;
 				--i: 50% auto auto -2rem;
@@ -88,7 +88,7 @@
 			--h: 160%;
 			--i: 2rem auto auto 50%;
 
-			@media (width >=64rem) {
+			@media (width >=80rem) {
 				--w: 110%;
 				--h: 110%;
 				--i: 50% auto auto -4rem;
