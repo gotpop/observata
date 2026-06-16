@@ -62,9 +62,11 @@ main {
 
 .content-home,
 .content-page {
+	background-color: var(--surface-white);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
+	view-transition-name: primary-content;
 }
 
 .section-block {
@@ -127,9 +129,4 @@ block-content {
 	grid-template-columns: subgrid;
 	grid-template-rows: min-content;
 	grid-column: full;
-}
-
-.content-home,
-.content-page {
-	view-transition-name: primary-content;
 }
