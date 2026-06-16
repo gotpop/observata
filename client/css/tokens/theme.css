@@ -44,6 +44,9 @@
 	--sizing-width-site: 1440px;
 	--sizing-width-content: 1200px;
 
+	/* Blur */
+	--blur: blur(2px);
+
 	/* Gradients */
 	--overlay: linear-gradient(
 		to bottom,

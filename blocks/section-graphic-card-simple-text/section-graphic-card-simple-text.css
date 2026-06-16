@@ -21,7 +21,9 @@
 			row-gap: var(--spacing-32);
 
 			.card-text-simple {
-				background-color: var(--surface-white-t);
+				backdrop-filter: var(--blur);
+				background-color: var(--surface-white-transparent);
+				box-shadow: var(--shadow-inner-line-white);
 			}
 
 			@media (width >=80rem) {
@@ -41,7 +43,7 @@
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
 		--mask: url(#mask-europe);
-		--size: 460px;
+		--size: 356px;
 		--gradient: conic-gradient(
 			var(--colour-secondary-500),
 			var(--colour-primary-200),
@@ -50,8 +52,12 @@
 
 		scale: var(--s, 0.7);
 		margin: 0 auto;
+		width: 100%;
+
+		--width-after: 100%;
 
 		@media (width >=48rem) {
+			--width-after: 630px;
 			--s: 1;
 			--size: 500px;
 		}
