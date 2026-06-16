@@ -21,7 +21,7 @@
 			row-gap: var(--spacing-32);
 
 			.card-text-simple {
-				background-color: var(--surface-white-transparent);
+				background-color: var(--surface-white-t);
 			}
 
 			@media (width >=80rem) {
@@ -67,9 +67,9 @@
 				}
 
 				.in-view & {
+					--opacity: 1;
 					/* Enter */
 					transition-delay: calc(0.0002s * sibling-index());
-					--opacity: 1;
 				}
 			}
 		}

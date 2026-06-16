@@ -82,13 +82,18 @@
 			stroke-width: 5.3px;
 			stroke: var(--colour-neutral-white);
 
-			@media (width >=40rem) {
+			/* Special case for Chrome other browsers can't handle the number of circles */
+			.chrome & {
 				opacity: 0;
 				transition: all 0.3s ease-in-out;
-				transition-delay: calc(0.01s * sibling-index());
+
+				/* Exit */
+				transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.0003s);
 			}
 
 			.in-view & {
+				/* Enter */
+				transition-delay: calc(0.01s * sibling-index());
 				opacity: 1;
 			}
 		}
