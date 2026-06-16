@@ -21,7 +21,6 @@
 @import './global/graphic.css';
 @import './global/accessibility.css';
 @import './global/stretch.css';
-@import './global/anchors.css';
 
 /* Template header partials (rendered via Twig, not as WP blocks) */
 @import '../../blocks/template/header-logo/header-logo.css';
