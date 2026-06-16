@@ -38,7 +38,7 @@
 
 	@media (width >=96rem) {
 		--bottom: 1rem;
-		--offset: 0.75;
+		--offset: 0.8;
 		--r-2: 3.8rem;
 		--shader: 21.25rem;
 	}
@@ -81,5 +81,25 @@
 		position: absolute;
 		width: 100%;
 		height: var(--shader);
+
+		&.loaded {
+			animation: fade-in 0.5s ease-in-out forwards;
+		}
 	}
 }
+
+/* ::view-transition-new(shader-hero) {
+	animation: entry-from-right 3s ease forwards;
+}
+
+::view-transition-old(shader-hero) {
+	animation: exit-to-right 3s ease forwards;
+} */
+/* 
+::view-transition-new(shader-hero) {
+	animation: entry-from-right 3s ease forwards;
+}
+
+::view-transition-old(shader-hero) {
+	animation: exit-to-right 3s ease forwards;
+} */

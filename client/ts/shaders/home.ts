@@ -77,6 +77,7 @@ const initHeroShaders = async () => {
 			onReady: () => {
 				canvas.style.width = '';
 				canvas.style.height = '';
+				canvas.classList.add('loaded');
 			},
 		});
 
