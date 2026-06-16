@@ -11,10 +11,9 @@
 	/* Surface */
 	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.003) c h);
 	--surface-white: var(--colour-neutral-white);
-	--surface-white-transparent: rgba(255, 255, 255, 0.7);
+	--surface-white-transparent: oklch(from var(--colour-neutral-white) l c h / 0.7);
 
 	/* Borders */
-	/* --colour-border-border-gray: #e5e7ea; */
 	--colour-border-border-gray: oklch(from var(--colour-neutral-200) calc(l - 0.02) c h);
 
 	--border-primary: thin solid var(--colour-primary-400);
