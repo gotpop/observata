@@ -8,14 +8,14 @@ const shaderConfig = {
 			id: 'idmmr8zyxrodm90feqn',
 			props: {
 				center: {
-					x: 0.49,
+					x: 0.5,
 					y: 0.5,
 				},
 				glossiness: 200,
 				lighting: 197,
 				shape3d: {
 					type: 'ribbon',
-					angle: 179.5,
+					angle: 179.3,
 					twist: 45,
 					width: 39,
 					thickness: 8,
