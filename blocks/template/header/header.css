@@ -57,7 +57,7 @@
 		}
 
 		@supports (corner-shape: squircle) {
-			border-radius: 0 0 4.5rem 4.5rem;
+			border-radius: 0 0 4rem 4rem;
 			corner-shape: squircle;
 		}
 
