@@ -1,4 +1,3 @@
-export { deferUntilIdle } from './defer-until-idle';
 export { createMatchMedia } from './breakpoints';
 export {
 	isBrave,
@@ -11,4 +10,5 @@ export {
 	isSafari,
 } from './browser';
 export { removeClickOutsideClose, setupClickOutsideClose } from './click-outside-close';
+export { deferUntilIdle } from './defer-until-idle';
 export { PerformanceMonitor } from './performance-monitor';
