@@ -128,3 +128,8 @@ block-content {
 	grid-template-rows: min-content;
 	grid-column: full;
 }
+
+.content-home,
+.content-page {
+	view-transition-name: primary-content;
+}
