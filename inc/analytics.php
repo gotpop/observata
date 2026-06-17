@@ -22,48 +22,76 @@ function observata_analytics_settings_page() {
 
 add_action( 'admin_init', 'observata_analytics_register_settings' );
 function observata_analytics_register_settings() {
-	register_setting( 'observata_settings', 'observata_ga4_id', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'observata_sanitize_ga4_id',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_ga4_id',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'observata_sanitize_ga4_id',
+			'default'           => '',
+		)
+	);
 
-	register_setting( 'observata_settings', 'observata_leadfeeder_id', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'observata_sanitize_leadfeeder_id',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_leadfeeder_id',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'observata_sanitize_leadfeeder_id',
+			'default'           => '',
+		)
+	);
 
-	register_setting( 'observata_settings', 'observata_cookiebot_id', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'observata_sanitize_cookiebot_id',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_cookiebot_id',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'observata_sanitize_cookiebot_id',
+			'default'           => '',
+		)
+	);
 
 	// Footer content fields
-	register_setting( 'observata_settings', 'observata_footer_email', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'observata_sanitize_footer_email',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_footer_email',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'observata_sanitize_footer_email',
+			'default'           => '',
+		)
+	);
 
-	register_setting( 'observata_settings', 'observata_footer_address', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'sanitize_textarea_field',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_footer_address',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_textarea_field',
+			'default'           => '',
+		)
+	);
 
-	register_setting( 'observata_settings', 'observata_footer_locations', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_footer_locations',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
 
-	register_setting( 'observata_settings', 'observata_footer_copyright', array(
-		'type'              => 'string',
-		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => '',
-	) );
+	register_setting(
+		'observata_settings',
+		'observata_footer_copyright',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
 
 	add_settings_section(
 		'observata_analytics_section',
@@ -342,6 +370,11 @@ function observata_is_production() {
 
 /**
  * Output the GA4 gtag.js snippet when a Measurement ID is configured.
+ *
+ * Consent-gated via CookieBot using type="text/plain" so the library and
+ * page-view call only fire after the user accepts statistics cookies.
+ * The dataLayer queue and gtag() function are initialised immediately so
+ * any queued events flush correctly once the library loads.
  */
 add_action( 'wp_head', 'observata_output_ga4_script', 99 );
 function observata_output_ga4_script() {
@@ -362,15 +395,17 @@ function observata_output_ga4_script() {
 	}
 
 	printf(
-		'<!-- Google Analytics (GA4) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=%1$s"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag("js", new Date());
-			gtag("config", "%1$s");
-		</script>
-		',
+		'<!-- Google Analytics (GA4) (consent-gated via CookieBot) -->
+<script>
+	window.dataLayer=window.dataLayer||[];
+	function gtag(){dataLayer.push(arguments);}
+</script>
+<script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=%1$s"></script>
+<script type="text/plain" data-cookieconsent="statistics">
+	gtag("js",new Date());
+	gtag("config","%1$s");
+</script>
+',
 		esc_js( $ga4_id )
 	);
 }
@@ -379,6 +414,9 @@ function observata_output_ga4_script() {
 
 /**
  * Output the Leadfeeder tracking snippet when a Tracker ID is configured.
+ *
+ * Consent-gated via CookieBot using type="text/plain" so the tracker only
+ * fires after the user accepts statistics cookies.
  */
 add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
 function observata_output_leadfeeder_script() {
@@ -399,8 +437,10 @@ function observata_output_leadfeeder_script() {
 	}
 
 	printf(
-		'<!-- Leadfeeder Web Visitors Tracker -->
-<script>(function(){window.ldfdr=window.ldfdr||function(){(window.ldfdr._q=window.ldfdr._q||[]).push(arguments)};var sf=document.createElement("script");sf.async=!0;sf.setAttribute("data-cookieconsent","ignore");sf.src="https://lftracker.leadfeeder.com/lftracker_v1_%1$s.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(sf,s);})();</script>
+		'<!-- Leadfeeder Web Visitors Tracker (consent-gated via CookieBot) -->
+<script type="text/plain" data-cookieconsent="statistics">
+(function(){window.ldfdr=window.ldfdr||function(){(window.ldfdr._q=window.ldfdr._q||[]).push(arguments)};var sf=document.createElement("script");sf.async=!0;sf.src="https://lftracker.leadfeeder.com/lftracker_v1_%1$s.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(sf,s);})();
+</script>
 ',
 		esc_js( $lf_id )
 	);
