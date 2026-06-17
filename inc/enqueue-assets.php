@@ -51,6 +51,23 @@ function observata_cache_bust_theme_styles( $src, $handle ) {
 	return $src;
 }
 
+// Preload fonts so the browser starts downloading them immediately,
+// before the CSS is parsed and @font-face is discovered.
+add_action( 'wp_head', 'observata_preload_fonts', 1 );
+function observata_preload_fonts() {
+	$fonts = array(
+		'inter'   => '/assets/fonts/inter/inter.woff2',
+		'gantari' => '/assets/fonts/gantari/gantari.woff2',
+	);
+
+	foreach ( $fonts as $path ) {
+		printf(
+			'<link rel="preload" href="%1$s" as="font" type="font/woff2" crossorigin>' . "\n",
+			esc_url( get_template_directory_uri() . $path )
+		);
+	}
+}
+
 // Enqueue bundled stylesheet and compiled client JS (with cache-busting).
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 function observata_enqueue() {
