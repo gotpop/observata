@@ -56,8 +56,8 @@ add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 function observata_enqueue() {
 	// Webpack bundles all @imported CSS into build/style-global.css with a
 	// content-hash version. Falls back to style.css if the build doesn't exist.
-	$bundle_css  = get_template_directory() . '/build/style-global.css';
-	$asset_path  = get_template_directory() . '/build/style-global.asset.php';
+	$bundle_css = get_template_directory() . '/build/style-global.css';
+	$asset_path = get_template_directory() . '/build/style-global.asset.php';
 
 	if ( file_exists( $bundle_css ) && file_exists( $asset_path ) ) {
 		$asset = require $asset_path;
@@ -67,9 +67,53 @@ function observata_enqueue() {
 		wp_enqueue_style( 'observata-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
 	}
 
-	$client_asset_path = get_template_directory() . '/build/client.asset.php';
+	// Helper: read a webpack asset.php manifest and register + enqueue the
+	// script with its runtime + vendor chunk dependencies.
+	$build_dir    = get_template_directory() . '/build';
+	$build_uri    = get_template_directory_uri() . '/build';
+	$runtime_path = $build_dir . '/runtime.asset.php';
+
+	// The runtime chunk manages all webpack chunk loading — must come first.
+	$runtime_deps = array();
+	if ( file_exists( $runtime_path ) ) {
+		$runtime_asset = require $runtime_path;
+		wp_register_script( 'observata-runtime', $build_uri . '/runtime.js', array(), $runtime_asset['version'], true );
+		$runtime_deps = array( 'observata-runtime' );
+	}
+
+	// The vendors chunk contains three.js + shaders library — shared by all
+	// entry points so the library is only downloaded once.
+	$vendor_deps  = array();
+	$vendors_path = $build_dir . '/vendors.asset.php';
+	if ( file_exists( $vendors_path ) ) {
+		$vendors_asset = require $vendors_path;
+		wp_register_script( 'observata-vendors', $build_uri . '/vendors.js', $runtime_deps, $vendors_asset['version'], true );
+		$vendor_deps = array( 'observata-vendors' );
+	}
+
+	// client.js — menu, intersection observer, tabs, subpage/card shaders.
+	// Deferred in the footer on all pages.
+	$client_asset_path = $build_dir . '/client.asset.php';
 	if ( file_exists( $client_asset_path ) ) {
 		$client_asset = require $client_asset_path;
-		wp_enqueue_script( 'observata-client', get_template_directory_uri() . '/build/client.js', $client_asset['dependencies'], $client_asset['version'], true );
+		$client_deps  = array_merge( $client_asset['dependencies'], $vendor_deps );
+		wp_enqueue_script( 'observata-client', $build_uri . '/client.js', $client_deps, $client_asset['version'], true );
+	}
+
+	// home.js — homepage hero shader. Loaded in the head (non-deferred) for LCP.
+	// Only loaded on the homepage.
+	$home_asset_path = $build_dir . '/home.asset.php';
+	if ( is_front_page() && file_exists( $home_asset_path ) ) {
+		$home_asset = require $home_asset_path;
+		$home_deps  = array_merge( $home_asset['dependencies'], $vendor_deps );
+
+		wp_register_script( 'observata-home', $build_uri . '/home.js', $home_deps, $home_asset['version'], false );
+		wp_enqueue_script( 'observata-home' );
+
+		// Move the runtime + vendors to the head too so they're available
+		// before home.js executes.
+		foreach ( array( 'observata-runtime', 'observata-vendors' ) as $handle ) {
+			wp_script_add_data( $handle, 'group', 0 );
+		}
 	}
 }

@@ -24,6 +24,10 @@ if (cssRule) {
 
 module.exports = {
     ...defaultConfig,
+    output: {
+        ...defaultConfig.output,
+        publicPath: 'auto',
+    },
     entry: async () => {
         const defaultEntries = typeof defaultConfig.entry === 'function'
             ? await defaultConfig.entry()
@@ -31,8 +35,28 @@ module.exports = {
         return {
             ...defaultEntries,
             client: './client/ts/index.ts',
+            home: './client/ts/home.ts',
             'style-global': './client/css/index.css',
             'unsplash-sidebar': './src/unsplash-sidebar/index.tsx',
         };
+    },
+    optimization: {
+        ...defaultConfig.optimization,
+        // Single runtime chunk shared by all entry points — manages chunk loading.
+        runtimeChunk: 'single',
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                // Extract three.js + shaders library into a shared vendor chunk
+                // so it's only downloaded once, regardless of which entry point
+                // needs it.
+                vendor: {
+                    test: /[\\/]node_modules[\\/](three|shaders)[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                    priority: 10,
+                },
+            },
+        },
     },
 };
