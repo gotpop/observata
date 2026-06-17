@@ -450,6 +450,11 @@ function observata_output_leadfeeder_script() {
 
 /**
  * Output the CookieBot consent banner script when a Domain Group ID is configured.
+ *
+ * Lazy-loaded on first user interaction (or after a 3s timeout). Legal
+ * compliance is maintained because GA4 and Leadfeeder are gated with
+ * type="text/plain" — the browser ignores those scripts entirely until
+ * CookieBot activates them after consent is given.
  */
 add_action( 'wp_head', 'observata_output_cookiebot_script', 1 );
 function observata_output_cookiebot_script() {
@@ -470,8 +475,27 @@ function observata_output_cookiebot_script() {
 	}
 
 	printf(
-		'<!-- CookieBot -->
-<script id="CookieBot" src="https://consent.cookiebot.com/uc.js" data-cbid="%1$s" data-blockingmode="auto" type="text/javascript"></script>
+		'<!-- CookieBot (lazy-loaded on first interaction) -->
+<script type="text/javascript">
+(function(){
+	var loaded=false;
+	function loadCB(){
+		if(loaded)return;loaded=true;
+		var s=document.createElement("script");
+		s.id="CookieBot";
+		s.src="https://consent.cookiebot.com/uc.js";
+		s.setAttribute("data-cbid","%1$s");
+		s.setAttribute("data-blockingmode","auto");
+		s.async=true;
+		document.head.appendChild(s);
+		var evts=["mousemove","scroll","touchstart","keydown","click"];
+		evts.forEach(function(e){document.removeEventListener(e,loadCB,{passive:true});});
+	}
+	var evts=["mousemove","scroll","touchstart","keydown","click"];
+	evts.forEach(function(e){document.addEventListener(e,loadCB,{passive:true});});
+	setTimeout(loadCB,3000);
+})();
+</script>
 ',
 		esc_attr( $cb_id )
 	);
