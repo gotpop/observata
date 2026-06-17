@@ -3,13 +3,24 @@
 {% set icon_geo = attributes.iconGeo|default('24') %}
 {% set read_more_text = attributes.readMoreText|default('Read more') %}
 {% set read_more_url = attributes.readMoreUrl|default('#') %}
+{% set aria_label = title ? read_more_text ~ ' about ' ~ title : read_more_text
+%}
 
 <article class="card-simple icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<h3 class="title">{{ title|strip_html }}</h3>
-	<p class="body">{{ description|strip_html }}</p>
+	<h3 class="title">
+		{{ title|strip_html }}
+	</h3>
+	<p class="body">
+		{{ description|strip_html }}
+	</p>
 
 	{% if read_more_url %}
-		<a href="{{ read_more_url }}" class="read-more">{{ read_more_text|strip_html }}</a>
+		<a
+			href="{{ read_more_url }}"
+			class="read-more"
+			aria-label="{{ aria_label|strip_html }}">
+			{{ read_more_text|strip_html }}
+		</a>
 	{% endif %}
 </article>
