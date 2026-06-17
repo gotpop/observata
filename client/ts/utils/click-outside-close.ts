@@ -30,7 +30,7 @@ export function setupClickOutsideClose(
 			trigger.setAttribute('aria-expanded', 'false');
 			content.setAttribute('aria-expanded', 'false');
 
-			const label = trigger.querySelector('.sr-only');
+			const label = trigger.querySelector('.screen-reader-text');
 			if (label) {
 				label.textContent = 'Open menu';
 			}

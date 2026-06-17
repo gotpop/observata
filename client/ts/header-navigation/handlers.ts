@@ -8,7 +8,7 @@ export function handleTriggerClick(
 
 	trigger.setAttribute('aria-expanded', String(isOpen));
 	headerContent.setAttribute('aria-expanded', String(isOpen));
-	const label = trigger.querySelector('.sr-only');
+	const label = trigger.querySelector('.screen-reader-text');
 
 	if (label) {
 		label.textContent = isOpen ? 'Close menu' : 'Open menu';
