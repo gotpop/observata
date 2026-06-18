@@ -15,6 +15,7 @@
 	position: absolute;
 	width: var(--stretch);
 	z-index: 0;
+	view-transition-name: trust-bar;
 
 	@media (width >=40rem) {
 		flex-wrap: wrap;

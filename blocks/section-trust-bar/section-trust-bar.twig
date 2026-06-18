@@ -8,7 +8,9 @@
 <section-trust class="section-trust-bar">
 	<block-content-trust class="block-content-trust">
 		{% for logo in logos %}
-			<trust-bar-item class="logo-item">
+			<trust-bar-item
+				class="logo-item"
+				style="view-transition-name: {{ logo }};">
 				{% include "logos/bar/#{logo}.twig" %}
 			</trust-bar-item>
 		{% endfor %}
