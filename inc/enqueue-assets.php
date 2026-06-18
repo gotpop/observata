@@ -92,6 +92,49 @@ function observata_preload_hero_scripts() {
 	);
 }
 
+// Inline the global stylesheet directly into <head> to eliminate the last
+// render-blocking CSS request. Registered at the top level so the hook is in
+// place before wp_head fires — all conditional logic lives inside the function.
+add_action( 'wp_head', 'observata_inline_critical_css', 1 );
+function observata_inline_critical_css() {
+	// Development mode: use a regular <link> tag for dev tools + webpack
+	// watch refreshes. The <link> is enqueued by observata_enqueue().
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		return;
+	}
+
+	$bundle_css = get_template_directory() . '/build/style-global.css';
+
+	if ( ! file_exists( $bundle_css ) ) {
+		return;
+	}
+
+	$css = file_get_contents( $bundle_css );
+
+	if ( false === $css || '' === trim( $css ) ) {
+		return;
+	}
+
+	// Rewrite relative asset URLs to absolute paths. When CSS is loaded via
+	// a <link> tag, relative URLs resolve relative to the stylesheet's
+	// location (build/ → ../assets/ resolves correctly). When inlined in a
+	// <style> tag, relative URLs resolve relative to the document URL
+	// (the page itself), which breaks font and asset paths.
+	$theme_uri = get_template_directory_uri();
+	$css       = preg_replace(
+		'/url\(\s*[\'"]?\.\.\/(assets\/[^)\'"]+)[\'"]?\)/',
+		'url(\'' . $theme_uri . '/$1\')',
+		$css
+	);
+
+	// Inline the CSS. No minification here — webpack already produces
+	// minified output in production mode.
+	printf(
+		'<style id="observata-inline-css">%s</style>' . "\n",
+		$css // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	);
+}
+
 // Enqueue bundled stylesheet and compiled client JS (with cache-busting).
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 function observata_enqueue() {
@@ -100,12 +143,22 @@ function observata_enqueue() {
 	$bundle_css = get_template_directory() . '/build/style-global.css';
 	$asset_path = get_template_directory() . '/build/style-global.asset.php';
 
-	if ( file_exists( $bundle_css ) && file_exists( $asset_path ) ) {
-		$asset = require $asset_path;
-		wp_enqueue_style( 'observata-style', get_template_directory_uri() . '/build/style-global.css', array(), $asset['version'] );
-	} else {
-		// Fallback for development before first build.
-		wp_enqueue_style( 'observata-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
+	// CSS strategy:
+	// - Production (SCRIPT_DEBUG off): inlined into <head> by
+	//   observata_inline_critical_css(). Do NOT enqueue here — that would
+	//   create a render-blocking <link> tag.
+	// - Development (SCRIPT_DEBUG on): enqueue a regular <link> tag so dev
+	//   tools and webpack watch-mode refreshes work as expected.
+	// - Pre-build fallback: enqueue style.css.
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		// Development: standard <link> tag for dev tools + webpack refreshes.
+		if ( file_exists( $bundle_css ) && file_exists( $asset_path ) ) {
+			$asset = require $asset_path;
+			wp_enqueue_style( 'observata-style', get_template_directory_uri() . '/build/style-global.css', array(), $asset['version'] );
+		} else {
+			// Fallback for development before first build.
+			wp_enqueue_style( 'observata-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
+		}
 	}
 
 	// Helper: read a webpack asset.php manifest and register + enqueue the
