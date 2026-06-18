@@ -11,6 +11,39 @@ remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 add_filter( 'emoji_svg_url', '__return_false' );
 
 /**
+ * Remove default WordPress frontend styles that inject unwanted CSS variables
+ * and inline styles into <head>. This theme provides its own complete design
+ * system and doesn't rely on WordPress defaults.
+ */
+add_action( 'wp_enqueue_scripts', 'observata_remove_default_styles', 100 );
+function observata_remove_default_styles() {
+	// Core block library styles (wp-block-library, wp-block-library-inline-css)
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+
+	// Classic theme styles (classic-theme-styles-inline-css)
+	wp_dequeue_style( 'classic-theme-styles' );
+
+	// Global styles / theme.json (global-styles-inline-css)
+	wp_dequeue_style( 'global-styles' );
+
+	// Image auto-sizes inline styles (wp-img-auto-sizes-contain-inline-css)
+	wp_dequeue_style( 'wp-img-auto-sizes' );
+
+	// Defer to register_block_styles for its inline styles. The filter
+	// below stops core from registering all default block stylesheets.
+}
+
+// Prevent WordPress from registering and enqueuing block stylesheets
+// bundled with core (e.g. wp-block-button, wp-block-quote, etc.).
+add_filter( 'should_load_separate_core_block_assets', '__return_false' );
+
+// Remove the global styles (theme.json) REST endpoint and inline CSS output.
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles_css_custom_properties' );
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles_styles' );
+remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+/**
  * Cache-bust block viewStyle CSS via filemtime().
  *
  * The main stylesheet (observata-style) is bundled by webpack and gets a
@@ -145,10 +178,10 @@ function observata_enqueue() {
 
 	// CSS strategy:
 	// - Production (SCRIPT_DEBUG off): inlined into <head> by
-	//   observata_inline_critical_css(). Do NOT enqueue here — that would
-	//   create a render-blocking <link> tag.
+	// observata_inline_critical_css(). Do NOT enqueue here — that would
+	// create a render-blocking <link> tag.
 	// - Development (SCRIPT_DEBUG on): enqueue a regular <link> tag so dev
-	//   tools and webpack watch-mode refreshes work as expected.
+	// tools and webpack watch-mode refreshes work as expected.
 	// - Pre-build fallback: enqueue style.css.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		// Development: standard <link> tag for dev tools + webpack refreshes.
