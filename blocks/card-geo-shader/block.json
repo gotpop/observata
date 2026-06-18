@@ -31,7 +31,7 @@
         }
     },
     "render": "file:render.php",
-    "editorScript": "file:../../../build/index.js",
+    "editorScript": "file:../../build/index.js",
     "viewStyle": "file:card-geo-shader.css",
     "example": {
         "attributes": {

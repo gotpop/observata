@@ -452,7 +452,7 @@ function observata_enqueue_unsplash_sidebar( $hook ) {
 
 	wp_enqueue_style(
 		'observata-unsplash-sidebar',
-		get_template_directory_uri() . '/build/style-unsplash-sidebar.css',
+		get_template_directory_uri() . '/build/unsplash-sidebar.css',
 		array( 'wp-components' ),
 		$asset['version']
 	);

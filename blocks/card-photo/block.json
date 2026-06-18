@@ -38,7 +38,7 @@
             "default": ""
         }
     },
-    "editorScript": "file:../../../build/index.js",
+    "editorScript": "file:../../build/index.js",
     "viewStyle": "file:card-photo.css",
     "example": {
         "attributes": {

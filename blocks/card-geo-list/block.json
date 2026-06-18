@@ -46,7 +46,7 @@
             "default": ""
         }
     },
-    "editorScript": "file:../../../build/index.js",
+    "editorScript": "file:../../build/index.js",
     "viewStyle": "file:card-geo-list.css",
     "example": {
         "attributes": {

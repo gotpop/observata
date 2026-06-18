@@ -5,7 +5,27 @@
 
 add_action( 'init', 'observata_register_blocks' );
 function observata_register_blocks() {
-	$asset_file = get_template_directory() . '/build/index.asset.php';
+	$build_dir = get_template_directory() . '/build';
+	$build_uri = get_template_directory_uri() . '/build';
+
+	// Register the webpack runtime chunk. build/index.js uses webpack's chunk
+	// loading mechanism (globalThis["webpackChunkobservata_blocks"]) which
+	// requires runtime.js to process the chunk and execute module factories.
+	// Without runtime.js, registerBlockType calls in index.js never run and
+	// no blocks appear in the editor.
+	$runtime_path = $build_dir . '/runtime.asset.php';
+	if ( file_exists( $runtime_path ) ) {
+		$runtime_asset = require $runtime_path;
+		wp_register_script(
+			'observata-runtime',
+			$build_uri . '/runtime.js',
+			array(),
+			$runtime_asset['version'],
+			true
+		);
+	}
+
+	$asset_file = $build_dir . '/index.asset.php';
 
 	if ( ! file_exists( $asset_file ) ) {
 		return;
@@ -13,10 +33,16 @@ function observata_register_blocks() {
 
 	$asset = require $asset_file;
 
+	// Ensure the blocks script depends on the runtime so it always loads first.
+	$deps = $asset['dependencies'];
+	if ( wp_script_is( 'observata-runtime', 'registered' ) ) {
+		$deps[] = 'observata-runtime';
+	}
+
 	wp_register_script(
 		'observata-blocks',
-		get_template_directory_uri() . '/build/index.js',
-		$asset['dependencies'],
+		$build_uri . '/index.js',
+		$deps,
 		$asset['version'],
 		true
 	);
@@ -60,8 +86,41 @@ function observata_register_blocks() {
 				array( 'render_callback' => 'observata_render_block_twig' )
 			);
 		} else {
-			// Use standard PHP renderer
-			register_block_type( $block_dir );
+			// Use standard PHP renderer — must use _from_metadata to read
+			// block.json (editorScript, editorStyle, attributes, etc.)
+			register_block_type_from_metadata( $block_dir );
+		}
+	}
+}
+
+/**
+ * Enqueue the webpack runtime chunk in the block editor.
+ *
+ * Block editor scripts loaded via block.json "editorScript" (file:../../build/index.js)
+ * only declare WordPress core dependencies from index.asset.php — they do NOT
+ * include observata-runtime. Without the runtime, webpack's chunk loading
+ * bootstrap never runs, so the registerBlockType calls in index.js never execute
+ * and ALL blocks show as "unsupported" in the editor.
+ *
+ * We also add observata-runtime as a dependency of every editor script handle
+ * that points to build/index.js, ensuring correct load ordering.
+ */
+add_action( 'enqueue_block_editor_assets', 'observata_enqueue_editor_runtime', 1 );
+function observata_enqueue_editor_runtime() {
+	if ( ! wp_script_is( 'observata-runtime', 'registered' ) ) {
+		return;
+	}
+
+	wp_enqueue_script( 'observata-runtime' );
+
+	// Add the runtime as a dependency for all block editor scripts that load
+	// build/index.js (auto-generated handles from block.json editorScript).
+	global $wp_scripts;
+	foreach ( $wp_scripts->registered as $handle => $script ) {
+		if ( $script->src && false !== strpos( $script->src, 'build/index.js' ) ) {
+			if ( ! in_array( 'observata-runtime', $script->deps, true ) ) {
+				$wp_scripts->registered[ $handle ]->deps[] = 'observata-runtime';
+			}
 		}
 	}
 }
