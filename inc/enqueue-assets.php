@@ -68,6 +68,30 @@ function observata_preload_fonts() {
 	}
 }
 
+// High-priority preload of the vendors chunk on the homepage so the shader
+// engine starts downloading the instant the browser parses <head> — in
+// parallel with the HTML and at the same fetch priority a blocking script
+// would get. Paired with the `defer` strategy on observata-home, this
+// eliminates render blocking without slowing the shader's start time.
+add_action( 'wp_head', 'observata_preload_hero_scripts', 2 );
+function observata_preload_hero_scripts() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	$vendors_asset_path = get_template_directory() . '/build/vendors.asset.php';
+	if ( ! file_exists( $vendors_asset_path ) ) {
+		return;
+	}
+
+	$vendors_asset = require $vendors_asset_path;
+
+	printf(
+		'<link rel="preload" href="%1$s" as="script" fetchpriority="high">' . "\n",
+		esc_url( get_template_directory_uri() . '/build/vendors.js?ver=' . $vendors_asset['version'] )
+	);
+}
+
 // Enqueue bundled stylesheet and compiled client JS (with cache-busting).
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 function observata_enqueue() {
@@ -109,7 +133,7 @@ function observata_enqueue() {
 	}
 
 	// client.js — menu, intersection observer, tabs, subpage/card shaders.
-	// Deferred in the footer on all pages.
+	// Loaded on all pages.
 	$client_asset_path = $build_dir . '/client.asset.php';
 	if ( file_exists( $client_asset_path ) ) {
 		$client_asset = require $client_asset_path;
@@ -117,20 +141,36 @@ function observata_enqueue() {
 		wp_enqueue_script( 'observata-client', $build_uri . '/client.js', $client_deps, $client_asset['version'], true );
 	}
 
-	// home.js — homepage hero shader. Loaded in the head (non-deferred) for LCP.
-	// Only loaded on the homepage.
+	// home.js — homepage hero shader. Only loaded on the homepage.
 	$home_asset_path = $build_dir . '/home.asset.php';
 	if ( is_front_page() && file_exists( $home_asset_path ) ) {
 		$home_asset = require $home_asset_path;
 		$home_deps  = array_merge( $home_asset['dependencies'], $vendor_deps );
-
 		wp_register_script( 'observata-home', $build_uri . '/home.js', $home_deps, $home_asset['version'], false );
 		wp_enqueue_script( 'observata-home' );
+	}
 
-		// Move the runtime + vendors to the head too so they're available
-		// before home.js executes.
-		foreach ( array( 'observata-runtime', 'observata-vendors' ) as $handle ) {
-			wp_script_add_data( $handle, 'group', 0 );
-		}
+	// Apply `defer` strategy to ALL theme scripts consistently.
+	//
+	// All theme scripts run inside DOMContentLoaded handlers, so deferring
+	// is safe — deferred scripts execute in dependency order after parsing
+	// completes and before DOMContentLoaded fires.
+	//
+	// CRITICAL: This MUST cover every script in the dependency chain.
+	// WordPress 6.3+ will strip `defer` from a script if a non-deferred
+	// (blocking) script depends on it — to preserve execution order.
+	// Previously client.js (blocking) depended on vendors.js (deferred),
+	// which cascaded and stripped defer from vendors.js AND runtime.js,
+	// making them all render-blocking again.
+	//
+	// With all four handles deferred, the browser's preload scanner starts
+	// every download immediately (in parallel with the HTML, no blocking),
+	// and the H1 (the LCP element) paints as soon as it's parsed.
+	$defer_handles = array( 'observata-runtime', 'observata-vendors', 'observata-client' );
+	if ( wp_script_is( 'observata-home', 'enqueued' ) ) {
+		$defer_handles[] = 'observata-home';
+	}
+	foreach ( $defer_handles as $handle ) {
+		wp_script_add_data( $handle, 'strategy', 'defer' );
 	}
 }
