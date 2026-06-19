@@ -78,27 +78,10 @@
 		z-index: 1;
 	}
 
-	.shader {
-		display: var(--display-shader, none);
+	shader-card {
 		inset: 0 0 auto auto;
 		position: absolute;
 		z-index: 0;
-
-		&.loaded {
-			--display-shader: block;
-		}
-	}
-
-	.img-fallback {
-		display: var(--display-img-fallback, block);
-		inset: 0 0 auto auto;
-		max-height: 220px;
-		position: absolute;
-		width: auto;
-
-		:has(.shader.loaded) & {
-			--display-img-fallback: none;
-		}
 	}
 
 	.heading-sm {
