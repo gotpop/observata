@@ -62,7 +62,7 @@
 				content: '';
 				height: var(--stretch);
 				width: 1px;
-				background-color: var(--colour-neutral-300);
+				background-color: var(--colour-neutral-400);
 				opacity: 0.3;
 				mix-blend-mode: overlay;
 				z-index: 99;
