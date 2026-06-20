@@ -1,0 +1,14 @@
+{% if menu %}
+	<div class="footer-menu-column">
+		<h4>
+			{{ menu.name|default('Footer') }}
+		</h4>
+		<ul class="footer-menu-list">
+			{% for item in menu.items %}
+				<li class="footer-menu-item">
+					<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}

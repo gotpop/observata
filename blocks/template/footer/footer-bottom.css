@@ -1,0 +1,23 @@
+@scope (.footer) {
+	.footer-locations {
+		font-size: var(--typography-size-14);
+		text-align: center;
+
+		span {
+			color: var(--colour-primary-100);
+		}
+
+		@media (width >=40rem) {
+			text-align: start;
+		}
+	}
+
+	.footer-copyright {
+		text-align: center;
+		font-size: var(--typography-size-14);
+
+		@media (width >=40rem) {
+			text-align: end;
+		}
+	}
+}

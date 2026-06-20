@@ -1,139 +1,50 @@
 {% set contact_email =
-	function('get_option', 'observata_footer_email')
-		|default(attributes.contactEmail)
-		|default('sales@observata.com')
+	function('get_option', 'observata_footer_email')|default(
+		attributes.contactEmail
+	)
 %}
 {% set contact_address =
-	function('get_option', 'observata_footer_address')
-		|default(attributes.contactAddress)
-		|default('Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden')
+	function('get_option', 'observata_footer_address')|default(
+		attributes.contactAddress
+	)
 %}
 {% set locations =
-	function('get_option', 'observata_footer_locations')
-		|default(attributes.locations)
-		|default('Denmark | Sweden | Finland | Norway')
+	function('get_option', 'observata_footer_locations')|default(
+		attributes.locations
+	)
 %}
 {% set copyright =
-	function('get_option', 'observata_footer_copyright')
-		|default(attributes.copyright)
-		|default('© Observata AB 2026')
+	function('get_option', 'observata_footer_copyright')|default(
+		attributes.copyright
+	)
 %}
 
+{# Contact list items: label and value pairs #}
+{% set contact_items = {
+	Email: contact_email,
+	Address: contact_address
+} %}
+
+{# Footer menu columns from registered menu locations #}
+{% set footer_menus = [footer_1, footer_2, footer_3, footer_4] %}
+
 <footer class="footer" role="contentinfo">
-	<block-content class="block-content">
+	<block-content-footer class="block-content-footer">
 		<footer-top class="footer-top">
-			<div class="footer-contact">
-				<a
-					class="footer-logo"
-					href="{{ function('home_url', '/') }}"
-					title="{{ function('get_bloginfo', 'name')|esc_attr }}">
-					{% include 'logos/logo-observata-white-logo.twig' %}
-				</a>
-				<article class="contact">
-					<h4>
-						Contact us
-					</h4>
-					<ul class="list-contact">
-						<li class="list-item">
-							<strong>Email:</strong>
-							<span>
-								<a class="anchor" href="mailto:{{ contact_email|strip_html }}">
-									{{ contact_email|strip_html }}
-								</a>
-							</span>
-						</li>
-						<li class="list-item">
-							<strong>Address:</strong>
-							<span>{{ contact_address|strip_html }}</span>
-						</li>
-					</ul>
-				</article>
-			</div>
+			{% include 'template/footer/footer-contact.twig' with {
+				contact_items: contact_items
+			} %}
 			<div class="footer-menus">
-				{% if footer_1 %}
-					<div class="footer-menu-column">
-						<h4>
-							{{ footer_1.name|default('Footer 1') }}
-						</h4>
-						<ul class="footer-menu-list">
-							{% for item in footer_1.items %}
-								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">
-										{{ item.title }}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-				{% endif %}
-				{% if footer_2 %}
-					<div class="footer-menu-column">
-						<h4>
-							{{ footer_2.name|default('Footer 2') }}
-						</h4>
-						<ul class="footer-menu-list">
-							{% for item in footer_2.items %}
-								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">
-										{{ item.title }}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-				{% endif %}
-				{% if footer_3 %}
-					<div class="footer-menu-column">
-						<h4>
-							{{ footer_3.name|default('Footer 3') }}
-						</h4>
-						<ul class="footer-menu-list">
-							{% for item in footer_3.items %}
-								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">
-										{{ item.title }}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-				{% endif %}
-				{% if footer_4 %}
-					<div class="footer-menu-column">
-						<h4>
-							{{ footer_4.name|default('Footer 4') }}
-						</h4>
-						<ul class="footer-menu-list">
-							{% for item in footer_4.items %}
-								<li class="footer-menu-item">
-									<a class="footer-menu-link" href="{{ item.url }}">
-										{{ item.title }}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-				{% endif %}
+				{% for menu in footer_menus %}
+					{% include 'template/footer/footer-menu-column.twig' with {
+						menu: menu
+					} %}
+				{% endfor %}
 			</div>
 		</footer-top>
-		<footer-bottom class="footer-bottom">
-			<div class="footer-locations">
-				<p>
-					{{
-						locations
-							|esc_html
-							|replace({
-								'|': '<span>|</span>'
-							})
-							|raw
-					}}
-				</p>
-			</div>
-			<div class="footer-copyright">
-				<p>
-					{{ copyright|strip_html }}
-				</p>
-			</div>
-		</footer-bottom>
+		{% include 'template/footer/footer-bottom.twig' with {
+			locations: locations,
+			copyright: copyright
+		} %}
 	</block-content>
 </footer>
