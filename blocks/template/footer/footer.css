@@ -17,9 +17,8 @@
 		grid-column: inner;
 		grid-template-columns: 1fr;
 
-		@media (width >=48rem) {
+		@media (width >=80rem) {
 			grid-column: content;
-			padding-inline: 0;
 		}
 	}
 
