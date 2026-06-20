@@ -1,9 +1,19 @@
 @scope (.footer) {
 	.footer-menus {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-		row-gap: var(--spacing-32);
-		padding-block-start: var(--spacing-40);
+		grid-template-columns: repeat(var(--c, 2), var(--w, max-content));
+		row-gap: var(--spacing-50);
+		column-gap: var(--spacing-32);
+		padding-block-start: var(--p, 0);
+
+		@media (width >=48rem) {
+			--c: 4;
+		}
+
+		@media (width >=80rem) {
+			--w: 1fr;
+			--p: var(--spacing-32);
+		}
 	}
 
 	.footer-menu-column {
@@ -11,13 +21,6 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
 		gap: var(--spacing-24);
-
-		h4 {
-			color: white;
-			font-size: var(--size-body-md);
-			font-weight: 600;
-			margin: 0;
-		}
 	}
 
 	.footer-menu-list {
@@ -27,22 +30,5 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-	}
-
-	.footer-menu-item {
-		margin: 0;
-		padding: 0;
-	}
-
-	.footer-menu-link {
-		color: var(--colour-primary-100);
-		text-decoration: none;
-		font-size: var(--size-body-sm);
-		transition: opacity 0.2s ease;
-
-		&:hover {
-			opacity: 0.8;
-			text-decoration: underline;
-		}
 	}
 }

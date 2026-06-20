@@ -19,6 +19,10 @@
 		--line: var(--line-height-heading-xl);
 		--size: var(--size-hero-default);
 	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-heading-light);
+	}
 }
 
 .heading-lg {
@@ -35,6 +39,10 @@
 	@media (width >=40rem) {
 		--size: var(--size-heading-lg);
 		--line: var(--line-height-heading-lg);
+	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-heading-light);
 	}
 }
 
@@ -53,6 +61,10 @@
 		--size: var(--size-heading-md);
 		--line: var(--line-height-heading-md);
 	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-heading-light);
+	}
 }
 
 .heading-sm {
@@ -69,6 +81,10 @@
 	@media (width >=40rem) {
 		--line: var(--line-height-heading-sm);
 		--size: var(--size-heading-sm);
+	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-heading-light);
 	}
 }
 
@@ -87,6 +103,10 @@
 		--line: var(--line-height-heading-sm);
 		--size: var(--typography-size-16);
 	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-heading-light);
+	}
 }
 
 .body-hero {
@@ -100,6 +120,10 @@
 
 	@media (width >=40rem) {
 		--size: var(--typography-size-20);
+	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
 	}
 }
 
@@ -115,6 +139,10 @@
 	@media (width >=40rem) {
 		--size: var(--typography-size-20);
 	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
+	}
 }
 
 .body-md {
@@ -125,6 +153,10 @@
 	max-width: var(--max-width-body-md, initial);
 	text-align: var(--align-body-md, left);
 	text-wrap: pretty;
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
+	}
 }
 
 .body-sm {
@@ -135,4 +167,22 @@
 	max-width: var(--max-width-body-sm, initial);
 	text-align: var(--align-body-md, left);
 	text-wrap: pretty;
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
+	}
+}
+
+.body-xs {
+	color: var(--colour-text-body-default);
+	font-size: var(--typography-size-14);
+	font-weight: var(--typography-weight-regular);
+	line-height: var(--line-height-body-sm);
+	max-width: var(--max-width-body-sm, initial);
+	text-align: var(--align-body-md, left);
+	text-wrap: pretty;
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
+	}
 }

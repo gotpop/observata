@@ -1,11 +1,11 @@
 {% if menu %}
 	<div class="footer-menu-column">
-		<h4>
+		<h4 class="heading-xs">
 			{{ menu.name|default('Footer') }}
 		</h4>
 		<ul class="footer-menu-list">
 			{% for item in menu.items %}
-				<li class="footer-menu-item">
+				<li class="body-sm footer-menu-item">
 					<a class="footer-menu-link" href="{{ item.url }}">{{ item.title }}</a>
 				</li>
 			{% endfor %}

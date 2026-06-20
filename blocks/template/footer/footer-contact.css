@@ -3,10 +3,11 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
-		gap: var(--spacing-32);
+		row-gap: var(--spacing-32);
 
 		.footer-logo {
 			display: grid;
+			width: max-content;
 
 			svg {
 				max-width: 200px;
@@ -20,6 +21,11 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
 		gap: var(--spacing-20);
+		width: var(--w, auto);
+
+		@media (width >=64rem) {
+			--w: max-content;
+		}
 	}
 
 	.list-contact {
@@ -27,14 +33,13 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
 		gap: var(--spacing-20);
-		font-size: var(--size-body-sm);
 
 		strong {
 			color: var(--colour-neutral-white);
 		}
 
-		span,
-		a {
+		a,
+		span {
 			color: var(--colour-primary-100);
 		}
 	}

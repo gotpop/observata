@@ -1,6 +1,5 @@
 @scope (.footer) {
 	.footer-locations {
-		font-size: var(--typography-size-14);
 		text-align: center;
 
 		span {
@@ -14,9 +13,11 @@
 
 	.footer-copyright {
 		text-align: center;
-		font-size: var(--typography-size-14);
+		justify-content: start;
+		display: flex;
 
-		@media (width >=40rem) {
+		@media (width >=48rem) {
+			justify-content: end;
 			text-align: end;
 		}
 	}

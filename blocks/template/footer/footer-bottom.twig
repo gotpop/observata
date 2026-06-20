@@ -1,18 +1,21 @@
+{# Split the locations string on the pipe separator so each "|" becomes a styled span #}
+{% set locations = locations|esc_html %}
+{% set span = '<span>|</span>' %}
+{% set locations_replaced =
+	locations|replace({
+		'|': span
+	})
+%}
+{% set locations_html = locations_replaced|raw %}
+
 <footer-bottom class="footer-bottom">
 	<div class="footer-locations">
-		<p>
-			{{
-				locations
-					|esc_html
-					|replace({
-						'|': '<span>|</span>'
-					})
-					|raw
-			}}
+		<p class="body-xs">
+			{{ locations_html }}
 		</p>
 	</div>
 	<div class="footer-copyright">
-		<p>
+		<p class="body-xs">
 			{{ copyright|strip_html }}
 		</p>
 	</div>

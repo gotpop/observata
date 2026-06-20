@@ -6,12 +6,15 @@
 
 	/* Text */
 	--colour-text-heading-default: var(--colour-neutral-800);
+	--colour-text-heading-light: var(--colour-neutral-white);
 	--colour-text-body-default: var(--colour-neutral-600);
+	--colour-text-body-light: var(--colour-neutral-white);
 
 	/* Surface */
 	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.00005) c h);
 	--surface-white: var(--colour-neutral-white);
 	--surface-white-transparent: oklch(from var(--colour-neutral-white) l c h / 0.7);
+	--surface-dark: var(--colour-primary-900);
 
 	/* Borders */
 	--colour-border-border-gray: oklch(from var(--colour-neutral-200) calc(l - 0.02) c h);
@@ -21,6 +24,7 @@
 	--border-accent: thin solid var(--colour-accent-1-400);
 	--border-grey: thin solid var(--colour-border-border-gray);
 	--border-card: thin solid oklch(from var(--colour-neutral-200) calc(l - 0.06) c h);
+	--border-light: 1px solid rgba(255, 255, 255, 0.2);
 
 	/* Shadows */
 	--shadow-inner-line-white: inset 0 0 0 1px var(--colour-neutral-white);

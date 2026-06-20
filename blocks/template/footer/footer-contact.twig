@@ -6,12 +6,12 @@
 		{% include 'logos/logo-observata-white-logo.twig' %}
 	</a>
 	<article class="contact">
-		<h4>
+		<h4 class="heading-xs">
 			Contact us
 		</h4>
 		<ul class="list-contact">
 			{% for label, value in contact_items %}
-				<li class="list-item">
+				<li class="body-sm list-item">
 					<strong>{{ label }}:</strong>
 					<span>
 						{% if label == 'Email' %}
