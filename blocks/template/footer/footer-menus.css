@@ -24,7 +24,7 @@
 	}
 
 	.footer-menu-list {
-		gap: var(--spacing-16);
+		gap: var(--spacing-24);
 		list-style: none;
 		margin: 0;
 		padding: 0;

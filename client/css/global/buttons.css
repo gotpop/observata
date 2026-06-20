@@ -75,14 +75,20 @@
 	}
 }
 
-.footer-menu-link {
-	color: var(--colour-primary-100);
-	text-decoration: none;
-	font-size: var(--size-body-sm);
-	transition: opacity 0.2s ease;
+.anchor {
+	color: var(--colour-text-body-default);
+	text-decoration-color: var(--colour-primary-400);
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.03em;
+	text-underline-offset: 0.1em;
+	transition: all 0.3s ease-in-out;
 
 	&:hover {
-		opacity: 0.8;
-		text-decoration: underline;
+		text-decoration-color: var(--colour-secondary-400);
+		text-underline-offset: 0.5em;
+	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
 	}
 }
