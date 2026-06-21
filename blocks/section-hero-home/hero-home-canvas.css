@@ -54,6 +54,11 @@
 		width: 100%;
 		z-index: 0;
 
+		@supports (view-transition-group: nearest) {
+			view-transition-name: wrap-canvas-home;
+			view-transition-group: nearest;
+		}
+
 		@media (width >=96rem) {
 			grid-column: 2 / -2;
 
@@ -88,18 +93,8 @@
 	}
 }
 
-/* ::view-transition-new(shader-hero) {
-	animation: entry-from-right 3s ease forwards;
+@supports (view-transition-group: nearest) {
+	::view-transition-new(wrap-canvas-home) {
+		animation: entry-from-bottom 0.5s ease forwards;
+	}
 }
-
-::view-transition-old(shader-hero) {
-	animation: exit-to-right 3s ease forwards;
-} */
-/* 
-::view-transition-new(shader-hero) {
-	animation: entry-from-right 3s ease forwards;
-}
-
-::view-transition-old(shader-hero) {
-	animation: exit-to-right 3s ease forwards;
-} */
