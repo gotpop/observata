@@ -54,11 +54,3 @@
 		--max-width-body-hero: 60ch;
 	}
 }
-
-::view-transition-new(hero-content-page) {
-	animation: entry-from-right 0.3s ease forwards;
-}
-
-::view-transition-old(hero-content-page) {
-	animation: exit-to-left 0.3s ease forwards;
-}
