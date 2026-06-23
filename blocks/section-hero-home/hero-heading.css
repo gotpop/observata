@@ -1,28 +1,26 @@
 .block-section-hero-home {
 	.heading-section-hero-home {
 		position: relative;
-		right: 9px;
 		text-align: center;
 		font-family: var(--typography-family-gantari);
 
 		i {
 			color: var(--colour-secondary-500);
-			font-family: var(--typography-family-gantari);
+			font-family: inherit;
 		}
 
 		span {
 			position: relative;
-			font-family: var(--typography-family-gantari);
+			font-family: inherit;
 		}
 
 		.line-two {
-			font-family: var(--typography-family-gantari);
+			font-family: inherit;
 			left: -3px;
 		}
 
 		.line-three {
-			font-family: var(--typography-family-gantari);
-			left: 18px;
+			font-family: inherit;
 		}
 	}
 }
