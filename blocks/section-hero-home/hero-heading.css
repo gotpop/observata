@@ -3,20 +3,25 @@
 		position: relative;
 		right: 9px;
 		text-align: center;
+		font-family: var(--typography-family-gantari);
 
 		i {
 			color: var(--colour-secondary-500);
+			font-family: var(--typography-family-gantari);
 		}
 
 		span {
 			position: relative;
+			font-family: var(--typography-family-gantari);
 		}
 
 		.line-two {
+			font-family: var(--typography-family-gantari);
 			left: -3px;
 		}
 
 		.line-three {
+			font-family: var(--typography-family-gantari);
 			left: 18px;
 		}
 	}
