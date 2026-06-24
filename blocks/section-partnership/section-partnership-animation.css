@@ -51,31 +51,15 @@
 		grid-row: 1;
 		background-image: var(--g);
 		content: '';
-		inset: 340px auto auto 50%;
+		left: anchor(center);
+		top: calc(anchor(center) - 5.5rem);
 		mask-image: url(#mask-swooping-lines);
 		min-height: 520px;
 		position: absolute;
+		position-anchor: --block-body;
 		transition: var(--t);
 		translate: -50% -50%;
 		width: 1440px;
-
-		@media (width >=40rem) {
-			top: 370px;
-
-			/* Firefox */
-			@supports not (text-box: trim-both cap alphabetic) {
-				top: 410px;
-			}
-		}
-
-		@media (width >=80rem) {
-			top: 246px;
-
-			/* Firefox */
-			@supports not (text-box: trim-both cap alphabetic) {
-				top: 286px;
-			}
-		}
 
 		.in-view & {
 			--section-partnership-color-inner: #ffffff;
