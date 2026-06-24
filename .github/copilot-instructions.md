@@ -5,6 +5,10 @@
 WordPress theme using Gutenberg blocks with **Timber/Twig server-side rendering**.
 All frontend HTML is rendered through Twig templates — not PHP render callbacks.
 
+## Local Development Server
+
+Dev site (Local by Flywheel): `http://localhost:10005/`
+
 ## Architecture
 
 - **Blocks are server-rendered**: Each block has a `.twig` template that receives `attributes` and `content` from `observata_render_block_twig()` in `inc/block-renderer.php`.

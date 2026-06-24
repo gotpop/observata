@@ -88,6 +88,15 @@ npm run build        # production build
 npm run build:zip    # build + create distributable zip in dist/
 ```
 
+### Local Development Server
+
+The local dev site is served by [Local by Flywheel](https://localwp.com) and is
+available at:
+
+```
+http://localhost:10005/
+```
+
 ### Dev Mode
 
 Set in `wp-config.php`:
