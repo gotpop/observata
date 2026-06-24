@@ -35,7 +35,7 @@
 }
 
 .block-section-partnership {
-	.graphic-tech {
+	.graphic-tech-partnership {
 		--g: radial-gradient(
 			circle,
 			var(--section-partnership-color-inner) var(--section-partnership-stop-inner, 0%),
