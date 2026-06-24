@@ -19,6 +19,7 @@ All frontend HTML is rendered through Twig templates — not PHP render callback
 - **Text escaping**: Always use `|strip_html` on user-entered text fields
 - **URLs**: Always use `|esc_url` on URL attributes
 - **CSS**: Use CSS nesting (native), scope under the block's class, use design tokens (`var(--spacing-24)`, `var(--colour-text-heading-default)`)
+- **Typography**: Prefer utility classes (`.heading-hero`, `.heading-lg`, `.body-md`, etc.) over raw font-size declarations. See `client/css/global/typography-scale.css` for the full class list
 - **Registration**: Auto-discovered via `inc/blocks.php` — never manually register
 
 ## Twig Gotchas

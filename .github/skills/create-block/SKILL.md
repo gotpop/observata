@@ -102,7 +102,7 @@ Blocks must also be imported in `src/index.js` and registered via `registerBlock
 
 <article class="card-simple icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
-	<h3 class="title">
+	<h3 class="heading-sm title">
 		{{ title|strip_html }}
 	</h3>
 
@@ -113,6 +113,23 @@ Blocks must also be imported in `src/index.js` and registered via `registerBlock
 	{% endif %}
 </article>
 ```
+
+### Typography Classes
+
+Apply utility classes in Twig templates instead of writing manual font-size/weight in CSS. See `client/css/global/typography-scale.css` for the full list:
+
+| Class           | Use case                      |
+| --------------- | ----------------------------- |
+| `.heading-hero` | Hero section headings         |
+| `.heading-lg`   | Large section headings        |
+| `.heading-md`   | Card/section titles           |
+| `.heading-sm`   | Card titles, smaller headings |
+| `.heading-xs`   | Small labels                  |
+| `.body-hero`    | Hero subheadings              |
+| `.body-lg`      | Large body text               |
+| `.body-md`      | Default body text             |
+| `.body-sm`      | Small body text               |
+| `.body-xs`      | Fine print                    |
 
 ### Available Custom Filters
 
@@ -184,6 +201,7 @@ registerBlockType('observata/card-simple', {
 - Use **CSS nesting** (native, no preprocessor)
 - Scope everything under the block's class (e.g. `.card-simple { ... }`)
 - Use design tokens from `:root` (e.g. `var(--spacing-24)`, `var(--colour-text-heading-default)`)
+- **Prefer typography utility classes** (`.heading-sm`, `.body-md`) over raw font-size/weight in CSS
 - Class naming: kebab-case
 
 ```css
@@ -191,10 +209,12 @@ registerBlockType('observata/card-simple', {
 	display: grid;
 	gap: var(--spacing-24);
 
+	/* Typography handled by utility classes in Twig:
+	   .heading-sm on the title, .body-md on the description.
+	   Only override color here if needed. */
+
 	.title {
 		color: var(--colour-text-heading-default);
-		font-size: 24px;
-		font-weight: 600;
 	}
 
 	.body {

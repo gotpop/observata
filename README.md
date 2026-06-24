@@ -68,6 +68,18 @@ Page-level templates live in `views/templates/`, extending `views/base.twig`.
 | `device-detection.php`   | UA-based HTML classes                                             |
 | `image-optimization.php` | WebP MIME, disables intermediate sizes                            |
 
+### Design Token System (3-Tier)
+
+No `theme.json` — all styling uses hand-written CSS with a 3-tier custom property system:
+
+| Tier                | Location                                 | Purpose                                                                         |
+| ------------------- | ---------------------------------------- | ------------------------------------------------------------------------------- |
+| **Utility classes** | `client/css/global/typography-scale.css` | Ready-to-use classes (`.heading-hero`, `.heading-lg`, `.body-md`, etc.)         |
+| **Theme tokens**    | `client/css/tokens/theme-*.css`          | Semantic aliases (`--size-heading-lg`, `--colour-text-heading-default`)         |
+| **Base tokens**     | `client/css/tokens/base-*.css`           | Raw primitives (`--typography-size-32`, `--colour-neutral-800`, `--spacing-24`) |
+
+Prefer utility classes in Twig templates, theme tokens in block CSS, and avoid base tokens directly.
+
 ## Development
 
 ```bash
