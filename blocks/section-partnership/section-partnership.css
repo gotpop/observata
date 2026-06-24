@@ -2,11 +2,6 @@
 	overflow: clip;
 	view-transition-name: section-partnership;
 
-	.graphic-tech {
-		grid-column: breakout;
-		grid-row: 1;
-	}
-
 	.block-body {
 		display: grid;
 		gap: var(--spacing-24);

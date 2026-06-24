@@ -47,6 +47,8 @@
 			--section-partnership-color-outer 0.6s ease, --section-partnership-stop-inner 0.6s ease,
 			--section-partnership-stop-mid 0.6s ease, --section-partnership-stop-outer 0.6s ease;
 
+		grid-column: breakout;
+		grid-row: 1;
 		background-image: var(--g);
 		content: '';
 		inset: 340px auto auto 50%;
