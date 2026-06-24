@@ -2,6 +2,13 @@
 	overflow: clip;
 	view-transition-name: section-partnership;
 
+	.graphic-tech-partnership {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: clip;
+	}
+
 	.block-body {
 		anchor-name: --block-body;
 		display: grid;
@@ -24,10 +31,22 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
 		padding: var(--spacing-40);
+		max-width: 270px;
+		justify-self: center;
 
 		@media (width >=60rem) {
+			justify-self: initial;
+			max-width: initial;
 			background-color: var(--surface-white);
 		}
+	}
+
+	.phase-one {
+		anchor-name: --phase-one;
+	}
+
+	.phase-two {
+		anchor-name: --phase-two;
 	}
 
 	.phase-title {
