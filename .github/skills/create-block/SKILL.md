@@ -1,6 +1,6 @@
 ---
 name: create-block
-description: "Use when: creating a new Gutenberg block, adding a block, scaffolding a block, making a new section/card/element/grid block. Guides the full structure for observata blocks (block.json, Twig template, CSS)."
+description: 'Use when: creating a new Gutenberg block, adding a block, scaffolding a block, making a new section/card/element/grid block. Guides the full structure for observata blocks (block.json, Twig template, CSS).'
 ---
 
 # Create Block
@@ -9,12 +9,12 @@ Scaffolds a new WordPress Gutenberg block following the observata pattern.
 
 ## Block Types
 
-| Prefix | Purpose | Example |
-|--------|---------|---------|
-| `section-` | Full-page sections (hero, intro, CTA, contact) | `section-hero-home` |
-| `card-` | Reusable card components | `card-simple`, `card-geo` |
-| `element-` | Small text/layout elements | `element-body-md` |
-| `grid-` | Layout grids that wrap child blocks | `grid-cards-simple` |
+| Prefix     | Purpose                                        | Example                   |
+| ---------- | ---------------------------------------------- | ------------------------- |
+| `section-` | Full-page sections (hero, intro, CTA, contact) | `section-hero-home`       |
+| `card-`    | Reusable card components                       | `card-simple`, `card-geo` |
+| `element-` | Small text/layout elements                     | `element-body-md`         |
+| `grid-`    | Layout grids that wrap child blocks            | `grid-cards-simple`       |
 
 ## File Structure
 
@@ -31,28 +31,28 @@ blocks/<block-name>/
 
 ```json
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/<block-name>",
-    "title": "<Block Title>",
-    "category": "theme",
-    "description": "<Short description for the editor>",
-    "attributes": {
-        "content": {
-            "type": "string",
-            "default": ""
-        }
-    },
-    "supports": {
-        "html": false
-    },
-    "textdomain": "observata",
-    "viewStyle": "file:<block-name>.css",
-    "example": {
-        "attributes": {
-            "content": "Default preview content"
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/<block-name>",
+	"title": "<Block Title>",
+	"category": "theme",
+	"description": "<Short description for the editor>",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "observata",
+	"viewStyle": "file:<block-name>.css",
+	"example": {
+		"attributes": {
+			"content": "Default preview content"
+		}
+	}
 }
 ```
 
@@ -69,7 +69,7 @@ blocks/<block-name>/
 
 {# Use strip_html for user-entered text fields #}
 <div class="<block-name>">
-    {{ content|strip_html }}
+	{{ content|strip_html }}
 </div>
 ```
 
@@ -92,18 +92,18 @@ The `=>` character sequence gets corrupted by the toolchain. Rephrase comments o
 
 ```css
 .card-simple {
-    display: grid;
-    gap: var(--spacing-24);
+	display: grid;
+	gap: var(--spacing-24);
 
-    .title {
-        color: var(--colour-text-heading-default);
-        font-size: 24px;
-        font-weight: 600;
-    }
+	.title {
+		color: var(--colour-text-heading-default);
+		font-size: 24px;
+		font-weight: 600;
+	}
 
-    .body {
-        color: var(--colour-text-body-default);
-    }
+	.body {
+		color: var(--colour-text-body-default);
+	}
 }
 ```
 
