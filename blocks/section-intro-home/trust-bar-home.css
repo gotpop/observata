@@ -13,7 +13,7 @@
 	position-anchor: --intro-anchor;
 	position-area: center top;
 	position: absolute;
-	width: var(--stretch);
+	width: 100dvw;
 	z-index: 0;
 	view-transition-name: trust-bar;
 
