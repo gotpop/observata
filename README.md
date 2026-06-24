@@ -1,61 +1,109 @@
 # Observata Theme
 
-Custom WordPress theme built on top of [BlankSlate](https://github.com/webguyio/blankslate) by WebGuy.
+Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rendering.
 
 ## Stack
 
-- [BlankSlate](https://github.com/webguyio/blankslate) — base starter theme
-- [Timber](https://timber.github.io/docs/) — Twig templating for PHP
-- [Twig](https://twig.symfony.com/) — template engine
-- [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) — block build tooling
+- **Timber 2.x** — Twig templating for PHP
+- **Twig 3.x** — template engine for all block + page rendering
+- **@wordpress/scripts** — block build tooling (webpack)
+- **Three.js + Shaders** — WebGPU/WebGL hero shader effects
+- No `theme.json` — all styling is hand-written CSS with custom properties
+
+## Architecture
+
+All blocks are **server-rendered via Twig** (not PHP `render.php`). The render pipeline:
+
+```
+WP block editor (React/JSX edit components)
+        ↓ saved as block markup in post_content
+WordPress do_blocks() → observata_render_block_twig()
+        ↓ merges Timber::context() + block attributes
+Twig template (.twig) → server-rendered HTML
+```
+
+### Block Types
+
+| Prefix     | Purpose                            | Example                            |
+| ---------- | ---------------------------------- | ---------------------------------- |
+| `section-` | Full-page sections                 | `section-hero-home`, `section-cta` |
+| `card-`    | Reusable content cards             | `card-simple`, `card-geo`          |
+| `grid-`    | Layout grids wrapping child blocks | `grid-cards-simple`                |
+| `element-` | Small text/layout elements         | `element-body-md`                  |
+
+Each block directory contains:
+
+```
+blocks/<block-name>/
+  block.json          # Metadata, attributes, styles
+  <block-name>.twig   # Server-side Twig template
+  <block-name>.css    # Frontend-only styles (viewStyle)
+  editor.css          # Editor-only styles (optional)
+```
+
+### Template Resolution
+
+Timber is configured with three loader paths (`inc/theme-setup.php`):
+
+1. Theme root — `{% include 'blocks/...' %}`
+2. `blocks/` — `{% include 'card-simple/card-simple.twig' %}`
+3. `views/` — `{% include 'partials/header-default.twig' %}`
+
+Page-level templates live in `views/templates/`, extending `views/base.twig`.
+
+### PHP Modules (`inc/`)
+
+| File                     | Responsibility                                                    |
+| ------------------------ | ----------------------------------------------------------------- |
+| `theme-setup.php`        | Timber init, menus, theme supports                                |
+| `enqueue-assets.php`     | CSS inlining (SCRIPT_DEBUG gated), script deferral, font preloads |
+| `block-renderer.php`     | Twig render callback, inner block serialization, context builders |
+| `blocks.php`             | Block auto-discovery + registration, webpack runtime enqueue      |
+| `twig-filters.php`       | Custom Twig filters (`strip_html`)                                |
+| `seo.php`                | Sitemap, robots.txt, canonical URLs                               |
+| `analytics.php`          | GA4, Leadfeeder, Cookiebot settings                               |
+| `schema-markup.php`      | Schema.org itemscope/itemprop                                     |
+| `speculation-rules.php`  | Chrome navigation prefetch                                        |
+| `content-filters.php`    | Title filters, read-more links                                    |
+| `device-detection.php`   | UA-based HTML classes                                             |
+| `image-optimization.php` | WebP MIME, disables intermediate sizes                            |
 
 ## Development
 
 ```bash
-npm run start   # watch mode
-npm run build   # production build
+npm run start        # webpack watch mode (blocks + client JS + global CSS)
+npm run build        # production build
+npm run build:zip    # build + create distributable zip in dist/
 ```
+
+### Dev Mode
+
+Set in `wp-config.php`:
+
+```php
+define( 'SCRIPT_DEBUG', true );
+```
+
+This switches CSS from inlined `<style>` to standard `<link>` tags, enabling webpack watch-mode hot reloads.
 
 ## Linting & Formatting
 
-### PHP (WordPress Standards)
-
 ```bash
-composer phpcs        # Check PHP files against WordPress Coding Standards
-composer phpcbf       # Auto-fix PHP files
-composer check        # Alias for phpcs
-composer fix          # Alias for phpcbf
+# PHP
+composer phpcs        # check against WordPress Coding Standards
+composer phpcbf       # auto-fix
+composer fix          # alias for phpcbf
+
+# JS/TS & CSS
+npm run lint:ts       # eslint on src/ and client/
+npm run lint:css      # stylelint on all .css
+npm run lint          # all of the above
+
+# Format
+npm run format        # prettier --write .
+npm run format:check  # prettier --check .
 ```
 
-### JavaScript & TypeScript
+### VS Code Task
 
-```bash
-npm run lint:ts       # Lint TypeScript/JavaScript files
-npm run lint          # Lint all (TS + CSS)
-```
-
-### CSS
-
-```bash
-npm run lint:css      # Lint CSS files
-npm run lint          # Lint all (TS + CSS)
-```
-
-### Code Formatting
-
-```bash
-npm run format        # Format all code files
-npm run format:check  # Check formatting without making changes
-```
-
-## Blocks
-
-All custom blocks are dynamic (PHP-rendered). To modify frontend output, edit the `render.php` in the relevant block folder — no rebuild required.
-
-```
-blocks/
-  hero/       → render.php
-  cards/      → render.php
-  card/       → render.php
-  callout/    → render.php
-```
+`PHPCS Fix` (default build task) — runs phpcbf on the current file.
