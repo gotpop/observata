@@ -7,7 +7,7 @@
  * with the full block editor. Falls back to a simple message if no page exists.
  */
 
-$context = \Timber\Timber::context();
+$context               = \Timber\Timber::context();
 $context['body_class'] = implode( ' ', get_body_class( 'error-404' ) );
 $context['header']     = do_blocks( '<!-- wp:observata/header /-->' );
 $context['footer']     = do_blocks( '<!-- wp:observata/footer /-->' );
@@ -15,8 +15,8 @@ $context['footer']     = do_blocks( '<!-- wp:observata/footer /-->' );
 // Look for a user-editable 404 page.
 $not_found = \Timber\Timber::get_post(
 	array(
-		'post_type'  => 'page',
-		'name'       => 'error-404',
+		'post_type'   => 'page',
+		'name'        => 'error-404',
 		'post_status' => 'publish',
 	)
 );

@@ -394,6 +394,7 @@ function observata_output_ga4_script() {
 		return;
 	}
 
+	// phpcs:disable WordPress.WP.EnqueuedResources.NonEnqueuedScript -- GA4 consent-gated via CookieBot
 	printf(
 		'<!-- Google Analytics (GA4) (consent-gated via CookieBot) -->
 <script>
@@ -408,6 +409,7 @@ function observata_output_ga4_script() {
 ',
 		esc_js( $ga4_id )
 	);
+	// phpcs:enable
 }
 
 // ─── Leadfeeder Script Output ─────────────────────────────────────────────────

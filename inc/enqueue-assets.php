@@ -142,7 +142,7 @@ function observata_inline_critical_css() {
 		return;
 	}
 
-	$css = file_get_contents( $bundle_css );
+	$css = file_get_contents( $bundle_css ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 
 	if ( false === $css || '' === trim( $css ) ) {
 		return;

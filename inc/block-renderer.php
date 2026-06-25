@@ -85,7 +85,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 	$twig_relative = $map[ $template_name ] ?? null;
 
 	if ( ! $twig_relative ) {
-		error_log( "[observata] No twig template found for: {$template_name}" );
+		error_log( "[observata] No twig template found for: {$template_name}" ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		return '';
 	}
 
@@ -179,7 +179,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		}
 	}
 
-	// TODO: Delete this once new tabs are used 
+	// TODO: Delete this once new tabs are used
 	// Generic handling: auto-render any attribute ending in 'InnerBlocks'.
 	// Scans all attributes for keys like 'tab1InnerBlocks' or 'mdrInnerBlocks',
 	// serializes the block array, runs do_blocks(), and exposes the result in
@@ -190,8 +190,8 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		if ( ! is_array( $value ) || ! str_ends_with( $key, 'InnerBlocks' ) ) {
 			continue;
 		}
-		$short_key = substr( $key, 0, -11 ); // strip 'InnerBlocks'
-		$serialized = observata_serialize_blocks_recursive( $value );
+		$short_key                    = substr( $key, 0, -11 ); // strip 'InnerBlocks'
+		$serialized                   = observata_serialize_blocks_recursive( $value );
 		$rendered_inner[ $short_key ] = do_blocks( $serialized );
 	}
 	if ( ! empty( $rendered_inner ) ) {
@@ -201,7 +201,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 	try {
 		return \Timber\Timber::compile( 'blocks/' . $twig_relative, $context );
 	} catch ( \Exception $e ) {
-		error_log( "[observata] Twig error for {$template_name}: " . $e->getMessage() );
+		error_log( "[observata] Twig error for {$template_name}: " . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		return '';
 	}
 }
