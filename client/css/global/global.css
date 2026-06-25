@@ -52,7 +52,7 @@
 	}
 }
 
-:where(html) {
+html {
 	/* Improve font smoothing on macOS/Safari */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -76,7 +76,7 @@
 	}
 }
 
-:where(body) {
+body {
 	font-kerning: normal;
 	font-synthesis: none;
 	font-variant-ligatures: common-ligatures;

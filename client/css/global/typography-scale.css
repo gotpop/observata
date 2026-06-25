@@ -2,7 +2,7 @@
 
 .heading-hero {
 	color: var(--colour-text-hero);
-	font-family: var(--typography-family-gantari);
+	font-family: var(--font-stack-heading);
 	font-size: var(--size, var(--typography-size-32));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -1px;
@@ -27,7 +27,7 @@
 
 .heading-lg {
 	color: var(--colour-text-heading-default);
-	font-family: var(--typography-family-gantari);
+	font-family: var(--font-stack-heading);
 	font-size: var(--size, var(--typography-size-32));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: -0.8px;
@@ -48,7 +48,7 @@
 
 .heading-md {
 	color: var(--colour-text-heading-default);
-	font-family: var(--typography-family-gantari);
+	font-family: var(--font-stack-heading);
 	font-size: var(--size, var(--typography-size-24));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0;
@@ -69,7 +69,7 @@
 
 .heading-sm {
 	color: var(--colour-text-heading-default);
-	font-family: var(--typography-family-gantari);
+	font-family: var(--font-stack-heading);
 	font-size: var(--size, var(--typography-size-20));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0;
@@ -90,7 +90,7 @@
 
 .heading-xs {
 	color: var(--colour-text-heading-default);
-	font-family: var(--typography-family-gantari);
+	font-family: var(--font-stack-heading);
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-bold);
 	letter-spacing: 0;
@@ -111,7 +111,7 @@
 
 .body-hero {
 	color: var(--colour-text-hero-subheading);
-	font-family: var(--typography-family-inter);
+	font-family: var(--font-stack-body);
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
@@ -130,7 +130,7 @@
 
 .body-lg {
 	color: var(--colour-text-body-default);
-	font-family: var(--typography-family-inter);
+	font-family: var(--font-stack-body);
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
@@ -149,7 +149,7 @@
 
 .body-md {
 	color: var(--colour-text-body-default);
-	font-family: var(--typography-family-inter);
+	font-family: var(--font-stack-body);
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-md);
@@ -164,7 +164,7 @@
 
 .body-sm {
 	color: var(--colour-text-body-default);
-	font-family: var(--typography-family-inter);
+	font-family: var(--font-stack-body);
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
@@ -179,7 +179,7 @@
 
 .body-xs {
 	color: var(--colour-text-body-default);
-	font-family: var(--typography-family-inter);
+	font-family: var(--font-stack-body);
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
