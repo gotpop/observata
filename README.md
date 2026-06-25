@@ -128,3 +128,39 @@ npm run format:check  # prettier --check .
 ### VS Code Task
 
 `PHPCS Fix` (default build task) — runs phpcbf on the current file.
+
+## Testing
+
+Unit tests for frontend TypeScript (`client/ts/`) use [Vitest](https://vitest.dev)
+with jsdom for DOM APIs.
+
+```bash
+npm test              # run all tests once
+npm run test:watch    # watch mode (re-runs on file changes)
+```
+
+Tests live alongside source files as `*.test.ts`. Coverage includes CSS feature
+detection, breakpoint media queries, browser/platform detection, click-outside
+behaviour, scroll observer, and GPU/CPU performance monitoring.
+
+## CI (GitHub Actions)
+
+Three workflows run automatically — all live in `.github/workflows/`:
+
+| Workflow      | Triggers                     | Runs                                |
+| ------------- | ---------------------------- | ----------------------------------- |
+| `lint.yml`    | PR + push to `master`        | ESLint, Stylelint, Prettier, PHPCS  |
+| `test.yml`    | PR + push to `master`        | Vitest unit tests                   |
+| `release.yml` | push to `master` + `v*` tags | Build zip artifact, GitHub Releases |
+
+### Producing a Release
+
+Push a version tag to trigger a GitHub Release with the theme zip attached:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Every push to `master` also produces a downloadable zip artifact (90-day
+retention) in the Actions run — no tag required.
