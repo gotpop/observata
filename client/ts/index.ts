@@ -9,7 +9,7 @@ import { initShaders } from './shaders';
 import { detectCssFeature } from './utils';
 
 // Run as early as possible — documentElement is available before DOMContentLoaded.
-detectCssFeature('view-timeline', 'auto');
+detectCssFeature('animation-timeline', 'scroll()', 'no-view-timeline');
 
 document.addEventListener('DOMContentLoaded', () => {
 	initShaders();
