@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+
+# Cancel in-progress runs on the same ref when new commits are pushed.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------- Build
+  build:
+    name: Build theme zip
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Build & zip
+        run: npm run build:zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: observata-zip
+          path: dist/observata.zip
+          retention-days: 90
+
+  # ---------------------------------------------------------------- Release
+  release:
+    name: GitHub Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: observata-zip
+          path: dist
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/observata.zip
+          generate_release_notes: true
