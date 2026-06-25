@@ -56,16 +56,17 @@
 			animation-range-start: 100px;
 		}
 
+		/* Firefox */
 		@supports not (animation-timeline: scroll(nearest)) {
 			animation: none;
 		}
 
-		.no-view-timeline & {
-			animation: none;
-		}
+		/* &.no-view-timeline {
+			animation: header-scroll 0.4s ease backwards;
+		} */
 
 		.no-view-timeline.has-scrolled & {
-			animation: header-scroll 0.4s ease forwards;
+			animation: header-scroll 0.3s ease-in-out forwards;
 		}
 
 		@supports (corner-shape: squircle) {
