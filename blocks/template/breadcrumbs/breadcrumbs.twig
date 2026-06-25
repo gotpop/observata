@@ -1,0 +1,19 @@
+{% if breadcrumbs %}
+	<section-breadcrumbs class="section-breadcrumbs">
+		<nav class="breadcrumbs" aria-label="Breadcrumb">
+			{% for crumb in breadcrumbs %}
+				{% if not loop.first %}
+					<span class="breadcrumbs__separator" aria-hidden="true">&raquo;</span>
+				{% endif %}
+				{% if crumb.url %}
+					<a class+"link-anchor" href="{{ crumb.url|esc_url }}">	{{ crumb.label|strip_html }}
+					</a>
+				{% else %}
+					<span class="body-sm breadcrumbs__current">
+						{{ crumb.label|strip_html }}
+					</span>
+				{% endif %}
+			{% endfor %}
+		</nav>
+	</section-breadcrumbs>
+{% endif %}

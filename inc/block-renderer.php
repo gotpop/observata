@@ -179,6 +179,11 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		}
 	}
 
+	// Build breadcrumb trail for the breadcrumbs block.
+	if ( $template_name === 'breadcrumbs' ) {
+		$context['breadcrumbs'] = observata_build_breadcrumbs();
+	}
+
 	// TODO: Delete this once new tabs are used
 	// Generic handling: auto-render any attribute ending in 'InnerBlocks'.
 	// Scans all attributes for keys like 'tab1InnerBlocks' or 'mdrInnerBlocks',
