@@ -1,56 +1,41 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/grid-flexible-content",
-    "title": "Grid Flexible Content",
-    "category": "theme",
-    "description": "Grid section with simple text card blocks. Add Card Text Simple blocks inside.",
-    "supports": {
-        "html": false,
-        "multiple": true
-    },
-    "attributes": {
-        "sectionTitle": {
-            "type": "string",
-            "default": ""
-        },
-        "sectionBgColour": {
-            "type": "string",
-            "default": "white",
-            "enum": [
-                "white",
-                "grey",
-                "gradient"
-            ]
-        },
-        "layout": {
-            "type": "string",
-            "default": "2",
-            "enum": [
-                "1",
-                "1-centred",
-                "2",
-                "3"
-            ]
-        },
-        "contentLayout": {
-            "type": "string",
-            "default": "content",
-            "enum": [
-                "content",
-                "inner"
-            ]
-        }
-    },
-    "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css",
-    "viewStyle": [
-        "file:../card-text-simple/card-text-simple.css",
-        "file:grid-flexible-content.css"
-    ],
-    "example": {
-        "attributes": {
-            "sectionTitle": "Our Content"
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/grid-flexible-content",
+	"title": "Grid Flexible Content",
+	"category": "theme",
+	"description": "Grid section with simple text card blocks. Add Card Text Simple blocks inside.",
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		},
+		"layout": {
+			"type": "string",
+			"default": "2",
+			"enum": ["1", "1-centred", "2", "3"]
+		},
+		"contentLayout": {
+			"type": "string",
+			"default": "content",
+			"enum": ["content", "inner"]
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": ["file:../card-text-simple/card-text-simple.css", "file:grid-flexible-content.css"],
+	"example": {
+		"attributes": {
+			"sectionTitle": "Our Content"
+		}
+	}
 }

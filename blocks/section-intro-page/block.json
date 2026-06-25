@@ -1,47 +1,36 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/section-intro-page",
-    "title": "Section Intro Page",
-    "category": "theme",
-    "description": "Sub-page intro section with feature cards containing lists, icons, and a graphic element.",
-    "supports": {
-        "html": false,
-        "multiple": false
-    },
-    "attributes": {
-        "graphic": {
-            "type": "string",
-            "default": "connected-dots"
-        },
-        "sectionBgColour": {
-            "type": "string",
-            "default": "white",
-            "enum": [
-                "white",
-                "grey",
-                "gradient"
-            ]
-        },
-        "shaderColour": {
-            "type": "string",
-            "default": "blue",
-            "enum": [
-                "blue",
-                "pink",
-                "blueLight"
-            ]
-        }
-    },
-    "editorScript": "file:../../build/index.js",
-    "editorStyle": "file:../../build/index.css",
-    "viewStyle": [
-        "file:section-intro-page.css",
-        "file:../cards/card-geo-list/card-geo-list.css"
-    ],
-    "example": {
-        "attributes": {
-            "graphic": "connected-dots"
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-intro-page",
+	"title": "Section Intro Page",
+	"category": "theme",
+	"description": "Sub-page intro section with feature cards containing lists, icons, and a graphic element.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"graphic": {
+			"type": "string",
+			"default": "connected-dots"
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		},
+		"shaderColour": {
+			"type": "string",
+			"default": "blue",
+			"enum": ["blue", "pink", "blueLight"]
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": ["file:section-intro-page.css", "file:../cards/card-geo-list/card-geo-list.css"],
+	"example": {
+		"attributes": {
+			"graphic": "connected-dots"
+		}
+	}
 }

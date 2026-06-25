@@ -1,11 +1,9 @@
 {
-    "tabWidth": 2,
-    "useTabs": true,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "printWidth": 100,
-    "plugins": [
-        "@sanderjn/prettier-plugin-twig-melody"
-    ]
+	"tabWidth": 2,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"printWidth": 100,
+	"plugins": ["@sanderjn/prettier-plugin-twig-melody"]
 }

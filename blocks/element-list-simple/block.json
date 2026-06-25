@@ -1,19 +1,17 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/element-list-simple",
-    "title": "Element List Simple",
-    "category": "theme",
-    "description": "A simple unordered list.",
-    "parent": [
-        "observata/card-text-simple"
-    ],
-    "supports": {
-        "html": false,
-        "multiple": true
-    },
-    "attributes": {},
-    "editorScript": "file:../../build/index.js",
-    "viewStyle": "file:element-list-simple.css",
-    "example": {}
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/element-list-simple",
+	"title": "Element List Simple",
+	"category": "theme",
+	"description": "A simple unordered list.",
+	"parent": ["observata/card-text-simple"],
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {},
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:element-list-simple.css",
+	"example": {}
 }

@@ -6,72 +6,72 @@ import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 const iconOptions = Array.from({ length: 30 }, (_, i) => {
-    const num = String(i + 1).padStart(2, '0');
-    return { label: num, value: num };
+	const num = String(i + 1).padStart(2, '0');
+	return { label: num, value: num };
 });
 
 const graphicOptions = [
-    { label: __('None', 'observata'), value: '' },
-    { label: 'Connected Dots', value: 'connected-dots-graphic' },
-    { label: 'Donut Plane', value: 'donut-plane-graphic' },
-    { label: 'Globe Dots', value: 'globe-dots-graphic' },
-    { label: 'Globe Lines', value: 'globe-lines-graphic' },
-    { label: 'Infinity Twist', value: 'infinity-twist-graphic' },
-    { label: 'Plane Distortion', value: 'plane-distortion-graphic' },
-    { label: 'Ribbon Star', value: 'ribbon-star-graphic' },
-    { label: 'Ribbon Wave', value: 'ribbon-wave-graphic' },
-    { label: 'Sine Flute', value: 'sine-flute-graphic' },
-    { label: 'Sine Wave', value: 'sine-wave-graphic' },
-    { label: 'Squares Rotating', value: 'squares-rotating-graphic' },
-    { label: 'Swooping Lines', value: 'swooping-lines' },
-    { label: 'Target', value: 'target-graphic' },
-    { label: 'Target Plane', value: 'target-plane-graphic' },
-    { label: 'Waveform', value: 'waveform-graphic' },
+	{ label: __('None', 'observata'), value: '' },
+	{ label: 'Connected Dots', value: 'connected-dots-graphic' },
+	{ label: 'Donut Plane', value: 'donut-plane-graphic' },
+	{ label: 'Globe Dots', value: 'globe-dots-graphic' },
+	{ label: 'Globe Lines', value: 'globe-lines-graphic' },
+	{ label: 'Infinity Twist', value: 'infinity-twist-graphic' },
+	{ label: 'Plane Distortion', value: 'plane-distortion-graphic' },
+	{ label: 'Ribbon Star', value: 'ribbon-star-graphic' },
+	{ label: 'Ribbon Wave', value: 'ribbon-wave-graphic' },
+	{ label: 'Sine Flute', value: 'sine-flute-graphic' },
+	{ label: 'Sine Wave', value: 'sine-wave-graphic' },
+	{ label: 'Squares Rotating', value: 'squares-rotating-graphic' },
+	{ label: 'Swooping Lines', value: 'swooping-lines' },
+	{ label: 'Target', value: 'target-graphic' },
+	{ label: 'Target Plane', value: 'target-plane-graphic' },
+	{ label: 'Waveform', value: 'waveform-graphic' },
 ];
 
 export default function CardGeoTechEdit({ attributes, setAttributes }) {
-    const { cardTitle, cardText, iconGeo, backgroundGraphic } = attributes;
-    const blockProps = useBlockProps({ className: 'card-geo-tech' });
+	const { cardTitle, cardText, iconGeo, backgroundGraphic } = attributes;
+	const blockProps = useBlockProps({ className: 'card-geo-tech' });
 
-    return (
-        <article {...blockProps}>
-            <BlockLabel name="Card Geo Tech" />
+	return (
+		<article {...blockProps}>
+			<BlockLabel name="Card Geo Tech" />
 
-            <div className="icon-geo">
-                <GeoIcon number={iconGeo} />
-            </div>
-            <div className="intro-card-body">
-                <RichText
-                    tagName="h3"
-                    className="intro-card-title"
-                    value={cardTitle}
-                    onChange={(val) => setAttributes({ cardTitle: val })}
-                    placeholder={__('Card title…', 'observata')}
-                    disableLineBreaks
-                    allowedFormats={[]}
-                />
-                <RichText
-                    tagName="p"
-                    className="intro-card-text"
-                    value={cardText}
-                    onChange={(val) => setAttributes({ cardText: val })}
-                    placeholder={__('Card description…', 'observata')}
-                    disableLineBreaks
-                    allowedFormats={[]}
-                />
-                <SelectControl
-                    label={__('Geo Icon', 'observata')}
-                    value={iconGeo}
-                    options={iconOptions}
-                    onChange={(val) => setAttributes({ iconGeo: val })}
-                />
-                <SelectControl
-                    label={__('Background Graphic', 'observata')}
-                    value={backgroundGraphic}
-                    options={graphicOptions}
-                    onChange={(val) => setAttributes({ backgroundGraphic: val })}
-                />
-            </div>
-        </article>
-    );
+			<div className="icon-geo">
+				<GeoIcon number={iconGeo} />
+			</div>
+			<div className="intro-card-body">
+				<RichText
+					tagName="h3"
+					className="intro-card-title"
+					value={cardTitle}
+					onChange={(val) => setAttributes({ cardTitle: val })}
+					placeholder={__('Card title…', 'observata')}
+					disableLineBreaks
+					allowedFormats={[]}
+				/>
+				<RichText
+					tagName="p"
+					className="intro-card-text"
+					value={cardText}
+					onChange={(val) => setAttributes({ cardText: val })}
+					placeholder={__('Card description…', 'observata')}
+					disableLineBreaks
+					allowedFormats={[]}
+				/>
+				<SelectControl
+					label={__('Geo Icon', 'observata')}
+					value={iconGeo}
+					options={iconOptions}
+					onChange={(val) => setAttributes({ iconGeo: val })}
+				/>
+				<SelectControl
+					label={__('Background Graphic', 'observata')}
+					value={backgroundGraphic}
+					options={graphicOptions}
+					onChange={(val) => setAttributes({ backgroundGraphic: val })}
+				/>
+			</div>
+		</article>
+	);
 }

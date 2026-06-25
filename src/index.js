@@ -139,248 +139,247 @@ import sectionTrustBarMetadata from '../blocks/section-trust-bar/block.json';
 import { useBlockProps } from '@wordpress/block-editor';
 
 function createDynamicEdit(label) {
-    return function DynamicEdit() {
-        const blockProps = useBlockProps({ className: 'observata-dynamic-block-placeholder' });
-        return <div {...blockProps}>{label}</div>;
-    };
+	return function DynamicEdit() {
+		const blockProps = useBlockProps({ className: 'observata-dynamic-block-placeholder' });
+		return <div {...blockProps}>{label}</div>;
+	};
 }
 
 function DynamicSave() {
-    return null;
+	return null;
 }
 
 registerBlockType(sectionHeroHomeMetadata.name, {
-    edit: SectionHeroHomeEdit,
-    save: SectionHeroHomeSave,
+	edit: SectionHeroHomeEdit,
+	save: SectionHeroHomeSave,
 });
 
 registerBlockType(sectionHeroPageMetadata.name, {
-    edit: SectionHeroPageEdit,
-    save: SectionHeroPageSave,
+	edit: SectionHeroPageEdit,
+	save: SectionHeroPageSave,
 });
 
 registerBlockType(sectionCtaMetadata.name, {
-    edit: SectionCtaEdit,
-    save: SectionCtaSave,
+	edit: SectionCtaEdit,
+	save: SectionCtaSave,
 });
 
 registerBlockType(sectionIntroHomeMetadata.name, {
-    edit: SectionIntroHomeEdit,
-    save: SectionIntroHomeSave,
+	edit: SectionIntroHomeEdit,
+	save: SectionIntroHomeSave,
 });
 
 registerBlockType(cardGeoMetadata.name, {
-    edit: CardGeoEdit,
-    save: CardGeoSave,
+	edit: CardGeoEdit,
+	save: CardGeoSave,
 });
 
 registerBlockType(cardGeoListMetadata.name, {
-    edit: CardGeoListEdit,
-    save: CardGeoListSave,
+	edit: CardGeoListEdit,
+	save: CardGeoListSave,
 });
 
 registerBlockType(cardMicroMetadata.name, {
-    edit: CardMicroEdit,
-    save: CardMicroSave,
+	edit: CardMicroEdit,
+	save: CardMicroSave,
 });
 
 registerBlockType(cardPhotoMetadata.name, {
-    edit: CardPhotoEdit,
-    save: CardPhotoSave,
+	edit: CardPhotoEdit,
+	save: CardPhotoSave,
 });
 
 registerBlockType(cardImageUnsplashMetadata.name, {
-    edit: CardImageUnsplashEdit,
-    save: CardImageUnsplashSave,
+	edit: CardImageUnsplashEdit,
+	save: CardImageUnsplashSave,
 });
 
 registerBlockType(headerMetadata.name, {
-    edit: createDynamicEdit('Header block'),
-    save: DynamicSave,
+	edit: createDynamicEdit('Header block'),
+	save: DynamicSave,
 });
 
 registerBlockType(footerMetadata.name, {
-    edit: createDynamicEdit('Footer block'),
-    save: DynamicSave,
+	edit: createDynamicEdit('Footer block'),
+	save: DynamicSave,
 });
 
 registerBlockType(gridCardsShaderMetadata.name, {
-    edit: GridCardsShaderEdit,
-    save: GridCardsShaderSave,
+	edit: GridCardsShaderEdit,
+	save: GridCardsShaderSave,
 });
 
 registerBlockType(gridCardsSimpleMetadata.name, {
-    edit: GridCardsSimpleEdit,
-    save: GridCardsSimpleSave,
+	edit: GridCardsSimpleEdit,
+	save: GridCardsSimpleSave,
 });
 
 registerBlockType(cardGeoShaderMetadata.name, {
-    edit: CardGeoShaderEdit,
-    save: CardGeoShaderSave,
+	edit: CardGeoShaderEdit,
+	save: CardGeoShaderSave,
 });
 
 registerBlockType(sectionPartnershipMetadata.name, {
-    edit: SectionPartnershipEdit,
-    save: SectionPartnershipSave,
+	edit: SectionPartnershipEdit,
+	save: SectionPartnershipSave,
 });
 
 registerBlockType(cardSimpleMetadata.name, {
-    edit: CardSimpleEdit,
-    save: CardSimpleSave,
+	edit: CardSimpleEdit,
+	save: CardSimpleSave,
 });
 
 registerBlockType(observabilityMetadata.name, {
-    edit: ObservabilityEdit,
-    save: ObservabilitySave,
+	edit: ObservabilityEdit,
+	save: ObservabilitySave,
 });
 
 registerBlockType(blogPaginationMetadata.name, {
-    edit: BlogPaginationEdit,
-    save: BlogPaginationSave,
+	edit: BlogPaginationEdit,
+	save: BlogPaginationSave,
 });
 
 registerBlockType(sectionTrustBarMetadata.name, {
-    edit: SectionTrustBarEdit,
-    save: SectionTrustBarSave,
+	edit: SectionTrustBarEdit,
+	save: SectionTrustBarSave,
 });
 
 registerBlockType(sectionCardAndGraphicMetadata.name, {
-    edit: SectionCardAndGraphicEdit,
-    save: SectionCardAndGraphicSave,
+	edit: SectionCardAndGraphicEdit,
+	save: SectionCardAndGraphicSave,
 });
 
 registerBlockType(sectionHeroBlogMetadata.name, {
-    edit: SectionHeroBlogEdit,
-    save: SectionHeroBlogSave,
+	edit: SectionHeroBlogEdit,
+	save: SectionHeroBlogSave,
 });
 
 registerBlockType(sectionIntroPageMetadata.name, {
-    edit: SectionIntroPageEdit,
-    save: SectionIntroPageSave,
+	edit: SectionIntroPageEdit,
+	save: SectionIntroPageSave,
 });
 
 registerBlockType(gridCardsGeoMetadata.name, {
-    edit: GridCardsGeoEdit,
-    save: GridCardsGeoSave,
+	edit: GridCardsGeoEdit,
+	save: GridCardsGeoSave,
 });
 
 registerBlockType(gridCardsMicroMetadata.name, {
-    edit: GridCardsMicroEdit,
-    save: GridCardsMicroSave,
+	edit: GridCardsMicroEdit,
+	save: GridCardsMicroSave,
 });
 
 registerBlockType(gridCardsPhotoMetadata.name, {
-    edit: GridCardsPhotoEdit,
-    save: GridCardsPhotoSave,
+	edit: GridCardsPhotoEdit,
+	save: GridCardsPhotoSave,
 });
 
 registerBlockType(gridCardsGraphicMetadata.name, {
-    edit: GridCardsGraphicEdit,
-    save: GridCardsGraphicSave,
+	edit: GridCardsGraphicEdit,
+	save: GridCardsGraphicSave,
 });
 
 registerBlockType(cardGeoTechMetadata.name, {
-    edit: CardGeoTechEdit,
-    save: CardGeoTechSave,
+	edit: CardGeoTechEdit,
+	save: CardGeoTechSave,
 });
 
 registerBlockType(gridCardsGeoTechMetadata.name, {
-    edit: GridCardsGeoTechEdit,
-    save: GridCardsGeoTechSave,
+	edit: GridCardsGeoTechEdit,
+	save: GridCardsGeoTechSave,
 });
 
 registerBlockType(cardTableSimpleMetadata.name, {
-    edit: CardTableSimpleEdit,
-    save: CardTableSimpleSave,
+	edit: CardTableSimpleEdit,
+	save: CardTableSimpleSave,
 });
 
 registerBlockType(elementTableSimpleRowMetadata.name, {
-    edit: ElementTableSimpleRowEdit,
-    save: ElementTableSimpleRowSave,
+	edit: ElementTableSimpleRowEdit,
+	save: ElementTableSimpleRowSave,
 });
 
 registerBlockType(elementTableFeaturesRowMetadata.name, {
-    edit: ElementTableFeaturesRowEdit,
-    save: ElementTableFeaturesRowSave,
+	edit: ElementTableFeaturesRowEdit,
+	save: ElementTableFeaturesRowSave,
 });
 
 registerBlockType(elementListSimpleMetadata.name, {
-    edit: ElementListSimpleEdit,
-    save: ElementListSimpleSave,
+	edit: ElementListSimpleEdit,
+	save: ElementListSimpleSave,
 });
 
 registerBlockType(elementListSimpleItemMetadata.name, {
-    edit: ElementListSimpleItemEdit,
-    save: ElementListSimpleItemSave,
+	edit: ElementListSimpleItemEdit,
+	save: ElementListSimpleItemSave,
 });
 
 registerBlockType(sectionIntroMetadata.name, {
-    edit: SectionIntroEdit,
-    save: SectionIntroSave,
+	edit: SectionIntroEdit,
+	save: SectionIntroSave,
 });
 
 registerBlockType(contactMetadata.name, {
-    edit: ContactEdit,
-    save: ContactSave,
+	edit: ContactEdit,
+	save: ContactSave,
 });
 
 registerBlockType(cardContactDetailsMetadata.name, {
-    edit: CardContactDetailsEdit,
-    save: CardContactDetailsSave,
+	edit: CardContactDetailsEdit,
+	save: CardContactDetailsSave,
 });
 
 registerBlockType(cardContactFormMetadata.name, {
-    edit: CardContactFormEdit,
-    save: CardContactFormSave,
+	edit: CardContactFormEdit,
+	save: CardContactFormSave,
 });
 
 registerBlockType(blogPostsMetadata.name, {
-    edit: BlogPostsEdit,
-    save: BlogPostsSave,
+	edit: BlogPostsEdit,
+	save: BlogPostsSave,
 });
 
 registerBlockType(cardTextSimpleMetadata.name, {
-    edit: CardTextSimpleEdit,
-    save: CardTextSimpleSave,
+	edit: CardTextSimpleEdit,
+	save: CardTextSimpleSave,
 });
 
 registerBlockType(cardTextIntroMetadata.name, {
-    edit: CardTextIntroEdit,
-    save: CardTextIntroSave,
+	edit: CardTextIntroEdit,
+	save: CardTextIntroSave,
 });
 
-
 registerBlockType(bodyMdMetadata.name, {
-    edit: BodyMdEdit,
-    save: BodyMdSave,
+	edit: BodyMdEdit,
+	save: BodyMdSave,
 });
 
 registerBlockType(bodySmMetadata.name, {
-    edit: BodySmEdit,
-    save: BodySmSave,
+	edit: BodySmEdit,
+	save: BodySmSave,
 });
 
 registerBlockType(gridFlexibleContentMetadata.name, {
-    edit: GridFlexibleContentEdit,
-    save: GridFlexibleContentSave,
+	edit: GridFlexibleContentEdit,
+	save: GridFlexibleContentSave,
 });
 
 registerBlockType(breadcrumbsMetadata.name, {
-    edit: BreadcrumbsEdit,
-    save: BreadcrumbsSave,
+	edit: BreadcrumbsEdit,
+	save: BreadcrumbsSave,
 });
 
 registerBlockType(sectionGraphicCardSimpleTextMetadata.name, {
-    edit: SectionGraphicCardSimpleTextEdit,
-    save: SectionGraphicCardSimpleTextSave,
+	edit: SectionGraphicCardSimpleTextEdit,
+	save: SectionGraphicCardSimpleTextSave,
 });
 
 registerBlockType(sectionTabsMetadata.name, {
-    edit: SectionTabsEdit,
-    save: SectionTabsSave,
+	edit: SectionTabsEdit,
+	save: SectionTabsSave,
 });
 
 registerBlockType(cardTableFeaturesMetadata.name, {
-    edit: CardTableFeaturesEdit,
-    save: CardTableFeaturesSave,
+	edit: CardTableFeaturesEdit,
+	save: CardTableFeaturesSave,
 });

@@ -1,40 +1,36 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/grid-cards-photo",
-    "title": "Grid Cards Photo",
-    "category": "theme",
-    "description": "A container for photo cards with title and subtitle.",
-    "supports": {
-        "html": false,
-        "reusable": false
-    },
-    "attributes": {
-        "title": {
-            "type": "string",
-            "default": ""
-        },
-        "subtitle": {
-            "type": "string",
-            "default": ""
-        },
-        "sectionBgColour": {
-            "type": "string",
-            "default": "white",
-            "enum": [
-                "white",
-                "grey",
-                "gradient"
-            ]
-        }
-    },
-    "render": "file:grid-cards-photo.twig",
-    "editorScript": "file:../../build/index.js",
-    "viewStyle": "file:grid-cards-photo.css",
-    "example": {
-        "attributes": {
-            "title": "Photo Cards",
-            "subtitle": "Beautiful photography with descriptions"
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/grid-cards-photo",
+	"title": "Grid Cards Photo",
+	"category": "theme",
+	"description": "A container for photo cards with title and subtitle.",
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"subtitle": {
+			"type": "string",
+			"default": ""
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"render": "file:grid-cards-photo.twig",
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:grid-cards-photo.css",
+	"example": {
+		"attributes": {
+			"title": "Photo Cards",
+			"subtitle": "Beautiful photography with descriptions"
+		}
+	}
 }

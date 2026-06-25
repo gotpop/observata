@@ -9,41 +9,89 @@ import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 const CARD_TEMPLATE = [
-    ['observata/card-geo-shader', { cardTitle: 'Unify every data source', cardText: 'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.', iconGeo: '01' }],
-    ['observata/card-geo-shader', { cardTitle: 'Zero cost migration', cardText: 'Transition from legacy tools without migration headache. As Elastic specialists, we manage your end-to-end move for free—ensuring a seamless shift to a faster, more flexible observability standard.', iconGeo: '02' }],
-    ['observata/card-geo-shader', { cardTitle: 'Unlimited optimisation', cardText: 'Transform static charts into actionable dashboards using ML and AI. Our team provides ongoing tuning and predictive analytics, delivering true operational resilience without the risk of vendor lock-in.', iconGeo: '03' }],
-    ['observata/card-geo-shader', { cardTitle: 'Simplified licencing', cardText: 'Eliminate complex billing with one flat monthly fee. Our all-inclusive model covers ingestion, licensing, and operational support. Ensuring you never face surprise charges or "data taxes" from third-party vendors.', iconGeo: '04' }],
-    ['observata/card-geo-shader', { cardTitle: 'Support & training', cardText: 'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.', iconGeo: '05' }],
-    ['observata/card-geo-shader', { cardTitle: 'Unify every data source', cardText: 'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.', iconGeo: '06' }],
+	[
+		'observata/card-geo-shader',
+		{
+			cardTitle: 'Unify every data source',
+			cardText:
+				'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.',
+			iconGeo: '01',
+		},
+	],
+	[
+		'observata/card-geo-shader',
+		{
+			cardTitle: 'Zero cost migration',
+			cardText:
+				'Transition from legacy tools without migration headache. As Elastic specialists, we manage your end-to-end move for free—ensuring a seamless shift to a faster, more flexible observability standard.',
+			iconGeo: '02',
+		},
+	],
+	[
+		'observata/card-geo-shader',
+		{
+			cardTitle: 'Unlimited optimisation',
+			cardText:
+				'Transform static charts into actionable dashboards using ML and AI. Our team provides ongoing tuning and predictive analytics, delivering true operational resilience without the risk of vendor lock-in.',
+			iconGeo: '03',
+		},
+	],
+	[
+		'observata/card-geo-shader',
+		{
+			cardTitle: 'Simplified licencing',
+			cardText:
+				'Eliminate complex billing with one flat monthly fee. Our all-inclusive model covers ingestion, licensing, and operational support. Ensuring you never face surprise charges or "data taxes" from third-party vendors.',
+			iconGeo: '04',
+		},
+	],
+	[
+		'observata/card-geo-shader',
+		{
+			cardTitle: 'Support & training',
+			cardText:
+				'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.',
+			iconGeo: '05',
+		},
+	],
+	[
+		'observata/card-geo-shader',
+		{
+			cardTitle: 'Unify every data source',
+			cardText:
+				'Master your data flow with a seamless ingestion strategy. Using OpenTelemetry and custom SDKs, we unify logs and traces across your entire stack to break down silos and deliver actionable insights.',
+			iconGeo: '06',
+		},
+	],
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-    const { sectionBgColour } = attributes;
-    const blockProps = useBlockProps({ className: 'observata-grid-cards-shader-editor' });
+	const { sectionBgColour } = attributes;
+	const blockProps = useBlockProps({ className: 'observata-grid-cards-shader-editor' });
 
-    return (
-        <div {...blockProps}>
-            <BlockLabel name="Grid Cards Shader">
-                <SelectControl
-                    label={__('Section Background', 'observata')}
-                    value={sectionBgColour}
-                    options={[
-                        { label: __('White', 'observata'), value: 'white' },
-                        { label: __('Grey', 'observata'), value: 'grey' },
-                        { label: __('Gradient', 'observata'), value: 'gradient' },
-                    ]}
-                    onChange={(val) => setAttributes({ sectionBgColour: val })}
-                />
-            </BlockLabel>
-            <SectionIntro attributes={attributes} setAttributes={setAttributes} />
+	return (
+		<div {...blockProps}>
+			<BlockLabel name="Grid Cards Shader">
+				<SelectControl
+					label={__('Section Background', 'observata')}
+					value={sectionBgColour}
+					options={[
+						{ label: __('White', 'observata'), value: 'white' },
+						{ label: __('Grey', 'observata'), value: 'grey' },
+						{ label: __('Gradient', 'observata'), value: 'gradient' },
+					]}
+					onChange={(val) => setAttributes({ sectionBgColour: val })}
+				/>
+			</BlockLabel>
+			<SectionIntro attributes={attributes} setAttributes={setAttributes} />
 
-            <ControlsLayout columns={2} gap="1rem">
-                <InnerBlocks
-                    template={CARD_TEMPLATE}
-                    templateLock={false}
-                    allowedBlocks={['observata/card-geo-shader']}
-                />
-            </ControlsLayout>
-        </div>
-    );
+			<ControlsLayout columns={2} gap="1rem">
+				<InnerBlocks
+					template={CARD_TEMPLATE}
+					templateLock={false}
+					allowedBlocks={['observata/card-geo-shader']}
+				/>
+			</ControlsLayout>
+		</div>
+	);
 }

@@ -1,44 +1,40 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/grid-cards-shader",
-    "title": "Grid Cards Shader",
-    "category": "theme",
-    "description": "Multi-card shader grid section.",
-    "supports": {
-        "html": false,
-        "multiple": false
-    },
-    "attributes": {
-        "sectionTitle": {
-            "type": "string",
-            "default": ""
-        },
-        "introText": {
-            "type": "string",
-            "default": ""
-        },
-        "sectionBgColour": {
-            "type": "string",
-            "default": "white",
-            "enum": [
-                "white",
-                "grey",
-                "gradient"
-            ]
-        }
-    },
-    "editorScript": "file:../../build/index.js",
-    "viewStyle": [
-        "file:grid-cards-shader.css",
-        "file:../cards/card-geo-shader/card-geo-shader.css",
-        "file:../template/section-intro/section-intro.css"
-    ],
-    "editorStyle": "file:../../build/index.css",
-    "example": {
-        "attributes": {
-            "sectionTitle": "Key Benefits",
-            "introText": "Why choose our solution for your business."
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/grid-cards-shader",
+	"title": "Grid Cards Shader",
+	"category": "theme",
+	"description": "Multi-card shader grid section.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"introText": {
+			"type": "string",
+			"default": ""
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": [
+		"file:grid-cards-shader.css",
+		"file:../cards/card-geo-shader/card-geo-shader.css",
+		"file:../template/section-intro/section-intro.css"
+	],
+	"editorStyle": "file:../../build/index.css",
+	"example": {
+		"attributes": {
+			"sectionTitle": "Key Benefits",
+			"introText": "Why choose our solution for your business."
+		}
+	}
 }

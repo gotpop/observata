@@ -1,24 +1,22 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/element-list-simple-item",
-    "title": "Element List Simple Item",
-    "category": "theme",
-    "description": "A single list item.",
-    "parent": [
-        "observata/element-list-simple"
-    ],
-    "supports": {
-        "html": false,
-        "multiple": true
-    },
-    "attributes": {
-        "content": {
-            "type": "string",
-            "default": "List item"
-        }
-    },
-    "editorScript": "file:../../build/index.js",
-    "viewStyle": "file:element-list-simple-item.css",
-    "example": {}
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/element-list-simple-item",
+	"title": "Element List Simple Item",
+	"category": "theme",
+	"description": "A single list item.",
+	"parent": ["observata/element-list-simple"],
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "List item"
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:element-list-simple-item.css",
+	"example": {}
 }

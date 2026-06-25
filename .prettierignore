@@ -1,3 +1,24 @@
+# Dependencies
 node_modules
 vendor
+
+# Build output
 build
+dist
+
+# Lock files (generated)
+package-lock.json
+composer.lock
+
+# Caches
+cache
+
+# SVG icons & logos in Twig (pure markup, not meant for reformatting)
+views/icons
+views/logos
+
+# Editor settings
+.vscode
+
+# OS
+.DS_Store

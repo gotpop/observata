@@ -1,3 +1,3 @@
 export default function SectionHeroBlogSave() {
-    return null;
+	return null;
 }

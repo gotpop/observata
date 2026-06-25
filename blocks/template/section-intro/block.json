@@ -1,38 +1,36 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "observata/section-intro",
-  "title": "Section Intro",
-  "category": "theme",
-  "description": "Section heading and intro text with optional center alignment.",
-  "supports": {
-    "html": false,
-    "multiple": true
-  },
-  "attributes": {
-    "sectionTitle": {
-      "type": "string",
-      "default": "Precision operation of your observability and security"
-    },
-    "introText": {
-      "type": "string",
-      "default": "We specialise exclusively in Elastic. Our team brings unmatched operational experience to streamline your ingestion, data modelling and AI powered outcomes under one expert-led strategy."
-    },
-    "textAlign": {
-      "type": "string",
-      "default": "left"
-    }
-  },
-  "editorScript": "file:../../build/index.js",
-  "viewStyle": "file:section-intro.css",
-  "editorStyle": [
-    "file:../../build/index.css"
-  ],
-  "example": {
-    "attributes": {
-      "sectionTitle": "Precision operation of your observability and security",
-      "introText": "We specialise exclusively in Elastic. Our team brings unmatched operational experience to streamline your ingestion, data modelling and AI powered outcomes under one expert-led strategy.",
-      "textAlign": "left"
-    }
-  }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-intro",
+	"title": "Section Intro",
+	"category": "theme",
+	"description": "Section heading and intro text with optional center alignment.",
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": "Precision operation of your observability and security"
+		},
+		"introText": {
+			"type": "string",
+			"default": "We specialise exclusively in Elastic. Our team brings unmatched operational experience to streamline your ingestion, data modelling and AI powered outcomes under one expert-led strategy."
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "left"
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:section-intro.css",
+	"editorStyle": ["file:../../build/index.css"],
+	"example": {
+		"attributes": {
+			"sectionTitle": "Precision operation of your observability and security",
+			"introText": "We specialise exclusively in Elastic. Our team brings unmatched operational experience to streamline your ingestion, data modelling and AI powered outcomes under one expert-led strategy.",
+			"textAlign": "left"
+		}
+	}
 }

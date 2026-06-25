@@ -1,44 +1,42 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/card-geo-shader",
-    "title": "Card with Geo Shader",
-    "category": "theme",
-    "description": "A benefit card with swoosh gradient background and geo icon.",
-    "parent": [
-        "observata/grid-cards-shader"
-    ],
-    "supports": {
-        "html": false,
-        "reusable": false
-    },
-    "attributes": {
-        "cardTitle": {
-            "type": "string",
-            "default": ""
-        },
-        "cardText": {
-            "type": "string",
-            "default": ""
-        },
-        "iconGeo": {
-            "type": "string",
-            "default": "01"
-        },
-        "shaderColour": {
-            "type": "string",
-            "default": "blue"
-        }
-    },
-    "render": "file:render.php",
-    "editorScript": "file:../../build/index.js",
-    "viewStyle": "file:card-geo-shader.css",
-    "example": {
-        "attributes": {
-            "cardTitle": "Benefit Title",
-            "cardText": "Description of the benefit and what it offers.",
-            "iconGeo": "01",
-            "shaderColour": "blue"
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/card-geo-shader",
+	"title": "Card with Geo Shader",
+	"category": "theme",
+	"description": "A benefit card with swoosh gradient background and geo icon.",
+	"parent": ["observata/grid-cards-shader"],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"attributes": {
+		"cardTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"cardText": {
+			"type": "string",
+			"default": ""
+		},
+		"iconGeo": {
+			"type": "string",
+			"default": "01"
+		},
+		"shaderColour": {
+			"type": "string",
+			"default": "blue"
+		}
+	},
+	"render": "file:render.php",
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:card-geo-shader.css",
+	"example": {
+		"attributes": {
+			"cardTitle": "Benefit Title",
+			"cardText": "Description of the benefit and what it offers.",
+			"iconGeo": "01",
+			"shaderColour": "blue"
+		}
+	}
 }

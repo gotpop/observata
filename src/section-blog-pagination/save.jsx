@@ -1,3 +1,3 @@
 export default function BlogPaginationSave() {
-    return null;
+	return null;
 }

@@ -1,35 +1,32 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "observata/card-micro",
-    "title": "Card Micro",
-    "category": "theme",
-    "description": "A small card with title and description, used inside the Observability block.",
-    "parent": [
-        "observata/observability",
-        "observata/grid-cards-micro"
-    ],
-    "supports": {
-        "html": false,
-        "reusable": false
-    },
-    "attributes": {
-        "cardTitle": {
-            "type": "string",
-            "default": ""
-        },
-        "cardDescription": {
-            "type": "string",
-            "default": ""
-        }
-    },
-    "render": "file:render.php",
-    "editorScript": "file:../../build/index.js",
-    "viewStyle": "file:card-micro.css",
-    "example": {
-        "attributes": {
-            "cardTitle": "Feature Title",
-            "cardDescription": "A brief description of this feature that highlights its benefits."
-        }
-    }
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/card-micro",
+	"title": "Card Micro",
+	"category": "theme",
+	"description": "A small card with title and description, used inside the Observability block.",
+	"parent": ["observata/observability", "observata/grid-cards-micro"],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"attributes": {
+		"cardTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"cardDescription": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"render": "file:render.php",
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:card-micro.css",
+	"example": {
+		"attributes": {
+			"cardTitle": "Feature Title",
+			"cardDescription": "A brief description of this feature that highlights its benefits."
+		}
+	}
 }

@@ -9,7 +9,11 @@
 	{% endif %}
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	<div class="content">
-		<h3 class="heading">{{ card_title|strip_html }}</h3>
-		<p class="body">{{ card_text|strip_html }}</p>
+		<h3 class="heading">
+			{{ card_title|strip_html }}
+		</h3>
+		<p class="body">
+			{{ card_text|strip_html }}
+		</p>
 	</div>
 </article>

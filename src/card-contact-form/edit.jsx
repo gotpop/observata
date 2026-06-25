@@ -2,19 +2,19 @@ import { useBlockProps } from '@wordpress/block-editor';
 import BlockLabel from '../components/block-label';
 
 export default function CardContactFormEdit({ attributes }) {
-    const blockProps = useBlockProps({ className: 'contact-form-editor' });
+	const blockProps = useBlockProps({ className: 'contact-form-editor' });
 
-    return (
-        <div {...blockProps}>
-            <BlockLabel name="Card Contact Form" />
-            <div className="contact-form">
-                <div className="contact-form__placeholder">
-                    <span className="contact-form__placeholder-icon">📝</span>
-                    <p className="contact-form__placeholder-text">
-                        Zoho Contact Form — preview not available in editor
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div {...blockProps}>
+			<BlockLabel name="Card Contact Form" />
+			<div className="contact-form">
+				<div className="contact-form__placeholder">
+					<span className="contact-form__placeholder-icon">📝</span>
+					<p className="contact-form__placeholder-text">
+						Zoho Contact Form — preview not available in editor
+					</p>
+				</div>
+			</div>
+		</div>
+	);
 }

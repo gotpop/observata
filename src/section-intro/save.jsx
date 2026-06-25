@@ -1,3 +1,3 @@
 export default function SectionIntroSave() {
-    return null;
+	return null;
 }

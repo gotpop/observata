@@ -1,3 +1,3 @@
 export default function CardContactDetailsSave() {
-    return null;
+	return null;
 }

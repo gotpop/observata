@@ -13,7 +13,9 @@ declare module '@wordpress/editor' {
 
 declare module '@wordpress/element' {
 	export const useCallback: <T extends (...args: any[]) => any>(callback: T, deps: any[]) => T;
-	export const useState: <T>(initialState: T | (() => T)) => [T, React.Dispatch<React.SetStateAction<T>>];
+	export const useState: <T>(
+		initialState: T | (() => T)
+	) => [T, React.Dispatch<React.SetStateAction<T>>];
 }
 
 declare module '@wordpress/data' {

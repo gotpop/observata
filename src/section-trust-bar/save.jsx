@@ -1,3 +1,3 @@
 export default function SectionTrustBarSave() {
-    return null;
+	return null;
 }

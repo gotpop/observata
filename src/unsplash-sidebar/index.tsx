@@ -61,11 +61,16 @@ const UnsplashSidebar: React.FC = () => {
 		setError(null);
 
 		try {
-			const response = await fetch(`/wp-json/wp/v2/unsplash/search?query=${encodeURIComponent(query)}&page=${page}&per_page=12`, {
-				headers: {
-					'X-WP-Nonce': (window as typeof window & { wpApiSettings?: { nonce?: string } }).wpApiSettings?.nonce || '',
-				},
-			});
+			const response = await fetch(
+				`/wp-json/wp/v2/unsplash/search?query=${encodeURIComponent(query)}&page=${page}&per_page=12`,
+				{
+					headers: {
+						'X-WP-Nonce':
+							(window as typeof window & { wpApiSettings?: { nonce?: string } }).wpApiSettings
+								?.nonce || '',
+					},
+				}
+			);
 			const data: SearchResponse = await response.json();
 
 			if (!response.ok) {
@@ -89,10 +94,13 @@ const UnsplashSidebar: React.FC = () => {
 		}
 	}, []);
 
-	const handleSearch = useCallback((e: React.FormEvent) => {
-		e.preventDefault();
-		searchImages(searchQuery, 1);
-	}, [searchQuery, searchImages]);
+	const handleSearch = useCallback(
+		(e: React.FormEvent) => {
+			e.preventDefault();
+			searchImages(searchQuery, 1);
+		},
+		[searchQuery, searchImages]
+	);
 
 	const handleNextPage = useCallback(() => {
 		if (currentPage < totalPages) {
@@ -106,40 +114,45 @@ const UnsplashSidebar: React.FC = () => {
 		}
 	}, [currentPage, searchQuery, searchImages]);
 
-	const handleImageSelect = useCallback(async (image: UnsplashImage) => {
-		setIsDownloading(image.id);
-		setError(null);
+	const handleImageSelect = useCallback(
+		async (image: UnsplashImage) => {
+			setIsDownloading(image.id);
+			setError(null);
 
-		try {
-			const response = await fetch('/wp-json/wp/v2/unsplash/download', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'X-WP-Nonce': (window as typeof window & { wpApiSettings?: { nonce?: string } }).wpApiSettings?.nonce || '',
-				},
-				body: JSON.stringify({
-					image_url: image.urls.regular,
-					photographer: image.user.name,
-					unsplash_url: image.links.html,
-				}),
-			});
+			try {
+				const response = await fetch('/wp-json/wp/v2/unsplash/download', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'X-WP-Nonce':
+							(window as typeof window & { wpApiSettings?: { nonce?: string } }).wpApiSettings
+								?.nonce || '',
+					},
+					body: JSON.stringify({
+						image_url: image.urls.regular,
+						photographer: image.user.name,
+						unsplash_url: image.links.html,
+					}),
+				});
 
-			const data = await response.json();
+				const data = await response.json();
 
-			if (!response.ok) {
-				setError(data.message || 'Failed to download image. Please try again.');
-				return;
+				if (!response.ok) {
+					setError(data.message || 'Failed to download image. Please try again.');
+					return;
+				}
+
+				if (data.success && data.attachment_id) {
+					editPost({ featured_media: data.attachment_id });
+				}
+			} catch {
+				setError('Network error while downloading image. Please try again.');
+			} finally {
+				setIsDownloading(null);
 			}
-
-			if (data.success && data.attachment_id) {
-				editPost({ featured_media: data.attachment_id });
-			}
-		} catch {
-			setError('Network error while downloading image. Please try again.');
-		} finally {
-			setIsDownloading(null);
-		}
-	}, [editPost]);
+		},
+		[editPost]
+	);
 
 	return (
 		<>

@@ -10,20 +10,20 @@ const postcssPlugins = require('@wordpress/postcss-plugins-preset');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    plugins: [
-        ...postcssPlugins,
-        ...(isProduction
-            ? [
-                require('cssnano')({
-                    preset: [
-                        'default',
-                        {
-                            discardComments: { removeAll: true },
-                            calc: false,
-                        },
-                    ],
-                }),
-            ]
-            : []),
-    ],
+	plugins: [
+		...postcssPlugins,
+		...(isProduction
+			? [
+					require('cssnano')({
+						preset: [
+							'default',
+							{
+								discardComments: { removeAll: true },
+								calc: false,
+							},
+						],
+					}),
+				]
+			: []),
+	],
 };

@@ -1,3 +1,3 @@
 export default function BlogPostsSave() {
-    return null;
+	return null;
 }
