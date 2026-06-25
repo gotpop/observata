@@ -9,10 +9,8 @@
 		"html": false,
 		"multiple": false
 	},
-	"render": "file:render.php",
 	"editorScript": "file:../../build/index.js",
 	"viewStyle": "file:breadcrumbs.css",
-	"editorStyle": "file:../../build/style-index.css",
 	"example": {
 		"attributes": {}
 	}

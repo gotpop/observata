@@ -21,4 +21,5 @@ require get_template_directory() . '/inc/twig-filters.php';
 // Load existing functionality
 require get_template_directory() . '/inc/block-renderer.php';
 require get_template_directory() . '/inc/blocks.php';
+require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/unsplash-handler.php';

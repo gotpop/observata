@@ -5,10 +5,6 @@
 	--typography-family-gantari: gantari;
 
 	/* Line height */
-
-	/* --typography-line-height-tightest: 1; */
-
-	/* --typography-line-height-tight: 1.2; */
 	--typography-line-height-tight: 1;
 	--typography-line-height-default: 1.6;
 	--typography-line-height-relaxed: 1.7;

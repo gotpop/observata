@@ -17,9 +17,9 @@
 
 .header-logo h1 a {
 	font-size: 32px;
-	font-family: var(--typography-family-gantari);
+	font-family: var(--font-stack-heading);
 	font-weight: 700;
-	color: var(--fonts-colour-text-heading);
+	color: var(--colour-text-heading-default);
 	line-height: 1.2;
 	letter-spacing: -0.03em;
 	text-decoration: none;
