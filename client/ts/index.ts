@@ -1,4 +1,3 @@
-// Side-effect import: registers the <shader-card> custom element.
 import './components/shader-card';
 
 import { initHeaderNavigation } from './header-navigation';
