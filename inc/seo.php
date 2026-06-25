@@ -38,9 +38,12 @@ add_filter(
  * Set maximum entries per sitemap page.
  * Lower value = faster sitemap generation, less server load.
  */
-add_filter( 'wp_sitemaps_max_urls', function () {
-	return 500;
-} );
+add_filter(
+	'wp_sitemaps_max_urls',
+	function () {
+		return 500;
+	}
+);
 
 /**
  * Include homepage in the sitemap with proper lastmod.
@@ -86,7 +89,7 @@ add_filter(
 		$output .= "Allow: $path/wp-content/themes/\n";
 		$output .= "Allow: $path/wp-content/uploads/\n";
 		$output .= "\n";
-		$output .= "Sitemap: " . esc_url( home_url( '/wp-sitemap.xml' ) ) . "\n";
+		$output .= 'Sitemap: ' . esc_url( home_url( '/wp-sitemap.xml' ) ) . "\n";
 
 		return $output;
 	},

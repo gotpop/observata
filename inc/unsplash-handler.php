@@ -148,7 +148,7 @@ function observata_unsplash_search_handler( $request ) {
 	);
 
 	if ( is_wp_error( $response ) ) {
-		error_log( '[observata] Unsplash API error: ' . $response->get_error_message() );
+		error_log( '[observata] Unsplash API error: ' . $response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		return new WP_Error(
 			'unsplash_api_error',
 			'Failed to connect to Unsplash API. Please try again.',
@@ -160,7 +160,7 @@ function observata_unsplash_search_handler( $request ) {
 	$data = json_decode( $body, true );
 
 	if ( json_last_error() !== JSON_ERROR_NONE ) {
-		error_log( '[observata] Unsplash JSON decode error: ' . json_last_error_msg() );
+		error_log( '[observata] Unsplash JSON decode error: ' . json_last_error_msg() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		return new WP_Error(
 			'unsplash_json_error',
 			'Failed to parse Unsplash API response.',
@@ -237,7 +237,7 @@ function observata_unsplash_download_handler( $request ) {
 	$head_response = wp_remote_head( $image_url, array( 'timeout' => 10 ) );
 
 	if ( is_wp_error( $head_response ) ) {
-		error_log( '[observata] Image HEAD request failed: ' . $head_response->get_error_message() );
+		error_log( '[observata] Image HEAD request failed: ' . $head_response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		return new WP_Error(
 			'image_download_error',
 			'Failed to check image size.',
@@ -266,7 +266,7 @@ function observata_unsplash_download_handler( $request ) {
 	);
 
 	if ( is_wp_error( $response ) ) {
-		error_log( '[observata] Image download failed: ' . $response->get_error_message() );
+		error_log( '[observata] Image download failed: ' . $response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		return new WP_Error(
 			'image_download_error',
 			'Failed to download image from Unsplash.',
@@ -296,7 +296,7 @@ function observata_unsplash_download_handler( $request ) {
 	}
 
 	// Write downloaded data to temp file
-	file_put_contents( $temp_path, $image_data );
+	file_put_contents( $temp_path, $image_data ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
 
 	// Convert to WebP
 	$webp_path = $temp_path . '.webp';
@@ -337,7 +337,7 @@ function observata_unsplash_download_handler( $request ) {
 				throw new Exception( 'Failed to convert image to WebP.' );
 			}
 
-			imagedestroy( $image );
+			imagedestroy( $image ); // phpcs:ignore Generic.PHP.DeprecatedFunctions.Deprecated -- required for GD image cleanup
 		}
 
 		// Read WebP data
@@ -345,7 +345,7 @@ function observata_unsplash_download_handler( $request ) {
 			throw new Exception( 'WebP file was not created.' );
 		}
 
-		$webp_data = file_get_contents( $webp_path );
+		$webp_data = file_get_contents( $webp_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 
 		if ( $webp_data === false ) {
 			throw new Exception( 'Failed to read WebP file.' );
@@ -400,8 +400,8 @@ function observata_unsplash_download_handler( $request ) {
 		}
 
 		// Clean up temp files
-		@unlink( $temp_path );
-		@unlink( $webp_path );
+		wp_delete_file( $temp_path );
+		wp_delete_file( $webp_path );
 
 		return rest_ensure_response(
 			array(
@@ -412,11 +412,11 @@ function observata_unsplash_download_handler( $request ) {
 		);
 
 	} catch ( Exception $e ) {
-		error_log( '[observata] Unsplash download error: ' . $e->getMessage() );
+		error_log( '[observata] Unsplash download error: ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 
 		// Clean up temp files
-		@unlink( $temp_path );
-		@unlink( $webp_path );
+		wp_delete_file( $temp_path );
+		wp_delete_file( $webp_path );
 
 		return new WP_Error(
 			'image_processing_error',
@@ -477,7 +477,7 @@ function observata_unsplash_api_notice() {
 			<p>
 				<strong>Unsplash Integration:</strong>
 				To use Unsplash images in your posts, please add your Unsplash API key.
-				<a href="<?php echo admin_url( 'options-general.php' ); ?>">Add it in Settings → General</a>.
+				<a href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>">Add it in Settings → General</a>.
 			</p>
 		</div>
 		<?php

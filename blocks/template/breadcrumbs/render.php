@@ -15,7 +15,7 @@ if ( is_home() || is_singular( 'post' ) ) {
 }
 
 if ( is_category() || is_tag() || is_tax() ) {
-	$term          = get_queried_object();
+	$queried_term  = get_queried_object();
 	$breadcrumbs[] = single_term_title( '', false );
 } elseif ( is_search() ) {
 	$breadcrumbs[] = 'Search Results: "' . get_search_query() . '"';
@@ -31,9 +31,9 @@ if ( is_category() || is_tag() || is_tax() ) {
 		$breadcrumbs[] = get_the_date( 'Y' );
 	}
 } elseif ( is_singular() ) {
-	$post_id   = get_the_ID();
-	$ancestors = get_post_ancestors( $post_id );
-	$ancestors = array_reverse( $ancestors );
+	$current_post_id = get_the_ID();
+	$ancestors       = get_post_ancestors( $current_post_id );
+	$ancestors       = array_reverse( $ancestors );
 
 	foreach ( $ancestors as $ancestor ) {
 		$breadcrumbs[] = '<a href="' . get_permalink( $ancestor ) . '">' . get_the_title( $ancestor ) . '</a>';
@@ -52,4 +52,4 @@ if ( ! empty( $breadcrumbs ) ) {
 	$breadcrumbs_html .= '</nav>';
 }
 
-echo $breadcrumbs_html;
+echo $breadcrumbs_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

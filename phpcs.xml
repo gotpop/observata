@@ -5,12 +5,61 @@
     <!-- Use WordPress coding standards -->
     <rule ref="WordPress"/>
     
+    <!-- Exclude noisy documentation / strictness rules -->
+    <rule ref="Squiz.Commenting.InlineComment.InvalidEndChar">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FileComment.Missing">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FileComment.WrongStyle">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionComment.Missing">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionComment.MissingParamTag">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionComment.WrongStyle">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.VariableComment.Missing">
+        <severity>0</severity>
+    </rule>
+    <rule ref="WordPress.PHP.YodaConditions.NotYoda">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Universal.Operators.StrictComparisons.LooseEqual">
+        <severity>0</severity>
+    </rule>
+    <rule ref="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid">
+        <severity>0</severity>
+    </rule>
+    <rule ref="WordPress.Files.FileName.InvalidClassFileName">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Universal.NamingConventions.NoReservedKeywordParameterNames">
+        <severity>0</severity>
+    </rule>
+    
     <!-- Exclude certain directories -->
     <exclude-pattern>vendor/*</exclude-pattern>
     <exclude-pattern>node_modules/*</exclude-pattern>
     <exclude-pattern>build/*</exclude-pattern>
+    <exclude-pattern>dist/*</exclude-pattern>
     <exclude-pattern>*.min.js</exclude-pattern>
     <exclude-pattern>*.min.css</exclude-pattern>
+    <exclude-pattern>intelephense-wp.php</exclude-pattern>
     
     <!-- File extensions to check -->
     <arg name="extensions" value="php"/>

@@ -144,7 +144,7 @@ function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
 			continue;
 		}
 
-		$metadata = json_decode( file_get_contents( $file->getPathname() ), true );
+		$metadata = json_decode( file_get_contents( $file->getPathname() ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 
 		// Skip internal blocks
 		if ( ! empty( $metadata['name'] ) && in_array(
@@ -154,7 +154,8 @@ function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
 				'observata/header-navigation',
 				'observata/header-navigation-trigger',
 				'observata/section-intro',
-			)
+			),
+			true
 		) ) {
 			continue;
 		}

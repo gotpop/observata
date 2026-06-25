@@ -48,3 +48,20 @@ jobs:
 
       - name: Prettier --check
         run: npm run format:check
+
+  # ---------------------------------------------------------------- PHP
+  lint-php:
+    name: PHPCS (WordPress)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: PHPCS
+        run: composer phpcs

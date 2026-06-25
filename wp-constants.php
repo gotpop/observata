@@ -37,7 +37,7 @@ if ( ! function_exists( '__' ) ) {
 
 if ( ! function_exists( '_e' ) ) {
 	function _e( $text, $domain = 'default' ) {
-		echo $text;
+		echo $text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
