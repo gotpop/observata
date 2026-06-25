@@ -56,8 +56,17 @@ npm run build        # production build
 npm run build:zip    # build + dist zip
 npm run lint         # eslint + stylelint
 npm run format       # prettier
+npm test             # vitest unit tests
 composer fix         # phpcbf auto-fix
 ```
+
+## CI (GitHub Actions)
+
+Three workflows in `.github/workflows/`:
+
+- `lint.yml` — ESLint, Stylelint, Prettier, PHPCS (PR + push to master)
+- `test.yml` — Vitest unit tests (PR + push to master)
+- `release.yml` — Build zip artifact + GitHub Releases (push to master + `v*` tags)
 
 ## File Locations
 
@@ -72,6 +81,7 @@ composer fix         # phpcbf auto-fix
 | Icons                | `views/icons/` (geo/, lucide/, logos/)       |
 | PHP modules          | `inc/*.php`                                  |
 | Frontend JS          | `client/ts/`                                 |
+| Frontend tests       | `client/ts/**/*.test.ts`                     |
 | Global CSS           | `client/css/`                                |
 | Build output         | `build/`                                     |
 
