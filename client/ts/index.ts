@@ -2,6 +2,7 @@
 import './components/shader-card';
 
 import { initHeaderNavigation } from './header-navigation';
+import { initScrollObserver } from './scroll-observer';
 import { initSectionObserver } from './section-observer';
 import { initSectionTabs } from './section-tabs';
 import { initShaders } from './shaders';
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	initSectionObserver();
 	initHeaderNavigation();
 	initSectionTabs();
+	initScrollObserver();
 });
