@@ -69,7 +69,7 @@
 		background-image: var(--g);
 		content: '';
 		left: anchor(center);
-		mask-image: url("#mask-swooping-lines");
+		mask-image: url('#mask-swooping-lines');
 		min-height: 520px;
 		position: absolute;
 		transition: var(--t);

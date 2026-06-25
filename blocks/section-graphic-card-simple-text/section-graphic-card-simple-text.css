@@ -42,7 +42,7 @@
 
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
-		--mask: url("#mask-europe");
+		--mask: url('#mask-europe');
 		--size: 356px;
 		--gradient: conic-gradient(
 			var(--colour-secondary-500),
