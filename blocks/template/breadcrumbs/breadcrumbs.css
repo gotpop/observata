@@ -11,7 +11,6 @@
 		align-items: center;
 		gap: var(--spacing-8);
 		padding-block: var(--spacing-16);
-		/* color: var(--colour-text-body-light); */
 		grid-column: content;
 
 		& a {
