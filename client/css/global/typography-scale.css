@@ -111,6 +111,7 @@
 
 .body-hero {
 	color: var(--colour-text-hero-subheading);
+	font-family: var(--typography-family-inter);
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
@@ -129,6 +130,7 @@
 
 .body-lg {
 	color: var(--colour-text-body-default);
+	font-family: var(--typography-family-inter);
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-lg);
@@ -147,6 +149,7 @@
 
 .body-md {
 	color: var(--colour-text-body-default);
+	font-family: var(--typography-family-inter);
 	font-size: var(--typography-size-16);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-md);
@@ -161,6 +164,7 @@
 
 .body-sm {
 	color: var(--colour-text-body-default);
+	font-family: var(--typography-family-inter);
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
@@ -175,6 +179,7 @@
 
 .body-xs {
 	color: var(--colour-text-body-default);
+	font-family: var(--typography-family-inter);
 	font-size: var(--typography-size-14);
 	font-weight: var(--typography-weight-regular);
 	line-height: var(--line-height-body-sm);
