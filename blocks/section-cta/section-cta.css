@@ -1,0 +1,28 @@
+.section-cta {
+	--section-bg-colour: var(--colour-neutral-white);
+
+	.card-cta {
+		--surface-card: var(--surface-white-transparent);
+		--box-shadow-card: var(--shadow-inner-line-white);
+
+		justify-items: center;
+		padding: var(--padding-cta, var(--spacing-40));
+
+		@media (width >=60rem) {
+			--padding-cta: var(--spacing-40);
+
+			justify-self: center;
+		}
+	}
+
+	.heading-lg {
+		--align-heading-lg: center;
+		--max-width-heading-lg: 24ch;
+		--text-wrap-heading-lg: balance;
+	}
+
+	.body-md {
+		--align-body-md: center;
+		--max-width-body-md: 60ch;
+	}
+}

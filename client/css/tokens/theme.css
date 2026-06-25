@@ -1,0 +1,89 @@
+/* Collection: Alias */
+:root {
+	/* Hero */
+	--colour-text-hero: var(--colour-text-heading-default);
+	--colour-text-hero-subheading: var(--colour-text-body-default);
+
+	/* Text */
+	--colour-text-heading-default: var(--colour-neutral-800);
+	--colour-text-heading-light: var(--colour-neutral-white);
+	--colour-text-body-default: var(--colour-neutral-600);
+	--colour-text-body-light: var(--colour-neutral-white);
+
+	/* Surface */
+	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.00005) c h);
+	--surface-white: var(--colour-neutral-white);
+	--surface-white-transparent: oklch(from var(--colour-neutral-white) l c h / 70%);
+	--surface-dark: var(--colour-primary-900);
+
+	/* Borders */
+	--colour-border-border-gray: oklch(from var(--colour-neutral-200) calc(l - 0.02) c h);
+	--border-primary: thin solid var(--colour-primary-400);
+	--border-secondary: thin solid var(--colour-secondary-400);
+	--border-accent: thin solid var(--colour-accent-1-400);
+	--border-grey: thin solid var(--colour-border-border-gray);
+	--border-card: thin solid oklch(from var(--colour-neutral-200) calc(l - 0.06) c h);
+	--border-light: 1px solid rgb(255 255 255 / 20%);
+
+	/* Shadows */
+	--shadow-inner-line-white: inset 0 0 0 1px var(--colour-neutral-white);
+
+	/* Lines */
+	--icon-line-colour: var(--colour-brand-light);
+	--icon-circle-colour: var(--colour-brand-dark);
+	--icon-line-stroke: 0.9;
+
+	/* Radius */
+	--radius-minimal: 4px;
+	--radius-standard: 8px;
+	--radius-comfortable: 13px;
+	--radius-generous: 16px;
+	--radius-large: 20px;
+	--radius-card: 24px;
+	--radius-pill: 9999px;
+	--radius-circle: 50%;
+
+	/* Sizing */
+	--sizing-width-site: 1440px;
+	--sizing-width-content: 1200px;
+
+	/* Blur */
+	--blur: blur(2px);
+
+	/* Gradients */
+	--overlay: linear-gradient(
+		to bottom,
+		color-mix(in oklab, var(--colour-secondary-300) 80%, transparent) 20%,
+		color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
+	);
+	--gradient-graphic: radial-gradient(
+		circle,
+		var(--colour-accent-1-400),
+		var(--colour-secondary-200)
+	);
+	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
+	--grad-rad: radial-gradient(
+		circle at 40% 50%,
+		rgb(255 255 255 / 90%) 20%,
+		rgb(255 255 255 / 0%) 60%
+	);
+
+	/* Filters */
+	--grayscale: grayscale(1);
+
+	/* Theme html */
+	--accent: var(--colour-accent-1-400);
+}
+
+:root {
+	/* Unified header height */
+	--size-height-heading: 5.625rem;
+
+	@media (width >= 48rem) {
+		--size-height-heading: 4rem;
+	}
+
+	@media (width >= 80rem) {
+		--size-height-heading: 7rem;
+	}
+}

@@ -16,10 +16,10 @@
  */
 class Layout {
 
-	private array $body_classes = [];
-	private ?string $header  = null;
-	private ?string $content = null;
-	private ?string $footer  = null;
+	private array $body_classes = array();
+	private ?string $header     = null;
+	private ?string $content    = null;
+	private ?string $footer     = null;
 
 	public static function make(): self {
 		return new self();
@@ -53,24 +53,33 @@ class Layout {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<?php wp_head(); ?>
+		<?php wp_head(); ?>
 </head>
 <body <?php body_class( $this->body_classes ); ?>>
-<?php wp_body_open(); ?>
+		<?php wp_body_open(); ?>
 <div id="wrapper" class="hfeed">
 
-	<?php if ( $this->header ) require $base . $this->header . '.php'; ?>
+		<?php
+		if ( $this->header ) {
+			require $base . $this->header . '.php';}
+		?>
 
 	<div id="container">
 		<main id="content" class="site-main">
-			<?php if ( $this->content ) require $base . $this->content . '.php'; ?>
+			<?php
+			if ( $this->content ) {
+				require $base . $this->content . '.php';}
+			?>
 		</main>
 	</div>
 
-	<?php if ( $this->footer ) require $base . $this->footer . '.php'; ?>
+		<?php
+		if ( $this->footer ) {
+			require $base . $this->footer . '.php';}
+		?>
 
 </div>
-<?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 </body>
 </html>
 		<?php

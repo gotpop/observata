@@ -1,0 +1,22 @@
+.card-geo {
+	--overflow-card: visible;
+
+	.icon-geo {
+		--icon-size-outer: 3.25rem;
+		--icon-size-inner: 2rem;
+
+		position: absolute;
+		inset: 1rem 1rem auto auto;
+
+		@media (width >=60rem) {
+			--icon-size-outer: 5.25rem;
+			--icon-size-inner: 3.467rem;
+
+			inset: calc(var(--icon-size-outer) / -3.5) calc(var(--icon-size-outer) / -3.5) auto auto;
+		}
+	}
+
+	.heading-md {
+		--max-width-heading-md: 12ch;
+	}
+}

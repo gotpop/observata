@@ -1,0 +1,123 @@
+/* Mobile menu */
+@media (width <= 48rem) {
+	.header-navigation {
+		display: grid;
+		grid-area: nav;
+		transition:
+			grid-template-rows 0.3s ease-in-out,
+			padding-block-start 0.3s ease-in-out,
+			border-block-start-width 0.3s ease-in-out,
+			border-block-start-color 0s ease-in-out;
+		grid-template-rows: 0fr;
+		overflow: hidden;
+		border-block-start: 1px solid transparent;
+		border-block-start-width: 0;
+		padding-block-start: 0;
+
+		.is-open & {
+			border-block-start: var(--border-grey);
+			grid-template-rows: 1fr;
+			padding-block-start: var(--spacing-16);
+			transition:
+				grid-template-rows 0.3s ease-in-out,
+				padding-block-start 0.3s ease-in-out,
+				border-block-start-width 0.3s ease-in-out 0.3s,
+				border-block-start-color 0.3s ease-in-out 0.3s;
+		}
+
+		.navigation {
+			overflow: hidden;
+			width: 100%;
+		}
+	}
+
+	.sub-menu-wrapper {
+		display: grid;
+		transition: grid-template-rows 0.3s ease-in-out;
+		grid-template-rows: 0fr;
+
+		.submenu {
+			overflow: hidden;
+		}
+
+		[aria-expanded='true'] + & {
+			grid-template-rows: 1fr;
+			padding-bottom: var(--spacing-8);
+			padding-left: var(--spacing-8);
+			margin-bottom: var(--spacing-8);
+			border-bottom: var(--border-grey);
+		}
+	}
+
+	.menu-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+		padding: 0;
+	}
+
+	.submenu {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+	}
+
+	.menu-button {
+		align-items: center;
+		background-color: transparent;
+		border: none;
+		color: var(--colour-text-body-default);
+		cursor: pointer;
+		display: inline-flex;
+		font-size: var(--size-body-md);
+		gap: var(--spacing-8);
+		padding-block: 1rem;
+		padding-inline: 0;
+
+		.icon {
+			--size: 12px;
+
+			rotate: var(--rotate-icon, -90deg);
+			transition: rotate 0.2s ease-in-out;
+
+			@media (width >=40rem) {
+				--size: 12px;
+			}
+		}
+
+		&[aria-expanded='true'] .icon {
+			--rotate-icon: 0deg;
+		}
+	}
+
+	.menu-anchor {
+		text-decoration: none;
+		font-size: var(--size-body-md);
+		color: var(--colour-text-body-default);
+		padding-block: 1rem;
+		padding-inline: 0;
+	}
+
+	.menu-item {
+		position: relative;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+
+		.is-open & {
+			opacity: 1;
+			transition-delay: calc(sibling-index() * 0.05s + 0.1s);
+		}
+
+		@starting-style {
+			.is-open & {
+				opacity: 0;
+			}
+		}
+	}
+
+	.menu-item,
+	.submenu-item {
+		display: flex;
+		flex-direction: column;
+	}
+}

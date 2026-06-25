@@ -1,0 +1,71 @@
+import js from '@eslint/js';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsparser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+
+export default [
+	js.configs.recommended,
+	{
+		files: ['**/*.{ts,tsx,js,jsx}'],
+		languageOptions: {
+			parser: tsparser,
+			parserOptions: {
+				ecmaVersion: 'latest',
+				sourceType: 'module',
+				ecmaFeatures: { jsx: true },
+			},
+			globals: {
+				...globals.browser,
+				...globals.es2021,
+				wp: 'readonly',
+				blocks: 'readonly',
+				element: 'readonly',
+				editor: 'readonly',
+				components: 'readonly',
+				data: 'readonly',
+				i18n: 'readonly',
+			},
+		},
+		plugins: {
+			'@typescript-eslint': tseslint,
+			react,
+			'react-hooks': reactHooks,
+		},
+		rules: {
+			...tseslint.configs.recommended.rules,
+			'react/react-in-jsx-scope': 'off',
+			'react-hooks/rules-of-hooks': 'error',
+			'react-hooks/exhaustive-deps': 'warn',
+			'no-unused-vars': 'off',
+			'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+		},
+		settings: {
+			react: { version: 'detect' },
+		},
+	},
+	{
+		ignores: ['node_modules/', 'build/', 'dist/', 'vendor/', '*.min.js'],
+	},
+	{
+		files: ['webpack.config.js', 'postcss.config.js'],
+		languageOptions: {
+			sourceType: 'commonjs',
+			globals: {
+				...globals.node,
+			},
+		},
+		rules: {
+			'@typescript-eslint/no-require-imports': 'off',
+		},
+	},
+	{
+		// Type declaration files — relaxed rules for ambient types
+		files: ['**/*.d.ts'],
+		rules: {
+			'no-undef': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+		},
+	},
+];

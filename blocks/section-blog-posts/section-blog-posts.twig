@@ -1,0 +1,25 @@
+{#
+  Blog Posts - displays latest posts in a responsive card grid.
+  Posts are queried in the PHP render callback and passed via context.
+#}
+
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+
+<section
+	class="section-block blog-posts"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+	<block-content class="block-content">
+		<blog-posts-grid class="blog-posts-grid">
+			{% for post in posts %}
+				{% include 'partials/card-blog-post.twig' with {
+					post: post
+				} only %}
+			{% else %}
+				<p class="blog-posts__empty">
+					No posts found.
+				</p>
+			{% endfor %}
+		</blog-posts-grid>
+	</block-content>
+</section>

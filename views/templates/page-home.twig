@@ -1,15 +1,18 @@
 {% extends 'base.twig' %}
 
 {% block header %}
-	{% include 'partials/header-default.twig' %}
+	{{ header|raw }}
 {% endblock %}
 
 {% block content %}
-	<div id="post-{{ post.ID }}" class="{{ post.class }} homepage-content">
-		{{ content | raw }}
-	</div>
+	{% if hero %}
+		{{ hero|raw }}
+	{% endif %}
+	<content-home id="content-home" class="content-home">
+		{{ content|raw }}
+	</content-home>
 {% endblock %}
 
 {% block footer %}
-	{% include 'partials/footer-default.twig' %}
+	{{ footer|raw }}
 {% endblock %}

@@ -1,0 +1,49 @@
+{
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit",
+        "source.fixAll.phpcs": "explicit"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "stylelint.validate": [
+        "css"
+    ],
+    "prettier.requireConfig": true,
+    "[php]": {
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+    },
+    "[twig]": {
+        "editor.defaultFormatter": "junstyle.twig-language"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cssCustomProperties.files": [
+        "**/*.css"
+    ],
+    "cssCustomProperties.languages": [
+        "css"
+    ],
+    "php.validate.executablePath": "/usr/bin/php",
+    "phpcs.enable": true,
+    "phpcs.standard": "WordPress",
+    "phpcs.executablePath": "./vendor/bin/phpcs",
+    "phpcs.autoConfigSearch": true,
+    "phpcs.showWarnings": true,
+    "phpcs.showSources": true,
+    "phpcs.ignorePatterns": [
+        "vendor/",
+        "node_modules/",
+        "build/"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "intelephense.files.associations": [
+        "*.php",
+        "*.phtml"
+    ],
+    "intelephense.environment.phpVersion": "8.2",
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/vendor/**/**/Tests/**",
+        "**/vendor/**/**/tests/**"
+    ],
+    "intelephense.stubs": [
+        "wordpress",
+        "timber"
+    ],
+    "intelephense.diagnostics.enable": true,
+    "intelephense.diagnostics.run": "onType"
+}

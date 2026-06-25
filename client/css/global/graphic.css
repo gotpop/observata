@@ -1,0 +1,30 @@
+.graphic-tech {
+	color: var(--colour-neutral-white);
+	height: var(--height, var(--size));
+	inset: 50% 0 0 auto;
+	pointer-events: none;
+	position: relative;
+	translate: 0 -50%;
+	width: var(--width, var(--size));
+	z-index: 0;
+
+	&::after {
+		background-image: var(--gradient);
+		content: '';
+		height: var(--size);
+		inset: 50% -100px 0 auto;
+		mask-image: var(--mask);
+		opacity: var(--opacity, 1);
+		position: absolute;
+		translate: 0 -50%;
+		width: var(--width-after, calc(var(--size) + 100px));
+		z-index: 1;
+	}
+
+	.mask-source {
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+		width: 0;
+	}
+}

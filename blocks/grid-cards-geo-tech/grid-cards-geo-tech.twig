@@ -1,0 +1,17 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+
+<section class="block-grid-cards-geo-tech">
+	<block-content class="block-content">
+		{% include 'template/section-intro/section-intro.twig' with {
+			attributes: {
+				sectionTitle: section_title,
+				introText: intro_text
+			}
+		} %}
+
+		<layout-cards class="layout-cards">
+			{{ content|raw }}
+		</layout-cards>
+	</block-content>
+</section>

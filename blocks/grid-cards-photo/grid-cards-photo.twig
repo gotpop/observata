@@ -1,0 +1,34 @@
+{#
+  Grid Cards Photo - displays a container for photo cards with title and subtitle.
+#}
+
+{% set grid_title = attributes.title|default('') %}
+{% set grid_subtitle = attributes.subtitle|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+
+<section
+	class="section-block grid-cards-photo"
+	data-observe="true"
+	data-threshold="0.6"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+	<block-content class="block-content">
+		<div class="intro">
+			{% if grid_title %}
+				<h2 class="heading-lg">
+					{{ grid_title|strip_html }}
+				</h2>
+			{% endif %}
+
+			{% if grid_subtitle %}
+				<p class="body-lg">
+					{{ grid_subtitle|strip_html }}
+				</p>
+			{% endif %}
+		</div>
+
+		<div class="grid-cards-photos">
+			{{ content|raw }}
+		</div>
+	</block-content>
+</section>

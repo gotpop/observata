@@ -1,0 +1,16 @@
+:root {
+	/* Firefox */
+	@supports (width: -moz-available) {
+		--stretch: -moz-available;
+	}
+
+	/* Safari */
+	@supports (width: -webkit-fill-available) {
+		--stretch: -webkit-fill-available;
+	}
+
+	/* Chromium */
+	@supports (width: stretch) {
+		--stretch: stretch;
+	}
+}

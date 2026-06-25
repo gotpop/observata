@@ -1,0 +1,31 @@
+{#
+  Card Table Simple - 3-column table with editable headers and rows.
+  Inner blocks (observata/table-simple-row) render as table rows.
+#}
+
+{% set col1_label = attributes.column1Label|default('Feature') %}
+{% set col2_label = attributes.column2Label|default('Capability') %}
+{% set col3_label = attributes.column3Label|default('Impact') %}
+
+<div class="card-table-simple" data-observe="true" data-threshold="0.8">
+	<div class="table-wrapper">
+		<table class="table">
+			<thead>
+				<tr class="head-row">
+					<th class="head-cell">
+						{{ col1_label }}
+					</th>
+					<th class="head-cell">
+						{{ col2_label }}
+					</th>
+					<th class="head-cell">
+						{{ col3_label }}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{ content|raw }}
+			</tbody>
+		</table>
+	</div>
+</div>

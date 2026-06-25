@@ -1,0 +1,11 @@
+.card-micro {
+	align-items: flex-start;
+	backdrop-filter: blur(3px);
+	background-color: var(--card-micro-bg, var(--surface-white-transparent));
+	border-radius: var(--radius-comfortable);
+	border: var(--border-secondary);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-16);
+	padding: var(--spacing-20);
+}

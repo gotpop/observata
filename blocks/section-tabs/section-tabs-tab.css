@@ -1,0 +1,31 @@
+.section-tabs {
+	.tab {
+		--transition-tab: color 0.2s ease, border-color 0.2s ease;
+
+		background: transparent;
+		border-bottom: 3px solid transparent;
+		color: var(--colour-text-body-default);
+		font-size: var(--size-body-sm);
+		padding: var(--spacing-20) var(--spacing-8);
+		text-align: center;
+		transition: var(--transition-tab);
+		width: var(--stretch);
+
+		@media (width >=48rem) {
+			font-size: var(--size-body-md);
+			padding: var(--spacing-20) var(--spacing-32);
+		}
+
+		&:hover {
+			color: var(--colour-secondary-400);
+		}
+
+		&:focus-visible {
+			outline-offset: -2px;
+		}
+
+		&.is-active {
+			border-color: var(--colour-secondary-500);
+		}
+	}
+}

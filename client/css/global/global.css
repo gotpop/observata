@@ -1,0 +1,96 @@
+@view-transition {
+	navigation: auto;
+}
+
+/* WebKit scrollbar styling */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(0 0 0 / 20%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(0 0 0 / 40%);
+}
+
+/* Text selection */
+::selection {
+	background-color: var(--colour-primary-700);
+	color: var(--colour-neutral-white);
+}
+
+:focus-visible {
+	outline: var(--accent) dashed 2px;
+	outline-offset: 0.5em;
+}
+
+::-webkit-calendar-picker-indicator,
+::-webkit-clear-button,
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	color: var(--accent);
+}
+
+:target {
+	box-sizing: content-box;
+}
+
+::marker {
+	color: inherit;
+}
+
+/* Firefox scrollbar hover */
+@media (hover: hover) {
+	html:hover {
+		scrollbar-color: rgb(0 0 0 / 40%) transparent;
+	}
+}
+
+:where(html) {
+	/* Improve font smoothing on macOS/Safari */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Better text rendering */
+	text-rendering: optimizelegibility;
+
+	/* Prevent font size inflation on mobile Safari */
+	text-size-adjust: 100%;
+	accent-color: var(--accent);
+	background-color: var(--surface-white);
+	min-height: 100dvh;
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--spacing-32);
+	scroll-timeline: --main-timeline;
+	scrollbar-color: rgb(0 0 0 / 20%) transparent;
+	scrollbar-width: thin;
+
+	@media (width >=64rem) {
+		overscroll-behavior: none;
+	}
+}
+
+:where(body) {
+	font-kerning: normal;
+	font-synthesis: none;
+	font-variant-ligatures: common-ligatures;
+	font-feature-settings:
+		'kern' 1,
+		'liga' 1,
+		'calt' 1;
+	-webkit-font-smoothing: antialiased;
+	display: grid;
+	font-family: var(--font-stack-body);
+	grid-template-columns: 1fr;
+	margin: unset;
+	min-height: 100dvh;
+	overflow: hidden auto;
+	position: relative;
+	line-height: 1;
+}

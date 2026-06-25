@@ -1,0 +1,30 @@
+icon-geo {
+	--size-outer: var(--icon-size-outer, 5.25rem);
+	--size-inner: var(--icon-size-inner, 3.467rem);
+	--border-colour: var(--icon-border-colour, var(--colour-border-border-gray));
+
+	border-radius: 50%;
+	width: var(--size-outer);
+	height: var(--size-outer);
+	border: var(--icon-border-colour, var(--border-card));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--surface-white);
+
+	svg {
+		width: var(--size-inner);
+		height: var(--size-inner);
+	}
+}
+
+icon-lucide {
+	display: flex;
+	width: var(--size, 1rem);
+	height: var(--size, 1rem);
+
+	svg {
+		width: var(--size, 1rem);
+		height: var(--size, 1rem);
+	}
+}

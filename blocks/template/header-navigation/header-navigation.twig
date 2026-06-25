@@ -1,0 +1,31 @@
+<div class="header-navigation">
+	<nav
+		class="navigation"
+		id="menu"
+		role="navigation"
+		aria-label="{{ function('__', 'Primary Navigation', 'observata') }}">
+		<ul class="menu-list">
+			{% if main_menu and main_menu.items %}
+				{% for item in main_menu.items %}
+					{% if item.children %}
+						<li
+							class="menu-item menu-item-has-children menu-item-{{ item.slug|esc_attr }}">
+							{% if item.link == '#' %}
+								{% include 'template/header-navigation/menu-item-button.twig' %}
+							{% else %}
+								{% include 'template/header-navigation/menu-item-anchor.twig' %}
+							{% endif %}
+							{% include 'template/header-navigation/menu-submenu.twig' %}
+						</li>
+					{% else %}
+						<li class="menu-item menu-item-{{ item.slug|esc_attr }}">
+							<a class="menu-anchor" href="{{ item.link }}">
+								<span>{{ item.title|strip_html }}</span>
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</ul>
+	</nav>
+</div>

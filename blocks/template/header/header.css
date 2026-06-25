@@ -1,0 +1,112 @@
+@keyframes header-scroll {
+	to {
+		backdrop-filter: blur(2px);
+		background-color: rgb(255 255 255 / 95%);
+		border-bottom: var(--border-grey);
+		border-left: thin solid transparent;
+		border-radius: 0;
+		border-right: thin solid transparent;
+		border-top: thin solid transparent;
+		margin: 0;
+		max-width: 100%;
+	}
+}
+
+@keyframes header-unscroll {
+	from {
+		backdrop-filter: blur(2px);
+		background-color: rgb(255 255 255 / 95%);
+		border-bottom: var(--border-grey);
+		border-left: thin solid transparent;
+		border-radius: 0;
+		border-right: thin solid transparent;
+		border-top: thin solid transparent;
+		margin: 0;
+		max-width: 100%;
+	}
+}
+
+.header {
+	display: flex;
+	inset: 0 auto auto;
+	justify-content: center;
+	position: fixed;
+	view-transition-name: header;
+	width: 100%;
+	z-index: 999;
+
+	.content-header {
+		align-items: center;
+		animation-fill-mode: forwards;
+		animation-name: header-scroll;
+		animation-timeline: scroll(nearest);
+		animation-timing-function: linear;
+		background-color: var(--surface-white);
+		border-bottom: var(--border-grey);
+		border-left: thin solid transparent;
+		border-radius: 0 0 2rem 2rem;
+		border-right: thin solid transparent;
+		border-top: thin solid transparent;
+		gap: 0 var(--spacing-16);
+		display: grid;
+		flex-basis: 100%;
+		grid-template-areas: 'logo trigger' 'nav nav';
+		grid-template-columns: 1fr var(--spacing-32);
+		grid-template-rows: min-content 1fr;
+		justify-content: space-between;
+		max-width: var(--sizing-width-content);
+		min-height: var(--size-height-heading);
+		padding-block: var(--spacing-24);
+		padding-inline: var(--spacing-32);
+
+		.home & {
+			animation-range-end: 600px;
+			animation-range-start: 300px;
+		}
+
+		.page & {
+			animation-range-end: 400px;
+			animation-range-start: 100px;
+		}
+
+		/* Firefox */
+		@supports not (animation-timeline: scroll(nearest)) {
+			animation: none;
+		}
+
+		.no-view-timeline.has-scrolled & {
+			animation: header-scroll 0.3s ease-in-out forwards;
+		}
+
+		.no-view-timeline.scrolled-once:not(.has-scrolled) & {
+			animation: header-unscroll 0.3s ease-in-out forwards;
+		}
+
+		/* Firefox */
+
+		@supports (corner-shape: squircle) {
+			border-radius: 0 0 4rem 4rem;
+			corner-shape: squircle;
+		}
+
+		&.is-open {
+			gap: var(--spacing-16) var(--spacing-16);
+			animation: none;
+		}
+
+		@media (width >= 48rem) {
+			border: var(--border-grey);
+			grid-template-areas: 'logo nav';
+			grid-template-rows: min-content;
+			grid-template-columns: max-content 1fr;
+			padding: 18px 28px;
+		}
+
+		@media (width >= 80rem) {
+			margin-block: 3rem 0;
+			margin-inline: 1rem;
+			border-radius: 4.5rem;
+			min-height: initial;
+		}
+	}
+}

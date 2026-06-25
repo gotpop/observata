@@ -1,0 +1,33 @@
+@scope (.footer) {
+	.footer-menus {
+		display: grid;
+		grid-template-columns: repeat(var(--c, 2), var(--w, max-content));
+		gap: var(--spacing-50) var(--spacing-32);
+		padding-block-start: var(--p, 0);
+
+		@media (width >=48rem) {
+			--c: 4;
+		}
+
+		@media (width >=80rem) {
+			--w: 1fr;
+			--p: var(--spacing-32);
+		}
+	}
+
+	.footer-menu-column {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+		gap: var(--spacing-24);
+	}
+
+	.footer-menu-list {
+		gap: var(--spacing-24);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+	}
+}

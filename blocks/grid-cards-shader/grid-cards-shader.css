@@ -1,0 +1,20 @@
+.block-grid-cards-shader {
+	.block-cards {
+		display: grid;
+		gap: var(--gap-block-cards, var(--spacing-20));
+		grid-template-columns: repeat(auto-fit, minmax(var(--m, 1fr), 1fr));
+
+		@media (width >=48rem) {
+			--gap-block-cards: var(--spacing-32);
+			--m: 454px;
+		}
+	}
+
+	.heading-lg {
+		--text-wrap-heading-lg: balance;
+	}
+
+	.body-md {
+		--max-width-body-md: 100ch;
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-observability",
+	"title": "Section Observability",
+	"category": "theme",
+	"description": "Observability section.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": "Being observed is not the same as being observable"
+		},
+		"introText": {
+			"type": "string",
+			"default": "Most observability stacks were built for dashboards and not decisions."
+		},
+		"cardTitle": {
+			"type": "string",
+			"default": "Tools aren't the answer \u2014 ownership is"
+		},
+		"cardBody": {
+			"type": "string",
+			"default": "When observability is split across teams, costs skyrocket and visibility suffers. Consolidating your tech stack isn't enough; you need to solve the root cause. We provide the structural ownership required to turn disjointed data into a high-performing, unified operation."
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"render": "file:render.php",
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": [
+		"file:observability.css",
+		"file:../cards/card-micro/card-micro.css",
+		"file:../template/section-intro/section-intro.css"
+	],
+	"editorStyle": "file:../../build/index.css",
+	"example": {
+		"attributes": {
+			"sectionTitle": "Being observed is not the same as being observable",
+			"introText": "Most observability stacks were built for dashboards and not decisions."
+		}
+	}
+}

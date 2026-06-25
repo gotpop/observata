@@ -1,0 +1,111 @@
+button-toggle {
+	--background-color: transparent;
+	--button-toggle-color: var(--colour-primary-100);
+	--padding-right: 1rem;
+
+	align-items: center;
+	anchor-name: --buttontoggle;
+	border: none;
+	color: var(--button-toggle-color);
+	cursor: pointer;
+	display: flex;
+	font-size: var(--typography-size-16);
+	grid-area: trigger;
+	height: var(--spacing-40);
+	justify-content: center;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+
+	button {
+		background: none;
+		border: none;
+		color: var(--colour-neutral-100);
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		outline: none;
+		width: 100%;
+		padding: 0;
+	}
+
+	&:is(:hover, :active) {
+		--background-color: var(--colour-secondary-600);
+		--button-toggle-color: var(--colour-secondary-300);
+	}
+
+	@media (width >= 48rem) {
+		display: none;
+	}
+}
+
+icon-hamburger {
+	--after-bottom: 0;
+	--after-rotate: 0deg;
+	--after-y: 0;
+	--before-rotate: 0deg;
+	--before-top: 0;
+	--before-y: 0;
+	--hamburger-bg: var(--bg);
+	--line: 0.2rem;
+	--transition: translate 0.2s ease, rotate 0.2s ease, bottom 0.2s ease;
+
+	aspect-ratio: 1;
+	display: flex;
+	position: relative;
+	transition: background 0.2s ease;
+	width: var(--spacing-32);
+	color: var(--colour-primary-600);
+
+	.centre {
+		background-color: currentcolor;
+		width: 100%;
+		height: 6px;
+		display: inline flex;
+		align-self: center;
+		border-radius: 3px;
+
+		.is-active & {
+			background-color: transparent;
+		}
+	}
+
+	&::before,
+	&::after {
+		background: currentcolor;
+		bottom: var(--bottom, auto);
+		content: '';
+		display: block;
+		height: calc(var(--line) * 2);
+		position: absolute;
+		rotate: var(--rotate, 0deg);
+		top: var(--top, auto);
+		transform-origin: center;
+		transition: var(--transition);
+		translate: 0 var(--y, 0);
+		width: 100%;
+		border-radius: 3px;
+	}
+
+	&::before {
+		--rotate: var(--before-rotate);
+		--top: var(--before-top);
+		--y: var(--before-y);
+	}
+
+	&::after {
+		--bottom: var(--after-bottom);
+		--rotate: var(--after-rotate);
+		--y: var(--after-y);
+	}
+
+	/* Active state when popover is open */
+	&.is-active {
+		--after-bottom: calc(108% - var(--line));
+		--after-rotate: -45deg;
+		--after-y: calc(32px / 2 + var(--line));
+		--before-rotate: 45deg;
+		--before-y: calc(32px / 2 - var(--line));
+		--hamburger-bg: transparent;
+	}
+}

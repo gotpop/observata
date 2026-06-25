@@ -1,0 +1,68 @@
+.block-section-contact {
+	--section-bg-colour: var(--colour-neutral-100);
+
+	.block-content {
+		display: grid;
+		gap: var(--spacing-48) var(--spacing-40);
+		grid-column: content;
+		grid-template-columns: 1fr;
+
+		@media (width >=64rem) {
+			grid-template-columns: 1fr 2fr;
+			grid-template-areas: 'intro intro' 'details form';
+		}
+	}
+
+	.section-intro {
+		grid-column: 1 / -1;
+		text-align: center;
+		justify-items: center;
+
+		@media (width >=64rem) {
+			grid-area: intro;
+		}
+
+		.section-intro-title {
+			max-width: 70ch;
+			text-wrap: balance;
+		}
+
+		.section-intro-text {
+			max-width: 70ch;
+			text-wrap: pretty;
+		}
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-24);
+		border: 1px solid var(--colour-border-border-gray);
+		padding: var(--spacing-32);
+		border-radius: var(--radius-card);
+
+		@media (width >=64rem) {
+			grid-area: form;
+		}
+
+		iframe {
+			overflow: hidden;
+		}
+
+		iframe {
+			width: 100%;
+			border: none;
+
+			/* Firefox */
+			scrollbar-width: none;
+
+			/* IE and Edge */
+			-ms-overflow-style: none;
+		}
+
+		/* Chrome, Safari, and Opera */
+		iframe::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

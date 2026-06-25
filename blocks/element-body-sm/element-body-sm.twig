@@ -1,0 +1,4 @@
+{% set content = attributes.content|default('') %}
+<p class="body-sm">
+	{{ content|strip_html }}
+</p>

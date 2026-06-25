@@ -1,0 +1,61 @@
+.section-tabs {
+	.tabs-content {
+		position: relative;
+	}
+
+	.tab-content {
+		display: none;
+
+		&.is-active {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: min-content;
+			position: relative;
+			gap: var(--spacing-60);
+		}
+
+		.card-text-intro {
+			view-transition-name: tab-intro;
+		}
+
+		.card-table-features {
+			view-transition-name: tab-table-features;
+		}
+	}
+}
+
+html:active-view-transition-type(forward) {
+	&::view-transition-old(tab-intro) {
+		animation: exit-to-left 0.3s ease forwards;
+	}
+
+	&::view-transition-new(tab-intro) {
+		animation: entry-from-right 0.3s ease forwards;
+	}
+
+	&::view-transition-old(tab-table-features) {
+		animation: exit-to-left 0.3s ease forwards;
+	}
+
+	&::view-transition-new(tab-table-features) {
+		animation: entry-from-right 0.3s ease forwards;
+	}
+}
+
+html:active-view-transition-type(backward) {
+	&::view-transition-old(tab-intro) {
+		animation: exit-to-right 0.3s ease forwards;
+	}
+
+	&::view-transition-new(tab-intro) {
+		animation: entry-from-left 0.3s ease forwards;
+	}
+
+	&::view-transition-old(tab-table-features) {
+		animation: exit-to-right 0.3s ease forwards;
+	}
+
+	&::view-transition-new(tab-table-features) {
+		animation: entry-from-left 0.3s ease forwards;
+	}
+}

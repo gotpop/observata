@@ -1,0 +1,36 @@
+.grid-cards-photo {
+	grid-template-rows: min-content;
+
+	.block-content {
+		--gap-block-content: var(--spacing-32) 0;
+
+		grid-template-columns: subgrid;
+
+		@media (width >=60rem) {
+			--gap-block-content: var(--spacing-50) 0;
+		}
+	}
+
+	.intro {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: 1fr;
+		row-gap: var(--spacing-24);
+	}
+
+	.body-lg {
+		--max-width-body-lg: 120ch;
+	}
+
+	.grid-cards-photos {
+		display: grid;
+		gap: var(--g-photos, var(--spacing-24));
+		grid-column: content;
+		grid-template-columns: repeat(auto-fit, minmax(var(--min, 1fr), 1fr));
+
+		@media (width >=80rem) {
+			--min: 460px;
+			--g-photos: var(--spacing-50);
+		}
+	}
+}

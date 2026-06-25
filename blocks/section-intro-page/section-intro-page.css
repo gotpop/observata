@@ -1,0 +1,71 @@
+::view-transition-new(geo-first) {
+	animation: entry-from-left 0.3s ease forwards;
+}
+
+::view-transition-old(geo-first) {
+	animation: exit-to-left 0.3s ease forwards;
+}
+
+::view-transition-new(geo-last) {
+	animation: entry-from-right 0.3s ease forwards;
+}
+
+::view-transition-old(geo-last) {
+	animation: exit-to-right 0.3s ease forwards;
+}
+
+.block-section-intro-page {
+	overflow: clip;
+	view-transition-group: intro-page-group;
+	view-transition-name: intro-page;
+
+	.block-content {
+		display: grid;
+		gap: var(--spacing-24);
+		grid-column: content;
+		grid-template-columns: 1fr;
+		z-index: 1;
+
+		@media (width >=48rem) {
+			gap: var(--spacing-40);
+		}
+
+		@media (width >=80rem) {
+			gap: var(--spacing-50);
+			grid-template-areas: 'a .' '. b';
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.subpage-shader {
+		grid-column: full;
+
+		/* inset: 50% auto auto 50%; */
+		position: absolute;
+
+		/* translate: -50% -50%; */
+
+		/* view-transition-name: shader; */
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+
+		@media (width >= 96rem) {
+			grid-column: breakout;
+		}
+	}
+
+	.card-geo-list {
+		&:first-child {
+			view-transition-name: geo-first;
+		}
+
+		&:last-child {
+			view-transition-name: geo-last;
+
+			@media (width >=80rem) {
+				grid-area: b;
+			}
+		}
+	}
+}

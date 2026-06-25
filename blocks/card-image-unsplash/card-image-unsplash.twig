@@ -1,0 +1,34 @@
+{% set image_id = attributes.imageId %}
+{% set image_url =
+	attributes.imageUrl|replace({
+		'http://': 'https://'
+	})
+%}
+{% set image_alt = attributes.imageAlt %}
+{% set image_opts = {
+	class: 'card-image',
+	alt: image_alt
+} %}
+{% set attachment_image =
+	function(
+		'wp_get_attachment_image',
+		image_id,
+		'medium_large',
+		false,
+		image_opts
+	)
+%}
+
+{% if image_id %}
+	<figure class="card-image-unsplash">
+		{{ attachment_image }}
+	</figure>
+{% elseif image_url %}
+	<figure class="card-image-unsplash">
+		<img
+			src="{{ image_url }}"
+			alt="{{ image_alt }}"
+			class="card-image"
+			loading="lazy" />
+	</figure>
+{% endif %}

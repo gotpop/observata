@@ -1,0 +1,94 @@
+.cta-primary {
+	--size: 1rem;
+
+	align-items: center;
+	background-color: var(--colour-accent-1-base);
+	border-radius: var(--radius-pill);
+	border: 2px solid var(--colour-accent-1-400);
+	color: var(--colour-neutral-white);
+	display: inline flex;
+	font-size: var(--size-body-md);
+	font-weight: var(--typography-weight-medium);
+	gap: var(--spacing-16);
+	justify-content: space-between;
+	padding: var(--spacing-16) var(--spacing-24);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	width: var(--w, auto);
+
+	@media (width >=48rem) {
+		--w: max-content;
+	}
+
+	&:hover {
+		background-color: var(--colour-accent-1-500);
+		color: var(--colour-neutral-white);
+	}
+}
+
+.cta-secondary {
+	--size: 1rem;
+
+	align-items: center;
+	background-color: var(--colour-accent-1-base);
+	border-radius: var(--radius-pill);
+	border: 2px solid var(--colour-accent-1-400);
+	color: var(--colour-neutral-white);
+	display: inline flex;
+	font-size: var(--size-body-md);
+	font-weight: var(--typography-weight-medium);
+	gap: var(--spacing-16);
+	justify-content: space-between;
+	padding: var(--spacing-16) var(--spacing-24);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	width: var(--w, auto);
+
+	@media (width >=48rem) {
+		--w: max-content;
+	}
+
+	&:hover {
+		background-color: var(--colour-accent-1-500);
+		color: var(--colour-neutral-white);
+	}
+}
+
+.link-anchor {
+	--size: 1rem;
+
+	align-items: center;
+	color: var(--link-anchor-colour, var(--colour-primary-500));
+	cursor: pointer;
+	display: flex;
+	font-size: var(--size-body-md);
+	gap: var(--spacing-8);
+	text-decoration-color: var(--colour-primary-400);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.3em;
+	transition: color 0.3s ease;
+	width: max-content;
+	text-decoration-line: underline;
+
+	&:hover {
+		--link-anchor-colour: var(--colour-secondary-500);
+	}
+}
+
+.anchor {
+	color: var(--colour-text-body-default);
+	text-decoration-color: var(--colour-primary-400);
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.03em;
+	text-underline-offset: 0.1em;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		text-decoration-color: var(--colour-secondary-400);
+		text-underline-offset: 0.5em;
+	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-body-light);
+	}
+}

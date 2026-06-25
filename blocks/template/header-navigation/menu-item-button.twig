@@ -1,0 +1,8 @@
+<button
+	class="menu-button"
+	aria-haspopup="true"
+	aria-expanded="false"
+	aria-controls="submenu-{{ loop.index }}">
+	<span>{{ item.title|strip_html }}</span>
+	{% include 'icons/lucide/chevron-down.twig' %}
+</button>

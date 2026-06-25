@@ -1,0 +1,49 @@
+{% set tab_count = attributes.tabCount|default(3) %}
+{% set active_tab = attributes.activeTab|default('1') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set group_name = 'section-tabs-' ~ (attributes.id|default('default')) %}
+
+<section
+	class="section-block section-tabs"
+	data-active-tab="{{ active_tab }}"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+	<block-content class="block-content">
+		<wrapper-tabs class="wrapper-tabs">
+			<nav class="tabs-nav" role="tablist" aria-label="Section tabs">
+				{% for i in 1..tab_count %}
+					{% set tab_name =
+						attributes['tab' ~ i ~ 'Name']|default('Tab ' ~ i)
+					%}
+					{% set is_active = active_tab == i %}
+					<button
+						type="button"
+						class="tab {% if is_active %}is-active{% endif %}"
+						role="tab"
+						id="{{ group_name }}-tab-{{ i }}"
+						aria-controls="{{ group_name }}-panel-{{ i }}"
+						aria-selected="{% if is_active %}true{% else %}false{% endif %}"
+						data-tab="{{ i }}">
+						{{ tab_name }}
+					</button>
+				{% endfor %}
+			</nav>
+		</wrapper-tabs>
+		<div class="tabs-content">
+			{% for i in 1..tab_count %}
+				{% set is_active = active_tab == i %}
+				<div
+					aria-labelledby="{{ group_name }}-tab-{{ i }}"
+					class="tab-content {% if is_active %}is-active{% endif %}"
+					data-panel="{{ i }}"
+					id="{{ group_name }}-panel-{{ i }}"
+					role="tabpanel"
+					{% if not is_active %}hidden{% endif %}>
+					{% if renderedInnerBlocks['tab' ~ i] is defined %}
+						{{ renderedInnerBlocks['tab' ~ i]|raw }}
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	</block-content>
+</section>

@@ -1,0 +1,28 @@
+{#
+  Card Plan partial — renders a single plan card.
+  Variables: plan_name, plan_price, plan_description, highlighted, plan_icon,
+             show_read_more, read_more_text, read_more_url
+#}
+{% set classes = 'card card-plan' ~ (highlighted ? ' card-plan-highlighted') %}
+{% set icon_geo = plan_icon|default('01') %}
+
+<article class="{{ classes }} icon-{{ icon_geo }}">
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	<h3 class="plan-title">
+		{{ plan_name }}
+	</h3>
+	<body-card class="body-card">
+		<span class="plan-price">{{ plan_price }}</span>
+		<p class="plan-description">
+			{{ plan_description }}
+		</p>
+	</body-card>
+	{% if show_read_more and read_more_text and read_more_url %}
+		<a
+			class="link-anchor link-anchor-card-plan"
+			href="{{ read_more_url|esc_url }}">
+			<span>{{ read_more_text|strip_html }}</span>
+			{% include 'icons/lucide/arrow-right.twig' %}
+		</a>
+	{% endif %}
+</article>

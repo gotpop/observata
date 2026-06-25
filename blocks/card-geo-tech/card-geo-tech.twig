@@ -1,0 +1,19 @@
+{% set card_title = attributes.cardTitle|default('') %}
+{% set card_text = attributes.cardText|default('') %}
+{% set icon_geo = attributes.iconGeo|default('24') %}
+{% set background_graphic = attributes.backgroundGraphic|default('') %}
+
+<article class="card-geo-tech {{ background_graphic }}">
+	{% if background_graphic %}
+		{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
+	{% endif %}
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	<div class="content">
+		<h3 class="heading">
+			{{ card_title|strip_html }}
+		</h3>
+		<p class="body">
+			{{ card_text|strip_html }}
+		</p>
+	</div>
+</article>

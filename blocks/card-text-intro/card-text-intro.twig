@@ -1,0 +1,15 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set text_align = attributes.textAlign|default('left') %}
+{% set align_class = text_align and text_align != 'left'
+	? 'card-text-intro-' ~ text_align
+	: ''
+%}
+
+<article class="card-text-intro {{ align_class }}">
+	{% if section_title %}
+		<h2 class="heading-lg">
+			{{ section_title|strip_html }}
+		</h2>
+	{% endif %}
+	{{ content|raw }}
+</article>

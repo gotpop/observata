@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/grid-cards-simple",
+	"title": "Grid Cards Simple",
+	"category": "theme",
+	"description": "Grid section with simple card blocks. Add Card Simple blocks inside.",
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": ["file:../cards/card-simple/card-simple.css", "file:grid-cards-simple.css"],
+	"example": {
+		"attributes": {
+			"sectionTitle": "Our Services"
+		}
+	}
+}

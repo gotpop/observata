@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/element-table-simple-row",
+	"title": "Element Table Simple Row",
+	"category": "theme",
+	"parent": ["observata/card-table-simple"],
+	"description": "A table row with 3 editable cells.",
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"rowLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"column2Value": {
+			"type": "string",
+			"default": ""
+		},
+		"column3Value": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "observata",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:element-table-simple-row.editor.css",
+	"viewStyle": "file:element-table-simple-row.css"
+}

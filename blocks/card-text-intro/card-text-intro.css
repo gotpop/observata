@@ -1,0 +1,20 @@
+.card-text-intro {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-32);
+	grid-template-rows: min-content;
+	grid-column: 1 / -1;
+
+	&.card-text-intro-center {
+		justify-items: center;
+
+		.heading-lg {
+			--align-heading-lg: center;
+		}
+
+		.body-md {
+			--align-body-md: center;
+			--max-width-body-md: 60ch;
+		}
+	}
+}

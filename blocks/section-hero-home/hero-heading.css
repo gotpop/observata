@@ -1,0 +1,17 @@
+@scope (.block-section-hero-home) {
+	.heading-section-hero-home {
+		text-align: center;
+
+		.highlight {
+			color: var(--colour-secondary-500);
+		}
+
+		.line {
+			position: relative;
+		}
+
+		.line-two {
+			left: -0.03em;
+		}
+	}
+}

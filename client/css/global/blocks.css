@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Global Block Styles
+   Central stylesheet aggregating all Gutenberg block CSS.
+   Loaded on both frontend and editor via style.css / editor-style.css.
+   ========================================================================== */
+
+/* --- Template blocks --- */
+@import url('../../blocks/template/header/header.css');
+@import url('../../blocks/template/footer/footer.css');
+@import url('../../blocks/template/section-intro/section-intro.css');
+
+/* --- Hero blocks --- */
+@import url('../../blocks/hero-home/hero-home.css');
+
+/* --- Intro blocks --- */
+@import url('../../blocks/section-intro-home/section-intro-home.css');
+@import url('../../blocks/section-intro-page/section-intro-page.css');
+
+/* --- Element blocks --- */
+@import url('../../blocks/element-body-md/element-body-md.css');
+@import url('../../blocks/element-body-sm/element-body-sm.css');
+
+/* --- Card blocks --- */
+@import url('../../blocks/card-contact-details/card-contact-details.css');
+@import url('../../blocks/card-contact-form/card-contact-form.css');
+@import url('../../blocks/card-geo/card-geo.css');
+@import url('../../blocks/card-geo-list/card-geo-list.css');
+@import url('../../blocks/card-geo-shader/card-geo-shader.css');
+@import url('../../blocks/card-geo-tech/card-geo-tech.css');
+@import url('../../blocks/card-micro/card-micro.css');
+@import url('../../blocks/card-pricing-plan/card-pricing-plan.css');
+@import url('../../blocks/card-simple/card-simple.css');
+@import url('../../blocks/card-text-intro/card-text-intro.css');
+@import url('../../blocks/card-text-simple/card-text-simple.css');
+
+/* --- Grid blocks --- */
+@import url('../../blocks/section-blog-posts/section-blog-posts.css');
+@import url('../../blocks/grid-cards-geo/grid-cards-geo.css');
+@import url('../../blocks/grid-cards-geo-tech/grid-cards-geo-tech.css');
+@import url('../../blocks/grid-cards-graphic/grid-cards-graphic.css');
+@import url('../../blocks/grid-cards-micro/grid-cards-micro.css');
+@import url('../../blocks/grid-cards-shader/grid-cards-shader.css');
+@import url('../../blocks/grid-cards-simple/grid-cards-simple.css');
+@import url('../../blocks/grid-flexible-content/grid-flexible-content.css');
+@import url('../../blocks/pricing-plans/pricing-plans.css');
+@import url('../../blocks/section-card-and-graphic/section-card-and-graphic.css');
+@import url('../../blocks/section-cta/section-cta.css');
+
+/* --- Other blocks --- */
+@import url('../../blocks/logo-bar/logo-bar.css');
+@import url('../../blocks/observability/observability.css');
+@import url('../../blocks/partnership/partnership.css');

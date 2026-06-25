@@ -1,0 +1,23 @@
+{% set section_title = attributes.sectionTitle|default('') %}
+{% set intro_text = attributes.introText|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+
+<section
+	class="section-block block-grid-cards-shader"
+	data-observe="true"
+	data-threshold="0.4"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }});">
+	<block-content class="block-content">
+		{% include 'template/section-intro/section-intro.twig' with {
+			attributes: {
+				sectionTitle: section_title,
+				introText: intro_text
+			}
+		} %}
+
+		<block-cards class="block-cards" data-columns="2">
+			{{ content|raw }}
+		</block-cards>
+	</block-content>
+</section>

@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-hero-home",
+	"title": "Section Hero Home",
+	"category": "theme",
+	"description": "Full-width hero section with gradient background, shader effect, and CTA buttons.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "observability & security"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "unify your AI powered"
+		},
+		"ctaText": {
+			"type": "string",
+			"default": "Review Your Observability Structure"
+		},
+		"ctaUrl": {
+			"type": "string",
+			"default": "#"
+		},
+		"readMoreText": {
+			"type": "string",
+			"default": "Discover"
+		},
+		"readMoreUrl": {
+			"type": "string",
+			"default": "#"
+		}
+	},
+	"render": "file:render.php",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": ["file:section-hero-home.css", "file:hero-home-canvas.css", "file:hero-heading.css"],
+	"example": {
+		"attributes": {
+			"heading": "observability & security",
+			"subheading": "unify your AI powered",
+			"ctaText": "Review Your Observability Structure",
+			"ctaUrl": "#",
+			"readMoreText": "Discover",
+			"readMoreUrl": "#"
+		}
+	}
+}

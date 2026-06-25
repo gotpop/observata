@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/card-simple",
+	"title": "Card Simple",
+	"category": "theme",
+	"description": "A simple card with geo icon, title and description.",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"iconGeo": {
+			"type": "string",
+			"default": ""
+		},
+		"readMoreText": {
+			"type": "string",
+			"default": ""
+		},
+		"readMoreUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "observata",
+	"viewStyle": "file:card-simple.css",
+	"example": {
+		"attributes": {
+			"title": "Card Title",
+			"description": "Description of the card content.",
+			"iconGeo": "24"
+		}
+	}
+}

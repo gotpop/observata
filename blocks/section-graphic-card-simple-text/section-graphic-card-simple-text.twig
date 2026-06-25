@@ -1,0 +1,32 @@
+{% set background_graphic = attributes.backgroundGraphic|default('') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set layout = attributes.layout|default('content') %}
+{% set sphere_mask_image = theme_url ~ '/assets/svg/spheres/sphere-'
+	~ background_graphic
+	~ '.svg'
+%}
+
+<section
+	class="section-block block-section-graphic-card-simple-text"
+	{% if attributes.anchor %}id="{{ attributes.anchor }}"{% endif %}
+	data-observe="true"
+	data-threshold="1"
+	data-margin-top="400px"
+	data-margin-bottom="0px"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }}); --layout: {{ layout }};">
+	<block-content class="block-content">
+		{{ content|raw }}
+		{% if background_graphic == 'europe-dots-graphic' %}
+			{% include 'graphics/tech/' ~ background_graphic ~ '.twig' %}
+		{% else %}
+			<graphic-tech
+				aria-hidden="true"
+				class="graphic-sphere"
+				{% if background_graphic %}
+					data-sphere="{{ background_graphic }}"
+					style="--mask-image: url('{{ sphere_mask_image }}');"
+				{% endif %} />
+		{% endif %}
+	</block-content>
+</section>

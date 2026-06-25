@@ -1,0 +1,46 @@
+.table-features-row {
+	display: table-row;
+	border-block-end: var(--border-row, var(--border-grey));
+	transition: background 0.1s ease;
+	background-color: var(--bg-row, transparent);
+
+	&:nth-child(odd) {
+		--bg-row: var(--colour-neutral-100);
+	}
+
+	&:last-child {
+		border-block-end: none;
+	}
+
+	&:hover {
+		--bg-row: var(--colour-neutral-200);
+
+		transition-delay: 0s;
+
+		.in-view & {
+			transition-delay: 0s;
+		}
+	}
+
+	.name {
+		--align-table-cell: left;
+		--padding-inline: var(--spacing-32) var(--spacing-16);
+	}
+
+	.icon {
+		--size: 1.8rem;
+
+		color: var(--colour-icon);
+		position: absolute;
+		inset: 50% auto auto 50%;
+		translate: -50% -50%;
+
+		.value-check & {
+			--colour-icon: var(--colour-secondary-600);
+		}
+
+		.value-dash & {
+			--colour-icon: var(--colour-neutral-500);
+		}
+	}
+}

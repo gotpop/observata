@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/card-text-intro",
+	"title": "Card Text Intro",
+	"category": "theme",
+	"description": "A card with section heading and intro text.",
+	"attributes": {
+		"sectionTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"introText": {
+			"type": "string",
+			"default": ""
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "left"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "observata",
+	"viewStyle": "file:card-text-intro.css",
+	"example": {
+		"attributes": {
+			"sectionTitle": "Section Title",
+			"introText": "Intro text description here.",
+			"textAlign": "left"
+		}
+	}
+}

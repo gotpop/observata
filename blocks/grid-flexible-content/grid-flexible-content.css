@@ -1,0 +1,43 @@
+.block-grid-flexible-content {
+	.block-content {
+		gap: var(--spacing-60) var(--spacing-80);
+		display: grid;
+		grid-column: inner;
+		grid-template-columns: repeat(var(--cols, 2), 1fr);
+
+		@media (width >=40rem) {
+			grid-column: var(--layout);
+		}
+
+		[data-layout='1'] & {
+			--cols: 1;
+		}
+
+		[data-layout='1-centred'] & {
+			--cols: 1;
+
+			max-width: 768px;
+			justify-self: center;
+		}
+
+		[data-layout='2'] & {
+			--cols: 1;
+
+			.body-md {
+				max-width: 120ch;
+			}
+
+			@media (width >=40rem) {
+				--cols: 2;
+			}
+		}
+
+		[data-layout='3'] & {
+			--cols: 1;
+
+			@media (width >=40rem) {
+				--cols: 3;
+			}
+		}
+	}
+}

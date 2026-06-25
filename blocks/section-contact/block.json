@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-contact",
+	"title": "Section Contact",
+	"category": "theme",
+	"description": "Contact section with intro, details and form blocks.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": ["file:section-contact.css", "file:../template/section-intro/section-intro.css"],
+	"example": {
+		"attributes": {}
+	}
+}

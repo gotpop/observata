@@ -1,0 +1,18 @@
+{% set logos = [
+	'af-logo',
+	'tele-dark-logo',
+	'elastic-logo',
+	'crowdstrike-red-logo'
+] %}
+
+<section-trust class="section-trust-bar">
+	<block-content-trust class="block-content-trust">
+		{% for logo in logos %}
+			<trust-bar-item
+				class="logo-item"
+				style="view-transition-name: {{ logo }};">
+				{% include "logos/bar/#{logo}.twig" %}
+			</trust-bar-item>
+		{% endfor %}
+	</block-content-trust>
+</section-trust>

@@ -1,0 +1,64 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-tabs",
+	"title": "Section Tabs",
+	"category": "theme",
+	"description": "Tabbed section with 1-3 tabs using native details/summary.",
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"tabCount": {
+			"type": "number",
+			"default": 3
+		},
+		"activeTab": {
+			"type": "string",
+			"default": "1"
+		},
+		"tab1Name": {
+			"type": "string",
+			"default": "Tab 1"
+		},
+		"tab2Name": {
+			"type": "string",
+			"default": "Tab 2"
+		},
+		"tab3Name": {
+			"type": "string",
+			"default": "Tab 3"
+		},
+		"tab1InnerBlocks": {
+			"type": "array",
+			"default": []
+		},
+		"tab2InnerBlocks": {
+			"type": "array",
+			"default": []
+		},
+		"tab3InnerBlocks": {
+			"type": "array",
+			"default": []
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": [
+		"file:section-tabs.css",
+		"file:section-tabs-content.css",
+		"file:section-tabs-tab.css"
+	],
+	"editorStyle": ["file:../../build/index.css"],
+	"example": {
+		"attributes": {
+			"tabCount": 3,
+			"activeTab": "1"
+		}
+	}
+}

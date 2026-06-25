@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-card-and-graphic",
+	"title": "Section Card and Graphic",
+	"category": "theme",
+	"description": "A single-column section with an SVG graphic illustration and an editable card-geo-list.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"graphic": {
+			"type": "string",
+			"default": "ribbon-star"
+		},
+		"graphicPosition": {
+			"type": "string",
+			"default": "left"
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"render": "file:render.php",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": "file:section-card-and-graphic.css",
+	"example": {
+		"attributes": {
+			"graphic": "ribbon-star",
+			"graphicPosition": "left"
+		}
+	}
+}

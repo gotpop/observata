@@ -1,0 +1,111 @@
+@keyframes entry-from-left {
+	from {
+		opacity: 0;
+		translate: -100px 0;
+	}
+
+	to {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@keyframes entry-from-right {
+	from {
+		opacity: 0;
+		translate: 100px 0;
+	}
+
+	to {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@keyframes exit-to-left {
+	from {
+		opacity: 1;
+		translate: 0 0;
+	}
+
+	to {
+		opacity: 0;
+		translate: -100px 0;
+	}
+}
+
+@keyframes exit-to-right {
+	from {
+		opacity: 1;
+		translate: 0 0;
+	}
+
+	to {
+		opacity: 0;
+		translate: 100px 0;
+	}
+}
+
+@keyframes entry-from-bottom {
+	from {
+		opacity: 0;
+		translate: 0 100px;
+	}
+
+	to {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@keyframes exit-to-bottom {
+	from {
+		opacity: 1;
+		translate: 0 0;
+	}
+
+	to {
+		opacity: 0;
+		translate: 0 100px;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes overlay-animation {
+	from {
+		background-color: transparent;
+	}
+
+	to {
+		background-color: rgb(0 0 0 / 50%);
+	}
+}
+
+@keyframes overlay-animation-reverse {
+	from {
+		background-color: rgb(0 0 0 / 50%);
+	}
+
+	to {
+		background-color: transparent;
+	}
+}

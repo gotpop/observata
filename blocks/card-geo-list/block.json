@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/card-geo-list",
+	"title": "Card with Geo Icon & List",
+	"category": "theme",
+	"description": "A feature card with a geometric icon and a list of items, used inside the Intro block.",
+	"parent": [
+		"observata/section-intro-home",
+		"observata/section-intro-page",
+		"observata/grid-cards-geo",
+		"observata/grid-cards-graphic",
+		"observata/section-card-and-graphic"
+	],
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"attributes": {
+		"cardTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"listItem1": {
+			"type": "string",
+			"default": ""
+		},
+		"listItem2": {
+			"type": "string",
+			"default": ""
+		},
+		"iconGeo": {
+			"type": "string",
+			"default": "24"
+		},
+		"showReadMore": {
+			"type": "boolean",
+			"default": false
+		},
+		"readMoreText": {
+			"type": "string",
+			"default": ""
+		},
+		"readMoreUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:card-geo-list.css",
+	"example": {
+		"attributes": {
+			"cardTitle": "Feature Title",
+			"listItem1": "First feature benefit",
+			"listItem2": "Second feature benefit",
+			"iconGeo": "24"
+		}
+	}
+}

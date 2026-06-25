@@ -1,0 +1,73 @@
+/*
+ * Editor Stylesheet for Gutenberg
+ *
+ * Editor-only overrides. All other styles (variables, fonts, layout, block CSS)
+ * are registered dynamically via functions.php using add_editor_style().
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+	--font-body: 'Inter', sans-serif;
+	--font-heading: 'Gantari', sans-serif;
+	--colour-light: white;
+	--colour-grey-100: #e5e7ea;
+	--colour-grey-200: #6e6e6e;
+	--colour-grey-300: #252525;
+	--spacing-xs: 0.35rem;
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-lg: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-box: trim-both cap alphabetic;
+	margin-block: 0 1rem;
+	color: var(--colour-grey-300);
+	text-wrap: balance;
+	font-family: var(--font-heading);
+}
+
+body {
+	font-family: var(--font-body);
+}
+
+p,
+[role='textbox']:not(h1, h2, h3, h4) {
+	text-box: trim-both cap alphabetic;
+	color: var(--colour-grey-200);
+	font-family: var(--font-body);
+	margin-block: 0 1rem;
+}
+
+.wp-block:not(.wp-block-post-title) {
+	padding: var(--spacing-md);
+	border: 1px solid var(--colour-grey-100);
+	margin-block: 0 var(--spacing-md);
+}
+
+.block-editor-inner-blocks {
+	margin-block: 0 var(--spacing-md);
+}
+
+.block-list-appender {
+	background-color: var(--colour-light);
+}
+
+.icon-geo {
+	float: right;
+}
+
+/* Allow ControlsLayout grid to cascade through InnerBlocks wrappers */
+.observata-controls-layout {
+	& > .block-editor-inner-blocks {
+		display: contents;
+
+		& > .block-editor-block-list__layout {
+			display: contents;
+		}
+	}
+}

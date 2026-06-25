@@ -1,0 +1,50 @@
+{% set contact_email =
+	function('get_option', 'observata_footer_email')|default(
+		attributes.contactEmail
+	)
+%}
+{% set contact_address =
+	function('get_option', 'observata_footer_address')|default(
+		attributes.contactAddress
+	)
+%}
+{% set locations =
+	function('get_option', 'observata_footer_locations')|default(
+		attributes.locations
+	)
+%}
+{% set copyright =
+	function('get_option', 'observata_footer_copyright')|default(
+		attributes.copyright
+	)
+%}
+
+{# Contact list items: label and value pairs #}
+{% set contact_items = {
+	Email: contact_email,
+	Address: contact_address
+} %}
+
+{# Footer menu columns from registered menu locations #}
+{% set footer_menus = [footer_1, footer_2, footer_3, footer_4] %}
+
+<footer class="footer" role="contentinfo">
+	<block-content-footer class="block-content-footer">
+		<footer-top class="footer-top">
+			{% include 'template/footer/footer-contact.twig' with {
+				contact_items: contact_items
+			} %}
+			<div class="footer-menus">
+				{% for menu in footer_menus %}
+					{% include 'template/footer/footer-menu-column.twig' with {
+						menu: menu
+					} %}
+				{% endfor %}
+			</div>
+		</footer-top>
+		{% include 'template/footer/footer-bottom.twig' with {
+			locations: locations,
+			copyright: copyright
+		} %}
+	</block-content-footer>
+</footer>

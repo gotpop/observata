@@ -1,0 +1,42 @@
+{#
+  Card Blog Post - individual blog post card component.
+  Accepts: post (Timber\Post object)
+#}
+
+{# Use post slug for view-transition-name #}
+{% set view_name = post.post_name|default('post-' ~ post.ID) %}
+
+<article
+	class="card card-blog-post"
+	id="post-{{ post.ID }}"
+	style="view-transition-name: {{ view_name }};">
+	{% if post.thumbnail %}
+		<wrappper-img class="wrappper-img">
+			<img
+				src="{{ post.thumbnail.src('large') }}"
+				alt="{{ post.title }}"
+				class="image post-img"
+				loading="lazy" />
+		</wrappper-img>
+	{% endif %}
+
+	<time class="date" datetime="{{ post.date|date('c') }}">
+		{{ post.date|date('F j, Y') }}
+	</time>
+
+	<post-main class="post-main">
+		<h3
+			class="heading-sm heading-post"
+			style="view-transition-name: heading-{{ view_name }};">
+			<a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a>
+		</h3>
+
+		{% if post.excerpt %}
+			<p class="body-md post-excerpt">
+				{{ post.preview.read_more(false) }}
+			</p>
+		{% endif %}
+	</post-main>
+
+	<a href="{{ post.link }}" class="read-more">Read more</a>
+</article>

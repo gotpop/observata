@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/breadcrumbs",
+	"title": "Breadcrumbs",
+	"category": "theme",
+	"description": "Breadcrumbs navigation component.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"render": "file:render.php",
+	"editorScript": "file:../../build/index.js",
+	"viewStyle": "file:breadcrumbs.css",
+	"editorStyle": "file:../../build/style-index.css",
+	"example": {
+		"attributes": {}
+	}
+}

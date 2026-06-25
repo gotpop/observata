@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/section-hero-blog",
+	"title": "Section Hero Blog",
+	"category": "theme",
+	"description": "Section with hero blog styling, heading, subheading, and optional section background.",
+	"supports": {
+		"html": false,
+		"multiple": false
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Lorem Ipsum Dolor"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		"sectionBgColour": {
+			"type": "string",
+			"default": "white",
+			"enum": ["white", "grey", "gradient"]
+		}
+	},
+	"render": "file:section-hero-blog.twig",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css",
+	"viewStyle": "file:section-hero-blog.css",
+	"example": {
+		"attributes": {
+			"heading": "Building Modern Observability Stacks",
+			"subheading": "Discover how to create scalable, reliable monitoring systems for your applications"
+		}
+	}
+}

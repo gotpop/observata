@@ -1,0 +1,23 @@
+{% set card_title = attributes.cardTitle|default('') %}
+{% set card_text = attributes.cardText|default('') %}
+{% set icon_geo = attributes.iconGeo|default('01') %}
+{% set shader_colour = attributes.shaderColour|default('blue') %}
+
+<article class="card card-geo-shader fade-in-up">
+	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	<shader-card
+		colour="{{ shader_colour }}"
+		fallback="{{ site.theme.uri }}/assets/img/shader-fallback.webp"
+		aria-hidden="true"></shader-card>
+
+	{% if card_title %}
+		<h3 class="heading-sm">
+			{{ card_title|strip_html }}
+		</h3>
+	{% endif %}
+	{% if card_text %}
+		<p class="body-sm">
+			{{ card_text|strip_html }}
+		</p>
+	{% endif %}
+</article>

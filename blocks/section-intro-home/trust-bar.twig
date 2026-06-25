@@ -1,0 +1,14 @@
+{% set logos = [
+	'af-logo',
+	'tele-dark-logo',
+	'elastic-logo',
+	'crowdstrike-red-logo'
+] %}
+
+<trust-bar class="trust-bar-home">
+	{% for logo in logos %}
+		<trust-bar-item class="logo-item" style="view-transition-name: {{ logo }};">
+			{% include "logos/bar/#{logo}.twig" %}
+		</trust-bar-item>
+	{% endfor %}
+</trust-bar>

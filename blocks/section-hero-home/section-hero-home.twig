@@ -1,0 +1,42 @@
+{% set heading = attributes.heading|default('') %}
+{% set subheading = attributes.subheading|default('') %}
+{% set cta_text =
+	attributes.ctaText|default('Review Your Observability Structure')
+%}
+{% set cta_url = attributes.ctaUrl|default('#') %}
+{% set read_more_text = attributes.readMoreText|default('Discover') %}
+{% set read_more_url = attributes.readMoreUrl|default('#') %}
+
+<section class="block-section-hero-home">
+	<wrap-canvas class="wrap-canvas">
+		<canvas id="hero-shader" class="hero-shader"></canvas>
+	</wrap-canvas>
+	<div class="hero-content">
+		<div class="hero-text">
+			{% include 'blocks/section-hero-home/hero-heading.twig' %}
+			{% if subheading %}
+				<p class="body-hero">
+					{{ subheading|strip_html }}
+				</p>
+			{% endif %}
+		</div>
+		<div class="hero-buttons">
+			{% if cta_text and cta_url %}
+				<a
+					class="cta-primary"
+					id="cta-primary-hero"
+					href="{{ cta_url|esc_url }}">
+					<span>{{ cta_text|strip_html }}</span>
+					{% include 'icons/lucide/arrow-right.twig' %}
+				</a>
+			{% endif %}
+
+			{% if read_more_text and read_more_url %}
+				<a href="{{ read_more_url|esc_url }}" class="hero-read-more">
+					<span>{{ read_more_text|strip_html }}</span>
+					{% include 'icons/lucide/arrow-right.twig' %}
+				</a>
+			{% endif %}
+		</div>
+	</div>
+</section>

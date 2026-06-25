@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "observata/element-body-sm",
+	"title": "Element Body SM",
+	"category": "theme",
+	"description": "A wrapper for core content blocks with body-sm styling.",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "observata",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:element-body-sm.editor.css",
+	"viewStyle": "file:element-body-sm.css",
+	"example": {
+		"attributes": {
+			"content": "Body content with formatted text and paragraph breaks."
+		}
+	}
+}

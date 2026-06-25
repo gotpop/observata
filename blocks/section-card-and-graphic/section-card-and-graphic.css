@@ -1,0 +1,46 @@
+.block-section-card-and-graphic {
+	--size-graphic: 630px;
+
+	background-image: var(--grad-rad), var(--grad-lin);
+	overflow: clip;
+
+	.block-content {
+		align-items: center;
+		gap: var(--spacing-80) var(--spacing-60);
+		display: grid;
+		grid-column: content;
+		grid-template-columns: repeat(auto-fit, minmax(var(--c-card, 1fr), 1fr));
+		position: relative;
+
+		@media (width >=48rem) {
+			--c-card: 400px;
+		}
+	}
+
+	.card-geo-list {
+		--card-geo-list-bg: var(--surface-white);
+	}
+
+	.graphic-sphere {
+		position: relative;
+		min-height: var(--stretch);
+		min-height: 10rem;
+		height: 100%;
+
+		&::after {
+			background-image: var(--gradient-graphic);
+			content: '';
+			height: var(--size-graphic);
+			inset: 290px auto auto 50%;
+			mask: var(--mask-image) center / contain no-repeat;
+			position: absolute;
+			translate: -50% -50%;
+			width: var(--size-graphic);
+
+			@media (width >=70rem) {
+				inset: auto auto 50%;
+				translate: -5% 50%;
+			}
+		}
+	}
+}

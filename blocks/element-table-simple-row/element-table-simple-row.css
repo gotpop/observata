@@ -1,0 +1,36 @@
+/* Element Table Simple Row - 3-cell table row */
+
+.body-row {
+	border-block-end: var(--border-row, var(--border-grey));
+	transition: background 0.3s ease-in-out;
+	background-color: var(--bg-row, transparent);
+
+	&:last-child {
+		--border-row: transparent;
+	}
+
+	&:nth-child(odd) {
+		--bg-row: var(--colour-neutral-100);
+	}
+
+	&:hover {
+		--bg-row: var(--colour-neutral-200);
+
+		.in-view & {
+			transition-delay: 0s;
+		}
+	}
+
+	.body-cell {
+		text-align: start;
+		padding-block: var(--spacing-24);
+		padding-inline: var(--spacing-16);
+		font-size: var(--size-body-sm);
+		text-wrap: pretty;
+
+		&:first-child {
+			padding-inline: var(--spacing-24);
+			font-weight: var(--typography-weight-medium);
+		}
+	}
+}

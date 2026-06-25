@@ -1,0 +1,105 @@
+.block-section-hero-home {
+	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
+	--grad-radial-white: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgb(255 255 255 / 0%) 100%);
+
+	background-color: var(--surface-white);
+	background-image: var(--grad-radial-white), var(--grad-linear);
+	display: grid;
+	grid-column: full;
+	grid-template-columns: subgrid;
+	inset: 0 auto auto;
+	justify-content: center;
+	overflow: clip;
+	position: sticky;
+
+	&::after {
+		animation-name: overlay-animation;
+		animation-range-end: 50rem;
+		animation-timeline: --main-timeline;
+		animation-timing-function: linear;
+		content: '';
+		inset: 0;
+		pointer-events: none;
+		position: absolute;
+		z-index: 1;
+	}
+
+	/* Firefox */
+	@supports not (animation-timeline: scroll(nearest)) {
+		&::after {
+			animation: none;
+		}
+	}
+
+	.no-view-timeline.has-scrolled & {
+		&::after {
+			animation: overlay-animation 0.3s ease-in-out forwards;
+		}
+	}
+
+	.no-view-timeline.scrolled-once:not(.has-scrolled) & {
+		&::after {
+			animation: overlay-animation-reverse 0.3s ease-in-out forwards;
+		}
+	}
+
+	/* Firefox */
+
+	.hero-content {
+		display: grid;
+		gap: var(--spacing-50);
+		grid-row: hero;
+		grid-column: content;
+		grid-template-columns: 1fr;
+		z-index: 1;
+	}
+
+	.hero-text {
+		display: grid;
+		gap: var(--spacing-24);
+		grid-template-columns: 1fr;
+		justify-items: center;
+
+		@media (width >=40rem) {
+			gap: var(--spacing-32);
+		}
+	}
+
+	.body-hero {
+		--align-body-hero: center;
+		--max-width-body-hero: min(100%, 58ch);
+
+		@supports not (text-wrap: pretty) {
+			max-width: 47ch;
+		}
+	}
+
+	.hero-buttons {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-items: center;
+		gap: var(--spacing-24);
+
+		.icon {
+			--size: 16px;
+		}
+	}
+
+	.hero-read-more {
+		align-items: center;
+		color: var(--colour-primary-500);
+		display: flex;
+		font-size: var(--size-body-md);
+		gap: var(--spacing-8);
+		text-decoration: underline;
+		text-decoration-color: var(--colour-primary-400);
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.3em;
+		cursor: pointer;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: var(--colour-secondary-500);
+		}
+	}
+}

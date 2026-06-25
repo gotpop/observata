@@ -1,0 +1,24 @@
+@scope (.footer) {
+	.footer-locations {
+		text-align: center;
+
+		span {
+			color: var(--colour-primary-100);
+		}
+
+		@media (width >=40rem) {
+			text-align: start;
+		}
+	}
+
+	.footer-copyright {
+		text-align: center;
+		justify-content: start;
+		display: flex;
+
+		@media (width >=48rem) {
+			justify-content: end;
+			text-align: end;
+		}
+	}
+}

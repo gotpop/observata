@@ -1,0 +1,47 @@
+.section-trust-bar {
+	background: var(--surface-white);
+	border-bottom: var(--border-grey);
+	display: grid;
+	grid-column: full;
+	grid-template-columns: subgrid;
+	padding-block: var(--p, var(--spacing-24));
+	view-transition-name: trust-bar;
+
+	@media (width >=40rem) {
+		--p: var(--spacing-32);
+	}
+
+	.block-content-trust {
+		column-gap: var(--g, var(--spacing-16));
+		display: flex;
+		grid-column: var(--c, content);
+		justify-content: center;
+
+		@media (width >=40rem) {
+			--c: content;
+			--g: var(--spacing-50);
+		}
+	}
+
+	.logo-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.icon-logo {
+		max-height: var(--spacing-20);
+		max-width: 200px;
+		width: 100%;
+
+		@media (width >=48rem) {
+			height: 30px;
+			max-height: initial;
+		}
+	}
+
+	.logo-crowdstrike {
+		position: relative;
+		inset: 4px auto auto;
+	}
+}

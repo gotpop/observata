@@ -1,0 +1,41 @@
+.card-text-simple {
+	display: grid;
+	gap: var(--spacing-32);
+	grid-column: span var(--col-span, 1);
+	grid-template-columns: 1fr;
+	grid-template-rows: max-content;
+
+	&[data-span-columns='1'] {
+		--col-span: 1;
+	}
+
+	&[data-span-columns='2'] {
+		--col-span: 1 / -1;
+
+		@media (width >=40rem) {
+			--col-span: 2;
+		}
+	}
+
+	&[data-span-columns='3'] {
+		--col-span: 1 / -1;
+
+		@media (width >=40rem) {
+			--col-span: 3;
+		}
+	}
+
+	.heading-md {
+		text-wrap: balance;
+	}
+
+	.body-md {
+		max-width: 100ch;
+	}
+
+	.body-article {
+		gap: var(--spacing-24);
+		display: flex;
+		flex-direction: column;
+	}
+}

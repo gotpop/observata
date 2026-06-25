@@ -1,0 +1,32 @@
+{#
+  Plan Feature Row - a single table row in the features comparison table.
+  Attributes: featureName, plan1Value, plan2Value, plan3Value
+  Values: "check" or "dash"
+#}
+
+<tr class="row row-body table-features-row fade-in-up">
+	<td class="cell name">
+		{{ attributes.featureName }}
+	</td>
+	<td class="cell value value-{{ attributes.plan1Value }}">
+		{% if attributes.plan1Value == 'check' %}
+			{% include 'icons/lucide/check.twig' %}
+		{% else %}
+			{% include 'icons/lucide/minus.twig' %}
+		{% endif %}
+	</td>
+	<td class="cell value value-{{ attributes.plan2Value }}">
+		{% if attributes.plan2Value == 'check' %}
+			{% include 'icons/lucide/check.twig' %}
+		{% else %}
+			{% include 'icons/lucide/minus.twig' %}
+		{% endif %}
+	</td>
+	<td class="cell value value-{{ attributes.plan3Value }}">
+		{% if attributes.plan3Value == 'check' %}
+			{% include 'icons/lucide/check.twig' %}
+		{% else %}
+			{% include 'icons/lucide/minus.twig' %}
+		{% endif %}
+	</td>
+</tr>

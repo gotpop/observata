@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "PHPCS Fix",
+			"type": "shell",
+			"command": "./vendor/bin/phpcbf --standard=phpcs.xml ${file}",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

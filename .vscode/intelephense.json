@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"environment": {
+		"phpVersion": "8.2",
+		"includePaths": [
+			"./vendor/php-stubs/wordpress-stubs"
+		]
+	},
+	"files": {
+		"maxSize": 5000000
+	},
+	"completion": {
+		"insertUseDeclaration": true
+	},
+	"diagnostics": {
+		"enable": true,
+		"level": "warning"
+	}
+}

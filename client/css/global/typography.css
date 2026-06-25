@@ -1,0 +1,33 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-stack-heading);
+	font-optical-sizing: auto;
+	font-weight: var(--typography-weight-bold);
+	margin: 0;
+	text-wrap: balance;
+}
+
+p,
+div,
+li,
+a,
+button,
+input,
+textarea,
+time,
+select {
+	font-family: var(--font-stack-body);
+}
+
+span,
+i {
+	font-family: inherit;
+}
+
+blockquote {
+	hanging-punctuation: first last;
+}

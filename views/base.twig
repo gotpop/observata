@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html {{ site.language_attributes }}>
-<head>
-	<meta charset="{{ site.charset }}">
-	<meta name="viewport" content="width=device-width">
-	{{ function('wp_head') }}
-</head>
-<body class="{{ body_class }} liam">
-	{{ function('wp_body_open') }}
-	<div id="wrapper" class="hfeed">
+	<head>
+		<meta charset="{{ site.charset }}" />
+		<meta name="viewport" content="width=device-width" />
+		{{ function('wp_head') }}
+	</head>
+	<body class="{{ body_class }}">
+		{{ function('wp_body_open') }}
+		<site-wrap id="site" class="site">
+			{% block header %}
 
-		{% block header %}{% endblock %}
+			{% endblock %}
 
-		<div id="container">
-			<main id="content" class="site-main">
-				{% block content %}{% endblock %}
-			</main>
-		</div>
+			<site-layout class="site-layout">
+				<site-container id="container">
+					<main id="content" class="site-main">
+						{% block content %}
 
-		{% block footer %}{% endblock %}
+						{% endblock %}
+					</main>
+				</site-container>
 
-	</div>
-	{{ function('wp_footer') }}
-</body>
+				{% block footer %}
+
+				{% endblock %}
+			</site-layout>
+		</site-wrap>
+		{{ function('wp_footer') }}
+	</body>
 </html>

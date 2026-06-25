@@ -1,0 +1,29 @@
+/* Base */
+@import url('./tokens/base-spacing.css');
+@import url('./tokens/base-swatch.css');
+@import url('./tokens/base-typography.css');
+
+/* Theme */
+@import url('./tokens/theme-typography.css');
+@import url('./tokens/theme.css');
+
+/* Global */
+@import url('./global/fonts.css');
+@import url('./global/reset.css');
+@import url('./global/global.css');
+@import url('./global/layout.css');
+@import url('./global/icons.css');
+@import url('./global/buttons.css');
+@import url('./global/typography.css');
+@import url('./global/typography-scale.css');
+@import url('./global/animations.css');
+@import url('./global/keyframes.css');
+@import url('./global/graphic.css');
+@import url('./global/accessibility.css');
+@import url('./global/stretch.css');
+
+/* Template header partials (rendered via Twig, not as WP blocks) */
+@import url('../../blocks/template/header-logo/header-logo.css');
+@import url('../../blocks/template/header-navigation/header-navigation.css');
+@import url('../../blocks/template/header-navigation/header-navigation-desktop.css');
+@import url('../../blocks/template/header-navigation-trigger/header-navigation-trigger.css');

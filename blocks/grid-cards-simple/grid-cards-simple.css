@@ -1,0 +1,18 @@
+.block-grid-cards-simple {
+	overflow: clip;
+
+	.block-content {
+		display: grid;
+		grid-column: content;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-48);
+		border-radius: var(--radius-card);
+		border: var(--border-primary);
+		padding: var(--spacing-40);
+		background-color: var(--surface-white);
+
+		@media (width >=40rem) {
+			padding: var(--spacing-80);
+		}
+	}
+}

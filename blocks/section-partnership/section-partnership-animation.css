@@ -1,0 +1,121 @@
+@property --section-partnership-color-inner {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --section-partnership-stop-inner {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+
+@property --section-partnership-color-mid {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --section-partnership-stop-mid {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 100%;
+}
+
+@property --section-partnership-color-outer {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #dbdbdb;
+}
+
+@property --section-partnership-stop-outer {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
+}
+
+.block-section-partnership {
+	--g: radial-gradient(
+		circle,
+		var(--section-partnership-color-inner) var(--section-partnership-stop-inner, 0%),
+		var(--section-partnership-color-mid) var(--section-partnership-stop-mid, 50%),
+		var(--section-partnership-color-outer) var(--section-partnership-stop-outer, 100%)
+	);
+	--t:
+		--section-partnership-color-inner 0.6s ease, --section-partnership-color-mid 0.6s ease,
+		--section-partnership-color-outer 0.6s ease, --section-partnership-stop-inner 0.6s ease,
+		--section-partnership-stop-mid 0.6s ease, --section-partnership-stop-outer 0.6s ease;
+
+	&.in-view {
+		--section-partnership-color-inner: #fff;
+		--section-partnership-color-mid: #90b2dc;
+		--section-partnership-color-outer: #9bdbf2;
+		--section-partnership-stop-inner: 10%;
+		--section-partnership-stop-mid: 30%;
+		--section-partnership-stop-outer: 40%;
+
+		@media (width >=60rem) {
+			--section-partnership-color-inner: #90b2dc;
+			--section-partnership-color-mid: #90b2dc;
+			--section-partnership-color-outer: #9bdbf2;
+			--section-partnership-stop-inner: 40%;
+			--section-partnership-stop-mid: 50%;
+			--section-partnership-stop-outer: 80%;
+		}
+	}
+
+	&::before,
+	&::after {
+		background-image: var(--g);
+		content: '';
+		left: anchor(center);
+		mask-image: url('#mask-swooping-lines');
+		min-height: 520px;
+		position: absolute;
+		transition: var(--t);
+		translate: -50% -50%;
+		width: 1440px;
+		position-anchor: --phase-one;
+		top: anchor(center);
+		top: calc(anchor(center) - 20px);
+
+		@media (width >=30rem) {
+			top: calc(anchor(center) - 5.5rem);
+			position-anchor: --block-body;
+		}
+
+		:has(.cta-partnership:hover) & {
+			--section-partnership-stop-inner: 0%;
+			--section-partnership-stop-mid: 20%;
+			--section-partnership-stop-outer: 30%;
+		}
+	}
+
+	&::after {
+		display: block;
+		position-anchor: --phase-two;
+		top: anchor(center);
+		top: calc(anchor(center) - 40px);
+
+		@media (width >=30rem) {
+			display: none;
+		}
+	}
+
+	.line {
+		/* Special case for Chrome other browsers can't handle the number of lines */
+		.chrome & {
+			opacity: 0.3;
+			transition: opacity 0.3s ease-in-out;
+
+			/* Exit  */
+			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.07s);
+
+			.in-view & {
+				/* Enter */
+				transition-delay: calc(0.05s * sibling-index());
+				opacity: 1;
+			}
+		}
+	}
+}

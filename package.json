@@ -1,15 +1,34 @@
 {
-    "name": "observata-blocks",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "build": "wp-scripts build --config webpack.config.js",
-        "start": "wp-scripts start --config webpack.config.js"
-    },
-    "devDependencies": {
-        "@wordpress/scripts": "^30.0.0"
-    },
-    "dependencies": {
-        "shaders": "^2.5.95"
-    }
+	"name": "observata-blocks",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build --config webpack.config.js",
+		"build:zip": "npm run build && rm -rf dist/observata dist/observata.zip && mkdir -p dist/observata && cp -r *.php style.css style-editor.css screenshot.jpg composer.json composer.lock blocks assets views build vendor inc page-templates client dist/observata/ && cd dist && rm -f observata.zip && zip -rq observata.zip observata/",
+		"start": "wp-scripts start --config webpack.config.js",
+		"lint": "npm run lint:ts && npm run lint:css",
+		"lint:ts": "eslint src/ client/",
+		"lint:css": "stylelint '**/*.css'",
+		"format": "prettier --write .",
+		"format:check": "prettier --check ."
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.0.0",
+		"@sanderjn/prettier-plugin-twig-melody": "^2.2.2",
+		"@stylelint/postcss-css-in-js": "^0.38.0",
+		"@typescript-eslint/eslint-plugin": "^8.59.1",
+		"@typescript-eslint/parser": "^8.59.1",
+		"@wordpress/scripts": "^30.0.0",
+		"eslint": "^9.7.0",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^7.1.1",
+		"patch-package": "^8.0.1",
+		"prettier": "^3.8.3",
+		"stylelint": "^17.10.0",
+		"stylelint-config-standard": "^40.0.0",
+		"typescript": "^6.0.3"
+	},
+	"dependencies": {
+		"shaders": "^2.5.130"
+	}
 }
