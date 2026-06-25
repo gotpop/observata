@@ -1,29 +1,29 @@
 /* Base */
-@import './tokens/base-spacing.css';
-@import './tokens/base-swatch.css';
-@import './tokens/base-typography.css';
+@import url('./tokens/base-spacing.css');
+@import url('./tokens/base-swatch.css');
+@import url('./tokens/base-typography.css');
 
 /* Theme */
-@import './tokens/theme-typography.css';
-@import './tokens/theme.css';
+@import url('./tokens/theme-typography.css');
+@import url('./tokens/theme.css');
 
 /* Global */
-@import './global/fonts.css';
-@import './global/reset.css';
-@import './global/global.css';
-@import './global/layout.css';
-@import './global/icons.css';
-@import './global/buttons.css';
-@import './global/typography.css';
-@import './global/typography-scale.css';
-@import './global/animations.css';
-@import './global/keyframes.css';
-@import './global/graphic.css';
-@import './global/accessibility.css';
-@import './global/stretch.css';
+@import url('./global/fonts.css');
+@import url('./global/reset.css');
+@import url('./global/global.css');
+@import url('./global/layout.css');
+@import url('./global/icons.css');
+@import url('./global/buttons.css');
+@import url('./global/typography.css');
+@import url('./global/typography-scale.css');
+@import url('./global/animations.css');
+@import url('./global/keyframes.css');
+@import url('./global/graphic.css');
+@import url('./global/accessibility.css');
+@import url('./global/stretch.css');
 
 /* Template header partials (rendered via Twig, not as WP blocks) */
-@import '../../blocks/template/header-logo/header-logo.css';
-@import '../../blocks/template/header-navigation/header-navigation.css';
-@import '../../blocks/template/header-navigation/header-navigation-desktop.css';
-@import '../../blocks/template/header-navigation-trigger/header-navigation-trigger.css';
+@import url('../../blocks/template/header-logo/header-logo.css');
+@import url('../../blocks/template/header-navigation/header-navigation.css');
+@import url('../../blocks/template/header-navigation/header-navigation-desktop.css');
+@import url('../../blocks/template/header-navigation-trigger/header-navigation-trigger.css');

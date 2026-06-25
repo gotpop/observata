@@ -24,12 +24,11 @@
 
 	.footer-top {
 		border-bottom: var(--border-light);
-		column-gap: var(--spacing-32);
+		gap: var(--spacing-50) var(--spacing-32);
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content;
 		padding-block-end: 4rem;
-		row-gap: var(--spacing-50);
 
 		@media (width >=80rem) {
 			grid-template-columns: 1fr 1fr;

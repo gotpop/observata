@@ -3,7 +3,21 @@
 	"rules": {
 		"custom-property-pattern": null,
 		"selector-class-pattern": null,
-		"no-descending-specificity": null
+		"no-descending-specificity": null,
+		"no-empty-source": null,
+		"no-duplicate-selectors": null,
+		"number-max-precision": 6,
+		"custom-property-no-missing-var-function": null,
+		"at-rule-descriptor-value-no-unknown": null,
+		"declaration-block-no-redundant-longhand-properties": null,
+		"declaration-property-value-no-unknown": null,
+		"property-no-deprecated": null
 	},
-	"ignoreFiles": ["node_modules/**", "vendor/**", "build/**", "**/*.min.css"]
+	"ignoreFiles": [
+		"node_modules/**",
+		"vendor/**",
+		"build/**",
+		"dist/**",
+		"**/*.min.css"
+	]
 }

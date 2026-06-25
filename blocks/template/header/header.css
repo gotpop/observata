@@ -1,7 +1,7 @@
 @keyframes header-scroll {
 	to {
 		backdrop-filter: blur(2px);
-		background-color: rgba(255, 255, 255, 0.95);
+		background-color: rgb(255 255 255 / 95%);
 		border-bottom: var(--border-grey);
 		border-left: thin solid transparent;
 		border-radius: 0;
@@ -15,7 +15,7 @@
 @keyframes header-unscroll {
 	from {
 		backdrop-filter: blur(2px);
-		background-color: rgba(255, 255, 255, 0.95);
+		background-color: rgb(255 255 255 / 95%);
 		border-bottom: var(--border-grey);
 		border-left: thin solid transparent;
 		border-radius: 0;
@@ -28,7 +28,7 @@
 
 .header {
 	display: flex;
-	inset: 0 auto auto auto;
+	inset: 0 auto auto;
 	justify-content: center;
 	position: fixed;
 	view-transition-name: header;
@@ -47,7 +47,7 @@
 		border-radius: 0 0 2rem 2rem;
 		border-right: thin solid transparent;
 		border-top: thin solid transparent;
-		column-gap: var(--spacing-16);
+		gap: 0 var(--spacing-16);
 		display: grid;
 		flex-basis: 100%;
 		grid-template-areas: 'logo trigger' 'nav nav';
@@ -58,7 +58,6 @@
 		min-height: var(--size-height-heading);
 		padding-block: var(--spacing-24);
 		padding-inline: var(--spacing-32);
-		row-gap: 0;
 
 		.home & {
 			animation-range-end: 600px;
@@ -82,6 +81,7 @@
 		.no-view-timeline.scrolled-once:not(.has-scrolled) & {
 			animation: header-unscroll 0.3s ease-in-out forwards;
 		}
+
 		/* Firefox */
 
 		@supports (corner-shape: squircle) {
@@ -90,8 +90,7 @@
 		}
 
 		&.is-open {
-			row-gap: var(--spacing-16);
-			column-gap: var(--spacing-16);
+			gap: var(--spacing-16) var(--spacing-16);
 			animation: none;
 		}
 

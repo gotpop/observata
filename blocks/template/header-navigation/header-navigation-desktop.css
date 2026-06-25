@@ -25,6 +25,7 @@
 
 	.sub-menu-wrapper {
 		display: none;
+
 		/* display: grid; */
 		opacity: 0;
 		translate: 20px 0;

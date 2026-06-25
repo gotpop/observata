@@ -4,7 +4,7 @@ button-toggle {
 	--padding-right: 1rem;
 
 	align-items: center;
-	anchor-name: --buttonToggle;
+	anchor-name: --buttontoggle;
 	border: none;
 	color: var(--button-toggle-color);
 	cursor: pointer;
@@ -58,7 +58,7 @@ icon-hamburger {
 	color: var(--colour-primary-600);
 
 	.centre {
-		background-color: currentColor;
+		background-color: currentcolor;
 		width: 100%;
 		height: 6px;
 		display: inline flex;
@@ -72,7 +72,7 @@ icon-hamburger {
 
 	&::before,
 	&::after {
-		background: currentColor;
+		background: currentcolor;
 		bottom: var(--bottom, auto);
 		content: '';
 		display: block;

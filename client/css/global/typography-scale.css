@@ -51,7 +51,7 @@
 	font-family: var(--typography-family-gantari);
 	font-size: var(--size, var(--typography-size-24));
 	font-weight: var(--typography-weight-bold);
-	letter-spacing: 0px;
+	letter-spacing: 0;
 	line-height: var(--line, var(--line-height-heading-md));
 	max-width: var(--max-width-heading-md, initial);
 	text-align: var(--align-heading-md, left);
@@ -72,7 +72,7 @@
 	font-family: var(--typography-family-gantari);
 	font-size: var(--size, var(--typography-size-20));
 	font-weight: var(--typography-weight-bold);
-	letter-spacing: 0px;
+	letter-spacing: 0;
 	line-height: var(--line, var(--line-height-heading-sm));
 	max-width: var(--max-width-heading-sm, initial);
 	text-align: var(--align-heading-sm, left);
@@ -93,7 +93,7 @@
 	font-family: var(--typography-family-gantari);
 	font-size: var(--size, var(--typography-size-16));
 	font-weight: var(--typography-weight-bold);
-	letter-spacing: 0px;
+	letter-spacing: 0;
 	line-height: var(--line, var(--line-height-heading-sm));
 	max-width: var(--max-width-heading-xs, initial);
 	text-align: var(--align-heading-xs, left);

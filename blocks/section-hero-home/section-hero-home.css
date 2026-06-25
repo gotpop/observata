@@ -1,13 +1,13 @@
 .block-section-hero-home {
 	--grad-linear: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	--grad-radial-white: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
+	--grad-radial-white: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgb(255 255 255 / 0%) 100%);
 
 	background-color: var(--surface-white);
 	background-image: var(--grad-radial-white), var(--grad-linear);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	inset: 0 auto auto auto;
+	inset: 0 auto auto;
 	justify-content: center;
 	overflow: clip;
 	position: sticky;
@@ -42,6 +42,7 @@
 			animation: overlay-animation-reverse 0.3s ease-in-out forwards;
 		}
 	}
+
 	/* Firefox */
 
 	.hero-content {
@@ -90,12 +91,12 @@
 		display: flex;
 		font-size: var(--size-body-md);
 		gap: var(--spacing-8);
+		text-decoration: underline;
 		text-decoration-color: var(--colour-primary-400);
 		text-decoration-thickness: 1px;
-		text-decoration: underline;
 		text-underline-offset: 0.3em;
 		cursor: pointer;
-		transition: color 0.3 ease;
+		transition: color 0.3s ease;
 
 		&:hover {
 			color: var(--colour-secondary-500);

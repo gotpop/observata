@@ -16,7 +16,7 @@ observata-block-label {
 		content: '';
 		width: 14px;
 		height: 14px;
-		background-color: rgb(26, 255, 0);
+		background-color: rgb(26 255 0);
 		background-color: var(--label-colour-bg, var(--wp-admin-theme-color));
 		position: relative;
 		border-radius: 2px;

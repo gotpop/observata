@@ -11,7 +11,7 @@
 	position: relative;
 
 	&::after {
-		background-color: var(--bg-overlay, rgba(0, 0, 0, 0.7));
+		background-color: var(--bg-overlay, rgb(0 0 0 / 70%));
 		content: '';
 		inset: 0;
 		opacity: var(--opacity-overlay, 0);
@@ -73,8 +73,8 @@ main {
 	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
 	--grad-rad: radial-gradient(
 		circle at 40% 50%,
-		rgba(255, 255, 255, 0.9) 20%,
-		rgba(255, 255, 255, 0) 60%
+		rgb(255 255 255 / 90%) 20%,
+		rgb(255 255 255 / 0%) 60%
 	);
 
 	background-color: var(--section-bg-colour, var(--surface-white));

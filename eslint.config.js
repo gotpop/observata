@@ -46,7 +46,7 @@ export default [
 		},
 	},
 	{
-		ignores: ['node_modules/', 'build/', 'vendor/', '*.min.js'],
+		ignores: ['node_modules/', 'build/', 'dist/', 'vendor/', '*.min.js'],
 	},
 	{
 		files: ['webpack.config.js', 'postcss.config.js'],
@@ -58,6 +58,14 @@ export default [
 		},
 		rules: {
 			'@typescript-eslint/no-require-imports': 'off',
+		},
+	},
+	{
+		// Type declaration files — relaxed rules for ambient types
+		files: ['**/*.d.ts'],
+		rules: {
+			'no-undef': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
 		},
 	},
 ];

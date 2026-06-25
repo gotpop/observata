@@ -3,8 +3,8 @@
 	box-sizing: border-box;
 	text-box: trim-both cap alphabetic;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		box-sizing: inherit;
 		text-box-edge: inherit;
 		text-box-trim: inherit;
@@ -96,6 +96,7 @@ video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	/* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides -- standard reset */
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -125,10 +126,10 @@ q {
 	quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
 	content: '';
 	content: none;
 }
@@ -138,12 +139,12 @@ q {
 	font-style: italic;
 }
 
-q:before {
+q::before {
 	content: '"';
 	font-style: normal;
 }
 
-q:after {
+q::after {
 	content: '"';
 	font-style: normal;
 }
@@ -197,7 +198,7 @@ dd {
 
 kbd,
 tt {
-	font-family: courier;
+	font-family: courier, monospace;
 	font-size: 12px;
 }
 

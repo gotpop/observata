@@ -1,11 +1,13 @@
 /* Collection: Base */
 :root {
 	/* Family */
-	--typography-family-inter: Inter;
-	--typography-family-gantari: Gantari;
+	--typography-family-inter: inter;
+	--typography-family-gantari: gantari;
 
 	/* Line height */
+
 	/* --typography-line-height-tightest: 1; */
+
 	/* --typography-line-height-tight: 1.2; */
 	--typography-line-height-tight: 1;
 	--typography-line-height-default: 1.6;

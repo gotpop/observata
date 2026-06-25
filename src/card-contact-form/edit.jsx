@@ -1,7 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import BlockLabel from '../components/block-label';
 
-export default function CardContactFormEdit({ attributes }) {
+export default function CardContactFormEdit({ attributes: _attributes }) {
 	const blockProps = useBlockProps({ className: 'contact-form-editor' });
 
 	return (

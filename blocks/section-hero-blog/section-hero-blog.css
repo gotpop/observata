@@ -1,6 +1,6 @@
 .block-section-hero-blog {
 	--grad-bg: linear-gradient(90deg, #d4dbe0 0%, #e9edef 100%);
-	--grad-glow: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgba(255, 255, 255, 0) 100%);
+	--grad-glow: radial-gradient(60% 62% at 50% 65%, #fff 70%, rgb(255 255 255 / 0%) 100%);
 	--position-glow: center calc(50% + 60px);
 	--size-glow: 125vw 100%;
 	--size-bg: 100% 100%;

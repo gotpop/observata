@@ -8,7 +8,7 @@
 	width: var(--width, var(--size));
 	z-index: 0;
 
-	&:after {
+	&::after {
 		background-image: var(--gradient);
 		content: '';
 		height: var(--size);

@@ -47,7 +47,7 @@
 	}
 
 	.wrappper-img {
-		--g: linear-gradient(to bottom, var(--colour-primary-600), rgba(255, 255, 255, 0.6));
+		--g: linear-gradient(to bottom, var(--colour-primary-600), rgb(255 255 255 / 60%));
 
 		width: 200px;
 		height: var(--img-height, 120%);

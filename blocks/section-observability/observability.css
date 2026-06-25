@@ -54,7 +54,7 @@
 		height: var(--s);
 		inset: var(--i, 50% -15rem auto auto);
 		translate: 0 -58%;
-		mask-image: url(#mask-sphere-14);
+		mask-image: url("#mask-sphere-14");
 		pointer-events: none;
 		position: absolute;
 		width: var(--s);

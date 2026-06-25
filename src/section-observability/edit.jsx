@@ -2,11 +2,11 @@ import './editor.css';
 
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
+import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
 import SectionIntro from '../components/section-intro';
-import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 
 const CARD_TEMPLATE = [
 	[
@@ -33,7 +33,7 @@ const CARD_TEMPLATE = [
 ];
 
 export default function Edit({ attributes, setAttributes }) {
-	const { sectionBgColour, sectionTitle, introText, cardTitle, cardBody } = attributes;
+	const { sectionBgColour, cardTitle, cardBody } = attributes;
 	const blockProps = useBlockProps({ className: 'observability-observability-editor' });
 
 	return (

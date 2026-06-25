@@ -51,7 +51,7 @@
 .unsplash-image-picker__image-card:hover {
 	border-color: var(--wp-admin-theme-color);
 	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
 .unsplash-image-picker__image-card:focus {
@@ -70,7 +70,7 @@
 .unsplash-image-picker__image-overlay {
 	position: absolute;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgb(0 0 0 / 50%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -97,7 +97,7 @@
 	left: 0;
 	right: 0;
 	padding: 8px;
-	background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+	background: linear-gradient(transparent, rgb(0 0 0 / 80%));
 	color: white;
 	font-size: 12px;
 	text-align: center;

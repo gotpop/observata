@@ -42,7 +42,7 @@
 
 	.graphic-tech-europe {
 		--height: calc(500px - 4rem);
-		--mask: url(#mask-europe);
+		--mask: url("#mask-europe");
 		--size: 356px;
 		--gradient: conic-gradient(
 			var(--colour-secondary-500),
@@ -68,12 +68,14 @@
 				.chrome & {
 					opacity: var(--opacity, 0.3);
 					transition: all 0.2s ease-in-out;
+
 					/* Exit */
 					transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.0003s);
 				}
 
 				.in-view & {
 					--opacity: 1;
+
 					/* Enter */
 					transition-delay: calc(0.0002s * sibling-index());
 				}

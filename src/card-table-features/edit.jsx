@@ -3,108 +3,16 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
+import { useSelect } from '@wordpress/data';
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
 import GeoIcon from '../components/geo-icon';
-import { __ } from '@wordpress/i18n';
-import { useSelect } from '@wordpress/data';
 
 const ICON_OPTIONS = Array.from({ length: 30 }, (_, i) => {
 	const num = String(i + 1).padStart(2, '0');
 	return { label: num, value: num };
 });
-
-const ROW_TEMPLATE = [
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Elastic licensing',
-			plan1Value: 'check',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Real-time monitoring',
-			plan1Value: 'check',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Log aggregation',
-			plan1Value: 'check',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Custom dashboards',
-			plan1Value: 'check',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Alerting & notifications',
-			plan1Value: 'dash',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{ featureName: 'API access', plan1Value: 'dash', plan2Value: 'check', plan3Value: 'check' },
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: '30-day retention',
-			plan1Value: 'dash',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Advanced analytics',
-			plan1Value: 'dash',
-			plan2Value: 'check',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Custom integrations',
-			plan1Value: 'dash',
-			plan2Value: 'dash',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{
-			featureName: 'Dedicated support',
-			plan1Value: 'dash',
-			plan2Value: 'dash',
-			plan3Value: 'check',
-		},
-	],
-	[
-		'observata/element-table-features-row',
-		{ featureName: 'SLA guarantee', plan1Value: 'dash', plan2Value: 'dash', plan3Value: 'check' },
-	],
-];
 
 export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
 	const { showPlanCards, featuredPlan } = attributes;
@@ -211,7 +119,6 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
 
 			<div className="editor-rows">
 				<InnerBlocks
-					// template={ROW_TEMPLATE}
 					allowedBlocks={['observata/element-table-features-row']}
 					templateLock={false}
 				/>

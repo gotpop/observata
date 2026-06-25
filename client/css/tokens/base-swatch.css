@@ -29,7 +29,7 @@
 	--colour-secondary-900: #032d3c;
 
 	/* Neutral */
-	--colour-neutral-white: #ffffff;
+	--colour-neutral-white: #fff;
 	--colour-neutral-100: #f7f7f7;
 	--colour-neutral-200: #ededed;
 	--colour-neutral-300: #d0d0d0;
@@ -39,7 +39,7 @@
 	--colour-neutral-700: #484848;
 	--colour-neutral-800: #2e2e2e;
 	--colour-neutral-900: #1e1e1e;
-	--colour-neutral-black: #000000;
+	--colour-neutral-black: #000;
 
 	/* Accent 1 */
 	--colour-accent-1-base: #ea5ec1;

@@ -1,7 +1,7 @@
 @property --gradient-color-inner {
 	syntax: '<color>';
 	inherits: false;
-	initial-value: #ffffff;
+	initial-value: #fff;
 }
 
 @property --gradient-color-mid {
@@ -53,7 +53,7 @@
 		content: '';
 		height: 520px;
 		inset: calc(50% - 1.7rem) 0 0 50%;
-		mask-image: url(#mask-swooping-lines-cta);
+		mask-image: url("#mask-swooping-lines-cta");
 		pointer-events: none;
 		position: absolute;
 		transform: translate(-50%, -50%);
@@ -62,7 +62,7 @@
 		z-index: 0;
 
 		.in-view & {
-			--gradient-color-inner: #ffffff;
+			--gradient-color-inner: #fff;
 			--gradient-color-mid: #7399c6;
 			--gradient-color-outer: #9bdbf2;
 			--grad-stop-inner: 20%;
@@ -81,6 +81,7 @@
 		.chrome & {
 			opacity: 0.3;
 			transition: opacity 0.3s ease-in-out;
+
 			/* Exit  */
 			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.07s);
 

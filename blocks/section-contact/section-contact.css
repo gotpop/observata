@@ -3,9 +3,7 @@
 
 	.block-content {
 		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: var(--spacing-48);
-		column-gap: var(--spacing-40);
+		gap: var(--spacing-48) var(--spacing-40);
 		grid-column: content;
 		grid-template-columns: 1fr;
 

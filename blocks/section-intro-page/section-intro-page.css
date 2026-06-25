@@ -39,9 +39,12 @@
 
 	.subpage-shader {
 		grid-column: full;
+
 		/* inset: 50% auto auto 50%; */
 		position: absolute;
+
 		/* translate: -50% -50%; */
+
 		/* view-transition-name: shader; */
 		z-index: 0;
 		width: 100%;

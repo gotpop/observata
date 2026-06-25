@@ -1,3 +1,3 @@
-export default function CardImageUnsplashSave({ attributes }) {
+export default function CardImageUnsplashSave({ attributes: _attributes }) {
 	return null;
 }

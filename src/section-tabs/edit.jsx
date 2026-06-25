@@ -1,5 +1,6 @@
 import './editor.css';
 
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import {
 	Button,
 	ButtonGroup,
@@ -7,18 +8,17 @@ import {
 	SelectControl,
 	TextControl,
 } from '@wordpress/components';
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
+import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
-import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
 
 const ALLOWED_BLOCKS = ['observata/card-text-intro', 'observata/card-table-features'];
 
 const TAB_TEMPLATE = [['observata/card-table-features', {}]];
 
-export default function SectionTabsEdit({ attributes, setAttributes, clientId }) {
+export default function SectionTabsEdit({ attributes, setAttributes, clientId: _clientId }) {
 	const [localActiveTab, setLocalActiveTab] = useState(attributes.activeTab || '1');
 	const { tabCount, tab1Name, tab2Name, tab3Name, sectionBgColour, activeTab } = attributes;
 

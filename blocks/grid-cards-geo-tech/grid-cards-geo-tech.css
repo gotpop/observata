@@ -18,7 +18,6 @@
 
 	.layout-cards {
 		display: grid;
-		grid-template-columns: 1fr;
 		gap: var(--spacing-32);
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	}

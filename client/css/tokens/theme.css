@@ -13,18 +13,17 @@
 	/* Surface */
 	--surface-grey: oklch(from var(--colour-neutral-100) calc(l - 0.00005) c h);
 	--surface-white: var(--colour-neutral-white);
-	--surface-white-transparent: oklch(from var(--colour-neutral-white) l c h / 0.7);
+	--surface-white-transparent: oklch(from var(--colour-neutral-white) l c h / 70%);
 	--surface-dark: var(--colour-primary-900);
 
 	/* Borders */
 	--colour-border-border-gray: oklch(from var(--colour-neutral-200) calc(l - 0.02) c h);
-
 	--border-primary: thin solid var(--colour-primary-400);
 	--border-secondary: thin solid var(--colour-secondary-400);
 	--border-accent: thin solid var(--colour-accent-1-400);
 	--border-grey: thin solid var(--colour-border-border-gray);
 	--border-card: thin solid oklch(from var(--colour-neutral-200) calc(l - 0.06) c h);
-	--border-light: 1px solid rgba(255, 255, 255, 0.2);
+	--border-light: 1px solid rgb(255 255 255 / 20%);
 
 	/* Shadows */
 	--shadow-inner-line-white: inset 0 0 0 1px var(--colour-neutral-white);
@@ -57,18 +56,16 @@
 		color-mix(in oklab, var(--colour-secondary-300) 80%, transparent) 20%,
 		color-mix(in oklab, var(--colour-primary-300) 60%, transparent) 70%
 	);
-
 	--gradient-graphic: radial-gradient(
 		circle,
 		var(--colour-accent-1-400),
 		var(--colour-secondary-200)
 	);
-
 	--grad-lin: linear-gradient(-45deg, var(--colour-neutral-white) 0%, #c5ccce 100%);
 	--grad-rad: radial-gradient(
 		circle at 40% 50%,
-		rgba(255, 255, 255, 0.9) 20%,
-		rgba(255, 255, 255, 0) 60%
+		rgb(255 255 255 / 90%) 20%,
+		rgb(255 255 255 / 0%) 60%
 	);
 
 	/* Filters */
