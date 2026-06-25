@@ -1,0 +1,68 @@
+name: Lint
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+# Cancel in-progress runs on the same ref when new commits are pushed.
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------- JS / CSS
+  lint-frontend:
+    name: ESLint & Stylelint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: ESLint (TS / JS)
+        run: npm run lint:ts
+
+      - name: Stylelint (CSS)
+        run: npm run lint:css
+
+  # -------------------------------------------------------------------- PHP
+  lint-php:
+    name: PHPCS (WordPress)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Composer install
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: PHPCS
+        run: composer phpcs
+
+  # ---------------------------------------------------------------- Format
+  lint-format:
+    name: Prettier format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Prettier --check
+        run: npm run format:check
