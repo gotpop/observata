@@ -6,7 +6,8 @@
 					<span class="breadcrumbs__separator" aria-hidden="true">&raquo;</span>
 				{% endif %}
 				{% if crumb.url %}
-					<a class+"link-anchor" href="{{ crumb.url|esc_url }}">	{{ crumb.label|strip_html }}
+					<a class="link-anchor" href="{{ crumb.url|esc_url }}">
+						{{ crumb.label|strip_html }}
 					</a>
 				{% else %}
 					<span class="body-sm breadcrumbs__current">
