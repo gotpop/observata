@@ -7,6 +7,7 @@
  */
 const SCROLL_THRESHOLD = 100;
 const SCROLLED_CLASS = 'has-scrolled';
+const SCROLLED_ONCE_CLASS = 'scrolled-once';
 
 export function initScrollObserver() {
 	// Only activate when view-timeline is unsupported.
@@ -18,7 +19,15 @@ export function initScrollObserver() {
 	let ticking = false;
 
 	const update = () => {
-		html.classList.toggle(SCROLLED_CLASS, window.scrollY > SCROLL_THRESHOLD);
+		const pastThreshold = window.scrollY > SCROLL_THRESHOLD;
+		html.classList.toggle(SCROLLED_CLASS, pastThreshold);
+
+		// Sticky flag: once the user has scrolled, allow the reverse animation
+		// to play when they scroll back to the top (never removed).
+		if (pastThreshold) {
+			html.classList.add(SCROLLED_ONCE_CLASS);
+		}
+
 		ticking = false;
 	};
 

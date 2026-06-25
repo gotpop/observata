@@ -12,6 +12,20 @@
 	}
 }
 
+@keyframes header-unscroll {
+	from {
+		backdrop-filter: blur(2px);
+		background-color: rgba(255, 255, 255, 0.95);
+		border-bottom: var(--border-grey);
+		border-left: thin solid transparent;
+		border-radius: 0;
+		border-right: thin solid transparent;
+		border-top: thin solid transparent;
+		margin: 0;
+		max-width: 100%;
+	}
+}
+
 .header {
 	display: flex;
 	inset: 0 auto auto auto;
@@ -61,13 +75,14 @@
 			animation: none;
 		}
 
-		/* &.no-view-timeline {
-			animation: header-scroll 0.4s ease backwards;
-		} */
-
 		.no-view-timeline.has-scrolled & {
 			animation: header-scroll 0.3s ease-in-out forwards;
 		}
+
+		.no-view-timeline.scrolled-once:not(.has-scrolled) & {
+			animation: header-unscroll 0.3s ease-in-out forwards;
+		}
+		/* Firefox */
 
 		@supports (corner-shape: squircle) {
 			border-radius: 0 0 4rem 4rem;
