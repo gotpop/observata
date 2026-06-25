@@ -6,6 +6,10 @@ applyTo:
 
 # Twig Template Guidelines
 
+## Comments
+
+Keep AI-generated comments to a minimum. Only comment non-obvious logic; do not restate what the code already says.
+
 ## Attribute Extraction
 
 Always extract block attributes to local variables at the top of the template:

@@ -7,6 +7,10 @@ applyTo:
 
 # Block Editor (JSX) Guidelines
 
+## Comments
+
+Keep AI-generated comments to a minimum. Only comment non-obvious logic; do not restate what the code already says.
+
 ## edit.jsx Pattern
 
 ```jsx

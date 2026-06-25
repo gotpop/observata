@@ -11,6 +11,7 @@ applyTo:
 - Use **native CSS nesting** (no SCSS, no PostCSS nesting plugins)
 - Scope all styles under the block's root class
 - No `@import` in block CSS files (webpack handles bundling)
+- **Comments**: Keep AI-generated comments to a minimum. Only comment non-obvious workarounds or hacks; do not restate what the code already says.
 
 ## Typography System (3-Tier)
 
