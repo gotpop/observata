@@ -99,3 +99,13 @@
 		background-color: rgba(0, 0, 0, 0.5);
 	}
 }
+
+@keyframes overlay-animation-reverse {
+	from {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	to {
+		background-color: transparent;
+	}
+}
