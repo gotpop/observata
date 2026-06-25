@@ -67,6 +67,10 @@
 	.body-hero {
 		--align-body-hero: center;
 		--max-width-body-hero: min(100%, 58ch);
+
+		@supports not (text-wrap: pretty) {
+			max-width: 47ch;
+		}
 	}
 
 	.hero-buttons {
