@@ -2,25 +2,22 @@
 
 $context  = \Timber\Timber::context();
 $post_obj = \Timber\Timber::get_post();
-$post_obj->setup();
-$context['post'] = $post_obj;
-$blocks          = parse_blocks( get_the_content() );
-$hero_content    = '';
-$body_content    = '';
 
-// Special case for header wrapper in blog
-foreach ( $blocks as $block ) {
-	if ( $block['blockName'] === 'observata/section-hero-blog' ) {
-		$hero_content .= render_block( $block );
-	} else {
-		$body_content .= render_block( $block );
-	}
+if ( ! $post_obj ) {
+	wp_safe_redirect( home_url( '/404' ), 307 );
+	exit;
 }
 
-$context['hero']       = $hero_content;
-$context['content']    = $body_content;
+$post_obj->setup();
+$context['post'] = $post_obj;
+
+$split              = observata_split_hero_from_content( get_the_content(), 'observata/section-hero-blog' );
+$context['hero']    = $split['hero'];
+$context['content'] = $split['content'];
+
 $context['body_class'] = implode( ' ', get_body_class( 'single-post' ) );
 $context['header']     = do_blocks( '<!-- wp:observata/header /-->' );
 $context['footer']     = do_blocks( '<!-- wp:observata/footer /-->' );
 
 \Timber\Timber::render( 'templates/blog-single-default.twig', $context );
+$post_obj->cleanup();

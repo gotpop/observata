@@ -36,3 +36,7 @@ if ( $not_found ) {
 }
 
 \Timber\Timber::render( 'templates/404.twig', $context );
+
+if ( $not_found ) {
+	$not_found->cleanup();
+}

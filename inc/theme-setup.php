@@ -1,9 +1,38 @@
 <?php
 
-// Init Timber with views/ directory only.
-// Block templates are loaded via Twig paths added in the timber/loader/loader filter.
-\Timber\Timber::init();
+// Timber template directory — must be set BEFORE init() so the loader
+// picks up the custom path during initialization.
 \Timber\Timber::$dirname = array( 'views' );
+\Timber\Timber::init();
+
+/**
+ * Enable Twig compilation cache in production only.
+ *
+ * The compilation cache stores the compiled PHP version of Twig templates
+ * (template source → PHP code), NOT the rendered HTML output. This means there
+ * is zero stale-data risk — templates always execute with fresh data on every
+ * request. When `auto_reload` is true, Twig automatically recompiles whenever a
+ * template source file changes on disk.
+ *
+ * Dev and staging environments keep the cache disabled so template edits are
+ * reflected immediately without needing to flush the cache.
+ *
+ * Environment flags (set in wp-config.php):
+ *   define( 'WP_ENVIRONMENT', 'production' ); // Caching ON
+ *   define( 'WP_ENVIRONMENT', 'staging' );    // Caching OFF (hot reload)
+ *   (undefined)                                // Caching OFF (local dev)
+ */
+add_filter(
+	'timber/twig/environment/options',
+	function ( $options ) {
+		if ( defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT ) {
+			$options['cache']       = get_template_directory() . '/cache/twig';
+			$options['auto_reload'] = true;
+		}
+
+		return $options;
+	}
+);
 
 // Add blocks/ directory and theme root to Twig's search paths.
 // This avoids Timber's LocationManager scanning blocks/ subdirectories,
