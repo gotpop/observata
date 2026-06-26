@@ -1,0 +1,24 @@
+@property --b {
+	syntax: '<length>';
+	inherits: false;
+	initial-value: 0px;
+}
+
+grid-master {
+	min-height: 100dvh;
+	display: grid;
+	overflow: clip;
+	grid-template-rows: 1fr max-content;
+	grid-template-columns:
+		[full-start] minmax(1rem, 1fr) [breakout-start] var(--b)
+		[content-start] 2rem [inner-start] minmax(300px, 1136px)
+		[inner-end] 2rem [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
+
+	@media (width >=48rem) {
+		--b: 10px;
+	}
+
+	@media (width >=60rem) {
+		--b: 100px;
+	}
+}
