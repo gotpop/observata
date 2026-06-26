@@ -1,10 +1,12 @@
-{% set image_id = attributes.imageId %}
+{% set image_id = attributes.imageId|default(0) %}
 {% set image_url =
-	attributes.imageUrl|replace({
-		'http://': 'https://'
-	})
+	attributes.imageUrl
+		|default('')
+		|replace({
+			'http://': 'https://'
+		})
 %}
-{% set image_alt = attributes.imageAlt %}
+{% set image_alt = attributes.imageAlt|default('') %}
 {% set image_opts = {
 	class: 'card-image',
 	alt: image_alt
@@ -26,7 +28,7 @@
 {% elseif image_url %}
 	<figure class="card-image-unsplash">
 		<img
-			src="{{ image_url }}"
+			src="{{ image_url|esc_url }}"
 			alt="{{ image_alt }}"
 			class="card-image"
 			loading="lazy" />

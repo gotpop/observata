@@ -1,7 +1,7 @@
 {% extends 'base.twig' %}
 
 {% block header %}
-	{% include 'partials/header-default.twig' %}
+	{{ header|raw }}
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,10 @@
 			<article id="post-{{ post.ID }}" class="{{ post.class }}">
 				<header>
 					<h2 class="entry-title">
-						<a href="{{ post.link }}" title="{{ post.title }}" rel="bookmark">
+						<a
+							href="{{ post.link|esc_url }}"
+							title="{{ post.title }}"
+							rel="bookmark">
 							{{ post.title }}
 						</a>
 					</h2>
@@ -74,5 +77,5 @@
 {% endblock %}
 
 {% block footer %}
-	{% include 'partials/footer-default.twig' %}
+	{{ footer|raw }}
 {% endblock %}

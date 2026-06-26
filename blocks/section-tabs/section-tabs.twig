@@ -24,7 +24,7 @@
 						aria-controls="{{ group_name }}-panel-{{ i }}"
 						aria-selected="{% if is_active %}true{% else %}false{% endif %}"
 						data-tab="{{ i }}">
-						{{ tab_name }}
+						{{ tab_name|strip_html }}
 					</button>
 				{% endfor %}
 			</nav>

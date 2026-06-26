@@ -13,7 +13,7 @@
 	{% if post.thumbnail %}
 		<wrappper-img class="wrappper-img">
 			<img
-				src="{{ post.thumbnail.src('large') }}"
+				src="{{ post.thumbnail.src('large')|esc_url }}"
 				alt="{{ post.title }}"
 				class="image post-img"
 				loading="lazy" />
@@ -28,15 +28,15 @@
 		<h3
 			class="heading-sm heading-post"
 			style="view-transition-name: heading-{{ view_name }};">
-			<a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a>
+			<a href="{{ post.link|esc_url }}" rel="bookmark">{{ post.title }}</a>
 		</h3>
 
 		{% if post.excerpt %}
 			<p class="body-md post-excerpt">
-				{{ post.preview.read_more(false) }}
+				{{ post.excerpt.read_more(false)|raw }}
 			</p>
 		{% endif %}
 	</post-main>
 
-	<a href="{{ post.link }}" class="read-more">Read more</a>
+	<a href="{{ post.link|esc_url }}" class="read-more">Read more</a>
 </article>

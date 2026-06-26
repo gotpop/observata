@@ -1,7 +1,7 @@
 <div class="footer-contact">
 	<a
 		class="footer-logo"
-		href="{{ function('home_url', '/') }}"
+		href="{{ function('home_url', '/')|esc_url }}"
 		title="{{ function('get_bloginfo', 'name')|esc_attr }}">
 		{% include 'logos/logo-observata-white-logo.twig' %}
 	</a>

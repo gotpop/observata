@@ -9,12 +9,12 @@
 <article class="{{ classes }} icon-{{ icon_geo }}">
 	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
 	<h3 class="plan-title">
-		{{ plan_name }}
+		{{ plan_name|strip_html }}
 	</h3>
 	<body-card class="body-card">
-		<span class="plan-price">{{ plan_price }}</span>
+		<span class="plan-price">{{ plan_price|strip_html }}</span>
 		<p class="plan-description">
-			{{ plan_description }}
+			{{ plan_description|strip_html }}
 		</p>
 	</body-card>
 	{% if show_read_more and read_more_text and read_more_url %}
