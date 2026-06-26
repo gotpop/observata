@@ -4,6 +4,32 @@
  */
 
 /**
+ * Parse a page's block content and separate the hero block from body content.
+ *
+ * @param string $post_content   Raw post_content from the database.
+ * @param string $hero_block_name Full block name to extract (e.g. 'observata/section-hero-home').
+ * @return array Associative array with 'hero' and 'content' keys.
+ */
+function observata_split_hero_from_content( string $post_content, string $hero_block_name ): array {
+	$blocks      = parse_blocks( $post_content );
+	$hero_output = '';
+	$body_output = '';
+
+	foreach ( $blocks as $block ) {
+		if ( $block['blockName'] === $hero_block_name ) {
+			$hero_output .= render_block( $block );
+		} else {
+			$body_output .= render_block( $block );
+		}
+	}
+
+	return array(
+		'hero'    => $hero_output,
+		'content' => $body_output,
+	);
+}
+
+/**
  * Recursively serialize an array of block objects into WordPress
  * block-delimiter HTML comments, preserving the full nesting tree.
  *
@@ -104,9 +130,10 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 
 	// Add WordPress main menu to context for header block
 	if ( $template_name === 'header' ) {
-		$context['main_menu'] = \Timber\Timber::get_menu( 'main-menu' );
-
-		// Header partial styles are bundled in style-global.css via webpack.
+		$menu = \Timber\Timber::get_menu( 'main-menu' );
+		if ( $menu ) {
+			$context['main_menu'] = $menu;
+		}
 	}
 
 	// Add footer menus to context for footer block
