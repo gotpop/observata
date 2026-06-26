@@ -24,7 +24,7 @@
 
 	/* Font stack */
 	--font-stack:
-		system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial,
+		system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Helvetica Neue', arial,
 		sans-serif;
 	--font-stack-heading:
 		var(--typography-family-gantari), var(--typography-family-inter), var(--font-stack);
