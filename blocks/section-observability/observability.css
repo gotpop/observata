@@ -1,4 +1,4 @@
-.block-section-observability {
+@scope (.block-section-observability) {
 	.block-content {
 		display: grid;
 		gap: var(--spacing-50);
@@ -46,62 +46,60 @@
 	}
 
 	.graphic-sphere {
-		--g: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-		--s: 420px;
-
-		background-image: var(--g);
-		color: var(--colour-neutral-white);
-		height: var(--s);
-		inset: var(--i, 50% -15rem auto auto);
-		translate: 0 -58%;
-		mask-image: url('#mask-sphere-14');
-		pointer-events: none;
+		width: 460px;
+		height: 460px;
 		position: absolute;
-		width: var(--s);
-		z-index: 0;
+		inset: -6.5rem -7.5rem auto auto;
+		rotate: 6.5deg;
 
-		@media (width >=40rem) {
-			--i: 50% -15rem auto auto;
+		svg {
+			display: flex;
 		}
 
-		@media (width >=86rem) {
-			--i: 10rem -8rem auto auto;
-			--s: 420px;
+		#circles circle {
+			r: 0.5;
+			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
 
-			scale: 1.15;
-			rotate: 40deg;
-		}
-	}
-
-	.mask-source {
-		height: 0;
-		overflow: hidden;
-		position: absolute;
-
-		.circle {
-			stroke-width: 5.3px;
-			stroke: var(--colour-neutral-white);
-
-			/* Special case for Chrome other browsers can't handle the number of circles */
-			.chrome & {
-				opacity: 0;
-				transition: all 0.3s ease-in-out;
-
-				/* Exit */
-				transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.0003s);
-			}
+			opacity: 0;
 
 			.in-view & {
 				/* Enter */
+				scale: 1;
 				transition-delay: calc(0.01s * sibling-index());
+				transition-delay: 0.5s;
 				opacity: 1;
+				r: 5.5;
 			}
 		}
 
-		.mesh {
-			fill: var(--colour-neutral-white);
-			stroke-width: 0.3px;
-			stroke: var(--colour-neutral-white);
+		#triangles .triangle {
+			/* fill: var(--colour-accent-1-400, #ea5ec1); */
+			stroke-width: 0.75;
+			transform-box: fill-box;
+			transform-origin: center;
+
+			opacity: 0.3;
+			scale: 0.5;
+			transition: all 0.3s ease-in-out;
+
+			/* Exit  */
+			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
+
+			.in-view & {
+				/* Enter */
+				scale: 1;
+				transition-delay: calc(0.007s * sibling-index());
+				opacity: 1;
+			}
+
+			&:hover {
+				fill: red;
+			}
+		}
+		#circles circle {
+			/* fill: var(--colour-accent-1-400, #ea5ec1); */
+			fill: url(#sphere-gradient);
+			stroke-width: 2.75;
 		}
 	}
 }
