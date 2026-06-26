@@ -17,7 +17,15 @@
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"cssCustomProperties.files": ["client/css/**/*.css", "blocks/**/*.css", "client/ts/**/*.css", "src/**/*.css"],
+	"cssCustomProperties.files": [
+		"client/css/tokens-base/**/*.css",
+		"client/css/tokens-theme/**/*.css",
+		"client/css/reset/**/*.css",
+		"client/css/global/**/*.css",
+		"blocks/**/*.css",
+		"client/ts/**/*.css",
+		"src/**/*.css"
+	],
 	"cssCustomProperties.languages": ["css"],
 	"php.validate.executablePath": "/usr/bin/php",
 	"phpcs.enable": true,
