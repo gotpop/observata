@@ -1,23 +1,25 @@
-@layer base, theme, global, template;
+@layer tokens-base, tokens-theme, reset, global, template;
 
 /* Base */
-@import url('./tokens/base-spacing.css') layer(base);
-@import url('./tokens/base-swatch.css') layer(base);
-@import url('./tokens/base-typography.css') layer(base);
+@import url('./tokens/base-spacing.css') layer(tokens-base);
+@import url('./tokens/base-swatch.css') layer(tokens-base);
+@import url('./tokens/base-typography.css') layer(tokens-base);
 
 /* Theme */
-@import url('./tokens/theme-typography.css') layer(theme);
-@import url('./tokens/theme.css') layer(theme);
+@import url('./tokens/theme-typography.css') layer(tokens-theme);
+@import url('./tokens/theme.css') layer(tokens-theme);
+
+/* Reset */
+@import url('./global/reset.css') layer(reset);
+@import url('./global/typography.css') layer(reset);
 
 /* Global */
 @import url('./global/fonts.css') layer(global);
-@import url('./global/reset.css') layer(global);
 @import url('./global/global.css') layer(global);
 @import url('./global/layout.css') layer(global);
 @import url('./global/grid-master.css') layer(global);
 @import url('./global/icons.css') layer(global);
 @import url('./global/buttons.css') layer(global);
-@import url('./global/typography.css') layer(global);
 @import url('./global/typography-scale.css') layer(global);
 @import url('./global/animations.css') layer(global);
 @import url('./global/keyframes.css') layer(global);
