@@ -11,7 +11,7 @@
 			<trust-bar-item
 				class="logo-item"
 				style="view-transition-name: {{ logo }};">
-				{% include "logos/bar/#{logo}.twig" %}
+				{% include 'logos/bar/' ~ logo ~ '.twig' %}
 			</trust-bar-item>
 		{% endfor %}
 	</block-content-trust>

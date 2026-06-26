@@ -1,6 +1,7 @@
 {% set background_graphic = attributes.backgroundGraphic|default('') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 {% set layout = attributes.layout|default('content') %}
+{% set anchor = attributes.anchor|default('') %}
 {% set sphere_mask_image = theme_url ~ '/assets/svg/spheres/sphere-'
 	~ background_graphic
 	~ '.svg'
@@ -8,7 +9,7 @@
 
 <section
 	class="section-block block-section-graphic-card-simple-text"
-	{% if attributes.anchor %}id="{{ attributes.anchor }}"{% endif %}
+	{% if anchor %}id="{{ anchor|esc_attr }}"{% endif %}
 	data-observe="true"
 	data-threshold="1"
 	data-margin-top="400px"

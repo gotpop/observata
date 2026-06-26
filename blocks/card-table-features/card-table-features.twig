@@ -34,18 +34,18 @@
 							Features
 						</th>
 						<th class="cell cell-head">
-							{{ attributes.plan1Name }}
+							{{ attributes.plan1Name|default('')|strip_html }}
 						</th>
 						<th class="cell cell-head">
-							{{ attributes.plan2Name }}
+							{{ attributes.plan2Name|default('')|strip_html }}
 						</th>
 						<th class="cell cell-head">
-							{{ attributes.plan3Name }}
+							{{ attributes.plan3Name|default('')|strip_html }}
 						</th>
 					</tr>
 				</thead>
 				<tbody>
-					{{ content }}
+					{{ content|raw }}
 				</tbody>
 			</table>
 		</table-inner>

@@ -2,7 +2,7 @@
 	<div class="section-blog-pagination__container">
 		{% if prev_post %}
 			<a
-				href="{{ prev_post.link }}"
+				href="{{ prev_post.link|esc_url }}"
 				class="section-blog-pagination__link section-blog-pagination__link--prev">
 				<span class="section-blog-pagination__arrow section-blog-pagination__arrow--left">
 					&larr;
@@ -15,7 +15,7 @@
 
 		{% if next_post %}
 			<a
-				href="{{ next_post.link }}"
+				href="{{ next_post.link|esc_url }}"
 				class="section-blog-pagination__link section-blog-pagination__link--next">
 				<span class="section-blog-pagination__title">
 					{{ next_post.post_title }}

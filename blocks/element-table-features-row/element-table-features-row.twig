@@ -4,26 +4,31 @@
   Values: "check" or "dash"
 #}
 
+{% set feature_name = attributes.featureName|default('') %}
+{% set plan1_value = attributes.plan1Value|default('') %}
+{% set plan2_value = attributes.plan2Value|default('') %}
+{% set plan3_value = attributes.plan3Value|default('') %}
+
 <tr class="row row-body table-features-row fade-in-up">
 	<td class="cell name">
-		{{ attributes.featureName }}
+		{{ feature_name|strip_html }}
 	</td>
-	<td class="cell value value-{{ attributes.plan1Value }}">
-		{% if attributes.plan1Value == 'check' %}
+	<td class="cell value value-{{ plan1_value }}">
+		{% if plan1_value == 'check' %}
 			{% include 'icons/lucide/check.twig' %}
 		{% else %}
 			{% include 'icons/lucide/minus.twig' %}
 		{% endif %}
 	</td>
-	<td class="cell value value-{{ attributes.plan2Value }}">
-		{% if attributes.plan2Value == 'check' %}
+	<td class="cell value value-{{ plan2_value }}">
+		{% if plan2_value == 'check' %}
 			{% include 'icons/lucide/check.twig' %}
 		{% else %}
 			{% include 'icons/lucide/minus.twig' %}
 		{% endif %}
 	</td>
-	<td class="cell value value-{{ attributes.plan3Value }}">
-		{% if attributes.plan3Value == 'check' %}
+	<td class="cell value value-{{ plan3_value }}">
+		{% if plan3_value == 'check' %}
 			{% include 'icons/lucide/check.twig' %}
 		{% else %}
 			{% include 'icons/lucide/minus.twig' %}

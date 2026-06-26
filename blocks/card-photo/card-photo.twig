@@ -11,7 +11,7 @@
 <article class="card card-photo fade-in-up">
 	{% if image_url %}
 		<wrappper-img class="wrappper-img">
-			<img class="image" src="{{ image_url }}" alt="{{ image_alt }}" />
+			<img class="image" src="{{ image_url|esc_url }}" alt="{{ image_alt }}" />
 		</wrappper-img>
 	{% endif %}
 

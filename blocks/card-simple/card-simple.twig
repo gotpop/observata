@@ -16,7 +16,7 @@
 	</p>
 
 	{% if read_more_url %}
-		<a href="{{ read_more_url }}" class="read-more">
+		<a href="{{ read_more_url|esc_url }}" class="read-more">
 			<span>{{ read_more_text|strip_html }}</span>
 			<span class="screen-reader-text">about {{ title|strip_html }}</span>
 		</a>

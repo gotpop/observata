@@ -8,11 +8,13 @@
 			{% include 'icons/lucide/phone.twig' %}
 			<span class="label">Phone</span>
 			<a
-				href="tel:{{ phone|replace({
-					' ': '',
-					'(': '',
-					') ': ''
-				}) }}"
+				href="tel:{{ phone
+					|strip_html
+					|replace({
+						' ': '',
+						'(': '',
+						') ': ''
+					}) }}"
 				class="value">
 				{{ phone|strip_html }}
 			</a>

@@ -21,7 +21,10 @@
 			<article id="post-{{ post.ID }}" class="{{ post.class }}">
 				<header>
 					<h2 class="entry-title">
-						<a href="{{ post.link }}" title="{{ post.title }}" rel="bookmark">
+						<a
+							href="{{ post.link|esc_url }}"
+							title="{{ post.title }}"
+							rel="bookmark">
 							{{ post.title }}
 						</a>
 					</h2>
@@ -42,8 +45,10 @@
 				</header>
 				<div class="entry-summary">
 					{% if post.thumbnail %}
-						<a href="{{ post.link }}" title="{{ post.title }}">
-							<img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
+						<a href="{{ post.link|esc_url }}" title="{{ post.title }}">
+							<img
+								src="{{ post.thumbnail.src|esc_url }}"
+								alt="{{ post.title }}" />
 						</a>
 					{% endif %}
 					<div itemprop="description">
