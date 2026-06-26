@@ -1,6 +1,7 @@
 @property --b {
 	syntax: '<length>';
 	inherits: false;
+	/* stylelint-disable-next-line length-zero-no-unit -- @property <length> syntax requires a unit */
 	initial-value: 0px;
 }
 
