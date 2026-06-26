@@ -1,19 +1,19 @@
 @layer tokens-base, tokens-theme, reset, global, template;
 
-/* Base */
-@import url('./tokens/base-spacing.css') layer(tokens-base);
-@import url('./tokens/base-swatch.css') layer(tokens-base);
-@import url('./tokens/base-typography.css') layer(tokens-base);
+/* tokens-base */
+@import url('./tokens-base/base-spacing.css') layer(tokens-base);
+@import url('./tokens-base/base-swatch.css') layer(tokens-base);
+@import url('./tokens-base/base-typography.css') layer(tokens-base);
 
-/* Theme */
-@import url('./tokens/theme-typography.css') layer(tokens-theme);
-@import url('./tokens/theme.css') layer(tokens-theme);
+/* tokens-theme */
+@import url('./tokens-theme/theme-typography.css') layer(tokens-theme);
+@import url('./tokens-theme/theme.css') layer(tokens-theme);
 
-/* Reset */
-@import url('./global/reset.css') layer(reset);
-@import url('./global/typography.css') layer(reset);
+/* reset */
+@import url('./reset/reset.css') layer(reset);
+@import url('./reset/typography.css') layer(reset);
 
-/* Global */
+/* global */
 @import url('./global/fonts.css') layer(global);
 @import url('./global/global.css') layer(global);
 @import url('./global/layout.css') layer(global);
@@ -28,7 +28,7 @@
 @import url('./global/accessibility.css') layer(global);
 @import url('./global/stretch.css') layer(global);
 
-/* Template header partials (rendered via Twig, not as WP blocks) */
+/* template */
 @import url('../../blocks/template/header-logo/header-logo.css') layer(template);
 @import url('../../blocks/template/header-navigation/header-navigation.css') layer(template);
 @import url('../../blocks/template/header-navigation/header-navigation-desktop.css') layer(template);
