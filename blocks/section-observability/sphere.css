@@ -22,7 +22,8 @@
 	}
 
 	.outline {
-		opacity: var(--o, 0.3);
+		opacity: var(--o, 0.2);
+		transition: opacity 0.4s ease;
 
 		.in-view-sphere & {
 			--o: 1;
@@ -36,14 +37,15 @@
 		scale: var(--s, 0.5);
 		transform-box: fill-box;
 		transform-origin: center;
-		transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
-		transition: all 0.3s ease-in-out;
+		transition-delay: var(--t, calc((sibling-count() - sibling-index() + 1) * 0.007s));
+		transition-duration: 0.3s;
+		transition-property: opacity, scale;
+		transition-timing-function: ease-in-out;
 
 		.in-view-sphere & {
-			--s: 1;
 			--o: 1;
-
-			transition-delay: calc(0.007s * sibling-index());
+			--s: 1;
+			--t: calc(0.007s * sibling-index());
 		}
 	}
 
@@ -52,7 +54,8 @@
 		opacity: 0;
 		transition:
 			r 0.4s ease,
-			opacity 0.4s ease;
+			opacity 0.4s ease,
+			scale 0.4s ease;
 		transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
 
 		.in-view-sphere & {
