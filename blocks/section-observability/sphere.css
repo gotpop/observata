@@ -52,19 +52,19 @@
 	}
 
 	.circle {
-		r: 0.5;
-		opacity: 0;
-		transition:
-			r 0.4s ease,
-			opacity 0.4s ease,
-			scale 0.4s ease;
-		transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
+		opacity: var(--o, 0);
+		scale: var(--s, 0);
+		transform-box: fill-box;
+		transform-origin: center;
+		transition-delay: var(--t, calc((sibling-count() - sibling-index() + 1) * 0.007s));
+		transition-duration: 0.4s;
+		transition-property: opacity, r, scale;
+		transition-timing-function: ease;
 
 		.in-view-sphere & {
-			scale: 1;
-			opacity: 1;
-			r: 5.5;
-			transition-delay: 0.5s;
+			--o: 1;
+			--s: 1;
+			--t: 0.5s;
 		}
 	}
 }
