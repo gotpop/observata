@@ -1,6 +1,7 @@
 {% set section_title = attributes.sectionTitle|default('') %}
 {% set intro_text = attributes.introText|default('') %}
 {% set text_align = attributes.textAlign|default('left') %}
+{% set data_attributes = dataAttributes|default('') %}
 {% set align_class = text_align and text_align != 'left'
 	? ' section-intro--' ~ text_align
 	: ''
@@ -8,7 +9,7 @@
 
 <section-intro class="section-intro{{ align_class }}">
 	{% if section_title %}
-		<h2 class="heading-lg section-intro-title">
+		<h2 class="heading-lg section-intro-title" {{ data_attributes|raw }}>
 			{{ section_title|strip_html }}
 		</h2>
 	{% endif %}

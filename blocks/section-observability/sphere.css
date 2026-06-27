@@ -1,0 +1,72 @@
+@scope (.block-section-observability) {
+	.graphic-sphere {
+		inset-block: var(--ib, anchor(center) auto);
+		inset-inline: var(--ii, calc(anchor(right) - 4rem) auto);
+		position-anchor: --layout-micro;
+		position: absolute;
+		rotate: var(--r, 0);
+		translate: var(--t, 0 -50%);
+		width: var(--w, 440px);
+
+		@media (width >=96rem) {
+			--ib: -6.5rem auto;
+			--ii: auto -7.5rem;
+			--r: 6.5deg;
+			--t: 0;
+			--w: 460px;
+		}
+
+		svg {
+			display: flex;
+		}
+
+		.outline {
+			opacity: 0.3;
+			fill: var(--surface-white);
+		}
+
+		#circles circle {
+			r: 0.5;
+			opacity: 0;
+			fill: url(#sphere-gradient);
+			stroke-width: 2.75;
+			transition:
+				r 0.4s ease,
+				opacity 0.4s ease;
+			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
+		}
+
+		#triangles .triangle {
+			stroke-width: 0.75;
+			transform-box: fill-box;
+			transform-origin: center;
+			opacity: 0.3;
+			scale: 0.5;
+			transition: all 0.3s ease-in-out;
+			fill: var(--surface-white);
+			/* Exit stagger */
+			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
+		}
+
+		/* Active state — triggered by IntersectionObserver */
+		&.in-view-sphere {
+			.outline {
+				opacity: 1;
+				transition-delay: 0.3s;
+			}
+
+			#circles circle {
+				scale: 1;
+				opacity: 1;
+				r: 5.5;
+				transition-delay: 0.5s;
+			}
+
+			#triangles .triangle {
+				scale: 1;
+				opacity: 1;
+				transition-delay: calc(0.007s * sibling-index());
+			}
+		}
+	}
+}

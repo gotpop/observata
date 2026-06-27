@@ -29,13 +29,18 @@
 		"sectionBgColour": {
 			"type": "string",
 			"default": "white",
-			"enum": ["white", "grey", "gradient"]
+			"enum": [
+				"white",
+				"grey",
+				"gradient"
+			]
 		}
 	},
 	"render": "file:render.php",
 	"editorScript": "file:../../build/index.js",
 	"viewStyle": [
 		"file:observability.css",
+		"file:sphere.css",
 		"file:../cards/card-micro/card-micro.css",
 		"file:../template/section-intro/section-intro.css"
 	],

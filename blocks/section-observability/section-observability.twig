@@ -13,15 +13,18 @@
 	<block-content class="block-content">
 		<article class="card-large">
 			{% include 'graphics/spheres/sphere-14.twig' %}
-			{% include 'template/section-intro/section-intro.twig' with {
-				attributes: {
-					sectionTitle: section_title,
-					introText: intro_text
-				}
-			} %}
-			<layout-micro class="layout-micro">
-				{{ content|raw }}
-			</layout-micro>
+			<card-large-pitch class="card-large-pitch">
+				{% include 'template/section-intro/section-intro.twig' with {
+					attributes: {
+						sectionTitle: section_title,
+						introText: intro_text
+					},
+					dataAttributes: 'data-sphere-trigger=""'
+				} %}
+				<layout-micro class="layout-micro">
+					{{ content|raw }}
+				</layout-micro>
+			</card-large-pitch>
 			<card-large-content class="card-large-content">
 				{% if card_title %}
 					<h4 class="heading-sm">
