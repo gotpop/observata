@@ -1,5 +1,8 @@
 @scope (.block-section-observability) {
 	.graphic-sphere {
+		--transition-delay-exit: calc((sibling-count() - sibling-index() + 1) * 0.007s);
+		--transition-delay-entry: calc(0.007s * sibling-index());
+
 		inset-block: var(--ib, anchor(center) auto);
 		inset-inline: var(--ii, calc(anchor(right) - 4rem) auto);
 		position-anchor: --layout-micro;
@@ -31,18 +34,17 @@
 		}
 
 		.triangle {
-			stroke-width: 0.75;
+			opacity: var(--o, 0.3);
+			scale: var(--s, 0.5);
 			transform-box: fill-box;
 			transform-origin: center;
-			opacity: 0.3;
-			scale: 0.5;
+			transition-delay: var(--td, var(--transition-delay-exit));
 			transition: all 0.3s ease-in-out;
-			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
 
 			.in-view-sphere & {
-				scale: 1;
-				opacity: 1;
-				transition-delay: calc(0.007s * sibling-index());
+				--s: 1;
+				--o: 1;
+				--td: var(--transition-delay-entry);
 			}
 		}
 
