@@ -16,16 +16,37 @@
 			--w: 460px;
 		}
 
-		svg {
+		.graphic-sphere-svg {
 			display: flex;
 		}
 
 		.outline {
 			opacity: 0.3;
-			fill: var(--surface-white);
+			/* fill: var(--surface-white); */
+
+			.in-view-sphere & {
+				opacity: 1;
+				transition-delay: 0.3s;
+			}
 		}
 
-		#circles circle {
+		.triangle {
+			stroke-width: 0.75;
+			transform-box: fill-box;
+			transform-origin: center;
+			opacity: 0.3;
+			scale: 0.5;
+			transition: all 0.3s ease-in-out;
+			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
+
+			.in-view-sphere & {
+				scale: 1;
+				opacity: 1;
+				transition-delay: calc(0.007s * sibling-index());
+			}
+		}
+
+		.circle {
 			r: 0.5;
 			opacity: 0;
 			fill: url(#sphere-gradient);
@@ -34,38 +55,12 @@
 				r 0.4s ease,
 				opacity 0.4s ease;
 			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
-		}
 
-		#triangles .triangle {
-			stroke-width: 0.75;
-			transform-box: fill-box;
-			transform-origin: center;
-			opacity: 0.3;
-			scale: 0.5;
-			transition: all 0.3s ease-in-out;
-			fill: var(--surface-white);
-			/* Exit stagger */
-			transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.007s);
-		}
-
-		/* Active state — triggered by IntersectionObserver */
-		&.in-view-sphere {
-			.outline {
-				opacity: 1;
-				transition-delay: 0.3s;
-			}
-
-			#circles circle {
+			.in-view-sphere & {
 				scale: 1;
 				opacity: 1;
 				r: 5.5;
 				transition-delay: 0.5s;
-			}
-
-			#triangles .triangle {
-				scale: 1;
-				opacity: 1;
-				transition-delay: calc(0.007s * sibling-index());
 			}
 		}
 	}
