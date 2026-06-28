@@ -24,6 +24,7 @@
 		border-radius: var(--radius-card);
 		border: var(--border-card);
 		z-index: 1;
+		height: min-content;
 	}
 
 	.graphic-sphere {
@@ -46,6 +47,7 @@
 		&.graphic-sphere-18 {
 			--w: 100%;
 			--h: 160%;
+			max-height: 400px;
 
 			@media (width >=80rem) {
 				--w: 110%;
