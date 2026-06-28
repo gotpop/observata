@@ -25,25 +25,61 @@
     </style>
     <circle class="bg-sphere" cx="213.189" cy="213.189" r="212.739" />
     <g id="dots-circle">
+        <circle class="dot dot-circle" cx="209.54" cy="0.48" r="4" />
+        <circle class="dot dot-circle" cx="217.31" cy="0.49" r="4" />
         <circle class="dot dot-circle" cx="193.12" cy="1.40" r="4" />
-        <circle class="dot dot-circle" cx="247.38" cy="3.22" r="4" />
+        <circle class="dot dot-circle" cx="196.95" cy="1.07" r="4" />
+        <circle class="dot dot-circle" cx="225.54" cy="0.81" r="4" />
+        <circle class="dot dot-circle" cx="229.43" cy="1.07" r="4" />
+        <circle class="dot dot-circle" cx="235.46" cy="1.62" r="4" />
+        <circle class="dot dot-circle" cx="178.00" cy="3.38" r="4" />
+        <circle class="dot dot-circle" cx="182.21" cy="2.72" r="4" />
+        <circle class="dot dot-circle" cx="249.18" cy="3.52" r="4" />
         <circle class="dot dot-circle" cx="267.26" cy="7.44" r="4" />
         <circle class="dot dot-circle" cx="157.38" cy="7.90" r="4" />
+        <circle class="dot dot-circle" cx="145.67" cy="11.45" r="4" />
+        <circle class="dot dot-circle" cx="278.94" cy="10.87" r="4" />
+        <circle class="dot dot-circle" cx="286.19" cy="13.37" r="4" />
+        <circle class="dot dot-circle" cx="138.46" cy="14.01" r="4" />
         <circle class="dot dot-circle" cx="128.27" cy="18.13" r="4" />
         <circle class="dot dot-circle" cx="297.73" cy="17.97" r="4" />
+        <circle class="dot dot-circle" cx="323.59" cy="31.34" r="4" />
+        <circle class="dot dot-circle" cx="102.26" cy="31.66" r="4" />
+        <circle class="dot dot-circle" cx="73.46" cy="52.77" r="4" />
         <circle class="dot dot-circle" cx="352.92" cy="52.77" r="4" />
+        <circle class="dot dot-circle" cx="373.70" cy="73.56" r="4" />
+        <circle class="dot dot-circle" cx="51.86" cy="74.51" r="4" />
         <circle class="dot dot-circle" cx="392.27" cy="98.35" r="4" />
         <circle class="dot dot-circle" cx="394.03" cy="101.14" r="4" />
+        <circle class="dot dot-circle" cx="31.99" cy="101.73" r="4" />
         <circle class="dot dot-circle" cx="413.45" cy="141.40" r="4" />
         <circle class="dot dot-circle" cx="12.68" cy="142.09" r="4" />
         <circle class="dot dot-circle" cx="3.29" cy="178.54" r="4" />
         <circle class="dot dot-circle" cx="423.09" cy="178.58" r="4" />
         <circle class="dot dot-circle" cx="0.81" cy="200.74" r="4" />
+        <circle class="dot dot-circle" cx="0.54" cy="207.00" r="4" />
+        <circle class="dot dot-circle" cx="425.84" cy="206.95" r="4" />
+        <circle class="dot dot-circle" cx="5.55" cy="259.49" r="4" />
+        <circle class="dot dot-circle" cx="420.69" cy="260.10" r="4" />
         <circle class="dot dot-circle" cx="26.97" cy="316.05" r="4" />
+        <circle class="dot dot-circle" cx="29.18" cy="319.94" r="4" />
+        <circle class="dot dot-circle" cx="396.53" cy="321.09" r="4" />
+        <circle class="dot dot-circle" cx="54.58" cy="354.96" r="4" />
+        <circle class="dot dot-circle" cx="370.77" cy="356.11" r="4" />
+        <circle class="dot dot-circle" cx="86.37" cy="383.99" r="4" />
+        <circle class="dot dot-circle" cx="338.85" cy="384.85" r="4" />
+        <circle class="dot dot-circle" cx="123.92" cy="406.29" r="4" />
+        <circle class="dot dot-circle" cx="300.73" cy="407.08" r="4" />
         <circle class="dot dot-circle" cx="150.37" cy="416.44" r="4" />
         <circle class="dot dot-circle" cx="153.50" cy="417.38" r="4" />
         <circle class="dot dot-circle" cx="273.81" cy="417.11" r="4" />
+        <circle class="dot dot-circle" cx="270.82" cy="417.97" r="4" />
+        <circle class="dot dot-circle" cx="173.70" cy="422.23" r="4" />
+        <circle class="dot dot-circle" cx="250.80" cy="422.58" r="4" />
         <circle class="dot dot-circle" cx="184.08" cy="423.93" r="4" />
+        <circle class="dot dot-circle" cx="239.49" cy="424.30" r="4" />
+        <circle class="dot dot-circle" cx="193.88" cy="425.05" r="4" />
+        <circle class="dot dot-circle" cx="230.58" cy="425.22" r="4" />
         <circle class="dot dot-circle" cx="208.48" cy="425.88" r="4" />
         <circle class="dot dot-circle" cx="215.87" cy="425.91" r="4" />
     </g>
