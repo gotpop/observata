@@ -12,6 +12,12 @@
             stroke: white;
             stroke-width: 1px;
         }
+
+        .dot {
+            fill: white;
+            stroke: none;
+            r: 4px;
+        }
     </style>
     <circle class="bg-sphere" cx="213.189" cy="213.189" r="212.739" />
     <g id="lines-left">
@@ -91,5 +97,153 @@
         <path class="line" d="M213.382,9.506L225.434,2.67L229.425,1.116" />
         <path class="line" d="M213.376,9.053L217.246,3.783L216.932,0.616" />
         <path class="line" d="M149.122,33.86L176.713,17.064L213.328,9.528" />
+    </g>
+    <g id="dots">
+        <circle class="dot" cx="213.34" cy="9.55" r="4" />
+        <circle class="dot" cx="204.21" cy="31.78" r="4" />
+        <circle class="dot" cx="186.47" cy="53.75" r="4" />
+        <circle class="dot" cx="159.95" cy="76.54" r="4" />
+        <circle class="dot" cx="127.14" cy="102.59" r="4" />
+        <circle class="dot" cx="92.68" cy="130.82" r="4" />
+        <circle class="dot" cx="61.04" cy="159.54" r="4" />
+        <circle class="dot" cx="34.84" cy="188.07" r="4" />
+        <circle class="dot" cx="16.65" cy="214.82" r="4" />
+        <circle class="dot" cx="6.87" cy="239.98" r="4" />
+        <circle class="dot" cx="220.47" cy="31.70" r="4" />
+        <circle class="dot" cx="212.22" cy="57.00" r="4" />
+        <circle class="dot" cx="195.10" cy="79.99" r="4" />
+        <circle class="dot" cx="167.84" cy="109.10" r="4" />
+        <circle class="dot" cx="136.25" cy="140.22" r="4" />
+        <circle class="dot" cx="103.82" cy="172.26" r="4" />
+        <circle class="dot" cx="74.26" cy="203.56" r="4" />
+        <circle class="dot" cx="47.71" cy="236.34" r="4" />
+        <circle class="dot" cx="30.84" cy="264.44" r="4" />
+        <circle class="dot" cx="23.30" cy="287.37" r="4" />
+        <circle class="dot" cx="237.98" cy="53.73" r="4" />
+        <circle class="dot" cx="229.35" cy="79.98" r="4" />
+        <circle class="dot" cx="212.23" cy="109.83" r="4" />
+        <circle class="dot" cx="185.60" cy="144.27" r="4" />
+        <circle class="dot" cx="155.25" cy="177.76" r="4" />
+        <circle class="dot" cx="123.51" cy="210.76" r="4" />
+        <circle class="dot" cx="94.51" cy="241.66" r="4" />
+        <circle class="dot" cx="67.19" cy="274.85" r="4" />
+        <circle class="dot" cx="50.91" cy="302.23" r="4" />
+        <circle class="dot" cx="44.90" cy="323.18" r="4" />
+        <circle class="dot" cx="235.98" cy="30.93" r="4" />
+        <circle class="dot" cx="264.52" cy="76.45" r="4" />
+        <circle class="dot" cx="256.63" cy="109.12" r="4" />
+        <circle class="dot" cx="238.85" cy="144.31" r="4" />
+        <circle class="dot" cx="212.23" cy="181.50" r="4" />
+        <circle class="dot" cx="182.35" cy="216.40" r="4" />
+        <circle class="dot" cx="150.90" cy="250.44" r="4" />
+        <circle class="dot" cx="122.59" cy="281.37" r="4" />
+        <circle class="dot" cx="95.86" cy="314.39" r="4" />
+        <circle class="dot" cx="80.87" cy="340.47" r="4" />
+        <circle class="dot" cx="76.47" cy="358.78" r="4" />
+        <circle class="dot" cx="263.34" cy="50.99" r="4" />
+        <circle class="dot" cx="249.62" cy="28.09" r="4" />
+        <circle class="dot" cx="275.32" cy="33.86" r="4" />
+        <circle class="dot" cx="297.32" cy="102.38" r="4" />
+        <circle class="dot" cx="288.19" cy="140.19" r="4" />
+        <circle class="dot" cx="269.12" cy="177.75" r="4" />
+        <circle class="dot" cx="242.00" cy="216.30" r="4" />
+        <circle class="dot" cx="212.10" cy="252.09" r="4" />
+        <circle class="dot" cx="180.69" cy="286.81" r="4" />
+        <circle class="dot" cx="153.01" cy="317.31" r="4" />
+        <circle class="dot" cx="127.74" cy="348.09" r="4" />
+        <circle class="dot" cx="113.88" cy="371.02" r="4" />
+        <circle class="dot" cx="110.04" cy="385.86" r="4" />
+        <circle class="dot" cx="294.92" cy="71.87" r="4" />
+        <circle class="dot" cx="283.73" cy="45.69" r="4" />
+        <circle class="dot" cx="331.80" cy="130.42" r="4" />
+        <circle class="dot" cx="320.59" cy="172.18" r="4" />
+        <circle class="dot" cx="300.82" cy="210.75" r="4" />
+        <circle class="dot" cx="273.42" cy="250.33" r="4" />
+        <circle class="dot" cx="243.45" cy="286.83" r="4" />
+        <circle class="dot" cx="212.03" cy="321.69" r="4" />
+        <circle class="dot" cx="184.85" cy="351.00" r="4" />
+        <circle class="dot" cx="161.62" cy="377.44" r="4" />
+        <circle class="dot" cx="148.65" cy="395.56" r="4" />
+        <circle class="dot" cx="144.35" cy="406.47" r="4" />
+        <circle class="dot" cx="330.62" cy="96.88" r="4" />
+        <circle class="dot" cx="316.56" cy="62.73" r="4" />
+        <circle class="dot" cx="294.40" cy="37.08" r="4" />
+        <circle class="dot" cx="263.16" cy="19.44" r="4" />
+        <circle class="dot" cx="363.49" cy="158.90" r="4" />
+        <circle class="dot" cx="350.23" cy="203.45" r="4" />
+        <circle class="dot" cx="329.89" cy="241.71" r="4" />
+        <circle class="dot" cx="301.85" cy="281.37" r="4" />
+        <circle class="dot" cx="271.24" cy="317.52" r="4" />
+        <circle class="dot" cx="239.37" cy="351.23" r="4" />
+        <circle class="dot" cx="212.22" cy="378.42" r="4" />
+        <circle class="dot" cx="191.35" cy="399.53" r="4" />
+        <circle class="dot" cx="179.55" cy="412.78" r="4" />
+        <circle class="dot" cx="174.51" cy="420.25" r="4" />
+        <circle class="dot" cx="363.94" cy="122.91" r="4" />
+        <circle class="dot" cx="350.00" cy="82.37" r="4" />
+        <circle class="dot" cx="325.31" cy="51.17" r="4" />
+        <circle class="dot" cx="298.07" cy="29.22" r="4" />
+        <circle class="dot" cx="263.35" cy="15.29" r="4" />
+        <circle class="dot" cx="160.33" cy="11.58" r="4" />
+        <circle class="dot" cx="389.73" cy="187.00" r="4" />
+        <circle class="dot" cx="376.83" cy="236.05" r="4" />
+        <circle class="dot" cx="357.27" cy="274.82" r="4" />
+        <circle class="dot" cx="328.64" cy="314.31" r="4" />
+        <circle class="dot" cx="296.51" cy="348.27" r="4" />
+        <circle class="dot" cx="262.56" cy="377.64" r="4" />
+        <circle class="dot" cx="233.09" cy="399.53" r="4" />
+        <circle class="dot" cx="264.11" cy="11.58" r="4" />
+        <circle class="dot" cx="212.22" cy="413.50" r="4" />
+        <circle class="dot" cx="198.95" cy="421.85" r="4" />
+        <circle class="dot" cx="390.10" cy="146.89" r="4" />
+        <circle class="dot" cx="377.79" cy="101.92" r="4" />
+        <circle class="dot" cx="357.62" cy="68.98" r="4" />
+        <circle class="dot" cx="328.85" cy="40.99" r="4" />
+        <circle class="dot" cx="299.95" cy="23.04" r="4" />
+        <circle class="dot" cx="408.57" cy="213.85" r="4" />
+        <circle class="dot" cx="394.07" cy="264.12" r="4" />
+        <circle class="dot" cx="373.80" cy="302.08" r="4" />
+        <circle class="dot" cx="343.86" cy="340.20" r="4" />
+        <circle class="dot" cx="310.46" cy="371.09" r="4" />
+        <circle class="dot" cx="275.54" cy="395.71" r="4" />
+        <circle class="dot" cx="244.89" cy="412.77" r="4" />
+        <circle class="dot" cx="225.49" cy="421.85" r="4" />
+        <circle class="dot" cx="410.41" cy="170.85" r="4" />
+        <circle class="dot" cx="400.13" cy="122.43" r="4" />
+        <circle class="dot" cx="383.64" cy="88.47" r="4" />
+        <circle class="dot" cx="419.12" cy="239.84" r="4" />
+        <circle class="dot" cx="402.14" cy="287.50" r="4" />
+        <circle class="dot" cx="380.24" cy="323.14" r="4" />
+        <circle class="dot" cx="348.69" cy="358.40" r="4" />
+        <circle class="dot" cx="314.57" cy="385.82" r="4" />
+        <circle class="dot" cx="279.97" cy="406.54" r="4" />
+        <circle class="dot" cx="249.93" cy="420.25" r="4" />
+        <circle class="dot" cx="423.83" cy="203.06" r="4" />
+        <circle class="dot" cx="188.43" cy="30.99" r="4" />
+        <circle class="dot" cx="161.10" cy="50.99" r="4" />
+        <circle class="dot" cx="129.53" cy="71.86" r="4" />
+        <circle class="dot" cx="93.83" cy="96.87" r="4" />
+        <circle class="dot" cx="60.50" cy="122.91" r="4" />
+        <circle class="dot" cx="34.34" cy="146.89" r="4" />
+        <circle class="dot" cx="15.07" cy="169.39" r="4" />
+        <circle class="dot" cx="2.40" cy="193.51" r="4" />
+        <circle class="dot" cx="174.45" cy="28.29" r="4" />
+        <circle class="dot" cx="140.62" cy="45.84" r="4" />
+        <circle class="dot" cx="107.45" cy="63.39" r="4" />
+        <circle class="dot" cx="73.72" cy="83.71" r="4" />
+        <circle class="dot" cx="45.68" cy="104.13" r="4" />
+        <circle class="dot" cx="25.10" cy="123.81" r="4" />
+        <circle class="dot" cx="129.81" cy="37.30" r="4" />
+        <circle class="dot" cx="98.07" cy="52.25" r="4" />
+        <circle class="dot" cx="64.90" cy="71.40" r="4" />
+        <circle class="dot" cx="41.49" cy="89.88" r="4" />
+        <circle class="dot" cx="165.08" cy="24.15" r="4" />
+        <circle class="dot" cx="163.11" cy="18.99" r="4" />
+        <circle class="dot" cx="125.68" cy="29.72" r="4" />
+        <circle class="dot" cx="93.17" cy="42.90" r="4" />
+        <circle class="dot" cx="157.48" cy="15.95" r="4" />
+        <circle class="dot" cx="122.72" cy="23.96" r="4" />
+        <circle class="dot" cx="259.72" cy="24.37" r="4" />
+        <circle class="dot" cx="149.12" cy="33.86" r="4" />
     </g>
 </svg>
