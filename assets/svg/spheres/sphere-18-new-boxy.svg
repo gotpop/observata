@@ -16,7 +16,7 @@
             fill: none;
             stroke: grey;
             stroke-width: 1px;
-            stroke-dasharray: 4 12;
+            stroke-dasharray: 56 12;
             animation: flow 3s linear infinite;
         }
 
@@ -33,7 +33,7 @@
 
         @keyframes flow {
             to {
-                stroke-dashoffset: -16;
+                stroke-dashoffset: -68;
             }
         }
 
