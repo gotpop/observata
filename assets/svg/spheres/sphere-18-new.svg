@@ -20,7 +20,8 @@
         }
 
         .dot-circle {
-            fill: red;
+            fill: white;
+            r: 3px;
         }
     </style>
     <circle class="bg-sphere" cx="213.189" cy="213.189" r="212.739" />
