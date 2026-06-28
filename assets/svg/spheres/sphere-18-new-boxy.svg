@@ -54,12 +54,8 @@
         }
     </style>
     <defs>
-        <radialGradient
-            id="sphere-gradient"
-            gradientUnits="userSpaceOnUse"
-            cx="213"
-            cy="213"
-            r="213">
+        <radialGradient id="sphere-gradient" gradientUnits="userSpaceOnUse"
+            cx="213" cy="213" r="213">
             <stop offset="20%" stop-color="#ea5ec1" />
             <stop offset="110%" stop-color="#51a8c8" />
         </radialGradient>
