@@ -16,7 +16,7 @@
             fill: none;
             stroke: grey;
             stroke-width: 1px;
-            stroke-dasharray: 56 12;
+            stroke-dasharray: 56 24;
             animation: flow 3s linear infinite;
         }
 
@@ -33,8 +33,17 @@
 
         @keyframes flow {
             to {
-                stroke-dashoffset: -68;
+                stroke-dashoffset: -80;
             }
+        }
+
+
+        .line:nth-child(even) {
+            animation-delay: -1.5s;
+        }
+
+        .line:nth-child(odd) {
+            animation-delay: -0.5s;
         }
 
         @media (prefers-reduced-motion: reduce) {
