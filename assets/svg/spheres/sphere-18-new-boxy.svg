@@ -16,7 +16,7 @@
         .dot {
             fill: grey;
             stroke: none;
-            r: 4px;
+            r: 3.5px;
         }
 
         .dot-circle {
