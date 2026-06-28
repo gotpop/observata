@@ -9,18 +9,18 @@
         .bg-sphere,
         .line {
             fill: none;
-            stroke: white;
+            stroke: grey;
             stroke-width: 1px;
         }
 
         .dot {
-            fill: white;
+            fill: grey;
             stroke: none;
             r: 4px;
         }
 
         .dot-circle {
-            fill: white;
+            fill: grey;
             r: 3px;
         }
     </style>
