@@ -6,11 +6,18 @@
             stroke-linejoin: round;
         }
 
-        .bg-sphere,
+        .bg-sphere {
+            fill: none;
+            stroke: grey;
+            stroke-width: 1px;
+        }
+
         .line {
             fill: none;
             stroke: grey;
             stroke-width: 1px;
+            stroke-dasharray: 4 12;
+            animation: flow 3s linear infinite;
         }
 
         .dot {
@@ -22,6 +29,19 @@
         .dot-circle {
             fill: grey;
             r: 3px;
+        }
+
+        @keyframes flow {
+            to {
+                stroke-dashoffset: -16;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .line {
+                animation: none;
+                stroke-dasharray: none;
+            }
         }
     </style>
     <circle class="bg-sphere" cx="213.189" cy="213.189" r="212.739" />
