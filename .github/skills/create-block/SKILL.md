@@ -174,13 +174,29 @@ export default function Edit({ attributes, setAttributes }) {
 }
 ```
 
-### save.jsx — Always returns null
+### save.jsx — Depends on InnerBlocks
+
+Twig handles all frontend rendering, but `save.jsx` controls what gets persisted to the database.
+
+**Blocks WITHOUT InnerBlocks** — return `null`:
 
 ```jsx
 export default function Save() {
-	return null; // Twig handles all rendering
+	return null; // Twig renders from attributes
 }
 ```
+
+**Blocks WITH InnerBlocks** — MUST return `<InnerBlocks.Content />`:
+
+```jsx
+import { InnerBlocks } from '@wordpress/block-editor';
+
+export default function Save() {
+	return <InnerBlocks.Content />;
+}
+```
+
+**CRITICAL:** If a block uses `<InnerBlocks>` in `edit.jsx` but `save.jsx` returns `null`, child blocks render in the editor but are missing on the frontend (stored as empty self-closing tags in `post_content`). Existing instances won't auto-migrate — must delete and re-add.
 
 ### Register in src/index.js
 

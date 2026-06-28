@@ -1,0 +1,56 @@
+.block-section-graphic-sphere-card {
+	overflow: clip;
+	border-block-end: var(--border-grey);
+
+	.block-content {
+		display: grid;
+		gap: var(--g, var(--spacing-24) 0);
+		grid-column: var(--layout);
+		grid-template-areas: var(--a, 'content' 'graphic');
+		grid-template-columns: var(--c, 1fr);
+		grid-template-rows: var(--r, '1fr 150px');
+
+		@media (width >=80rem) {
+			--a: 'content graphic';
+			--c: 1fr 1fr;
+			--g: 0 var(--spacing-60);
+			--r: max-content;
+		}
+	}
+
+	.card-text-simple {
+		background-color: var(--surface-white);
+		padding: var(--spacing-40);
+		border-radius: var(--radius-card);
+		border: var(--border-card);
+		z-index: 1;
+	}
+
+	.graphic-sphere {
+		grid-area: graphic;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.graphic-sphere-svg {
+			width: var(--w, 140%);
+			height: var(--h, 155%);
+			max-width: 100%;
+		}
+
+		@media (width >=80rem) {
+			--h: 150%;
+			--w: 100%;
+		}
+
+		&.graphic-sphere-18 {
+			--w: 100%;
+			--h: 160%;
+
+			@media (width >=80rem) {
+				--w: 110%;
+				--h: 110%;
+			}
+		}
+	}
+}

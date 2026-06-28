@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "observata/section-graphic-sphere-card",
+    "title": "Section Graphic Sphere Card",
+    "category": "theme",
+    "description": "A single Card Text Simple block with an inline SVG background graphic.",
+    "supports": {
+        "html": false,
+        "multiple": true
+    },
+    "attributes": {
+        "graphicSphere": {
+            "type": "string",
+            "default": "18"
+        },
+        "sectionBgColour": {
+            "type": "string",
+            "default": "white",
+            "enum": [
+                "white",
+                "grey",
+                "gradient"
+            ]
+        },
+        "layout": {
+            "type": "string",
+            "default": "content",
+            "enum": [
+                "content",
+                "inner"
+            ]
+        }
+    },
+    "editorScript": "file:../../build/index.js",
+    "viewStyle": [
+        "file:section-graphic-sphere-card.css",
+        "file:../card-text-simple/card-text-simple.css"
+    ],
+    "editorStyle": "file:../../build/index.css",
+    "example": {
+        "attributes": {
+            "graphicSphere": "18"
+        }
+    }
+}

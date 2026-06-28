@@ -1,0 +1,19 @@
+{% set graphic_sphere = attributes.graphicSphere|default('18') %}
+{% set section_bg_colour = attributes.sectionBgColour|default('white') %}
+{% set layout = attributes.layout|default('content') %}
+{% set anchor = attributes.anchor|default('') %}
+
+<section
+	class="section-block block-section-graphic-sphere-card"
+	{% if anchor %}id="{{ anchor|esc_attr }}"{% endif %}
+	data-observe="true"
+	data-threshold="1"
+	data-margin-top="400px"
+	data-margin-bottom="0px"
+	data-bg="{{ section_bg_colour }}"
+	style="--section-bg-colour: var(--surface-{{ section_bg_colour }}); --layout: {{ layout }};">
+	<block-content class="block-content">
+		{{ content|raw }}
+		{% include 'graphics/spheres/sphere-' ~ graphic_sphere ~ '.twig' %}
+	</block-content>
+</section>
