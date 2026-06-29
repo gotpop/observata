@@ -41,14 +41,32 @@
 	}
 
 	.graphic-tech-europe {
+		--height: calc(500px - 4rem);
+		--mask: url('#mask-europe');
+		--size: 356px;
+		--width-after: 100%;
+		--gradient: conic-gradient(
+			var(--colour-secondary-500),
+			var(--colour-primary-200),
+			var(--colour-accent-1-500)
+		);
+
 		color: var(--colour-neutral-white);
 		height: var(--height, var(--size));
 		inset: 50% 0 0 auto;
+		margin: 0 auto;
 		pointer-events: none;
 		position: relative;
+		scale: var(--s, 0.7);
 		translate: 0 -50%;
-		width: var(--width, var(--size));
+		width: 100%;
 		z-index: 0;
+
+		@media (width >=48rem) {
+			--width-after: 630px;
+			--s: 1;
+			--size: 500px;
+		}
 
 		&::after {
 			background-image: var(--gradient);
@@ -68,32 +86,7 @@
 			overflow: hidden;
 			position: absolute;
 			width: 0;
-		}
-	}
 
-	.graphic-tech-europe {
-		--height: calc(500px - 4rem);
-		--mask: url('#mask-europe');
-		--size: 356px;
-		--gradient: conic-gradient(
-			var(--colour-secondary-500),
-			var(--colour-primary-200),
-			var(--colour-accent-1-500)
-		);
-
-		scale: var(--s, 0.7);
-		margin: 0 auto;
-		width: 100%;
-
-		--width-after: 100%;
-
-		@media (width >=48rem) {
-			--width-after: 630px;
-			--s: 1;
-			--size: 500px;
-		}
-
-		.mask-source {
 			circle {
 				/* Special case for Chrome other browsers can't handle the number of circles */
 				.chrome & {
