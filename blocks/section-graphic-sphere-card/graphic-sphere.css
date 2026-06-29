@@ -4,6 +4,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 	}
 
 	.graphic-sphere-svg {
@@ -15,7 +16,8 @@
 		}
 
 		.graphic-sphere-18 & {
-			--h: 90%;
+			--h: 140%;
+			max-width: 100%;
 		}
 	}
 }
