@@ -35,6 +35,7 @@
     "editorScript": "file:../../build/index.js",
     "viewStyle": [
         "file:section-graphic-sphere-card.css",
+        "file:graphic-sphere.css",
         "file:../card-text-simple/card-text-simple.css"
     ],
     "editorStyle": "file:../../build/index.css",

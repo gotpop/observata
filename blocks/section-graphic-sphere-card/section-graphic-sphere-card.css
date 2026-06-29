@@ -26,33 +26,4 @@
 		z-index: 1;
 		height: min-content;
 	}
-
-	.graphic-sphere {
-		grid-area: graphic;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		.graphic-sphere-svg {
-			width: var(--w, 140%);
-			height: var(--h, 155%);
-			max-width: 100%;
-		}
-
-		@media (width >=80rem) {
-			--h: 150%;
-			--w: 100%;
-		}
-
-		&.graphic-sphere-18 {
-			--w: 100%;
-			--h: 160%;
-			max-height: 400px;
-
-			@media (width >=80rem) {
-				--w: 110%;
-				--h: 110%;
-			}
-		}
-	}
 }
