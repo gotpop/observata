@@ -1,6 +1,5 @@
 .block-section-graphic-sphere-card {
 	overflow: clip;
-	border-block-end: var(--border-grey);
 
 	.block-content {
 		display: grid;
@@ -20,10 +19,10 @@
 
 	.card-text-simple {
 		background-color: var(--surface-white);
-		padding: var(--spacing-40);
 		border-radius: var(--radius-card);
 		border: var(--border-card);
-		z-index: 1;
 		height: min-content;
+		padding: var(--spacing-40);
+		z-index: 1;
 	}
 }
