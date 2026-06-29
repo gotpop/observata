@@ -4,8 +4,11 @@ import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
-const SPHERE_GRAPHICS = [
-    { label: 'Sphere 18', value: '18' },
+const BACKGROUND_GRAPHICS = [
+    { label: 'Sphere 01', value: 'graphics/spheres/sphere-01' },
+    { label: 'Sphere 14', value: 'graphics/spheres/sphere-14' },
+    { label: 'Sphere 18', value: 'graphics/spheres/sphere-18' },
+    { label: 'Europe Dots', value: 'graphics/tech/europe-dots-graphic' },
 ];
 
 const CARD_TEXT_SIMPLE_TEMPLATE = [['observata/card-text-simple', { heading: 'Card Heading' }]];
@@ -32,7 +35,7 @@ export default function SectionGraphicSphereCardEdit({ attributes, setAttributes
                 <SelectControl
                     label={__('Background Graphic', 'observata')}
                     value={attributes.graphicSphere}
-                    options={SPHERE_GRAPHICS}
+                    options={BACKGROUND_GRAPHICS}
                     onChange={(value) => setAttributes({ graphicSphere: value })}
                 />
                 <SelectControl

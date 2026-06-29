@@ -12,7 +12,7 @@
     "attributes": {
         "graphicSphere": {
             "type": "string",
-            "default": "18"
+            "default": "graphics/spheres/sphere-18"
         },
         "sectionBgColour": {
             "type": "string",
@@ -40,7 +40,7 @@
     "editorStyle": "file:../../build/index.css",
     "example": {
         "attributes": {
-            "graphicSphere": "18"
+            "graphicSphere": "graphics/spheres/sphere-18"
         }
     }
 }

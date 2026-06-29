@@ -1,4 +1,6 @@
-{% set graphic_sphere = attributes.graphicSphere|default('18') %}
+{% set graphic_sphere =
+	attributes.graphicSphere|default('graphics/spheres/sphere-18')
+%}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
 {% set layout = attributes.layout|default('content') %}
 {% set anchor = attributes.anchor|default('') %}
@@ -14,6 +16,6 @@
 	style="--section-bg-colour: var(--surface-{{ section_bg_colour }}); --layout: {{ layout }};">
 	<block-content class="block-content">
 		{{ content|raw }}
-		{% include 'graphics/spheres/sphere-' ~ graphic_sphere ~ '.twig' %}
+		{% include graphic_sphere ~ '.twig' %}
 	</block-content>
 </section>
