@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="440"
+    viewBox="0 0 440 440">
+    <style>
+        .sphere {
+            fill: none;
+            stroke: #c6c6c6;
+            stroke-width: 1;
+        }
+    </style>
+    <!-- Outer globe outline -->
+    <circle class="sphere" cx="220" cy="220" r="220" />
+    <!-- Meridian ellipses (longitude lines), 440px tall, tops aligned to outer circle -->
+    <g id="meridians">
+        <ellipse class="sphere" cx="220" cy="220" rx="38" ry="220" />
+        <ellipse class="sphere" cx="220" cy="220" rx="110" ry="220" />
+        <ellipse class="sphere" cx="220" cy="220" rx="169" ry="220" />
+        <ellipse class="sphere" cx="220" cy="220" rx="207" ry="220" />
+    </g>
+    <!-- Meridians rotated 90deg -->
+    <g id="meridians-rotated" transform="rotate(90 220 220)">
+        <ellipse class="sphere" cx="220" cy="220" rx="38" ry="220" />
+        <ellipse class="sphere" cx="220" cy="220" rx="110" ry="220" />
+        <ellipse class="sphere" cx="220" cy="220" rx="169" ry="220" />
+        <ellipse class="sphere" cx="220" cy="220" rx="207" ry="220" />
+    </g>
+</svg>

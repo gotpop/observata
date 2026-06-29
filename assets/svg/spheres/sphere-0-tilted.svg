@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="440" viewBox="0 0 440 440">
+    <style>
+        .sphere {
+            fill: none;
+            stroke: #c6c6c6;
+            stroke-width: 1;
+        }
+    </style>
+    <!-- Outer sphere outline -->
+    <circle class="sphere" cx="220" cy="220" r="220" />
+    <!-- Latitude lines -->
+    <g id="latitudes">
+        <ellipse class="sphere" cx="220" cy="399.0" rx="110.0" ry="37.6" />
+        <ellipse class="sphere" cx="220" cy="323.4" rx="190.5" ry="65.2" />
+        <ellipse class="sphere" cx="220" cy="220.0" rx="220.0" ry="75.2" />
+        <ellipse class="sphere" cx="220" cy="116.6" rx="190.5" ry="65.2" />
+        <ellipse class="sphere" cx="220" cy="41.0" rx="110.0" ry="37.6" />
+    </g>
+    <!-- Meridian lines (longitude) -->
+    <g id="meridians">
+        <ellipse class="sphere" cx="220" cy="220" rx="220.0" ry="199.7" transform="rotate(-141.9 220 220)" />
+        <ellipse class="sphere" cx="220" cy="220" rx="220.0" ry="146.2" transform="rotate(-108.9 220 220)" />
+        <ellipse class="sphere" cx="220" cy="220" rx="220.0" ry="53.5" transform="rotate(-95.2 220 220)" />
+        <ellipse class="sphere" cx="220" cy="220" rx="220.0" ry="53.5" transform="rotate(-84.8 220 220)" />
+        <ellipse class="sphere" cx="220" cy="220" rx="220.0" ry="146.2" transform="rotate(-71.1 220 220)" />
+        <ellipse class="sphere" cx="220" cy="220" rx="220.0" ry="199.7" transform="rotate(-38.1 220 220)" />
+    </g>
+</svg>
