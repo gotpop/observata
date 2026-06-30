@@ -11,13 +11,59 @@
 		height: var(--h, 155%);
 		position: absolute;
 
-		@media (width >=80rem) {
-			--h: 170%;
-		}
-
-		/* .graphic-sphere-18 & {
+		.graphic-sphere-18 & {
 			--h: 110%;
 			max-width: 100%;
-		} */
+			stroke-linecap: round;
+			stroke-linejoin: round;
+
+			.bg-sphere {
+				fill: none;
+				stroke: url(#sphere-gradient);
+				stroke-width: 1px;
+			}
+
+			.line {
+				fill: none;
+				stroke: url(#sphere-gradient);
+				stroke-width: 1px;
+				stroke-dasharray: 56 24;
+				/* stroke-dasharray: none !important; */
+				animation: flow 3s linear infinite;
+				/* animation: none !important; */
+			}
+
+			.dot {
+				fill: url(#sphere-gradient);
+				stroke: none;
+				r: 2.5px;
+			}
+
+			.dot-circle {
+				fill: url(#sphere-gradient);
+				r: 2.5px;
+			}
+
+			@keyframes flow {
+				to {
+					stroke-dashoffset: -80;
+				}
+			}
+
+			.line:nth-child(even) {
+				animation-delay: -1.5s;
+			}
+
+			.line:nth-child(odd) {
+				animation-delay: -0.5s;
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.line {
+					animation: none;
+					stroke-dasharray: none;
+				}
+			}
+		}
 	}
 }
