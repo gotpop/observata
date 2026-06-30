@@ -8,10 +8,12 @@
 	}
 
 	.graphic-sphere-svg {
-		/* height: var(--h, 155%);
-		position: absolute; */
+		height: var(--h, 155%);
+		position: absolute;
 		stroke-linecap: round;
 		stroke-linejoin: round;
+		min-height: 400px;
+		min-width: 400px;
 
 		.line {
 			stroke-dasharray: 56 24;
