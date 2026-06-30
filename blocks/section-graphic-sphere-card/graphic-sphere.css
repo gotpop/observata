@@ -10,12 +10,12 @@
 	.graphic-sphere-svg {
 		height: var(--h, 155%);
 		position: absolute;
+		stroke-linecap: round;
+		stroke-linejoin: round;
 
 		.graphic-sphere-18 & {
 			--h: 110%;
 			max-width: 100%;
-			stroke-linecap: round;
-			stroke-linejoin: round;
 
 			.bg-sphere {
 				fill: none;
@@ -40,6 +40,70 @@
 			.dot-circle {
 				fill: url(#sphere-18-gradient);
 				r: 2.5px;
+			}
+
+			.line:nth-child(even) {
+				animation-delay: -1.5s;
+			}
+
+			.line:nth-child(odd) {
+				animation-delay: -0.5s;
+			}
+		}
+
+		.graphic-sphere-09 & {
+			.line {
+				fill: none;
+				stroke: url(#sphere-09-gradient);
+				stroke-width: 1px;
+				stroke-dasharray: 56 24;
+				animation: flow 3s linear infinite;
+			}
+
+			.dot {
+				fill: url(#sphere-09-gradient);
+				stroke: none;
+			}
+
+			@keyframes flow {
+				to {
+					stroke-dashoffset: -80;
+				}
+			}
+
+			.line:nth-child(even) {
+				animation-delay: -1.5s;
+			}
+
+			.line:nth-child(odd) {
+				animation-delay: -0.5s;
+			}
+		}
+
+		.graphic-sphere-01 & {
+			.sphere {
+				fill: none;
+				stroke: url(#sphere-01-gradient);
+				stroke-width: 1px;
+			}
+
+			.line {
+				fill: none;
+				stroke: url(#sphere-01-gradient);
+				stroke-width: 1px;
+				stroke-dasharray: 56 24;
+				animation: flow 3s linear infinite;
+			}
+
+			.dot-front {
+				fill: url(#sphere-01-gradient);
+				stroke: none;
+			}
+
+			.dot-back {
+				fill: url(#sphere-01-gradient);
+				stroke: none;
+				opacity: 0.35;
 			}
 
 			.line:nth-child(even) {
