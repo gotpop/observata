@@ -19,26 +19,26 @@
 
 			.bg-sphere {
 				fill: none;
-				stroke: url(#sphere-gradient);
+				stroke: url(#sphere-18-gradient);
 				stroke-width: 1px;
 			}
 
 			.line {
 				fill: none;
-				stroke: url(#sphere-gradient);
+				stroke: url(#sphere-18-gradient);
 				stroke-width: 1px;
 				stroke-dasharray: 56 24;
 				animation: flow 3s linear infinite;
 			}
 
 			.dot {
-				fill: url(#sphere-gradient);
+				fill: url(#sphere-18-gradient);
 				stroke: none;
 				r: 2.5px;
 			}
 
 			.dot-circle {
-				fill: url(#sphere-gradient);
+				fill: url(#sphere-18-gradient);
 				r: 2.5px;
 			}
 
