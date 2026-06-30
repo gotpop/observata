@@ -13,33 +13,30 @@
 		stroke-linecap: round;
 		stroke-linejoin: round;
 
-		.graphic-sphere-18 & {
-			--h: 110%;
-			max-width: 100%;
-
-			.bg-sphere {
+		.graphic-sphere-01 & {
+			.sphere {
 				fill: none;
-				stroke: url(#sphere-18-gradient);
+				stroke: url(#sphere-01-gradient);
 				stroke-width: 1px;
 			}
 
 			.line {
 				fill: none;
-				stroke: url(#sphere-18-gradient);
+				stroke: url(#sphere-01-gradient);
 				stroke-width: 1px;
 				stroke-dasharray: 56 24;
 				animation: flow 3s linear infinite;
 			}
 
-			.dot {
-				fill: url(#sphere-18-gradient);
+			.dot-front {
+				fill: url(#sphere-01-gradient);
 				stroke: none;
-				r: 2.5px;
 			}
 
-			.dot-circle {
-				fill: url(#sphere-18-gradient);
-				r: 2.5px;
+			.dot-back {
+				fill: url(#sphere-01-gradient);
+				stroke: none;
+				opacity: 0.35;
 			}
 
 			.line:nth-child(even) {
@@ -80,30 +77,33 @@
 			}
 		}
 
-		.graphic-sphere-01 & {
-			.sphere {
+		.graphic-sphere-18 & {
+			--h: 110%;
+			max-width: 100%;
+
+			.bg-sphere {
 				fill: none;
-				stroke: url(#sphere-01-gradient);
+				stroke: url(#sphere-18-gradient);
 				stroke-width: 1px;
 			}
 
 			.line {
 				fill: none;
-				stroke: url(#sphere-01-gradient);
+				stroke: url(#sphere-18-gradient);
 				stroke-width: 1px;
 				stroke-dasharray: 56 24;
 				animation: flow 3s linear infinite;
 			}
 
-			.dot-front {
-				fill: url(#sphere-01-gradient);
+			.dot {
+				fill: url(#sphere-18-gradient);
 				stroke: none;
+				r: 2.5px;
 			}
 
-			.dot-back {
-				fill: url(#sphere-01-gradient);
-				stroke: none;
-				opacity: 0.35;
+			.dot-circle {
+				fill: url(#sphere-18-gradient);
+				r: 2.5px;
 			}
 
 			.line:nth-child(even) {
