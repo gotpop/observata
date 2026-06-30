@@ -8,8 +8,8 @@
 	}
 
 	.graphic-sphere-svg {
-		height: var(--h, 155%);
-		position: absolute;
+		/* height: var(--h, 155%);
+		position: absolute; */
 		stroke-linecap: round;
 		stroke-linejoin: round;
 
