@@ -5,15 +5,27 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
+		height: 15vw;
+
+		@media (width >=80rem) {
+			height: auto;
+		}
 	}
 
 	.graphic-sphere-svg {
-		/* height: var(--h, 155%); */
 		position: absolute;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		min-height: 400px;
-		min-width: 400px;
+		top: -1rem;
+
+		@media (width >=48rem) {
+			top: 0;
+		}
+
+		@media (width >=80rem) {
+			top: auto;
+		}
 
 		.line {
 			stroke-dasharray: 56 24;
