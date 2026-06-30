@@ -11,13 +11,38 @@
 	text-wrap: var(--text-wrap-heading-hero, initial);
 
 	@media (width >=40rem) {
+		--line: var(--line-height-hero-default);
+		--size: var(--typography-size-48);
+	}
+
+	@media (width >=64rem) {
+		--line: var(--line-height-hero-default);
+		--size: var(--size-hero-default);
+	}
+
+	@container style(--theme: dark) {
+		color: var(--colour-text-heading-light);
+	}
+}
+
+.heading-xl {
+	color: var(--colour-text-hero);
+	font-family: var(--font-stack-heading);
+	font-size: var(--size, var(--typography-size-32));
+	font-weight: var(--typography-weight-bold);
+	letter-spacing: -1px;
+	line-height: var(--line, var(--line-height-heading-lg));
+	max-width: var(--max-width-heading-hero, initial);
+	text-wrap: var(--text-wrap-heading-hero, initial);
+
+	@media (width >=40rem) {
 		--line: var(--line-height-heading-xl);
 		--size: var(--typography-size-48);
 	}
 
 	@media (width >=64rem) {
 		--line: var(--line-height-heading-xl);
-		--size: var(--size-hero-default);
+		--size: var(--size-heading-xl);
 	}
 
 	@container style(--theme: dark) {
