@@ -12,7 +12,7 @@
 		position: absolute;
 
 		@media (width >=80rem) {
-			--h: 120%;
+			--h: 170%;
 		}
 
 		.graphic-sphere-18 & {
