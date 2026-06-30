@@ -12,15 +12,16 @@
 	--size-body-xs: var(--typography-size-12);
 
 	/* Line height */
-	--line-height-hero-default: var(--typography-line-height-tight);
-	--line-height-heading-xl: var(--typography-line-height-tight);
-	--line-height-heading-lg: var(--typography-line-height-tight);
-	--line-height-heading-md: var(--typography-line-height-tight);
-	--line-height-heading-sm: var(--typography-line-height-tight);
+	--line-height-hero-default: var(--typography-line-height-tightest);
+	--line-height-heading-xl: var(--typography-line-height-tightest);
+	--line-height-heading-lg: var(--typography-line-height-tightest);
+	--line-height-heading-md: var(--typography-line-height-tightest);
+	--line-height-heading-sm: var(--typography-line-height-tightest);
 	--line-height-body-xs: var(--typography-line-height-default);
 	--line-height-body-sm: var(--typography-line-height-default);
 	--line-height-body-md: var(--typography-line-height-default);
 	--line-height-body-lg: var(--typography-line-height-default);
+	--line-height-button: var(--typography-line-height-tight);
 
 	/* Font stack */
 	--font-stack:

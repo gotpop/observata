@@ -52,7 +52,7 @@ Defined in `client/css/tokens/theme-typography.css` and `client/css/tokens/theme
 --size-body-sm: var(--typography-size-14);
 
 /* Line heights */
---line-height-heading-xl: var(--typography-line-height-tight); /* 1 */
+--line-height-heading-xl: var(--typography-line-height-tightest); /* 1 */
 --line-height-body-lg: var(--typography-line-height-default); /* 1.6 */
 
 /* Font stacks */
@@ -75,7 +75,7 @@ Defined in `client/css/tokens/base-typography.css`. Raw values, avoid using dire
 --typography-family-gantari: Gantari;
 --typography-size-10: 10px; /* through to */
 --typography-size-80: 80px;
---typography-line-height-tight: 1;
+--typography-line-height-tightest: 1;
 --typography-line-height-default: 1.6;
 ```
 
