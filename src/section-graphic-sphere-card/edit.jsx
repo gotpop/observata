@@ -6,10 +6,8 @@ import BlockLabel from '../components/block-label';
 
 const BACKGROUND_GRAPHICS = [
     { label: 'Sphere 01', value: 'graphics/spheres/sphere-01' },
-    { label: 'Sphere 01c — Swirl (8 lines, CW)', value: 'graphics/spheres/sphere-01c' },
     { label: 'Sphere 09', value: 'graphics/spheres/sphere-09' },
     { label: 'Sphere 18', value: 'graphics/spheres/sphere-18' },
-    { label: 'Europe Dots', value: 'graphics/tech/europe-dots-graphic' },
 ];
 
 const CARD_TEXT_SIMPLE_TEMPLATE = [['observata/card-text-simple', { heading: 'Card Heading' }]];
