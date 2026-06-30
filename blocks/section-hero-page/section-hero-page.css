@@ -29,8 +29,10 @@
 		pointer-events: none;
 		position: absolute;
 	}
+}
 
-	.hero-page-content {
+@scope (.block-section-hero-page) {
+	.content-hero {
 		display: grid;
 		grid-column: inner;
 		grid-row: hero-content;
@@ -43,6 +45,11 @@
 			--page-content-gap: var(--spacing-40);
 			--page-content-padding: var(--spacing-50);
 		}
+	}
+
+	.text-hero {
+		display: grid;
+		row-gap: var(--spacing-32);
 	}
 
 	.heading-hero {
