@@ -109,3 +109,9 @@
 		background-color: transparent;
 	}
 }
+
+@keyframes flow {
+	to {
+		stroke-dashoffset: -80;
+	}
+}
