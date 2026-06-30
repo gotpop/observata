@@ -14,33 +14,27 @@
 
 			.sphere {
 				fill: none;
-				stroke: url(#sphere-gradient);
+				stroke: url(#sphere-01-gradient);
 				stroke-width: 1px;
 			}
 
 			.line {
 				fill: none;
-				stroke: url(#sphere-gradient);
+				stroke: url(#sphere-01-gradient);
 				stroke-width: 1px;
 				stroke-dasharray: 56 24;
 				animation: flow 3s linear infinite;
 			}
 
 			.dot-front {
-				fill: url(#sphere-gradient);
+				fill: url(#sphere-01-gradient);
 				stroke: none;
 			}
 
 			.dot-back {
-				fill: url(#sphere-gradient);
+				fill: url(#sphere-01-gradient);
 				stroke: none;
 				opacity: 0.35;
-			}
-
-			@keyframes flow {
-				to {
-					stroke-dashoffset: -80;
-				}
 			}
 
 			.line:nth-child(even) {
@@ -51,17 +45,10 @@
 				animation-delay: -0.5s;
 			}
 
-			@media (prefers-reduced-motion: reduce) {
-				.line {
-					animation: none;
-					stroke-dasharray: none;
-				}
-			}
-
 		</style>
 		<defs>
 			<radialGradient
-				id="sphere-gradient"
+				id="sphere-01-gradient"
 				gradientUnits="userSpaceOnUse"
 				cx="250.0"
 				cy="250.0"
@@ -73,7 +60,7 @@
 		<!-- Outer sphere outline -->
 		<circle class="sphere" cx="250.0" cy="250.0" r="239.1" />
 		<!-- Latitude lines -->
-		<g id="latitudes">
+		<g id="sphere-01-latitudes">
 			<ellipse class="line" cx="250.0" cy="467.1" rx="61.8" ry="21.2" />
 			<ellipse class="line" cx="250.0" cy="444.6" rx="119.6" ry="40.9" />
 			<ellipse class="line" cx="250.0" cy="408.9" rx="169.1" ry="57.8" />
@@ -87,7 +74,7 @@
 			<ellipse class="line" cx="250.0" cy="32.9" rx="61.8" ry="21.2" />
 		</g>
 		<!-- Meridian lines (longitude) -->
-		<g id="meridians">
+		<g id="sphere-01-meridians">
 			<ellipse
 				class="line"
 				cx="250.0"
@@ -145,7 +132,7 @@
 				ry="220.4"
 				transform="rotate(-30.2 250.0 250.0)" />
 		</g>
-		<g id="dots-back">
+		<g id="sphere-01-dots-back">
 			<circle cx="262.1" cy="487.8" r="2.7" class="dot-back" />
 			<circle cx="237.9" cy="446.3" r="2.7" class="dot-back" />
 			<circle cx="284.3" cy="484.7" r="2.7" class="dot-back" />
@@ -236,7 +223,7 @@
 			<circle cx="273.4" cy="15.3" r="2.7" class="dot-back" />
 			<circle cx="250.0" cy="474.7" r="2.7" class="dot-back" />
 		</g>
-		<g id="dots-front">
+		<g id="sphere-01-dots-front">
 			<circle cx="273.4" cy="484.7" r="2.7" class="dot-front" />
 			<circle cx="316.4" cy="478.6" r="2.7" class="dot-front" />
 			<circle cx="183.6" cy="478.6" r="2.7" class="dot-front" />
