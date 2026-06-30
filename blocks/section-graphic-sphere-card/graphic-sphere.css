@@ -13,37 +13,15 @@
 		stroke-linecap: round;
 		stroke-linejoin: round;
 
-		.graphic-sphere-01 & {
-			.bg-sphere {
-				fill: none;
-				stroke: url(#sphere-01-gradient);
-				stroke-width: 1px;
-			}
+		.line {
+			stroke-dasharray: 56 24;
+			animation: flow 3s linear infinite;
 
-			.line {
-				fill: none;
-				stroke: url(#sphere-01-gradient);
-				stroke-width: 1px;
-				stroke-dasharray: 56 24;
-				animation: flow 3s linear infinite;
-			}
-
-			.dot-front {
-				fill: url(#sphere-01-gradient);
-				stroke: none;
-			}
-
-			.dot-back {
-				fill: url(#sphere-01-gradient);
-				stroke: none;
-				opacity: 0.35;
-			}
-
-			.line:nth-child(even) {
+			&:nth-child(even) {
 				animation-delay: -1.5s;
 			}
 
-			.line:nth-child(odd) {
+			&:nth-child(odd) {
 				animation-delay: -0.5s;
 			}
 		}
