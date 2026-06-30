@@ -14,7 +14,7 @@
 		stroke-linejoin: round;
 
 		.graphic-sphere-01 & {
-			.sphere {
+			.bg-sphere {
 				fill: none;
 				stroke: url(#sphere-01-gradient);
 				stroke-width: 1px;
