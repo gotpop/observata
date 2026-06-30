@@ -15,9 +15,9 @@
 			--h: 170%;
 		}
 
-		.graphic-sphere-18 & {
+		/* .graphic-sphere-18 & {
 			--h: 110%;
 			max-width: 100%;
-		}
+		} */
 	}
 }

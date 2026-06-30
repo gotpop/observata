@@ -11,7 +11,7 @@
 
 		@media (width >=80rem) {
 			--a: 'content graphic';
-			--c: 2fr 1fr;
+			--c: 1fr 400px;
 			--g: 0 var(--spacing-24);
 			--r: max-content;
 		}
