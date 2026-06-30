@@ -1,38 +1,51 @@
 .card-simple {
 	display: grid;
-	gap: var(--spacing-32);
+	row-gap: var(--spacing-32);
+	container-type: inline-size;
+
+	@media (width >=64rem) {
+		grid-template-rows: subgrid;
+		grid-row: f;
+		container-type: unset;
+	}
 }
 
 @scope (.card-simple) {
+	.inner-card {
+		display: contents;
+
+		@container (width >= 30rem) {
+			display: grid;
+			grid-template-columns: min-content 1fr;
+			column-gap: var(--spacing-32);
+		}
+
+		@media (width >=64rem) {
+			display: contents;
+		}
+	}
+
 	.icon-geo {
 		--icon-size-outer: 66px;
 		--icon-size-inner: 32px;
+
+		@media (width >=64rem) {
+			grid-row: i;
+		}
 	}
 
 	.content-card {
 		display: grid;
 		gap: var(--spacing-24);
+
+		@media (width >=64rem) {
+			grid-template-rows: subgrid;
+			grid-row: c;
+		}
 	}
 
-	.title {
-		color: var(--colour-text-heading-default);
-		text-box: trim-both cap alphabetic;
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 120%;
-		letter-spacing: -0.48px;
-	}
-
-	.body {
-		color: var(--colour-text-body-default);
-		text-box: trim-both cap alphabetic;
-		font-size: var(--size-body-md);
-		font-style: normal;
-		font-weight: 400;
-		line-height: 145%;
-		letter-spacing: -0.08px;
-		text-wrap: pretty;
+	.heading-sm {
+		--text-wrap-heading-sm: balance;
 	}
 
 	.read-more {

@@ -16,7 +16,7 @@
 	--line-height-heading-xl: var(--typography-line-height-tightest);
 	--line-height-heading-lg: var(--typography-line-height-tightest);
 	--line-height-heading-md: var(--typography-line-height-tightest);
-	--line-height-heading-sm: var(--typography-line-height-tightest);
+	--line-height-heading-sm: var(--typography-line-height-tight);
 	--line-height-body-xs: var(--typography-line-height-default);
 	--line-height-body-sm: var(--typography-line-height-default);
 	--line-height-body-md: var(--typography-line-height-default);
