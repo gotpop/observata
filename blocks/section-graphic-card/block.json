@@ -17,19 +17,12 @@
 		"sectionBgColour": {
 			"type": "string",
 			"default": "white",
-			"enum": [
-				"white",
-				"grey",
-				"gradient"
-			]
+			"enum": ["white", "grey", "gradient"]
 		},
 		"layout": {
 			"type": "string",
 			"default": "content",
-			"enum": [
-				"content",
-				"inner"
-			]
+			"enum": ["content", "inner"]
 		}
 	},
 	"editorScript": "file:../../build/index.js",
