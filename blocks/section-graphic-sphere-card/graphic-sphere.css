@@ -1,5 +1,6 @@
 @scope (.block-section-graphic-sphere-card) {
-	.graphic-sphere {
+	.graphic-sphere,
+	.graphic-tech-europe {
 		grid-area: graphic;
 		display: flex;
 		align-items: center;
