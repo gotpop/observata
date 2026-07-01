@@ -36,6 +36,7 @@
 	"editorScript": "file:../../build/index.js",
 	"viewStyle": [
 		"file:observability.css",
+		"file:graphic-sphere-dots.css",
 		"file:../cards/card-micro/card-micro.css",
 		"file:../template/section-intro/section-intro.css"
 	],

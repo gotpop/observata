@@ -16,10 +16,14 @@ grid-master {
 		[inner-end] 2rem [content-end] var(--b) [breakout-end] minmax(1rem, 1fr) [full-end];
 
 	@media (width >=48rem) {
-		--b: 10px;
+		--b: 16px;
 	}
 
 	@media (width >=60rem) {
+		--b: 50px;
+	}
+
+	@media (width >=80rem) {
 		--b: 100px;
 	}
 }

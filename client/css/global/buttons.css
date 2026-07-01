@@ -11,8 +11,10 @@
 	font-weight: var(--typography-weight-medium);
 	gap: var(--spacing-16);
 	justify-content: space-between;
+	line-height: var(--line-height-button);
 	padding: var(--spacing-16) var(--spacing-24);
 	text-decoration: none;
+	text-wrap: balance;
 	transition: all 0.3s ease;
 	width: var(--w, auto);
 
@@ -39,8 +41,10 @@
 	font-weight: var(--typography-weight-medium);
 	gap: var(--spacing-16);
 	justify-content: space-between;
+	line-height: var(--line-height-button);
 	padding: var(--spacing-16) var(--spacing-24);
 	text-decoration: none;
+	text-wrap: balance;
 	transition: all 0.3s ease;
 	width: var(--w, auto);
 

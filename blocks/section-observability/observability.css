@@ -1,9 +1,17 @@
-.block-section-observability {
+@scope (.block-section-observability) {
 	.block-content {
 		display: grid;
 		gap: var(--spacing-50);
 		grid-column: content;
-		grid-template-columns: 1fr;
+	}
+
+	.heading-lg {
+		--text-wrap-heading-lg: balance;
+		--max-width-heading-lg: 20ch;
+
+		@media (width >=80rem) {
+			--max-width-heading-lg: auto;
+		}
 	}
 
 	.card-large {
@@ -11,11 +19,13 @@
 		border-radius: var(--radius-large);
 		border: var(--border-primary);
 		display: grid;
-		gap: var(--spacing-40);
-		grid-template-columns: 1fr;
+		grid-template-columns: [w-start n-start] fit-content(600px) [n-end] 1fr [w-end];
 		overflow: clip;
 		padding: var(--padding-card-large, var(--spacing-32));
 		position: relative;
+		row-gap: var(--spacing-56);
+
+		/* Subpixel rendering IOS */
 		transform: translate3d(0, 0, 0);
 
 		.section-intro {
@@ -23,85 +33,42 @@
 		}
 
 		@media (width >=40rem) {
+			--padding-card-large: var(--spacing-60);
+		}
+
+		@media (width >=64rem) {
 			--padding-card-large: var(--spacing-80);
+		}
+	}
+
+	.card-large-pitch {
+		display: grid;
+		grid-column: w;
+		row-gap: var(--spacing-40);
+	}
+
+	.layout-micro {
+		display: grid;
+		gap: var(--spacing-24);
+		width: 80%;
+		anchor-name: --layout-micro;
+
+		@media (width >=64rem) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (width >=80rem) {
+			grid-template-columns: repeat(3, fit-content(288px));
+		}
+
+		@media (width >=96rem) {
+			width: auto;
 		}
 	}
 
 	.card-large-content {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-column: n;
 		row-gap: var(--spacing-24);
-		max-width: 600px;
-	}
-
-	.layout-micro {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 288px));
-		gap: var(--spacing-24);
-		margin-block-end: var(--spacing-16);
-	}
-
-	.section-intro {
-		z-index: 1;
-	}
-
-	.graphic-sphere {
-		--g: radial-gradient(circle, var(--colour-accent-1-400), var(--colour-secondary-400));
-		--s: 420px;
-
-		background-image: var(--g);
-		color: var(--colour-neutral-white);
-		height: var(--s);
-		inset: var(--i, 50% -15rem auto auto);
-		translate: 0 -58%;
-		mask-image: url('#mask-sphere-14');
-		pointer-events: none;
-		position: absolute;
-		width: var(--s);
-		z-index: 0;
-
-		@media (width >=40rem) {
-			--i: 50% -15rem auto auto;
-		}
-
-		@media (width >=86rem) {
-			--i: 10rem -8rem auto auto;
-			--s: 420px;
-
-			scale: 1.15;
-			rotate: 40deg;
-		}
-	}
-
-	.mask-source {
-		height: 0;
-		overflow: hidden;
-		position: absolute;
-
-		.circle {
-			stroke-width: 5.3px;
-			stroke: var(--colour-neutral-white);
-
-			/* Special case for Chrome other browsers can't handle the number of circles */
-			.chrome & {
-				opacity: 0;
-				transition: all 0.3s ease-in-out;
-
-				/* Exit */
-				transition-delay: calc((sibling-count() - sibling-index() + 1) * 0.0003s);
-			}
-
-			.in-view & {
-				/* Enter */
-				transition-delay: calc(0.01s * sibling-index());
-				opacity: 1;
-			}
-		}
-
-		.mesh {
-			fill: var(--colour-neutral-white);
-			stroke-width: 0.3px;
-			stroke: var(--colour-neutral-white);
-		}
 	}
 }

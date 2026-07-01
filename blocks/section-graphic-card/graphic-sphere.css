@@ -1,0 +1,106 @@
+@scope (.block-section-graphic-card) {
+	.graphic-sphere,
+	.graphic-tech-europe {
+		grid-area: graphic;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 15vw;
+
+		@media (width >=80rem) {
+			height: auto;
+		}
+
+		&.graphic-sphere-09 {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		}
+	}
+
+	.line-group {
+		opacity: var(--o, 0.4);
+		scale: var(--s, 1);
+		transform-box: fill-box;
+		transform-origin: center;
+		transition-delay: var(--t, calc((sibling-count() - sibling-index() + 1) * 0.7s));
+		transition-duration: 0.2s;
+		transition-property: opacity;
+		transition-timing-function: ease-in-out;
+
+		.in-view & {
+			--o: 1;
+			--s: 1;
+			--t: calc(0.1s * sibling-index());
+		}
+	}
+
+	.graphic-sphere-svg {
+		position: absolute;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		min-height: 400px;
+		top: -1rem;
+
+		@media (width >=48rem) {
+			top: 0;
+		}
+
+		@media (width >=80rem) {
+			top: auto;
+		}
+
+		.line {
+			stroke-dasharray: 56 24;
+			animation: flow 3s linear infinite;
+
+			&:nth-child(even) {
+				animation-delay: -1.5s;
+			}
+
+			&:nth-child(odd) {
+				animation-delay: -0.5s;
+			}
+		}
+	}
+
+	.graphic-tech-europe {
+		--enter: calc(0.05s * sibling-index());
+		--exit: calc((sibling-count() - sibling-index() + 1) * 0.05s);
+
+		position: relative;
+		height: 30vw;
+
+		@media (width >=80rem) {
+			height: auto;
+		}
+
+		.graphic-tech-svg {
+			position: absolute;
+			width: 80vw;
+			height: auto;
+
+			@media (width >=80rem) {
+				inset-inline: -1rem auto;
+				inset-block: auto;
+				width: auto;
+				height: min(40vw, 540px);
+			}
+		}
+
+		.ring-group {
+			opacity: var(--opacity, 0.4);
+			transition-delay: var(--delay, var(--exit));
+			transition-duration: 0.3s;
+			transition-property: opacity;
+			transition-timing-function: ease-in-out;
+
+			.in-view & {
+				--delay: var(--enter);
+				--opacity: 1;
+			}
+		}
+	}
+}

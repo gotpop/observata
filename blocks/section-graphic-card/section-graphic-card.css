@@ -1,0 +1,34 @@
+.block-section-graphic-card {
+	overflow: clip;
+
+	.block-content {
+		display: grid;
+		gap: var(--g, var(--spacing-24) 0);
+		grid-column: var(--layout);
+		grid-template-areas: var(--a, 'content' 'graphic');
+		grid-template-columns: var(--c, 1fr);
+		grid-template-rows: var(--r, '1fr 150px');
+
+		@media (width >=80rem) {
+			--a: 'content graphic';
+			--c: 1fr 340px;
+			--g: 0 var(--spacing-40);
+			--r: max-content;
+		}
+
+		&:has(.graphic-tech-europe) {
+			@media (width >=80rem) {
+				--c: 1fr 500px;
+			}
+		}
+	}
+
+	.card-text-simple {
+		background-color: var(--surface-white);
+		border-radius: var(--radius-card);
+		border: var(--border-card);
+		height: min-content;
+		padding: var(--spacing-40);
+		z-index: 1;
+	}
+}

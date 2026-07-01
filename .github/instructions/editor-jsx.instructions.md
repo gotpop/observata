@@ -38,13 +38,36 @@ export default function Edit({ attributes, setAttributes }) {
 }
 ```
 
-## save.jsx — Always Returns null
+## save.jsx — Depends on InnerBlocks
+
+Twig handles all frontend rendering, but `save.jsx` controls what markup is persisted to the database. The Twig template's `{{ content|raw }}` receives this saved markup as the `$content` variable.
+
+**Blocks WITHOUT InnerBlocks** — return `null` (attributes are read by Twig directly):
 
 ```jsx
 export default function Save() {
-	return null; // Twig handles all rendering server-side
+	return null;
 }
 ```
+
+**Blocks WITH InnerBlocks** — MUST return `<InnerBlocks.Content />`, otherwise child blocks are never saved to the database and will be missing on the frontend:
+
+```jsx
+import { InnerBlocks } from '@wordpress/block-editor';
+
+export default function Save() {
+	return <InnerBlocks.Content />;
+}
+```
+
+### Critical Gotcha: InnerBlocks save.jsx
+
+If a block uses `<InnerBlocks>` in `edit.jsx` but `save.jsx` returns `null`:
+
+- **Symptom:** Block renders correctly in the editor but child blocks are missing on the frontend — `{{ content|raw }}` in Twig is empty. In the database the block is stored as a self-closing tag (`<!-- wp:observata/block-name /-->`) with no inner content.
+- **Cause:** `save.jsx` returned `null` instead of `<InnerBlocks.Content />`. The `save` function serialises block markup to `post_content`; returning `null` means inner blocks are never written.
+- **Fix:** Return `<InnerBlocks.Content />` from `save.jsx`.
+- **Migration gotcha:** Existing blocks already saved with `null` will NOT auto-migrate — they stay as self-closing tags in `post_content`. Must manually delete and re-add existing instances, or register a `deprecated` array to handle old markup.
 
 ## Registration in src/index.js
 
