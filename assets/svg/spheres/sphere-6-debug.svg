@@ -6,6 +6,8 @@
         style="fill:#c6c6c6;fill-rule:nonzero" />
     <g stroke="red" stroke-width="2" fill="none">
         <line x1="215.34" y1="427.67" x2="215.34" y2="215" />
+        <line x1="31.16" y1="108.66" x2="215.34" y2="215" />
+        <line x1="399.52" y1="108.66" x2="215.34" y2="215" />
         <circle cx="215.34" cy="215" r="212.67" />
     </g>
 </svg>
