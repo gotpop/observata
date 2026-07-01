@@ -1,5 +1,5 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 
-export default function SectionGraphicSphereCardSave() {
+export default function SectionGraphicCardSave() {
 	return <InnerBlocks.Content />;
 }

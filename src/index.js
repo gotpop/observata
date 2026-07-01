@@ -34,7 +34,7 @@ import sectionCardAndGraphicMetadata from '../blocks/section-card-and-graphic/bl
 import contactMetadata from '../blocks/section-contact/block.json';
 import sectionCtaMetadata from '../blocks/section-cta/block.json';
 import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card-simple-text/block.json';
-import sectionGraphicSphereCardMetadata from '../blocks/section-graphic-sphere-card/block.json';
+import sectionGraphicCardMetadata from '../blocks/section-graphic-card/block.json';
 import sectionHeroBlogMetadata from '../blocks/section-hero-blog/block.json';
 import sectionHeroHomeMetadata from '../blocks/section-hero-home/block.json';
 import sectionHeroPageMetadata from '../blocks/section-hero-page/block.json';
@@ -118,8 +118,8 @@ import SectionCtaEdit from './section-cta/edit';
 import SectionCtaSave from './section-cta/save';
 import SectionGraphicCardSimpleTextEdit from './section-graphic-card-simple-text/edit';
 import SectionGraphicCardSimpleTextSave from './section-graphic-card-simple-text/save';
-import SectionGraphicSphereCardEdit from './section-graphic-sphere-card/edit';
-import SectionGraphicSphereCardSave from './section-graphic-sphere-card/save';
+import SectionGraphicCardEdit from './section-graphic-card/edit';
+import SectionGraphicCardSave from './section-graphic-card/save';
 import SectionHeroBlogEdit from './section-hero-blog/edit';
 import SectionHeroBlogSave from './section-hero-blog/save';
 import SectionHeroHomeEdit from './section-hero-home/edit';
@@ -372,9 +372,9 @@ registerBlockType(breadcrumbsMetadata.name, {
 	save: BreadcrumbsSave,
 });
 
-registerBlockType(sectionGraphicSphereCardMetadata.name, {
-	edit: SectionGraphicSphereCardEdit,
-	save: SectionGraphicSphereCardSave,
+registerBlockType(sectionGraphicCardMetadata.name, {
+	edit: SectionGraphicCardEdit,
+	save: SectionGraphicCardSave,
 });
 
 registerBlockType(sectionGraphicCardSimpleTextMetadata.name, {

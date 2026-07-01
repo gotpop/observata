@@ -13,15 +13,15 @@ const BACKGROUND_GRAPHICS = [
 
 const CARD_TEXT_SIMPLE_TEMPLATE = [['observata/card-text-simple', { heading: 'Card Heading' }]];
 
-export default function SectionGraphicSphereCardEdit({ attributes, setAttributes }) {
+export default function SectionGraphicCardEdit({ attributes, setAttributes }) {
 	const { sectionBgColour, layout } = attributes;
 	const blockProps = useBlockProps({
-		className: 'observata-section-graphic-sphere-card-editor',
+		className: 'observata-section-graphic-card-editor',
 	});
 
 	return (
 		<div {...blockProps}>
-			<BlockLabel name="Section Graphic Sphere Card">
+			<BlockLabel name="Section Graphic Card">
 				<SelectControl
 					label={__('Section Background', 'observata')}
 					value={sectionBgColour}
