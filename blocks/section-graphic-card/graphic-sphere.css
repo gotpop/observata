@@ -20,20 +20,20 @@
 		}
 	}
 
-	.line {
-		opacity: var(--o, 0);
-		scale: var(--s, 0);
+	.line-group {
+		opacity: var(--o, 0.4);
+		scale: var(--s, 1);
 		transform-box: fill-box;
 		transform-origin: center;
 		transition-delay: var(--t, calc((sibling-count() - sibling-index() + 1) * 0.7s));
-		transition-duration: 0.4s;
-		transition-property: opacity, scale;
-		transition-timing-function: ease;
+		transition-duration: 0.2s;
+		transition-property: opacity;
+		transition-timing-function: ease-in-out;
 
 		.in-view & {
 			--o: 1;
 			--s: 1;
-			--t: calc(0.007s * sibling-index());
+			--t: calc(0.1s * sibling-index());
 		}
 	}
 
@@ -69,6 +69,26 @@
 	.graphic-tech-europe {
 		--enter: calc(0.05s * sibling-index());
 		--exit: calc((sibling-count() - sibling-index() + 1) * 0.05s);
+
+		position: relative;
+		height: 30vw;
+
+		@media (width >=80rem) {
+			height: auto;
+		}
+
+		.graphic-tech-svg {
+			position: absolute;
+			width: 80vw;
+			height: auto;
+
+			@media (width >=80rem) {
+				inset-inline: -1rem auto;
+				inset-block: auto;
+				width: auto;
+				height: min(40vw, 540px);
+			}
+		}
 
 		.ring-group {
 			opacity: var(--opacity, 0.4);
