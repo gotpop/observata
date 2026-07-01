@@ -11,6 +11,30 @@
 		@media (width >=80rem) {
 			height: auto;
 		}
+
+		&.graphic-sphere-09 {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		}
+	}
+
+	.line {
+		opacity: var(--o, 0);
+		scale: var(--s, 0);
+		transform-box: fill-box;
+		transform-origin: center;
+		transition-delay: var(--t, calc((sibling-count() - sibling-index() + 1) * 0.7s));
+		transition-duration: 0.4s;
+		transition-property: opacity, scale;
+		transition-timing-function: ease;
+
+		.in-view & {
+			--o: 1;
+			--s: 1;
+			--t: calc(0.007s * sibling-index());
+		}
 	}
 
 	.graphic-sphere-svg {
