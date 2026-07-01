@@ -7,6 +7,7 @@ import BlockLabel from '../components/block-label';
 const BACKGROUND_GRAPHICS = [
 	{ label: 'Sphere 01', value: 'graphics/spheres/sphere-01' },
 	{ label: 'Sphere 01b', value: 'graphics/spheres/sphere-01b' },
+	{ label: 'Sphere 06', value: 'graphics/spheres/sphere-06' },
 	{ label: 'Sphere 09', value: 'graphics/spheres/sphere-09' },
 	{ label: 'Sphere 18', value: 'graphics/spheres/sphere-18' },
 	{ label: 'Europe', value: 'graphics/tech/europe-graphic' },
