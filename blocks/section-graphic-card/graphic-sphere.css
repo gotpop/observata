@@ -41,4 +41,22 @@
 			}
 		}
 	}
+
+	.graphic-tech-europe {
+		--enter: calc(0.05s * sibling-index());
+		--exit: calc((sibling-count() - sibling-index() + 1) * 0.05s);
+
+		.ring-group {
+			opacity: var(--opacity, 0.4);
+			transition-delay: var(--delay, var(--exit));
+			transition-duration: 0.3s;
+			transition-property: opacity;
+			transition-timing-function: ease-in-out;
+
+			.in-view & {
+				--delay: var(--enter);
+				--opacity: 1;
+			}
+		}
+	}
 }
