@@ -5,12 +5,13 @@ import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 
 const BACKGROUND_GRAPHICS = [
-	{ label: 'Sphere 01', value: 'graphics/spheres/sphere-01' },
-	{ label: 'Sphere 01b', value: 'graphics/spheres/sphere-01b' },
-	{ label: 'Sphere 06', value: 'graphics/spheres/sphere-06' },
-	{ label: 'Sphere 09', value: 'graphics/spheres/sphere-09' },
-	{ label: 'Sphere 11', value: 'graphics/spheres/sphere-11' },
-	{ label: 'Sphere 18', value: 'graphics/spheres/sphere-18' },
+	{ label: 'Sphere Globe Tilted', value: 'graphics/spheres/sphere-globe-tilted' },
+	{ label: 'Sphere Globe 45', value: 'graphics/spheres/sphere-globe-45' },
+	{ label: 'Sphere Pie', value: 'graphics/spheres/sphere-pie' },
+	{ label: 'Sphere Amorphous', value: 'graphics/spheres/sphere-amorphous' },
+	{ label: 'Sphere Bulge', value: 'graphics/spheres/sphere-bulge' },
+	{ label: 'Sphere Dots Connected', value: 'graphics/spheres/sphere-dots-connected' },
+	{ label: 'Sphere Lattice', value: 'graphics/spheres/sphere-lattice' },
 	{ label: 'Europe', value: 'graphics/tech/europe-graphic' },
 ];
 

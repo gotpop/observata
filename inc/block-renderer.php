@@ -106,6 +106,28 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 	$block_name    = $block->block_type->name;
 	$template_name = str_replace( 'observata/', '', $block_name );
 
+	// TODO: Remove this migration block after all saved block instances have been
+	// re-saved in the editor (or run a wp search-replace on post_content). Once the
+	// database no longer holds any sphere-NN graphicSphere values, this is dead code.
+	// Migrate renamed sphere graphics references in saved block content.
+	// Sphere templates were renamed from sphere-NN to descriptive names.
+	// Old attribute values stored in the database are mapped to their new paths.
+	if ( isset( $attributes['graphicSphere'] ) ) {
+		$rename_map = array(
+			'graphics/spheres/sphere-01'  => 'graphics/spheres/sphere-globe-tilted',
+			'graphics/spheres/sphere-01b' => 'graphics/spheres/sphere-globe-45',
+			'graphics/spheres/sphere-06'  => 'graphics/spheres/sphere-pie',
+			'graphics/spheres/sphere-09'  => 'graphics/spheres/sphere-amorphous',
+			'graphics/spheres/sphere-11'  => 'graphics/spheres/sphere-bulge',
+			'graphics/spheres/sphere-14'  => 'graphics/spheres/sphere-dots-connected',
+			'graphics/spheres/sphere-18'  => 'graphics/spheres/sphere-lattice',
+		);
+		$current    = $attributes['graphicSphere'];
+		if ( isset( $rename_map[ $current ] ) ) {
+			$attributes['graphicSphere'] = $rename_map[ $current ];
+		}
+	}
+
 	// Look up the template in the cached map
 	$map           = observata_get_template_map();
 	$twig_relative = $map[ $template_name ] ?? null;

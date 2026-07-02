@@ -12,17 +12,24 @@
 	"attributes": {
 		"graphicSphere": {
 			"type": "string",
-			"default": "graphics/spheres/sphere-18"
+			"default": "graphics/spheres/sphere-globe-tilted"
 		},
 		"sectionBgColour": {
 			"type": "string",
 			"default": "white",
-			"enum": ["white", "grey", "gradient"]
+			"enum": [
+				"white",
+				"grey",
+				"gradient"
+			]
 		},
 		"layout": {
 			"type": "string",
 			"default": "content",
-			"enum": ["content", "inner"]
+			"enum": [
+				"content",
+				"inner"
+			]
 		}
 	},
 	"editorScript": "file:../../build/index.js",
@@ -34,7 +41,7 @@
 	"editorStyle": "file:../../build/index.css",
 	"example": {
 		"attributes": {
-			"graphicSphere": "graphics/spheres/sphere-18"
+			"graphicSphere": "graphics/spheres/sphere-globe-tilted"
 		}
 	}
 }
