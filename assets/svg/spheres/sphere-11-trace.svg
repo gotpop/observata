@@ -1,25 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg
-    PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 426 425" version="1.1"
+<svg width="100%" height="100%" viewBox="0 0 426 425"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-    xmlns:serif="http://www.serif.com/"
     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <style>
         path {
             stroke: white !important;
         }
     </style>
-    <g id="Lines-base-" serif:id="Lines base ">
-        <path id="line-vertical" serif:id="line vertical"
+    <g id="Lines-base-">
+        <path id="line-vertical"
             d="M212.447,422.974C210.677,427.397 207.961,10.76 212.759,0.928"
             style="fill:none;stroke:black;stroke-width:0.9px;" />
-        <path id="line-horizontal" serif:id="line horizontal"
+        <path id="line-horizontal"
             d="M424.768,211.91C419.607,205.825 20.268,207.666 0.915,211.596"
             style="fill:none;stroke:black;stroke-width:0.9px;" />
     </g>
-    <g id="base-shapes" serif:id="base shapes">
+    <g id="base-shapes">
         <path id="oval-4-largest"
             d="M212.653,0.45C333.311,0.45 424.856,84.634 424.856,213.633C424.856,335.874 338.044,423.817 212.653,423.817C90.38,423.817 0.45,335.907 0.45,213.633C0.45,150.227 22.342,96.218 60.098,58.841C98.091,21.231 152.136,0.45 212.653,0.45Z"
             style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:0.9px;" />
@@ -32,7 +27,7 @@
         <path id="oval-1-smallest"
             d="M212.653,15.134C270.043,15.134 322.755,31.941 357.072,66.411C391.586,101.079 407.539,153.584 407.539,214.246C407.539,271.563 390.804,321.664 357.084,355.53C323.359,389.401 268.47,407.033 212.828,407.033C152.73,407.033 100.355,390.207 66.146,355.829C38.82,328.368 14.421,269.186 14.696,214.598C14.997,154.815 32.252,100.293 67.42,65.328C102.431,30.519 155.227,15.134 212.653,15.134Z"
             style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:0.9px;" />
-        <path id="oval-1-smallest1" serif:id="oval-1-smallest"
+        <path id="oval-1-smallest1"
             d="M211.174,23.705C252.441,23.705 325.845,38.659 353.406,69.374C379.367,98.305 397.733,150.624 397.733,210.639C397.733,267.345 377.529,328.609 354.242,351.896C328.174,377.964 265.997,396.755 210.949,396.755C159.631,396.755 96.821,379.364 69.787,352.195C42.752,325.027 24.024,256.35 24.024,210.656C24.024,172.768 34.112,103.612 69.553,68.956C103.053,36.197 167.582,23.705 211.174,23.705Z"
             style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:0.9px;" />
         <path id="inner"
@@ -45,13 +40,12 @@
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
             <path id="connect-top-left" d="M60.098,58.841L72.788,72.241"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
-            <path id="connect-bottom-right1" serif:id="connect-bottom-right"
-                d="M72.743,348.664L59.714,363.599"
+            <path id="connect-bottom-right1" d="M72.743,348.664L59.714,363.599"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
         </g>
     </g>
-    <g id="lines-horizontal" serif:id="lines horizontal">
-        <g id="lines-bottom" serif:id="lines bottom">
+    <g id="lines-horizontal">
+        <g id="lines-bottom">
             <path
                 d="M422.676,227.308C413.488,228.297 320.651,234.349 209.126,234.459C119.765,234.548 13.912,227.387 2.267,234.081"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
@@ -74,7 +68,7 @@
                 d="M379.349,348.334C352.942,326.561 319.566,363.922 207.193,367.568C103.514,370.931 77.352,323.087 46.894,347.399"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
         </g>
-        <g id="lines-top" serif:id="lines top">
+        <g id="lines-top">
             <path
                 d="M424.135,189.898C414.947,188.908 322.108,182.175 210.585,182.747C123.825,183.191 10.549,188.131 2.012,190.496"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
@@ -98,8 +92,8 @@
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
         </g>
     </g>
-    <g id="lines-vertical" serif:id="lines vertical">
-        <g id="lines-left" serif:id="lines left">
+    <g id="lines-vertical">
+        <g id="lines-left">
             <path
                 d="M191.1,422.05C190.11,412.862 183.377,320.023 183.948,208.5C184.393,121.74 188.713,10.541 191.079,2.004"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
@@ -122,7 +116,7 @@
                 d="M74.16,377.038C95.933,350.631 53.261,318.973 50.84,206.567C48.72,108.182 97.343,75.858 75.184,46.022"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
         </g>
-        <g id="lines-right" serif:id="lines right">
+        <g id="lines-right">
             <path
                 d="M234.725,422.871C231.499,410.724 235.878,318.102 235.306,206.579C234.862,119.819 233.266,13.763 233.502,1.85"
                 style="fill:none;stroke:black;stroke-width:0.9px;" />
