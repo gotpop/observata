@@ -11,6 +11,7 @@ const BACKGROUND_GRAPHICS = [
 	{ label: 'Sphere Amorphous', value: 'graphics/spheres/sphere-amorphous' },
 	{ label: 'Sphere Bulge', value: 'graphics/spheres/sphere-bulge' },
 	{ label: 'Sphere Dots Connected', value: 'graphics/spheres/sphere-dots-connected' },
+	{ label: 'Sphere Football', value: 'graphics/spheres/sphere-football' },
 	{ label: 'Sphere Geodesic', value: 'graphics/spheres/sphere-geodesic' },
 	{ label: 'Sphere Lattice', value: 'graphics/spheres/sphere-lattice' },
 	{ label: 'Europe', value: 'graphics/tech/europe-graphic' },
