@@ -18,6 +18,13 @@
 				animation: none;
 			}
 		}
+
+		&.graphic-sphere-football {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		}
 	}
 
 	.line-group {
