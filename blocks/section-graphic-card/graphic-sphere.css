@@ -19,7 +19,21 @@
 			}
 		}
 
+		&.graphic-sphere-atom {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		}
+
 		&.graphic-sphere-football {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		}
+
+		&.graphic-sphere-geodesic {
 			.line {
 				stroke-dasharray: none;
 				animation: none;
