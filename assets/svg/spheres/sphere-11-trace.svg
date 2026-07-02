@@ -1,6 +1,6 @@
 <svg width="100%" height="100%" viewBox="0 0 426 425"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none" stroke="black" stroke-width="0.9"
+    xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black"
+    stroke-width="0.9"
     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <style>
         path {
@@ -26,12 +26,12 @@
             d="M211.174,23.705C252.441,23.705 325.845,38.659 353.406,69.374C379.367,98.305 397.733,150.624 397.733,210.639C397.733,267.345 377.529,328.609 354.242,351.896C328.174,377.964 265.997,396.755 210.949,396.755C159.631,396.755 96.821,379.364 69.787,352.195C42.752,325.027 24.024,256.35 24.024,210.656C24.024,172.768 34.112,103.612 69.553,68.956C103.053,36.197 167.582,23.705 211.174,23.705Z" />
         <path id="inner"
             d="M72.788,72.241C160.536,22.072 258.441,23.098 349.57,72.241C370.858,103.232 386.483,159.818 385.985,206.559C385.357,265.382 372.755,308.672 349.615,348.664C282.482,388.364 157.166,401.199 72.743,348.664C72.743,348.664 34.803,284.294 36.374,206.559C37.994,126.414 72.788,72.241 72.788,72.241Z" />
-        <g id="connect">
-            <path id="connect-bottom-right" d="M349.615,348.664L366.74,363.597" />
-            <path id="connect-top-right" d="M364.691,59.346L349.57,72.241" />
-            <path id="connect-top-left" d="M60.098,58.841L72.788,72.241" />
-            <path id="connect-bottom-right1" d="M72.743,348.664L59.714,363.599" />
-        </g>
+    </g>
+    <g id="connect">
+        <path id="connect-bottom-right" d="M349.615,348.664L366.74,363.597" />
+        <path id="connect-top-right" d="M364.691,59.346L349.57,72.241" />
+        <path id="connect-top-left" d="M60.098,58.841L72.788,72.241" />
+        <path id="connect-bottom-right1" d="M72.743,348.664L59.714,363.599" />
     </g>
     <g id="lines-horizontal">
         <g id="lines-bottom">
