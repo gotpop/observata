@@ -10,6 +10,7 @@ const BACKGROUND_GRAPHICS = [
 	{ label: 'Sphere Pie', value: 'graphics/spheres/sphere-pie' },
 	{ label: 'Sphere Amorphous', value: 'graphics/spheres/sphere-amorphous' },
 	{ label: 'Sphere Atom', value: 'graphics/spheres/sphere-atom' },
+	{ label: 'Sphere Blob', value: 'graphics/spheres/sphere-blob' },
 	{ label: 'Sphere Bulge', value: 'graphics/spheres/sphere-bulge' },
 	{ label: 'Sphere Dots Connected', value: 'graphics/spheres/sphere-dots-connected' },
 	{ label: 'Sphere Football', value: 'graphics/spheres/sphere-football' },
