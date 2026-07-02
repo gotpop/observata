@@ -979,5 +979,9 @@
         <path d="M386.995,300.624L385.794,322.073" />
         <path d="M419.051,208.646L408.645,225.513" />
         <path d="M408.499,225.605L417.448,226.936" />
+        <path d="M75.24,367.861L101.652,373.336"
+            style="fill:none;stroke:rgb(255,40,40);stroke-width:1px;" />
+        <path d="M101.892,373.055L82.656,374.011"
+            style="fill:none;stroke:rgb(255,40,40);stroke-width:1px;" />
     </g>
 </svg>
