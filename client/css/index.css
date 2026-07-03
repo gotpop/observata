@@ -8,6 +8,7 @@
 /* tokens-theme */
 @import url('./tokens-theme/theme-typography.css') layer(tokens-theme);
 @import url('./tokens-theme/theme.css') layer(tokens-theme);
+@import url('./tokens-theme/theme-svg.css') layer(tokens-theme);
 
 /* reset */
 @import url('./reset/reset.css') layer(reset);

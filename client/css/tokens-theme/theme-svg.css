@@ -1,0 +1,8 @@
+:root {
+	/* Surface */
+	--surface-sphere: none;
+
+	/* Stroke widths */
+	--stroke-sphere-background: 1px;
+	--stroke-sphere-line: 0.6px;
+}
