@@ -16,11 +16,11 @@ SVG presentation attributes (`fill="…"`, `stroke-width="…"`) **cannot use `v
 
 Defined in `client/css/tokens-theme/theme-svg.css`:
 
-| Token                       | Default | Controls                              |
-| --------------------------- | ------- | ------------------------------------- |
-| `--surface-sphere`          | `none`  | Fill on `.background` and `.triangle` |
-| `--stroke-sphere-background`| `1px`   | Stroke width on `.background` circle  |
-| `--stroke-sphere-line`      | `0.6px` | Stroke width on `.line`, `.line-back` |
+| Token                        | Default | Controls                              |
+| ---------------------------- | ------- | ------------------------------------- |
+| `--surface-sphere`           | `none`  | Fill on `.background` and `.triangle` |
+| `--stroke-sphere-background` | `1px`   | Stroke width on `.background` circle  |
+| `--stroke-sphere-line`       | `0.6px` | Stroke width on `.line`, `.line-back` |
 
 ## Class → Token Mapping
 
@@ -28,18 +28,18 @@ All rules live under `.graphic-sphere-svg` in `client/css/global/graphic.css` �
 
 ```css
 .graphic-sphere-svg {
-    .background {
-        fill: var(--surface-sphere);
-        stroke-width: var(--stroke-sphere-background);
-    }
-    .line,
-    .line-back {
-        stroke-width: var(--stroke-sphere-line);
-    }
-    .triangle {
-        fill: var(--surface-sphere);
-        stroke-width: var(--stroke-sphere-line);
-    }
+	.background {
+		fill: var(--surface-sphere);
+		stroke-width: var(--stroke-sphere-background);
+	}
+	.line,
+	.line-back {
+		stroke-width: var(--stroke-sphere-line);
+	}
+	.triangle {
+		fill: var(--surface-sphere);
+		stroke-width: var(--stroke-sphere-line);
+	}
 }
 ```
 
