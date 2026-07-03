@@ -1,6 +1,6 @@
 :root {
 	/* Surface */
-	--surface-sphere: none;
+	--surface-sphere: var(--surface-white);
 
 	/* Stroke widths */
 	--stroke-sphere-background: 1px;

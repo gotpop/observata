@@ -1,1 +1,12 @@
 /* Graphics */
+
+.graphic-sphere-svg {
+	.background {
+		fill: var(--surface-sphere);
+		stroke-width: var(--stroke-sphere-background);
+	}
+
+	.line {
+		stroke-width: var(--stroke-sphere-line);
+	}
+}
