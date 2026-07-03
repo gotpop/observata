@@ -1,4 +1,5 @@
-<graphic-sphere class="graphic-sphere graphic-sphere-globe-tilted" aria-hidden="true">
+<graphic-sphere class="graphic-sphere graphic-sphere-globe-tilted"
+aria-hidden="true">
 	<svg
 		class="graphic-sphere-svg"
 		height="100%"
@@ -16,13 +17,16 @@
 				<stop offset="110%" stop-color="#51a8c8" />
 			</radialGradient>
 		</defs>
-		<circle
-			cx="250.0"
-			cy="250.0"
-			r="248.0"
-			fill="none"
-			stroke="url(#sphere-globe-tilted-gradient)"
-			stroke-width="1px" />
+		<g id="sphere-globe-tilted-background">
+			<circle
+				class="background"
+				cx="250.0"
+				cy="250.0"
+				r="248.0"
+				fill="none"
+				stroke="url(#sphere-globe-tilted-gradient)"
+				stroke-width="1px" />
+		</g>
 		<g
 			id="sphere-globe-tilted-latitudes"
 			fill="none"
@@ -197,7 +201,10 @@
 			<circle cx="274.3" cy="6.5" r="2.8" class="dot-back" />
 			<circle cx="250.0" cy="483.1" r="2.8" class="dot-back" />
 		</g>
-		<g id="sphere-globe-tilted-dots-front" fill="url(#sphere-globe-tilted-gradient)" stroke="none">
+		<g
+			id="sphere-globe-tilted-dots-front"
+			fill="url(#sphere-globe-tilted-gradient)"
+			stroke="none">
 			<circle cx="274.3" cy="493.5" r="2.8" class="dot-front" />
 			<circle cx="318.9" cy="487.1" r="2.8" class="dot-front" />
 			<circle cx="181.1" cy="487.1" r="2.8" class="dot-front" />

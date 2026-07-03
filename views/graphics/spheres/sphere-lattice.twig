@@ -1,4 +1,5 @@
-<graphic-sphere class="graphic-sphere graphic-sphere-lattice" aria-hidden="true">
+<graphic-sphere class="graphic-sphere graphic-sphere-lattice"
+aria-hidden="true">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="100%"
@@ -56,13 +57,16 @@
 		</defs>
 		<g mask="url(#sphere-lattice-pole-mask)">
 			<g transform="translate(-7.58 -7.89) scale(1.033)">
-				<circle
-					cx="249.7"
-					cy="249.7"
-					r="238"
-					fill="none"
-					stroke="url(#sphere-lattice-gradient)"
-					stroke-width="1" />
+				<g id="sphere-lattice-background">
+					<circle
+						class="background"
+						cx="249.7"
+						cy="249.7"
+						r="238"
+						fill="none"
+						stroke="url(#sphere-lattice-gradient)"
+						stroke-width="1" />
+				</g>
 				<g
 					id="sphere-lattice-lines-back"
 					fill="none"
@@ -354,7 +358,10 @@
 					<circle cx="23.9" cy="325.3" r="2.5" class="dot" />
 					<circle cx="12.9" cy="276.0" r="2.5" class="dot" />
 				</g>
-				<g id="sphere-lattice-dots" fill="url(#sphere-lattice-gradient)" stroke="none">
+				<g
+					id="sphere-lattice-dots"
+					fill="url(#sphere-lattice-gradient)"
+					stroke="none">
 					<circle cx="249.4" cy="64.8" r="2.5" class="dot" />
 					<circle cx="269.7" cy="63.9" r="2.5" class="dot" />
 					<circle cx="293.6" cy="90.0" r="2.5" class="dot" />
