@@ -21,9 +21,12 @@
 
 		&.graphic-sphere-atom {
 			.line {
-				stroke-dasharray: none;
-				animation: none;
-				animation-duration: 15s;
+				animation-duration: 7s;
+
+				&.line-outer {
+					stroke-dasharray: none;
+					animation: none;
+				}
 			}
 		}
 
