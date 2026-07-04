@@ -23,6 +23,7 @@
 			.line {
 				stroke-dasharray: none;
 				animation: none;
+				animation-duration: 15s;
 			}
 		}
 
