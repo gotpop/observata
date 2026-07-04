@@ -32,24 +32,27 @@
 
 		&.graphic-sphere-blob {
 			.line {
-				stroke-dasharray: none;
-				animation: none;
+				/* stroke-dasharray: none;
+				animation: none; */
+
+				stroke-dasharray: 64 16;
+				animation-duration: 7s;
 			}
 		}
 
-		&.graphic-sphere-football {
+		/* &.graphic-sphere-football {
 			.line {
 				stroke-dasharray: none;
 				animation: none;
 			}
-		}
+		} */
 
-		&.graphic-sphere-geodesic {
+		/* &.graphic-sphere-geodesic {
 			.line {
 				stroke-dasharray: none;
 				animation: none;
 			}
-		}
+		} */
 	}
 
 	.line-group {
