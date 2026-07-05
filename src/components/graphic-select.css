@@ -1,0 +1,189 @@
+/* Opt into the customizable <select> API (Chrome 135+, Safari 27 TP) */
+.graphic-select,
+.graphic-select::picker(select) {
+	appearance: base-select;
+}
+
+.graphic-select-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs, 0.35rem);
+}
+
+.graphic-select-label {
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.4;
+	text-transform: uppercase;
+	color: var(--colour-grey-200, #6e6e6e);
+}
+
+/* Select button (closed state) */
+.graphic-select {
+	display: flex;
+	align-items: center;
+	min-height: 36px;
+	padding: var(--spacing-sm, 6px) var(--spacing-sm, 8px);
+	border: 1px solid #1e1e1e;
+	border-radius: 2px;
+	background: #fff;
+	color: var(--colour-grey-300, #252525);
+	font-size: 13px;
+	font-family: var(--font-body, 'Inter', sans-serif);
+	line-height: 1.4;
+	cursor: pointer;
+	transition:
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.graphic-select:hover {
+	border-color: var(--wp-admin-theme-color, #007cba);
+}
+
+.graphic-select:focus-visible,
+.graphic-select:open {
+	border-color: var(--wp-admin-theme-color, #007cba);
+	box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #007cba);
+	outline: 2px solid transparent;
+	outline-offset: 0;
+}
+
+/* Picker icon (dropdown arrow) */
+.graphic-select::picker-icon {
+	width: 16px;
+	height: 16px;
+	color: var(--colour-grey-200, #6e6e6e);
+	transition: rotate 0.2s ease;
+}
+
+.graphic-select:open::picker-icon {
+	rotate: 180deg;
+}
+
+/* Dropdown picker (open state) — grid layout with large SVG cells */
+.graphic-select::picker(select) {
+	border: 1px solid var(--colour-grey-100, #e5e7ea);
+	border-radius: var(--radius-standard, 8px);
+	background: #fff;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+	padding: var(--spacing-sm, 8px);
+	width: max(anchor-size(width), 480px);
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	gap: var(--spacing-xs, 4px);
+	max-height: 400px;
+	overflow-y: auto;
+	opacity: 0;
+	transform: scaleY(0.95) translateY(-4px);
+	transform-origin: top center;
+	transition:
+		opacity 0.15s ease,
+		transform 0.15s ease,
+		overlay 0.15s ease allow-discrete,
+		display 0.15s ease allow-discrete;
+}
+
+.graphic-select:open::picker(select) {
+	opacity: 1;
+	transform: scaleY(1) translateY(0);
+}
+
+@starting-style {
+	.graphic-select:open::picker(select) {
+		opacity: 0;
+		transform: scaleY(0.95) translateY(-4px);
+	}
+}
+
+/* Options — vertical card layout (SVG on top, label below) */
+.graphic-select option {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-xs, 4px);
+	padding: var(--spacing-sm, 8px);
+	border: 1px solid var(--colour-grey-100, #e5e7ea);
+	border-radius: var(--radius-standard, 8px);
+	background: #fff;
+	color: var(--colour-grey-300, #252525);
+	font-size: 11px;
+	font-family: var(--font-body, 'Inter', sans-serif);
+	line-height: 1.3;
+	text-align: center;
+	cursor: pointer;
+	transition:
+		background 0.1s ease,
+		border-color 0.1s ease;
+}
+
+.graphic-select option:hover,
+.graphic-select option:focus {
+	background: var(--colour-grey-100, #f0f0f1);
+	border-color: var(--wp-admin-theme-color, #007cba);
+}
+
+.graphic-select option:checked {
+	font-weight: 600;
+	background: var(--colour-grey-100, #f0f0f1);
+	border-color: var(--wp-admin-theme-color, #007cba);
+	border-width: 2px;
+}
+
+.graphic-select option:checked:hover {
+	background: var(--colour-grey-100, #f0f0f1);
+}
+
+/* Option icon wrapper — provides sphere CSS variables so inline SVGs render with default colours */
+.graphic-select-option-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	flex-shrink: 0;
+	pointer-events: none;
+
+	/* Sphere design tokens — provide defaults so SVGs are visible anywhere */
+	--surface-sphere: var(--surface-white, #fff);
+	--stroke-sphere-background: 1.5px;
+	--stroke-sphere-line: 1px;
+
+	/* Constrain inline SVGs (spheres + tech graphics) */
+	.graphic-sphere-svg,
+	.graphic-tech-svg {
+		position: static;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
+
+		/* Disable flow animation in preview */
+		.line {
+			animation: none !important;
+			stroke-dasharray: none !important;
+		}
+	}
+
+	&.graphic-select-option-icon--placeholder {
+		background: var(--colour-grey-100, #e5e7ea);
+		border-radius: var(--radius-standard, 8px);
+	}
+}
+
+.graphic-select-option-label {
+	flex: 1;
+	width: 100%;
+	overflow-wrap: anywhere;
+}
+
+/* Hide icon when option is cloned into selectedcontent (button display) */
+selectedcontent .graphic-select-option-icon {
+	display: none;
+}
+
+/* Help text */
+.graphic-select-help {
+	margin: 0;
+	font-size: 12px;
+	color: var(--colour-grey-200, #6e6e6e);
+}

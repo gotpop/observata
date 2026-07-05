@@ -33,7 +33,6 @@ import blogPostsMetadata from '../blocks/section-blog-posts/block.json';
 import sectionCardAndGraphicMetadata from '../blocks/section-card-and-graphic/block.json';
 import contactMetadata from '../blocks/section-contact/block.json';
 import sectionCtaMetadata from '../blocks/section-cta/block.json';
-import sectionGraphicCardSimpleTextMetadata from '../blocks/section-graphic-card-simple-text/block.json';
 import sectionGraphicCardMetadata from '../blocks/section-graphic-card/block.json';
 import sectionHeroBlogMetadata from '../blocks/section-hero-blog/block.json';
 import sectionHeroHomeMetadata from '../blocks/section-hero-home/block.json';
@@ -116,8 +115,6 @@ import ContactEdit from './section-contact/edit';
 import ContactSave from './section-contact/save';
 import SectionCtaEdit from './section-cta/edit';
 import SectionCtaSave from './section-cta/save';
-import SectionGraphicCardSimpleTextEdit from './section-graphic-card-simple-text/edit';
-import SectionGraphicCardSimpleTextSave from './section-graphic-card-simple-text/save';
 import SectionGraphicCardEdit from './section-graphic-card/edit';
 import SectionGraphicCardSave from './section-graphic-card/save';
 import SectionHeroBlogEdit from './section-hero-blog/edit';
@@ -375,11 +372,6 @@ registerBlockType(breadcrumbsMetadata.name, {
 registerBlockType(sectionGraphicCardMetadata.name, {
 	edit: SectionGraphicCardEdit,
 	save: SectionGraphicCardSave,
-});
-
-registerBlockType(sectionGraphicCardSimpleTextMetadata.name, {
-	edit: SectionGraphicCardSimpleTextEdit,
-	save: SectionGraphicCardSimpleTextSave,
 });
 
 registerBlockType(sectionTabsMetadata.name, {
