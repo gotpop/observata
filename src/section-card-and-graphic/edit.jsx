@@ -2,10 +2,10 @@ import './editor.css';
 
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import GraphicSelect from '../components/graphic-select';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import BlockLabel from '../components/block-label';
+import GraphicSelect from '../components/graphic-select';
 
 const SVG_BASE = '/wp-content/themes/observata/assets/svg';
 

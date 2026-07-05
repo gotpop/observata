@@ -149,9 +149,10 @@
 	--stroke-sphere-background: 1.5px;
 	--stroke-sphere-line: 1px;
 
-	/* Constrain inline SVGs (spheres + tech graphics) */
+	/* Constrain inline SVGs (spheres, tech graphics, geo icons) */
 	.graphic-sphere-svg,
-	.graphic-tech-svg {
+	.graphic-tech-svg,
+	svg {
 		position: static;
 		width: 100%;
 		height: 100%;
