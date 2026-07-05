@@ -24,7 +24,7 @@
 	align-items: center;
 	min-height: 36px;
 	padding: var(--spacing-sm, 6px) var(--spacing-sm, 8px);
-	border: 1px solid var(--colour-grey-100, #e5e7ea);
+	border: 1px solid #1e1e1e;
 	border-radius: 2px;
 	background: #fff;
 	color: var(--colour-grey-300, #252525);
