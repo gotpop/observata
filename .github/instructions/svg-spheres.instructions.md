@@ -65,22 +65,37 @@ After **any** change to a sphere Twig file's wrapper structure — including:
 - Adding/removing classes or IDs on wrapper elements
 - Changing the `viewBox`, gradient IDs, or gradient definitions
 
-### How to Sync
+### How to Sync — Automated Pipeline
 
-1. Render the Twig file to plain SVG markup (strip the `<graphic-sphere>` wrapper, Timber/Twig tags, and any `{% include %}` directives — keep only the inner `<svg>…</svg>`).
-2. Save the result as `assets/svg/spheres/<sphere-name>.svg` (same filename stem as the Twig file).
-3. Keep inline `fill`, `stroke`, and `stroke-width` attributes in the `.svg` export — the `.svg` file is a standalone reference, not a token-driven template. It does not load the theme's CSS.
-4. Do **not** sync changes that only affect CSS animation/transition rules in `.css` files — those are stylesheet concerns, not SVG structure.
+Syncing is handled by `tools/sync-sphere-svgs.js`. **Always use the script** — never manually edit `.svg` exports.
 
-### Sync Checklist
+**Commands:**
 
-For each Twig file in `views/graphics/spheres/`:
+| Command                   | Purpose                                                      |
+| ------------------------- | ------------------------------------------------------------ |
+| `npm run sync:svgs`       | Regenerate all `.svg` exports from Twig files                |
+| `npm run sync:svgs:check` | Verify sync without writing (CI-safe, exits `1` on mismatch) |
 
-- [ ] A matching `.svg` file exists in `assets/svg/spheres/`
-- [ ] The `<svg>` root, `viewBox`, and `xmlns` attributes match
-- [ ] All `<path>`, `<circle>`, `<g>` elements match (count and `d`/`cx`/`cy`/`r` values)
-- [ ] Gradient `<defs>` match (`id`, `gradientUnits`, `cx`/`cy`/`r`, stop colors/offsets)
-- [ ] Class names on wrapper groups match (`graphic-sphere-svg`, `dots`, `line`, etc.)
+**Workflow after editing a Twig file:**
+
+1. Save your changes to the `.twig` file in `views/graphics/spheres/`
+2. Run `npm run sync:svgs` to regenerate the matching `.svg` export
+3. Commit both files together
+
+**What the script does:**
+
+1. Reads every `*.twig` file in `views/graphics/spheres/`
+2. Extracts the inner `<svg>…</svg>` markup (strips the `<graphic-sphere>` wrapper)
+3. Dedents by one tab level (removes the wrapper's indentation)
+4. Prepends `<?xml ?>` declaration
+5. Writes to `assets/svg/spheres/<sphere-name>.svg`
+6. Prints element counts (svg/path/circle/g) for visual verification
+
+**Sync rules:**
+
+- The `.svg` files are **standalone references** — they keep inline `fill`, `stroke`, and `stroke-width` attributes because they don't load the theme's CSS token system.
+- Do **not** sync changes that only affect CSS animation/transition rules in `.css` files — those are stylesheet concerns, not SVG structure.
+- Do **not** manually edit `.svg` exports — the script overwrites them.
 
 ## Exception: `sphere-dots-connected.twig`
 
