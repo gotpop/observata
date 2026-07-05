@@ -63,7 +63,11 @@ const BACKGROUND_GRAPHICS = [
 		value: 'graphics/spheres/sphere-lattice',
 		icon: `${SVG_BASE}/spheres/sphere-lattice.svg`,
 	},
-	{ label: 'Europe', value: 'graphics/tech/europe-graphic' },
+	{
+		label: 'Europe',
+		value: 'graphics/tech/europe-graphic',
+		icon: `${SVG_BASE}/tech/europe-graphic.svg`,
+	},
 ];
 
 const CARD_TEXT_SIMPLE_TEMPLATE = [['observata/card-text-simple', { heading: 'Card Heading' }]];
