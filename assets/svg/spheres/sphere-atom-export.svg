@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 369" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Right">
+        <g id="Backgrounds">
+            <path id="Background" d="M327.844,365.853C421.209,365.853 497.009,284.201 497.009,183.629C497.009,83.057 421.209,1.405 327.844,1.405C292.193,1.405 263.249,83.057 263.249,183.629C263.249,284.201 292.193,365.853 327.844,365.853Z" style="fill:white;stroke:black;stroke-width:1px;"/>
+            <path id="Outer-bg" serif:id="Outer bg" d="M327.844,365.853C421.209,365.853 497.009,284.201 497.009,183.629C497.009,83.057 421.209,1.405 327.844,1.405C363.495,1.405 392.439,83.057 392.439,183.629C392.439,284.201 363.495,365.853 327.844,365.853Z" style="fill:white;"/>
+            <ellipse id="Inner-bg" serif:id="Inner bg" cx="327.844" cy="183.629" rx="64.595" ry="182.224" style="fill:rgb(215,215,215);stroke:black;stroke-width:1px;"/>
+        </g>
+        <g id="Content-outer" serif:id="Content outer">
+            <clipPath id="_clip1">
+                <path d="M327.844,365.853C421.209,365.853 497.009,284.201 497.009,183.629C497.009,83.057 421.209,1.405 327.844,1.405C363.495,1.405 392.439,83.057 392.439,183.629C392.439,284.201 363.495,365.853 327.844,365.853Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="Lines-outer-bottom" serif:id="Lines outer bottom">
+                    <path d="M392.684,180.23C392.684,180.23 472.326,197.258 496.864,203.4" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 467.431,209.975 491.108,225.344" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 466.475,222.994 485.474,247.21" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 464.112,237.727 475.664,273.19" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 464.312,260.611 460.444,296.91" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 463.167,290.963 439.834,319.29" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 447.28,301.865 417.123,338.606" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 433.465,311.975 390.544,353.682" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,180.23C392.684,180.23 404.952,325.121 363.673,362.168" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 472.422,180.417 497.064,183.5" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <g id="Lines-outer-top" serif:id="Lines outer top">
+                    <path d="M392.684,181.04C392.684,181.04 472.326,164.012 496.864,157.87" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 467.431,151.295 491.108,135.926" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 466.475,138.276 485.474,114.06" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 462.022,124.769 473.574,89.307" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 461.49,103.274 457.622,66.975" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 460.256,72.294 436.923,43.968" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 442.934,56.419 415.684,27.334" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 426.103,46.652 395.315,16.43" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M392.684,181.04C392.684,181.04 409.694,43.341 368.415,6.293" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <g id="Rings-outer" serif:id="Rings outer">
+                    <circle cx="389.247" cy="178.184" r="35.233" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="387.247" cy="178.184" r="65.154" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="373.247" cy="178.184" r="98.725" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="361.033" cy="178.184" r="126.764" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="350.351" cy="180.184" r="149.229" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="337.775" cy="180.539" r="165.104" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="331.862" cy="180.931" r="175.718" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+            </g>
+        </g>
+        <g id="Content-inner" serif:id="Content inner">
+            <clipPath id="_clip2">
+                <ellipse cx="327.844" cy="183.629" rx="64.595" ry="182.224"/>
+            </clipPath>
+            <g clip-path="url(#_clip2)">
+                <g id="Rings">
+                    <circle cx="263.249" cy="189.629" r="24.115" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="44.594" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="68.699" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="89.424" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="108.336" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="131.247" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="150.06" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="171.569" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="263.249" cy="189.629" r="192.984" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <path id="central-line" serif:id="central line" d="M263.249,189.629L497.009,189.52" style="fill:none;stroke:black;stroke-width:1px;"/>
+                <g id="Lines-bottom" serif:id="Lines bottom">
+                    <path d="M263.109,189.629C273.809,256.368 298.329,332.533 343.523,371.52" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C281.956,250.805 318.613,320.235 358.138,356.456" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C289.073,244.723 329.657,299.043 369.182,335.263" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C297.482,240.582 337.717,276.267 377.242,312.487" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C306.401,234.115 345.809,262.478 382.8,290.59" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C263.109,189.629 356.627,249.45 386.519,268.129" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C263.109,189.629 360.117,234.611 389.887,248.717" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C263.109,189.629 360.892,219.111 390.798,228.122" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.629C263.109,189.629 361.501,203.972 391.439,208.149" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <g id="Lines-top" serif:id="Lines top">
+                    <path d="M263.109,189.52C273.809,122.782 298.329,46.617 343.523,7.629" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C281.956,128.345 318.613,58.914 358.138,22.693" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C289.073,134.427 329.657,80.106 369.182,43.886" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C297.482,138.568 337.717,102.883 377.242,66.662" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C306.401,145.034 345.809,116.671 382.8,88.56" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C263.109,189.52 356.627,129.699 386.519,111.02" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C263.109,189.52 360.117,144.539 389.887,130.432" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C263.109,189.52 360.892,160.038 390.798,151.027" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M263.109,189.52C263.109,189.52 361.501,175.177 391.439,171" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <g id="Left">
+        <g id="Backgrounds1" serif:id="Backgrounds">
+            <path id="Background1" serif:id="Background" d="M172.001,365.853C78.636,365.853 2.835,284.201 2.835,183.629C2.835,83.057 78.636,1.405 172.001,1.405C207.652,1.405 236.596,83.057 236.596,183.629C236.596,284.201 207.652,365.853 172.001,365.853Z" style="fill:white;stroke:black;stroke-width:1px;"/>
+            <path id="Outer-bg1" serif:id="Outer bg" d="M172.001,365.853C78.636,365.853 2.835,284.201 2.835,183.629C2.835,83.057 78.636,1.405 172.001,1.405C136.35,1.405 107.406,83.057 107.406,183.629C107.406,284.201 136.35,365.853 172.001,365.853Z" style="fill:white;"/>
+            <ellipse id="Inner-bg1" serif:id="Inner bg" cx="172.001" cy="183.629" rx="64.595" ry="182.224" style="fill:rgb(215,215,215);stroke:black;stroke-width:1px;"/>
+        </g>
+        <g id="Content-outer1" serif:id="Content outer">
+            <clipPath id="_clip3">
+                <path d="M172.001,365.853C78.636,365.853 2.835,284.201 2.835,183.629C2.835,83.057 78.636,1.405 172.001,1.405C136.35,1.405 107.406,83.057 107.406,183.629C107.406,284.201 136.35,365.853 172.001,365.853Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip3)">
+                <g id="Lines-outer-bottom1" serif:id="Lines outer bottom">
+                    <path d="M107.16,180.23C107.16,180.23 27.519,197.258 2.98,203.4" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 32.413,209.975 8.737,225.344" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 33.37,222.994 14.37,247.21" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 35.732,237.727 24.18,273.19" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 35.532,260.611 39.4,296.91" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 36.678,290.963 60.01,319.29" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 52.564,301.865 82.722,338.606" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 66.379,311.975 109.301,353.682" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,180.23C107.16,180.23 94.893,325.121 136.171,362.168" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 27.422,180.417 2.78,183.5" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <g id="Lines-outer-top1" serif:id="Lines outer top">
+                    <path d="M107.16,181.04C107.16,181.04 27.519,164.012 2.98,157.87" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 32.413,151.295 8.737,135.926" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 33.37,138.276 14.37,114.06" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 37.822,124.769 26.27,89.307" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 38.354,103.274 42.222,66.975" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 39.589,72.294 62.921,43.968" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 56.91,56.419 84.16,27.334" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 73.742,46.652 104.53,16.43" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M107.16,181.04C107.16,181.04 90.151,43.341 131.429,6.293" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <g id="Rings-outer1" serif:id="Rings outer">
+                    <circle cx="110.597" cy="178.184" r="35.233" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="112.597" cy="178.184" r="65.154" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="126.597" cy="178.184" r="98.725" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="138.811" cy="178.184" r="126.764" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="149.493" cy="180.184" r="149.229" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="162.069" cy="180.539" r="165.104" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="167.982" cy="180.931" r="175.718" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+            </g>
+        </g>
+        <g id="Content-inner1" serif:id="Content inner">
+            <clipPath id="_clip4">
+                <ellipse cx="172.001" cy="183.629" rx="64.595" ry="182.224"/>
+            </clipPath>
+            <g clip-path="url(#_clip4)">
+                <g id="Rings1" serif:id="Rings">
+                    <circle cx="236.596" cy="189.629" r="24.115" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="44.594" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="68.699" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="89.424" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="108.336" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="131.247" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="150.06" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="171.569" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <circle cx="236.596" cy="189.629" r="192.984" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <path id="central-line1" serif:id="central line" d="M236.596,189.629L2.835,189.52" style="fill:none;stroke:black;stroke-width:1px;"/>
+                <g id="Lines-bottom1" serif:id="Lines bottom">
+                    <path d="M236.736,189.629C226.036,256.368 201.516,332.533 156.322,371.52" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C217.888,250.805 181.231,320.235 141.706,356.456" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C210.771,244.723 170.188,299.043 130.663,335.263" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C202.362,240.582 162.128,276.267 122.603,312.487" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C193.444,234.115 154.035,262.478 117.045,290.59" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C236.736,189.629 143.218,249.45 113.326,268.129" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C236.736,189.629 139.728,234.611 109.958,248.717" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C236.736,189.629 138.952,219.111 109.046,228.122" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.629C236.736,189.629 138.344,203.972 108.406,208.149" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+                <g id="Lines-top1" serif:id="Lines top">
+                    <path d="M236.736,189.52C226.036,122.782 201.516,46.617 156.322,7.629" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C217.888,128.345 181.231,58.914 141.706,22.693" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C210.771,134.427 170.188,80.106 130.663,43.886" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C202.362,138.568 162.128,102.883 122.603,66.662" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C193.444,145.034 154.035,116.671 117.045,88.56" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C236.736,189.52 143.218,129.699 113.326,111.02" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C236.736,189.52 139.728,144.539 109.958,130.432" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C236.736,189.52 138.952,160.038 109.046,151.027" style="fill:none;stroke:black;stroke-width:1px;"/>
+                    <path d="M236.736,189.52C236.736,189.52 138.344,175.177 108.406,171" style="fill:none;stroke:black;stroke-width:1px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

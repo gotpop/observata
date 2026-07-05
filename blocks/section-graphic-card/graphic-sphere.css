@@ -12,12 +12,47 @@
 			height: auto;
 		}
 
-		&.graphic-sphere-09 {
+		&.graphic-sphere-amorphous {
 			.line {
 				stroke-dasharray: none;
 				animation: none;
 			}
 		}
+
+		&.graphic-sphere-atom {
+			.line {
+				animation-duration: 7s;
+
+				&.line-outer {
+					stroke-dasharray: none;
+					animation: none;
+				}
+			}
+		}
+
+		&.graphic-sphere-blob {
+			.line {
+				/* stroke-dasharray: none;
+				animation: none; */
+
+				stroke-dasharray: 64 16;
+				animation-duration: 7s;
+			}
+		}
+
+		/* &.graphic-sphere-football {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		} */
+
+		/* &.graphic-sphere-geodesic {
+			.line {
+				stroke-dasharray: none;
+				animation: none;
+			}
+		} */
 	}
 
 	.line-group {

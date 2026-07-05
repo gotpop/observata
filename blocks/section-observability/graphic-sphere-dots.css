@@ -21,7 +21,7 @@
 		display: flex;
 	}
 
-	.outline {
+	.background {
 		opacity: var(--o, 0.2);
 		transition-delay: var(--t, 0);
 		transition-duration: 0.4s;
