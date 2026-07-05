@@ -1,10 +1,11 @@
 ---
-description: 'SVG sphere token system — no inline fill/stroke-width, use CSS classes driven by design tokens'
+description: 'SVG sphere system — token styling, twig-to-svg sync, and editing rules'
 applyTo:
   - 'views/graphics/spheres/**'
+  - 'assets/svg/spheres/**'
 ---
 
-# SVG Sphere Token System
+# SVG Sphere System
 
 All decorative sphere SVGs in `views/graphics/spheres/` are styled via **CSS design tokens + class names**, never inline presentation attributes.
 
@@ -51,6 +52,36 @@ All rules live under `.graphic-sphere-svg` in `client/css/global/graphic.css` �
 4. `stroke="url(#gradient-id)"` is fine to keep inline — gradients are sphere-specific.
 5. `fill="none"` on `<g>` groups is fine — it's a structural default, not a token-driven value.
 
+## Twig ↔ SVG Sync
+
+`assets/svg/spheres/` must **always** stay in sync with `views/graphics/spheres/`.
+
+### When to Sync
+
+After **any** change to a sphere Twig file's wrapper structure — including:
+
+- Adding or removing SVG elements (paths, circles, groups, gradients)
+- Changing the `<graphic-sphere>` wrapper, `<svg>` root, `<defs>`, or `<g>` group structure
+- Adding/removing classes or IDs on wrapper elements
+- Changing the `viewBox`, gradient IDs, or gradient definitions
+
+### How to Sync
+
+1. Render the Twig file to plain SVG markup (strip the `<graphic-sphere>` wrapper, Timber/Twig tags, and any `{% include %}` directives — keep only the inner `<svg>…</svg>`).
+2. Save the result as `assets/svg/spheres/<sphere-name>.svg` (same filename stem as the Twig file).
+3. Keep inline `fill`, `stroke`, and `stroke-width` attributes in the `.svg` export — the `.svg` file is a standalone reference, not a token-driven template. It does not load the theme's CSS.
+4. Do **not** sync changes that only affect CSS animation/transition rules in `.css` files — those are stylesheet concerns, not SVG structure.
+
+### Sync Checklist
+
+For each Twig file in `views/graphics/spheres/`:
+
+- [ ] A matching `.svg` file exists in `assets/svg/spheres/`
+- [ ] The `<svg>` root, `viewBox`, and `xmlns` attributes match
+- [ ] All `<path>`, `<circle>`, `<g>` elements match (count and `d`/`cx`/`cy`/`r` values)
+- [ ] Gradient `<defs>` match (`id`, `gradientUnits`, `cx`/`cy`/`r`, stop colors/offsets)
+- [ ] Class names on wrapper groups match (`graphic-sphere-svg`, `dots`, `line`, etc.)
+
 ## Exception: `sphere-dots-connected.twig`
 
 This sphere has unique elements (gradient-filled circles, connecting lines) and keeps its own inline values. Do not strip inline attributes from this file unless explicitly asked.
@@ -60,3 +91,4 @@ This sphere has unique elements (gradient-filled circles, connecting lines) and 
 - **Adding `fill="none"` to a `.background` circle** — the CSS sets `fill: var(--surface-sphere)` which defaults to `none`. Inline attributes override CSS, so this is redundant but harmless. Still, remove it for cleanliness.
 - **Adding `stroke-width="1"` to a `.background` circle** — this overrides the token. Remove it.
 - **Forgetting the closing `>`** when stripping attributes from a multi-line tag — always verify the tag is still valid XML after edits.
+- **Editing only the Twig file without syncing the `.svg`** — the two must stay in sync (see Twig ↔ SVG Sync above).
