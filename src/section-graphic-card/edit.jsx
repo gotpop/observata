@@ -70,7 +70,8 @@ const BACKGROUND_GRAPHICS = [
 	},
 ];
 
-const CARD_TEXT_SIMPLE_TEMPLATE = [['observata/card-text-simple', { heading: 'Card Heading' }]];
+const CARD_TEMPLATE = [['observata/card-text-simple', { heading: 'Card Heading' }]];
+const ALLOWED_BLOCKS = ['observata/card-text-simple', 'observata/card-geo-list'];
 
 export default function SectionGraphicCardEdit({ attributes, setAttributes }) {
 	const { sectionBgColour, layout } = attributes;
@@ -109,10 +110,7 @@ export default function SectionGraphicCardEdit({ attributes, setAttributes }) {
 			</BlockLabel>
 
 			<div className="card-container">
-				<InnerBlocks
-					template={CARD_TEXT_SIMPLE_TEMPLATE}
-					allowedBlocks={['observata/card-text-simple']}
-				/>
+				<InnerBlocks template={CARD_TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
 			</div>
 		</div>
 	);

@@ -17,19 +17,27 @@
 		"sectionBgColour": {
 			"type": "string",
 			"default": "white",
-			"enum": ["white", "grey", "gradient"]
+			"enum": [
+				"white",
+				"grey",
+				"gradient"
+			]
 		},
 		"layout": {
 			"type": "string",
 			"default": "content",
-			"enum": ["content", "inner"]
+			"enum": [
+				"content",
+				"inner"
+			]
 		}
 	},
 	"editorScript": "file:../../build/index.js",
 	"viewStyle": [
 		"file:section-graphic-card.css",
 		"file:graphic-sphere.css",
-		"file:../card-text-simple/card-text-simple.css"
+		"file:../card-text-simple/card-text-simple.css",
+		"file:../card-geo-list/card-geo-list.css"
 	],
 	"editorStyle": "file:../../build/index.css",
 	"example": {
