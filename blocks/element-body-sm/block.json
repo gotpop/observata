@@ -5,9 +5,7 @@
 	"title": "Element Body SM",
 	"category": "theme",
 	"description": "A wrapper for core content blocks with body-sm styling.",
-	"parent": [
-		"observata/card-photo"
-	],
+	"parent": ["observata/card-photo"],
 	"attributes": {
 		"content": {
 			"type": "string",

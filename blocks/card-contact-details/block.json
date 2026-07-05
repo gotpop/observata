@@ -5,9 +5,7 @@
 	"title": "Card Contact Details",
 	"category": "theme",
 	"description": "Contact information block with phone, email and address.",
-	"parent": [
-		"observata/section-contact"
-	],
+	"parent": ["observata/section-contact"],
 	"supports": {
 		"html": false,
 		"multiple": false
@@ -28,9 +26,7 @@
 	},
 	"editorScript": "file:../../build/index.js",
 	"editorStyle": "file:../../build/index.css",
-	"viewStyle": [
-		"file:card-contact-details.css"
-	],
+	"viewStyle": ["file:card-contact-details.css"],
 	"example": {
 		"attributes": {
 			"phone": "+44 (0) 20 1234 5678",

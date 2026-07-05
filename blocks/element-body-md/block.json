@@ -5,10 +5,7 @@
 	"title": "Body MD",
 	"category": "theme",
 	"description": "A wrapper for core content blocks with body-md styling.",
-	"parent": [
-		"observata/card-text-intro",
-		"observata/card-text-simple"
-	],
+	"parent": ["observata/card-text-intro", "observata/card-text-simple"],
 	"attributes": {
 		"content": {
 			"type": "string",

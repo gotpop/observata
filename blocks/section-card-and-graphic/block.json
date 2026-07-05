@@ -26,10 +26,7 @@
 	"render": "file:render.php",
 	"editorScript": "file:../../build/index.js",
 	"editorStyle": "file:../../build/index.css",
-	"viewStyle": [
-		"file:section-card-and-graphic.css",
-		"file:../card-geo-list/card-geo-list.css"
-	],
+	"viewStyle": ["file:section-card-and-graphic.css", "file:../card-geo-list/card-geo-list.css"],
 	"example": {
 		"attributes": {
 			"graphicSphere": "graphics/spheres/sphere-globe-tilted",

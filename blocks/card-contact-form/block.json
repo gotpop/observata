@@ -5,9 +5,7 @@
 	"title": "Card Contact Form",
 	"category": "theme",
 	"description": "Embedded contact form via Zoho.",
-	"parent": [
-		"observata/section-contact"
-	],
+	"parent": ["observata/section-contact"],
 	"supports": {
 		"html": false,
 		"multiple": false
@@ -20,9 +18,7 @@
 	},
 	"editorScript": "file:../../build/index.js",
 	"editorStyle": "file:../../build/index.css",
-	"viewStyle": [
-		"file:card-contact-form.css"
-	],
+	"viewStyle": ["file:card-contact-form.css"],
 	"example": {
 		"attributes": {
 			"formUrl": "https://forms.zohopublic.eu/Observata/form/Contactusforwebsite/formperma/WZY4ixkroGhjj-TNFSI45yFNmi5QFNBVWTdBcPxWMTE"
