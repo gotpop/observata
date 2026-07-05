@@ -5,6 +5,9 @@
 	"title": "Card Simple",
 	"category": "theme",
 	"description": "A simple card with geo icon, title and description.",
+	"parent": [
+		"observata/grid-cards-simple"
+	],
 	"attributes": {
 		"title": {
 			"type": "string",
