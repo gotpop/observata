@@ -3,28 +3,68 @@ import './editor.css';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
+import GraphicSelect from '../components/graphic-select';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-const GRAPHIC_OPTIONS = [
-	{ label: '1', value: '1' },
-	{ label: '2', value: '2' },
-	{ label: '3', value: '3' },
-	{ label: '4', value: '4' },
-	{ label: '5', value: '5' },
-	{ label: '6', value: '6' },
-	{ label: '7', value: '7' },
-	{ label: '8', value: '8' },
-	{ label: '9', value: '9' },
-	{ label: '10', value: '10' },
-	{ label: '11', value: '11' },
-	{ label: '12', value: '12' },
-	{ label: '13', value: '13' },
-	{ label: '14', value: '14' },
-	{ label: '15', value: '15' },
-	{ label: '16', value: '16' },
-	{ label: '17', value: '17' },
-	{ label: '18', value: '18' },
+const SVG_BASE = '/wp-content/themes/observata/assets/svg';
+
+const SPHERE_GRAPHICS = [
+	{
+		label: 'Sphere Globe Tilted',
+		value: 'graphics/spheres/sphere-globe-tilted',
+		icon: `${SVG_BASE}/spheres/sphere-globe-tilted.svg`,
+	},
+	{
+		label: 'Sphere Globe 45',
+		value: 'graphics/spheres/sphere-globe-45',
+		icon: `${SVG_BASE}/spheres/sphere-globe-45.svg`,
+	},
+	{
+		label: 'Sphere Pie',
+		value: 'graphics/spheres/sphere-pie',
+		icon: `${SVG_BASE}/spheres/sphere-pie.svg`,
+	},
+	{
+		label: 'Sphere Amorphous',
+		value: 'graphics/spheres/sphere-amorphous',
+		icon: `${SVG_BASE}/spheres/sphere-amorphous.svg`,
+	},
+	{
+		label: 'Sphere Atom',
+		value: 'graphics/spheres/sphere-atom',
+		icon: `${SVG_BASE}/spheres/sphere-atom.svg`,
+	},
+	{
+		label: 'Sphere Blob',
+		value: 'graphics/spheres/sphere-blob',
+		icon: `${SVG_BASE}/spheres/sphere-blob.svg`,
+	},
+	{
+		label: 'Sphere Bulge',
+		value: 'graphics/spheres/sphere-bulge',
+		icon: `${SVG_BASE}/spheres/sphere-bulge.svg`,
+	},
+	{
+		label: 'Sphere Dots Connected',
+		value: 'graphics/spheres/sphere-dots-connected',
+		icon: `${SVG_BASE}/spheres/sphere-dots-connected.svg`,
+	},
+	{
+		label: 'Sphere Football',
+		value: 'graphics/spheres/sphere-football',
+		icon: `${SVG_BASE}/spheres/sphere-football.svg`,
+	},
+	{
+		label: 'Sphere Geodesic',
+		value: 'graphics/spheres/sphere-geodesic',
+		icon: `${SVG_BASE}/spheres/sphere-geodesic.svg`,
+	},
+	{
+		label: 'Sphere Lattice',
+		value: 'graphics/spheres/sphere-lattice',
+		icon: `${SVG_BASE}/spheres/sphere-lattice.svg`,
+	},
 ];
 
 const CARD_TEMPLATE = [
@@ -40,9 +80,9 @@ const CARD_TEMPLATE = [
 ];
 
 export default function SectionCardAndGraphicEdit({ attributes, setAttributes }) {
-	const { graphic, graphicPosition, sectionBgColour } = attributes;
+	const { graphicSphere, graphicPosition, sectionBgColour } = attributes;
 	const blockProps = useBlockProps({
-		className: `block-section-card-and-graphic graphic-${graphicPosition}`,
+		className: `block-section-card-and-graphic position-${graphicPosition}`,
 	});
 
 	return (
@@ -58,11 +98,11 @@ export default function SectionCardAndGraphicEdit({ attributes, setAttributes })
 					]}
 					onChange={(val) => setAttributes({ sectionBgColour: val })}
 				/>
-				<SelectControl
-					label={__('Graphic', 'observata')}
-					value={graphic}
-					options={GRAPHIC_OPTIONS}
-					onChange={(val) => setAttributes({ graphic: val })}
+				<GraphicSelect
+					label={__('Sphere Graphic', 'observata')}
+					value={graphicSphere}
+					options={SPHERE_GRAPHICS}
+					onChange={(val) => setAttributes({ graphicSphere: val })}
 				/>
 				<SelectControl
 					label={__('Graphic Position', 'observata')}
