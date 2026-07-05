@@ -3,19 +3,66 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import GraphicSelect from '../components/graphic-select';
+
+const SVG_BASE = '/wp-content/themes/observata/assets/svg';
 
 const BACKGROUND_GRAPHICS = [
-	{ label: 'Sphere Globe Tilted', value: 'graphics/spheres/sphere-globe-tilted' },
-	{ label: 'Sphere Globe 45', value: 'graphics/spheres/sphere-globe-45' },
-	{ label: 'Sphere Pie', value: 'graphics/spheres/sphere-pie' },
-	{ label: 'Sphere Amorphous', value: 'graphics/spheres/sphere-amorphous' },
-	{ label: 'Sphere Atom', value: 'graphics/spheres/sphere-atom' },
-	{ label: 'Sphere Blob', value: 'graphics/spheres/sphere-blob' },
-	{ label: 'Sphere Bulge', value: 'graphics/spheres/sphere-bulge' },
-	{ label: 'Sphere Dots Connected', value: 'graphics/spheres/sphere-dots-connected' },
-	{ label: 'Sphere Football', value: 'graphics/spheres/sphere-football' },
-	{ label: 'Sphere Geodesic', value: 'graphics/spheres/sphere-geodesic' },
-	{ label: 'Sphere Lattice', value: 'graphics/spheres/sphere-lattice' },
+	{
+		label: 'Sphere Globe Tilted',
+		value: 'graphics/spheres/sphere-globe-tilted',
+		icon: `${SVG_BASE}/spheres/sphere-globe-tilted.svg`,
+	},
+	{
+		label: 'Sphere Globe 45',
+		value: 'graphics/spheres/sphere-globe-45',
+		icon: `${SVG_BASE}/spheres/sphere-globe-45.svg`,
+	},
+	{
+		label: 'Sphere Pie',
+		value: 'graphics/spheres/sphere-pie',
+		icon: `${SVG_BASE}/spheres/sphere-pie.svg`,
+	},
+	{
+		label: 'Sphere Amorphous',
+		value: 'graphics/spheres/sphere-amorphous',
+		icon: `${SVG_BASE}/spheres/sphere-amorphous.svg`,
+	},
+	{
+		label: 'Sphere Atom',
+		value: 'graphics/spheres/sphere-atom',
+		icon: `${SVG_BASE}/spheres/sphere-atom.svg`,
+	},
+	{
+		label: 'Sphere Blob',
+		value: 'graphics/spheres/sphere-blob',
+		icon: `${SVG_BASE}/spheres/sphere-blob.svg`,
+	},
+	{
+		label: 'Sphere Bulge',
+		value: 'graphics/spheres/sphere-bulge',
+		icon: `${SVG_BASE}/spheres/sphere-bulge.svg`,
+	},
+	{
+		label: 'Sphere Dots Connected',
+		value: 'graphics/spheres/sphere-dots-connected',
+		icon: `${SVG_BASE}/spheres/sphere-dots-connected.svg`,
+	},
+	{
+		label: 'Sphere Football',
+		value: 'graphics/spheres/sphere-football',
+		icon: `${SVG_BASE}/spheres/sphere-football.svg`,
+	},
+	{
+		label: 'Sphere Geodesic',
+		value: 'graphics/spheres/sphere-geodesic',
+		icon: `${SVG_BASE}/spheres/sphere-geodesic.svg`,
+	},
+	{
+		label: 'Sphere Lattice',
+		value: 'graphics/spheres/sphere-lattice',
+		icon: `${SVG_BASE}/spheres/sphere-lattice.svg`,
+	},
 	{ label: 'Europe', value: 'graphics/tech/europe-graphic' },
 ];
 
@@ -40,7 +87,7 @@ export default function SectionGraphicCardEdit({ attributes, setAttributes }) {
 					]}
 					onChange={(value) => setAttributes({ sectionBgColour: value })}
 				/>
-				<SelectControl
+				<GraphicSelect
 					label={__('Background Graphic', 'observata')}
 					value={attributes.graphicSphere}
 					options={BACKGROUND_GRAPHICS}

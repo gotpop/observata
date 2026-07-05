@@ -18,6 +18,11 @@
 	--spacing-sm: 0.5rem;
 	--spacing-md: 1rem;
 	--spacing-lg: 1.5rem;
+
+	/* SVG sphere tokens (frontend uses theme-svg.css + graphic.css via style-global; editor needs them here) */
+	--surface-sphere: #fff;
+	--stroke-sphere-background: 1px;
+	--stroke-sphere-line: 1px;
 }
 
 h1,
@@ -69,5 +74,23 @@ p,
 		& > .block-editor-block-list__layout {
 			display: contents;
 		}
+	}
+}
+
+/* SVG sphere styling (frontend uses graphic.css via style-global; editor needs it here) */
+.graphic-sphere-svg {
+	.background {
+		fill: var(--surface-sphere);
+		stroke-width: var(--stroke-sphere-background);
+	}
+
+	.line,
+	.line-back {
+		stroke-width: var(--stroke-sphere-line);
+	}
+
+	.triangle {
+		fill: var(--surface-sphere);
+		stroke-width: var(--stroke-sphere-line);
 	}
 }
