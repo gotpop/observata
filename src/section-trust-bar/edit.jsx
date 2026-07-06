@@ -1,7 +1,7 @@
 import './editor.css';
 
-import BlockLabel from '../components/block-label';
 import { useBlockProps } from '@wordpress/block-editor';
+import BlockLabel from '../components/block-label';
 
 const LOGO_COUNT = 4;
 
