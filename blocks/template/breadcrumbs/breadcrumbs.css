@@ -1,8 +1,8 @@
 .section-breadcrumbs {
+	border-block-end: var(--border-grey);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
-	border-block-end: var(--border-grey);
 }
 
 @scope (.section-breadcrumbs) {
@@ -11,16 +11,12 @@
 		border-block-start: var(--border-grey);
 		border-inline: var(--border-grey);
 		border-radius: 4rem 4rem 0 0;
-		box-sizing: content-box;
 		corner-shape: squircle;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
-		grid-auto-columns: max-content;
+		grid-column: full;
+		grid-template-columns: repeat(auto-fit, minmax(30px, min-content));
 		overflow: clip;
 		padding-inline: var(--spacing-16);
-		grid-column: full;
-
-		display: flex;
 
 		@media (width >= 40rem) {
 			grid-column: content;
@@ -30,22 +26,22 @@
 	.breadcrumb-anchor {
 		--size: 1cap;
 
+		align-items: center;
 		color: var(--colour-text-body-default);
-		text-decoration: none;
+		display: flex;
 		position: relative;
+		text-decoration: none;
 
 		&::after {
-			content: '';
-			position: absolute;
-			right: 0;
-			top: calc(50% - 4px);
-			width: 1.5px;
-			height: 12px;
-			background: var(--colour-text-body-default);
-			opacity: 0.2;
+			background-color: var(--colour-text-body-default);
 			border-radius: 1px;
+			content: '';
+			height: 12px;
+			inset: calc(50% - 4px) 0 auto auto;
+			opacity: 0.2;
+			position: absolute;
 			rotate: 25deg;
-			transform-origin: top center;
+			width: 1.5px;
 		}
 
 		&:hover span {
@@ -54,20 +50,34 @@
 	}
 
 	.breadcrumb {
-		display: flex;
 		align-items: center;
-		padding-inline: 0.2rem;
-		white-space: nowrap;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		max-width: 12ch;
-		padding-block: 1rem;
+		display: flex;
 		gap: var(--spacing-8);
+		justify-content: center;
+		padding: var(--spacing-16);
+	}
+
+	.icon + .body-breadcrumb {
+		display: none;
 
 		@media (width >= 40rem) {
-			padding-inline: 1rem;
+			display: block;
+		}
+	}
+
+	.body-breadcrumb {
+		display: block;
+		line-height: normal;
+		max-width: calc(12ch - 2rem);
+		overflow-x: hidden;
+		text-box-edge: text;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		@media (width >= 40rem) {
 			max-width: none;
+			overflow: visible;
+			text-box-edge: cap alphabetic;
 		}
 	}
 }

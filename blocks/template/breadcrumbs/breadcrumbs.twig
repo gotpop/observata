@@ -8,12 +8,16 @@
 							{% if loop.first %}
 								{% include 'icons/lucide/house.twig' %}
 							{% endif %}
-							<span class="body-sm">{{ crumb.label|strip_html }}</span>
+							<span class="body-sm body-breadcrumb">
+								{{ crumb.label|strip_html }}
+							</span>
 						</span>
 					</a>
 				{% else %}
 					<span class="breadcrumb">
-						<span class="body-sm">{{ crumb.label|strip_html }}</span>
+						<span class="body-sm body-breadcrumb">
+							{{ crumb.label|strip_html }}
+						</span>
 					</span>
 				{% endif %}
 			{% endfor %}
