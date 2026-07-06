@@ -9,7 +9,7 @@ const DEFAULT_LOGOS = [
 	{ alt: 'AF', file: 'af-logo.svg' },
 	{ alt: 'Tele Dark', file: 'tele-dark-logo.svg' },
 	{ alt: 'Elastic', file: 'elastic-logo.svg' },
-	{ alt: 'Crowdstrike', file: 'crowdstrike-logo.svg' },
+	{ alt: 'Crowdstrike', file: 'crowdstrike-red-logo.svg' },
 ];
 
 function getTemplateUrl() {
