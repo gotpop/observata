@@ -14,10 +14,14 @@
 		box-sizing: content-box;
 		corner-shape: squircle;
 		display: grid;
-		grid-column: content;
 		grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
 		overflow: clip;
 		padding-inline: var(--spacing-16);
+		grid-column: full;
+
+		@media (width >= 48rem) {
+			grid-column: content;
+		}
 	}
 
 	.link-anchor {
@@ -47,7 +51,27 @@
 	.breadcrumb {
 		display: flex;
 		align-items: center;
-		padding-inline: 1rem;
 		padding-block: 1rem;
+		padding-inline: 0.2rem;
+		max-width: 10ch;
+		overflow: clip;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+
+		white-space: nowrap;
+		/* overflow: scroll; */
+
+		display: block;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		max-width: 12ch;
+		padding-block: 1rem;
+		padding-inline: 0.4rem 1rem;
+
+		@media (width >= 48rem) {
+			padding-inline: 1rem;
+			max-width: none;
+		}
 	}
 }
