@@ -45,7 +45,7 @@
 	}
 
 	.breadcrumb {
-		display: flex !important;
+		display: flex;
 		align-items: center;
 		padding-inline: 1rem;
 		padding-block: 1rem;
