@@ -15,16 +15,21 @@
 		corner-shape: squircle;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
+		grid-auto-columns: max-content;
 		overflow: clip;
 		padding-inline: var(--spacing-16);
 		grid-column: full;
 
-		@media (width >= 48rem) {
+		display: flex;
+
+		@media (width >= 40rem) {
 			grid-column: content;
 		}
 	}
 
-	.link-anchor {
+	.breadcrumb-anchor {
+		--size: 1cap;
+
 		color: var(--colour-text-body-default);
 		text-decoration: none;
 		position: relative;
@@ -33,7 +38,7 @@
 			content: '';
 			position: absolute;
 			right: 0;
-			top: calc(50% - 6px);
+			top: calc(50% - 4px);
 			width: 1.5px;
 			height: 12px;
 			background: var(--colour-text-body-default);
@@ -51,26 +56,19 @@
 	.breadcrumb {
 		display: flex;
 		align-items: center;
-		padding-block: 1rem;
 		padding-inline: 0.2rem;
-		max-width: 10ch;
 		overflow: clip;
 		white-space: nowrap;
-		text-overflow: ellipsis;
-
-		white-space: nowrap;
-		/* overflow: scroll; */
-
-		display: block;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		max-width: 12ch;
 		padding-block: 1rem;
-		padding-inline: 0.4rem 1rem;
+		gap: var(--spacing-8);
 
-		@media (width >= 48rem) {
+		@media (width >= 40rem) {
 			padding-inline: 1rem;
+			padding-block: 1rem;
 			max-width: none;
 		}
 	}

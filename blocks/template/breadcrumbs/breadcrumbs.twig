@@ -3,14 +3,18 @@
 		<nav class="breadcrumbs" aria-label="Breadcrumb">
 			{% for crumb in breadcrumbs %}
 				{% if crumb.url %}
-					<a class="body-sm link-anchor" href="{{ crumb.url|esc_url }}">
-						{% if loop.first %}
-							{% include 'icons/lucide/house.twig' %}
-						{% endif %}
-						<span class="body-sm breadcrumb">{{ crumb.label|strip_html }}</span>
+					<a class="breadcrumb-anchor" href="{{ crumb.url|esc_url }}">
+						<span class="breadcrumb">
+							{% if loop.first %}
+								{% include 'icons/lucide/house.twig' %}
+							{% endif %}
+							<span class="body-sm">{{ crumb.label|strip_html }}</span>
+						</span>
 					</a>
 				{% else %}
-					<span class="body-sm breadcrumb">{{ crumb.label|strip_html }}</span>
+					<span class="breadcrumb">
+						<span class="body-sm">{{ crumb.label|strip_html }}</span>
+					</span>
 				{% endif %}
 			{% endfor %}
 		</nav>
