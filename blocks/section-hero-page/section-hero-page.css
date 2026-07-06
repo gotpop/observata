@@ -11,13 +11,16 @@
 	background-position: var(--position-glow), center;
 	background-repeat: no-repeat;
 	background-size: var(--size-glow), var(--size-bg);
-	border-block-end: var(--border-grey);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
 	grid-template-rows: var(--size-height-heading) [hero-content] 1fr;
 	overflow: clip;
 	position: relative;
+
+	&:has(:not(+ .section-breadcrumbs)) {
+		border-block-end: var(--border-grey);
+	}
 
 	&::after {
 		animation-name: overlay-animation;
