@@ -98,6 +98,7 @@
 		translate: var(--t, -50% 25%);
 		transition: border 0.3s ease;
 		text-decoration-line: none;
+		gap: var(--spacing-16);
 
 		@media (width >=40rem) {
 			--t: -50% 50%;
