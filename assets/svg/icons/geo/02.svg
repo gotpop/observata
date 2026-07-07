@@ -5,7 +5,7 @@
 			<g id="Lines">
 				<path id="Vector" d="M8.24707 10.493V23.993" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_2" d="M10.4941 26.239H24.0001" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_3" d="M8.24707 8.24707L26.2471 26.2391" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path id="Vector_3" d="M9.836 9.836L24.658 24.65" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 			</g>
 			<g id="Circles">
 				<path id="Vector_4" d="M8.247 10.494C9.48798 10.494 10.494 9.48798 10.494 8.247C10.494 7.00602 9.48798 6 8.247 6C7.00602 6 6 7.00602 6 8.247C6 9.48798 7.00602 10.494 8.247 10.494Z" fill="#113768"/>
