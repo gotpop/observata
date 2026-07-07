@@ -11,7 +11,7 @@
 	overflow: clip;
 	padding-inline: var(--spacing-16);
 
-	@media (width >= 40rem) {
+	@media (width >= 64rem) {
 		grid-column: content;
 	}
 }
@@ -54,7 +54,7 @@
 	.icon + .body-breadcrumb {
 		display: none;
 
-		@media (width >= 40rem) {
+		@media (width >= 64rem) {
 			display: block;
 		}
 	}
@@ -62,13 +62,17 @@
 	.body-breadcrumb {
 		display: block;
 		line-height: normal;
-		max-width: calc(12ch - 2rem);
+		max-width: calc(13ch - 2rem);
 		overflow-x: hidden;
 		text-box-edge: text;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 
 		@media (width >= 40rem) {
+			max-width: calc(30ch - 2rem);
+		}
+
+		@media (width >= 64rem) {
 			max-width: none;
 			overflow: visible;
 			text-box-edge: cap alphabetic;

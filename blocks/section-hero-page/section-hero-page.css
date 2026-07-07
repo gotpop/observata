@@ -56,7 +56,7 @@
 		row-gap: var(--spacing-32);
 	}
 
-	.heading-hero {
+	.heading-xl {
 		--text-wrap-heading-hero: balance;
 		--max-width-heading-hero: 28ch;
 	}
