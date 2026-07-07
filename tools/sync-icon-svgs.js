@@ -173,10 +173,10 @@ if (checkOnly) {
 	} else {
 		console.log(
 			'  ✗ ' +
-			totalMismatches +
-			' of ' +
-			totalFiles +
-			' files out of sync — run: npm run sync:icons'
+				totalMismatches +
+				' of ' +
+				totalFiles +
+				' files out of sync — run: npm run sync:icons'
 		);
 		process.exit(1);
 	}
