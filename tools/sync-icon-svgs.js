@@ -39,14 +39,23 @@ const CATEGORIES = ['geo', 'lucide', 'platform'];
 
 /**
  * Extract the <svg>…</svg> block from a Twig file,
- * stripping the custom-element wrapper and removing
- * one level of indentation (the wrapper's tab).
+ * stripping the custom-element wrapper, removing
+ * one level of indentation (the wrapper's tab),
+ * and adding xmlns for standalone rendering (required when
+ * loaded via <img> tag — inline HTML5 SVGs inherit the namespace).
  */
 function extractSvg(twigContent) {
 	const svgMatch = twigContent.match(/<svg[\s\S]*<\/svg>/);
 	if (!svgMatch) return null;
 
-	const lines = svgMatch[0].split('\n');
+	// Add xmlns for standalone SVG rendering (e.g. <img src="...">).
+	// Inline SVGs in HTML5 don't need it, but standalone .svg files do.
+	let svgContent = svgMatch[0];
+	if (!svgContent.includes('xmlns=')) {
+		svgContent = svgContent.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+	}
+
+	const lines = svgContent.split('\n');
 	const dedented = lines.map((line) => {
 		if (line.startsWith('\t')) return line.slice(1);
 		return line;
@@ -164,10 +173,10 @@ if (checkOnly) {
 	} else {
 		console.log(
 			'  ✗ ' +
-				totalMismatches +
-				' of ' +
-				totalFiles +
-				' files out of sync — run: npm run sync:icons'
+			totalMismatches +
+			' of ' +
+			totalFiles +
+			' files out of sync — run: npm run sync:icons'
 		);
 		process.exit(1);
 	}

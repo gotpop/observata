@@ -1,4 +1,6 @@
-const SVG_BASE = '/wp-content/themes/observata/assets/svg';
+function getSvgBase() {
+	return (window.observata?.templateUrl || '') + '/assets/svg';
+}
 
 /**
  * Geo icon options (01–30) with SVG preview URLs for GraphicSelect.
@@ -9,7 +11,9 @@ const GEO_ICON_OPTIONS = Array.from({ length: 30 }, (_, i) => {
 	return {
 		label: `Icon ${num}`,
 		value: num,
-		icon: `${SVG_BASE}/icons/geo/${num}.svg`,
+		get icon() {
+			return `${getSvgBase()}/icons/geo/${num}.svg`;
+		},
 	};
 });
 
