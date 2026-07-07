@@ -29,6 +29,10 @@
 		"ctaUrl": {
 			"type": "string",
 			"default": ""
+		},
+		"showBreadcrumbs": {
+			"type": "boolean",
+			"default": true
 		}
 	},
 	"render": "file:section-hero-page.twig",

@@ -211,8 +211,8 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		$context['breadcrumbs'] = observata_build_breadcrumbs();
 	}
 
-	// Inject rendered breadcrumbs into section-hero-page.
-	if ( $template_name === 'section-hero-page' ) {
+	// Inject rendered breadcrumbs into section-hero-page when enabled.
+	if ( $template_name === 'section-hero-page' && ( $attributes['showBreadcrumbs'] ?? true ) ) {
 		$context['breadcrumbs_html'] = do_blocks( '<!-- wp:observata/breadcrumbs /-->' );
 	}
 
