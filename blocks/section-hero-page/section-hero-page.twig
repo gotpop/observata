@@ -4,8 +4,6 @@
 {% set cta_text = attributes.ctaText|default('') %}
 {% set cta_url = attributes.ctaUrl|default('') %}
 {% set section_bg_colour = attributes.sectionBgColour|default('white') %}
-
-{# Use post slug for view-transition-name #}
 {% set view_name = post.post_name|default('page') %}
 
 <section class="block-section-hero-page"
@@ -35,4 +33,5 @@ aria-labeled-by="heading-section-hero-page">
 			</a>
 		{% endif %}
 	</content-hero>
+	{{ breadcrumbs_html|raw }}
 </section>

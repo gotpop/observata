@@ -1,28 +1,22 @@
-.section-breadcrumbs {
-	border-block-end: var(--border-grey);
+.breadcrumbs {
+	border-block-end: none;
+	border-block-start: var(--border-grey);
+	border-inline: var(--border-grey);
+	border-radius: 4rem 4rem 0 0;
+	corner-shape: squircle;
 	display: grid;
 	grid-column: full;
-	grid-template-columns: subgrid;
+	grid-row: breadcrumbs;
+	grid-template-columns: repeat(auto-fit, minmax(30px, min-content));
+	overflow: clip;
+	padding-inline: var(--spacing-16);
+
+	@media (width >= 40rem) {
+		grid-column: content;
+	}
 }
 
-@scope (.section-breadcrumbs) {
-	.breadcrumbs {
-		border-block-end: none;
-		border-block-start: var(--border-grey);
-		border-inline: var(--border-grey);
-		border-radius: 4rem 4rem 0 0;
-		corner-shape: squircle;
-		display: grid;
-		grid-column: full;
-		grid-template-columns: repeat(auto-fit, minmax(30px, min-content));
-		overflow: clip;
-		padding-inline: var(--spacing-16);
-
-		@media (width >= 40rem) {
-			grid-column: content;
-		}
-	}
-
+@scope (.breadcrumbs) {
 	.breadcrumb-anchor {
 		--size: 1cap;
 

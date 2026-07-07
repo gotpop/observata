@@ -154,6 +154,7 @@ function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
 				'observata/header-navigation',
 				'observata/header-navigation-trigger',
 				'observata/section-intro',
+				'observata/breadcrumbs',
 			),
 			true
 		) ) {

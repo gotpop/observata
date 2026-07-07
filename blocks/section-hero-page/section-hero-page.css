@@ -17,9 +17,10 @@
 	grid-template-rows: var(--size-height-heading) [hero-content] 1fr;
 	overflow: clip;
 	position: relative;
+	border-block-end: var(--border-grey);
 
-	&:has(:not(+ .section-breadcrumbs)) {
-		border-block-end: var(--border-grey);
+	&:has(.breadcrumbs) {
+		grid-template-rows: var(--size-height-heading) [hero-content] 1fr [breadcrumbs] min-content;
 	}
 
 	&::after {
