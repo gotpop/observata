@@ -5,6 +5,7 @@
 	"title": "Card Contact Details",
 	"category": "theme",
 	"description": "Contact information block with phone, email and address.",
+	"parent": ["observata/section-contact"],
 	"supports": {
 		"html": false,
 		"multiple": false

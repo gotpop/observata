@@ -1,35 +1,81 @@
-.section-breadcrumbs {
+.breadcrumbs {
+	border-block-end: none;
+	border-block-start: var(--border-grey);
+	border-inline: var(--border-grey);
+	border-radius: 4rem 4rem 0 0;
+	corner-shape: squircle;
 	display: grid;
 	grid-column: full;
-	grid-template-columns: subgrid;
+	grid-row: breadcrumbs;
+	grid-template-columns: repeat(auto-fit, minmax(30px, min-content));
+	overflow: clip;
+	padding-inline: var(--spacing-16);
+
+	@media (width >= 64rem) {
+		grid-column: content;
+	}
 }
 
-@scope (.section-breadcrumbs) {
-	.breadcrumbs {
-		display: flex;
-		flex-wrap: wrap;
+@scope (.breadcrumbs) {
+	.breadcrumb-anchor {
+		--size: 1cap;
+
 		align-items: center;
-		gap: var(--spacing-8);
-		padding-block: var(--spacing-16);
-		grid-column: content;
+		color: var(--colour-text-body-default);
+		display: flex;
+		position: relative;
+		text-decoration: none;
 
-		& a {
-			color: var(--colour-text-body-light);
-			text-decoration: none;
+		&::after {
+			background-color: var(--colour-text-body-default);
+			border-radius: 1px;
+			content: '';
+			height: 12px;
+			inset: calc(50% - 4px) 0 auto auto;
+			opacity: 0.2;
+			position: absolute;
+			rotate: 25deg;
+			width: 1.5px;
+		}
 
-			&:hover {
-				color: var(--colour-text-body-default);
-				text-decoration: underline;
-			}
+		&:hover span {
+			text-decoration: underline;
 		}
 	}
 
-	.breadcrumbs__separator {
-		color: var(--colour-text-body-light);
-		opacity: 0.6;
+	.breadcrumb {
+		align-items: center;
+		display: flex;
+		gap: var(--spacing-8);
+		justify-content: center;
+		padding: var(--spacing-16);
 	}
 
-	.breadcrumbs__current {
-		color: var(--colour-text-body-default);
+	.icon + .body-breadcrumb {
+		display: none;
+
+		@media (width >= 64rem) {
+			display: block;
+		}
+	}
+
+	.body-breadcrumb {
+		display: block;
+		line-height: normal;
+		max-width: calc(13ch - 2rem);
+		overflow-x: hidden;
+		text-box-edge: text;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		@media (width >= 40rem) {
+			max-width: calc(30ch - 2rem);
+		}
+
+		@media (width >= 64rem) {
+			max-width: none;
+			overflow: visible;
+			text-box-edge: cap alphabetic;
+		}
 	}
 }

@@ -5,6 +5,7 @@
 	"title": "Card Text Intro",
 	"category": "theme",
 	"description": "A card with section heading and intro text.",
+	"parent": ["observata/section-tabs", "observata/grid-flexible-content"],
 	"attributes": {
 		"sectionTitle": {
 			"type": "string",

@@ -8,11 +8,8 @@ import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
 import GeoIcon from '../components/geo-icon';
-
-const ICON_OPTIONS = Array.from({ length: 30 }, (_, i) => {
-	const num = String(i + 1).padStart(2, '0');
-	return { label: num, value: num };
-});
+import GEO_ICON_OPTIONS from '../components/geo-icon-options';
+import GraphicSelect from '../components/graphic-select';
 
 export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
 	const { showPlanCards, featuredPlan } = attributes;
@@ -84,10 +81,10 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
 											number={attributes['plan' + i + 'Icon'] || String(i).padStart(2, '0')}
 										/>
 									</div>
-									<SelectControl
+									<GraphicSelect
 										label={__('Plan ' + i + ' Icon', 'observata')}
 										value={attributes['plan' + i + 'Icon']}
-										options={ICON_OPTIONS}
+										options={GEO_ICON_OPTIONS}
 										onChange={(val) => setAttributes({ ['plan' + i + 'Icon']: val })}
 									/>
 								</ControlsLayout>

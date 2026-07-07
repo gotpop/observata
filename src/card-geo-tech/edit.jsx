@@ -1,14 +1,11 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import BlockLabel from '../components/block-label';
-import GeoIcon from '../components/geo-icon';
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-
-const iconOptions = Array.from({ length: 30 }, (_, i) => {
-	const num = String(i + 1).padStart(2, '0');
-	return { label: num, value: num };
-});
+import BlockLabel from '../components/block-label';
+import GeoIcon from '../components/geo-icon';
+import GEO_ICON_OPTIONS from '../components/geo-icon-options';
+import GraphicSelect from '../components/graphic-select';
 
 const graphicOptions = [
 	{ label: __('None', 'observata'), value: '' },
@@ -59,10 +56,10 @@ export default function CardGeoTechEdit({ attributes, setAttributes }) {
 					disableLineBreaks
 					allowedFormats={[]}
 				/>
-				<SelectControl
+				<GraphicSelect
 					label={__('Geo Icon', 'observata')}
 					value={iconGeo}
-					options={iconOptions}
+					options={GEO_ICON_OPTIONS}
 					onChange={(val) => setAttributes({ iconGeo: val })}
 				/>
 				<SelectControl

@@ -3,16 +3,13 @@ import './editor.css';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
+import { useSelect } from '@wordpress/data';
+import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
 import GeoIcon from '../components/geo-icon';
-import { __ } from '@wordpress/i18n';
-import { useSelect } from '@wordpress/data';
-
-const iconOptions = Array.from({ length: 30 }, (_, i) => {
-	const num = String(i + 1).padStart(2, '0');
-	return { label: num, value: num };
-});
+import GEO_ICON_OPTIONS from '../components/geo-icon-options';
+import GraphicSelect from '../components/graphic-select';
 
 export default function CardGeoListEdit({ attributes, setAttributes }) {
 	const { cardTitle, listItem1, listItem2, iconGeo, showReadMore, readMoreText, readMoreUrl } =
@@ -76,10 +73,10 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
 					</li>
 				</ul>
 				<ControlsLayout layout="vertical" gap="1rem">
-					<SelectControl
+					<GraphicSelect
 						label={__('Icon', 'observata')}
 						value={iconGeo}
-						options={iconOptions}
+						options={GEO_ICON_OPTIONS}
 						onChange={(val) => setAttributes({ iconGeo: val })}
 					/>
 					<ToggleControl

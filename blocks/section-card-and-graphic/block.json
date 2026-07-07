@@ -4,14 +4,14 @@
 	"name": "observata/section-card-and-graphic",
 	"title": "Section Card and Graphic",
 	"category": "theme",
-	"description": "A single-column section with an SVG graphic illustration and an editable card-geo-list.",
+	"description": "A single-column section with an inline SVG sphere graphic and an editable card-geo-list.",
 	"supports": {
 		"html": false
 	},
 	"attributes": {
-		"graphic": {
+		"graphicSphere": {
 			"type": "string",
-			"default": "ribbon-star"
+			"default": "graphics/spheres/sphere-globe-tilted"
 		},
 		"graphicPosition": {
 			"type": "string",
@@ -26,10 +26,10 @@
 	"render": "file:render.php",
 	"editorScript": "file:../../build/index.js",
 	"editorStyle": "file:../../build/index.css",
-	"viewStyle": "file:section-card-and-graphic.css",
+	"viewStyle": ["file:section-card-and-graphic.css", "file:../card-geo-list/card-geo-list.css"],
 	"example": {
 		"attributes": {
-			"graphic": "ribbon-star",
+			"graphicSphere": "graphics/spheres/sphere-globe-tilted",
 			"graphicPosition": "left"
 		}
 	}

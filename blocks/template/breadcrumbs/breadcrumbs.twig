@@ -1,20 +1,24 @@
 {% if breadcrumbs %}
-	<section-breadcrumbs class="section-breadcrumbs">
-		<nav class="breadcrumbs" aria-label="Breadcrumb">
-			{% for crumb in breadcrumbs %}
-				{% if not loop.first %}
-					<span class="breadcrumbs__separator" aria-hidden="true">&raquo;</span>
-				{% endif %}
-				{% if crumb.url %}
-					<a class="link-anchor" href="{{ crumb.url|esc_url }}">
-						{{ crumb.label|strip_html }}
-					</a>
-				{% else %}
-					<span class="body-sm breadcrumbs__current">
+	<nav class="breadcrumbs" aria-label="Breadcrumb">
+		{% for crumb in breadcrumbs %}
+			{% if crumb.url %}
+				<a class="breadcrumb-anchor" href="{{ crumb.url|esc_url }}">
+					<span class="breadcrumb">
+						{% if loop.first %}
+							{% include 'icons/lucide/house.twig' %}
+						{% endif %}
+						<span class="body-sm body-breadcrumb">
+							{{ crumb.label|strip_html }}
+						</span>
+					</span>
+				</a>
+			{% else %}
+				<span class="breadcrumb">
+					<span class="body-sm body-breadcrumb">
 						{{ crumb.label|strip_html }}
 					</span>
-				{% endif %}
-			{% endfor %}
-		</nav>
-	</section-breadcrumbs>
+				</span>
+			{% endif %}
+		{% endfor %}
+	</nav>
 {% endif %}

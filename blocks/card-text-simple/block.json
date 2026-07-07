@@ -5,6 +5,7 @@
 	"title": "Card Text Simple",
 	"category": "theme",
 	"description": "A simple text card with heading and paragraph.",
+	"parent": ["observata/grid-flexible-content", "observata/section-graphic-card"],
 	"attributes": {
 		"heading": {
 			"type": "string",

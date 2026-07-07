@@ -3,12 +3,12 @@ import './editor.css';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
-import { useSelect } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 
 export default function SectionHeroPageEdit({ attributes, setAttributes }) {
-	const { heading, subheading, showCta, ctaText, ctaUrl } = attributes;
+	const { heading, subheading, showCta, ctaText, ctaUrl, showBreadcrumbs } = attributes;
 	const blockProps = useBlockProps({
 		className: 'block-section-hero-page',
 	});
@@ -53,6 +53,11 @@ export default function SectionHeroPageEdit({ attributes, setAttributes }) {
 						onChange={(val) => setAttributes({ subheading: val })}
 						placeholder={__('Subheading text…', 'observata')}
 						allowedFormats={[]}
+					/>
+					<ToggleControl
+						label={__('Show Breadcrumbs', 'observata')}
+						checked={showBreadcrumbs}
+						onChange={(val) => setAttributes({ showBreadcrumbs: val })}
 					/>
 					<ToggleControl
 						label={__('Show CTA Button', 'observata')}

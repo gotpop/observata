@@ -1,10 +1,10 @@
 /*
 Theme Name: Observata
-Theme URI: https://github.com/observata
+Theme URI: https://github.com/gotpop/observata
 Author: Observata
-Author URI: https://github.com/observata
-Description: Custom WordPress theme for Observata. Built on BlankSlate.
-Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images
+Author URI: https://github.com/gotpop
+Description: Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rendering.
+Tags: block-editor, block-styles, blog, custom-logo, editor-style, full-site-editing
 Version: 1.0.2
 Requires at least: 6.0
 Tested up to: 6.8
@@ -14,5 +14,4 @@ License URI: https://www.gnu.org/licenses/gpl.html
 Text Domain: observata
 
 Observata WordPress Theme
-Built on BlankSlate by WebGuy
 */

@@ -3,7 +3,8 @@ export default function GeoIcon({ number, className = 'geo-icon' }) {
 		return <span className={className}>?</span>;
 	}
 
-	const url = `/wp-content/themes/observata/assets/svg/geo/${number}-icon-geo.svg`;
+	const baseUrl = window.observata?.templateUrl || '';
+	const url = `${baseUrl}/assets/svg/icons/geo/${number}.svg`;
 
 	return <img src={url} className={className} alt={`Geo icon ${number}`} width="48" height="48" />;
 }

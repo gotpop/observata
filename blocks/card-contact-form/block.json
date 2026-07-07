@@ -5,6 +5,7 @@
 	"title": "Card Contact Form",
 	"category": "theme",
 	"description": "Embedded contact form via Zoho.",
+	"parent": ["observata/section-contact"],
 	"supports": {
 		"html": false,
 		"multiple": false

@@ -1,7 +1,7 @@
 import './editor.css';
 
-import BlockLabel from '../components/block-label';
 import { useBlockProps } from '@wordpress/block-editor';
+import BlockLabel from '../components/block-label';
 
 const LOGO_COUNT = 4;
 
@@ -9,7 +9,7 @@ const DEFAULT_LOGOS = [
 	{ alt: 'AF', file: 'af-logo.svg' },
 	{ alt: 'Tele Dark', file: 'tele-dark-logo.svg' },
 	{ alt: 'Elastic', file: 'elastic-logo.svg' },
-	{ alt: 'Crowdstrike', file: 'crowdstrike-logo.svg' },
+	{ alt: 'Crowdstrike', file: 'crowdstrike-red-logo.svg' },
 ];
 
 function getTemplateUrl() {

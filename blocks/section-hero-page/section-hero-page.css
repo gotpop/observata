@@ -11,13 +11,17 @@
 	background-position: var(--position-glow), center;
 	background-repeat: no-repeat;
 	background-size: var(--size-glow), var(--size-bg);
-	border-block-end: var(--border-grey);
 	display: grid;
 	grid-column: full;
 	grid-template-columns: subgrid;
 	grid-template-rows: var(--size-height-heading) [hero-content] 1fr;
 	overflow: clip;
 	position: relative;
+	border-block-end: var(--border-grey);
+
+	&:has(.breadcrumbs) {
+		grid-template-rows: var(--size-height-heading) [hero-content] 1fr [breadcrumbs] min-content;
+	}
 
 	&::after {
 		animation-name: overlay-animation;
@@ -52,7 +56,7 @@
 		row-gap: var(--spacing-32);
 	}
 
-	.heading-hero {
+	.heading-xl {
 		--text-wrap-heading-hero: balance;
 		--max-width-heading-hero: 28ch;
 	}
