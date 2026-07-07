@@ -3,9 +3,9 @@ import './editor.css';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { SelectControl, TextControl, ToggleControl } from '@wordpress/components';
 
-import { useSelect } from '@wordpress/data';
-import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
 
 export default function SectionHeroPageEdit({ attributes, setAttributes }) {
 	const { heading, subheading, showCta, ctaText, ctaUrl, showBreadcrumbs } = attributes;
