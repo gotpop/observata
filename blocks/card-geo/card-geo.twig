@@ -3,7 +3,10 @@
 {% set icon_geo = attributes.iconGeo|default('24') %}
 
 <article class="card card-geo icon-{{ icon_geo }}">
-	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	{% include [
+		'icons/geo/squares/' ~ icon_geo ~ '.twig',
+		'icons/geo/' ~ icon_geo ~ '.twig'
+	] %}
 	<h2 class="heading-md title">
 		{{ card_title|strip_html }}
 	</h2>

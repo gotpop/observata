@@ -9,6 +9,22 @@ applyTo:
 
 29 numbered icons (`01.twig`–`29.twig`) rendered inside `<icon-geo>` wrappers.
 
+## File layout
+
+- `views/icons/geo/` — circular/octagon-shaped icons (01, 04, 06, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27)
+- `views/icons/geo/squares/` — square-shaped icons (02, 03, 05, 07, 08, 09, 10, 13, 14, 16, 21, 25, 26, 28, 29)
+- `assets/svg/icons/geo/` — flat export directory (no subfolders, all 29 SVGs)
+
+## Block includes
+
+Block templates use array fallback syntax so `squares/` takes priority when the icon exists there:
+
+```twig
+{% include ['icons/geo/squares/' ~ icon_geo ~ '.twig', 'icons/geo/' ~ icon_geo ~ '.twig'] %}
+```
+
+This keeps the `icon_geo` attribute stable — moving icons between folders does not require re-saving content.
+
 ## Wrapper & Root
 
 ```xml

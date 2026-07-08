@@ -11,7 +11,7 @@ All icons in `views/icons/` are Twig templates with custom-element wrappers that
 
 | Category | Wrapper element   | Subdirectory            | Count | Standards                                              |
 | -------- | ----------------- | ----------------------- | ----- | ------------------------------------------------------ |
-| Geo      | `<icon-geo>`      | `views/icons/geo/`      | 30    | [geo-icons.instructions.md](geo-icons.instructions.md) |
+| Geo      | `<icon-geo>`      | `views/icons/geo/`      | 29    | [geo-icons.instructions.md](geo-icons.instructions.md) |
 | Lucide   | `<icon-lucide>`   | `views/icons/lucide/`   | 7     | Below                                                  |
 | Platform | `<icon-platform>` | `views/icons/platform/` | 2     | Below                                                  |
 
