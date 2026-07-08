@@ -55,7 +55,7 @@ This keeps the `icon_geo` attribute stable — moving icons between folders does
 
 - **No** `fill="none"` on `<svg>` — removed.
 - **No** `stroke-miterlimit` — removed.
-- Medium: squares reduced 10% from edge-to-edge (~28.8×28.8 within 32×32); circles fill edge-to-edge.
+- Medium: squares reduced 10% from edge-to-edge (~28.8×28.8 within 32×32), except icon 26; circles fill edge-to-edge.
 - Large: squares fit within 40×40 centred in 54×54; circles fill edge-to-edge.
 - Stroke-width (0.9px) and circle radius (2.247) are identical across all size variants — only positions scale.
 
