@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 34 34">
 			<g id="lines-17">
-				<path class="line" d="M 7.2839 26.7161 L 26.7161 7.2925" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 7.2839 7.2838 L 26.7161 26.7247" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 2.4259 17.0086 L 7.2839 7.2838" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 2.4259 17.0087 L 7.2839 26.7161" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 7.2839 7.2838 L 17 2.4258" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 17 2.4258 L 26.7161 7.2925" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 26.7161 7.2925 L 31.5742 17.0087" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 31.5742 17.0087 L 26.7161 26.7248" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 17 31.5741 L 7.2839 26.716" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
-				<path class="line" d="M 17 31.5742 L 26.7161 26.7248" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
+				<path class="line" d="M 7.2839 26.7161 L 26.7161 7.2925" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 7.2839 7.2838 L 26.7161 26.7247" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 2.4259 17.0086 L 7.2839 7.2838" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 2.4259 17.0087 L 7.2839 26.7161" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 7.2839 7.2838 L 17 2.4258" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 17 2.4258 L 26.7161 7.2925" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 26.7161 7.2925 L 31.5742 17.0087" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 31.5742 17.0087 L 26.7161 26.7248" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 17 31.5741 L 7.2839 26.716" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 17 31.5742 L 26.7161 26.7248" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
 			<g id="circles-17">
 				<circle class="circle" cx="7.284" cy="7.284" r="2.247" fill="var(--geo-fill, #113768)"/>

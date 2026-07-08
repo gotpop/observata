@@ -9,5 +9,6 @@
 	/* Geo icons */
 	--geo-stroke: #0598ce;
 	--geo-stroke-width: 0.9px;
+	--geo-stroke-linecap: round;
 	--geo-fill: #113768;
 }
