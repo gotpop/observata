@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
 			<g id="lines-14">
-				<path class="line" d="M 2.1157 27.4306 L 16 4.5691" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 16 4.5691 L 29.8853 27.4306" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 4.5662 27.4306 H 27.4338" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5041 26.2875 L 16 5.7122" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 16 5.7122 L 28.4968 26.2875" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 5.7096 26.2875 H 26.2904" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
 			<g id="circles-14">
-				<circle class="circle" cx="16" cy="4.5694" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="2.1147" cy="27.4306" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="29.8853" cy="27.4306" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="16" cy="5.7125" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="3.5032" cy="26.2875" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="28.4968" cy="26.2875" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
 			</g>
 		</svg>

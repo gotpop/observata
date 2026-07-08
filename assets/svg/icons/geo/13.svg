@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
 			<g id="lines-13">
-				<path class="line" d="M 2.1147 2.1147 V 29.8853" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 2.1147 29.8853 H 29.8853" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 2.1147 2.1147 L 29.8853 29.8853" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 2.1147 29.8853 L 11.4965 11.4965" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 2.1147 2.1147 L 11.4965 11.4965" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 11.4965 11.4965 L 20.5035 20.5035" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 20.5035 20.5035 L 29.8853 29.8853" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 2.1147 29.8853 L 20.5035 20.5035" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5032 3.5032 V 28.4968" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5032 28.4968 H 28.4968" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5032 3.5032 L 28.4968 28.4968" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5032 28.4968 L 11.9468 11.9468" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5032 3.5032 L 11.9468 11.9468" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 11.9468 11.9468 L 20.0531 20.0531" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 20.0531 20.0531 L 28.4968 28.4968" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 3.5032 28.4968 L 20.0531 20.0531" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
 			<g id="circles-13">
-				<circle class="circle" cx="2.1147" cy="2.1147" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="11.4965" cy="11.4965" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="20.5035" cy="20.5035" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="29.8853" cy="29.8853" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="3.5032" cy="3.5032" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="11.9468" cy="11.9468" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="20.0531" cy="20.0531" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="28.4968" cy="28.4968" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
 			</g>
 		</svg>

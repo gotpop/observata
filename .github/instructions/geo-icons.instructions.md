@@ -11,26 +11,34 @@ applyTo:
 
 ## File layout
 
-| Variant  | ViewBox | Class                       | Use                                |
-| -------- | ------- | --------------------------- | ---------------------------------- |
-| Standard | 34×34   | `icon-geo`                  | `card-geo-list`                    |
-| Medium   | 32×32   | `icon-geo icon-geo--medium` | All other cards (canonical export) |
-| Large    | 54×54   | `icon-geo icon-geo--large`  | `card-geo`                         |
+Only two size variants exist — no root-level `.twig` files.
 
-- `views/icons/geo/circles/` — standard (01, 04, 06, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27)
-- `views/icons/geo/circles/medium/` — medium 32×32
+| Variant | ViewBox | Class                       | Use                                                            |
+| ------- | ------- | --------------------------- | -------------------------------------------------------------- |
+| Medium  | 32×32   | `icon-geo icon-geo--medium` | All cards except `card-geo`, `card-geo-list`; canonical export |
+| Large   | 54×54   | `icon-geo icon-geo--large`  | `card-geo`, `card-geo-list`                                    |
+
+- `views/icons/geo/circles/medium/` — medium 32×32 (01, 04, 06, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27)
 - `views/icons/geo/circles/large/` — large 54×54
-- `views/icons/geo/squares/` — standard (02, 03, 05, 07, 08, 09, 10, 13, 14, 16, 21, 25, 26, 28, 29)
-- `views/icons/geo/squares/medium/` — medium 32×32
-- `views/icons/geo/squares/large/` — large 54×54, geometry fits within 40×40 centred
-- `assets/svg/icons/geo/` — flat export, exports **medium** variants (sync tool prefers `medium/`)
+- `views/icons/geo/squares/medium/` — medium 32×32, squares reduced 10% from edge-to-edge (02, 03, 05, 07, 08, 09, 10, 13, 14, 16, 21, 25, 26, 28, 29)
+- `views/icons/geo/squares/large/` — large 54×54, squares fit within 40×40 centred
+- `assets/svg/icons/geo/` — flat export, sync tool exports **medium** variants
+
+## Editing workflow
+
+1. Edit the `.twig` file in `views/icons/geo/circles/medium/` or `views/icons/geo/squares/medium/`
+2. Run `npm run sync:icons` to regenerate `assets/svg/icons/geo/*.svg`
+3. The sync tool scans all subdirectories recursively; medium/ has priority for export
 
 ## Block includes
 
-Block templates use array fallback syntax so both subdirectories are searched:
+Uses array fallback so Timber tries the correct size variant:
 
 ```twig
-{% include ['icons/geo/squares/' ~ icon_geo ~ '.twig', 'icons/geo/circles/' ~ icon_geo ~ '.twig'] %}
+{% include [
+	'icons/geo/squares/medium/' ~ icon_geo ~ '.twig',
+	'icons/geo/circles/medium/' ~ icon_geo ~ '.twig'
+] %}
 ```
 
 This keeps the `icon_geo` attribute stable — moving icons between folders does not require re-saving content.
@@ -47,8 +55,9 @@ This keeps the `icon_geo` attribute stable — moving icons between folders does
 
 - **No** `fill="none"` on `<svg>` — removed.
 - **No** `stroke-miterlimit` — removed.
-- Icons fill the 34×34 viewBox edge-to-edge.
-- Large variants (54×54 viewBox): squares fit within 40×40 centred, circles fill edge-to-edge.
+- Medium: squares reduced 10% from edge-to-edge (~28.8×28.8 within 32×32); circles fill edge-to-edge.
+- Large: squares fit within 40×40 centred in 54×54; circles fill edge-to-edge.
+- Stroke-width (0.9px) and circle radius (2.247) are identical across all size variants — only positions scale.
 
 ### Optical exceptions
 
