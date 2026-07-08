@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-			<g id="Lines">
+			<g id="lines-16">
 				<path class="line" d="M27.875 0.25V33.5" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M5.875 0.25V33.5" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M0.25 28H33.5" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M0.25 5.75H33.5" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 			</g>
-			<g id="Circles">
+			<g id="circles-16">
 				<circle class="circle" cx="5.875" cy="28.000" r="2.247" fill="#113768"/>
 				<circle class="circle" cx="5.875" cy="5.750" r="2.247" fill="#113768"/>
 				<circle class="circle" cx="27.875" cy="5.750" r="2.247" fill="#113768"/>

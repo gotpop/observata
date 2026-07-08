@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-			<g id="Lines">
+			<g id="lines-04">
 				<path class="line" d="M 12.1329 4.8497 V 29.1415" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M 21.8584 4.8497 V 29.1415" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M 4.8497 17 H 29.1415" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 			</g>
-			<g id="Circles">
+			<g id="circles-04">
 				<circle class="circle" cx="2.425" cy="17.000" r="2.247" fill="#113768"/>
 				<circle class="circle" cx="12.142" cy="16.993" r="2.247" fill="#113768"/>
 				<circle class="circle" cx="21.858" cy="17.000" r="2.247" fill="#113768"/>

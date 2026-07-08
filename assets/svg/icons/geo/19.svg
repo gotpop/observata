@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-			<g id="Lines">
+			<g id="lines-19">
 				<path class="line" d="M 2.4259 17.0043 L 26.7161 7.2882" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M 2.4259 17.0043 L 26.7161 26.7205" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M 31.5742 17.0042 L 7.2839 7.2795" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
@@ -11,7 +11,7 @@
 				<path class="line" d="M 31.5742 17.0043 L 26.7161 26.7205" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path class="line" d="M 17 11.1704 V 22.834" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 			</g>
-			<g id="Circles">
+			<g id="circles-19">
 				<circle class="circle" cx="7.284" cy="7.280" r="2.247" fill="#113768"/>
 				<circle class="circle" cx="2.426" cy="17.004" r="2.247" fill="#113768"/>
 				<circle class="circle" cx="7.284" cy="26.712" r="2.247" fill="#113768"/>
