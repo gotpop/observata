@@ -11,11 +11,19 @@ applyTo:
 
 ## File layout
 
-- `views/icons/geo/circles/` — circular icons, 34×34 viewBox (01, 04, 06, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27)
-- `views/icons/geo/circles/large/` — same icons, 54×54 viewBox, `icon-geo--large` class
-- `views/icons/geo/squares/` — square icons, 34×34 viewBox (02, 03, 05, 07, 08, 09, 10, 13, 14, 16, 21, 25, 26, 28, 29)
-- `views/icons/geo/squares/large/` — same icons, 54×54 viewBox, `icon-geo--large` class, geometry fits within 40×40 centred
-- `assets/svg/icons/geo/` — flat export directory (no subfolders, all 29 SVGs)
+| Variant | ViewBox | Class | Use |
+|---------|---------|-------|-----|
+| Standard | 34×34 | `icon-geo` | `card-geo-list` |
+| Medium | 32×32 | `icon-geo icon-geo--medium` | All other cards (canonical export) |
+| Large | 54×54 | `icon-geo icon-geo--large` | `card-geo` |
+
+- `views/icons/geo/circles/` — standard (01, 04, 06, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27)
+- `views/icons/geo/circles/medium/` — medium 32×32
+- `views/icons/geo/circles/large/` — large 54×54
+- `views/icons/geo/squares/` — standard (02, 03, 05, 07, 08, 09, 10, 13, 14, 16, 21, 25, 26, 28, 29)
+- `views/icons/geo/squares/medium/` — medium 32×32
+- `views/icons/geo/squares/large/` — large 54×54, geometry fits within 40×40 centred
+- `assets/svg/icons/geo/` — flat export, exports **medium** variants (sync tool prefers `medium/`)
 
 ## Block includes
 

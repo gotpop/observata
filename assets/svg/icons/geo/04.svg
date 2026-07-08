@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 34 34">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
 			<g id="lines-04">
-				<path class="line" d="M 12.133 4.494 V 29.506" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 21.867 4.494 V 29.506" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
-				<path class="line" d="M 4.494 17.0 H 29.506" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 11.4193 4.2296 V 27.7704" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 20.5807 4.2296 V 27.7704" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M 4.2296 16 H 27.7704" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
 			<g id="circles-04">
-				<circle class="circle" cx="2.247" cy="17.0" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="12.133" cy="17.0" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="21.867" cy="17.0" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="31.753" cy="17.0" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="12.133" cy="2.247" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="12.133" cy="31.753" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="21.867" cy="31.753" r="2.247" fill="var(--geo-fill, #113768)"/>
-				<circle class="circle" cx="21.867" cy="2.247" r="2.247" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="2.1148" cy="16" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="11.4193" cy="16" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="20.5807" cy="16" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="29.8852" cy="16" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="11.4193" cy="2.1148" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="11.4193" cy="29.8852" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="20.5807" cy="29.8852" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="20.5807" cy="2.1148" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
 			</g>
 		</svg>

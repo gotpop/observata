@@ -156,10 +156,16 @@ for (const category of CATEGORIES) {
 	for (const twigPath of twigFiles) {
 		const baseName = path.basename(twigPath).replace('.twig', '');
 		const subdir = path.relative(twigDir, path.dirname(twigPath));
-		// If duplicate base names exist in subdirectories, subdir takes precedence
-		// (e.g. squares/03.twig overrides a wrapper 03.twig if both exist)
+		// Precedence: medium/ > other subdirs > top-level
+		// Medium variants are the canonical export; other subdirs
+		// and top-level are fallbacks.
 		const existing = nameMap.get(baseName);
-		if (!existing || subdir !== '.') {
+		const priority = (s) => {
+			if (s === '.') return 0;
+			if (s.includes('medium')) return 2;
+			return 1;
+		};
+		if (!existing || priority(subdir) > priority(existing.subdir)) {
 			nameMap.set(baseName, { twigPath, subdir });
 		}
 	}
