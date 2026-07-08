@@ -62,9 +62,10 @@ This keeps the `icon_geo` attribute stable — moving icons between folders does
 ### Optical exceptions
 
 **Icon 26** (all sizes): Grid lines extending beyond the main square create extra visual weight.
+
 - Large: square portion reduced to ~36 span (from standard 40).
 - Medium: excluded from the 10% reduction applied to other squares.
-Adjust with uniform scale around viewBox centre when editing.
+  Adjust with uniform scale around viewBox centre when editing.
 
 ## Group Structure
 
