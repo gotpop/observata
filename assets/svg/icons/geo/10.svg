@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 34 34">
-			<g id="lines-9.355">
+			<g id="lines-10">
 				<path class="line" d="M2.247 6.302L24.373 31.384" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 				<path class="line" d="M9.627 2.72L31.753 27.802" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 				<path class="line" d="M5.914 10.587L12.472 6.074" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
@@ -10,7 +10,7 @@
 				<path class="line" d="M17.331 23.464L23.888 18.95" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 				<path class="line" d="M20.298 26.836L26.856 22.322" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
-			<g id="circles-9.355">
+			<g id="circles-10">
 				<circle class="circle" cx="2.247" cy="6.249" r="2.247" fill="var(--geo-fill, #113768)"/>
 				<circle class="circle" cx="9.627" cy="2.668" r="2.247" fill="var(--geo-fill, #113768)"/>
 				<circle class="circle" cx="31.753" cy="27.749" r="2.247" fill="var(--geo-fill, #113768)"/>
