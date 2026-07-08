@@ -11,11 +11,11 @@ applyTo:
 
 ## File layout
 
-| Variant | ViewBox | Class | Use |
-|---------|---------|-------|-----|
-| Standard | 34×34 | `icon-geo` | `card-geo-list` |
-| Medium | 32×32 | `icon-geo icon-geo--medium` | All other cards (canonical export) |
-| Large | 54×54 | `icon-geo icon-geo--large` | `card-geo` |
+| Variant  | ViewBox | Class                       | Use                                |
+| -------- | ------- | --------------------------- | ---------------------------------- |
+| Standard | 34×34   | `icon-geo`                  | `card-geo-list`                    |
+| Medium   | 32×32   | `icon-geo icon-geo--medium` | All other cards (canonical export) |
+| Large    | 54×54   | `icon-geo icon-geo--large`  | `card-geo`                         |
 
 - `views/icons/geo/circles/` — standard (01, 04, 06, 11, 12, 15, 17, 18, 19, 20, 22, 23, 24, 27)
 - `views/icons/geo/circles/medium/` — medium 32×32
