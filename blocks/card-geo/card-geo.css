@@ -11,6 +11,8 @@
 		@media (width >=60rem) {
 			--icon-size-outer: 5.25rem;
 			--icon-size-inner: 3.467rem;
+			--geo-circle-radius: 3.5px;
+			--geo-stroke-width: 1.3px;
 
 			inset: calc(var(--icon-size-outer) / -3.5) calc(var(--icon-size-outer) / -3.5) auto auto;
 		}
