@@ -40,6 +40,13 @@ This keeps the `icon_geo` attribute stable — moving icons between folders does
 - **No** `fill="none"` on `<svg>` — removed.
 - **No** `stroke-miterlimit` — removed.
 - Icons fill the 34×34 viewBox edge-to-edge.
+- Large variants (54×54 viewBox): squares fit within 40×40 centred, circles fill edge-to-edge.
+
+### Optical exceptions
+
+**Icon 26** (large): Grid lines extending beyond the main square create extra visual weight.
+The square portion is optically reduced to ~36 span (from the standard 40) so it feels balanced
+alongside other icons. Adjust with uniform scale around centre (27, 27).
 
 ## Group Structure
 
