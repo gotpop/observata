@@ -4,7 +4,7 @@
 				<path class="line" d="M 5.002 28.4104 L 28.3732 5.0392" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
 			<g id="circles-26">
-				<circle class="circle" cx="17.001" cy="16.384" r="2.247" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="17.0" cy="16.384" r="2.247" fill="var(--geo-fill, #113768)"/>
 				<circle class="circle" cx="3.176" cy="30.894" r="2.247" fill="var(--geo-fill, #113768)"/>
 				<circle class="circle" cx="30.826" cy="3.105" r="2.247" fill="var(--geo-fill, #113768)"/>
 			</g>
