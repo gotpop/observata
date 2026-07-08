@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 34 34">
 			<g id="lines-14">
-				<path class="line" d="M 2.4259 29.145 L 17.0065 4.8548" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path class="line" d="M 17.0064 4.8548 L 31.5741 29.145" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path class="line" d="M 4.8516 29.145 H 29.1484" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 2.4259 29.145 L 17.0065 4.8548" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
+				<path class="line" d="M 17.0064 4.8548 L 31.5741 29.145" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
+				<path class="line" d="M 4.8516 29.145 H 29.1484" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)"/>
 			</g>
 			<g id="circles-14">
-				<circle class="circle" cx="17.006" cy="4.855" r="2.247" fill="#113768"/>
-				<circle class="circle" cx="2.426" cy="29.145" r="2.247" fill="#113768"/>
-				<circle class="circle" cx="31.574" cy="29.145" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="17.006" cy="4.855" r="2.247" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="2.426" cy="29.145" r="2.247" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="31.574" cy="29.145" r="2.247" fill="var(--geo-fill, #113768)"/>
 			</g>
 		</svg>

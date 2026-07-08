@@ -5,4 +5,9 @@
 	/* Stroke widths */
 	--stroke-sphere-background: 1px;
 	--stroke-sphere-line: 1px;
+
+	/* Geo icons */
+	--geo-stroke: #0598ce;
+	--geo-stroke-width: 0.9px;
+	--geo-fill: #113768;
 }
