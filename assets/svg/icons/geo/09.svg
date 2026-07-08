@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-			<g id="Circles">
-				<circle id="Vector" cx="30.825" cy="30.894" r="2.247" fill="#113768"/>
-				<circle id="Vector_2" cx="3.176" cy="30.894" r="2.247" fill="#113768"/>
-				<circle id="Vector_3" cx="30.825" cy="3.106" r="2.247" fill="#113768"/>
-				<circle id="Vector_4" cx="3.176" cy="3.106" r="2.247" fill="#113768"/>
 			<g id="Lines">
 				<path id="Vector_5" d="M 3.1761 6.2112 V 27.7885" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_6" d="M 30.825 6.2112 V 27.7885" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_7" d="M 6.2824 3.1063 H 27.7201" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_8" d="M 6.2824 30.8935 H 27.7201" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-</svg>
+			</g>
+			<g id="Circles">
+				<circle id="Vector" cx="30.825" cy="30.894" r="2.247" fill="#113768"/>
+				<circle id="Vector_2" cx="3.176" cy="30.894" r="2.247" fill="#113768"/>
+				<circle id="Vector_3" cx="30.825" cy="3.106" r="2.247" fill="#113768"/>
+				<circle id="Vector_4" cx="3.176" cy="3.106" r="2.247" fill="#113768"/>
+			</g>
+		</svg>

@@ -9,9 +9,11 @@
 				<path id="Vector_6" d="M 21.3433 24.7977 L 31.2624 28.5174" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_7" d="M 8.9444 13.6387 L 18.8635 23.5578" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_8" d="M 8.9444 13.6387 L 3.9849 2.4798" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+			</g>
 			<g id="Circles">
 				<circle id="Vector_9" cx="3.051" cy="2.786" r="2.247" fill="#113768"/>
 				<circle id="Vector_10" cx="8.638" cy="13.935" r="2.247" fill="#113768"/>
 				<circle id="Vector_11" cx="19.790" cy="25.104" r="2.247" fill="#113768"/>
 				<circle id="Vector_12" cx="30.949" cy="30.683" r="2.247" fill="#113768"/>
-</svg>
+			</g>
+		</svg>

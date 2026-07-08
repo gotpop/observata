@@ -7,6 +7,7 @@
 				<path id="Vector_4" d="M 31.5751 16.553 L 21.8584 2.4238" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_5" d="M 14.558 2.425 H 19.4336" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_6" d="M 14.558 31.5687 H 19.4336" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+			</g>
 			<g id="Circles">
 				<circle id="Vector_7" cx="2.425" cy="17.000" r="2.247" fill="#113768"/>
 				<circle id="Vector_8" cx="31.575" cy="16.994" r="2.247" fill="#113768"/>
@@ -14,4 +15,5 @@
 				<circle id="Vector_10" cx="12.133" cy="31.569" r="2.247" fill="#113768"/>
 				<circle id="Vector_11" cx="21.858" cy="31.575" r="2.247" fill="#113768"/>
 				<circle id="Vector_12" cx="21.858" cy="2.425" r="2.247" fill="#113768"/>
-</svg>
+			</g>
+		</svg>

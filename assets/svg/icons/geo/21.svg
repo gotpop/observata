@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-	<g id="21" clip-path="url(#clip0_3733_8898)">
 			<g id="Lines">
 				<path id="Vector" d="M1.88635 5.50224L24.553 31.1977" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_2" d="M9.44702 1.83246L32.1137 27.5279" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
@@ -11,11 +10,4 @@
 				<circle id="Vector_5" cx="32.114" cy="27.474" r="2.247" fill="#113768"/>
 				<circle id="Vector_6" cx="24.553" cy="31.144" r="2.247" fill="#113768"/>
 			</g>
-		</g>
-	</g>
-	<defs>
-		<clipPath id="clip0_3733_8898">
-			<rect width="34" height="34" fill="white"/>
-		</clipPath>
-	</defs>
-</svg>
+		</svg>

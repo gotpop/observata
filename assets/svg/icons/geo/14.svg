@@ -4,8 +4,10 @@
 				<path id="Vector" d="M 2.4259 29.145 L 17.0065 4.8548" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_2" d="M 17.0064 4.8548 L 31.5741 29.145" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 				<path id="Vector_3" d="M 4.8516 29.145 H 29.1484" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+			</g>
 			<g id="Circles">
 				<circle id="Vector_4" cx="17.006" cy="4.855" r="2.247" fill="#113768"/>
 				<circle id="Vector_5" cx="2.426" cy="29.145" r="2.247" fill="#113768"/>
 				<circle id="Vector_6" cx="31.574" cy="29.145" r="2.247" fill="#113768"/>
-</svg>
+			</g>
+		</svg>
