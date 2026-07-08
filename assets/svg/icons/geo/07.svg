@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
 			<g id="Lines">
-				<path id="Vector_10" d="M 3.3939 6.7895 V 27.1985" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10" />
-				<path id="Vector_11" d="M 17.006 6.7984 V 27.1984" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10" />
-				<path id="Vector_12" d="M 30.6059 6.7984 V 27.1984" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10" />
+				<path class="line" d="M 3.3939 6.7895 V 27.1985" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10" />
+				<path class="line" d="M 17.006 6.7984 V 27.1984" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10" />
+				<path class="line" d="M 30.6059 6.7984 V 27.1984" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10" />
 			</g>
 			<g id="Circles">
-				<circle id="Vector" cx="3.394" cy="3.395" r="2.247" fill="#113768"/>
-				<circle id="Vector_2" cx="3.394" cy="16.995" r="2.247" fill="#113768"/>
-				<circle id="Vector_3" cx="3.394" cy="30.605" r="2.247" fill="#113768"/>
-				<circle id="Vector_4" cx="17.006" cy="3.405" r="2.247" fill="#113768"/>
-				<circle id="Vector_5" cx="17.006" cy="16.995" r="2.247" fill="#113768"/>
-				<circle id="Vector_6" cx="17.006" cy="30.604" r="2.247" fill="#113768"/>
-				<circle id="Vector_7" cx="30.606" cy="3.405" r="2.247" fill="#113768"/>
-				<circle id="Vector_8" cx="30.606" cy="16.995" r="2.247" fill="#113768"/>
-				<circle id="Vector_9" cx="30.606" cy="30.604" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="3.394" cy="3.395" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="3.394" cy="16.995" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="3.394" cy="30.605" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="17.006" cy="3.405" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="17.006" cy="16.995" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="17.006" cy="30.604" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="30.606" cy="3.405" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="30.606" cy="16.995" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="30.606" cy="30.604" r="2.247" fill="#113768"/>
 			</g>
 		</svg>

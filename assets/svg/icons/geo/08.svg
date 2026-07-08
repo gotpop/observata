@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
 			<g id="Lines">
-				<path id="Vector_5" d="M 5.3205 5.3211 L 28.7268 28.7273" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_6" d="M 28.7045 5.3211 L 5.2969 28.7273" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 5.3205 5.3211 L 28.7268 28.7273" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 28.7045 5.3211 L 5.2969 28.7273" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 			</g>
 			<g id="Circles">
-				<circle id="Vector" cx="30.825" cy="30.894" r="2.247" fill="#113768"/>
-				<circle id="Vector_2" cx="3.176" cy="30.894" r="2.247" fill="#113768"/>
-				<circle id="Vector_3" cx="30.825" cy="3.106" r="2.247" fill="#113768"/>
-				<circle id="Vector_4" cx="3.176" cy="3.106" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="30.825" cy="30.894" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="3.176" cy="30.894" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="30.825" cy="3.106" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="3.176" cy="3.106" r="2.247" fill="#113768"/>
 			</g>
 		</svg>

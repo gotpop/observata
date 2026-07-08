@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
 			<g id="Lines">
-				<path id="Vector" d="M 7.2839 7.2795 L 2.4259 17.0042" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_2" d="M 2.4259 17.0043 L 7.2839 26.7118" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_3" d="M 26.7161 7.2882 L 31.5742 17.0043" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_4" d="M 31.5742 17.0043 L 26.7161 26.7205" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_5" d="M 9.7098 7.2795 H 24.2905" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_6" d="M 4.8517 17.0043 H 29.142" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_7" d="M 9.7098 26.7117 H 24.3347" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 7.2839 7.2795 L 2.4259 17.0042" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 2.4259 17.0043 L 7.2839 26.7118" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 26.7161 7.2882 L 31.5742 17.0043" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 31.5742 17.0043 L 26.7161 26.7205" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 9.7098 7.2795 H 24.2905" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 4.8517 17.0043 H 29.142" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+				<path class="line" d="M 9.7098 26.7117 H 24.3347" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
 			</g>
 			<g id="Circles">
-				<circle id="Vector_8" cx="7.284" cy="7.280" r="2.247" fill="#113768"/>
-				<circle id="Vector_9" cx="2.426" cy="17.004" r="2.247" fill="#113768"/>
-				<circle id="Vector_10" cx="7.284" cy="26.712" r="2.247" fill="#113768"/>
-				<circle id="Vector_11" cx="26.716" cy="7.288" r="2.247" fill="#113768"/>
-				<circle id="Vector_12" cx="31.574" cy="17.004" r="2.247" fill="#113768"/>
-				<circle id="Vector_13" cx="26.716" cy="26.720" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="7.284" cy="7.280" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="2.426" cy="17.004" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="7.284" cy="26.712" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="26.716" cy="7.288" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="31.574" cy="17.004" r="2.247" fill="#113768"/>
+				<circle class="circle" cx="26.716" cy="26.720" r="2.247" fill="#113768"/>
 			</g>
 		</svg>
