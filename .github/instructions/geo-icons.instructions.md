@@ -7,7 +7,7 @@ applyTo:
 
 # Geo Icon Standards
 
-30 numbered icons (`01.twig`–`30.twig`) rendered inside `<icon-geo>` wrappers.
+29 numbered icons (`01.twig`–`29.twig`) rendered inside `<icon-geo>` wrappers.
 
 ## Wrapper & Root
 
