@@ -2,19 +2,19 @@
 	--overflow-card: visible;
 
 	.icon-geo {
-		--icon-size-outer: 3.25rem;
+		--geo-circle-radius: 3.5px;
+		--geo-stroke-width: 1.3px;
 		--icon-size-inner: 2rem;
+		--icon-size-outer: 3.25rem;
 
+		inset-block: var(--offset, var(--spacing-16)) auto;
+		inset-inline: auto var(--offset, var(--spacing-16));
 		position: absolute;
-		inset: 1rem 1rem auto auto;
 
 		@media (width >=60rem) {
-			--icon-size-outer: 5.25rem;
 			--icon-size-inner: 54px;
-			--geo-circle-radius: 3.5px;
-			--geo-stroke-width: 1.3px;
-
-			inset: calc(var(--icon-size-outer) / -3.5) calc(var(--icon-size-outer) / -3.5) auto auto;
+			--icon-size-outer: 5.25rem;
+			--offset: -1.5rem;
 		}
 	}
 
