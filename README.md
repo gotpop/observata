@@ -1,12 +1,12 @@
-# Observata Theme
-
-Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rendering.
-
-![Screenshot](screenshot.jpg)
+# Observata
 
 [![Lint](https://github.com/gotpop/observata/actions/workflows/lint.yml/badge.svg)](https://github.com/gotpop/observata/actions/workflows/lint.yml)
 [![Test](https://github.com/gotpop/observata/actions/workflows/test.yml/badge.svg)](https://github.com/gotpop/observata/actions/workflows/test.yml)
 [![PHPStan](https://github.com/gotpop/observata/actions/workflows/phpstan.yml/badge.svg)](https://github.com/gotpop/observata/actions/workflows/phpstan.yml)
+
+Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rendering.
+
+![Screenshot](screenshot.jpg)
 
 ## Stack
 
@@ -16,7 +16,7 @@ Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rende
 - **Three.js + Shaders** — WebGPU/WebGL hero shader effects
 - No `theme.json` — all styling is hand-written CSS with custom properties
 
-## Architecture
+<details><summary>Architecture</summary>
 
 All blocks are **server-rendered via Twig** (not PHP `render.php`). The render pipeline:
 
@@ -57,24 +57,39 @@ Timber is configured with three loader paths (`inc/theme-setup.php`):
 
 Page-level templates live in `views/templates/`, extending `views/base.twig`.
 
-### PHP Modules (`inc/`)
+</details>
 
-| File                     | Responsibility                                                    |
-| ------------------------ | ----------------------------------------------------------------- |
-| `theme-setup.php`        | Timber init, menus, theme supports                                |
-| `enqueue-assets.php`     | CSS inlining (SCRIPT_DEBUG gated), script deferral, font preloads |
-| `block-renderer.php`     | Twig render callback, inner block serialization, context builders |
-| `blocks.php`             | Block auto-discovery + registration, webpack runtime enqueue      |
-| `twig-filters.php`       | Custom Twig filters (`strip_html`)                                |
-| `seo.php`                | Sitemap, robots.txt, canonical URLs                               |
-| `analytics.php`          | GA4, Leadfeeder, Cookiebot settings                               |
-| `schema-markup.php`      | Schema.org itemscope/itemprop                                     |
-| `speculation-rules.php`  | Chrome navigation prefetch                                        |
-| `content-filters.php`    | Title filters, read-more links                                    |
-| `device-detection.php`   | UA-based HTML classes                                             |
-| `image-optimization.php` | WebP MIME, disables intermediate sizes                            |
+<details><summary>PHP Modules (`inc/`)</summary>
 
-### Design Token System (3-Tier)
+Each file handles **one concern**:
+
+| File                        | Responsibility                                     |
+| --------------------------- | -------------------------------------------------- |
+| `theme-setup.php`           | Timber init, menus, theme supports, env helpers    |
+| `enqueue-assets.php`        | CSS inlining (SCRIPT_DEBUG gated), script deferral |
+| `block-renderer.php`        | Twig render callback + context injection helpers   |
+| `block-helpers.php`         | Hero split, block serialization, template map      |
+| `blocks.php`                | Block registration, editor runtime, allowed blocks |
+| `breadcrumbs.php`           | Breadcrumb trail builder                           |
+| `twig-filters.php`          | Custom Twig filters (`strip_html`)                 |
+| `seo.php`                   | Sitemap, robots.txt, canonical URLs                |
+| `content-filters.php`       | Title filters, read-more links                     |
+| `device-detection.php`      | UA-based HTML classes                              |
+| `image-optimization.php`    | WebP MIME, disables intermediate sizes             |
+| `schema-markup.php`         | Schema.org itemscope/itemprop                      |
+| `speculation-rules.php`     | Chrome navigation prefetch                         |
+| `theme-settings.php`        | Theme Settings admin page + sections               |
+| `theme-settings-footer.php` | Footer content fields                              |
+| `analytics-ga4.php`         | GA4 registration + output                          |
+| `analytics-leadfeeder.php`  | Leadfeeder registration + output                   |
+| `analytics-cookiebot.php`   | CookieBot registration + output                    |
+
+All functions are **fully typed** (parameter + return types). PHPStan runs at
+level 5 in CI to prevent type regressions.
+
+</details>
+
+<details><summary>Design Token System</summary>
 
 No `theme.json` — all styling uses hand-written CSS with a 3-tier custom property system:
 
@@ -86,7 +101,9 @@ No `theme.json` — all styling uses hand-written CSS with a 3-tier custom prope
 
 Prefer utility classes in Twig templates, theme tokens in block CSS, and avoid base tokens directly.
 
-## Development
+</details>
+
+<details><summary>Development</summary>
 
 ```bash
 npm run start        # webpack watch mode (blocks + client JS + global CSS)
@@ -113,20 +130,15 @@ define( 'SCRIPT_DEBUG', true );
 
 This switches CSS from inlined `<style>` to standard `<link>` tags, enabling webpack watch-mode hot reloads.
 
-## Linting & Formatting
+</details>
+
+<details><summary>Linting & Formatting</summary>
 
 ```bash
-# PHP
-composer phpcs        # check against WordPress Coding Standards
-composer phpcbf       # auto-fix
-composer fix          # alias for phpcbf
-
-# JS/TS & CSS
-npm run lint:ts       # eslint on src/ and client/
-npm run lint:css      # stylelint on all .css
-npm run lint          # all of the above
-
-# Format
+npm run lint          # eslint + stylelint + phpcs + phpstan (everything)
+composer phpcs        # PHPCS only
+composer phpstan      # PHPStan type check (level 5)
+composer fix          # phpcbf auto-fix
 npm run format        # prettier --write .
 npm run format:check  # prettier --check .
 ```
@@ -135,7 +147,9 @@ npm run format:check  # prettier --check .
 
 `PHPCS Fix` (default build task) — runs phpcbf on the current file.
 
-## Testing
+</details>
+
+<details><summary>Testing</summary>
 
 Unit tests for frontend TypeScript (`client/ts/`) use [Vitest](https://vitest.dev)
 with jsdom for DOM APIs.
@@ -149,13 +163,16 @@ Tests live alongside source files as `*.test.ts`. Coverage includes CSS feature
 detection, breakpoint media queries, browser/platform detection, click-outside
 behaviour, scroll observer, and GPU/CPU performance monitoring.
 
-## CI (GitHub Actions)
+</details>
 
-Three workflows run automatically — all live in `.github/workflows/`:
+<details><summary>CI (GitHub Actions)</summary>
+
+Four workflows run automatically in `.github/workflows/`:
 
 | Workflow      | Triggers                     | Runs                                |
 | ------------- | ---------------------------- | ----------------------------------- |
 | `lint.yml`    | PR + push to `master`        | ESLint, Stylelint, Prettier, PHPCS  |
+| `phpstan.yml` | PR + push to `master`        | PHPStan type check (level 5)        |
 | `test.yml`    | PR + push to `master`        | Vitest unit tests                   |
 | `release.yml` | push to `master` + `v*` tags | Build zip artifact, GitHub Releases |
 
@@ -170,3 +187,5 @@ git push origin v1.0.0
 
 Every push to `master` also produces a downloadable zip artifact (90-day
 retention) in the Actions run — no tag required.
+
+</details>
