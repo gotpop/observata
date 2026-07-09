@@ -1,7 +1,11 @@
 <?php
 
-// Use | as the document title separator.
 add_filter( 'document_title_separator', 'observata_document_title_separator' );
+add_filter( 'the_title', 'observata_title' );
+add_filter( 'the_content_more_link', 'observata_read_more_link' );
+add_filter( 'excerpt_more', 'observata_excerpt_read_more_link' );
+
+// Use | as the document title separator.
 function observata_document_title_separator( string $sep ): string {
 	$sep = esc_html( '|' );
 
@@ -9,7 +13,6 @@ function observata_document_title_separator( string $sep ): string {
 }
 
 // Fall back to '...' for empty post titles.
-add_filter( 'the_title', 'observata_title' );
 function observata_title( string $title ): string {
 	if ( $title == '' ) {
 		return esc_html( '...' );
@@ -18,8 +21,7 @@ function observata_title( string $title ): string {
 	}
 }
 
-// Custom "read more" link for post content and excerpts.
-add_filter( 'the_content_more_link', 'observata_read_more_link' );
+// Custom "read more" link for post content.
 function observata_read_more_link(): string {
 	if ( ! is_admin() ) {
 		/* translators: %s is a visual arrow icon. */
@@ -28,7 +30,8 @@ function observata_read_more_link(): string {
 
 	return '';
 }
-add_filter( 'excerpt_more', 'observata_excerpt_read_more_link' );
+
+// Custom "read more" link for post excerpts.
 function observata_excerpt_read_more_link( string $more ): string {
 	if ( ! is_admin() ) {
 		global $post;
