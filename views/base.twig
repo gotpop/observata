@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="{{ site.charset }}" />
 		<meta name="viewport" content="width=device-width" />
+		{% include 'partials/device-detect.twig' %}
 		{{ function('wp_head') }}
 	</head>
 	<body class="{{ body_class }}">
