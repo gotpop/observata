@@ -1,6 +1,7 @@
 <?php
 
-// Disable WordPress emoji scripts and styles.
+// ── Remove WordPress defaults ───────────────────────────────────
+
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -10,40 +11,33 @@ remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 add_filter( 'emoji_svg_url', '__return_false' );
 
-// Remove default WordPress frontend styles — this theme provides its own design system.
-add_action( 'wp_enqueue_scripts', 'observata_remove_default_styles', 100 );
-function observata_remove_default_styles(): void {
-	// Core block library styles (wp-block-library, wp-block-library-inline-css)
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wp-block-library-theme' );
-
-	// Classic theme styles (classic-theme-styles-inline-css)
-	wp_dequeue_style( 'classic-theme-styles' );
-
-	// Global styles / theme.json (global-styles-inline-css)
-	wp_dequeue_style( 'global-styles' );
-
-	// Image auto-sizes inline styles (wp-img-auto-sizes-contain-inline-css)
-	wp_dequeue_style( 'wp-img-auto-sizes' );
-
-	// Defer to register_block_styles for its inline styles. The filter
-	// below stops core from registering all default block stylesheets.
-}
-
-// Prevent WordPress from registering and enqueuing block stylesheets
-// bundled with core (e.g. wp-block-button, wp-block-quote, etc.).
 add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 
-// Remove the global styles (theme.json) REST endpoint and inline CSS output.
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles_css_custom_properties' );
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 
-// Cache-bust block viewStyle CSS via filemtime().
-// The webpack-bundled stylesheet (observata-style) already has a content-hash
-// version. Block viewStyle files registered by core use the static theme
-// version — this overrides with the file's modification time.
+// ── Theme hooks ─────────────────────────────────────────────────
+
+add_action( 'wp_enqueue_scripts', 'observata_remove_default_styles', 100 );
 add_filter( 'style_loader_src', 'observata_cache_bust_theme_styles', 10, 2 );
+add_action( 'wp_head', 'observata_preload_fonts', 1 );
+add_action( 'wp_head', 'observata_preload_hero_scripts', 2 );
+add_action( 'wp_head', 'observata_inline_critical_css', 1 );
+add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
+
+// ─────────────────────────────────────────────────────────────────
+
+// Remove default WordPress frontend block styles.
+function observata_remove_default_styles(): void {
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'classic-theme-styles' );
+	wp_dequeue_style( 'global-styles' );
+	wp_dequeue_style( 'wp-img-auto-sizes' );
+}
+
+// Cache-bust block viewStyle CSS via filemtime().
 function observata_cache_bust_theme_styles( string $src, string $handle ): string {
 	// Skip the webpack-bundled stylesheet — it already has a content-hash version.
 	if ( $handle === 'observata-style' ) {
@@ -76,9 +70,7 @@ function observata_cache_bust_theme_styles( string $src, string $handle ): strin
 	return $src;
 }
 
-// Preload fonts so the browser starts downloading them immediately,
-// before the CSS is parsed and @font-face is discovered.
-add_action( 'wp_head', 'observata_preload_fonts', 1 );
+// Preload fonts so the browser discovers them before CSS is parsed.
 function observata_preload_fonts(): void {
 	$fonts = array(
 		'inter'   => '/assets/fonts/inter/inter.woff2',
@@ -93,12 +85,7 @@ function observata_preload_fonts(): void {
 	}
 }
 
-// High-priority preload of the vendors chunk on the homepage so the shader
-// engine starts downloading the instant the browser parses <head> — in
-// parallel with the HTML and at the same fetch priority a blocking script
-// would get. Paired with the `defer` strategy on observata-home, this
-// eliminates render blocking without slowing the shader's start time.
-add_action( 'wp_head', 'observata_preload_hero_scripts', 2 );
+// Preload the homepage hero shader engine at high fetch priority.
 function observata_preload_hero_scripts(): void {
 	if ( ! is_front_page() ) {
 		return;
@@ -118,13 +105,9 @@ function observata_preload_hero_scripts(): void {
 	);
 }
 
-// Inline the global stylesheet directly into <head> to eliminate the last
-// render-blocking CSS request. Registered at the top level so the hook is in
-// place before wp_head fires — all conditional logic lives inside the function.
-add_action( 'wp_head', 'observata_inline_critical_css', 1 );
+// Inline critical CSS into <head> to eliminate render-blocking requests.
 function observata_inline_critical_css(): void {
-	// Development mode: use a regular <link> tag for dev tools + webpack
-	// watch refreshes. The <link> is enqueued by observata_enqueue().
+	// Development mode: use a <link> tag for dev tools + webpack watch refreshes.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		return;
 	}
@@ -141,11 +124,7 @@ function observata_inline_critical_css(): void {
 		return;
 	}
 
-	// Rewrite relative asset URLs to absolute paths. When CSS is loaded via
-	// a <link> tag, relative URLs resolve relative to the stylesheet's
-	// location (build/ → ../assets/ resolves correctly). When inlined in a
-	// <style> tag, relative URLs resolve relative to the document URL
-	// (the page itself), which breaks font and asset paths.
+	// Rewrite relative asset URLs to absolute paths so inlined CSS resolves fonts and assets correctly.
 	$theme_uri = get_template_directory_uri();
 	$css       = preg_replace(
 		'/url\(\s*[\'"]?\.\.\/(assets\/[^)\'"]+)[\'"]?\)/',
@@ -153,29 +132,20 @@ function observata_inline_critical_css(): void {
 		$css
 	);
 
-	// Inline the CSS. No minification here — webpack already produces
-	// minified output in production mode.
+	// Inline the CSS (already minified by webpack in production mode).
 	printf(
 		'<style id="observata-inline-css">%s</style>' . "\n",
 		$css // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	);
 }
 
-// Enqueue bundled stylesheet and compiled client JS (with cache-busting).
-add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
+// Enqueue theme scripts and styles with cache-busting.
 function observata_enqueue(): void {
-	// Webpack bundles all @imported CSS into build/style-global.css with a
-	// content-hash version. Falls back to style.css if the build doesn't exist.
+	// CSS bundle with content-hash version; falls back to style.css if no build exists.
 	$bundle_css = get_template_directory() . '/build/style-global.css';
 	$asset_path = get_template_directory() . '/build/style-global.asset.php';
 
-	// CSS strategy:
-	// - Production (SCRIPT_DEBUG off): inlined into <head> by
-	// observata_inline_critical_css(). Do NOT enqueue here — that would
-	// create a render-blocking <link> tag.
-	// - Development (SCRIPT_DEBUG on): enqueue a regular <link> tag so dev
-	// tools and webpack watch-mode refreshes work as expected.
-	// - Pre-build fallback: enqueue style.css.
+	// Production: CSS is inlined by observata_inline_critical_css(). Dev: enqueue <link> tag.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		// Development: standard <link> tag for dev tools + webpack refreshes.
 		if ( file_exists( $bundle_css ) && file_exists( $asset_path ) ) {
@@ -187,8 +157,7 @@ function observata_enqueue(): void {
 		}
 	}
 
-	// Helper: read a webpack asset.php manifest and register + enqueue the
-	// script with its runtime + vendor chunk dependencies.
+	// Read webpack asset manifest and register script with runtime + vendor dependencies.
 	$build_dir    = get_template_directory() . '/build';
 	$build_uri    = get_template_directory_uri() . '/build';
 	$runtime_path = $build_dir . '/runtime.asset.php';
@@ -202,8 +171,7 @@ function observata_enqueue(): void {
 		$runtime_deps = array( 'observata-runtime' );
 	}
 
-	// The vendors chunk contains three.js + shaders library — shared by all
-	// entry points so the library is only downloaded once.
+	// Vendors chunk: three.js + shaders, shared by all entry points.
 	$vendor_deps  = array();
 	$vendors_path = $build_dir . '/vendors.asset.php';
 
@@ -213,8 +181,7 @@ function observata_enqueue(): void {
 		$vendor_deps = array( 'observata-vendors' );
 	}
 
-	// client.js — menu, intersection observer, tabs, subpage/card shaders.
-	// Loaded on all pages.
+	// client.js — menu, intersection observer, tabs, subpage/card shaders. Loaded on all pages.
 	$client_asset_path = $build_dir . '/client.asset.php';
 
 	if ( file_exists( $client_asset_path ) ) {
@@ -233,22 +200,7 @@ function observata_enqueue(): void {
 		wp_enqueue_script( 'observata-home' );
 	}
 
-	// Apply `defer` strategy to ALL theme scripts consistently.
-	//
-	// All theme scripts run inside DOMContentLoaded handlers, so deferring
-	// is safe — deferred scripts execute in dependency order after parsing
-	// completes and before DOMContentLoaded fires.
-	//
-	// CRITICAL: This MUST cover every script in the dependency chain.
-	// WordPress 6.3+ will strip `defer` from a script if a non-deferred
-	// (blocking) script depends on it — to preserve execution order.
-	// Previously client.js (blocking) depended on vendors.js (deferred),
-	// which cascaded and stripped defer from vendors.js AND runtime.js,
-	// making them all render-blocking again.
-	//
-	// With all four handles deferred, the browser's preload scanner starts
-	// every download immediately (in parallel with the HTML, no blocking),
-	// and the H1 (the LCP element) paints as soon as it's parsed.
+	// Defer all theme scripts — every script in the chain must be deferred or WP 6.3+ cascades back to render-blocking.
 	$defer_handles = array( 'observata-runtime', 'observata-vendors', 'observata-client' );
 
 	if ( wp_script_is( 'observata-home', 'enqueued' ) ) {
