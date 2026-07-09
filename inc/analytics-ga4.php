@@ -47,7 +47,7 @@ function observata_sanitize_ga4_id( $value ) {
 
 function observata_ga4_id_field() {
 	$value = get_option( 'observata_ga4_id', '' );
-	
+
 	printf(
 		'<input type="text" name="observata_ga4_id" value="%s" class="regular-text" placeholder="G-XXXXXXXXXX">',
 		esc_attr( $value )
@@ -85,8 +85,7 @@ function observata_output_ga4_script() {
 		<script type="text/plain" data-cookieconsent="statistics">
 			gtag("js",new Date());
 			gtag("config","%1$s");
-		</script>
-		',
+		</script>',
 		esc_js( $ga4_id )
 	);
 	// phpcs:enable
