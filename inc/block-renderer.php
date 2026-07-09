@@ -1,15 +1,11 @@
 <?php
 /**
- * Custom block renderer that uses Twig templates for block output.
+ * Custom block renderer — compiles blocks through Twig templates.
+ *
+ * @see observata_render_block_twig() for the main render callback.
  */
 
-/**
- * Parse a page's block content and separate the hero block from body content.
- *
- * @param string $post_content   Raw post_content from the database.
- * @param string $hero_block_name Full block name to extract (e.g. 'observata/section-hero-home').
- * @return array Associative array with 'hero' and 'content' keys.
- */
+// Split a page's post_content into hero block + body content.
 function observata_split_hero_from_content( string $post_content, string $hero_block_name ): array {
 	$blocks      = parse_blocks( $post_content );
 	$hero_output = '';
@@ -29,17 +25,7 @@ function observata_split_hero_from_content( string $post_content, string $hero_b
 	);
 }
 
-/**
- * Recursively serialize an array of block objects into WordPress
- * block-delimiter HTML comments, preserving the full nesting tree.
- *
- * The controlled InnerBlocks (value/onChange) stores blocks as:
- *   [ name, attributes, innerBlocks ]
- * This function converts them to the <!-- wp:... --> format do_blocks() expects.
- *
- * @param array $blocks Array of block objects from InnerBlocks onChange.
- * @return string Serialized block-delimiter HTML.
- */
+// Serialize block objects into WordPress block-delimiter HTML comments.
 function observata_serialize_blocks_recursive( array $blocks ): string {
 	$output = '';
 
@@ -69,10 +55,7 @@ function observata_serialize_blocks_recursive( array $blocks ): string {
 	return $output;
 }
 
-/**
- * Cached mapping of template_name => relative path from blocks/ dir.
- * Built once per request to avoid repeated filesystem scans.
- */
+// Build a cached template_name => relative path map (once per request).
 function observata_get_template_map(): array {
 	static $map = null;
 
@@ -157,7 +140,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		}
 	}
 
-	// Special handling for blog-posts to query latest posts via Timber.
+	// Query latest posts for section-blog-posts via Timber.
 	if ( $template_name === 'section-blog-posts' ) {
 		$posts_per_page   = $attributes['postsPerPage'] ?? 10;
 		$context['posts'] = \Timber\Timber::get_posts(
@@ -171,7 +154,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		);
 	}
 
-	// Special handling for section-blog-pagination to create cycling array of posts.
+	// Build prev/next cycling array for section-blog-pagination.
 	if ( $template_name === 'section-blog-pagination' ) {
 		$all_posts = \Timber\Timber::get_posts(
 			array(

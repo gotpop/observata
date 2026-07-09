@@ -1,12 +1,9 @@
 <?php
 /**
- * Custom Twig filters for block templates.
+ * Custom Twig filters.
  */
 
-/**
- * Add global Twig filter to strip all HTML tags.
- * Available in all Twig templates as: {{ text|strip_html }}
- */
+// Add |strip_html filter — removes all HTML tags from a string.
 add_filter(
 	'timber/twig',
 	function ( $twig ) {

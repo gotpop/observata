@@ -5,23 +5,8 @@
 \Timber\Timber::$dirname = array( 'views' );
 \Timber\Timber::init();
 
-/**
- * Enable Twig compilation cache in production only.
- *
- * The compilation cache stores the compiled PHP version of Twig templates
- * (template source → PHP code), NOT the rendered HTML output. This means there
- * is zero stale-data risk — templates always execute with fresh data on every
- * request. When `auto_reload` is true, Twig automatically recompiles whenever a
- * template source file changes on disk.
- *
- * Dev and staging environments keep the cache disabled so template edits are
- * reflected immediately without needing to flush the cache.
- *
- * Environment flags (set in wp-config.php):
- *   define( 'WP_ENVIRONMENT', 'production' ); // Caching ON
- *   define( 'WP_ENVIRONMENT', 'staging' );    // Caching OFF (hot reload)
- *   (undefined)                                // Caching OFF (local dev)
- */
+// Enable Twig compilation cache in production only (auto_reload handles invalidation).
+// Dev/staging skip caching so template edits reflect immediately.
 add_filter(
 	'timber/twig/environment/options',
 	function ( $options ) {
@@ -84,14 +69,8 @@ function observata_setup() {
 	);
 }
 
-// ─── Environment Helper ──────────────────────────────────────────────────────
 
-/**
- * Check if the current environment is production.
- *
- * Reads WP_ENVIRONMENT constant from wp-config.php.
- * Returns false for all other values or if undefined.
- */
+// Check if the current environment is production (reads WP_ENVIRONMENT constant).
 function observata_is_production() {
 	return defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT;
 }
@@ -119,9 +98,7 @@ function observata_editor_styles() {
 	);
 }
 
-/**
- * Disable comments site-wide: removes support, hides from admin, and blocks the REST endpoint.
- */
+// Disable comments site-wide: removes support, hides from admin, blocks REST.
 function observata_disable_comments() {
 	// Remove comments/trackbacks support from all post types.
 	$post_types = get_post_types( array( 'public' => true ) );
@@ -184,10 +161,7 @@ function observata_disable_comments() {
 	);
 }
 
-/**
- * Strip verbose WordPress body classes.
- * Keeps only custom classes passed via Layout::bodyClass() or get_body_class( '...' ).
- */
+// Strip verbose WordPress body classes — keep only explicit custom classes.
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
 function observata_clean_body_class( $classes, $class ) {
 	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.

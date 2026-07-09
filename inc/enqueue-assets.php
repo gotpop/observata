@@ -10,11 +10,7 @@ remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 add_filter( 'emoji_svg_url', '__return_false' );
 
-/**
- * Remove default WordPress frontend styles that inject unwanted CSS variables
- * and inline styles into <head>. This theme provides its own complete design
- * system and doesn't rely on WordPress defaults.
- */
+// Remove default WordPress frontend styles — this theme provides its own design system.
 add_action( 'wp_enqueue_scripts', 'observata_remove_default_styles', 100 );
 function observata_remove_default_styles() {
 	// Core block library styles (wp-block-library, wp-block-library-inline-css)
@@ -43,14 +39,10 @@ remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles_css_custom_proper
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 
-/**
- * Cache-bust block viewStyle CSS via filemtime().
- *
- * The main stylesheet (observata-style) is bundled by webpack and gets a
- * content-hash version automatically. Block viewStyle files are registered
- * by WordPress core with the static theme version — this filter overrides
- * that with the file's modification time.
- */
+// Cache-bust block viewStyle CSS via filemtime().
+// The webpack-bundled stylesheet (observata-style) already has a content-hash
+// version. Block viewStyle files registered by core use the static theme
+// version — this overrides with the file's modification time.
 add_filter( 'style_loader_src', 'observata_cache_bust_theme_styles', 10, 2 );
 function observata_cache_bust_theme_styles( $src, $handle ) {
 	// Skip the webpack-bundled stylesheet — it already has a content-hash version.

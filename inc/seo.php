@@ -1,21 +1,12 @@
 <?php
 /**
- * SEO enhancements: sitemap optimisation, robots.txt, canonical URLs,
- * and noindex for low-value pages.
+ * SEO enhancements: sitemap, robots.txt, canonical URLs, noindex.
  *
  * Meta description, Open Graph, Twitter Card, and JSON-LD schema are
- * handled by the "Native SEO Meta Tags" plugin. This file only provides
- * what the plugin does not cover.
- *
- * Uses WordPress 5.5+ core sitemaps as the foundation and enhances them.
+ * handled by the "Native SEO Meta Tags" plugin.
  */
 
-// ─── Core Sitemap Optimisation ────────────────────────────────────────────────
-
-/**
- * Exclude utility pages from the sitemap.
- * WordPress core sitemaps already include posts, pages, categories, tags, and users.
- */
+// Exclude utility pages from the core sitemap.
 add_filter(
 	'wp_sitemaps_posts_query_args',
 	function ( $args ) {
@@ -34,10 +25,7 @@ add_filter(
 	}
 );
 
-/**
- * Set maximum entries per sitemap page.
- * Lower value = faster sitemap generation, less server load.
- */
+// Limit sitemap entries per page for faster generation.
 add_filter(
 	'wp_sitemaps_max_urls',
 	function () {
@@ -45,9 +33,7 @@ add_filter(
 	}
 );
 
-/**
- * Include homepage in the sitemap with proper lastmod.
- */
+// Include homepage lastmod in sitemap.
 add_filter(
 	'wp_sitemaps_posts_entry',
 	function ( $entry, $post ) {
@@ -60,12 +46,7 @@ add_filter(
 	2
 );
 
-// ─── robots.txt Virtual File ──────────────────────────────────────────────────
-
-/**
- * Generate a virtual robots.txt. WordPress will serve this at /robots.txt
- * automatically when no physical robots.txt file exists in the root.
- */
+// Generate a virtual robots.txt at /robots.txt.
 add_filter(
 	'robots_txt',
 	function ( $output, $public ) {
@@ -97,12 +78,7 @@ add_filter(
 	2
 );
 
-// ─── Canonical URL ───────────────────────────────────────────────────────────
-
-/**
- * Ensure clean canonical URLs for archive and taxonomy pages.
- * Singular post canonicals are handled by WordPress core + the SEO plugin.
- */
+// Ensure clean canonical URLs for archive and taxonomy pages.
 add_action( 'wp_head', 'observata_canonical_url', 2 );
 function observata_canonical_url() {
 	$url = '';
@@ -125,11 +101,7 @@ function observata_canonical_url() {
 	}
 }
 
-// ─── Noindex for Low-Value Pages ─────────────────────────────────────────────
-
-/**
- * Prevent search engines from indexing low-value pages.
- */
+// Prevent search engines from indexing low-value pages.
 add_action( 'wp_head', 'observata_noindex', 0 );
 function observata_noindex() {
 	$noindex = false;

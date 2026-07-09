@@ -6,7 +6,6 @@
  * (email, address, locations, copyright) on the Theme Settings page.
  */
 
-// ─── Field Registration ──────────────────────────────────────────────────────
 
 add_action( 'admin_init', 'observata_footer_register_settings' );
 function observata_footer_register_settings() {
@@ -83,7 +82,6 @@ function observata_footer_register_settings() {
 	);
 }
 
-// ─── Sanitizer ───────────────────────────────────────────────────────────────
 
 function observata_sanitize_footer_email( $value ) {
 	$value = sanitize_email( $value );
@@ -98,7 +96,6 @@ function observata_sanitize_footer_email( $value ) {
 	return $value;
 }
 
-// ─── Field Renderers ─────────────────────────────────────────────────────────
 
 function observata_footer_email_field() {
 	$value = get_option( 'observata_footer_email', '' );

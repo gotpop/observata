@@ -8,7 +8,6 @@
  * Footer fields are registered in theme-settings-footer.php.
  */
 
-// ─── Admin Menu ──────────────────────────────────────────────────────────────
 
 add_action( 'admin_menu', 'observata_theme_settings_page' );
 function observata_theme_settings_page() {
@@ -21,7 +20,6 @@ function observata_theme_settings_page() {
 	);
 }
 
-// ─── Sections ────────────────────────────────────────────────────────────────
 
 add_action( 'admin_init', 'observata_theme_settings_sections' );
 function observata_theme_settings_sections() {
@@ -40,7 +38,6 @@ function observata_theme_settings_sections() {
 	);
 }
 
-// ─── Page Renderer ───────────────────────────────────────────────────────────
 
 function observata_theme_settings_render() {
 	if ( ! current_user_can( 'manage_options' ) ) {

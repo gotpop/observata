@@ -1,6 +1,6 @@
 <?php
 
-// Output Schema.org itemscope/itemtype attributes based on the current page type.
+// Output Schema.org itemscope/itemtype attributes for the current page.
 function observata_schema_type() {
 	$schema = 'https://schema.org/';
 	if ( is_single() ) {

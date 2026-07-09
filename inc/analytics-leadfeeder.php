@@ -6,7 +6,6 @@
  * and outputs the consent-gated tracking snippet in <head>.
  */
 
-// ─── Setting Registration ────────────────────────────────────────────────────
 
 add_action( 'admin_init', 'observata_leadfeeder_register_setting' );
 function observata_leadfeeder_register_setting() {
@@ -29,7 +28,6 @@ function observata_leadfeeder_register_setting() {
 	);
 }
 
-// ─── Sanitize ─────────────────────────────────────────────────────────────────
 
 function observata_sanitize_leadfeeder_id( $value ) {
 	$value = sanitize_text_field( $value );
@@ -44,7 +42,6 @@ function observata_sanitize_leadfeeder_id( $value ) {
 	return $value;
 }
 
-// ─── Admin Field ──────────────────────────────────────────────────────────────
 
 function observata_leadfeeder_id_field() {
 	$value = get_option( 'observata_leadfeeder_id', '' );
@@ -58,7 +55,6 @@ function observata_leadfeeder_id_field() {
 	);
 }
 
-// ─── Frontend Output ──────────────────────────────────────────────────────────
 
 add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
 function observata_output_leadfeeder_script() {
