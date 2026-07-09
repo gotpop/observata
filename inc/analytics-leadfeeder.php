@@ -6,8 +6,9 @@
  * and outputs the consent-gated tracking snippet in <head>.
  */
 
-
 add_action( 'admin_init', 'observata_leadfeeder_register_setting' );
+add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
+
 function observata_leadfeeder_register_setting() {
 	register_setting(
 		'observata_settings',
@@ -55,8 +56,6 @@ function observata_leadfeeder_id_field() {
 	);
 }
 
-
-add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
 function observata_output_leadfeeder_script() {
 	if ( ! observata_is_production() ) {
 		return;

@@ -8,8 +8,9 @@
  * Footer fields are registered in theme-settings-footer.php.
  */
 
-
 add_action( 'admin_menu', 'observata_theme_settings_page' );
+add_action( 'admin_init', 'observata_theme_settings_sections' );
+
 function observata_theme_settings_page() {
 	add_options_page(
 		__( 'Theme Settings', 'observata' ),
@@ -20,8 +21,6 @@ function observata_theme_settings_page() {
 	);
 }
 
-
-add_action( 'admin_init', 'observata_theme_settings_sections' );
 function observata_theme_settings_sections() {
 	add_settings_section(
 		'observata_analytics_section',

@@ -6,8 +6,9 @@
  * and outputs the consent-gated gtag.js snippet in <head>.
  */
 
-
 add_action( 'admin_init', 'observata_ga4_register_setting' );
+add_action( 'wp_head', 'observata_output_ga4_script', 99 );
+
 function observata_ga4_register_setting() {
 	register_setting(
 		'observata_settings',
@@ -28,7 +29,6 @@ function observata_ga4_register_setting() {
 	);
 }
 
-
 function observata_sanitize_ga4_id( $value ) {
 	$value = sanitize_text_field( $value );
 	if ( $value && ! preg_match( '/^G[T-]?[A-Z0-9]+$/i', $value ) ) {
@@ -42,7 +42,6 @@ function observata_sanitize_ga4_id( $value ) {
 	return $value;
 }
 
-
 function observata_ga4_id_field() {
 	$value = get_option( 'observata_ga4_id', '' );
 	printf(
@@ -55,8 +54,6 @@ function observata_ga4_id_field() {
 	);
 }
 
-
-add_action( 'wp_head', 'observata_output_ga4_script', 99 );
 function observata_output_ga4_script() {
 	if ( ! observata_is_production() ) {
 		return;
@@ -75,16 +72,16 @@ function observata_output_ga4_script() {
 	// phpcs:disable WordPress.WP.EnqueuedResources.NonEnqueuedScript -- consent-gated via CookieBot
 	printf(
 		'<!-- Google Analytics (GA4) (consent-gated via CookieBot) -->
-<script>
-	window.dataLayer=window.dataLayer||[];
-	function gtag(){dataLayer.push(arguments);}
-</script>
-<script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=%1$s"></script>
-<script type="text/plain" data-cookieconsent="statistics">
-	gtag("js",new Date());
-	gtag("config","%1$s");
-</script>
-',
+		<script>
+			window.dataLayer=window.dataLayer||[];
+			function gtag(){dataLayer.push(arguments);}
+		</script>
+		<script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=%1$s"></script>
+		<script type="text/plain" data-cookieconsent="statistics">
+			gtag("js",new Date());
+			gtag("config","%1$s");
+		</script>
+		',
 		esc_js( $ga4_id )
 	);
 	// phpcs:enable

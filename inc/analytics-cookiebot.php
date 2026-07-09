@@ -6,8 +6,9 @@
  * and outputs the lazy-loaded consent banner script in <head>.
  */
 
-
 add_action( 'admin_init', 'observata_cookiebot_register_setting' );
+add_action( 'wp_head', 'observata_output_cookiebot_script', 1 );
+
 function observata_cookiebot_register_setting() {
 	register_setting(
 		'observata_settings',
@@ -28,7 +29,6 @@ function observata_cookiebot_register_setting() {
 	);
 }
 
-
 function observata_sanitize_cookiebot_id( $value ) {
 	$value = sanitize_text_field( $value );
 	if ( $value && ! preg_match( '/^[a-f0-9\-]+$/i', $value ) ) {
@@ -42,9 +42,9 @@ function observata_sanitize_cookiebot_id( $value ) {
 	return $value;
 }
 
-
 function observata_cookiebot_id_field() {
 	$value = get_option( 'observata_cookiebot_id', '' );
+
 	printf(
 		'<input type="text" name="observata_cookiebot_id" value="%s" class="regular-text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">',
 		esc_attr( $value )
@@ -55,8 +55,6 @@ function observata_cookiebot_id_field() {
 	);
 }
 
-
-add_action( 'wp_head', 'observata_output_cookiebot_script', 1 );
 function observata_output_cookiebot_script() {
 	if ( ! observata_is_production() ) {
 		return;
@@ -74,27 +72,26 @@ function observata_output_cookiebot_script() {
 
 	printf(
 		'<!-- CookieBot (lazy-loaded on first interaction) -->
-<script type="text/javascript">
-(function(){
-	var loaded=false;
-	function loadCB(){
-		if(loaded)return;loaded=true;
-		var s=document.createElement("script");
-		s.id="CookieBot";
-		s.src="https://consent.cookiebot.com/uc.js";
-		s.setAttribute("data-cbid","%1$s");
-		s.setAttribute("data-blockingmode","auto");
-		s.async=true;
-		document.head.appendChild(s);
-		var evts=["mousemove","scroll","touchstart","keydown","click"];
-		evts.forEach(function(e){document.removeEventListener(e,loadCB,{passive:true});});
-	}
-	var evts=["mousemove","scroll","touchstart","keydown","click"];
-	evts.forEach(function(e){document.addEventListener(e,loadCB,{passive:true});});
-	setTimeout(loadCB,3000);
-})();
-</script>
-',
+		<script type="text/javascript">
+			(function(){
+				var loaded=false;
+				function loadCB(){
+					if(loaded)return;loaded=true;
+					var s=document.createElement("script");
+					s.id="CookieBot";
+					s.src="https://consent.cookiebot.com/uc.js";
+					s.setAttribute("data-cbid","%1$s");
+					s.setAttribute("data-blockingmode","auto");
+					s.async=true;
+					document.head.appendChild(s);
+					var evts=["mousemove","scroll","touchstart","keydown","click"];
+					evts.forEach(function(e){document.removeEventListener(e,loadCB,{passive:true});});
+				}
+				var evts=["mousemove","scroll","touchstart","keydown","click"];
+				evts.forEach(function(e){document.addEventListener(e,loadCB,{passive:true});});
+				setTimeout(loadCB,3000);
+			})();
+		</script>',
 		esc_attr( $cb_id )
 	);
 }
