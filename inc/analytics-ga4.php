@@ -31,23 +31,28 @@ function observata_ga4_register_setting() {
 
 function observata_sanitize_ga4_id( $value ) {
 	$value = sanitize_text_field( $value );
+
 	if ( $value && ! preg_match( '/^G[T-]?[A-Z0-9]+$/i', $value ) ) {
 		add_settings_error(
 			'observata_ga4_id',
 			'invalid-ga4-id',
 			__( 'Invalid GA4 Measurement ID format. Expected format: G-XXXXXXXXXX', 'observata' )
 		);
+
 		return '';
 	}
+
 	return $value;
 }
 
 function observata_ga4_id_field() {
 	$value = get_option( 'observata_ga4_id', '' );
+	
 	printf(
 		'<input type="text" name="observata_ga4_id" value="%s" class="regular-text" placeholder="G-XXXXXXXXXX">',
 		esc_attr( $value )
 	);
+
 	printf(
 		'<p class="description">%s</p>',
 		esc_html__( 'Enter your Google Analytics 4 Measurement ID. Leave blank to disable.', 'observata' )
