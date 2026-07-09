@@ -14,7 +14,6 @@ Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rende
 - **Twig 3.x** — template engine for all block + page rendering
 - **@wordpress/scripts** — block build tooling (webpack)
 - **Three.js + Shaders** — WebGPU/WebGL hero shader effects
-- No `theme.json` — all styling is hand-written CSS with custom properties
 
 <details><summary>Architecture</summary>
 
