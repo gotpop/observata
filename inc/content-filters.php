@@ -4,6 +4,7 @@
 add_filter( 'document_title_separator', 'observata_document_title_separator' );
 function observata_document_title_separator( $sep ) {
 	$sep = esc_html( '|' );
+
 	return $sep;
 }
 

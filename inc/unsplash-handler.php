@@ -139,6 +139,7 @@ function observata_unsplash_search_handler( $request ) {
 
 	if ( is_wp_error( $response ) ) {
 		error_log( '[observata] Unsplash API error: ' . $response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'unsplash_api_error',
 			'Failed to connect to Unsplash API. Please try again.',
@@ -151,6 +152,7 @@ function observata_unsplash_search_handler( $request ) {
 
 	if ( json_last_error() !== JSON_ERROR_NONE ) {
 		error_log( '[observata] Unsplash JSON decode error: ' . json_last_error_msg() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'unsplash_json_error',
 			'Failed to parse Unsplash API response.',
@@ -162,6 +164,7 @@ function observata_unsplash_search_handler( $request ) {
 		// Check for rate limit errors
 		if ( isset( $data['errors'] ) && is_array( $data['errors'] ) ) {
 			$error_msg = $data['errors'][0] ?? 'Unknown error';
+
 			return new WP_Error(
 				'unsplash_api_error',
 				'Unsplash API error: ' . $error_msg,
@@ -226,6 +229,7 @@ function observata_unsplash_download_handler( $request ) {
 
 	if ( is_wp_error( $head_response ) ) {
 		error_log( '[observata] Image HEAD request failed: ' . $head_response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'image_download_error',
 			'Failed to check image size.',
@@ -255,6 +259,7 @@ function observata_unsplash_download_handler( $request ) {
 
 	if ( is_wp_error( $response ) ) {
 		error_log( '[observata] Image download failed: ' . $response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'image_download_error',
 			'Failed to download image from Unsplash.',
@@ -383,6 +388,7 @@ function observata_unsplash_download_handler( $request ) {
 
 		// Add attribution meta data
 		update_post_meta( $attach_id, 'unsplash_photographer', $photographer );
+
 		if ( ! empty( $unsplash_url ) ) {
 			update_post_meta( $attach_id, 'unsplash_source_url', $unsplash_url );
 		}
@@ -449,6 +455,7 @@ add_action( 'admin_enqueue_scripts', 'observata_enqueue_unsplash_sidebar' );
 function observata_unsplash_api_notice() {
 	// Only show on post editor pages
 	$screen = get_current_screen();
+
 	if ( ! $screen || $screen->base !== 'post' ) {
 		return;
 	}

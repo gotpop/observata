@@ -15,6 +15,7 @@ add_filter(
 				}
 			)
 		);
+
 		return $twig;
 	}
 );

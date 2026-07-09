@@ -16,6 +16,7 @@ add_filter(
 
 		// Exclude the error-404 page from the sitemap.
 		$error_page = get_page_by_path( 'error-404' );
+
 		if ( $error_page ) {
 			$args['post__not_in']   = isset( $args['post__not_in'] ) ? $args['post__not_in'] : array();
 			$args['post__not_in'][] = $error_page->ID;

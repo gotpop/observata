@@ -32,6 +32,7 @@ add_filter(
 		$loader->addPath( $theme_root . '/blocks' );
 		// Add views/ so existing view includes work from within block templates
 		$loader->addPath( $theme_root . '/views' );
+
 		return $loader;
 	}
 );
@@ -55,6 +56,7 @@ function observata_setup() {
 	add_action( 'init', 'observata_disable_comments' );
 
 	global $content_width;
+
 	if ( ! isset( $content_width ) ) {
 		$content_width = 1920;
 	}
@@ -129,6 +131,7 @@ function observata_disable_comments() {
 		'admin_init',
 		function () {
 			global $pagenow;
+
 			if ( 'edit-comments.php' === $pagenow || 'comment.php' === $pagenow || 'options-discussion.php' === $pagenow ) {
 				wp_safe_redirect( admin_url() );
 				exit;

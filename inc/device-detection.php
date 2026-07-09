@@ -8,6 +8,7 @@ function observata_footer() {
 		(function () {
 			const ua = navigator.userAgent.toLowerCase();
 			const html = document.documentElement;
+
 			if (/(iphone|ipod|ipad)/.test(ua)) {
 				html.classList.add('ios', 'mobile');
 			}

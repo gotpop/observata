@@ -35,6 +35,7 @@ function observata_serialize_blocks_recursive( array $blocks ): string {
 		}
 
 		$attrs = '';
+
 		if ( ! empty( $block['attributes'] ) ) {
 			$attrs = ' ' . wp_json_encode(
 				$block['attributes'],
@@ -95,6 +96,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 
 	if ( ! $twig_relative ) {
 		error_log( "[observata] No twig template found for: {$template_name}" ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return '';
 	}
 
@@ -114,6 +116,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 	// Add WordPress main menu to context for header block
 	if ( $template_name === 'header' ) {
 		$menu = \Timber\Timber::get_menu( 'main-menu' );
+
 		if ( $menu ) {
 			$context['main_menu'] = $menu;
 		}
@@ -199,20 +202,19 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		$context['breadcrumbs_html'] = do_blocks( '<!-- wp:observata/breadcrumbs /-->' );
 	}
 
-	// Auto-render any attribute ending in 'InnerBlocks'.
-	// Scans all attributes for keys like 'tab1InnerBlocks' or 'mdrInnerBlocks',
-	// serializes the block array, runs do_blocks(), and exposes the result in
-	// $context['renderedInnerBlocks'] keyed by the attribute name (minus the suffix).
-	// e.g. 'tab1InnerBlocks' becomes available as renderedInnerBlocks['tab1'].
+	// Auto-render attributes ending in 'InnerBlocks' (e.g. 'tab1InnerBlocks' → renderedInnerBlocks.tab1).
 	$rendered_inner = array();
+
 	foreach ( $attributes as $key => $value ) {
 		if ( ! is_array( $value ) || ! str_ends_with( $key, 'InnerBlocks' ) ) {
 			continue;
 		}
+
 		$short_key                    = substr( $key, 0, -11 ); // strip 'InnerBlocks'
 		$serialized                   = observata_serialize_blocks_recursive( $value );
 		$rendered_inner[ $short_key ] = do_blocks( $serialized );
 	}
+
 	if ( ! empty( $rendered_inner ) ) {
 		$context['renderedInnerBlocks'] = $rendered_inner;
 	}
@@ -221,6 +223,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		return \Timber\Timber::compile( 'blocks/' . $twig_relative, $context );
 	} catch ( \Exception $e ) {
 		error_log( "[observata] Twig error for {$template_name}: " . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return '';
 	}
 }

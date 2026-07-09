@@ -3,6 +3,7 @@
 // Output Schema.org itemscope/itemtype attributes for the current page.
 function observata_schema_type() {
 	$schema = 'https://schema.org/';
+
 	if ( is_single() ) {
 		$type = 'Article';
 	} elseif ( is_author() ) {
@@ -19,5 +20,6 @@ function observata_schema_type() {
 add_filter( 'nav_menu_link_attributes', 'observata_schema_url', 10 );
 function observata_schema_url( $atts ) {
 	$atts['itemprop'] = 'url';
+
 	return $atts;
 }

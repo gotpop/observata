@@ -14,6 +14,7 @@ function observata_register_blocks() {
 	// Without runtime.js, registerBlockType calls in index.js never run and
 	// no blocks appear in the editor.
 	$runtime_path = $build_dir . '/runtime.asset.php';
+
 	if ( file_exists( $runtime_path ) ) {
 		$runtime_asset = require $runtime_path;
 		wp_register_script(
@@ -35,6 +36,7 @@ function observata_register_blocks() {
 
 	// Ensure the blocks script depends on the runtime so it always loads first.
 	$deps = $asset['dependencies'];
+
 	if ( wp_script_is( 'observata-runtime', 'registered' ) ) {
 		$deps[] = 'observata-runtime';
 	}

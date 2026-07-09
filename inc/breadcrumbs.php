@@ -19,6 +19,7 @@ function observata_build_breadcrumbs(): array {
 
 	if ( is_home() || is_singular( 'post' ) ) {
 		$blog_page_id = get_option( 'page_for_posts' );
+
 		if ( $blog_page_id ) {
 			$breadcrumbs[] = array(
 				'label' => get_the_title( $blog_page_id ),

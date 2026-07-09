@@ -31,12 +31,14 @@ function observata_cookiebot_register_setting() {
 
 function observata_sanitize_cookiebot_id( $value ) {
 	$value = sanitize_text_field( $value );
+
 	if ( $value && ! preg_match( '/^[a-f0-9\-]+$/i', $value ) ) {
 		add_settings_error(
 			'observata_cookiebot_id',
 			'invalid-cookiebot-id',
 			__( 'Invalid CookieBot Domain Group ID. Expected a UUID format.', 'observata' )
 		);
+
 		return '';
 	}
 	return $value;

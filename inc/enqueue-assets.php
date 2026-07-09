@@ -105,6 +105,7 @@ function observata_preload_hero_scripts() {
 	}
 
 	$vendors_asset_path = get_template_directory() . '/build/vendors.asset.php';
+
 	if ( ! file_exists( $vendors_asset_path ) ) {
 		return;
 	}
@@ -194,6 +195,7 @@ function observata_enqueue() {
 
 	// The runtime chunk manages all webpack chunk loading — must come first.
 	$runtime_deps = array();
+
 	if ( file_exists( $runtime_path ) ) {
 		$runtime_asset = require $runtime_path;
 		wp_register_script( 'observata-runtime', $build_uri . '/runtime.js', array(), $runtime_asset['version'], true );
@@ -204,6 +206,7 @@ function observata_enqueue() {
 	// entry points so the library is only downloaded once.
 	$vendor_deps  = array();
 	$vendors_path = $build_dir . '/vendors.asset.php';
+
 	if ( file_exists( $vendors_path ) ) {
 		$vendors_asset = require $vendors_path;
 		wp_register_script( 'observata-vendors', $build_uri . '/vendors.js', $runtime_deps, $vendors_asset['version'], true );
@@ -213,6 +216,7 @@ function observata_enqueue() {
 	// client.js — menu, intersection observer, tabs, subpage/card shaders.
 	// Loaded on all pages.
 	$client_asset_path = $build_dir . '/client.asset.php';
+
 	if ( file_exists( $client_asset_path ) ) {
 		$client_asset = require $client_asset_path;
 		$client_deps  = array_merge( $client_asset['dependencies'], $vendor_deps );
@@ -221,6 +225,7 @@ function observata_enqueue() {
 
 	// home.js — homepage hero shader. Only loaded on the homepage.
 	$home_asset_path = $build_dir . '/home.asset.php';
+
 	if ( is_front_page() && file_exists( $home_asset_path ) ) {
 		$home_asset = require $home_asset_path;
 		$home_deps  = array_merge( $home_asset['dependencies'], $vendor_deps );
@@ -245,6 +250,7 @@ function observata_enqueue() {
 	// every download immediately (in parallel with the HTML, no blocking),
 	// and the H1 (the LCP element) paints as soon as it's parsed.
 	$defer_handles = array( 'observata-runtime', 'observata-vendors', 'observata-client' );
+
 	if ( wp_script_is( 'observata-home', 'enqueued' ) ) {
 		$defer_handles[] = 'observata-home';
 	}

@@ -7,6 +7,7 @@ function observata_image_insert_override( $sizes ) {
 	unset( $sizes['medium_large'] );
 	unset( $sizes['1536x1536'] );
 	unset( $sizes['2048x2048'] );
+
 	return $sizes;
 }
 
@@ -14,6 +15,7 @@ function observata_image_insert_override( $sizes ) {
 add_filter( 'upload_mimes', 'observata_add_webp_mime_type' );
 function observata_add_webp_mime_type( $mimes ) {
 	$mimes['webp'] = 'image/webp';
+
 	return $mimes;
 }
 

@@ -32,12 +32,14 @@ function observata_leadfeeder_register_setting() {
 
 function observata_sanitize_leadfeeder_id( $value ) {
 	$value = sanitize_text_field( $value );
+
 	if ( $value && ! preg_match( '/^[a-zA-Z0-9\-]+$/', $value ) ) {
 		add_settings_error(
 			'observata_leadfeeder_id',
 			'invalid-leadfeeder-id',
 			__( 'Invalid Leadfeeder Tracker ID format.', 'observata' )
 		);
+
 		return '';
 	}
 	return $value;
