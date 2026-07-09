@@ -2,6 +2,12 @@
 
 Custom WordPress theme using Gutenberg blocks with Timber/Twig server-side rendering.
 
+![Screenshot](screenshot.jpg)
+
+[![Lint](https://github.com/gotpop/observata/actions/workflows/lint.yml/badge.svg)](https://github.com/gotpop/observata/actions/workflows/lint.yml)
+[![Test](https://github.com/gotpop/observata/actions/workflows/test.yml/badge.svg)](https://github.com/gotpop/observata/actions/workflows/test.yml)
+[![PHPStan](https://github.com/gotpop/observata/actions/workflows/phpstan.yml/badge.svg)](https://github.com/gotpop/observata/actions/workflows/phpstan.yml)
+
 ## Stack
 
 - **Timber 2.x** — Twig templating for PHP
