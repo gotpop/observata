@@ -119,6 +119,7 @@ function observata_add_post_context( string $template_name, array $attributes, a
 	for ( $i = 0; $i < $total_posts; $i++ ) {
 		if ( $all_posts[ $i ]->ID == $current_post_id ) {
 			$current_index = $i;
+			
 			break;
 		}
 	}
