@@ -14,7 +14,6 @@ require get_template_directory() . '/inc/seo.php';
 require get_template_directory() . '/inc/analytics.php';
 require get_template_directory() . '/inc/accessibility.php';
 require get_template_directory() . '/inc/image-optimization.php';
-require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/speculation-rules.php';
 require get_template_directory() . '/inc/twig-filters.php';
 
