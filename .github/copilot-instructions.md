@@ -54,7 +54,7 @@ Dev site (Local by Flywheel): `http://localhost:10005/`
 npm run start        # webpack watch
 npm run build        # production build
 npm run build:zip    # build + dist zip
-npm run lint         # eslint + stylelint
+npm run lint         # eslint + stylelint + phpcs + phpstan
 npm run format       # prettier
 npm test             # vitest unit tests
 composer fix         # phpcbf auto-fix
@@ -109,3 +109,12 @@ Three workflows in `.github/workflows/`:
 - `theme_url` — template directory URI
 - `site` — Timber site object
 - `renderedInnerBlocks` — named inner block slots (use `|raw`)
+
+## Version Bump
+
+Update both files to the same version number:
+
+- `package.json` — `"version": "X.Y.Z"`
+- `style.css` — `Version: X.Y.Z`
+
+**Minor** (`1.1.0`) for features and refactors. **Patch** (`1.1.1`) for bug fixes only.
