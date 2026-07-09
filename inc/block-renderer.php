@@ -216,8 +216,7 @@ function observata_render_block_twig( $attributes, $content, $block ) {
 		$context['breadcrumbs_html'] = do_blocks( '<!-- wp:observata/breadcrumbs /-->' );
 	}
 
-	// TODO: Delete this once new tabs are used
-	// Generic handling: auto-render any attribute ending in 'InnerBlocks'.
+	// Auto-render any attribute ending in 'InnerBlocks'.
 	// Scans all attributes for keys like 'tab1InnerBlocks' or 'mdrInnerBlocks',
 	// serializes the block array, runs do_blocks(), and exposes the result in
 	// $context['renderedInnerBlocks'] keyed by the attribute name (minus the suffix).

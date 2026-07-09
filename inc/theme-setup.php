@@ -66,7 +66,6 @@ function observata_setup() {
 	add_theme_support( 'editor-styles' );
 
 	add_theme_support( 'appearance-tools' );
-	add_theme_support( 'woocommerce' );
 
 	// Disable comments across the site.
 	add_action( 'init', 'observata_disable_comments' );

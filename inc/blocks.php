@@ -127,8 +127,6 @@ function observata_enqueue_editor_runtime() {
 
 /**
  * Restrict the block inserter to only our custom blocks.
- * observata/card is intentionally included so it can be added
- * inside the Cards block via InnerBlocks.
  * observata/section-blog-pagination is only allowed on single blog posts.
  */
 add_filter( 'allowed_block_types_all', 'observata_allowed_blocks', 10, 2 );
