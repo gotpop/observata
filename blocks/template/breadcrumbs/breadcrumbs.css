@@ -69,6 +69,10 @@
 
 		.breadcrumbs:has(> :nth-child(3)) & {
 			max-width: calc(13ch - 2rem);
+
+			@media (width >= 40rem) {
+				max-width: none;
+			}
 		}
 
 		@media (width >= 40rem) {
