@@ -9,6 +9,9 @@
 add_action( 'admin_init', 'observata_ga4_register_setting' );
 add_action( 'wp_head', 'observata_output_ga4_script', 99 );
 
+// ─────────────────────────────────────────────────────────────────
+
+// Register the GA4 Measurement ID setting and admin field.
 function observata_ga4_register_setting(): void {
 	register_setting(
 		'observata_settings',
@@ -29,6 +32,7 @@ function observata_ga4_register_setting(): void {
 	);
 }
 
+// Sanitize and validate the GA4 Measurement ID format.
 function observata_sanitize_ga4_id( string $value ): string {
 	$value = sanitize_text_field( $value );
 
@@ -45,6 +49,7 @@ function observata_sanitize_ga4_id( string $value ): string {
 	return $value;
 }
 
+// Render the GA4 Measurement ID input field.
 function observata_ga4_id_field(): void {
 	$value = get_option( 'observata_ga4_id', '' );
 
@@ -59,6 +64,7 @@ function observata_ga4_id_field(): void {
 	);
 }
 
+// Output the consent-gated GA4 gtag.js snippet in <head>.
 function observata_output_ga4_script(): void {
 	if ( ! observata_is_production() ) {
 		return;
