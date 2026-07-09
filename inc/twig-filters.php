@@ -1,21 +1,13 @@
 <?php
-/**
- * Custom Twig filters.
- */
+add_filter( 'timber/twig', 'observata_register_twig_filters' );
 
-// Add |strip_html filter — removes all HTML tags from a string.
-add_filter(
-	'timber/twig',
-	function ( $twig ) {
-		$twig->addFilter(
-			new \Twig\TwigFilter(
-				'strip_html',
-				function ( string $text ): string {
-					return wp_strip_all_tags( $text );
-				}
-			)
-		);
+// Register custom Twig filters with Timber.
+function observata_register_twig_filters( $twig ) {
+	$strip_html = function ( string $text ): string {
+		return wp_strip_all_tags( $text );
+	};
 
-		return $twig;
-	}
-);
+	$twig->addFilter( new \Twig\TwigFilter( 'strip_html', $strip_html ) );
+
+	return $twig;
+}

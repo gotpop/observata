@@ -1,7 +1,12 @@
 <?php
 
-// Output speculation rules for improved navigation performance.
 add_action( 'wp_head', 'observata_speculation_rules', 2 );
+add_action( 'wp_head', 'observata_pingback_header' );
+add_action( 'admin_init', 'observata_speculation_settings' );
+
+// ─────────────────────────────────────────────────────────────────
+
+// Output speculation rules for improved navigation performance.
 function observata_speculation_rules(): void {
 	// Allow disabling via query param: ?no_speculation=1
 	if ( isset( $_GET['no_speculation'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- debug query param
@@ -109,8 +114,6 @@ function observata_speculation_rules(): void {
 }
 
 // Output pingback link tag for singular posts that allow pings.
-add_action( 'wp_head', 'observata_pingback_header' );
-
 function observata_pingback_header(): void {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
@@ -118,7 +121,6 @@ function observata_pingback_header(): void {
 }
 
 // Add speculation rules toggle to Settings > General.
-add_action( 'admin_init', 'observata_speculation_settings' );
 function observata_speculation_settings(): void {
 	add_settings_section(
 		'observata_performance_section',

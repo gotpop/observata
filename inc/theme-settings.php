@@ -11,6 +11,7 @@
 add_action( 'admin_menu', 'observata_theme_settings_page' );
 add_action( 'admin_init', 'observata_theme_settings_sections' );
 
+// Register the Theme Settings page under Settings.
 function observata_theme_settings_page(): void {
 	add_options_page(
 		__( 'Theme Settings', 'observata' ),
@@ -21,6 +22,7 @@ function observata_theme_settings_page(): void {
 	);
 }
 
+// Register Analytics and Footer Content settings sections.
 function observata_theme_settings_sections(): void {
 	add_settings_section(
 		'observata_analytics_section',
@@ -38,6 +40,7 @@ function observata_theme_settings_sections(): void {
 }
 
 
+// Render the Theme Settings admin page.
 function observata_theme_settings_render(): void {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;

@@ -117,4 +117,4 @@ Update both files to the same version number:
 - `package.json` — `"version": "X.Y.Z"`
 - `style.css` — `Version: X.Y.Z`
 
-**Minor** (`1.1.0`) for features and refactors. **Patch** (`1.1.1`) for bug fixes only.
+**Always bump minor** (`1.1.0` → `1.2.0`) unless explicitly asked for a patch.

@@ -9,6 +9,9 @@
 add_action( 'admin_init', 'observata_leadfeeder_register_setting' );
 add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
 
+// ─────────────────────────────────────────────────────────────────
+
+// Register the Leadfeeder Tracker ID setting and admin field.
 function observata_leadfeeder_register_setting(): void {
 	register_setting(
 		'observata_settings',
@@ -30,6 +33,7 @@ function observata_leadfeeder_register_setting(): void {
 }
 
 
+// Sanitize and validate the Leadfeeder Tracker ID format.
 function observata_sanitize_leadfeeder_id( string $value ): string {
 	$value = sanitize_text_field( $value );
 
@@ -46,6 +50,7 @@ function observata_sanitize_leadfeeder_id( string $value ): string {
 }
 
 
+// Render the Leadfeeder Tracker ID input field.
 function observata_leadfeeder_id_field(): void {
 	$value = get_option( 'observata_leadfeeder_id', '' );
 	printf(
@@ -58,6 +63,7 @@ function observata_leadfeeder_id_field(): void {
 	);
 }
 
+// Output the consent-gated Leadfeeder tracking snippet in <head>.
 function observata_output_leadfeeder_script(): void {
 	if ( ! observata_is_production() ) {
 		return;

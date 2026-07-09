@@ -4,6 +4,12 @@
  */
 
 add_action( 'init', 'observata_register_blocks' );
+add_action( 'enqueue_block_editor_assets', 'observata_enqueue_editor_runtime', 1 );
+add_filter( 'allowed_block_types_all', 'observata_allowed_blocks', 10, 2 );
+
+// ─────────────────────────────────────────────────────────────────
+
+// Register all blocks discovered in the blocks/ directory.
 function observata_register_blocks(): void {
 	$build_dir = get_template_directory() . '/build';
 	$build_uri = get_template_directory_uri() . '/build';
@@ -57,7 +63,7 @@ function observata_register_blocks(): void {
 		)
 	);
 
-	// Ensure templateUrl is available even when blocks load via block.json editorScript handles
+	// Ensure templateUrl is available even when blocks load via block.json editorScript handles.
 	add_action(
 		'admin_enqueue_scripts',
 		function () {
@@ -95,10 +101,7 @@ function observata_register_blocks(): void {
 	}
 }
 
-// Enqueue the webpack runtime chunk in the block editor — required
-// for build/index.js to load. Also adds runtime as a dependency of every
-// editor script handle pointing to build/index.js.
-add_action( 'enqueue_block_editor_assets', 'observata_enqueue_editor_runtime', 1 );
+// Enqueue the webpack runtime chunk in the block editor.
 function observata_enqueue_editor_runtime(): void {
 	if ( ! wp_script_is( 'observata-runtime', 'registered' ) ) {
 		return;
@@ -119,8 +122,6 @@ function observata_enqueue_editor_runtime(): void {
 }
 
 // Restrict the block inserter to only our custom blocks.
-// observata/section-blog-pagination is only allowed on single blog posts.
-add_filter( 'allowed_block_types_all', 'observata_allowed_blocks', 10, 2 );
 function observata_allowed_blocks( bool|array $allowed_blocks, \WP_Block_Editor_Context $editor_context ): array {
 	$allowed = array();
 
