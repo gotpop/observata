@@ -8,6 +8,7 @@
 
 add_action( 'admin_init', 'observata_footer_register_settings' );
 
+// Register footer settings fields.
 function observata_footer_register_settings(): void {
 	register_setting(
 		'observata_settings',
@@ -82,6 +83,7 @@ function observata_footer_register_settings(): void {
 	);
 }
 
+// Validate and sanitize the footer email address.
 function observata_sanitize_footer_email( string $value ): string {
 	$value = sanitize_email( $value );
 
@@ -98,6 +100,7 @@ function observata_sanitize_footer_email( string $value ): string {
 	return $value;
 }
 
+// Render the footer email input field.
 function observata_footer_email_field(): void {
 	$value = get_option( 'observata_footer_email', '' );
 
@@ -112,6 +115,7 @@ function observata_footer_email_field(): void {
 	);
 }
 
+// Render the footer address textarea.
 function observata_footer_address_field(): void {
 	$value = get_option( 'observata_footer_address', '' );
 
@@ -126,6 +130,7 @@ function observata_footer_address_field(): void {
 	);
 }
 
+// Render the footer locations input field.
 function observata_footer_locations_field(): void {
 	$value = get_option( 'observata_footer_locations', '' );
 
@@ -140,6 +145,7 @@ function observata_footer_locations_field(): void {
 	);
 }
 
+// Render the footer copyright input field.
 function observata_footer_copyright_field(): void {
 	$value = get_option( 'observata_footer_copyright', '' );
 
