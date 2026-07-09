@@ -1,30 +1,15 @@
 <?php
 /**
- * Theme Settings page and shared analytics helpers.
+ * Footer content settings fields.
  *
- * Provides the "Theme Settings" admin page (Analytics + Footer sections),
- * the environment helper, and the settings section registration.
- * Individual tracking integrations (GA4, Leadfeeder, CookieBot) live
- * in their own files: analytics-ga4.php, analytics-leadfeeder.php,
- * analytics-cookiebot.php.
+ * Registers and renders the footer customisation fields
+ * (email, address, locations, copyright) on the Theme Settings page.
  */
 
-// ─── Settings Page ────────────────────────────────────────────────────────────
+// ─── Field Registration ──────────────────────────────────────────────────────
 
-add_action( 'admin_menu', 'observata_analytics_settings_page' );
-function observata_analytics_settings_page() {
-	add_options_page(
-		__( 'Theme Settings', 'observata' ),
-		__( 'Theme Settings', 'observata' ),
-		'manage_options',
-		'observata-settings',
-		'observata_analytics_settings_render'
-	);
-}
-
-add_action( 'admin_init', 'observata_analytics_register_settings' );
-function observata_analytics_register_settings() {
-	// Footer content fields
+add_action( 'admin_init', 'observata_footer_register_settings' );
+function observata_footer_register_settings() {
 	register_setting(
 		'observata_settings',
 		'observata_footer_email',
@@ -65,20 +50,6 @@ function observata_analytics_register_settings() {
 		)
 	);
 
-	add_settings_section(
-		'observata_analytics_section',
-		__( 'Analytics', 'observata' ),
-		'__return_null',
-		'observata-settings'
-	);
-
-	add_settings_section(
-		'observata_footer_section',
-		__( 'Footer Content', 'observata' ),
-		'__return_null',
-		'observata-settings'
-	);
-
 	add_settings_field(
 		'observata_footer_email',
 		__( 'Contact Email', 'observata' ),
@@ -112,7 +83,7 @@ function observata_analytics_register_settings() {
 	);
 }
 
-// ─── Footer Field Sanitizers ──────────────────────────────────────────────────
+// ─── Sanitizer ───────────────────────────────────────────────────────────────
 
 function observata_sanitize_footer_email( $value ) {
 	$value = sanitize_email( $value );
@@ -127,7 +98,7 @@ function observata_sanitize_footer_email( $value ) {
 	return $value;
 }
 
-// ─── Footer Field Renderers ───────────────────────────────────────────────────
+// ─── Field Renderers ─────────────────────────────────────────────────────────
 
 function observata_footer_email_field() {
 	$value = get_option( 'observata_footer_email', '' );
@@ -175,30 +146,4 @@ function observata_footer_copyright_field() {
 		'<p class="description">%s</p>',
 		esc_html__( 'Copyright notice shown in the footer bottom bar. Leave blank to use the theme default.', 'observata' )
 	);
-}
-
-// ─── Settings Page Renderer ───────────────────────────────────────────────────
-
-function observata_analytics_settings_render() {
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
-	?>
-	<div class="wrap">
-		<h1><?php esc_html_e( 'Theme Settings', 'observata' ); ?></h1>
-		<form method="post" action="options.php">
-			<?php
-			settings_fields( 'observata_settings' );
-			do_settings_sections( 'observata-settings' );
-			submit_button();
-			?>
-		</form>
-	</div>
-	<?php
-}
-
-// ─── Environment Helper ──────────────────────────────────────────────────────
-
-function observata_is_production() {
-	return defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT;
 }

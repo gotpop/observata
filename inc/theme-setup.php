@@ -84,6 +84,18 @@ function observata_setup() {
 	);
 }
 
+// ─── Environment Helper ──────────────────────────────────────────────────────
+
+/**
+ * Check if the current environment is production.
+ *
+ * Reads WP_ENVIRONMENT constant from wp-config.php.
+ * Returns false for all other values or if undefined.
+ */
+function observata_is_production() {
+	return defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT;
+}
+
 // Add favicon to wp_head.
 add_action( 'wp_head', 'observata_add_favicon' );
 function observata_add_favicon() {
