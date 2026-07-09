@@ -41,7 +41,6 @@ function observata_setup(): void {
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
-
 	add_theme_support( 'appearance-tools' );
 
 	global $content_width;
@@ -49,6 +48,7 @@ function observata_setup(): void {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 1920;
 	}
+
 	register_nav_menus(
 		array(
 			'main-menu' => esc_html__( 'Main Menu', 'observata' ),
@@ -119,7 +119,5 @@ function observata_disable_comments(): void {
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
 
 function observata_clean_body_class( array $classes, array|string $class ): array {
-	// $classes contains everything WP auto-generates. Return only the explicit ones.
-
 	return is_array( $class ) ? $class : array();
 }
