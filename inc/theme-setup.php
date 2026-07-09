@@ -5,8 +5,7 @@
 \Timber\Timber::$dirname = array( 'views' );
 \Timber\Timber::init();
 
-// Enable Twig compilation cache in production only (auto_reload handles invalidation).
-// Dev/staging skip caching so template edits reflect immediately.
+// Enable Twig compilation cache in production only; dev/staging skip caching so template edits reflect immediately.
 add_filter(
 	'timber/twig/environment/options',
 	function ( $options ) {
@@ -19,9 +18,7 @@ add_filter(
 	}
 );
 
-// Add blocks/ directory and theme root to Twig's search paths.
-// This avoids Timber's LocationManager scanning blocks/ subdirectories,
-// while still allowing Timber::compile('blocks/...') to resolve correctly.
+// Add blocks/ and views/ to Twig's search paths so relative includes resolve correctly.
 add_filter(
 	'timber/loader/loader',
 	function ( $loader ) {
@@ -39,6 +36,7 @@ add_filter(
 
 // Theme setup: supports, menus, text domain.
 add_action( 'after_setup_theme', 'observata_setup' );
+
 function observata_setup(): void {
 	load_theme_textdomain( 'observata', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
@@ -79,14 +77,14 @@ function observata_is_production(): bool {
 
 // Add favicon to wp_head.
 add_action( 'wp_head', 'observata_add_favicon' );
+
 function observata_add_favicon(): void {
 	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
 }
 
-// Enqueue editor-only stylesheet via enqueue_block_assets (the correct hook
-// for styles inside the editor iframe). Guarded with is_admin() so it only
-// loads in the editor, not on the frontend.
+// Enqueue editor-only stylesheet; guarded with is_admin() so it only loads in the editor.
 add_action( 'enqueue_block_assets', 'observata_editor_styles' );
+
 function observata_editor_styles(): void {
 	if ( ! is_admin() ) {
 		return;
@@ -166,6 +164,8 @@ function observata_disable_comments(): void {
 
 // Strip verbose WordPress body classes — keep only explicit custom classes.
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
+
+/** @param array $classes Auto-generated body classes. @param array|string $class Explicit classes passed to body_class(). */
 function observata_clean_body_class( array $classes, array|string $class ): array {
 	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.
 	// $classes contains everything WP auto-generates. Return only the explicit ones.
