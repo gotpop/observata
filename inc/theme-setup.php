@@ -5,23 +5,8 @@
 \Timber\Timber::$dirname = array( 'views' );
 \Timber\Timber::init();
 
-/**
- * Enable Twig compilation cache in production only.
- *
- * The compilation cache stores the compiled PHP version of Twig templates
- * (template source → PHP code), NOT the rendered HTML output. This means there
- * is zero stale-data risk — templates always execute with fresh data on every
- * request. When `auto_reload` is true, Twig automatically recompiles whenever a
- * template source file changes on disk.
- *
- * Dev and staging environments keep the cache disabled so template edits are
- * reflected immediately without needing to flush the cache.
- *
- * Environment flags (set in wp-config.php):
- *   define( 'WP_ENVIRONMENT', 'production' ); // Caching ON
- *   define( 'WP_ENVIRONMENT', 'staging' );    // Caching OFF (hot reload)
- *   (undefined)                                // Caching OFF (local dev)
- */
+// Enable Twig compilation cache in production only (auto_reload handles invalidation).
+// Dev/staging skip caching so template edits reflect immediately.
 add_filter(
 	'timber/twig/environment/options',
 	function ( $options ) {
@@ -47,18 +32,18 @@ add_filter(
 		$loader->addPath( $theme_root . '/blocks' );
 		// Add views/ so existing view includes work from within block templates
 		$loader->addPath( $theme_root . '/views' );
+
 		return $loader;
 	}
 );
 
 // Theme setup: supports, menus, text domain.
 add_action( 'after_setup_theme', 'observata_setup' );
-function observata_setup() {
+function observata_setup(): void {
 	load_theme_textdomain( 'observata', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'custom-logo' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-list', 'comment-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'align-wide' );
@@ -66,12 +51,12 @@ function observata_setup() {
 	add_theme_support( 'editor-styles' );
 
 	add_theme_support( 'appearance-tools' );
-	add_theme_support( 'woocommerce' );
 
 	// Disable comments across the site.
 	add_action( 'init', 'observata_disable_comments' );
 
 	global $content_width;
+
 	if ( ! isset( $content_width ) ) {
 		$content_width = 1920;
 	}
@@ -86,9 +71,15 @@ function observata_setup() {
 	);
 }
 
+
+// Check if the current environment is production (reads WP_ENVIRONMENT constant).
+function observata_is_production(): bool {
+	return defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT;
+}
+
 // Add favicon to wp_head.
 add_action( 'wp_head', 'observata_add_favicon' );
-function observata_add_favicon() {
+function observata_add_favicon(): void {
 	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
 }
 
@@ -96,7 +87,7 @@ function observata_add_favicon() {
 // for styles inside the editor iframe). Guarded with is_admin() so it only
 // loads in the editor, not on the frontend.
 add_action( 'enqueue_block_assets', 'observata_editor_styles' );
-function observata_editor_styles() {
+function observata_editor_styles(): void {
 	if ( ! is_admin() ) {
 		return;
 	}
@@ -109,10 +100,8 @@ function observata_editor_styles() {
 	);
 }
 
-/**
- * Disable comments site-wide: removes support, hides from admin, and blocks the REST endpoint.
- */
-function observata_disable_comments() {
+// Disable comments site-wide: removes support, hides from admin, blocks REST.
+function observata_disable_comments(): void {
 	// Remove comments/trackbacks support from all post types.
 	$post_types = get_post_types( array( 'public' => true ) );
 	foreach ( $post_types as $post_type ) {
@@ -142,6 +131,7 @@ function observata_disable_comments() {
 		'admin_init',
 		function () {
 			global $pagenow;
+
 			if ( 'edit-comments.php' === $pagenow || 'comment.php' === $pagenow || 'options-discussion.php' === $pagenow ) {
 				wp_safe_redirect( admin_url() );
 				exit;
@@ -153,8 +143,8 @@ function observata_disable_comments() {
 	add_action(
 		'add_meta_boxes',
 		function () {
-			remove_meta_box( 'commentsdiv', null, 'normal' );
-			remove_meta_box( 'commentstatusdiv', null, 'normal' );
+			remove_meta_box( 'commentsdiv', '', 'normal' );
+			remove_meta_box( 'commentstatusdiv', '', 'normal' );
 		},
 		999
 	);
@@ -174,12 +164,9 @@ function observata_disable_comments() {
 	);
 }
 
-/**
- * Strip verbose WordPress body classes.
- * Keeps only custom classes passed via Layout::bodyClass() or get_body_class( '...' ).
- */
+// Strip verbose WordPress body classes — keep only explicit custom classes.
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
-function observata_clean_body_class( $classes, $class ) {
+function observata_clean_body_class( array $classes, array|string $class ): array {
 	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.
 	// $classes contains everything WP auto-generates. Return only the explicit ones.
 	return is_array( $class ) ? $class : array();

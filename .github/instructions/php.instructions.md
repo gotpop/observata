@@ -20,7 +20,63 @@ Follow WordPress Coding Standards (WPCS). Run `composer fix` to auto-fix.
 - snake_case for functions and variables
 - Prefix all functions with `observata_`
 - Use `wp_` functions (not raw PHP) for escaping, DB, etc.
-- **Comments**: Keep AI-generated comments to a minimum. Only comment non-obvious logic; do not restate what the code already says.
+
+### Type safety
+
+All functions must have **parameter types** and **return types** — no untyped signatures.
+
+```php
+// ✓ Good
+function observata_build_breadcrumbs(): array { ... }
+function observata_add_menu_context( string $template_name, array &$context ): void { ... }
+
+// ✗ Bad
+function observata_build_breadcrumbs() { ... }
+function observata_add_menu_context( $template_name, &$context ) { ... }
+```
+
+Run `composer phpstan` to type-check. CI fails PRs that break types (`.github/workflows/phpstan.yml`, level 5). Treat PHPStan errors like `tsc` errors — fix the code, don't suppress.
+
+### Comments
+
+- **File header**: One `/** */` docblock per file explaining its purpose. The only multi-line comment allowed.
+- **Everything else**: `//` single-line comments only. No `/** */` on functions.
+- Keep comments minimal — state why, not what.
+
+### Spacing
+
+Blank line before `return` and `if` statements inside functions. No blank line between `{` and the first statement.
+
+```php
+function example( string $value ): string {
+    $result = do_something( $value );
+
+    if ( ! $result ) {
+        return '';
+    }
+
+    return $result;
+}
+```
+
+### File organization
+
+Each file does **one thing**. Hooks (`add_action`/`add_filter`) go at the top after the header docblock. Function definitions follow below.
+
+```php
+<?php
+/**
+ * File header — what this module does.
+ */
+
+add_action( 'hook', 'observata_callback', 10 );
+
+function observata_callback(): void {
+    // ...
+}
+```
+
+No ASCII-art section dividers (`// ───`). No standalone `analytics.php` index files — each integration gets its own file.
 
 ## Block Registration
 
@@ -28,34 +84,43 @@ Blocks are auto-discovered in `inc/blocks.php`. Never manually call `register_bl
 
 ### Render Callback
 
-`observata_render_block_twig()` in `inc/block-renderer.php` handles all Twig-based blocks. It:
+`observata_render_block_twig()` in `inc/block-renderer.php` is the main render callback. Utility functions (split, serialize, template map) live in `inc/block-helpers.php`.
 
-1. Strips `observata/` prefix to find the template name
-2. Looks up the Twig file via `observata_get_template_map()`
-3. Runs `do_blocks()` on inner content
-4. Merges `Timber::context()` with block-specific data
-5. Calls `Timber::compile()` (returns string, does not echo)
-
-## Asset Enqueue Strategy
-
-- **Production**: Global CSS inlined via `wp_head` hook (not `wp_enqueue_style`)
-- **Dev** (`SCRIPT_DEBUG`): Standard `<link>` tags
-- **Scripts**: All deferred — apply `strategy => defer` to ALL scripts in dependency chain or WP strips it
-- **Removed**: wp-block-library, classic-theme-styles, global-styles
-
-## Adding Block Context Data
-
-Add conditionals in `observata_render_block_twig()` for block-specific data:
+The render callback delegates context injection to focused helper functions in the same file:
 
 ```php
-if ( $template_name === 'section-your-block' ) {
-	$context['custom_data'] = get_custom_data();
-}
+observata_add_menu_context( $template_name, $context );          // header/footer menus
+observata_add_post_context( $template_name, $attributes, $context ); // blog posts + pagination
+observata_add_breadcrumb_context( $template_name, $attributes, $context ); // breadcrumbs
+observata_render_inner_blocks( $attributes, $context );          // InnerBlocks auto-render
 ```
+
+Each helper receives `$context` by reference (`&$context`). Add new block-specific context data by adding a new helper function following the same pattern.
 
 ## Module Organization
 
-All PHP lives in `inc/` and is loaded via `functions.php`. Each file handles one concern. Follow existing naming: `enqueue-assets.php`, `block-renderer.php`, `twig-filters.php`, etc.
+All PHP lives in `inc/` and is loaded via `functions.php`. Each file handles **one concern**:
+
+| File                        | Concern                                                       |
+| --------------------------- | ------------------------------------------------------------- |
+| `block-helpers.php`         | Block utility functions (split hero, serialize, template map) |
+| `block-renderer.php`        | Render callback + context injection helpers                   |
+| `blocks.php`                | Block registration, editor runtime, allowed blocks            |
+| `enqueue-assets.php`        | Asset enqueuing, CSS inlining, font preloading                |
+| `theme-setup.php`           | Timber config, theme supports, body classes, env helpers      |
+| `analytics-ga4.php`         | GA4 registration + output                                     |
+| `analytics-leadfeeder.php`  | Leadfeeder registration + output                              |
+| `analytics-cookiebot.php`   | CookieBot registration + output                               |
+| `theme-settings.php`        | Settings page + sections                                      |
+| `theme-settings-footer.php` | Footer content fields                                         |
+
+## Type Checking (PHPStan)
+
+```bash
+composer phpstan          # level 5 — catches type errors, wrong arg counts, undefined functions
+```
+
+Config in `phpstan.neon`. CI runs on every PR — fails if types break. Level 5 catches all critical issues without requiring `@param array<...>` annotations on every iterable.
 
 ## Environment Flags
 

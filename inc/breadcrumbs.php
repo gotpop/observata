@@ -1,19 +1,12 @@
 <?php
 /**
- * Breadcrumbs logic for the breadcrumbs block.
+ * Breadcrumbs logic — builds an array of breadcrumb items for the
+ * breadcrumbs block. Called from observata_render_block_twig().
  *
- * Builds an array of breadcrumb items that the Twig template renders.
- * Called from observata_render_block_twig() in block-renderer.php.
+ * @return array Each item: [ 'label' => string, 'url' => string|null ].
  */
 
-/**
- * Build an array of breadcrumb items for the breadcrumbs block.
- *
- * Each item is [ 'label' => string, 'url' => string|null ].
- * A null url indicates the current page (rendered as plain text).
- *
- * @return array Array of breadcrumb items.
- */
+// Build breadcrumb trail for the current page.
 function observata_build_breadcrumbs(): array {
 	$breadcrumbs = array();
 
@@ -26,6 +19,7 @@ function observata_build_breadcrumbs(): array {
 
 	if ( is_home() || is_singular( 'post' ) ) {
 		$blog_page_id = get_option( 'page_for_posts' );
+
 		if ( $blog_page_id ) {
 			$breadcrumbs[] = array(
 				'label' => get_the_title( $blog_page_id ),

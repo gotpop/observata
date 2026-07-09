@@ -2,12 +2,13 @@
 
 // Inject device/browser classes on <html> for CSS targeting.
 add_action( 'wp_footer', 'observata_footer' );
-function observata_footer() {
+function observata_footer(): void {
 	?>
 	<script>
 		(function () {
 			const ua = navigator.userAgent.toLowerCase();
 			const html = document.documentElement;
+
 			if (/(iphone|ipod|ipad)/.test(ua)) {
 				html.classList.add('ios', 'mobile');
 			}

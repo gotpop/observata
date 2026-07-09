@@ -2,9 +2,10 @@
 
 // Output speculation rules for improved navigation performance.
 add_action( 'wp_head', 'observata_speculation_rules', 2 );
-function observata_speculation_rules() {
+function observata_speculation_rules(): void {
 	// Allow disabling via query param: ?no_speculation=1
 	if ( isset( $_GET['no_speculation'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- debug query param
+
 		return;
 	}
 
@@ -71,6 +72,7 @@ function observata_speculation_rules() {
 
 			if ( $page ) {
 				$url = get_permalink( $page->ID );
+
 				if ( $url && ! in_array( $url, $urls, true ) ) {
 					$urls[] = $url;
 				}
@@ -95,6 +97,7 @@ function observata_speculation_rules() {
 	);
 
 	$json = wp_json_encode( $rules, JSON_UNESCAPED_SLASHES );
+
 	if ( $json === false ) {
 		return;
 	}
@@ -108,7 +111,7 @@ function observata_speculation_rules() {
 // Output pingback link tag for singular posts that allow pings.
 add_action( 'wp_head', 'observata_pingback_header' );
 
-function observata_pingback_header() {
+function observata_pingback_header(): void {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
@@ -116,7 +119,7 @@ function observata_pingback_header() {
 
 // Add speculation rules toggle to Settings > General.
 add_action( 'admin_init', 'observata_speculation_settings' );
-function observata_speculation_settings() {
+function observata_speculation_settings(): void {
 	add_settings_section(
 		'observata_performance_section',
 		'Performance',
@@ -143,11 +146,11 @@ function observata_speculation_settings() {
 	);
 }
 
-function observata_performance_section_callback() {
+function observata_performance_section_callback(): void {
 	echo '<p>Performance-related settings for the Observata theme.</p>';
 }
 
-function observata_disable_speculation_render() {
+function observata_disable_speculation_render(): void {
 	$checked = (bool) get_option( 'observata_disable_speculation', false );
 	?>
 	<label>

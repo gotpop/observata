@@ -4,7 +4,7 @@
  */
 
 add_action( 'init', 'observata_register_blocks' );
-function observata_register_blocks() {
+function observata_register_blocks(): void {
 	$build_dir = get_template_directory() . '/build';
 	$build_uri = get_template_directory_uri() . '/build';
 
@@ -14,6 +14,7 @@ function observata_register_blocks() {
 	// Without runtime.js, registerBlockType calls in index.js never run and
 	// no blocks appear in the editor.
 	$runtime_path = $build_dir . '/runtime.asset.php';
+
 	if ( file_exists( $runtime_path ) ) {
 		$runtime_asset = require $runtime_path;
 		wp_register_script(
@@ -35,6 +36,7 @@ function observata_register_blocks() {
 
 	// Ensure the blocks script depends on the runtime so it always loads first.
 	$deps = $asset['dependencies'];
+
 	if ( wp_script_is( 'observata-runtime', 'registered' ) ) {
 		$deps[] = 'observata-runtime';
 	}
@@ -93,20 +95,11 @@ function observata_register_blocks() {
 	}
 }
 
-/**
- * Enqueue the webpack runtime chunk in the block editor.
- *
- * Block editor scripts loaded via block.json "editorScript" (file:../../build/index.js)
- * only declare WordPress core dependencies from index.asset.php — they do NOT
- * include observata-runtime. Without the runtime, webpack's chunk loading
- * bootstrap never runs, so the registerBlockType calls in index.js never execute
- * and ALL blocks show as "unsupported" in the editor.
- *
- * We also add observata-runtime as a dependency of every editor script handle
- * that points to build/index.js, ensuring correct load ordering.
- */
+// Enqueue the webpack runtime chunk in the block editor — required
+// for build/index.js to load. Also adds runtime as a dependency of every
+// editor script handle pointing to build/index.js.
 add_action( 'enqueue_block_editor_assets', 'observata_enqueue_editor_runtime', 1 );
-function observata_enqueue_editor_runtime() {
+function observata_enqueue_editor_runtime(): void {
 	if ( ! wp_script_is( 'observata-runtime', 'registered' ) ) {
 		return;
 	}
@@ -125,14 +118,10 @@ function observata_enqueue_editor_runtime() {
 	}
 }
 
-/**
- * Restrict the block inserter to only our custom blocks.
- * observata/card is intentionally included so it can be added
- * inside the Cards block via InnerBlocks.
- * observata/section-blog-pagination is only allowed on single blog posts.
- */
+// Restrict the block inserter to only our custom blocks.
+// observata/section-blog-pagination is only allowed on single blog posts.
 add_filter( 'allowed_block_types_all', 'observata_allowed_blocks', 10, 2 );
-function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
+function observata_allowed_blocks( bool|array $allowed_blocks, \WP_Block_Editor_Context $editor_context ): array {
 	$allowed = array();
 
 	$iterator = new RecursiveIteratorIterator(
@@ -176,9 +165,7 @@ function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
 	return $allowed;
 }
 
-/**
- * Render a dynamic block by name + attributes from PHP templates.
- */
+// Render a dynamic block by name + attributes from PHP templates.
 function observata_render_block( string $block_name, array $attributes = array() ): string {
 	$attrs = '';
 

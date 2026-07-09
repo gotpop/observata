@@ -9,10 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Register REST API routes for Unsplash operations
- */
-function observata_register_unsplash_routes() {
+// Register REST API routes for Unsplash operations.
+function observata_register_unsplash_routes(): void {
 	register_rest_route(
 		'wp/v2',
 		'/unsplash/search',
@@ -77,31 +75,23 @@ function observata_register_unsplash_routes() {
 }
 add_action( 'rest_api_init', 'observata_register_unsplash_routes' );
 
-/**
- * Permission callback for Unsplash search - requires edit_posts capability
- */
-function observata_unsplash_search_permission_callback() {
+// Permission callback for Unsplash search - requires edit_posts capability.
+function observata_unsplash_search_permission_callback(): bool {
 	return current_user_can( 'edit_posts' );
 }
 
-/**
- * Permission callback for Unsplash download - requires upload_files capability
- */
-function observata_unsplash_download_permission_callback() {
+// Permission callback for Unsplash download - requires upload_files capability.
+function observata_unsplash_download_permission_callback(): bool {
 	return current_user_can( 'upload_files' );
 }
 
-/**
- * Get Unsplash API key from WordPress options
- */
-function observata_get_unsplash_api_key() {
+// Get Unsplash API key from WordPress options.
+function observata_get_unsplash_api_key(): string {
 	return get_option( 'observata_unsplash_api_key', '' );
 }
 
-/**
- * Handler for Unsplash search endpoint
- */
-function observata_unsplash_search_handler( $request ) {
+// Handler for Unsplash search endpoint.
+function observata_unsplash_search_handler( \WP_REST_Request $request ): \WP_REST_Response|\WP_Error {
 	$api_key = observata_get_unsplash_api_key();
 
 	if ( empty( $api_key ) ) {
@@ -149,6 +139,7 @@ function observata_unsplash_search_handler( $request ) {
 
 	if ( is_wp_error( $response ) ) {
 		error_log( '[observata] Unsplash API error: ' . $response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'unsplash_api_error',
 			'Failed to connect to Unsplash API. Please try again.',
@@ -161,6 +152,7 @@ function observata_unsplash_search_handler( $request ) {
 
 	if ( json_last_error() !== JSON_ERROR_NONE ) {
 		error_log( '[observata] Unsplash JSON decode error: ' . json_last_error_msg() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'unsplash_json_error',
 			'Failed to parse Unsplash API response.',
@@ -172,6 +164,7 @@ function observata_unsplash_search_handler( $request ) {
 		// Check for rate limit errors
 		if ( isset( $data['errors'] ) && is_array( $data['errors'] ) ) {
 			$error_msg = $data['errors'][0] ?? 'Unknown error';
+
 			return new WP_Error(
 				'unsplash_api_error',
 				'Unsplash API error: ' . $error_msg,
@@ -225,10 +218,8 @@ function observata_unsplash_search_handler( $request ) {
 	);
 }
 
-/**
- * Handler for Unsplash download and upload endpoint
- */
-function observata_unsplash_download_handler( $request ) {
+// Handler for Unsplash download and upload endpoint.
+function observata_unsplash_download_handler( \WP_REST_Request $request ): \WP_REST_Response|\WP_Error {
 	$image_url    = $request->get_param( 'image_url' );
 	$photographer = $request->get_param( 'photographer' );
 	$unsplash_url = $request->get_param( 'unsplash_url' );
@@ -238,6 +229,7 @@ function observata_unsplash_download_handler( $request ) {
 
 	if ( is_wp_error( $head_response ) ) {
 		error_log( '[observata] Image HEAD request failed: ' . $head_response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'image_download_error',
 			'Failed to check image size.',
@@ -267,6 +259,7 @@ function observata_unsplash_download_handler( $request ) {
 
 	if ( is_wp_error( $response ) ) {
 		error_log( '[observata] Image download failed: ' . $response->get_error_message() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+
 		return new WP_Error(
 			'image_download_error',
 			'Failed to download image from Unsplash.',
@@ -366,7 +359,7 @@ function observata_unsplash_download_handler( $request ) {
 		$free_space = disk_free_space( $upload_dir['basedir'] );
 
 		if ( $free_space !== false && $free_space < 10 * 1024 * 1024 ) { // Less than 10MB
-			wp_delete_attachment( $upload['attachment_id'], true );
+			wp_delete_file( $upload['file'] );
 			throw new Exception( 'Insufficient disk space for upload.' );
 		}
 
@@ -380,21 +373,17 @@ function observata_unsplash_download_handler( $request ) {
 
 		$attach_id = wp_insert_attachment( $attachment, $upload['file'] );
 
-		if ( is_wp_error( $attach_id ) ) {
-			wp_delete_file( $upload['file'] );
-			throw new Exception( $attach_id->get_error_message() );
-		}
-
 		// Generate thumbnails
 		require_once ABSPATH . 'wp-admin/includes/image.php';
 		$attachment_data = wp_generate_attachment_metadata( $attach_id, $upload['file'] );
 
-		if ( ! is_wp_error( $attachment_data ) ) {
+		if ( $attachment_data ) {
 			wp_update_attachment_metadata( $attach_id, $attachment_data );
 		}
 
 		// Add attribution meta data
 		update_post_meta( $attach_id, 'unsplash_photographer', $photographer );
+
 		if ( ! empty( $unsplash_url ) ) {
 			update_post_meta( $attach_id, 'unsplash_source_url', $unsplash_url );
 		}
@@ -426,10 +415,8 @@ function observata_unsplash_download_handler( $request ) {
 	}
 }
 
-/**
- * Enqueue the Unsplash sidebar script only on the post editor.
- */
-function observata_enqueue_unsplash_sidebar( $hook ) {
+// Enqueue the Unsplash sidebar script only on the post editor..
+function observata_enqueue_unsplash_sidebar( string $hook ): void {
 	if ( $hook !== 'post.php' && $hook !== 'post-new.php' ) {
 		return;
 	}
@@ -459,12 +446,11 @@ function observata_enqueue_unsplash_sidebar( $hook ) {
 }
 add_action( 'admin_enqueue_scripts', 'observata_enqueue_unsplash_sidebar' );
 
-/**
- * Add admin notice if Unsplash API key is not configured
- */
-function observata_unsplash_api_notice() {
+// Add admin notice if Unsplash API key is not configured.
+function observata_unsplash_api_notice(): void {
 	// Only show on post editor pages
 	$screen = get_current_screen();
+
 	if ( ! $screen || $screen->base !== 'post' ) {
 		return;
 	}
@@ -485,10 +471,8 @@ function observata_unsplash_api_notice() {
 }
 add_action( 'admin_notices', 'observata_unsplash_api_notice' );
 
-/**
- * Add Unsplash API key field to WordPress settings
- */
-function observata_add_unsplash_api_key_setting() {
+// Add Unsplash API key field to WordPress settings.
+function observata_add_unsplash_api_key_setting(): void {
 	add_settings_section(
 		'observata_unsplash_section',
 		'Unsplash Integration',
@@ -516,17 +500,13 @@ function observata_add_unsplash_api_key_setting() {
 }
 add_action( 'admin_init', 'observata_add_unsplash_api_key_setting' );
 
-/**
- * Section callback for Unsplash settings
- */
-function observata_unsplash_section_callback() {
+// Section callback for Unsplash settings.
+function observata_unsplash_section_callback(): void {
 	echo '<p>Add your Unsplash API key to enable image search in the post editor. Get your key at <a href="https://unsplash.com/developers" target="_blank">unsplash.com/developers</a>.</p>';
 }
 
-/**
- * Render Unsplash API key input field
- */
-function observata_unsplash_api_key_render() {
+// Render Unsplash API key input field.
+function observata_unsplash_api_key_render(): void {
 	$api_key = get_option( 'observata_unsplash_api_key', '' );
 	?>
 	<input type="password"

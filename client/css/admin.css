@@ -1,0 +1,38 @@
+/* WordPress Admin — brand styling */
+
+#wpadminbar,
+#wpadminbar .quicklinks .menupop ul,
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar > #wp-toolbar > #wp-admin-bar-root-default .ab-item:hover,
+#wpadminbar .menupop .ab-sub-wrapper {
+	background: #113768;
+}
+
+#wpadminbar .ab-top-menu > li > .ab-item:focus,
+#wpadminbar .ab-top-menu > li:hover > .ab-item {
+	background: #0d2b54;
+}
+
+#adminmenuwrap,
+#adminmenuback,
+#adminmenu,
+#adminmenu .wp-submenu {
+	background: #071828;
+}
+
+#adminmenu a,
+#adminmenu .wp-submenu a {
+	color: #c8d8f0;
+}
+
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li a:hover,
+#adminmenu .wp-submenu a:hover {
+	background: #040e18;
+	color: #fff;
+}
+
+#adminmenu li.wp-has-current-submenu .wp-submenu-head {
+	background: #040e18;
+}
