@@ -187,6 +187,7 @@ function observata_enqueue(): void {
 	if ( file_exists( $client_asset_path ) ) {
 		$client_asset = require $client_asset_path;
 		$client_deps  = array_merge( $client_asset['dependencies'], $vendor_deps );
+
 		wp_enqueue_script( 'observata-client', $build_uri . '/client.js', $client_deps, $client_asset['version'], true );
 	}
 
@@ -196,6 +197,7 @@ function observata_enqueue(): void {
 	if ( is_front_page() && file_exists( $home_asset_path ) ) {
 		$home_asset = require $home_asset_path;
 		$home_deps  = array_merge( $home_asset['dependencies'], $vendor_deps );
+		
 		wp_register_script( 'observata-home', $build_uri . '/home.js', $home_deps, $home_asset['version'], false );
 		wp_enqueue_script( 'observata-home' );
 	}
