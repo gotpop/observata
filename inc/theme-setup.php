@@ -91,71 +91,30 @@ function observata_editor_styles(): void {
 	);
 }
 
-// Disable comments site-wide: removes support, hides from admin, blocks REST.
+// Disable comments site-wide and clean up admin UI.
 add_action( 'init', 'observata_disable_comments' );
 
 function observata_disable_comments(): void {
-	// Remove comments/trackbacks support from all post types.
-	$post_types = get_post_types( array( 'public' => true ) );
-	
-	foreach ( $post_types as $post_type ) {
-		if ( post_type_supports( $post_type, 'comments' ) ) {
-			remove_post_type_support( $post_type, 'comments' );
-			remove_post_type_support( $post_type, 'trackbacks' );
-		}
+	// Remove support from all public post types.
+	foreach ( get_post_types( array( 'public' => true ) ) as $post_type ) {
+		remove_post_type_support( $post_type, 'comments' );
+		remove_post_type_support( $post_type, 'trackbacks' );
 	}
 
 	// Close comments on the front end.
-	add_filter( 'comments_open', '__return_false', 20, 2 );
-	add_filter( 'pings_open', '__return_false', 20, 2 );
+	add_filter( 'comments_open', '__return_false' );
+	add_filter( 'pings_open', '__return_false' );
 
-	// Hide existing comments.
-	add_filter( 'comments_array', '__return_empty_array', 10, 2 );
+	// Remove comments menu from admin sidebar.
+	add_action( 'admin_menu', function () {
+		remove_menu_page( 'edit-comments.php' );
+	} );
 
-	// Remove the comments admin page and menu item.
-	add_action(
-		'admin_menu',
-		function () {
-			remove_menu_page( 'edit-comments.php' );
-		}
-	);
-
-	// Redirect any direct access to comments admin pages.
-	add_action(
-		'admin_init',
-		function () {
-			global $pagenow;
-
-			if ( 'edit-comments.php' === $pagenow || 'comment.php' === $pagenow || 'options-discussion.php' === $pagenow ) {
-				wp_safe_redirect( admin_url() );
-				exit;
-			}
-		}
-	);
-
-	// Remove the comments metabox from the editor.
-	add_action(
-		'add_meta_boxes',
-		function () {
-			remove_meta_box( 'commentsdiv', '', 'normal' );
-			remove_meta_box( 'commentstatusdiv', '', 'normal' );
-		},
-		999
-	);
-
-	// Disable comments REST endpoint.
-	add_filter(
-		'rest_endpoints',
-		function ( $endpoints ) {
-			if ( isset( $endpoints['/wp/v2/comments'] ) ) {
-				unset( $endpoints['/wp/v2/comments'] );
-			}
-			if ( isset( $endpoints['/wp/v2/comments/(?P<id>[\d]+)'] ) ) {
-				unset( $endpoints['/wp/v2/comments/(?P<id>[\d]+)'] );
-			}
-			return $endpoints;
-		}
-	);
+	// Remove discussion metabox from the editor.
+	add_action( 'add_meta_boxes', function () {
+		remove_meta_box( 'commentsdiv', 'post', 'normal' );
+		remove_meta_box( 'commentstatusdiv', 'post', 'normal' );
+	}, 999 );
 }
 
 // Strip verbose WordPress body classes — keep only explicit custom classes.
