@@ -4,31 +4,29 @@
 \Timber\Timber::$dirname = array( 'views' );
 \Timber\Timber::init();
 
-// Enable Twig compilation cache in production only; dev/staging skip caching so template edits reflect immediately.
-add_filter(
-	'timber/twig/environment/options',
-	function ( $options ) {
-		if ( defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT ) {
-			$options['cache']       = get_template_directory() . '/cache/twig';
-			$options['auto_reload'] = true;
-		}
+// Enable Twig compilation cache in production only; dev/staging skip caching.
+add_filter( 'timber/twig/environment/options', 'observata_twig_cache_options' );
 
-		return $options;
+function observata_twig_cache_options( array $options ): array {
+	if ( defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT ) {
+		$options['cache']       = get_template_directory() . '/cache/twig';
+		$options['auto_reload'] = true;
 	}
-);
+
+	return $options;
+}
 
 // Add blocks/ and views/ to Twig's search paths so relative includes resolve correctly.
-add_filter(
-	'timber/loader/loader',
-	function ( $loader ) {
-		$theme_root = get_template_directory();
-		$loader->addPath( $theme_root );
-		$loader->addPath( $theme_root . '/blocks' );
-		$loader->addPath( $theme_root . '/views' );
+add_filter( 'timber/loader/loader', 'observata_twig_loader_paths' );
 
-		return $loader;
-	}
-);
+function observata_twig_loader_paths( $loader ) {
+	$theme_root = get_template_directory();
+	$loader->addPath( $theme_root );
+	$loader->addPath( $theme_root . '/blocks' );
+	$loader->addPath( $theme_root . '/views' );
+
+	return $loader;
+}
 
 // Theme setup: supports, menus, text domain.
 add_action( 'after_setup_theme', 'observata_setup' );
@@ -121,7 +119,7 @@ function observata_disable_comments(): void {
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
 
 function observata_clean_body_class( array $classes, array|string $class ): array {
-	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.
 	// $classes contains everything WP auto-generates. Return only the explicit ones.
+
 	return is_array( $class ) ? $class : array();
 }
