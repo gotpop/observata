@@ -4,9 +4,17 @@
 \Timber\Timber::$dirname = array( 'views' );
 \Timber\Timber::init();
 
-// Enable Twig compilation cache in production only; dev/staging skip caching.
 add_filter( 'timber/twig/environment/options', 'observata_twig_cache_options' );
+add_filter( 'timber/loader/loader', 'observata_twig_loader_paths' );
+add_action( 'after_setup_theme', 'observata_setup' );
+add_action( 'wp_head', 'observata_add_favicon' );
+add_action( 'enqueue_block_assets', 'observata_editor_styles' );
+add_action( 'init', 'observata_disable_comments' );
+add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
 
+// ─────────────────────────────────────────────────────────────────
+
+// Enable Twig compilation cache in production only; dev/staging skip caching.
 function observata_twig_cache_options( array $options ): array {
 	if ( defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT ) {
 		$options['cache']       = get_template_directory() . '/cache/twig';
@@ -17,8 +25,6 @@ function observata_twig_cache_options( array $options ): array {
 }
 
 // Add blocks/ and views/ to Twig's search paths so relative includes resolve correctly.
-add_filter( 'timber/loader/loader', 'observata_twig_loader_paths' );
-
 function observata_twig_loader_paths( $loader ) {
 	$theme_root = get_template_directory();
 	$loader->addPath( $theme_root );
@@ -29,8 +35,6 @@ function observata_twig_loader_paths( $loader ) {
 }
 
 // Theme setup: supports, menus, text domain.
-add_action( 'after_setup_theme', 'observata_setup' );
-
 function observata_setup(): void {
 	load_theme_textdomain( 'observata', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
@@ -67,15 +71,11 @@ function observata_is_production(): bool {
 }
 
 // Add favicon to wp_head.
-add_action( 'wp_head', 'observata_add_favicon' );
-
 function observata_add_favicon(): void {
 	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
 }
 
 // Enqueue editor-only stylesheet; guarded with is_admin() so it only loads in the editor.
-add_action( 'enqueue_block_assets', 'observata_editor_styles' );
-
 function observata_editor_styles(): void {
 	if ( ! is_admin() ) {
 		return;
@@ -90,8 +90,6 @@ function observata_editor_styles(): void {
 }
 
 // Disable comments site-wide and clean up admin UI.
-add_action( 'init', 'observata_disable_comments' );
-
 function observata_disable_comments(): void {
 	// Remove support from all public post types.
 	foreach ( get_post_types( array( 'public' => true ) ) as $post_type ) {
@@ -116,8 +114,6 @@ function observata_disable_comments(): void {
 }
 
 // Strip verbose WordPress body classes — keep only explicit custom classes.
-add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
-
 function observata_clean_body_class( array $classes, array|string $class ): array {
 	return is_array( $class ) ? $class : array();
 }
