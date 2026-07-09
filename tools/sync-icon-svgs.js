@@ -44,15 +44,13 @@ const CATEGORIES = ['geo', 'lucide', 'platform'];
  * blocks/, or views/ (matching Timber loader behaviour).
  */
 function resolveWrapper(twigDir, content) {
-	const includeMatch = content.trim().match(
-		/^\{%\s*include\s+'([^']+)'\s*%\}\s*$/m
-	);
+	const includeMatch = content.trim().match(/^\{%\s*include\s+'([^']+)'\s*%\}\s*$/m);
 	if (!includeMatch) return null;
 
 	const includePath = includeMatch[1];
 	// Timber resolves from theme root, blocks/, views/
 	const bases = [
-		path.join(themeRoot),                    // theme root
+		path.join(themeRoot), // theme root
 		path.join(themeRoot, 'blocks'),
 		path.join(themeRoot, 'views'),
 	];
@@ -221,7 +219,11 @@ for (const category of CATEGORIES) {
 			if (!match) totalMismatches++;
 
 			console.log(
-				'    ' + name.padEnd(20) + sourceTag.padEnd(4) + sig(twigCounts).padEnd(24) + (match ? 'OK' : 'MISMATCH')
+				'    ' +
+					name.padEnd(20) +
+					sourceTag.padEnd(4) +
+					sig(twigCounts).padEnd(24) +
+					(match ? 'OK' : 'MISMATCH')
 			);
 			continue;
 		}
@@ -232,7 +234,9 @@ for (const category of CATEGORIES) {
 		totalSynced++;
 
 		const svgCounts = countElements(svgOutput);
-		console.log('    ' + name.padEnd(20) + sourceTag.padEnd(4) + sig(twigCounts).padEnd(24) + 'synced');
+		console.log(
+			'    ' + name.padEnd(20) + sourceTag.padEnd(4) + sig(twigCounts).padEnd(24) + 'synced'
+		);
 	}
 }
 
@@ -244,10 +248,10 @@ if (checkOnly) {
 	} else {
 		console.log(
 			'  ✗ ' +
-			totalMismatches +
-			' of ' +
-			totalFiles +
-			' files out of sync — run: npm run sync:icons'
+				totalMismatches +
+				' of ' +
+				totalFiles +
+				' files out of sync — run: npm run sync:icons'
 		);
 		process.exit(1);
 	}
