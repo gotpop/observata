@@ -1,6 +1,10 @@
 <?php
 /**
  * Block registration and Gutenberg configuration.
+ *
+ * Build/index.js uses webpack chunk loading via runtime.js — without it,
+ * registerBlockType calls never run and no blocks appear. The runtime must
+ * be registered on init and enqueued in the editor before block scripts load.
  */
 
 add_action( 'init', 'observata_register_blocks' );
@@ -14,11 +18,7 @@ function observata_register_blocks(): void {
 	$build_dir = get_template_directory() . '/build';
 	$build_uri = get_template_directory_uri() . '/build';
 
-	// Register the webpack runtime chunk. build/index.js uses webpack's chunk
-	// loading mechanism (globalThis["webpackChunkobservata_blocks"]) which
-	// requires runtime.js to process the chunk and execute module factories.
-	// Without runtime.js, registerBlockType calls in index.js never run and
-	// no blocks appear in the editor.
+	// Register the webpack runtime chunk (required for block editor).
 	$runtime_path = $build_dir . '/runtime.asset.php';
 
 	if ( file_exists( $runtime_path ) ) {
@@ -94,8 +94,7 @@ function observata_register_blocks(): void {
 				array( 'render_callback' => 'observata_render_block_twig' )
 			);
 		} else {
-			// Use standard PHP renderer — must use _from_metadata to read
-			// block.json (editorScript, editorStyle, attributes, etc.)
+			// Standard PHP renderer — reads block.json for metadata.
 			register_block_type_from_metadata( $block_dir );
 		}
 	}
@@ -109,8 +108,7 @@ function observata_enqueue_editor_runtime(): void {
 
 	wp_enqueue_script( 'observata-runtime' );
 
-	// Add the runtime as a dependency for all block editor scripts that load
-	// build/index.js (auto-generated handles from block.json editorScript).
+	// Patch runtime as a dependency for all build/index.js editor scripts.
 	global $wp_scripts;
 	foreach ( $wp_scripts->registered as $handle => $script ) {
 		if ( $script->src && false !== strpos( $script->src, 'build/index.js' ) ) {
