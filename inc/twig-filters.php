@@ -10,7 +10,7 @@ add_filter(
 		$twig->addFilter(
 			new \Twig\TwigFilter(
 				'strip_html',
-				function ( $text ) {
+				function ( string $text ): string {
 					return wp_strip_all_tags( $text );
 				}
 			)

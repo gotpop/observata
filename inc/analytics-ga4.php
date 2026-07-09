@@ -9,7 +9,7 @@
 add_action( 'admin_init', 'observata_ga4_register_setting' );
 add_action( 'wp_head', 'observata_output_ga4_script', 99 );
 
-function observata_ga4_register_setting() {
+function observata_ga4_register_setting(): void {
 	register_setting(
 		'observata_settings',
 		'observata_ga4_id',
@@ -29,7 +29,7 @@ function observata_ga4_register_setting() {
 	);
 }
 
-function observata_sanitize_ga4_id( $value ) {
+function observata_sanitize_ga4_id( string $value ): string {
 	$value = sanitize_text_field( $value );
 
 	if ( $value && ! preg_match( '/^G[T-]?[A-Z0-9]+$/i', $value ) ) {
@@ -45,7 +45,7 @@ function observata_sanitize_ga4_id( $value ) {
 	return $value;
 }
 
-function observata_ga4_id_field() {
+function observata_ga4_id_field(): void {
 	$value = get_option( 'observata_ga4_id', '' );
 
 	printf(
@@ -59,7 +59,7 @@ function observata_ga4_id_field() {
 	);
 }
 
-function observata_output_ga4_script() {
+function observata_output_ga4_script(): void {
 	if ( ! observata_is_production() ) {
 		return;
 	}

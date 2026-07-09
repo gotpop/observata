@@ -39,7 +39,7 @@ add_filter(
 
 // Theme setup: supports, menus, text domain.
 add_action( 'after_setup_theme', 'observata_setup' );
-function observata_setup() {
+function observata_setup(): void {
 	load_theme_textdomain( 'observata', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
@@ -73,13 +73,13 @@ function observata_setup() {
 
 
 // Check if the current environment is production (reads WP_ENVIRONMENT constant).
-function observata_is_production() {
+function observata_is_production(): bool {
 	return defined( 'WP_ENVIRONMENT' ) && 'production' === WP_ENVIRONMENT;
 }
 
 // Add favicon to wp_head.
 add_action( 'wp_head', 'observata_add_favicon' );
-function observata_add_favicon() {
+function observata_add_favicon(): void {
 	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
 }
 
@@ -87,7 +87,7 @@ function observata_add_favicon() {
 // for styles inside the editor iframe). Guarded with is_admin() so it only
 // loads in the editor, not on the frontend.
 add_action( 'enqueue_block_assets', 'observata_editor_styles' );
-function observata_editor_styles() {
+function observata_editor_styles(): void {
 	if ( ! is_admin() ) {
 		return;
 	}
@@ -101,7 +101,7 @@ function observata_editor_styles() {
 }
 
 // Disable comments site-wide: removes support, hides from admin, blocks REST.
-function observata_disable_comments() {
+function observata_disable_comments(): void {
 	// Remove comments/trackbacks support from all post types.
 	$post_types = get_post_types( array( 'public' => true ) );
 	foreach ( $post_types as $post_type ) {
@@ -166,7 +166,7 @@ function observata_disable_comments() {
 
 // Strip verbose WordPress body classes — keep only explicit custom classes.
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
-function observata_clean_body_class( $classes, $class ) {
+function observata_clean_body_class( array $classes, array|string $class ): array {
 	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.
 	// $classes contains everything WP auto-generates. Return only the explicit ones.
 	return is_array( $class ) ? $class : array();

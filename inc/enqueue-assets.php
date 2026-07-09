@@ -12,7 +12,7 @@ add_filter( 'emoji_svg_url', '__return_false' );
 
 // Remove default WordPress frontend styles — this theme provides its own design system.
 add_action( 'wp_enqueue_scripts', 'observata_remove_default_styles', 100 );
-function observata_remove_default_styles() {
+function observata_remove_default_styles(): void {
 	// Core block library styles (wp-block-library, wp-block-library-inline-css)
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'wp-block-library-theme' );
@@ -44,7 +44,7 @@ remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 // version. Block viewStyle files registered by core use the static theme
 // version — this overrides with the file's modification time.
 add_filter( 'style_loader_src', 'observata_cache_bust_theme_styles', 10, 2 );
-function observata_cache_bust_theme_styles( $src, $handle ) {
+function observata_cache_bust_theme_styles( string $src, string $handle ): string {
 	// Skip the webpack-bundled stylesheet — it already has a content-hash version.
 	if ( $handle === 'observata-style' ) {
 		return $src;
@@ -79,7 +79,7 @@ function observata_cache_bust_theme_styles( $src, $handle ) {
 // Preload fonts so the browser starts downloading them immediately,
 // before the CSS is parsed and @font-face is discovered.
 add_action( 'wp_head', 'observata_preload_fonts', 1 );
-function observata_preload_fonts() {
+function observata_preload_fonts(): void {
 	$fonts = array(
 		'inter'   => '/assets/fonts/inter/inter.woff2',
 		'gantari' => '/assets/fonts/gantari/gantari.woff2',
@@ -99,7 +99,7 @@ function observata_preload_fonts() {
 // would get. Paired with the `defer` strategy on observata-home, this
 // eliminates render blocking without slowing the shader's start time.
 add_action( 'wp_head', 'observata_preload_hero_scripts', 2 );
-function observata_preload_hero_scripts() {
+function observata_preload_hero_scripts(): void {
 	if ( ! is_front_page() ) {
 		return;
 	}
@@ -122,7 +122,7 @@ function observata_preload_hero_scripts() {
 // render-blocking CSS request. Registered at the top level so the hook is in
 // place before wp_head fires — all conditional logic lives inside the function.
 add_action( 'wp_head', 'observata_inline_critical_css', 1 );
-function observata_inline_critical_css() {
+function observata_inline_critical_css(): void {
 	// Development mode: use a regular <link> tag for dev tools + webpack
 	// watch refreshes. The <link> is enqueued by observata_enqueue().
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
@@ -163,7 +163,7 @@ function observata_inline_critical_css() {
 
 // Enqueue bundled stylesheet and compiled client JS (with cache-busting).
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
-function observata_enqueue() {
+function observata_enqueue(): void {
 	// Webpack bundles all @imported CSS into build/style-global.css with a
 	// content-hash version. Falls back to style.css if the build doesn't exist.
 	$bundle_css = get_template_directory() . '/build/style-global.css';

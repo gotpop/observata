@@ -81,7 +81,7 @@ add_filter(
 
 // Ensure clean canonical URLs for archive and taxonomy pages.
 add_action( 'wp_head', 'observata_canonical_url', 2 );
-function observata_canonical_url() {
+function observata_canonical_url(): void {
 	$url = '';
 
 	if ( is_category() || is_tag() || is_tax() ) {
@@ -104,7 +104,7 @@ function observata_canonical_url() {
 
 // Prevent search engines from indexing low-value pages.
 add_action( 'wp_head', 'observata_noindex', 0 );
-function observata_noindex() {
+function observata_noindex(): void {
 	$noindex = false;
 
 	if ( is_search() || is_404() ) {

@@ -1,7 +1,7 @@
 <?php
 
 // Output Schema.org itemscope/itemtype attributes for the current page.
-function observata_schema_type() {
+function observata_schema_type(): void {
 	$schema = 'https://schema.org/';
 
 	if ( is_single() ) {
@@ -18,7 +18,7 @@ function observata_schema_type() {
 
 // Add itemprop="url" to nav menu links for Schema.org compliance.
 add_filter( 'nav_menu_link_attributes', 'observata_schema_url', 10 );
-function observata_schema_url( $atts ) {
+function observata_schema_url( array $atts ): array {
 	$atts['itemprop'] = 'url';
 
 	return $atts;

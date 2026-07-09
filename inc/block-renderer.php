@@ -5,7 +5,7 @@
  * Utility functions (split, serialize, template map) live in block-helpers.php.
  */
 
-function observata_render_block_twig( $attributes, $content, $block ) {
+function observata_render_block_twig( array $attributes, string $content, \WP_Block $block ): string {
 	$block_name    = $block->block_type->name;
 	$template_name = str_replace( 'observata/', '', $block_name );
 

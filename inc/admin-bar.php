@@ -6,7 +6,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 // Replace "Howdy," with a friendlier greeting in the admin bar.
 add_filter( 'gettext', 'observata_replace_howdy', 10, 3 );
 
-function observata_replace_howdy( $translated, $text, $domain ) {
+function observata_replace_howdy( string $translated, string $text, string $domain ): string {
 	if ( 'default' === $domain && false !== strpos( $text, 'Howdy' ) ) {
 		$translated = str_replace( 'Howdy', 'Hej', $text );
 	}
@@ -17,7 +17,7 @@ function observata_replace_howdy( $translated, $text, $domain ) {
 // Enqueue admin stylesheet.
 add_action( 'admin_enqueue_scripts', 'observata_admin_styles' );
 
-function observata_admin_styles() {
+function observata_admin_styles(): void {
 	wp_enqueue_style(
 		'observata-admin',
 		get_template_directory_uri() . '/client/css/admin.css',

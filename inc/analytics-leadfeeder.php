@@ -9,7 +9,7 @@
 add_action( 'admin_init', 'observata_leadfeeder_register_setting' );
 add_action( 'wp_head', 'observata_output_leadfeeder_script', 100 );
 
-function observata_leadfeeder_register_setting() {
+function observata_leadfeeder_register_setting(): void {
 	register_setting(
 		'observata_settings',
 		'observata_leadfeeder_id',
@@ -30,7 +30,7 @@ function observata_leadfeeder_register_setting() {
 }
 
 
-function observata_sanitize_leadfeeder_id( $value ) {
+function observata_sanitize_leadfeeder_id( string $value ): string {
 	$value = sanitize_text_field( $value );
 
 	if ( $value && ! preg_match( '/^[a-zA-Z0-9\-]+$/', $value ) ) {
@@ -46,7 +46,7 @@ function observata_sanitize_leadfeeder_id( $value ) {
 }
 
 
-function observata_leadfeeder_id_field() {
+function observata_leadfeeder_id_field(): void {
 	$value = get_option( 'observata_leadfeeder_id', '' );
 	printf(
 		'<input type="text" name="observata_leadfeeder_id" value="%s" class="regular-text" placeholder="XXXXXXXXXXXXXXXXXXXX">',
@@ -58,7 +58,7 @@ function observata_leadfeeder_id_field() {
 	);
 }
 
-function observata_output_leadfeeder_script() {
+function observata_output_leadfeeder_script(): void {
 	if ( ! observata_is_production() ) {
 		return;
 	}

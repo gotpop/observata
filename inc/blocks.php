@@ -4,7 +4,7 @@
  */
 
 add_action( 'init', 'observata_register_blocks' );
-function observata_register_blocks() {
+function observata_register_blocks(): void {
 	$build_dir = get_template_directory() . '/build';
 	$build_uri = get_template_directory_uri() . '/build';
 
@@ -99,7 +99,7 @@ function observata_register_blocks() {
 // for build/index.js to load. Also adds runtime as a dependency of every
 // editor script handle pointing to build/index.js.
 add_action( 'enqueue_block_editor_assets', 'observata_enqueue_editor_runtime', 1 );
-function observata_enqueue_editor_runtime() {
+function observata_enqueue_editor_runtime(): void {
 	if ( ! wp_script_is( 'observata-runtime', 'registered' ) ) {
 		return;
 	}
@@ -121,7 +121,7 @@ function observata_enqueue_editor_runtime() {
 // Restrict the block inserter to only our custom blocks.
 // observata/section-blog-pagination is only allowed on single blog posts.
 add_filter( 'allowed_block_types_all', 'observata_allowed_blocks', 10, 2 );
-function observata_allowed_blocks( $allowed_blocks, $editor_context ) {
+function observata_allowed_blocks( bool|array $allowed_blocks, \WP_Block_Editor_Context $editor_context ): array {
 	$allowed = array();
 
 	$iterator = new RecursiveIteratorIterator(

@@ -8,7 +8,7 @@
 
 
 add_action( 'admin_init', 'observata_footer_register_settings' );
-function observata_footer_register_settings() {
+function observata_footer_register_settings(): void {
 	register_setting(
 		'observata_settings',
 		'observata_footer_email',
@@ -83,7 +83,7 @@ function observata_footer_register_settings() {
 }
 
 
-function observata_sanitize_footer_email( $value ) {
+function observata_sanitize_footer_email( string $value ): string {
 	$value = sanitize_email( $value );
 
 	if ( $value && ! is_email( $value ) ) {
@@ -99,7 +99,7 @@ function observata_sanitize_footer_email( $value ) {
 }
 
 
-function observata_footer_email_field() {
+function observata_footer_email_field(): void {
 	$value = get_option( 'observata_footer_email', '' );
 	printf(
 		'<input type="email" name="observata_footer_email" value="%s" class="regular-text" placeholder="sales@observata.com">',
@@ -111,7 +111,7 @@ function observata_footer_email_field() {
 	);
 }
 
-function observata_footer_address_field() {
+function observata_footer_address_field(): void {
 	$value = get_option( 'observata_footer_address', '' );
 	printf(
 		'<textarea name="observata_footer_address" rows="3" class="large-text" placeholder="Trade Center Halmstad Box 837 SE - 30118 Halmstad Sweden">%s</textarea>',
@@ -123,7 +123,7 @@ function observata_footer_address_field() {
 	);
 }
 
-function observata_footer_locations_field() {
+function observata_footer_locations_field(): void {
 	$value = get_option( 'observata_footer_locations', '' );
 	printf(
 		'<input type="text" name="observata_footer_locations" value="%s" class="regular-text" placeholder="Denmark | Sweden | Finland | Norway">',
@@ -135,7 +135,7 @@ function observata_footer_locations_field() {
 	);
 }
 
-function observata_footer_copyright_field() {
+function observata_footer_copyright_field(): void {
 	$value = get_option( 'observata_footer_copyright', '' );
 	printf(
 		'<input type="text" name="observata_footer_copyright" value="%s" class="regular-text" placeholder="© Observata AB 2026">',

@@ -9,7 +9,7 @@
 add_action( 'admin_init', 'observata_cookiebot_register_setting' );
 add_action( 'wp_head', 'observata_output_cookiebot_script', 1 );
 
-function observata_cookiebot_register_setting() {
+function observata_cookiebot_register_setting(): void {
 	register_setting(
 		'observata_settings',
 		'observata_cookiebot_id',
@@ -29,7 +29,7 @@ function observata_cookiebot_register_setting() {
 	);
 }
 
-function observata_sanitize_cookiebot_id( $value ) {
+function observata_sanitize_cookiebot_id( string $value ): string {
 	$value = sanitize_text_field( $value );
 
 	if ( $value && ! preg_match( '/^[a-f0-9\-]+$/i', $value ) ) {
@@ -44,7 +44,7 @@ function observata_sanitize_cookiebot_id( $value ) {
 	return $value;
 }
 
-function observata_cookiebot_id_field() {
+function observata_cookiebot_id_field(): void {
 	$value = get_option( 'observata_cookiebot_id', '' );
 
 	printf(
@@ -57,7 +57,7 @@ function observata_cookiebot_id_field() {
 	);
 }
 
-function observata_output_cookiebot_script() {
+function observata_output_cookiebot_script(): void {
 	if ( ! observata_is_production() ) {
 		return;
 	}

@@ -11,7 +11,7 @@
 add_action( 'admin_menu', 'observata_theme_settings_page' );
 add_action( 'admin_init', 'observata_theme_settings_sections' );
 
-function observata_theme_settings_page() {
+function observata_theme_settings_page(): void {
 	add_options_page(
 		__( 'Theme Settings', 'observata' ),
 		__( 'Theme Settings', 'observata' ),
@@ -21,7 +21,7 @@ function observata_theme_settings_page() {
 	);
 }
 
-function observata_theme_settings_sections() {
+function observata_theme_settings_sections(): void {
 	add_settings_section(
 		'observata_analytics_section',
 		__( 'Analytics', 'observata' ),
@@ -38,7 +38,7 @@ function observata_theme_settings_sections() {
 }
 
 
-function observata_theme_settings_render() {
+function observata_theme_settings_render(): void {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
