@@ -21,6 +21,19 @@ Follow WordPress Coding Standards (WPCS). Run `composer fix` to auto-fix.
 - Prefix all functions with `observata_`
 - Use `wp_` functions (not raw PHP) for escaping, DB, etc.
 - **Comments**: Keep AI-generated comments to a minimum. Only comment non-obvious logic; do not restate what the code already says.
+- **Spacing**: Blank line before `return` and `if` statements inside functions, matching the JS style used across the project.
+
+```php
+function example( $value ) {
+    $result = do_something( $value );
+
+    if ( ! $result ) {
+        return false;
+    }
+
+    return $result;
+}
+```
 
 ## Block Registration
 
