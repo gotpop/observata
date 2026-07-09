@@ -143,8 +143,8 @@ function observata_disable_comments(): void {
 	add_action(
 		'add_meta_boxes',
 		function () {
-			remove_meta_box( 'commentsdiv', null, 'normal' );
-			remove_meta_box( 'commentstatusdiv', null, 'normal' );
+			remove_meta_box( 'commentsdiv', '', 'normal' );
+			remove_meta_box( 'commentstatusdiv', '', 'normal' );
 		},
 		999
 	);

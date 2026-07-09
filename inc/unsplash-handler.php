@@ -359,7 +359,7 @@ function observata_unsplash_download_handler( \WP_REST_Request $request ): \WP_R
 		$free_space = disk_free_space( $upload_dir['basedir'] );
 
 		if ( $free_space !== false && $free_space < 10 * 1024 * 1024 ) { // Less than 10MB
-			wp_delete_attachment( $upload['attachment_id'], true );
+			wp_delete_file( $upload['file'] );
 			throw new Exception( 'Insufficient disk space for upload.' );
 		}
 
@@ -373,18 +373,13 @@ function observata_unsplash_download_handler( \WP_REST_Request $request ): \WP_R
 
 		$attach_id = wp_insert_attachment( $attachment, $upload['file'] );
 
-		if ( is_wp_error( $attach_id ) ) {
-			wp_delete_file( $upload['file'] );
-			throw new Exception( $attach_id->get_error_message() );
-		}
+	// Generate thumbnails
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	$attachment_data = wp_generate_attachment_metadata( $attach_id, $upload['file'] );
 
-		// Generate thumbnails
-		require_once ABSPATH . 'wp-admin/includes/image.php';
-		$attachment_data = wp_generate_attachment_metadata( $attach_id, $upload['file'] );
-
-		if ( ! is_wp_error( $attachment_data ) ) {
-			wp_update_attachment_metadata( $attach_id, $attachment_data );
-		}
+	if ( $attachment_data ) {
+		wp_update_attachment_metadata( $attach_id, $attachment_data );
+	}
 
 		// Add attribution meta data
 		update_post_meta( $attach_id, 'unsplash_photographer', $photographer );
