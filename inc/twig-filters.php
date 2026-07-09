@@ -1,5 +1,5 @@
 <?php
- add_filter( 'timber/twig', 'observata_register_twig_filters' );
+add_filter( 'timber/twig', 'observata_register_twig_filters' );
 
 // Register custom Twig filters with Timber.
 function observata_register_twig_filters( $twig ) {

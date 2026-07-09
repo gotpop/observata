@@ -17,12 +17,19 @@ function observata_disable_comments(): void {
 	add_filter( 'comments_open', '__return_false' );
 	add_filter( 'pings_open', '__return_false' );
 
-	add_action( 'admin_menu', function () {
-		remove_menu_page( 'edit-comments.php' );
-	} );
+	add_action(
+		'admin_menu',
+		function () {
+			remove_menu_page( 'edit-comments.php' );
+		}
+	);
 
-	add_action( 'add_meta_boxes', function () {
-		remove_meta_box( 'commentsdiv', 'post', 'normal' );
-		remove_meta_box( 'commentstatusdiv', 'post', 'normal' );
-	}, 999 );
+	add_action(
+		'add_meta_boxes',
+		function () {
+			remove_meta_box( 'commentsdiv', 'post', 'normal' );
+			remove_meta_box( 'commentstatusdiv', 'post', 'normal' );
+		},
+		999
+	);
 }

@@ -96,7 +96,7 @@ function observata_sanitize_footer_email( string $value ): string {
 
 		return '';
 	}
-	
+
 	return $value;
 }
 

@@ -17,7 +17,7 @@ function observata_schema_type(): void {
 	} else {
 		$type = 'WebPage';
 	}
-	
+
 	echo 'itemscope itemtype="' . esc_url( $schema ) . esc_attr( $type ) . '"';
 }
 
