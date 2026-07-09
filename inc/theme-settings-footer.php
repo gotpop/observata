@@ -6,7 +6,6 @@
  * (email, address, locations, copyright) on the Theme Settings page.
  */
 
-
 add_action( 'admin_init', 'observata_footer_register_settings' );
 function observata_footer_register_settings(): void {
 	register_setting(

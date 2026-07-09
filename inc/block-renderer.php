@@ -4,7 +4,6 @@
  *
  * Utility functions (split, serialize, template map) live in block-helpers.php.
  */
-
 function observata_render_block_twig( array $attributes, string $content, \WP_Block $block ): string {
 	$block_name    = $block->block_type->name;
 	$template_name = str_replace( 'observata/', '', $block_name );
@@ -119,15 +118,15 @@ function observata_add_post_context( string $template_name, array $attributes, a
 	for ( $i = 0; $i < $total_posts; $i++ ) {
 		if ( $all_posts[ $i ]->ID == $current_post_id ) {
 			$current_index = $i;
-			
+
 			break;
 		}
 	}
 
-	$prev_index               = ( $current_index - 1 + $total_posts ) % $total_posts;
-	$next_index               = ( $current_index + 1 ) % $total_posts;
-	$context['prev_post']     = $total_posts > 1 ? $all_posts[ $prev_index ] : null;
-	$context['next_post']     = $total_posts > 1 ? $all_posts[ $next_index ] : null;
+	$prev_index           = ( $current_index - 1 + $total_posts ) % $total_posts;
+	$next_index           = ( $current_index + 1 ) % $total_posts;
+	$context['prev_post'] = $total_posts > 1 ? $all_posts[ $prev_index ] : null;
+	$context['next_post'] = $total_posts > 1 ? $all_posts[ $next_index ] : null;
 }
 
 // Inject breadcrumb data into block context.

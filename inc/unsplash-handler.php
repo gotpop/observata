@@ -373,13 +373,13 @@ function observata_unsplash_download_handler( \WP_REST_Request $request ): \WP_R
 
 		$attach_id = wp_insert_attachment( $attachment, $upload['file'] );
 
-	// Generate thumbnails
-	require_once ABSPATH . 'wp-admin/includes/image.php';
-	$attachment_data = wp_generate_attachment_metadata( $attach_id, $upload['file'] );
+		// Generate thumbnails
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+		$attachment_data = wp_generate_attachment_metadata( $attach_id, $upload['file'] );
 
-	if ( $attachment_data ) {
-		wp_update_attachment_metadata( $attach_id, $attachment_data );
-	}
+		if ( $attachment_data ) {
+			wp_update_attachment_metadata( $attach_id, $attachment_data );
+		}
 
 		// Add attribution meta data
 		update_post_meta( $attach_id, 'unsplash_photographer', $photographer );

@@ -10,7 +10,7 @@ function observata_replace_howdy( string $translated, string $text, string $doma
 	if ( 'default' === $domain && false !== strpos( $text, 'Howdy' ) ) {
 		$translated = str_replace( 'Howdy', 'Hej', $text );
 	}
-	
+
 	return $translated;
 }
 
