@@ -74,6 +74,7 @@ function observata_get_template_map(): array {
 			$relative   = str_replace( $blocks_dir . '/', '', $file->getPathname() );
 			$basename   = $file->getBasename( '.twig' );
 			$parent_dir = basename( $file->getPath() );
+			
 			// Prefer canonical locations where directory name matches template name.
 			if ( $parent_dir === $basename || ! isset( $map[ $basename ] ) ) {
 				$map[ $basename ] = $relative;
