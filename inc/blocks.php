@@ -2,7 +2,7 @@
 /**
  * Block registration and Gutenberg configuration.
  *
- * build/index.js uses webpack chunk loading via runtime.js — without it,
+ * Build/index.js uses webpack chunk loading via runtime.js — without it,
  * registerBlockType calls never run and no blocks appear. The runtime must
  * be registered on init and enqueued in the editor before block scripts load.
  */
