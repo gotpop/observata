@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-	<g id="21" clip-path="url(#clip0_3733_8898)">
-		<g id="Icon">
-			<g id="Lines">
-				<path id="Vector" d="M1.88635 5.50224L24.553 31.1977" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
-				<path id="Vector_2" d="M9.44702 1.83246L32.1137 27.5279" stroke="#0598CE" stroke-width="0.9" stroke-miterlimit="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+			<g id="lines-21">
+				<path class="line" d="M3.5032 6.9382L22.2454 28.1841" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
+				<path class="line" d="M9.7546 3.904L28.4968 25.1499" stroke="var(--geo-stroke, #0598CE)" stroke-width="var(--geo-stroke-width, 0.9)" stroke-linecap="var(--geo-stroke-linecap, round)"/>
 			</g>
-			<g id="Circles">
-				<path id="Vector_3" d="M1.88637 7.33484C2.92818 7.33484 3.77274 6.51442 3.77274 5.50237C3.77274 4.49032 2.92818 3.66989 1.88637 3.66989C0.844556 3.66989 0 4.49032 0 5.50237C0 6.51442 0.844556 7.33484 1.88637 7.33484Z" fill="#113768"/>
-				<path id="Vector_4" d="M9.44692 3.66495C10.4887 3.66495 11.3333 2.84452 11.3333 1.83247C11.3333 0.820427 10.4887 0 9.44692 0C8.4051 0 7.56055 0.820427 7.56055 1.83247C7.56055 2.84452 8.4051 3.66495 9.44692 3.66495Z" fill="#113768"/>
-				<path id="Vector_5" d="M32.1137 29.3604C33.1555 29.3604 34 28.5399 34 27.5279C34 26.5158 33.1555 25.6954 32.1137 25.6954C31.0718 25.6954 30.2273 26.5158 30.2273 27.5279C30.2273 28.5399 31.0718 29.3604 32.1137 29.3604Z" fill="#113768"/>
-				<path id="Vector_6" d="M24.553 33.0302C25.5948 33.0302 26.4394 32.2097 26.4394 31.1977C26.4394 30.1856 25.5948 29.3652 24.553 29.3652C23.5112 29.3652 22.6666 30.1856 22.6666 31.1977C22.6666 32.2097 23.5112 33.0302 24.553 33.0302Z" fill="#113768"/>
+			<g id="circles-21">
+				<circle class="circle" cx="3.5032" cy="6.8933" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="9.7546" cy="3.86" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="28.4968" cy="25.0712" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
+				<circle class="circle" cx="22.2454" cy="28.1392" r="var(--geo-circle-radius, 2.247)" fill="var(--geo-fill, #113768)"/>
 			</g>
-		</g>
-	</g>
-	<defs>
-		<clipPath id="clip0_3733_8898">
-			<rect width="34" height="34" fill="white"/>
-		</clipPath>
-	</defs>
-</svg>
+		</svg>

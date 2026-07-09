@@ -24,18 +24,19 @@
 	}
 
 	.icon-geo {
-		--icon-size-outer: 3.25rem;
+		--geo-circle-radius: 3.5px;
+		--geo-stroke-width: 1.3px;
 		--icon-size-inner: 2rem;
+		--icon-size-outer: 3.25rem;
 
+		inset-block: var(--offset, var(--spacing-16)) auto;
+		inset-inline: auto var(--offset, var(--spacing-16));
 		position: absolute;
-		inset: 1rem 1rem auto auto;
-		transition: all 0.3s ease-in-out;
 
 		@media (width >=64rem) {
+			--icon-size-inner: 54px;
 			--icon-size-outer: 5.25rem;
-			--icon-size-inner: 3.467rem;
-
-			inset: calc(var(--icon-size-outer) / -3.5) calc(var(--icon-size-outer) / -3.5) auto auto;
+			--offset: -1.5rem;
 		}
 	}
 
@@ -70,6 +71,7 @@
 		&:first-child {
 			p {
 				max-width: 26ch;
+				min-height: 1.5lh;
 			}
 		}
 	}
@@ -98,6 +100,7 @@
 		translate: var(--t, -50% 25%);
 		transition: border 0.3s ease;
 		text-decoration-line: none;
+		gap: var(--spacing-16);
 
 		@media (width >=40rem) {
 			--t: -50% 50%;

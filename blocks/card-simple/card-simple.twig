@@ -8,7 +8,10 @@
 
 <article class="card-simple icon-{{ icon_geo }}">
 	<inner-card class="inner-card">
-		{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+		{% include [
+			'icons/geo/squares/medium/' ~ icon_geo ~ '.twig',
+			'icons/geo/circles/medium/' ~ icon_geo ~ '.twig'
+		] %}
 		<content-card class="content-card">
 			<h3 class="heading-sm">
 				{{ title|strip_html }}

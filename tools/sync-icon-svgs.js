@@ -38,6 +38,33 @@ const rel = (p) => path.relative(themeRoot, p);
 const CATEGORIES = ['geo', 'lucide', 'platform'];
 
 /**
+ * Resolve a Twig wrapper file to the actual template content.
+ * If the file is a thin wrapper (only contains an include statement),
+ * follow it to the real template. Resolves paths relative to theme root,
+ * blocks/, or views/ (matching Timber loader behaviour).
+ */
+function resolveWrapper(twigDir, content) {
+	const includeMatch = content.trim().match(/^\{%\s*include\s+'([^']+)'\s*%\}\s*$/m);
+	if (!includeMatch) return null;
+
+	const includePath = includeMatch[1];
+	// Timber resolves from theme root, blocks/, views/
+	const bases = [
+		path.join(themeRoot), // theme root
+		path.join(themeRoot, 'blocks'),
+		path.join(themeRoot, 'views'),
+	];
+
+	for (const base of bases) {
+		const resolved = path.join(base, includePath);
+		if (fs.existsSync(resolved)) {
+			return fs.readFileSync(resolved, 'utf8');
+		}
+	}
+	return null;
+}
+
+/**
  * Extract the <svg>…</svg> block from a Twig file,
  * stripping the custom-element wrapper, removing
  * one level of indentation (the wrapper's tab),
@@ -78,6 +105,24 @@ function countElements(content) {
 	};
 }
 
+/**
+ * Recursively collect all .twig files from a directory and its subdirectories.
+ * Returns array of absolute paths.
+ */
+function collectTwigs(dir) {
+	const results = [];
+	const entries = fs.readdirSync(dir, { withFileTypes: true });
+	for (const entry of entries) {
+		const fullPath = path.join(dir, entry.name);
+		if (entry.isDirectory()) {
+			results.push(...collectTwigs(fullPath));
+		} else if (entry.isFile() && entry.name.endsWith('.twig')) {
+			results.push(fullPath);
+		}
+	}
+	return results;
+}
+
 // Ensure output directories exist
 if (!checkOnly) {
 	for (const cat of CATEGORIES) {
@@ -103,24 +148,46 @@ for (const category of CATEGORIES) {
 		continue;
 	}
 
-	const twigFiles = fs
-		.readdirSync(twigDir)
-		.filter((f) => f.endsWith('.twig'))
-		.sort();
+	const twigFiles = collectTwigs(twigDir).sort();
+	const nameMap = new Map(); // baseName → { twigPath, subdir }
 
-	totalFiles += twigFiles.length;
+	for (const twigPath of twigFiles) {
+		const baseName = path.basename(twigPath).replace('.twig', '');
+		const subdir = path.relative(twigDir, path.dirname(twigPath));
+		// Precedence: medium/ > other subdirs > top-level
+		// Medium variants are the canonical export; other subdirs
+		// and top-level are fallbacks.
+		const existing = nameMap.get(baseName);
+		const priority = (s) => {
+			if (s === '.') return 0;
+			if (s.includes('medium')) return 2;
+			return 1;
+		};
+		if (!existing || priority(subdir) > priority(existing.subdir)) {
+			nameMap.set(baseName, { twigPath, subdir });
+		}
+	}
+
+	totalFiles += nameMap.size;
 
 	console.log('');
 	console.log('  [' + category + '/]');
 
-	for (const twigFile of twigFiles) {
-		const twigPath = path.join(twigDir, twigFile);
-		const twigContent = fs.readFileSync(twigPath, 'utf8');
-		const twigSvg = twigContent.match(/<svg[\s\S]*<\/svg>/);
+	for (const [name, { twigPath, subdir }] of nameMap) {
+		let twigContent = fs.readFileSync(twigPath, 'utf8');
+		let twigSvg = twigContent.match(/<svg[\s\S]*<\/svg>/);
 
-		const svgFileName = twigFile.replace('.twig', '.svg');
+		const svgFileName = name + '.svg';
 		const svgPath = path.join(svgDir, svgFileName);
-		const name = twigFile.replace('.twig', '');
+
+		// If this is a wrapper file (no <svg>), resolve to the real template
+		if (!twigSvg) {
+			const resolved = resolveWrapper(twigDir, twigContent);
+			if (resolved) {
+				twigContent = resolved;
+				twigSvg = twigContent.match(/<svg[\s\S]*<\/svg>/);
+			}
+		}
 
 		const twigCounts = twigSvg
 			? countElements(twigSvg[0])
@@ -136,9 +203,11 @@ for (const category of CATEGORIES) {
 		const sig = (c) =>
 			c.svg + '/' + c.path + '/' + c.circle + '/' + c.rect + '/' + c.g + '/' + c.defs;
 
+		const sourceTag = subdir === '.' ? ' ' : '←' + subdir;
+
 		if (checkOnly) {
 			if (!fs.existsSync(svgPath)) {
-				console.log('    ' + name.padEnd(20) + '— MISSING ' + rel(svgPath));
+				console.log('    ' + name.padEnd(20) + sourceTag.padEnd(4) + '— MISSING ' + rel(svgPath));
 				totalMismatches++;
 				continue;
 			}
@@ -150,7 +219,11 @@ for (const category of CATEGORIES) {
 			if (!match) totalMismatches++;
 
 			console.log(
-				'    ' + name.padEnd(20) + sig(twigCounts).padEnd(24) + (match ? 'OK' : 'MISMATCH')
+				'    ' +
+					name.padEnd(20) +
+					sourceTag.padEnd(4) +
+					sig(twigCounts).padEnd(24) +
+					(match ? 'OK' : 'MISMATCH')
 			);
 			continue;
 		}
@@ -161,7 +234,9 @@ for (const category of CATEGORIES) {
 		totalSynced++;
 
 		const svgCounts = countElements(svgOutput);
-		console.log('    ' + name.padEnd(20) + sig(twigCounts).padEnd(24) + 'synced');
+		console.log(
+			'    ' + name.padEnd(20) + sourceTag.padEnd(4) + sig(twigCounts).padEnd(24) + 'synced'
+		);
 	}
 }
 

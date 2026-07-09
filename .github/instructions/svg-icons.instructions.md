@@ -9,11 +9,11 @@ applyTo:
 
 All icons in `views/icons/` are Twig templates with custom-element wrappers that render as inline SVGs on the frontend. Each category has its own wrapper element:
 
-| Category | Wrapper element   | Subdirectory            | Count |
-| -------- | ----------------- | ----------------------- | ----- |
-| Geo      | `<icon-geo>`      | `views/icons/geo/`      | 30    |
-| Lucide   | `<icon-lucide>`   | `views/icons/lucide/`   | 7     |
-| Platform | `<icon-platform>` | `views/icons/platform/` | 2     |
+| Category | Wrapper element   | Subdirectory            | Count | Standards                                              |
+| -------- | ----------------- | ----------------------- | ----- | ------------------------------------------------------ |
+| Geo      | `<icon-geo>`      | `views/icons/geo/`      | 29    | [geo-icons.instructions.md](geo-icons.instructions.md) |
+| Lucide   | `<icon-lucide>`   | `views/icons/lucide/`   | 7     | Below                                                  |
+| Platform | `<icon-platform>` | `views/icons/platform/` | 2     | Below                                                  |
 
 ## Twig ↔ SVG Sync
 
@@ -50,24 +50,21 @@ Syncing is handled by `tools/sync-icon-svgs.js`. **Always use the script** — n
 1. Reads every `*.twig` file in `views/icons/{geo,lucide,platform}/`
 2. Extracts the inner `<svg>…</svg>` markup (strips the `<icon-*>` wrapper)
 3. Dedents by one tab level (removes the wrapper's indentation)
-4. Prepends `<?xml ?>` declaration
+4. Prepends `<?xml ?>` declaration and adds `xmlns` for standalone rendering
 5. Writes to `assets/svg/icons/<category>/<icon-name>.svg`
 6. Prints element counts (svg/path/circle/rect/g/defs) for visual verification
 
 **Sync rules:**
 
-- The `.svg` files are **standalone references** — they keep inline `fill`, `stroke`, and `stroke-width` attributes because they don't load the theme's CSS.
+- The `.svg` files are **standalone references** — they keep inline attributes because they don't load the theme's CSS.
 - Do **not** manually edit `.svg` exports — the script overwrites them.
 - Do **not** sync changes that only affect CSS animation/transition rules — those are stylesheet concerns, not SVG structure.
 
 ## Editing Conventions
 
-### Geo icons (`views/icons/geo/`)
+### Geo icons
 
-- Named `01.twig` through `30.twig` (zero-padded two digits)
-- Use `<icon-geo class="icon-geo" aria-hidden="true">` wrapper
-- Inline colours: `stroke="#0598CE"` for lines, `fill="#113768"` for circles
-- 34×34px viewport
+See [geo-icons.instructions.md](geo-icons.instructions.md) for the full geo icon standard.
 
 ### Lucide icons (`views/icons/lucide/`)
 

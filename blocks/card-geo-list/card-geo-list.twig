@@ -7,7 +7,10 @@
 {% set read_more_url = attributes.readMoreUrl|default('') %}
 
 <article class="card card-geo-list icon-{{ icon_geo }}">
-	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	{% include [
+		'icons/geo/squares/large/' ~ icon_geo ~ '.twig',
+		'icons/geo/circles/large/' ~ icon_geo ~ '.twig'
+	] %}
 	<h3 class="heading-md">
 		{{ card_title|strip_html }}
 	</h3>

@@ -7,7 +7,10 @@
 	{% if background_graphic %}
 		{% include 'views/graphics/tech/' ~ background_graphic ~ '.twig' %}
 	{% endif %}
-	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	{% include [
+		'icons/geo/squares/medium/' ~ icon_geo ~ '.twig',
+		'icons/geo/circles/medium/' ~ icon_geo ~ '.twig'
+	] %}
 	<div class="content">
 		<h3 class="heading">
 			{{ card_title|strip_html }}

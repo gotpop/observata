@@ -62,11 +62,18 @@
 	.body-breadcrumb {
 		display: block;
 		line-height: normal;
-		max-width: calc(13ch - 2rem);
 		overflow-x: hidden;
 		text-box-edge: text;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+
+		.breadcrumbs:has(> :nth-child(3)) & {
+			max-width: calc(13ch - 2rem);
+
+			@media (width >= 40rem) {
+				max-width: none;
+			}
+		}
 
 		@media (width >= 40rem) {
 			max-width: calc(30ch - 2rem);

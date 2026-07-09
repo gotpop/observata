@@ -4,7 +4,10 @@
 {% set shader_colour = attributes.shaderColour|default('blue') %}
 
 <article class="card card-geo-shader fade-in-up">
-	{% include 'icons/geo/' ~ icon_geo ~ '.twig' %}
+	{% include [
+		'icons/geo/squares/medium/' ~ icon_geo ~ '.twig',
+		'icons/geo/circles/medium/' ~ icon_geo ~ '.twig'
+	] %}
 	<shader-card
 		colour="{{ shader_colour }}"
 		fallback="{{ site.theme.uri }}/assets/img/shader-fallback.webp"
