@@ -1,7 +1,6 @@
 <?php
 
-// Timber template directory — must be set BEFORE init() so the loader
-// picks up the custom path during initialization.
+// Timber template directory — must be set BEFORE init() so the loader picks up the custom path.
 \Timber\Timber::$dirname = array( 'views' );
 \Timber\Timber::init();
 
@@ -23,11 +22,8 @@ add_filter(
 	'timber/loader/loader',
 	function ( $loader ) {
 		$theme_root = get_template_directory();
-		// Add theme root so 'blocks/...' paths resolve
 		$loader->addPath( $theme_root );
-		// Add blocks/ root so relative includes like 'section-intro/section-intro.twig' work
 		$loader->addPath( $theme_root . '/blocks' );
-		// Add views/ so existing view includes work from within block templates
 		$loader->addPath( $theme_root . '/views' );
 
 		return $loader;
@@ -49,9 +45,6 @@ function observata_setup(): void {
 	add_theme_support( 'editor-styles' );
 
 	add_theme_support( 'appearance-tools' );
-
-	// Disable comments across the site.
-	add_action( 'init', 'observata_disable_comments' );
 
 	global $content_width;
 
@@ -99,9 +92,12 @@ function observata_editor_styles(): void {
 }
 
 // Disable comments site-wide: removes support, hides from admin, blocks REST.
+add_action( 'init', 'observata_disable_comments' );
+
 function observata_disable_comments(): void {
 	// Remove comments/trackbacks support from all post types.
 	$post_types = get_post_types( array( 'public' => true ) );
+	
 	foreach ( $post_types as $post_type ) {
 		if ( post_type_supports( $post_type, 'comments' ) ) {
 			remove_post_type_support( $post_type, 'comments' );
@@ -165,7 +161,6 @@ function observata_disable_comments(): void {
 // Strip verbose WordPress body classes — keep only explicit custom classes.
 add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
 
-/** @param array $classes Auto-generated body classes. @param array|string $class Explicit classes passed to body_class(). */
 function observata_clean_body_class( array $classes, array|string $class ): array {
 	// Classes injected by the theme (e.g. 'has-homepage-header') are in the $class param.
 	// $classes contains everything WP auto-generates. Return only the explicit ones.
