@@ -4,6 +4,7 @@ add_filter( 'document_title_separator', 'observata_document_title_separator' );
 add_filter( 'the_title', 'observata_title' );
 add_filter( 'the_content_more_link', 'observata_read_more_link' );
 add_filter( 'excerpt_more', 'observata_excerpt_read_more_link' );
+add_filter( 'body_class', 'observata_clean_body_class', 10, 2 );
 
 // Use | as the document title separator.
 function observata_document_title_separator( string $sep ): string {
@@ -40,4 +41,9 @@ function observata_excerpt_read_more_link( string $more ): string {
 	}
 
 	return '';
+}
+
+// Strip verbose WordPress body classes — keep only explicit custom classes.
+function observata_clean_body_class( array $classes, array|string $class ): array {
+	return is_array( $class ) ? $class : array();
 }

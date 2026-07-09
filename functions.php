@@ -6,6 +6,7 @@ require get_template_directory() . '/vendor/autoload.php';
 // Load theme functionality from inc/ directory
 require get_template_directory() . '/inc/admin-bar.php';
 require get_template_directory() . '/inc/theme-setup.php';
+require get_template_directory() . '/inc/disable-comments.php';
 require get_template_directory() . '/inc/enqueue-assets.php';
 require get_template_directory() . '/inc/content-filters.php';
 require get_template_directory() . '/inc/schema-markup.php';

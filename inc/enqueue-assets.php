@@ -24,6 +24,8 @@ add_filter( 'style_loader_src', 'observata_cache_bust_theme_styles', 10, 2 );
 add_action( 'wp_head', 'observata_preload_fonts', 1 );
 add_action( 'wp_head', 'observata_preload_hero_scripts', 2 );
 add_action( 'wp_head', 'observata_inline_critical_css', 1 );
+add_action( 'wp_head', 'observata_add_favicon' );
+add_action( 'enqueue_block_assets', 'observata_editor_styles' );
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 
 // ─────────────────────────────────────────────────────────────────
@@ -197,7 +199,7 @@ function observata_enqueue(): void {
 	if ( is_front_page() && file_exists( $home_asset_path ) ) {
 		$home_asset = require $home_asset_path;
 		$home_deps  = array_merge( $home_asset['dependencies'], $vendor_deps );
-		
+
 		wp_register_script( 'observata-home', $build_uri . '/home.js', $home_deps, $home_asset['version'], false );
 		wp_enqueue_script( 'observata-home' );
 	}
@@ -211,4 +213,23 @@ function observata_enqueue(): void {
 	foreach ( $defer_handles as $handle ) {
 		wp_script_add_data( $handle, 'strategy', 'defer' );
 	}
+}
+
+// Add SVG favicon to <head>.
+function observata_add_favicon(): void {
+	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
+}
+
+// Enqueue editor-only stylesheet; guarded with is_admin() so it only loads in the editor.
+function observata_editor_styles(): void {
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'observata-editor',
+		get_template_directory_uri() . '/style-editor.css',
+		array(),
+		filemtime( get_template_directory() . '/style-editor.css' )
+	);
 }
