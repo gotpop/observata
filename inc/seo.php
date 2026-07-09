@@ -6,9 +6,16 @@
  * handled by the "Native SEO Meta Tags" plugin.
  */
 
-// Exclude utility pages from the core sitemap.
 add_filter( 'wp_sitemaps_posts_query_args', 'observata_sitemap_exclude_pages' );
+add_filter( 'wp_sitemaps_max_urls', 'observata_sitemap_max_urls' );
+add_filter( 'wp_sitemaps_posts_entry', 'observata_sitemap_entry_lastmod', 10, 2 );
+add_filter( 'robots_txt', 'observata_robots_txt', 10, 2 );
+add_action( 'wp_head', 'observata_canonical_url', 2 );
+add_action( 'wp_head', 'observata_noindex', 0 );
 
+// ─────────────────────────────────────────────────────────────────
+
+// Exclude utility pages from the core sitemap.
 function observata_sitemap_exclude_pages( array $args ): array {
 	$error_page = get_page_by_path( 'error-404' );
 
@@ -21,15 +28,11 @@ function observata_sitemap_exclude_pages( array $args ): array {
 }
 
 // Limit sitemap entries per page for faster generation.
-add_filter( 'wp_sitemaps_max_urls', 'observata_sitemap_max_urls' );
-
 function observata_sitemap_max_urls(): int {
 	return 500;
 }
 
 // Include homepage lastmod in sitemap.
-add_filter( 'wp_sitemaps_posts_entry', 'observata_sitemap_entry_lastmod', 10, 2 );
-
 function observata_sitemap_entry_lastmod( array $entry, \WP_Post $post ): array {
 	if ( 'page' === $post->post_type && (int) get_option( 'page_on_front' ) === $post->ID ) {
 		$entry['lastmod'] = get_post_modified_time( 'c', false, $post );
@@ -39,8 +42,6 @@ function observata_sitemap_entry_lastmod( array $entry, \WP_Post $post ): array 
 }
 
 // Generate a virtual robots.txt at /robots.txt.
-add_filter( 'robots_txt', 'observata_robots_txt', 10, 2 );
-
 function observata_robots_txt( string $output, string $public ): string {
 	if ( '0' === $public ) {
 		return $output;
@@ -68,8 +69,6 @@ function observata_robots_txt( string $output, string $public ): string {
 }
 
 // Ensure clean canonical URLs for archive and taxonomy pages.
-add_action( 'wp_head', 'observata_canonical_url', 2 );
-
 function observata_canonical_url(): void {
 	$url = '';
 
@@ -92,8 +91,6 @@ function observata_canonical_url(): void {
 }
 
 // Prevent search engines from indexing low-value pages.
-add_action( 'wp_head', 'observata_noindex', 0 );
-
 function observata_noindex(): void {
 	$noindex = false;
 

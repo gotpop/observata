@@ -2,6 +2,7 @@
 
 // Output speculation rules for improved navigation performance.
 add_action( 'wp_head', 'observata_speculation_rules', 2 );
+
 function observata_speculation_rules(): void {
 	// Allow disabling via query param: ?no_speculation=1
 	if ( isset( $_GET['no_speculation'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- debug query param
