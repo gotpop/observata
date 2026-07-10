@@ -136,7 +136,7 @@ class ShaderCard extends HTMLElement {
 
 	private started = false;
 
-	private readonly mediaQuery: MediaQueryList = createMatchMedia('md');
+	private readonly mediaQuery: MediaQueryList = createMatchMedia('lg');
 
 	private readonly handleBreakpointChange = (): void => {
 		void this.rebuild();
