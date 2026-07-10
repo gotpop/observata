@@ -32,8 +32,8 @@ function getColoursForCard(card: ShaderCard): ShaderColors {
 	return pattern[index % pattern.length] ?? COLOUR_BLUE;
 }
 
-const BUFFER_WIDTH = 82;
-const BUFFER_HEIGHT = 230;
+const BUFFER_WIDTH = 92;
+const BUFFER_HEIGHT = 250;
 
 function buildConfig({ colorA, colorB }: ShaderColors) {
 	return {
@@ -111,9 +111,9 @@ const template = document.createElement('template');
 template.innerHTML = `
 	<style>
 		:host { display: block; }
-		canvas { display: none; height: 230px; width: 82px; }
+		canvas { display: none; height: 250px; width: 92px; }
 		:host([loaded]) canvas { display: block; }
-		img { display: block; height: 230px; width: 82px; }
+		img { display: block; height: 250px; width: 92px; }
 		:host([loaded]) img { display: none; }
 	</style>
 	<canvas part="canvas" width="${BUFFER_WIDTH}" height="${BUFFER_HEIGHT}" aria-hidden="true"></canvas>
