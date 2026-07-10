@@ -25,6 +25,7 @@ add_action( 'wp_head', 'observata_preload_fonts', 1 );
 add_action( 'wp_head', 'observata_preload_hero_scripts', 2 );
 add_action( 'wp_head', 'observata_inline_critical_css', 1 );
 add_action( 'wp_head', 'observata_add_favicon' );
+add_action( 'admin_head', 'observata_add_favicon' );
 add_action( 'enqueue_block_assets', 'observata_editor_styles' );
 add_action( 'wp_enqueue_scripts', 'observata_enqueue' );
 
@@ -215,9 +216,16 @@ function observata_enqueue(): void {
 	}
 }
 
-// Add SVG favicon to <head>.
+// Add favicons to <head>.
 function observata_add_favicon(): void {
-	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_template_directory_uri() . '/assets/favicon.svg' ) . '">' . "\n";
+	$uri = get_template_directory_uri() . '/assets';
+
+	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( $uri . '/favicon.svg' ) . '">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="16x16" href="' . esc_url( $uri . '/img/favicon-16.png' ) . '">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( $uri . '/img/favicon-32.png' ) . '">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="192x192" href="' . esc_url( $uri . '/img/favicon-192.png' ) . '">' . "\n";
+	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . esc_url( $uri . '/img/apple-touch-icon.png' ) . '">' . "\n";
+	echo '<link rel="manifest" href="' . esc_url( $uri . '/img/site.webmanifest' ) . '">' . "\n";
 }
 
 // Enqueue editor-only stylesheet; guarded with is_admin() so it only loads in the editor.
