@@ -4,7 +4,6 @@
 	--gap-card: var(--spacing-24);
 
 	min-height: max-content;
-	min-height: 300px;
 
 	&::after {
 		border-radius: inherit;
@@ -40,7 +39,16 @@
 		content: '';
 		display: block;
 		position: absolute;
-		background: rgba(255, 0, 0, 0.567);
+		animation: shimmer-grey 1.4s linear infinite;
+		background-image: linear-gradient(
+			to top,
+			var(--colour-neutral-300) 30%,
+			var(--colour-neutral-100) 50%,
+			var(--colour-neutral-300) 70%
+		);
+		background-position: 0 var(--shimmer-y);
+		background-repeat: repeat-y;
+		background-size: 100% 200%;
 		right: 0;
 		top: 0;
 		width: 92px;
