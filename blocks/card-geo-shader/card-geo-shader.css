@@ -4,6 +4,7 @@
 	--gap-card: var(--spacing-24);
 
 	min-height: max-content;
+	min-height: 300px;
 
 	&::after {
 		border-radius: inherit;
@@ -33,6 +34,25 @@
 		inset: 0 0 auto auto;
 		position: absolute;
 		z-index: 0;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		background: rgba(255, 0, 0, 0.567);
+		right: 0;
+		top: 0;
+		width: 92px;
+		height: 250px;
+		z-index: 1;
+		clip-path: shape(
+			from 8% 100%,
+			curve to 61% 0% with 5% 60% / 50% 15%,
+			hline to 100%,
+			vline to 100%,
+			close
+		);
 	}
 
 	.heading-sm {
