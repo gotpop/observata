@@ -27,7 +27,7 @@ function getShaderIndex(card: ShaderCard): number {
 
 function getColoursForCard(card: ShaderCard): ShaderColors {
 	const index = getShaderIndex(card);
-	const pattern = createMatchMedia('md').matches ? DESKTOP_PATTERN : MOBILE_PATTERN;
+	const pattern = createMatchMedia('lg').matches ? DESKTOP_PATTERN : MOBILE_PATTERN;
 
 	return pattern[index % pattern.length] ?? COLOUR_BLUE;
 }
