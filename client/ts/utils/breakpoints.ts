@@ -1,9 +1,10 @@
+/** Tailwind breakpoints — values in px, rem equivalents shown for reference (1rem = 16px). */
 export const BREAKPOINTS = {
-	sm: 640,
-	md: 768,
-	lg: 1024,
-	xl: 1280,
-	'2xl': 1536,
+	sm: 640, // 40rem
+	md: 768, // 48rem
+	lg: 1024, // 64rem
+	xl: 1280, // 80rem
+	'2xl': 1536, // 96rem
 } as const;
 
 export type Breakpoint = keyof typeof BREAKPOINTS;
