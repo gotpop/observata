@@ -1,23 +1,39 @@
 import { createShader } from 'shaders/js';
 
-import {
-	COLOUR_BLUE,
-	COLOUR_BLUE_LIGHT,
-	COLOUR_BLUE_LIGHTEST,
-	COLOUR_PINK,
-	type ShaderColors,
-} from '../shaders/colours';
+import { COLOUR_BLUE, COLOUR_BLUE_LIGHTEST, type ShaderColors } from '../shaders/colours';
 import { deferUntilIdle } from '../utils';
+import { createMatchMedia } from '../utils/breakpoints';
 
-const COLOUR_MAP: Record<string, ShaderColors> = {
-	blue: COLOUR_BLUE,
-	blueLight: COLOUR_BLUE_LIGHT,
-	blueLightest: COLOUR_BLUE_LIGHTEST,
-	pink: COLOUR_PINK,
-};
+const DESKTOP_PATTERN: ShaderColors[] = [
+	COLOUR_BLUE,
+	COLOUR_BLUE_LIGHTEST,
+	COLOUR_BLUE_LIGHTEST,
+	COLOUR_BLUE,
+	COLOUR_BLUE,
+	COLOUR_BLUE_LIGHTEST,
+];
 
-const BUFFER_WIDTH = 82;
-const BUFFER_HEIGHT = 230;
+const MOBILE_PATTERN: ShaderColors[] = [COLOUR_BLUE, COLOUR_BLUE_LIGHTEST];
+
+function getShaderIndex(card: ShaderCard): number {
+	const container = card.closest('.block-cards, section');
+
+	if (!container) {
+		return 0;
+	}
+
+	return Array.from(container.querySelectorAll('shader-card')).indexOf(card);
+}
+
+function getColoursForCard(card: ShaderCard): ShaderColors {
+	const index = getShaderIndex(card);
+	const pattern = createMatchMedia('lg').matches ? DESKTOP_PATTERN : MOBILE_PATTERN;
+
+	return pattern[index % pattern.length] ?? COLOUR_BLUE;
+}
+
+const BUFFER_WIDTH = 92;
+const BUFFER_HEIGHT = 250;
 
 function buildConfig({ colorA, colorB }: ShaderColors) {
 	return {
@@ -95,21 +111,17 @@ const template = document.createElement('template');
 template.innerHTML = `
 	<style>
 		:host { display: block; }
-		canvas { display: none; height: 230px; width: 82px; }
+		canvas { display: none; height: 250px; width: 92px; }
 		:host([loaded]) canvas { display: block; }
-		img { display: block; height: 230px; width: 82px; }
-		:host([loaded]) img { display: none; }
 	</style>
 	<canvas part="canvas" width="${BUFFER_WIDTH}" height="${BUFFER_HEIGHT}" aria-hidden="true"></canvas>
-	<img part="fallback" alt="" aria-hidden="true" loading="lazy" />
 `;
 
 /**
  * `<shader-card>` — self-initialising WebGPU shader card.
  *
- * Attributes:
- *   - `colour`   one of blue | blueLight | blueLightest | pink (default: blue)
- *   - `fallback` URL of the image shown when WebGPU is unavailable
+ * Colours are auto-assigned by position within the nearest grid container
+ * and swapped between desktop/mobile patterns on breakpoint change.
  */
 class ShaderCard extends HTMLElement {
 	private canvas: HTMLCanvasElement | null = null;
@@ -118,9 +130,11 @@ class ShaderCard extends HTMLElement {
 
 	private started = false;
 
-	public static get observedAttributes(): string[] {
-		return ['colour', 'fallback'];
-	}
+	private readonly mediaQuery: MediaQueryList = createMatchMedia('lg');
+
+	private readonly handleBreakpointChange = (): void => {
+		void this.rebuild();
+	};
 
 	public constructor() {
 		super();
@@ -135,32 +149,14 @@ class ShaderCard extends HTMLElement {
 		this.started = true;
 		this.canvas = this.shadowRoot?.querySelector('canvas') ?? null;
 
-		const img = this.shadowRoot?.querySelector('img') ?? null;
-
-		if (img) {
-			img.src = this.getAttribute('fallback') ?? '';
-		}
+		this.mediaQuery.addEventListener('change', this.handleBreakpointChange);
 
 		// Defer so the hero shader keeps GPU priority on first paint.
 		deferUntilIdle(() => void this.init());
 	}
 
-	public attributeChangedCallback(name: string, _old: string, value: string): void {
-		if (!this.started) {
-			return;
-		}
-		if (name === 'fallback') {
-			const img = this.shadowRoot?.querySelector('img') ?? null;
-			if (img) {
-				img.src = value;
-			}
-		}
-		if (name === 'colour') {
-			void this.rebuild();
-		}
-	}
-
 	public disconnectedCallback(): void {
+		this.mediaQuery.removeEventListener('change', this.handleBreakpointChange);
 		this.destroy();
 	}
 
@@ -169,12 +165,12 @@ class ShaderCard extends HTMLElement {
 			return;
 		}
 
-		// No WebGPU / insecure context — leave the fallback image visible.
+		// No WebGPU / insecure context — nothing to render.
 		if (!window.isSecureContext || !('gpu' in navigator)) {
 			return;
 		}
 
-		const colours = COLOUR_MAP[this.getAttribute('colour') ?? 'blue'] ?? COLOUR_BLUE;
+		const colours = getColoursForCard(this);
 
 		try {
 			this.shader = await createShader(this.canvas, buildConfig(colours), {

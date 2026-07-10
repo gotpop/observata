@@ -2,11 +2,11 @@
 	.block-cards {
 		display: grid;
 		gap: var(--gap-block-cards, var(--spacing-20));
-		grid-template-columns: repeat(auto-fit, minmax(var(--m, 1fr), 1fr));
+		grid-template-columns: var(--columns-block-cards, 1fr);
 
-		@media (width >=48rem) {
+		@media (width >=64rem) {
+			--columns-block-cards: 1fr 1fr;
 			--gap-block-cards: var(--spacing-32);
-			--m: 454px;
 		}
 	}
 

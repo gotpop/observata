@@ -115,3 +115,15 @@
 		stroke-dashoffset: -80;
 	}
 }
+
+@property --shimmer-y {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: -200%;
+}
+
+@keyframes shimmer-grey {
+	to {
+		--shimmer-y: 0%;
+	}
+}

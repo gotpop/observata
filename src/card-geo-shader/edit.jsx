@@ -2,7 +2,6 @@ import './editor.css';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import GeoIcon from '../components/geo-icon';
@@ -10,7 +9,7 @@ import GEO_ICON_OPTIONS from '../components/geo-icon-options';
 import GraphicSelect from '../components/graphic-select';
 
 export default function CardGeoShaderEdit({ attributes, setAttributes }) {
-	const { cardTitle, cardText, iconGeo, shaderColour = 'blue' } = attributes;
+	const { cardTitle, cardText, iconGeo } = attributes;
 	const blockProps = useBlockProps();
 
 	return (
@@ -43,17 +42,6 @@ export default function CardGeoShaderEdit({ attributes, setAttributes }) {
 					value={iconGeo}
 					options={GEO_ICON_OPTIONS}
 					onChange={(val) => setAttributes({ iconGeo: val })}
-				/>
-				<SelectControl
-					label={__('Shader colour', 'observata')}
-					value={shaderColour}
-					options={[
-						{ label: __('Blue', 'observata'), value: 'blue' },
-						{ label: __('Pink', 'observata'), value: 'pink' },
-						{ label: __('Blue Light', 'observata'), value: 'blueLight' },
-						{ label: __('Blue Lightest', 'observata'), value: 'blueLightest' },
-					]}
-					onChange={(val) => setAttributes({ shaderColour: val })}
 				/>
 			</div>
 		</article>

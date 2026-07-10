@@ -20,55 +20,6 @@
 		--padding-inline-card: var(--spacing-40) 100px;
 	}
 
-	/* TODO: Find alternate solution */
-	&:nth-child(1) {
-		order: 1;
-
-		@media (width >=1363px) {
-			order: unset;
-		}
-	}
-
-	&:nth-child(2) {
-		order: 2;
-
-		@media (width >=1363px) {
-			order: unset;
-		}
-	}
-
-	&:nth-child(3) {
-		order: 4;
-
-		@media (width >=1363px) {
-			order: unset;
-		}
-	}
-
-	&:nth-child(4) {
-		order: 3;
-
-		@media (width >=1363px) {
-			order: unset;
-		}
-	}
-
-	&:nth-child(5) {
-		order: 5;
-
-		@media (width >=1363px) {
-			order: unset;
-		}
-	}
-
-	&:nth-child(6) {
-		order: 6;
-
-		@media (width >=1363px) {
-			order: unset;
-		}
-	}
-
 	.icon-geo {
 		--icon-size-outer: 3.25rem;
 		--icon-size-inner: 2rem;
@@ -82,6 +33,38 @@
 		inset: 0 0 auto auto;
 		position: absolute;
 		z-index: 0;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		animation: shimmer-grey 1.4s linear infinite;
+		background-image: linear-gradient(
+			to top,
+			var(--colour-neutral-300) 30%,
+			var(--colour-neutral-100) 50%,
+			var(--colour-neutral-300) 70%
+		);
+		background-position: 0 var(--shimmer-y);
+		background-repeat: repeat-y;
+		background-size: 100% 200%;
+		right: 0;
+		top: 0;
+		width: 92px;
+		height: 250px;
+		z-index: 1;
+		clip-path: shape(
+			from 8% 100%,
+			curve to 61% 0% with 5% 60% / 50% 15%,
+			hline to 100%,
+			vline to 100%,
+			close
+		);
+	}
+
+	&:has(shader-card[loaded])::before {
+		display: none;
 	}
 
 	.heading-sm {

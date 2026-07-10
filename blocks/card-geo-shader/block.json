@@ -22,10 +22,6 @@
 		"iconGeo": {
 			"type": "string",
 			"default": "01"
-		},
-		"shaderColour": {
-			"type": "string",
-			"default": "blue"
 		}
 	},
 	"render": "file:render.php",
@@ -35,8 +31,7 @@
 		"attributes": {
 			"cardTitle": "Benefit Title",
 			"cardText": "Description of the benefit and what it offers.",
-			"iconGeo": "01",
-			"shaderColour": "blue"
+			"iconGeo": "01"
 		}
 	}
 }
