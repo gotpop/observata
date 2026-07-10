@@ -55,6 +55,10 @@
 		);
 	}
 
+	&:has(shader-card[loaded])::before {
+		display: none;
+	}
+
 	.heading-sm {
 		--align-heading-sm: 22ch;
 	}

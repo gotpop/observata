@@ -113,11 +113,8 @@ template.innerHTML = `
 		:host { display: block; }
 		canvas { display: none; height: 250px; width: 92px; }
 		:host([loaded]) canvas { display: block; }
-		img { display: block; height: 250px; width: 92px; }
-		:host([loaded]) img { display: none; }
 	</style>
 	<canvas part="canvas" width="${BUFFER_WIDTH}" height="${BUFFER_HEIGHT}" aria-hidden="true"></canvas>
-	<img part="fallback" alt="" aria-hidden="true" loading="lazy" />
 `;
 
 /**
@@ -125,9 +122,6 @@ template.innerHTML = `
  *
  * Colours are auto-assigned by position within the nearest grid container
  * and swapped between desktop/mobile patterns on breakpoint change.
- *
- * Attributes:
- *   - `fallback` URL of the image shown when WebGPU is unavailable
  */
 class ShaderCard extends HTMLElement {
 	private canvas: HTMLCanvasElement | null = null;
@@ -142,10 +136,6 @@ class ShaderCard extends HTMLElement {
 		void this.rebuild();
 	};
 
-	public static get observedAttributes(): string[] {
-		return ['fallback'];
-	}
-
 	public constructor() {
 		super();
 		this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
@@ -159,28 +149,10 @@ class ShaderCard extends HTMLElement {
 		this.started = true;
 		this.canvas = this.shadowRoot?.querySelector('canvas') ?? null;
 
-		const img = this.shadowRoot?.querySelector('img') ?? null;
-
-		if (img) {
-			img.src = this.getAttribute('fallback') ?? '';
-		}
-
 		this.mediaQuery.addEventListener('change', this.handleBreakpointChange);
 
 		// Defer so the hero shader keeps GPU priority on first paint.
 		deferUntilIdle(() => void this.init());
-	}
-
-	public attributeChangedCallback(name: string, _old: string, value: string): void {
-		if (!this.started) {
-			return;
-		}
-		if (name === 'fallback') {
-			const img = this.shadowRoot?.querySelector('img') ?? null;
-			if (img) {
-				img.src = value;
-			}
-		}
 	}
 
 	public disconnectedCallback(): void {
@@ -193,7 +165,7 @@ class ShaderCard extends HTMLElement {
 			return;
 		}
 
-		// No WebGPU / insecure context — leave the fallback image visible.
+		// No WebGPU / insecure context — nothing to render.
 		if (!window.isSecureContext || !('gpu' in navigator)) {
 			return;
 		}
