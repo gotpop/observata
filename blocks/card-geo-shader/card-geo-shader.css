@@ -3,8 +3,6 @@
 	--padding-inline-card: var(--spacing-24) 5rem;
 	--gap-card: var(--spacing-24);
 
-	min-height: max-content;
-
 	&::after {
 		border-radius: inherit;
 		box-shadow: inset 0 0 0 1px rgb(255 255 255 / 50%);
