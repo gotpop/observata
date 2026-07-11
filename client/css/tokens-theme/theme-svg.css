@@ -13,3 +13,17 @@
 	--geo-fill: #113768;
 	--geo-circle-radius: 2.247px;
 }
+
+/* SVG defaults are hardcoded in the markup; CSS variables override via these rules. */
+.icon-geo {
+	& .circle {
+		r: var(--geo-circle-radius);
+		fill: var(--geo-fill);
+	}
+
+	& .line {
+		stroke: var(--geo-stroke);
+		stroke-width: var(--geo-stroke-width);
+		stroke-linecap: var(--geo-stroke-linecap);
+	}
+}
