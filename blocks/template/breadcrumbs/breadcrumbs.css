@@ -2,8 +2,7 @@
 	border-block-end: none;
 	border-block-start: var(--border-grey);
 	border-inline: var(--border-grey);
-	border-radius: 4rem 4rem 0 0;
-	corner-shape: squircle;
+	border-radius: 2rem 2rem 0 0;
 	display: grid;
 	grid-column: full;
 	grid-row: breadcrumbs;
@@ -13,6 +12,11 @@
 
 	@media (width >= 64rem) {
 		grid-column: content;
+	}
+
+	@supports (corner-shape: squircle) {
+		border-radius: 4rem 4rem 0 0;
+		corner-shape: squircle;
 	}
 }
 
