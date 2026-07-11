@@ -108,11 +108,33 @@ function buildConfig({ colorA, colorB }: ShaderColors) {
 }
 
 const template = document.createElement('template');
+
 template.innerHTML = `
 	<style>
-		:host { display: block; }
-		canvas { display: none; height: 250px; width: 92px; }
-		:host([loaded]) canvas { display: block; }
+		@keyframes fade-in {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		:host { 
+			display: block;
+		}
+
+		canvas { 
+			display: none; 
+			height: 250px; 
+			width: 92px; 
+		}
+		
+		:host([loaded]) canvas { 
+			display: block; 
+			animation: fade-in 1s forwards; 
+		}
 	</style>
 	<canvas part="canvas" width="${BUFFER_WIDTH}" height="${BUFFER_HEIGHT}" aria-hidden="true"></canvas>
 `;
