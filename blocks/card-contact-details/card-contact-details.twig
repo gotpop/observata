@@ -1,4 +1,13 @@
 {% set phone = attributes.phone|default('') %}
+{% set phone_href =
+	phone
+		|strip_html
+		|replace({
+			' ': '',
+			'(': '',
+			') ': ''
+		})
+%}
 {% set email = attributes.email|default('') %}
 {% set address = attributes.address|default('') %}
 
@@ -7,20 +16,9 @@
 		<div class="item">
 			{% include 'icons/lucide/phone.twig' %}
 			<span class="label">Phone</span>
-			<a
-				href="tel:{{ phone
-					|strip_html
-					|replace({
-						' ': '',
-						'(': '',
-						') ': ''
-					}) }}"
-				class="value">
-				{{ phone|strip_html }}
-			</a>
+			<a href="tel:{{ phone_href }}" class="value">{{ phone|strip_html }}</a>
 		</div>
 	{% endif %}
-
 	{% if email %}
 		<div class="item">
 			{% include 'icons/lucide/address.twig' %}
@@ -30,7 +28,6 @@
 			</a>
 		</div>
 	{% endif %}
-
 	{% if address %}
 		<div class="item">
 			{% include 'icons/lucide/email.twig' %}
