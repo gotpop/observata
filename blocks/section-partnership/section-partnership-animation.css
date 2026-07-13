@@ -59,8 +59,8 @@
 			--section-partnership-color-mid: #90b2dc;
 			--section-partnership-color-outer: #9bdbf2;
 			--section-partnership-stop-inner: 40%;
-			--section-partnership-stop-mid: 50%;
-			--section-partnership-stop-outer: 80%;
+			--section-partnership-stop-mid: 70%;
+			--section-partnership-stop-outer: 100%;
 		}
 	}
 
@@ -76,7 +76,6 @@
 		translate: -50% -50%;
 		width: 1440px;
 		position-anchor: --phase-one;
-		top: anchor(center);
 		top: calc(anchor(center) - 20px);
 
 		@media (width >=30rem) {
