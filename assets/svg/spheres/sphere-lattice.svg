@@ -58,7 +58,7 @@
 		<g transform="translate(-7.58 -7.89) scale(1.033)">
 			<g id="sphere-lattice-background">
 				<circle
-					class="background"
+					class="background" fill="none"
 					cx="249.7"
 					cy="249.7"
 					r="238"

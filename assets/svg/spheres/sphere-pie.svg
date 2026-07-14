@@ -22,7 +22,7 @@
 		stroke="url(#sphere-pie-gradient)">
 		<circle
 			id="sphere-pie-bg"
-			class="background"
+			class="background" fill="none"
 			cx="249.61"
 			cy="249.61"
 			r="248.45" />

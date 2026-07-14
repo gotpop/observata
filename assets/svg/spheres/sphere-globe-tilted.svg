@@ -18,7 +18,7 @@
 	</defs>
 	<g id="sphere-globe-tilted-background">
 		<circle
-			class="background"
+			class="background" fill="none"
 			cx="250.0"
 			cy="250.0"
 			r="248.0"

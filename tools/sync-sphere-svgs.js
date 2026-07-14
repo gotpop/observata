@@ -30,9 +30,35 @@ const checkOnly = process.argv.includes('--check');
 const rel = (p) => path.relative(themeRoot, p);
 
 /**
+ * Add fill="none" to .background and .triangle elements in the exported SVG.
+ *
+ * In the Twig source, these elements rely on var(--surface-sphere) which
+ * defaults to 'none' via CSS tokens. Standalone SVG exports don't load the
+ * CSS token system, so without an explicit fill="none" these elements
+ * render with SVG's default black fill in external viewers (Finder, etc).
+ *
+ * The transform only runs on exported .svg files — Twig sources are untouched.
+ */
+function addDefaultFills(svgContent) {
+	return svgContent.replace(
+		// Match opening tags of shape elements whose class includes "background" or "triangle".
+		// Captures up to and including the class attribute's closing quote.
+		/<(?:path|circle|ellipse|rect|polygon)\b[^>]*?\bclass="[^"]*\b(?:background|triangle)\b[^"]*"/g,
+		(match) => {
+			// Skip if the element already has an explicit fill attribute
+			if (/\bfill\s*=/.test(match)) return match;
+			return match + ' fill="none"';
+		}
+	);
+}
+
+/**
  * Extract the <svg>…</svg> block from a Twig file,
  * stripping the <graphic-sphere> wrapper and removing
  * one level of indentation (the wrapper's tab).
+ *
+ * Also injects fill="none" on .background/.triangle elements so the
+ * standalone export renders correctly without the theme's CSS tokens.
  */
 function extractSvg(twigContent) {
 	const svgMatch = twigContent.match(/<svg[\s\S]*<\/svg>/);
@@ -44,7 +70,10 @@ function extractSvg(twigContent) {
 		return line;
 	});
 
-	return '<?xml version="1.0" encoding="UTF-8"?>\n' + dedented.join('\n') + '\n';
+	const svgContent = dedented.join('\n');
+	const withFills = addDefaultFills(svgContent);
+
+	return '<?xml version="1.0" encoding="UTF-8"?>\n' + withFills + '\n';
 }
 
 /**
