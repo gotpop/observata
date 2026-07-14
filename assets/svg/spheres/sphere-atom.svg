@@ -31,12 +31,12 @@
 
 	{# Right hemisphere #}
 	<g id="sphere-atom-right-bg" stroke="url(#sphere-atom-gradient)">
-		<path class="background"
+		<path class="background" fill="none"
 		d="M327.844,365.853C421.209,365.853 497.009,284.201 497.009,183.629C497.009,83.057 421.209,1.405 327.844,1.405C292.193,1.405 263.249,83.057 263.249,183.629C263.249,284.201 292.193,365.853 327.844,365.853Z" />
-		<path class="background"
+		<path class="background" fill="none"
 		d="M327.844,365.853C421.209,365.853 497.009,284.201 497.009,183.629C497.009,83.057 421.209,1.405 327.844,1.405C363.495,1.405 392.439,83.057 392.439,183.629C392.439,284.201 363.495,365.853 327.844,365.853Z" />
 		<ellipse
-			class="background"
+			class="background" fill="none"
 			cx="327.844"
 			cy="183.629"
 			rx="64.595"
@@ -200,12 +200,12 @@
 
 	{# Left hemisphere #}
 	<g id="sphere-atom-left-bg" stroke="url(#sphere-atom-gradient)">
-		<path class="background"
+		<path class="background" fill="none"
 		d="M172.001,365.853C78.636,365.853 2.835,284.201 2.835,183.629C2.835,83.057 78.636,1.405 172.001,1.405C207.652,1.405 236.596,83.057 236.596,183.629C236.596,284.201 207.652,365.853 172.001,365.853Z" />
-		<path class="background"
+		<path class="background" fill="none"
 		d="M172.001,365.853C78.636,365.853 2.835,284.201 2.835,183.629C2.835,83.057 78.636,1.405 172.001,1.405C136.35,1.405 107.406,83.057 107.406,183.629C107.406,284.201 136.35,365.853 172.001,365.853Z" />
 		<ellipse
-			class="background"
+			class="background" fill="none"
 			cx="172.001"
 			cy="183.629"
 			rx="64.595"

@@ -9,6 +9,12 @@ applyTo:
 
 All decorative sphere SVGs in `views/graphics/spheres/` are styled via **CSS design tokens + class names**, never inline presentation attributes.
 
+## Export Source
+
+**Standalone `.svg` files must always be exported from `views/graphics/spheres/`** — never hand-authored or imported from an external tool. The Twig files are the single source of truth; the `.svg` exports in `assets/svg/spheres/` are generated artefacts produced by `tools/sync-sphere-svgs.js`.
+
+If you need to edit a sphere, **edit the `.twig` file and re-run the sync script** (see Twig ↔ SVG Sync below).
+
 ## Why Not Inline Attributes?
 
 SVG presentation attributes (`fill="…"`, `stroke-width="…"`) **cannot use `var()`**. To make spheres themeable via design tokens, values must be applied through CSS rules targeting class names.
@@ -87,9 +93,10 @@ Syncing is handled by `tools/sync-sphere-svgs.js`. **Always use the script** —
 1. Reads every `*.twig` file in `views/graphics/spheres/`
 2. Extracts the inner `<svg>…</svg>` markup (strips the `<graphic-sphere>` wrapper)
 3. Dedents by one tab level (removes the wrapper's indentation)
-4. Prepends `<?xml ?>` declaration
-5. Writes to `assets/svg/spheres/<sphere-name>.svg`
-6. Prints element counts (svg/path/circle/g) for visual verification
+4. **Injects `fill="none"`** on `.background` and `.triangle` elements (see Transparent Backgrounds below)
+5. Prepends `<?xml ?>` declaration
+6. Writes to `assets/svg/spheres/<sphere-name>.svg`
+7. Prints element counts (svg/path/circle/g) for visual verification
 
 **Sync rules:**
 
@@ -97,13 +104,25 @@ Syncing is handled by `tools/sync-sphere-svgs.js`. **Always use the script** —
 - Do **not** sync changes that only affect CSS animation/transition rules in `.css` files — those are stylesheet concerns, not SVG structure.
 - Do **not** manually edit `.svg` exports — the script overwrites them.
 
+## Transparent Backgrounds in Exports
+
+In the Twig source, `.background` and `.triangle` elements rely on `var(--surface-sphere)` which defaults to `none` via CSS tokens. This works in the browser because the theme CSS loads.
+
+Standalone `.svg` files don't load the CSS token system, so SVG's built-in default applies: **`fill="black"`**. Without intervention, every `.background` path renders as a solid black shape in Finder, Preview, and other external viewers.
+
+The sync script solves this by **injecting `fill="none"`** onto every `.background` and `.triangle` element during export — only in the `.svg` file, never in the Twig source. This ensures:
+
+- Transparent backgrounds in Finder, Preview, and any standalone viewer
+- No change to the live site (the Twig source is untouched)
+- No conflict with existing `fill` attributes (the script skips elements that already have one)
+
 ## Exception: `sphere-dots-connected.twig`
 
 This sphere has unique elements (gradient-filled circles, connecting lines) and keeps its own inline values. Do not strip inline attributes from this file unless explicitly asked.
 
 ## Common Mistakes
 
-- **Adding `fill="none"` to a `.background` circle** — the CSS sets `fill: var(--surface-sphere)` which defaults to `none`. Inline attributes override CSS, so this is redundant but harmless. Still, remove it for cleanliness.
+- **Adding `fill="none"` to a `.background` element in a Twig file** — the CSS sets `fill: var(--surface-sphere)` which defaults to `none`. Inline attributes override CSS, so this is redundant but harmless. Still, remove it for cleanliness. The sync script adds `fill="none"` to the **exported `.svg` only** — never to the Twig source.
 - **Adding `stroke-width="1"` to a `.background` circle** — this overrides the token. Remove it.
 - **Forgetting the closing `>`** when stripping attributes from a multi-line tag — always verify the tag is still valid XML after edits.
 - **Editing only the Twig file without syncing the `.svg`** — the two must stay in sync (see Twig ↔ SVG Sync above).
