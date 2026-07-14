@@ -38,6 +38,6 @@
 		"vitest": "^4.1.9"
 	},
 	"dependencies": {
-		"shaders": "^3.0.436"
+		"shaders": "^2.5.135"
 	}
 }
