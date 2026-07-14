@@ -48,22 +48,22 @@ module.exports = {
 			cacheGroups: {
 				// Extract three.js + shaders library into a shared vendor chunk
 				// so it's only downloaded once, regardless of which entry point
-			// needs it.
-			//
-			// NOTE (shaders v3): Upgrading shaders to v3 adds typegpu + transitive
-			// deps (tinyest, tsover-runtime, typed-binary). The wp-scripts runtime
-			// has NO webpack chunk loader — any split chunk not explicitly enqueued
-			// as a <script> tag silently never loads. When upgrading to v3, add
-			// all of those packages to the regex:
-			//   (three|shaders|typegpu|tinyest|tsover-runtime|typed-binary)
-			// See /memories/repo/shaders-v3-webpack-chunk-gotcha.md for full details.
-			vendor: {
-				test: /[\\/]node_modules[\\/](three|shaders)[\\/]/,
-				name: 'vendors',
-				chunks: 'all',
-				priority: 10,
+				// needs it.
+				//
+				// NOTE (shaders v3): Upgrading shaders to v3 adds typegpu + transitive
+				// deps (tinyest, tsover-runtime, typed-binary). The wp-scripts runtime
+				// has NO webpack chunk loader — any split chunk not explicitly enqueued
+				// as a <script> tag silently never loads. When upgrading to v3, add
+				// all of those packages to the regex:
+				//   (three|shaders|typegpu|tinyest|tsover-runtime|typed-binary)
+				// See /memories/repo/shaders-v3-webpack-chunk-gotcha.md for full details.
+				vendor: {
+					test: /[\\/]node_modules[\\/](three|shaders)[\\/]/,
+					name: 'vendors',
+					chunks: 'all',
+					priority: 10,
+				},
 			},
 		},
 	},
-},
 };
