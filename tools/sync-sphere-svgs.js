@@ -108,10 +108,10 @@ console.log('  Sphere Twig → SVG sync');
 console.log('  ' + '─'.repeat(66));
 console.log(
 	'  ' +
-	'sphere'.padEnd(22) +
-	'twig(svg/path/circ/g)'.padEnd(22) +
-	'svg(svg/path/circ/g)'.padEnd(22) +
-	'status'
+		'sphere'.padEnd(22) +
+		'twig(svg/path/circ/g)'.padEnd(22) +
+		'svg(svg/path/circ/g)'.padEnd(22) +
+		'status'
 );
 
 for (const twigFile of twigFiles) {
@@ -182,10 +182,10 @@ if (checkOnly) {
 	} else {
 		console.log(
 			'  ✗ ' +
-			mismatches +
-			' of ' +
-			twigFiles.length +
-			' files out of sync — run: npm run sync:svgs'
+				mismatches +
+				' of ' +
+				twigFiles.length +
+				' files out of sync — run: npm run sync:svgs'
 		);
 		process.exit(1);
 	}
