@@ -48,9 +48,13 @@ module.exports = {
 			cacheGroups: {
 				// Extract three.js + shaders library into a shared vendor chunk
 				// so it's only downloaded once, regardless of which entry point
-				// needs it.
+				// needs it. typegpu and its transitive deps (tinyest,
+				// tsover-runtime, typed-binary) must all be in the vendor chunk —
+				// the wp-scripts runtime has no webpack chunk loader, so any
+				// split chunk that isn't enqueued via wp_enqueue_script
+				// silently never loads.
 				vendor: {
-					test: /[\\/]node_modules[\\/](three|shaders)[\\/]/,
+					test: /[\\/]node_modules[\\/](three|shaders|typegpu|tinyest|tsover-runtime|typed-binary)[\\/]/,
 					name: 'vendors',
 					chunks: 'all',
 					priority: 10,
