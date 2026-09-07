@@ -111,6 +111,7 @@ All PHP lives in `inc/` and is loaded via `functions.php`. Each file handles **o
 | `analytics-ga4.php`         | GA4 registration + output                                     |
 | `analytics-leadfeeder.php`  | Leadfeeder registration + output                              |
 | `analytics-cookiebot.php`   | CookieBot registration + output                               |
+| `analytics-linkedin.php`    | LinkedIn Insight Tag registration + output                    |
 | `theme-settings.php`        | Settings page + sections                                      |
 | `theme-settings-footer.php` | Footer content fields                                         |
 
