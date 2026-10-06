@@ -82,6 +82,7 @@ Each file handles **one concern**:
 | `analytics-ga4.php`         | GA4 registration + output                          |
 | `analytics-leadfeeder.php`  | Leadfeeder registration + output                   |
 | `analytics-cookiebot.php`   | CookieBot registration + output                    |
+| `analytics-linkedin.php`    | LinkedIn Insight Tag registration + output         |
 
 All functions are **fully typed** (parameter + return types). PHPStan runs at
 level 5 in CI to prevent type regressions.

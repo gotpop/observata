@@ -14,6 +14,7 @@ require get_template_directory() . '/inc/seo.php';
 require get_template_directory() . '/inc/analytics-ga4.php';
 require get_template_directory() . '/inc/analytics-leadfeeder.php';
 require get_template_directory() . '/inc/analytics-cookiebot.php';
+require get_template_directory() . '/inc/analytics-linkedin.php';
 require get_template_directory() . '/inc/theme-settings.php';
 require get_template_directory() . '/inc/theme-settings-footer.php';
 require get_template_directory() . '/inc/image-optimization.php';
