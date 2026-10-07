@@ -7,7 +7,6 @@ import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
-import GeoIcon from '../components/geo-icon';
 import GEO_ICON_OPTIONS from '../components/geo-icon-options';
 import GraphicSelect from '../components/graphic-select';
 
@@ -37,9 +36,6 @@ export default function CardGeoListEdit({ attributes, setAttributes }) {
 		<article {...blockProps}>
 			<BlockLabel name="Card Geo List" />
 
-			<div className="icon-geo">
-				<GeoIcon number={iconGeo} />
-			</div>
 			<div className="intro-card-body">
 				<RichText
 					tagName="h3"

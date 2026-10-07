@@ -7,7 +7,6 @@ import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
-import GeoIcon from '../components/geo-icon';
 import GEO_ICON_OPTIONS from '../components/geo-icon-options';
 import GraphicSelect from '../components/graphic-select';
 
@@ -75,19 +74,12 @@ export default function CardTableFeaturesEdit({ attributes, setAttributes }) {
 									value={attributes['plan' + i + 'Description']}
 									onChange={(value) => setAttributes({ ['plan' + i + 'Description']: value })}
 								/>
-								<ControlsLayout layout="horizontal" gap="1rem">
-									<div className="icon-geo">
-										<GeoIcon
-											number={attributes['plan' + i + 'Icon'] || String(i).padStart(2, '0')}
-										/>
-									</div>
-									<GraphicSelect
-										label={__('Plan ' + i + ' Icon', 'observata')}
-										value={attributes['plan' + i + 'Icon']}
-										options={GEO_ICON_OPTIONS}
-										onChange={(val) => setAttributes({ ['plan' + i + 'Icon']: val })}
-									/>
-								</ControlsLayout>
+								<GraphicSelect
+									label={__('Plan ' + i + ' Icon', 'observata')}
+									value={attributes['plan' + i + 'Icon']}
+									options={GEO_ICON_OPTIONS}
+									onChange={(val) => setAttributes({ ['plan' + i + 'Icon']: val })}
+								/>
 								<ToggleControl
 									label={__('Show Read More Link', 'observata')}
 									checked={attributes['plan' + i + 'ShowReadMore']}
