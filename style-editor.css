@@ -25,7 +25,7 @@
 	--stroke-sphere-line: 1px;
 }
 
-.editor-styles-wrapper :where(h1, h2, h3, h4)  {
+.editor-styles-wrapper :where(h1, h2, h3, h4) {
 	text-box: trim-both cap alphabetic;
 	margin-block: 0 1rem;
 	color: var(--colour-grey-300);

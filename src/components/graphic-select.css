@@ -177,9 +177,24 @@
 	overflow-wrap: anywhere;
 }
 
-/* Hide icon when option is cloned into selectedcontent (button display) */
-selectedcontent .graphic-select-option-icon {
-	display: none;
+/* Selected option shown in the select button — compact icon beside the label */
+.graphic-select-button {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	gap: var(--spacing-sm, 8px);
+	min-width: 0;
+
+	.graphic-select-option-icon {
+		width: 32px;
+		height: 32px;
+	}
+
+	.graphic-select-option-label {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 }
 
 /* Help text */

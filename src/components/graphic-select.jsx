@@ -1,6 +1,6 @@
 import './graphic-select.css';
 
-import { createElement, useEffect, useState } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 
 const svgCache = new Map();
 
@@ -48,8 +48,8 @@ function SvgPreview({ src }) {
  * Reusable select component using the customizable <select> API (appearance: base-select).
  *
  * Supports rich option content — SVG icons, images, or plain text — rendered inside
- * native <option> elements. The browser clones the selected option into a
- * <selectedcontent> element inside the select button.
+ * native <option> elements. The selected option's icon and label are shown in
+ * the select button.
  *
  * @param {Object}   props
  * @param {string}   [props.label]          Label shown above the select.
@@ -60,11 +60,18 @@ function SvgPreview({ src }) {
  * @param {string}   [props.help]           Help text below the select.
  */
 export default function GraphicSelect({ label, value, options, onChange, className = '', help }) {
+	const selected = options.find((option) => option.value === value) ?? options[0];
+
 	return (
 		<div className={`graphic-select-container ${className}`.trim()}>
 			{label && <label className="graphic-select-label">{label}</label>}
 			<select className="graphic-select" value={value} onChange={(e) => onChange(e.target.value)}>
-				<button className="graphic-select-button">{createElement('selectedcontent')}</button>
+				{/* Rendered by React rather than <selectedcontent>, which only re-clones on
+				    selection change and would keep the placeholder while the SVG loads. */}
+				<button className="graphic-select-button">
+					{selected?.icon && <SvgPreview src={selected.icon} />}
+					{selected && <span className="graphic-select-option-label">{selected.label}</span>}
+				</button>
 				{options.map((option) => (
 					<option key={option.value} value={option.value} className="graphic-select-option">
 						{option.icon && <SvgPreview src={option.icon} />}
