@@ -21,9 +21,7 @@ export default function CardContactFormEdit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Contact Form Settings', 'observata')}>
-					{formUrlControl}
-				</PanelBody>
+				<PanelBody title={__('Contact Form Settings', 'observata')}>{formUrlControl}</PanelBody>
 			</InspectorControls>
 
 			<div {...blockProps}>
