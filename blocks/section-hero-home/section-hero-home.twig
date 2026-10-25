@@ -13,7 +13,13 @@
 	</wrap-canvas>
 	<div class="hero-content">
 		<div class="hero-text">
-			{% include 'section-hero-home/hero-heading.twig' %}
+			{% if attributes.useCustomHeading and heading %}
+				<h1 class="heading-hero heading-section-hero-home">
+					{{ heading|kses_inline }}
+				</h1>
+			{% else %}
+				{% include 'section-hero-home/hero-heading.twig' %}
+			{% endif %}
 			{% if subheading %}
 				<p class="body-hero">
 					{{ subheading|strip_html }}

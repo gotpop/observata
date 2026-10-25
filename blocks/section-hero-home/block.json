@@ -10,9 +10,13 @@
 		"multiple": false
 	},
 	"attributes": {
+		"useCustomHeading": {
+			"type": "boolean",
+			"default": false
+		},
 		"heading": {
 			"type": "string",
-			"default": "observability & security"
+			"default": ""
 		},
 		"subheading": {
 			"type": "string",
@@ -41,7 +45,6 @@
 	"viewStyle": ["file:section-hero-home.css", "file:hero-home-canvas.css", "file:hero-heading.css"],
 	"example": {
 		"attributes": {
-			"heading": "observability & security",
 			"subheading": "unify your AI powered",
 			"ctaText": "Review Your Observability Structure",
 			"ctaUrl": "#",

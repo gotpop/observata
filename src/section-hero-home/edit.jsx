@@ -4,12 +4,21 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import BlockLabel from '../components/block-label';
 import ControlsLayout from '../components/controls-layout';
-import { SelectControl } from '@wordpress/components';
+import { SelectControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
 
 export default function HeroEdit({ attributes, setAttributes }) {
-	const { heading, subheading, mediaUrl, ctaText, ctaUrl, readMoreText, readMoreUrl } = attributes;
+	const {
+		useCustomHeading,
+		heading,
+		subheading,
+		mediaUrl,
+		ctaText,
+		ctaUrl,
+		readMoreText,
+		readMoreUrl,
+	} = attributes;
 
 	// Fetch internal pages for dropdown
 	const pages = useSelect((select) => {
@@ -34,16 +43,31 @@ export default function HeroEdit({ attributes, setAttributes }) {
 		<section {...blockProps}>
 			<BlockLabel name="Section Hero Home" />
 			<ControlsLayout columns={1} gap="1rem">
-				<RichText
-					tagName="h1"
-					className="heading-hero"
-					value={heading}
-					onChange={() => {}}
-					placeholder={__('Hero heading…', 'observata')}
-					disableLineBreaks
-					allowedFormats={[]}
-					readOnly
+				<ToggleControl
+					label={__('Use custom heading', 'observata')}
+					help={__(
+						'Off uses the default hardcoded heading. Italic text is highlighted.',
+						'observata'
+					)}
+					checked={useCustomHeading}
+					onChange={(val) => setAttributes({ useCustomHeading: val })}
 				/>
+				{useCustomHeading ? (
+					<RichText
+						tagName="h1"
+						className="heading-hero heading-section-hero-home"
+						value={heading}
+						onChange={(val) => setAttributes({ heading: val })}
+						placeholder={__('Hero heading…', 'observata')}
+						allowedFormats={['core/italic']}
+					/>
+				) : (
+					<h1 className="heading-hero heading-section-hero-home">
+						We enable, operate and <br />
+						<i className="highlight">unify</i> your <i className="highlight">AI</i> powered <br />
+						observability and security
+					</h1>
+				)}
 				<RichText
 					tagName="p"
 					className="hero-subheading"

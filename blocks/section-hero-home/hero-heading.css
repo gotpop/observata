@@ -2,7 +2,8 @@
 	.heading-section-hero-home {
 		text-align: center;
 
-		.highlight {
+		.highlight,
+		em {
 			color: var(--colour-secondary-500);
 		}
 
